@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 import headerTranslations from '../common/translations/global.json'
 import { renderToStaticMarkup } from 'react-dom/server'
-import globalTranslations from '../common/translations/global.json'
 
 import LanguageToggle from './LanguageToggle'
 
@@ -26,8 +24,8 @@ class Header extends Component {
       { name: 'Deutsch', code: 'de' },
       { name: 'English', code: 'en' }
     ]
-    const defaultLanguage =
-      window.localStorage.getItem('languageCode') || this.props.languages[0]
+    // const defaultLanguage =
+    //   window.localStorage.getItem('languageCode') || this.props.languages[0]
     this.props.initialize({
       languages,
       // translation: headerTranslations,
@@ -46,7 +44,6 @@ class Header extends Component {
       this.props.activeLanguage && this.props.activeLanguage.code
 
     const hasLanguageChanged = prevLangCode !== curLangCode
-    console.log(prevLangCode, curLangCode)
     if (hasLanguageChanged) {
       window.localStorage.setItem('languageCode', curLangCode)
     }
@@ -76,7 +73,6 @@ class Header extends Component {
       { name: 'Wissen', index: 4 },
       { name: 'Über Zara', index: 5 }
     ]
-    const language = this.state.language && this.state.language
     return (
       <div className={styles['header-container']}>
         <div className={styles['top-header']}>

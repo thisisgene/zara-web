@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -12,32 +12,11 @@ import MainContent from './layout/MainContent'
 import styles from './User.module.sass'
 
 class User extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      auth: false
-    }
-  }
   componentDidMount() {}
   render() {
-    const { project, hasBackgroundImage } = this.props.project
-    let backgroundImg = ''
-    if (project && project.backgroundImage) {
-      backgroundImg =
-        project &&
-        `/public/${project._id}/${project.backgroundImage.originalName}`
-    }
     return (
       <div className={styles.user}>
-        {/* <div
-          className={styles.background}
-          style={{
-            backgroundImage:
-              backgroundImg != '' ? `url(${backgroundImg}` : 'none'
-          }}
-        /> */}
-        <Header hasBackgroundImage={hasBackgroundImage} />
+        <Header />
 
         <MainContent />
       </div>

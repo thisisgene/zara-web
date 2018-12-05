@@ -17,10 +17,8 @@ import TextInputButtonGroup from '../../common/TextInputButtonGroup'
 
 import cx from 'classnames'
 import globalStyles from '../../common/Bootstrap.module.css'
-import commonStyles from '../../common/Common.module.sass'
 import styles from './Projects.module.sass'
 
-const grid = 12
 let projectList = []
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'rgba(255, 255, 255, .1)' : 'transparent'

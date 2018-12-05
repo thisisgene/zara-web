@@ -2,21 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import cx from 'classnames'
 import globalStyles from '../../common/Bootstrap.module.css'
-import commonStyles from '../../common/Common.module.sass'
-import styles from './Projects.module.sass'
 
 import { updateProject } from '../../../../actions/projectActions'
 
 class Sidebar extends Component {
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     isVisible:
-  //   }
-  // }
-
   componentDidMount() {}
   onChange = e => {
     this.setState({ [e.target.name]: e.target.checked })
@@ -27,7 +17,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { project, waiting } = this.props.project
+    const { project } = this.props.project
 
     return (
       <div>
