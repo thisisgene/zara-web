@@ -11,46 +11,53 @@ import Image1 from './img/test_img1.png'
 
 class CarouselGroup extends Component {
   render() {
+    const { serverData, lang } = this.props
     return (
       <Carousel
         showThumbs={false}
         infiniteLoop
         // autoPlay
-
         interval={10000}
-        transitionTime={2000}
+        transitionTime={1000}
         showStatus={false}
       >
-        <div className={styles['carousel-item']}>
-          <div className={styles['carousel-item--info']}>
-            <div className={styles['carousel-item--info__header']}>
-              <DateObject lang={this.props.lang} />
-              <div className={styles['info-title']}>
-                <div className={styles['info-title--category']}>Workshop</div>
-                <div className={styles['info-title--main']}>
-                  Digitale Zivilcourage
+        {serverData &&
+          lang &&
+          serverData.map((item, index) => (
+            <div
+              key={index}
+              className={cx(styles['carousel-item'], {
+                [styles['backgroundImage']]: item.imageAsBackground
+              })}
+              style={{
+                background: item.imageAsBackground ? `url(${Image1})` : 'none'
+              }}
+            >
+              <div className={styles['carousel-item--info']}>
+                <div className={styles['carousel-item--info__header']}>
+                  <DateObject dateObj={item[lang].date} lang={lang} />
+                  <div className={styles['info-title']}>
+                    <div className={styles['info-title--category']}>
+                      {item[lang].category}
+                    </div>
+                    <div className={styles['info-title--main']}>
+                      {item[lang].title}
+                    </div>
+                  </div>
+                </div>
+                <div className={styles['carousel-item--info__body']}>
+                  <p>{item[lang].text}</p>
                 </div>
               </div>
+              {item.imageAsBackground ? (
+                ''
+              ) : (
+                <div className={styles['carousel-item--image']}>
+                  <img src={Image1} />
+                </div>
+              )}
             </div>
-            <div className={styles['carousel-item--info__body']}>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                velit rerum dolores culpa ab sequi reiciendis obcaecati in,
-                architecto ducimus modi, consequuntur a hic cupiditate eligendi
-                voluptatibus nam possimus eum!
-              </p>
-            </div>
-          </div>
-          <div className={styles['carousel-item--image']}>
-            <img src={Image1} />
-          </div>
-        </div>
-        <div>
-          <img src="http://placekitten.com/g/800/300" />
-        </div>
-        <div>
-          <img src="http://placekitten.com/g/800/300" />
-        </div>
+          ))}
       </Carousel>
     )
   }
