@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Condensed|Roboto:400,700')
+.header-container
+  position: sticky
+  top: -36px
+  z-index: 1
+  .top-header
+    font-family: 'Roboto Condensed', sans-serif
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: .2rem 2rem
+    background: #303030
+    color: #fff
+    width: 100vw
+    height: 36px
+
+    &--title
+      text-transform: uppercase
+      // line-height: 1rem
+      vertical-align: center
+
+    &--menu
+      a
+        font-family: 'Roboto', sans-serif
+        color: #fff
+        padding: 0 .5rem
+        border-right: 1px solid #fff
+        &:last-child
+          border-right: none
+        &:hover
+          text-decoration: none
+          color: rgba(#fff, .8)
+        &.active
+          font-weight: 700
+        
+    &--social-media
+      a
+        margin: 0 .4rem
+        &:hover
+          opacity: .8
+        img
+          width: 26px
+
+  .header 
+    font-family: 'Roboto Slab', serif
+    // position: sticky
+    // top: 0px
+    display: flex
+    flex-direction: row
+    align-items: center
+    height: 60px
+    width: 100vw
+    background: #fff
+    padding: 0 2rem
+    z-index: 3
+    box-shadow: 0 5px 4px rgba(0, 0, 0, .14)
+
+    .logo
+      margin-right: 3rem
+
+    .mobile-menu-container
+      display: none
+    .menu-container
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+
+      width: 100%
+      // height: 100%
+      a
+        margin: 0
+        line-height: 1
+        font-size: 1rem
+        padding: .6rem .2rem
+        border-bottom: 2px solid transparent
+        color: #333
+        transition: all 400ms ease-in-out
+        &:hover
+          text-decoration: none
+          opacity: .8
+
+      .active
+        border-bottom: 2px solid #FFC52D
+    
+    
+      &--language
+        margin-right: 1rem
+        display: flex
+
+        &-link
+          display: flex
+          flex-direction: row
+          align-items: center
+          display: inline-block
+          a
+            padding: 0 .3rem
+          &:last-child
+            span
+              display: none
+              border-right: none
+    .right-menu
+      margin-left: 1rem
+      display: flex
+  @media(max-width: 768px)
+    .header
+      position: absolute
+      width: 100vw
+      height: 4rem
+      flex-direction: row
+      justify-content: space-between
+      .logo
+        z-index: 2
+      .menu-container
+        display: none
+      .mobile-menu-container
+        display: block
+        .mobile-menu-button
+          margin-top: 1rem
+          position: relative
+          z-index: 3
+          .nav-burger
+            position: relative
+            display: block
+            width: 1.4rem
+            height: 0
+            background: #fff
+            color: #fff
+            &:before
+              content: ''
+              background: inherit
+              position: absolute
+              left: 0
+              transform: translateY(-.2rem)
+              width: inherit
+              height: 2px
+              transition: transform 100ms ease-in-out
+            &:after
+              content: ''
+              background: inherit
+              position: absolute
+              left: 0
+              transform: translateY(.2rem)            
+              width: inherit
+              height: 2px
+              transition: transform 300ms ease-in-out
+
+            &.burger-expand
+              right: 2rem
+              position: fixed
+              &:before
+                transform: rotateZ(45deg) translateY(0)
+              &:after
+                transform: rotateZ(-45deg) translateY(0)
+        .mobile-menu
+          position: fixed
+          top: 0
+          right: 0
+          width: 100vw
+          height: 100vh
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          padding: 3rem
+          background: rgba(#000, .7)
+          font-size: 1.7rem
+          transform: translateX(100%)
+          transition: transform 300ms ease-in-out
+          z-index: 1
+          a
+            color: #fff
+          .active
+            color: #aaa
+          &.expanded
+            transform: translateX(0)
+      &.black-header
+        .mobile-menu-container
+          .mobile-menu-button
+            .nav-burger
+              
+              background: #111
+            
+            
+          .mobile-menu
+            background: rgba(#fff, .9)
+            a
+              color: #111
+            .active
+              text-decoration: none
+              color: #aaa

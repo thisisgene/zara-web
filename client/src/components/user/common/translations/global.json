@@ -1,0 +1,9 @@
+{
+  "menu": {
+    "item1": ["Beratung", "Consulting"],
+    "item2": ["Training", "Training"],
+    "item3": ["Mitmischen", "Participate"],
+    "item4": ["Wissen", "Knowledge"],
+    "item5": ["Über ZARA", "About ZARA"]
+  }
+}

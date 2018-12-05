@@ -1,0 +1,14 @@
+
+Todo:
+  ☐ Implement News
+  ☐ Force 'logout' when Token expired.
+
+  Admin:
+    ☐ Delete projects
+    ☐ Remove images from db image files from server
+    ☐ Make project and image list dragable
+
+  User:
+    ☐ Change Menu color depending on background
+
+  
