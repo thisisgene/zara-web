@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
 import CarouselGroup from '../../dashboard/carousel/CarouselGroup'
+import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 
 import styles from './Home.module.sass'
 
@@ -111,6 +112,7 @@ class Home extends Component {
       <div className={styles['main-content']}>
         <div className={styles['carousel-container']}>
           <CarouselGroup serverData={fakeServerData} lang={lang} />
+          <OneLineAlert />
         </div>
       </div>
     )
