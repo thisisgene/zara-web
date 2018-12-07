@@ -14,10 +14,7 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
   return (
     <div>
       {languages.map(lang => (
-        <div
-          key={lang.code}
-          className={styles['menu-container--language-link']}
-        >
+        <div key={lang.code} className={styles['language-box--link']}>
           <NavLink
             activeClassName={cx(styles.active)}
             className={styles[getClass(lang.code)]}
@@ -26,7 +23,6 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
           >
             {lang.code}
           </NavLink>
-          <span>|</span>
         </div>
       ))}
     </div>

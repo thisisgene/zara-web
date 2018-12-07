@@ -13,6 +13,11 @@ import newsletterLogo from '../common/social media/newsletter.png'
 import twitterLogo from '../common/social media/twitter.png'
 import ytLogo from '../common/social media/youtube.png'
 
+import menuItemsFromFile from './menuItems'
+import SubMenu from './SubMenu'
+
+import ActIcon from '../common/img/act.png'
+
 import cx from 'classnames'
 import styles from './Header.module.sass'
 
@@ -34,7 +39,8 @@ class Header extends Component {
 
     this.props.addTranslation(headerTranslations)
     this.state = {
-      mobileExpand: false
+      mobileExpand: false,
+      subMenuContent: ''
     }
   }
   componentDidUpdate(prevProps) {
@@ -54,6 +60,12 @@ class Header extends Component {
     })
   }
 
+  onLinkHover = id => {
+    this.setState({
+      subMenuContent: id
+    })
+  }
+
   render() {
     // NOTE: Does link to admin make sense?
     // const toAdmin = this.props.auth ? (
@@ -66,48 +78,10 @@ class Header extends Component {
     //   console.log('hello')
     // }
     const { activeLanguage } = this.props
-    const menuItems = [
-      { name: 'Beratung', index: 1 },
-      { name: 'Training', index: 2 },
-      { name: 'Mitmischen', index: 3 },
-      { name: 'Wissen', index: 4 },
-      { name: 'Über Zara', index: 5 }
-    ]
+    let menuItems = menuItemsFromFile
+
     return (
       <div className={styles['header-container']}>
-        <div className={styles['top-header']}>
-          <div className={styles['top-header--title']}>
-            Zivilcourage und Anti-Rassismus-Arbeit
-          </div>
-          <div className={styles['top-header--menu']}>
-            <NavLink activeClassName={styles.active} to="/user/de/melden">
-              Melden
-            </NavLink>
-            <NavLink activeClassName={styles.active} to="/user/de/spenden">
-              Spenden
-            </NavLink>
-            <NavLink activeClassName={styles.active} to="/user/de/kontakt">
-              Kontakt
-            </NavLink>
-          </div>
-          <div className={styles['top-header--social-media']}>
-            <a target="blank" href="http://facebook.com">
-              <img src={fbLogo} alt="Facebook" />
-            </a>
-            <a target="blank" href="http://twitter.com">
-              <img src={twitterLogo} alt="Twitter" />
-            </a>
-            <a target="blank" href="http://instagram.com">
-              <img src={instaLogo} alt="Facebook" />
-            </a>
-            <a target="blank" href="http://youtube.com">
-              <img src={ytLogo} alt="Youtube" />
-            </a>
-            <a target="blank" href="http://mailchimp.com">
-              <img src={newsletterLogo} alt="Newsletter" />
-            </a>
-          </div>
-        </div>
         <div className={cx(styles.header)}>
           <div className={styles.logo}>
             <NavLink
@@ -122,31 +96,79 @@ class Header extends Component {
               />
             </NavLink>
           </div>
-          <div className={styles['menu-container']}>
-            {menuItems.map(
-              item =>
-                activeLanguage && (
-                  <NavLink
-                    key={item.index}
-                    activeClassName={styles.active}
-                    to={`/user/${activeLanguage.code}/${item.name}`}
-                  >
-                    <Translate id={`menu.item${item.index}`}>
-                      {item.name}
-                    </Translate>
-                  </NavLink>
-                )
-            )}
-
-            <div className={styles['menu-container--language']}>
-              <LanguageToggle />
+          <div className={styles['main-menu']}>
+            <div className={styles['top-header']}>
+              {/* <div className={styles['top-header--title']}>
+                Zivilcourage und Anti-Rassismus-Arbeit
+              </div> */}
+              <div className={styles['top-header--menu']}>
+                <NavLink activeClassName={styles.active} to="/user/de/melden">
+                  <img src={ActIcon} alt="" />
+                </NavLink>
+                <NavLink activeClassName={styles.active} to="/user/de/melden">
+                  Melden
+                </NavLink>
+                <NavLink activeClassName={styles.active} to="/user/de/spenden">
+                  Spenden
+                </NavLink>
+                <NavLink activeClassName={styles.active} to="/user/de/kontakt">
+                  Kontakt
+                </NavLink>
+              </div>
             </div>
+            <div className={styles['menu-container']}>
+              {menuItems.map(
+                item =>
+                  activeLanguage && (
+                    <NavLink
+                      key={item.id}
+                      activeClassName={styles.active}
+                      to={`/user/${activeLanguage.code}/${item.name}`}
+                      onMouseOver={this.onLinkHover.bind(this, item.id)}
+                    >
+                      <Translate id={`menu.item${item.id}`}>
+                        {item.name}
+                      </Translate>
+                    </NavLink>
+                  )
+              )}
+            </div>
+          </div>
+          <div className={styles['sub-menu']}>
+            <SubMenu
+              menuItems={menuItems}
+              subMenuContent={this.state.subMenuContent}
+            />
           </div>
           <div className={styles['right-menu']}>
-            <div>
-              <i className="fa fa-search" />
+            <div className={styles['right-menu--top']}>
+              <a target="blank" href="http://facebook.com">
+                <img src={fbLogo} alt="Facebook" />
+              </a>
+              <a target="blank" href="http://twitter.com">
+                <img src={twitterLogo} alt="Twitter" />
+              </a>
+              <a target="blank" href="http://instagram.com">
+                <img src={instaLogo} alt="Facebook" />
+              </a>
+              <a target="blank" href="http://youtube.com">
+                <img src={ytLogo} alt="Youtube" />
+              </a>
+              <a target="blank" href="http://mailchimp.com">
+                <img src={newsletterLogo} alt="Newsletter" />
+              </a>
+            </div>
+            <div className={styles['right-menu--bottom']}>
+              <div className={styles['language-box']}>
+                <LanguageToggle />
+              </div>
+              <div className={styles['search-box']}>
+                <i className="fa fa-search" />
+              </div>
             </div>
           </div>
+        </div>
+        <div>
           <div className={styles['mobile-menu-container']}>
             <div
               className={cx(styles['mobile-menu'], {

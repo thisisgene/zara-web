@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 import { Carousel } from 'react-responsive-carousel'
 import DateObject from '../dateObject/DateObject'
+import ButtonObject from '../ButtonObject/ButtonObject'
 
 import cx from 'classnames'
 import './carousel.min.css'
 import styles from './CarouselGroup.module.sass'
 
-import Image1 from './img/test_img1.png'
+import Image1 from './img/test_img2.png'
 
 class CarouselGroup extends Component {
   render() {
@@ -30,7 +31,9 @@ class CarouselGroup extends Component {
                 [styles['backgroundImage']]: item.imageAsBackground
               })}
               style={{
-                background: item.imageAsBackground ? `url(${Image1})` : 'none'
+                backgroundImage: item.imageAsBackground
+                  ? `url(${Image1})`
+                  : 'none'
               }}
             >
               <div className={styles['carousel-item--info']}>
@@ -47,6 +50,12 @@ class CarouselGroup extends Component {
                 </div>
                 <div className={styles['carousel-item--info__body']}>
                   <p>{item[lang].text}</p>
+                </div>
+                <div className={styles['button-group']}>
+                  {item[lang].buttons &&
+                    item[lang].buttons.map((button, i) => (
+                      <ButtonObject key={`btn-${i}`} button={button} />
+                    ))}
                 </div>
               </div>
               {item.imageAsBackground ? (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Route, Switch } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -8,6 +8,7 @@ import { getAllProjects, getProjectById } from '../../actions/projectActions'
 import Header from './layout/Header'
 // import Landing from './dashboard/Landing'
 import MainContent from './layout/MainContent'
+import Home from './pages/Home/Home'
 
 import styles from './User.module.sass'
 
@@ -17,8 +18,13 @@ class User extends Component {
     return (
       <div className={styles.user}>
         <Header />
-
-        <MainContent />
+        <div className={styles['main-content']}>
+          <Switch>
+            <Route exact path="/user/de" component={Home} />
+            <Route exact path="/user/en" component={Home} />
+            <MainContent />
+          </Switch>
+        </div>
       </div>
     )
   }

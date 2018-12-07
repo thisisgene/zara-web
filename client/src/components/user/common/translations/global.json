@@ -1,6 +1,14 @@
 {
   "menu": {
     "item1": ["Beratung", "Consulting"],
+    "item1.1": ["Beratung & Melden", "Consulting & Report"],
+    "item1.1.1": ["Rassismus", "Racism"],
+    "item1.1.2": ["Hass im Netz", "Online Hate"],
+    "item1.2": ["KENNE DEINE RECHTE", "KNOW YOUR RIGHTS"],
+    "item1.2.1": ["Was können wir tun?", "What can we do?"],
+    "item1.2.2": ["Wissenswertes & Tipps", ""],
+    "item1.2.3": ["Hasspostings in Social Media melden", ""],
+    "item1.2.4": ["Folder Hass im Netz", ""],
     "item2": ["Training", "Training"],
     "item3": ["Mitmischen", "Participate"],
     "item4": ["Wissen", "Knowledge"],
