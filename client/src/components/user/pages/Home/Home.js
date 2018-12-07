@@ -3,6 +3,8 @@ import { withLocalize } from 'react-localize-redux'
 
 import CarouselGroup from '../../dashboard/carousel/CarouselGroup'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
+import QuoteBox from '../../dashboard/QuoteBox/QuoteBox'
+import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
 
 import styles from './Home.module.sass'
 
@@ -99,6 +101,49 @@ const fakeServerData = [
   }
 ]
 
+const quote = {
+  text:
+    "Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has.",
+  author: 'Margaret Mead, Kulturantropologin'
+}
+
+const infoObj = {
+  image: 'act',
+  color: 'red',
+  title: 'Wie ich aktiv werden kann!',
+  text:
+    'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
+  cards: [
+    {
+      image: 'act',
+      color: 'red',
+      title: 'Rassismus melden',
+      text:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
+      link: 'de/melden',
+      linkText: "Los geht's!"
+    },
+    {
+      image: 'act',
+      color: 'red',
+      title: '(Online) Spenden',
+      text:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
+      link: 'de/melden',
+      linkText: "Los geht's!"
+    },
+    {
+      image: 'act',
+      color: 'red',
+      title: 'Ehrenamtlich mitmischen',
+      text:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
+      link: 'de/melden',
+      linkText: "Los geht's!"
+    }
+  ]
+}
+
 class Home extends Component {
   render() {
     const { activeLanguage } = this.props
@@ -113,6 +158,8 @@ class Home extends Component {
         <div className={styles['carousel-container']}>
           <CarouselGroup serverData={fakeServerData} lang={lang} />
           <OneLineAlert />
+          <QuoteBox quote={quote} />
+          <InfoBoxObject infoBox={infoObj} />
         </div>
       </div>
     )
