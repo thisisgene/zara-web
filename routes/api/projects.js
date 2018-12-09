@@ -189,88 +189,47 @@ router.post(
   '/image_upload',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    // const file = req.files.file
+    const file = req.files.file
     const body = req.body
-    let imgName = ''
-    // const newImage = {
-    //   originalName: imgName
-    // }
-    // console.log(req.files.file)
-    const spacesEndpoint = new AWS.Endpoint('ams3.digitaloceanspaces.com')
-    const s3 = new AWS.S3({
-      endpoint: spacesEndpoint
-    })
-    const upload = multer({
-      storage: multerS3({
-        s3: s3,
-
-        bucket: 'spigeon-space',
-        // dirname: '/gc-arch',
-        acl: 'public-read',
-        // contentType: multerS3.AUTO_CONTENT_TYPE,
-        key: function(req, file, cb) {
-          console.log('FILEEEE', req.body)
-          imgName = file.originalname.replace(/ /g, '_')
-          cb(null, `gc-arch/upload/${req.body.id}/${imgName}`)
-        }
+    const imgName = body.name.replace(/ /g, '_')
+    const newImage = {
+      originalName: imgName
+    }
+    Project.findOneAndUpdate(
+      // FIXME: If project has no background image, make first image to upload the background image!
+      { _id: body.id },
+      { $push: { images: newImage } },
+      { safe: true, new: true }
+    )
+      .then(project => {
+        file.mv(`public/${body.id}/${imgName}`, function(err) {
+          if (err) {
+            return res.status(500).send(err)
+          }
+          Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
+            if (err) throw err
+            img
+              .resize(600, Jimp.AUTO) // resize
+              .quality(88) // set JPEG quality
+              .write(`public/${body.id}/med/${imgName}`) // save
+          })
+          Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
+            if (err) throw err
+            img
+              .resize(100, Jimp.AUTO) // resize
+              .quality(60) // set JPEG quality
+              .blur(3) // set blur
+              .write(`public/${body.id}/min/${imgName}`) // save
+          })
+        })
+        res.json(project)
       })
-    }).array('file', 1)
-    upload(req, res, function(error) {
-      console.log('UPLOADDD')
-      if (error) {
-        console.log(error)
-      }
-      const body = req.body
-      const newImage = {
-        originalName: imgName
-      }
-      Project.findByIdAndUpdate(
-        // FIXME: If project has no background image, make first image to upload the background image!
-        body.id,
-        { $push: { images: newImage } },
-        { safe: true, new: true }
-      )
-        .then(project => {
-          res.json(project)
-        })
-        .catch(err => {
-          errors.project = 'Projekt nicht gefunden.'
-          return res.status(404).json(errors)
-        })
-    })
+      .catch(err => {
+        // errors.project = 'Projekt nicht gefunden.'
+        return res.status(404).json(err)
+      })
   }
 )
-/// OLD upload
-//     // const path = `gc-arch/${body.id}/${imgName}`
-//     // const params = {
-//     //   Body: 'file',
-//     //   Bucket: 'spigeon-space',
-//     //   Key: path
-//     // }
-//     // s3.putObject(params, function(err, data) {
-//     //   if (err) console.log(err, err.stack)
-//     //   else console.log(data)
-//     // })
-//     // file.mv(`public/${body.id}/${imgName}`, function(err) {
-//     //   if (err) {
-//     //     return res.status(500).send(err)
-//     //   }
-//     //   Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
-//     //     if (err) throw err
-//     //     img
-//     //       .resize(600, Jimp.AUTO) // resize
-//     //       .quality(88) // set JPEG quality
-//     //       .write(`public/${body.id}/med/${imgName}`) // save
-//     //   })
-//     //   Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
-//     //     if (err) throw err
-//     //     img
-//     //       .resize(100, Jimp.AUTO) // resize
-//     //       .quality(60) // set JPEG quality
-//     //       .blur(3) // set blur
-//     //       .write(`public/${body.id}/min/${imgName}`) // save
-//     //   })
-//     // })
 
 // @route   GET api/projects/get_home_project/:id
 // @desc    Get project to be displayed on home screen
