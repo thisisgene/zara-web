@@ -43,13 +43,13 @@ app.use(bodyParser.json())
 // })
 
 // FileUpload middleware
-// app.use(
-//   fileUpload({
-//     createParentPath: true,
-//     safeFileNames: true,
-//     preserveExtension: true
-//   })
-// )
+app.use(
+  fileUpload({
+    createParentPath: true,
+    safeFileNames: true,
+    preserveExtension: true
+  })
+)
 app.use('/public', express.static(__dirname + '/public'))
 
 // DB Config
