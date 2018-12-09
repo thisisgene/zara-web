@@ -4,7 +4,7 @@
 
 config/keys_dev.js
 
-client/build
+# client/build
 
 ### macOS ###
 # General
@@ -36,8 +36,8 @@ Temporary Items
 
 ### Node ###
 
-node_modules
-client/node_modules
+# node_modules
+# client/node_modules
 
 # Logs
 logs
@@ -74,7 +74,7 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+# node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
