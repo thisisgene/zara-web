@@ -1,0 +1,51 @@
+.compact-card
+  // padding: 1px
+  background: #fff
+  height: 100%
+  a
+    color: #050505
+    &:hover
+      color: #050505
+      opacity: .9
+  &.newsCard
+    padding: .4rem
+    .compact-card--news-head
+      display: flex
+      font-size: .7rem
+      margin-bottom: .4rem
+      span
+        margin: 0 .2rem
+  &.titleCard
+    padding: 1rem
+    display: flex
+    align-items: center
+    .compact-card--body
+      font:
+        size: 1.2rem
+        weight: bold
+  &.imageCard a
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    .compact-card--image
+      // flex-grow: 1
+      img
+        width: 100%
+        object-fit: contain
+    .compact-card--body
+      padding: 0 1rem
+      flex-grow: 2
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+  &--body
+    padding: 1rem .5rem
+    font-size: .75rem
+    line-height: 1
+    &__title
+      font-weight: bold
+      margin-bottom: .4rem
+    

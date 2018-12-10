@@ -5,6 +5,8 @@ import CarouselGroup from '../../dashboard/carousel/CarouselGroup'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 import QuoteBox from '../../dashboard/QuoteBox/QuoteBox'
 import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
+import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
+import BigNewsObject from '../../dashboard/BigNewsObject/BigNewsObject'
 
 import styles from './Home.module.sass'
 
@@ -184,6 +186,77 @@ const infoObj_red = {
   ]
 }
 
+const cardGridObject = {
+  title: 'Aktuell',
+  link: 'test',
+  linkText: 'Alle News & Presseaussendungen',
+  cards: [
+    {
+      size: 'wide',
+      type: 'titleCard',
+      text:
+        'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
+      link: 'test'
+    },
+    {
+      size: 'default',
+      type: 'imageCard',
+      title: 'Der Klagsverband ist vom Zusperren bedroht',
+      link: 'test'
+    },
+    {
+      size: 'default',
+      type: 'imageCard',
+      text: 'Der Klagsverband ist vom Zusperren bedroht',
+      link: 'test'
+    },
+    {
+      size: 'default',
+      type: 'imageCard',
+      text: 'Der Klagsverband ist vom Zusperren bedroht',
+      link: 'test'
+    },
+    {
+      size: 'default',
+      type: 'newsCard',
+      category: 'News',
+      date: '24. Juni 2018',
+      title:
+        'ZARA-Forderung für besseren Schutz bei grober sexueller Belästigung',
+      text:
+        'Der Fall von Sigi Maurer hat gezeigt, dass es einen besseren rechtlichen Schutz bei grober sexueller Belästigung durch Privatnachrichten benötigt. Laut Barbara Unterlerchner, Leiterin der Beratungsstelle #GegenHassimNetz, haben wir “immer wieder Fälle …',
+      link: 'test'
+    },
+    {
+      size: 'default',
+      type: 'imageCard',
+      text: 'Der Klagsverband ist vom Zusperren bedroht',
+      link: 'test'
+    },
+    {
+      size: 'default',
+      type: 'imageCard',
+      text: 'Der Klagsverband ist vom Zusperren bedroht',
+      link: 'test'
+    }
+  ]
+}
+
+const imageCard = {
+  text: 'Der Klagsverband ist vom Zusperren bedroht'
+}
+
+const mainInfo = {
+  text:
+    'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
+  link: 'text',
+  linkText: 'Mehr zur Mission'
+}
+
+const oneLineAlert = {
+  text: 'Ich bin Opfer oder Zeug*in eines rassistischen Vorfalls geworden'
+}
+
 class Home extends Component {
   render() {
     const { activeLanguage } = this.props
@@ -197,10 +270,11 @@ class Home extends Component {
       <div className={styles['main-content']}>
         <div className={styles['carousel-container']}>
           <CarouselGroup serverData={fakeServerData} lang={lang} />
-          <OneLineAlert />
-          <QuoteBox quote={quote} />
-
+          <OneLineAlert content={oneLineAlert} />
+          <BigNewsObject content={mainInfo} />
           <InfoBoxObject infoBox={infoObj_default} />
+          <QuoteBox quote={quote} />
+          <CardCollectionGridObject cardObject={cardGridObject} />
           <InfoBoxObject infoBox={infoObj_red} />
         </div>
       </div>

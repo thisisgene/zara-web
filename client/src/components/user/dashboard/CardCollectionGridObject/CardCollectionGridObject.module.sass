@@ -1,0 +1,30 @@
+.card-grid-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 1rem 2rem
+  background: rgba(#ffd300, .2)
+  width: 100vw
+  .card-grid-title
+    font-weight: bold
+    margin-bottom: 1rem
+  .card-grid
+    max-width: 1080px
+    display: grid
+    grid-gap: 2rem 1rem
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    padding: 
+
+    .grid-item
+      // width: 10rem
+      height: 220px
+      &.wide
+        grid-column: span 2
+
+    &-link
+      margin: 1rem 0 .5rem
+      a
+        color: #050505
+        text-decoration: underline
+

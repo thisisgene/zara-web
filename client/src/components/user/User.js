@@ -9,7 +9,7 @@ import Header from './layout/Header'
 // import Landing from './dashboard/Landing'
 import MainContent from './layout/MainContent'
 import Home from './pages/Home/Home'
-
+import Consulting from './pages/Consulting/Consulting'
 import styles from './User.module.sass'
 
 class User extends Component {
@@ -22,6 +22,7 @@ class User extends Component {
           <Switch>
             <Route exact path="/user" component={Home} />
             <Route exact path="/user/en" component={Home} />
+            <Route path="/user/beratung" component={Consulting} />
             <MainContent />
           </Switch>
         </div>

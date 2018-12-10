@@ -13,14 +13,13 @@ const button = {
 
 class OneLineAlert extends Component {
   render() {
+    const { content } = this.props
     return (
       <div className={styles['alert']}>
         <div className={styles['alert-wrapper']}>
           <div className={styles['alert--left']}>
             <img src={AlertIcon} alt="" />
-            <div className={styles['alert-text']}>
-              Ich bin Opfer oder Zeug*In eines rassistischen Vorfalls geworden
-            </div>
+            <div className={styles['alert-text']}>{content.text}</div>
           </div>
           <div className={styles['alert--right']}>
             <ButtonObject button={button} />

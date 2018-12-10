@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
 
 import { Carousel } from 'react-responsive-carousel'
-import DateObject from '../dateObject/DateObject'
-import ButtonObject from '../ButtonObject/ButtonObject'
 
-import cx from 'classnames'
-import './carousel.min.css'
-import styles from './CarouselGroup.module.sass'
-
-import Image1 from './img/test_img2.png'
+import CarouselItem from './CarouselItem'
 
 class CarouselGroup extends Component {
   render() {
     const { serverData, lang } = this.props
+
     return (
       <Carousel
         showThumbs={false}
@@ -25,47 +20,7 @@ class CarouselGroup extends Component {
         {serverData &&
           lang &&
           serverData.map((item, index) => (
-            <div
-              key={index}
-              className={cx(styles['carousel-item'], {
-                [styles['backgroundImage']]: item.imageAsBackground
-              })}
-              style={{
-                backgroundImage: item.imageAsBackground
-                  ? `url(${Image1})`
-                  : 'none'
-              }}
-            >
-              <div className={styles['carousel-item--info']}>
-                <div className={styles['carousel-item--info__header']}>
-                  <DateObject dateObj={item[lang].date} lang={lang} />
-                  <div className={styles['info-title']}>
-                    <div className={styles['info-title--category']}>
-                      {item[lang].category}
-                    </div>
-                    <div className={styles['info-title--main']}>
-                      {item[lang].title}
-                    </div>
-                  </div>
-                </div>
-                <div className={styles['carousel-item--info__body']}>
-                  <p>{item[lang].text}</p>
-                </div>
-                <div className={styles['button-group']}>
-                  {item[lang].buttons &&
-                    item[lang].buttons.map((button, i) => (
-                      <ButtonObject key={`btn-${i}`} button={button} />
-                    ))}
-                </div>
-              </div>
-              {item.imageAsBackground ? (
-                ''
-              ) : (
-                <div className={styles['carousel-item--image']}>
-                  <img src={Image1} />
-                </div>
-              )}
-            </div>
+            <CarouselItem key={index} item={item} lang={lang} />
           ))}
       </Carousel>
     )

@@ -6,12 +6,9 @@ import { renderToStaticMarkup } from 'react-dom/server'
 
 import LanguageToggle from './LanguageToggle'
 
+import IconObject from '../dashboard/IconObject/IconObject'
+
 import Logo from '../common/zara_logo.png'
-import fbLogo from '../common/social media/facebook.png'
-import instaLogo from '../common/social media/instagram.png'
-import newsletterLogo from '../common/social media/newsletter.png'
-import twitterLogo from '../common/social media/twitter.png'
-import ytLogo from '../common/social media/youtube.png'
 
 import menuItemsFromFile from './menuItems'
 import SubMenu from './SubMenu'
@@ -117,6 +114,7 @@ class Header extends Component {
               {menuItems.map(
                 item =>
                   activeLanguage && (
+                    // TODO: Set link base to '/' for de
                     <NavLink
                       key={item.id}
                       activeClassName={styles.active}
@@ -140,19 +138,19 @@ class Header extends Component {
           <div className={styles['right-menu']}>
             <div className={styles['right-menu--top']}>
               <a target="blank" href="http://facebook.com">
-                <img src={fbLogo} alt="Facebook" />
+                <IconObject image="fbLogo" />
               </a>
               <a target="blank" href="http://twitter.com">
-                <img src={twitterLogo} alt="Twitter" />
+                <IconObject image="twitterLogo" />
               </a>
               <a target="blank" href="http://instagram.com">
-                <img src={instaLogo} alt="Facebook" />
+                <IconObject image="instaLogo" />
               </a>
               <a target="blank" href="http://youtube.com">
-                <img src={ytLogo} alt="Youtube" />
+                <IconObject image="ytLogo" />
               </a>
               <a target="blank" href="http://mailchimp.com">
-                <img src={newsletterLogo} alt="Newsletter" />
+                <IconObject image="newsletterLogo" />
               </a>
             </div>
             <div className={styles['right-menu--bottom']}>

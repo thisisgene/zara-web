@@ -92,26 +92,35 @@
     
         
     .right-menu
-      margin-left: 1rem
       display: flex
       flex-direction: column
+      justify-content: space-between
       &--top
+        display: flex
+        justify-content: center
+        
         a
-          margin: 0 .2rem
+          margin-right: .2rem
           &:last-child
-            margin: 0
+            margin-right: 0
           &:hover
             opacity: .8
           img
-            width: 26px
+            width: 23px
       &--bottom
         display: flex
+        flex-direction: row
+        align-items: baseline
+
         .language-box
           margin-right: 1rem
           display: flex
           flex-direction: row
           justify-content: space-between
+          align-items: flex-end
           width: 100%
+
+          
 
           &--link
             display: flex

@@ -6,7 +6,11 @@
   padding: 1rem
   height: 70vh
   font-family: 'HankenGroteskRegular', sans-serif
-  &.backgroundImage
+  opacity: 0
+  transition: opacity 300ms ease-in-out
+  &.has-loaded
+    opacity: 1
+  &.background-image
     margin: 0 auto
     height: 100%
     background:
