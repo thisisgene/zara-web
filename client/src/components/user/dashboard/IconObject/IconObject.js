@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 
+import ArrowIcon from '../../common/img/list_arrow.png'
 import ActIcon from '../../common/img/act.png'
 
 class IconObject extends Component {
   render() {
     const { image } = this.props
-    let imageSrc
-    switch (image) {
-      case 'act':
-        imageSrc = ActIcon
-    }
-
+    const imageSrc = image =>
+      ({
+        act: ActIcon,
+        listArrow: ArrowIcon
+      }[image])
+    console.log(imageSrc[image])
     return (
       <div>
-        <img src={ActIcon} alt={image} />
+        <img src={imageSrc(image)} alt={image} />
       </div>
     )
   }

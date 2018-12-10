@@ -1,27 +1,36 @@
-.info-box
-  max-width: 1080px
-  margin: 2rem 0
+.info-box-container
+  width: 100vw
+  padding: 0 2rem
+  display: flex
+  justify-content: center
+  &.default
+    background: #F5F9F9
   &.red
     .info-box--title-box
       color: #EF542B
-  img
-    margin-right: .4rem
-    width: 56px
-  h1
-    font-size: 1.8rem
-    margin: 0
-    font-weight: bold
-  &--header
-    text-align: center
-    max-width: 700px
-    margin: 0 auto 2rem
 
-  &--title-box
-    display: flex
-    align-items: center
-    justify-content: center
-    margin-bottom: 1rem
-  &--body
-    line-height: 1.2
-  &--card-section
-    display: flex
+  .info-box
+    max-width: 1080px
+    margin: 2rem 0
+    
+    img
+      margin-right: .4rem
+      width: 56px
+    h1
+      font-size: 1.8rem
+      margin: 0
+      font-weight: bold
+    &--header
+      text-align: center
+      max-width: 700px
+      margin: 0 auto 2rem
+
+    &--title-box
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-bottom: 1rem
+    &--body
+      line-height: 1.2
+    &--card-section
+      display: flex

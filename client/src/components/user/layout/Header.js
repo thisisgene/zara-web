@@ -98,20 +98,17 @@ class Header extends Component {
           </div>
           <div className={styles['main-menu']}>
             <div className={styles['top-header']}>
-              {/* <div className={styles['top-header--title']}>
-                Zivilcourage und Anti-Rassismus-Arbeit
-              </div> */}
               <div className={styles['top-header--menu']}>
-                <NavLink activeClassName={styles.active} to="/user/de/melden">
+                <NavLink activeClassName={styles.active} to="/user/melden">
                   <img src={ActIcon} alt="" />
                 </NavLink>
-                <NavLink activeClassName={styles.active} to="/user/de/melden">
+                <NavLink activeClassName={styles.active} to="/user/melden">
                   Melden
                 </NavLink>
-                <NavLink activeClassName={styles.active} to="/user/de/spenden">
+                <NavLink activeClassName={styles.active} to="/user/spenden">
                   Spenden
                 </NavLink>
-                <NavLink activeClassName={styles.active} to="/user/de/kontakt">
+                <NavLink activeClassName={styles.active} to="/user/kontakt">
                   Kontakt
                 </NavLink>
               </div>

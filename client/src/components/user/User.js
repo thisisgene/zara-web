@@ -20,7 +20,7 @@ class User extends Component {
         <Header />
         <div className={styles['main-content']}>
           <Switch>
-            <Route exact path="/user/de" component={Home} />
+            <Route exact path="/user" component={Home} />
             <Route exact path="/user/en" component={Home} />
             <MainContent />
           </Switch>

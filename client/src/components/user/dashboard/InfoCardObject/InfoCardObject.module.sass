@@ -1,5 +1,10 @@
 .info-card
   margin: 0 1rem
+  &.default
+    .info-card--title-box
+      color: #2B7877
+    .info-card--body__link a
+      color: #050505
   &.red
     .info-card--title-box, .info-card--body__link a
       color: #EF542B
@@ -14,12 +19,27 @@
       width: 40px
     h2
       margin: 0
-      font-size: 1.3rem
+      font:
+        size: 1.3rem
+        weight: bold
 
   &--body
     &__text
       font-size: .9rem
       line-height: 1.2
       margin-bottom: .4rem
+    &__list
+      margin: 1.5rem 0 1.5rem 1rem
+      li
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+        margin: .4rem 0
+        img
+          width: 14px !important
+        span
+          line-height: 1
+          padding-top: 2px
     &__link
       text-decoration: underline
