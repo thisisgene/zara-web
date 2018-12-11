@@ -1,0 +1,153 @@
+ol.progtrckr {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+ol.progtrckr span {
+  /* display: none; */
+}
+
+ol.progtrckr li {
+  display: inline-block;
+  text-align: center;
+  line-height: 4.5rem;
+  cursor: pointer;
+}
+
+ol.progtrckr li span {
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 650px) {
+  .progtrckr li span {
+    display: none;
+  }
+}
+.progtrckr em {
+  display: none;
+  font-weight: 700;
+  padding-left: 1rem;
+}
+
+@media (max-width: 650px) {
+  .progtrckr em {
+    display: inline;
+  }
+}
+
+ol.progtrckr li.progtrckr-todo {
+  color: silver;
+  border-bottom: 4px solid silver;
+}
+
+ol.progtrckr li.progtrckr-doing {
+  color: black;
+  border-bottom: 4px solid #ffc800;
+}
+
+ol.progtrckr li.progtrckr-done {
+  color: black;
+  border-bottom: 4px solid #ffc800;
+}
+
+ol.progtrckr li:after {
+  content: '\00a0\00a0';
+}
+
+ol.progtrckr li:before {
+  position: relative;
+  bottom: calc(-4.5rem + 7px);
+  float: left;
+  left: calc(50% - 9px);
+  content: '';
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+}
+
+ol.progtrckr li.progtrckr-todo:before {
+  /* content: '\039F';
+  color: silver;
+  background-color: white;
+  width: 1.2em;
+  line-height: 1.4em; */
+  border: 2px solid silver;
+  background: white;
+}
+
+ol.progtrckr li.progtrckr-todo:hover:before {
+  /* color: #ff4500; */
+}
+
+ol.progtrckr li.progtrckr-doing:before {
+  /* content: '\2022';
+  color: white;
+  background-color: #cccccc;
+  width: 1.2em;
+  line-height: 1.2em;
+  border-radius: 1.2em; */
+  border: 2px solid #ffc800;
+  background: white;
+}
+
+ol.progtrckr li.progtrckr-doing:hover:before {
+  /* color: #ff4500; */
+}
+
+ol.progtrckr li.progtrckr-done:before {
+  /* content: '\2713';
+  color: white;
+  background-color: #5cb85c;
+  width: 1.2em;
+  line-height: 1.2em;
+  border-radius: 1.2em; */
+  border: 2px solid #ffc800;
+  background: #ffc800;
+}
+
+ol.progtrckr li.progtrckr-done:hover:before {
+  /* color: #333; */
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#prev-button {
+  border: none;
+  padding: 0.3rem 0.5rem;
+  margin-right: 0.4rem;
+  font-size: 0.9rem;
+  background: #ebeded;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.next-button {
+  border: none;
+  padding: 0.3rem 0.5rem;
+  margin-right: 0.4rem;
+  font-size: 0.9rem;
+  background: #ffc800;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #151515;
+  cursor: pointer;
+}
+#prev-button:hover,
+.next-button:hover {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.next-button:focus,
+#prev-button {
+  border: none;
+
+  outline: none;
+}
