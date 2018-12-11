@@ -91,7 +91,7 @@ export default class Step3 extends Component {
     let notValidClasses = {}
 
     return (
-      <div className="step step3">
+      <div className="step step2">
         <div className="row">
           <form id="Form" className="form-horizontal">
             <h1>Was ist vorgefallen?</h1>

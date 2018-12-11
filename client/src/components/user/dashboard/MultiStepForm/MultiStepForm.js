@@ -5,6 +5,8 @@ import StepOne from './StepComponents/StepOne'
 import StepTwo from './StepComponents/StepTwo'
 import StepThree from './StepComponents/StepThree'
 import StepFour from './StepComponents/StepFour'
+import StepFive from './StepComponents/StepFive'
+import StepSix from './StepComponents/StepSix'
 
 import cx from 'classnames'
 import './MultiStepForm_basic.css'
@@ -18,6 +20,7 @@ export default class MultiStepForm extends Component {
     this.sampleStore = {
       email: '',
       description: '',
+      files: [],
       savedToCloud: false
     }
   }
@@ -81,6 +84,28 @@ export default class MultiStepForm extends Component {
             }}
           />
         )
+      },
+      {
+        name: 'Schritt 5',
+        component: (
+          <StepFive
+            getStore={() => this.getStore()}
+            updateStore={u => {
+              this.updateStore(u)
+            }}
+          />
+        )
+      },
+      {
+        name: 'Schritt 6',
+        component: (
+          <StepSix
+            getStore={() => this.getStore()}
+            updateStore={u => {
+              this.updateStore(u)
+            }}
+          />
+        )
       }
     ]
     return (
@@ -88,9 +113,9 @@ export default class MultiStepForm extends Component {
         <div className={cx('step-progress', styles['multi-step-form'])}>
           <StepZilla
             steps={steps}
-            stepsNavigation={false}
-            startAtStep={1}
+            startAtStep={4}
             nextButtonCls={'next-button'}
+            nextTextOnFinalActionStep={'Absenden'}
           />
         </div>
       </div>

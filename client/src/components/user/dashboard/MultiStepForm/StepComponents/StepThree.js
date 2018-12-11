@@ -1,110 +1,119 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import validation from 'react-validation-mixin'
-import strategy from 'joi-validation-strategy'
-import Joi from 'joi'
+import Dropzone from 'react-dropzone'
 
-class Step4 extends Component {
+import commonStyles from '../../../common/Common.module.sass'
+
+export default class Step3 extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      emailEmergency: props.getStore().emailEmergency
+      files: props.getStore().files
     }
-
-    this.validatorTypes = {
-      emailEmergency: Joi.string()
-        .email()
-        .required()
-    }
-
-    this.getValidatorData = this.getValidatorData.bind(this)
-    this.renderHelpText = this.renderHelpText.bind(this)
-    this.isValidated = this.isValidated.bind(this)
   }
 
-  isValidated() {
-    return new Promise((resolve, reject) => {
-      this.props.validate(error => {
-        if (error) {
-          reject() // form contains errors
-          return
-        }
+  onDrop = files => {
+    console.log(files)
+    // this.props.uploadImages(files, this.state.id, 'project')
+    this.setState({
+      files: files.map(file =>
+        Object.assign(file, {
+          preview: URL.createObjectURL(file)
+        })
+      )
+    })
+    if (this.props.getStore().files != files) {
+      // only update store of something changed
+      // this.setState({ files: files })
+      this.props.updateStore({
+        files: files,
+        savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+      }) // Update store here (this is just an example, in reality you will do it via redux or flux)
+    }
+  }
 
-        if (
-          this.props.getStore().emailEmergency !=
-          this.getValidatorData().emailEmergency
-        ) {
-          // only update store of something changed
-          this.props.updateStore({
-            ...this.getValidatorData(),
-            savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
-          }) // Update store here (this is just an example, in reality you will do it via redux or flux)
-        }
-
-        resolve() // form is valid, fire action
-      })
+  onCancel() {
+    this.setState({
+      files: []
     })
   }
 
-  getValidatorData() {
-    return {
-      emailEmergency: this.refs.emailEmergency.value
+  removeFile = (file, e) => {
+    e.preventDefault()
+    console.log(file)
+    var array = [...this.state.files] // make a separate copy of the array
+    var index = array.indexOf(file)
+    if (index !== -1) {
+      array.splice(index, 1)
+      this.setState({ files: array })
+      this.props.updateStore({
+        files: array,
+        savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+      })
     }
   }
-
-  onChange(e) {
-    let newState = {}
-    newState[e.target.name] = e.target.value
-    this.setState(newState)
-  }
-
-  renderHelpText(message, id) {
-    return (
-      <div className="val-err-tooltip" key={id}>
-        <span>{message}</span>
-      </div>
-    )
-  }
-
   render() {
-    // explicit class assigning based on validation
-    let notValidClasses = {}
-    notValidClasses.emailEmergencyCls = this.props.isValid('emailEmergency')
-      ? 'no-error col-md-8'
-      : 'has-error col-md-8'
+    const { files } = this.state
 
+    const thumbs = files.map(file => (
+      <div key={file.name}>
+        <div className={commonStyles['thumb']}>
+          <div className={commonStyles['thumbInner']}>
+            <img src={file.preview} className={commonStyles['img']} />
+          </div>
+          <button
+            className={commonStyles['delete-button']}
+            onClick={this.removeFile.bind(this, file)}
+          >
+            x
+          </button>
+        </div>
+        <p>{file.name}</p>
+      </div>
+    ))
     return (
-      <div className="step step4">
+      <div className="step step3">
         <div className="row">
           <form id="Form" className="form-horizontal">
-            <div className="form-group">
-              <label className="control-label col-md-12 ">
-                <h1>
-                  Gibt es von dem Vorfall Fotos, Screenshots oder Links
-                  (optional)?
-                </h1>
-              </label>
-            </div>
-            <div className="form-group col-md-12 content form-block-holder">
-              <div className={notValidClasses.emailEmergencyCls}>
-                <input
-                  ref="emailEmergency"
-                  name="emailEmergency"
-                  autoComplete="off"
-                  type="email"
-                  className="form-control"
-                  placeholder="john.smith@example.com"
-                  required
-                  defaultValue={this.state.emailEmergency}
-                  onBlur={this.props.handleValidation('emailEmergency')}
-                  onChange={this.onChange.bind(this)}
-                />
-
-                {this.props
-                  .getValidationMessages('emailEmergency')
-                  .map(this.renderHelpText)}
-              </div>
+            <h1>
+              Gibt es von dem Vorfall Fotos, Screenshots oder Links (optional)?
+            </h1>
+            <div className={commonStyles['dropzone']}>
+              <Dropzone
+                className={commonStyles['dropzone-inner']}
+                accept="image/*"
+                onDrop={this.onDrop}
+                onFileDialogCancel={this.onCancel}
+                name="file"
+              >
+                {({
+                  isDragAccept,
+                  isDragReject,
+                  acceptedFiles,
+                  rejectedFiles
+                }) => {
+                  if (acceptedFiles.length || rejectedFiles.length) {
+                    return `Akzeptiert: ${acceptedFiles.length}, abgelehnt: ${
+                      rejectedFiles.length
+                    }`
+                  }
+                  if (isDragAccept) {
+                    return 'Gültiges Format.'
+                  }
+                  if (isDragReject) {
+                    return 'Ungültiges Format. Nur Bilddateien erlaubt.'
+                  }
+                  return (
+                    <p>
+                      <i className="dropzone-image fa fa-image" /> Bilder hier
+                      hochladen.
+                    </p>
+                  )
+                }}
+              </Dropzone>
+              <aside className={commonStyles['thumbsContainer']}>
+                {thumbs}
+              </aside>
             </div>
           </form>
         </div>
@@ -112,16 +121,3 @@ class Step4 extends Component {
     )
   }
 }
-
-Step4.propTypes = {
-  errors: PropTypes.object,
-  validate: PropTypes.func,
-  isValid: PropTypes.func,
-  handleValidation: PropTypes.func,
-  getValidationMessages: PropTypes.func,
-  clearValidations: PropTypes.func,
-  getStore: PropTypes.func,
-  updateStore: PropTypes.func
-}
-
-export default validation(strategy)(Step4)
