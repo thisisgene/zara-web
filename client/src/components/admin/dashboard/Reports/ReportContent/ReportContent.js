@@ -21,8 +21,9 @@ class ReportContent extends Component {
               <Moment format="YYYY/MM/DD">{report.date}</Moment>
             </p>
             {report.images &&
-              report.images.map(image => (
+              report.images.map((image, index) => (
                 <img
+                  key={index}
                   src={`/public/reports/${report._id}/${image.originalName}`}
                   alt=""
                 />
