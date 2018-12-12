@@ -7,8 +7,12 @@ const multer = require('multer')
 const multerS3 = require('multer-s3')
 const AWS = require('aws-sdk')
 const Jimp = require('jimp')
+
+const nodemailer = require('nodemailer')
+
 // Load project model
 const Project = require('../../models/Project')
+
 const Report = require('../../models/Report')
 
 // Load input validation
@@ -480,9 +484,56 @@ router.post('/report/send', async (req, res) => {
   })
     .save()
     .then(report => {
+      sendEmail(report)
       res.json(report)
     })
 })
+
+sendEmail = report => {
+  const link = `https://zara-web.seriouspigeon.com/admin/reports/${report.id}`
+  const outputPlain = `Neue Meldung empfangen. Link: ${link}`
+  const outputHtml = `
+    <p>Neue Meldung empfangen.</p>
+    <h3>
+      <a href="${link}">${link}</a>
+    </h3>
+  `
+  console.log(outputHtml)
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: 'serpig.testuser@gmail.com', // generated ethereal user
+      pass: 'serPig1dev' // generated ethereal password
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: '"Serious Pigeon Testuser" <serpig.testuser@gmail.com>', // sender address
+    to: 'emdo2000@gmail.com', // list of receivers
+    subject: 'New Report', // Subject line
+    text: outputPlain, // plain text body
+    html: outputHtml // html body
+  }
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error)
+    }
+    console.log('Message sent: %s', info.messageId)
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  })
+}
 
 router.post('/report/images', async (req, res) => {
   console.log('hier')
@@ -497,8 +548,13 @@ router.post('/report/images', async (req, res) => {
     { _id: body.id },
     { $push: { images: newImage } },
     { safe: true, new: true }
-  ).then(report => {
-    file.mv(`public/reports/${body.id}/${imgName}`)
-    res.json(report)
-  })
+  )
+    .then(report => {
+      file.mv(`public/reports/${body.id}/${imgName}`)
+
+      res.json(report)
+    })
+    .catch(err => {
+      res.json(err)
+    })
 })
