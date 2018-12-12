@@ -2,13 +2,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const passport = require('passport')
+const proxy = require('express-http-proxy')
 const fileUpload = require('express-fileupload')
 const path = require('path')
-const s3Proxy = require('s3-proxy')
-const request = require('request')
 const users = require('./routes/api/users')
 const projects = require('./routes/api/projects')
-const AWS = require('aws-sdk')
 const app = express()
 
 // Body parser middleware
@@ -51,6 +49,8 @@ app.use(
   })
 )
 app.use('/public', express.static(__dirname + '/public'))
+
+app.use('/assets', proxy('https://assets.seriouspigeon.com'))
 
 // DB Config
 const db = require('./config/keys').mongoURI

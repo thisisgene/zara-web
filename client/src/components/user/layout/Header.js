@@ -8,7 +8,7 @@ import LanguageToggle from './LanguageToggle'
 
 import IconObject from '../dashboard/IconObject/IconObject'
 
-import Logo from '../common/zara_logo.png'
+// import Logo from '/assets/Layer_1_2.png'
 
 import menuItemsFromFile from './menuItems'
 import SubMenu from './SubMenu'
@@ -86,7 +86,7 @@ class Header extends Component {
               to="/user"
             >
               <img
-                src={Logo}
+                src="/assets/Layer_1_2.png"
                 height="30"
                 className="d-inline-block align-top"
                 alt=""
