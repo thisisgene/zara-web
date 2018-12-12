@@ -112,7 +112,13 @@ class Register extends Component {
                   </select>
                   <input
                     type="submit"
-                    className={styles['btn btn-info btn-block mt-4']}
+                    value="Senden"
+                    className={cx(
+                      globalStyles['btn'],
+                      globalStyles['btn-info'],
+                      globalStyles['btn-block'],
+                      globalStyles['mt-4']
+                    )}
                   />
                 </form>
               </div>
