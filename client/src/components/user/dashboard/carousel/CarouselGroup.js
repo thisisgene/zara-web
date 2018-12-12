@@ -10,6 +10,7 @@ class CarouselGroup extends Component {
 
     return (
       <Carousel
+        showArrows={false}
         showThumbs={false}
         infiniteLoop
         // autoPlay

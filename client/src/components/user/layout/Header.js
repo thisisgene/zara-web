@@ -8,7 +8,8 @@ import LanguageToggle from './LanguageToggle'
 
 import IconObject from '../dashboard/IconObject/IconObject'
 
-// import Logo from '/assets/Layer_1_2.png'
+import Logo from '../common/zara_logo.png'
+import LogoAdd from '../common/zara_logo_add.png'
 
 import menuItemsFromFile from './menuItems'
 import SubMenu from './SubMenu'
@@ -80,19 +81,19 @@ class Header extends Component {
     return (
       <div className={styles['header-container']}>
         <div className={cx(styles.header)}>
-          <div className={styles.logo}>
-            <NavLink
-              onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
-              to="/user"
-            >
+          <NavLink
+            onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
+            to="/user"
+          >
+            <div className={styles.logo}>
+              <img className={styles['logo-img']} src={Logo} alt="Logo" />
               <img
-                src="/assets/Layer_1_2.png"
-                height="30"
-                className="d-inline-block align-top"
-                alt=""
+                className={styles['logo-add-img']}
+                src={LogoAdd}
+                alt="Logo-add"
               />
-            </NavLink>
-          </div>
+            </div>
+          </NavLink>
           <div className={styles['main-menu']}>
             <div className={styles['top-header']}>
               <div className={styles['top-header--menu']}>
