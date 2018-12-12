@@ -10,11 +10,6 @@ const passport = require('passport')
 const validateRegisterInput = require('../../validation/register')
 const validateLoginInput = require('../../validation/login')
 
-// @route   GET api/users/test
-// @desc    Tests users route
-// @access  Public
-router.get('/test', (req, res) => res.json({ msg: 'Users Works' }))
-
 // @route   POST api/users/register
 // @desc    Register user
 // @access  Public
@@ -34,7 +29,8 @@ router.post('/register', (req, res) => {
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        securityLevel: req.body.securityLevel
       })
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -43,7 +39,7 @@ router.post('/register', (req, res) => {
           newUser.password = hash
           newUser
             .save()
-            .then(user => res.json(user))
+            .then(user => User.find().then(users => res.json(users)))
             .catch(err => console.error(err))
         })
       })
@@ -77,7 +73,8 @@ router.post('/login', (req, res) => {
         const payload = {
           // Create JWT payload
           id: user.id,
-          name: user.name
+          name: user.name,
+          securityLevel: user.securityLevel
         }
         // Sign Token
         jwt.sign(
@@ -109,7 +106,8 @@ router.get(
     res.json({
       id: req.user.id,
       name: req.user.name,
-      email: req.user.email
+      email: req.user.email,
+      securityLevel: req.user.securityLevel
     })
   }
 )
@@ -119,7 +117,7 @@ router.get(
 // @access  Private
 router.get(
   '/all',
-  // passport.authenticate('jwt', { session: false }),
+  passport.authenticate('jwt', { session: false }),
   (req, res) => {
     User.find()
       .then(users => {

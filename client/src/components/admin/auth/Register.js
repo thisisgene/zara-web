@@ -4,8 +4,12 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { registerUser } from '../../../actions/authActions'
 import TextFieldGroup from '../common/TextFieldGroup'
+import SelectFieldGroup from '../common/SelectFieldGroup'
 
-import './Forms.css'
+import cx from 'classnames'
+import globalStyles from '../common/Bootstrap.module.css'
+import commonStyles from '../common/Common.module.sass'
+import styles from './Auth.module.css'
 
 class Register extends Component {
   constructor() {
@@ -15,6 +19,7 @@ class Register extends Component {
       email: '',
       password: '',
       password2: '',
+      securityLevel: '2',
       errors: {}
     }
   }
@@ -35,7 +40,8 @@ class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      securityLevel: this.state.securityLevel
     }
 
     this.props.registerUser(newUser, this.props.history)
@@ -45,12 +51,12 @@ class Register extends Component {
 
     return (
       <div>
-        <div className="register">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-8 m-auto form-dark">
-                <div className="title-container">
-                  <p className="lead">Neuen User hinzufügen</p>
+        <div className={styles['register']}>
+          <div className={styles['container']}>
+            <div className={styles['row']}>
+              <div className={styles['col-md-8 m-auto form-dark']}>
+                <div className={styles['title-container']}>
+                  <p className={styles['lead']}>Neuen User hinzufügen</p>
                   <p className="small text-muted">
                     Füllen Sie die Felder aus um einen neuen User zu erstellen.
                   </p>
@@ -88,10 +94,25 @@ class Register extends Component {
                     onChange={this.onChange}
                     error={errors.password2}
                   />
-
+                  <select
+                    className={cx(
+                      globalStyles['custom-select'],
+                      commonStyles['custom-select'],
+                      commonStyles['dark-input']
+                    )}
+                    name="securityLevel"
+                    id=""
+                    value={this.state.securityLevel}
+                    onChange={this.onChange}
+                  >
+                    <option value="4">Beratung</option>
+                    <option value="3">Website config</option>
+                    <option value="2">Website & Beratung</option>
+                    <option value="1">Admin</option>
+                  </select>
                   <input
                     type="submit"
-                    className="btn btn-info btn-block mt-4"
+                    className={styles['btn btn-info btn-block mt-4']}
                   />
                 </form>
               </div>

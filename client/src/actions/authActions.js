@@ -2,13 +2,23 @@ import axios from 'axios'
 import setAuthToken from '../utils/setAuthToken'
 import jwt_decode from 'jwt-decode'
 
-import { GET_ERRORS, SET_CURRENT_USER } from './types'
+import {
+  GET_ERRORS,
+  CREATE_NEW_USER,
+  SET_CURRENT_USER,
+  GET_ALL_USERS
+} from './types'
 
 // Register User
 export const registerUser = userData => dispatch => {
   axios
     .post('/api/users/register', userData)
-    .then(res => console.log(res.data))
+    .then(res => {
+      dispatch({
+        type: CREATE_NEW_USER,
+        payload: res.data
+      })
+    })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -39,6 +49,15 @@ export const loginUser = userData => dispatch => {
         payload: err.response.data
       })
     )
+}
+
+export const getAllUsers = () => dispatch => {
+  axios.get('/api/users/all').then(res => {
+    dispatch({
+      type: GET_ALL_USERS,
+      payload: res.data
+    })
+  })
 }
 
 // Set logged in user

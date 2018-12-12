@@ -11,6 +11,7 @@ import Login from './auth/Login'
 import Settings from './auth/Settings'
 import Reports from './dashboard/Reports/Reports'
 import Dashboard from './dashboard/Dashboard'
+import RestrictedPage from './RestrictedPage/RestrictedPage'
 
 // import News from './dashboard/news/News'
 
@@ -31,17 +32,32 @@ class Admin extends Component {
     document.title = 'ZARA | Admin'
   }
   render() {
-    const { isAuthenticated } = this.props.auth
+    const { isAuthenticated, user } = this.props.auth
 
     const authRoutes = (
       <div className="Admin">
         <Header />
         <Route exact path="/admin/login" component={Login} />
         <Switch>
-          <PrivateRoute exact path="/admin/settings" component={Settings} />
-          <PrivateRoute path="/admin/reports" component={Reports} />
-          {/* <PrivateRoute path="/admin/reports/:id" component={Reports} /> */}
-          <PrivateRoute path="/admin/dashboard" component={Dashboard} />
+          {user.securityLevel <= 4 ? (
+            <PrivateRoute exact path="/admin/settings" component={Settings} />
+          ) : (
+            <PrivateRoute
+              exact
+              path="/admin/settings"
+              component={RestrictedPage}
+            />
+          )}
+          {user.securityLevel === 4 || user.securityLevel <= 2 ? (
+            <PrivateRoute path="/admin/reports" component={Reports} />
+          ) : (
+            <PrivateRoute path="/admin/reports" component={RestrictedPage} />
+          )}
+          {user.securityLevel <= 3 ? (
+            <PrivateRoute path="/admin/dashboard" component={Dashboard} />
+          ) : (
+            <PrivateRoute path="/admin/dashboard" component={RestrictedPage} />
+          )}
         </Switch>
         <Footer />
       </div>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { loginUser } from '../../../actions/authActions'
 import TextFieldGroup from '../common/TextFieldGroup'
 
-import './Forms.css'
+import styles from './Auth.module.css'
 
 class Login extends Component {
   constructor() {

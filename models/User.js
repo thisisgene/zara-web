@@ -17,6 +17,11 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  securityLevel: {
+    type: Number,
+    required: true,
+    default: 3
   }
 })
 

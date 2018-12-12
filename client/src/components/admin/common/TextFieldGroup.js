@@ -23,7 +23,7 @@ const TextFieldGroup = ({
           globalStyles['form-control'],
           commonStyles['dark-input'],
           {
-            'is-invalid': error
+            [globalStyles['is-invalid']]: error
           }
         )}
         placeholder={placeholder}
