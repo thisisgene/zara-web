@@ -9,6 +9,7 @@ const AWS = require('aws-sdk')
 const Jimp = require('jimp')
 // Load project model
 const Project = require('../../models/Project')
+const Report = require('../../models/Report')
 
 // Load input validation
 const validateProjectInput = require('../../validation/project')
@@ -454,3 +455,50 @@ router.post(
       .catch(err => res.json(err))
   }
 )
+
+// client User
+
+router.get(
+  '/reports',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Report.find()
+      .then(reports => {
+        res.json(reports)
+      })
+      .catch(err => {
+        res.json(err)
+      })
+  }
+)
+
+router.post('/report/send', async (req, res) => {
+  const body = req.body
+  console.log(body)
+  const newReport = new Report({
+    description: body.description
+  })
+    .save()
+    .then(report => {
+      res.json(report)
+    })
+})
+
+router.post('/report/images', async (req, res) => {
+  console.log('hier')
+  const file = req.files.file
+  const body = req.body
+  const imgName = body.name.replace(/ /g, '_')
+  const newImage = {
+    originalName: imgName
+  }
+  Report.findOneAndUpdate(
+    // FIXME: If project has no background image, make first image to upload the background image!
+    { _id: body.id },
+    { $push: { images: newImage } },
+    { safe: true, new: true }
+  ).then(report => {
+    file.mv(`public/reports/${body.id}/${imgName}`)
+    res.json(report)
+  })
+})

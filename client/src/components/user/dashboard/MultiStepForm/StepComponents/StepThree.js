@@ -40,7 +40,6 @@ export default class Step3 extends Component {
 
   removeFile = (file, e) => {
     e.preventDefault()
-    console.log(file)
     var array = [...this.state.files] // make a separate copy of the array
     var index = array.indexOf(file)
     if (index !== -1) {

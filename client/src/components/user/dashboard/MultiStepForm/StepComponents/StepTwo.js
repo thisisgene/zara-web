@@ -58,11 +58,9 @@ export default class Step3 extends Component {
   }
   validationCheck() {
     if (!this._validateOnDemand) return
-    console.log('hola!')
 
     const userInput = this._grabUserInput() // grab user entered vals
     const validateNewInput = this._validateData(userInput) // run the new input against the validator
-    console.log(validateNewInput)
     this.setState(
       Object.assign(
         userInput,
@@ -73,7 +71,6 @@ export default class Step3 extends Component {
   }
 
   _validateData(data) {
-    console.log(data)
     return {
       descriptionVal: data.description != ''
     }

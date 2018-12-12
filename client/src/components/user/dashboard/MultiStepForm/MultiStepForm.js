@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import StepZilla from 'react-stepzilla'
+import { connect } from 'react-redux'
+
+import { sendReport } from '../../../../actions/userActions'
 
 import StepOne from './StepComponents/StepOne'
 import StepTwo from './StepComponents/StepTwo'
@@ -12,7 +15,7 @@ import cx from 'classnames'
 import './MultiStepForm_basic.css'
 import styles from './MultiStepForm.module.sass'
 
-export default class MultiStepForm extends Component {
+class MultiStepForm extends Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -93,6 +96,7 @@ export default class MultiStepForm extends Component {
             updateStore={u => {
               this.updateStore(u)
             }}
+            sendReport={reportData => this.props.sendReport(reportData)}
           />
         )
       },
@@ -113,7 +117,7 @@ export default class MultiStepForm extends Component {
         <div className={cx('step-progress', styles['multi-step-form'])}>
           <StepZilla
             steps={steps}
-            startAtStep={4}
+            startAtStep={0}
             nextButtonCls={'next-button'}
             nextTextOnFinalActionStep={'Absenden'}
           />
@@ -122,3 +126,8 @@ export default class MultiStepForm extends Component {
     )
   }
 }
+
+export default connect(
+  null,
+  { sendReport }
+)(MultiStepForm)
