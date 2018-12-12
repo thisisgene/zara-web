@@ -39,7 +39,8 @@ class Admin extends Component {
         <Route exact path="/admin/login" component={Login} />
         <Switch>
           <PrivateRoute exact path="/admin/settings" component={Settings} />
-          <PrivateRoute exact path="/admin/reports/*" component={Reports} />
+          <PrivateRoute exact path="/admin/reports" component={Reports} />
+          <PrivateRoute path="/admin/reports/:id" component={Reports} />
           <PrivateRoute path="/admin" component={Dashboard} />
         </Switch>
         <Footer />
