@@ -476,11 +476,26 @@ router.get(
   }
 )
 
+router.get(
+  '/reports/by_id/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Report.findById(req.params.id)
+      .then(report => {
+        res.json(report)
+      })
+      .catch(err => {
+        res.json(err)
+      })
+  }
+)
+
 router.post('/report/send', async (req, res) => {
   const body = req.body
-  console.log(body)
+  const date = new Date()
   const newReport = new Report({
-    description: body.description
+    description: body.description,
+    date: date
   })
     .save()
     .then(report => {

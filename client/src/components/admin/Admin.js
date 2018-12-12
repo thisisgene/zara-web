@@ -9,6 +9,7 @@ import Header from './layout/Header'
 import Footer from './layout/Footer'
 import Login from './auth/Login'
 import Settings from './auth/Settings'
+import Reports from './dashboard/Reports/Reports'
 import Dashboard from './dashboard/Dashboard'
 
 // import News from './dashboard/news/News'
@@ -38,6 +39,7 @@ class Admin extends Component {
         <Route exact path="/admin/login" component={Login} />
         <Switch>
           <PrivateRoute exact path="/admin/settings" component={Settings} />
+          <PrivateRoute exact path="/admin/reports/*" component={Reports} />
           <PrivateRoute path="/admin" component={Dashboard} />
         </Switch>
         <Footer />

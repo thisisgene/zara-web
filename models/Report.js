@@ -20,6 +20,9 @@ const ReportSchema = new Schema({
   phone: {
     type: String
   },
+  date: {
+    type: Date
+  },
   images: [
     {
       originalName: {
