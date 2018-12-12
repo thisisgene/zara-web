@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 import styles from './Dashboard.module.sass'
@@ -14,14 +12,14 @@ class Dashboard extends Component {
         <NavLink
           className={styles['category-nav--link']}
           activeClassName={styles['cat-active']}
-          to="/admin/projects"
+          to="/admin/dashboard/projects"
         >
           Projects
         </NavLink>
         <NavLink
           className={styles['category-nav--link']}
           activeClassName={styles['cat-active']}
-          to="/admin/news"
+          to="/admin/dashboard/news"
         >
           News
         </NavLink>
@@ -37,15 +35,4 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
-  auth: PropTypes.object.isRequired
-}
-
-const mapStateToProps = state => ({
-  auth: state.auth
-})
-
-export default connect(
-  mapStateToProps,
-  {}
-)(Dashboard)
+export default Dashboard

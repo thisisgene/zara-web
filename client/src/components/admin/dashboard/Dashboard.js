@@ -15,7 +15,7 @@ class Dashboard extends Component {
         <CategoryNav />
 
         <div className={styles['dashboard-content']}>
-          <PrivateRoute path="/admin/projects" component={Projects} />
+          <PrivateRoute path="/admin/dashboard/projects" component={Projects} />
           {/* <PrivateRoute path="/admin/reports" component={Reports} /> */}
           {/* <PrivateRoute path="/admin/news" component={News} /> */}
         </div>

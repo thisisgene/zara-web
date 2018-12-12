@@ -158,7 +158,7 @@ class ProjectList extends Component {
                     <div className={styles['list-child']}>
                       <NavLink
                         to={{
-                          pathname: '/admin/projects/' + project._id
+                          pathname: '/admin/dashboard/projects/' + project._id
                         }}
                         params={{ id: project._id }}
                         activeClassName={styles['active']}

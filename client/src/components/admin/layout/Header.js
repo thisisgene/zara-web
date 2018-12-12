@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { logoutUser } from '../../../actions/authActions'
@@ -24,9 +24,31 @@ class Header extends Component {
     const authLinks = (
       <ul className={cx(globalStyles.nav, globalStyles['justify-content-end'])}>
         <li className={globalStyles['nav-item']}>
-          <Link className={globalStyles['nav-link']} to="/admin/settings">
+          <NavLink
+            activeClassName={styles['active']}
+            className={globalStyles['nav-link']}
+            to="/admin/dashboard"
+          >
+            <i className="fas fa-cubes" />
+          </NavLink>
+        </li>
+        <li className={globalStyles['nav-item']}>
+          <NavLink
+            activeClassName={styles['active']}
+            className={globalStyles['nav-link']}
+            to="/admin/reports"
+          >
+            <i className="fas fa-clipboard-list" />
+          </NavLink>
+        </li>
+        <li className={globalStyles['nav-item']}>
+          <NavLink
+            activeClassName={styles['active']}
+            className={globalStyles['nav-link']}
+            to="/admin/settings"
+          >
             <i className="fas fa-cog" />
-          </Link>
+          </NavLink>
         </li>
         <li className={globalStyles['nav-item']}>
           <button
@@ -99,7 +121,9 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
-export default connect(
-  mapStateToProps,
-  { clearProjects, logoutUser }
-)(Header)
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { clearProjects, logoutUser }
+  )(Header)
+)

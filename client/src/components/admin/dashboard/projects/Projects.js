@@ -24,7 +24,7 @@ class Projects extends Component {
       <div className={styles['projects']}>
         <ProjectList />
         <Route
-          path="/admin/projects/:id"
+          path="/admin/dashboard/projects/:id"
           props={this.props}
           description={this.props.description}
           component={ProjectContent}
