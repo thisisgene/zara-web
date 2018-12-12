@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { logoutUser } from '../../../actions/authActions'
 import { clearProjects } from '../../../actions/projectActions'
 
-// import Logo from '../common/zara_logo.png'
+import Logo from '../common/zara_logo.png'
 
 import cx from 'classnames'
 import styles from './Header.module.sass'
@@ -70,7 +70,7 @@ class Header extends Component {
           )}
         >
           <Link className={globalStyles['navbar-brand']} to="/admin/">
-            {/* <img
+            <img
               src={Logo}
               height="30"
               className={cx(
@@ -78,8 +78,8 @@ class Header extends Component {
                 globalStyles['align-top']
               )}
               alt=""
-            /> */}
-            <h1>ZARA</h1>
+            />
+            {/* <h1>ZARA</h1> */}
             <span>Admin</span>
           </Link>
           {isAuthenticated ? authLinks : guestLinks}
