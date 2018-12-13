@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import ReportListItem from './ReportListItem'
 
-export default class ReportList extends Component {
+import styles from './ReportList.module.sass'
+
+class ReportList extends Component {
   render() {
     const { reports } = this.props
     return (
-      <div>
+      <div className={styles['report-list']}>
         {reports &&
           reports.map((report, index) => (
             <ReportListItem key={index} report={report} />
@@ -14,3 +16,5 @@ export default class ReportList extends Component {
     )
   }
 }
+
+export default ReportList

@@ -4,6 +4,8 @@ import validation from 'react-validation-mixin'
 import strategy from 'joi-validation-strategy'
 import Joi from 'joi'
 
+import styles from '../MultiStepForm.module.sass'
+
 class Step4 extends Component {
   constructor(props) {
     super(props)
@@ -75,7 +77,7 @@ class Step4 extends Component {
       : 'has-error col-md-8'
 
     return (
-      <div className="step step4">
+      <div className={styles['step']}>
         <div className="row">
           <form id="Form" className="form-horizontal">
             <div className="form-group">

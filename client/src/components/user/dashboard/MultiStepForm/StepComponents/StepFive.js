@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Promise from 'promise'
 
+import styles from '../MultiStepForm.module.sass'
+
 class StepFive extends Component {
   constructor(props) {
     super(props)
@@ -64,7 +66,7 @@ class StepFive extends Component {
     //   : 'saving col-md-12 hide'
 
     return (
-      <div className="step step5 review">
+      <div className={styles['step']}>
         <div className="row">
           <form id="Form" className="form-horizontal">
             <div className="form-group">

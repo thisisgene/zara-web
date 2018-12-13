@@ -48,6 +48,7 @@ class MultiStepForm extends Component {
         name: 'Schritt 1',
         component: (
           <StepOne
+            className={styles['step']}
             getStore={() => this.getStore()}
             updateStore={u => {
               this.updateStore(u)
@@ -59,6 +60,7 @@ class MultiStepForm extends Component {
         name: 'Schritt 2',
         component: (
           <StepTwo
+            className={styles['step']}
             getStore={() => this.getStore()}
             updateStore={u => {
               this.updateStore(u)
@@ -70,6 +72,7 @@ class MultiStepForm extends Component {
         name: 'Schritt 3',
         component: (
           <StepThree
+            className={styles['step']}
             getStore={() => this.getStore()}
             updateStore={u => {
               this.updateStore(u)
@@ -81,6 +84,7 @@ class MultiStepForm extends Component {
         name: 'Schritt 4',
         component: (
           <StepFour
+            className={styles['step']}
             getStore={() => this.getStore()}
             updateStore={u => {
               this.updateStore(u)
@@ -92,6 +96,7 @@ class MultiStepForm extends Component {
         name: 'Schritt 5',
         component: (
           <StepFive
+            className={styles['step']}
             getStore={() => this.getStore()}
             updateStore={u => {
               this.updateStore(u)
@@ -104,6 +109,7 @@ class MultiStepForm extends Component {
         name: 'Schritt 6',
         component: (
           <StepSix
+            className={styles['step']}
             getStore={() => this.getStore()}
             updateStore={u => {
               this.updateStore(u)
@@ -117,7 +123,7 @@ class MultiStepForm extends Component {
         <div className={cx('step-progress', styles['multi-step-form'])}>
           <StepZilla
             steps={steps}
-            startAtStep={0}
+            startAtStep={2}
             nextButtonCls={'next-button'}
             nextTextOnFinalActionStep={'Absenden'}
           />

@@ -5,7 +5,48 @@
   font-family: 'HK Grotesk', sans-serif
   .multi-step-form
     max-width: 1080px
+    margin: 0 auto
     
-    .step-2
+
+    .step
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      width: 80vw
+      margin: 0 auto
+      text-align: center
+    
       textarea
         border: 1px solid #ccc
+        width: 60vw
+        max-width: 800px
+        height: 10rem
+        text-align: left
+
+      .dropzone 
+        margin-bottom: 1rem
+
+        .dropzone-inner 
+          height: 100px
+          width: 80%
+          margin: 1rem auto
+          border: 2px dashed #888
+          border-radius: 4px
+          display: flex
+          justify-content: center
+          align-items: center
+          background-image: linear-gradient(#A3CDFA, #A3CDFA)
+          color: rgba(255, 255, 255, 0.7)
+
+
+        .dropzone-image 
+          font-size: 1.8rem
+
+        aside
+          display: grid
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+          font-size: .8rem
+          justify-content: center
+          div
+            margin: .3rem .5rem

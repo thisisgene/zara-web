@@ -7,6 +7,8 @@ import { getAllReports, getReportById } from '../../../../actions/reportActions'
 import ReportList from './ReportList/ReportList'
 import ReportContent from './ReportContent/ReportContent'
 
+import styles from './Reports.module.sass'
+
 class Reports extends Component {
   componentDidMount() {
     this.props.getAllReports()
@@ -15,11 +17,12 @@ class Reports extends Component {
   render() {
     const { reports } = this.props.report
     return (
-      <div>
+      <div className={styles['reports']}>
         <p>Reports</p>
-        <ReportList reports={reports} />
-        <Route path="/admin/reports/:id" component={ReportContent} />
-        {/* <ReportContent reports={reports} /> */}
+        <div className={styles['reports-container']}>
+          <ReportList reports={reports} />
+          <Route path="/admin/reports/:id" component={ReportContent} />
+        </div>
       </div>
     )
   }

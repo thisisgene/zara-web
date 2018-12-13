@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import InfoCardObject from '../../InfoCardObject/InfoCardObject'
 
+import styles from '../MultiStepForm.module.sass'
+
 const infoCard = {
   text: 'Was wir für eine Meldung von Ihnen wissen müssen:',
   link: '',
@@ -23,7 +25,7 @@ const infoCard = {
 export default class StepOne extends Component {
   render() {
     return (
-      <div>
+      <div className={styles['step']}>
         <h1>Einen Vorfall an ZARA melden</h1>
         <InfoCardObject card={infoCard} />
       </div>

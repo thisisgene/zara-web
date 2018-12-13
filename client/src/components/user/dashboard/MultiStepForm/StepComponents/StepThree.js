@@ -3,6 +3,8 @@ import Dropzone from 'react-dropzone'
 
 import commonStyles from '../../../common/Common.module.sass'
 
+import styles from '../MultiStepForm.module.sass'
+
 export default class Step3 extends Component {
   constructor(props) {
     super(props)
@@ -75,51 +77,47 @@ export default class Step3 extends Component {
       </div>
     ))
     return (
-      <div className="step step3">
-        <div className="row">
-          <form id="Form" className="form-horizontal">
-            <h1>
-              Gibt es von dem Vorfall Fotos, Screenshots oder Links (optional)?
-            </h1>
-            <div className={commonStyles['dropzone']}>
-              <Dropzone
-                className={commonStyles['dropzone-inner']}
-                accept="image/*"
-                onDrop={this.onDrop}
-                onFileDialogCancel={this.onCancel}
-                name="file"
-              >
-                {({
-                  isDragAccept,
-                  isDragReject,
-                  acceptedFiles,
-                  rejectedFiles
-                }) => {
-                  if (acceptedFiles.length || rejectedFiles.length) {
-                    return `Akzeptiert: ${acceptedFiles.length}, abgelehnt: ${
-                      rejectedFiles.length
-                    }`
-                  }
-                  if (isDragAccept) {
-                    return 'Gültiges Format.'
-                  }
-                  if (isDragReject) {
-                    return 'Ungültiges Format. Nur Bilddateien erlaubt.'
-                  }
-                  return (
-                    <p>
-                      <i className="dropzone-image fa fa-image" /> Bilder hier
-                      hochladen.
-                    </p>
-                  )
-                }}
-              </Dropzone>
-              <aside className={commonStyles['thumbsContainer']}>
-                {thumbs}
-              </aside>
-            </div>
-          </form>
-        </div>
+      <div className={styles['step']}>
+        <form id="Form" className="form-horizontal">
+          <h1>
+            Gibt es von dem Vorfall Fotos, Screenshots oder Links (optional)?
+          </h1>
+          <div className={styles['dropzone']}>
+            <Dropzone
+              className={styles['dropzone-inner']}
+              accept="image/*"
+              onDrop={this.onDrop}
+              onFileDialogCancel={this.onCancel}
+              name="file"
+            >
+              {({
+                isDragAccept,
+                isDragReject,
+                acceptedFiles,
+                rejectedFiles
+              }) => {
+                if (acceptedFiles.length || rejectedFiles.length) {
+                  return `Akzeptiert: ${acceptedFiles.length}, abgelehnt: ${
+                    rejectedFiles.length
+                  }`
+                }
+                if (isDragAccept) {
+                  return 'Gültiges Format.'
+                }
+                if (isDragReject) {
+                  return 'Ungültiges Format. Nur Bilddateien erlaubt.'
+                }
+                return (
+                  <p>
+                    <i className="dropzone-image fa fa-image" /> Bilder hier
+                    hochladen.
+                  </p>
+                )
+              }}
+            </Dropzone>
+            <aside className={styles['thumbsContainer']}>{thumbs}</aside>
+          </div>
+        </form>
       </div>
     )
   }

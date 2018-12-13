@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import styles from '../MultiStepForm.module.sass'
+
 export default class Step3 extends Component {
   constructor(props) {
     super(props)
@@ -85,7 +87,7 @@ export default class Step3 extends Component {
 
   render() {
     return (
-      <div className="step step2">
+      <div className={styles['step']}>
         <div className="row">
           <form id="Form" className="form-horizontal">
             <h1>Was ist vorgefallen?</h1>
