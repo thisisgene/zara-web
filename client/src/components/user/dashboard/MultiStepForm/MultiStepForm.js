@@ -123,7 +123,7 @@ class MultiStepForm extends Component {
         <div className={cx('step-progress', styles['multi-step-form'])}>
           <StepZilla
             steps={steps}
-            startAtStep={2}
+            startAtStep={0}
             nextButtonCls={'next-button'}
             nextTextOnFinalActionStep={'Absenden'}
           />
