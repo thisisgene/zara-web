@@ -7,11 +7,17 @@ class DateObject extends Component {
     const { dateObj, lang } = this.props
 
     let timeLang
+    let startTime
+    let endTime
     if (dateObj && lang) {
-      if (lang == 'de') {
-        timeLang = ' Uhr'
+      startTime = dateObj.time.startTime
+      endTime = dateObj.time.endTime
+      if (lang === 'de') {
+        timeLang = 'Uhr'
       } else {
         if (dateObj.time.endTime >= 12) {
+          startTime > 12 && (startTime -= 12)
+          endTime > 12 && (endTime -= 12)
           timeLang = 'pm'
         } else {
           timeLang = 'am'
@@ -24,7 +30,7 @@ class DateObject extends Component {
         <div className={styles['date-object--month']}>{dateObj.month}</div>
         <div className={styles['date-object--day']}>{dateObj.day}</div>
         <div className={styles['date-object--time']}>
-          {`${dateObj.time.startTime}-${dateObj.time.endTime}${timeLang}`}
+          {`${startTime}-${endTime} ${timeLang}`}
         </div>
       </div>
     )

@@ -1,13 +1,33 @@
 .sub-menu-item
   display: none
   flex-direction: row
+  max-width: 1080px
+  margin: 0 auto
+  
+
   &.visible
     display: flex
+    padding: 2rem 2rem 3rem
   .sub-item
-    
     margin: 0 1rem
-    &--title
-      font-size: 1.2rem
-      color: #FFC52D
-      border-bottom: 1px solid #aaa
+
+    &--title 
       margin-bottom: 1rem
+      
+      a
+        font-size: 1rem !important
+        color: #191919
+        padding: 0 0 .4rem !important
+        border-bottom: 1px solid #aaa !important
+        &:hover, &.active
+          border-bottom: 2px solid #FFC52D !important
+        
+        
+  .sub-sub-item 
+    margin-top: .3rem
+    a
+      padding: 0 !important
+      font-size: .9rem !important
+      color: #191919
+      &.active
+        border-bottom: 2px solid #FFC52D !important

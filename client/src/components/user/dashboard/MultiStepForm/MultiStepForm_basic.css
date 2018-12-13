@@ -145,7 +145,7 @@ ol.progtrckr li.progtrckr-done:hover:before {
   opacity: 0.9;
 }
 
-.next-button:focus,
+/* .next-button:focus,
 #prev-button {
   outline: none;
-}
+} */

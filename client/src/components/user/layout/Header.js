@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
-import headerTranslations from '../common/translations/global.json'
-import { renderToStaticMarkup } from 'react-dom/server'
 
 import LanguageToggle from './LanguageToggle'
 
@@ -23,9 +21,9 @@ class Header extends Component {
   constructor(props) {
     super(props)
 
-    // this.props.addTranslation(headerTranslations)
     this.state = {
       mobileExpand: false,
+      subMenuVisible: false,
       subMenuContent: ''
     }
   }
@@ -38,8 +36,15 @@ class Header extends Component {
 
   onLinkHover = id => {
     this.setState({
-      subMenuContent: id
+      subMenuContent: id,
+      subMenuVisible: true
     })
+  }
+  onLinkBlur = id => {
+    this.setState({
+      subMenuVisible: false
+    })
+    console.log('OUT!!')
   }
 
   render() {
@@ -58,17 +63,21 @@ class Header extends Component {
 
     return (
       <div className={styles['header-container']}>
-        <div className={cx(styles.header)}>
+        <nav
+          className={cx(styles.header)}
+          onMouseLeave={this.onLinkBlur.bind(this)}
+          onFocusOut={this.onLinkBlur.bind(this)}
+        >
           <NavLink
             onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
             to="/user"
           >
             <div className={styles.logo}>
-              <img className={styles['logo-img']} src={Logo} alt="Logo" />
+              <img className={styles['logo-img']} src={Logo} alt="Zara" />
               <img
                 className={styles['logo-add-img']}
                 src={LogoAdd}
-                alt="Logo-add"
+                alt="Zivilcourage und Anti-Rassismus-Arbeit"
               />
             </div>
           </NavLink>
@@ -93,25 +102,35 @@ class Header extends Component {
               {menuItems.map(
                 item =>
                   activeLanguage && (
-                    // TODO: Set link base to '/' for de
-                    <NavLink
-                      key={item.id}
-                      activeClassName={styles.active}
-                      to={`/user/${activeLanguage.code}/${item.name}`}
-                      onMouseOver={this.onLinkHover.bind(this, item.id)}
-                    >
-                      <Translate id={`menu.item${item.id}`} />
-                    </NavLink>
+                    //  TODO: Sub menu links focus on keyboard tab
+                    <div>
+                      <NavLink
+                        key={item.id}
+                        activeClassName={styles.active}
+                        to={`/user/${activeLanguage.code}/${item.link}`}
+                        onMouseEnter={this.onLinkHover.bind(this, item.id)}
+                        onFocus={this.onLinkHover.bind(this, item.id)}
+                      >
+                        <Translate id={`menu.item${item.id}`} />
+                      </NavLink>
+                      <nav
+                        role="submenu"
+                        className={cx(styles['sub-menu'], {
+                          [styles['open']]: this.state.subMenuVisible
+                        })}
+                      >
+                        <SubMenu
+                          menuItems={menuItems}
+                          subMenuContent={this.state.subMenuContent}
+                          lang={activeLanguage && activeLanguage.code}
+                        />
+                      </nav>
+                    </div>
                   )
               )}
             </div>
           </div>
-          <div className={styles['sub-menu']}>
-            <SubMenu
-              menuItems={menuItems}
-              subMenuContent={this.state.subMenuContent}
-            />
-          </div>
+
           <div className={styles['right-menu']}>
             <div className={styles['right-menu--top']}>
               <a target="blank" href="http://facebook.com">
@@ -139,7 +158,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </nav>
         <div>
           <div className={styles['mobile-menu-container']}>
             <div

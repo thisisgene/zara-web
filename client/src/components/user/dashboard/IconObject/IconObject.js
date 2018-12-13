@@ -22,7 +22,6 @@ class IconObject extends Component {
         ytLogo,
         newsletterLogo
       }[image])
-    console.log(imageSrc[image])
     return (
       <div>
         <img src={imageSrc(image)} alt={image} />
