@@ -59,9 +59,9 @@ class StepFive extends Component {
   }
 
   render() {
-    const savingCls = this.state.saving
-      ? 'saving col-md-12 show'
-      : 'saving col-md-12 hide'
+    // const savingCls = this.state.saving
+    //   ? 'saving col-md-12 show'
+    //   : 'saving col-md-12 hide'
 
     return (
       <div className="step step5 review">

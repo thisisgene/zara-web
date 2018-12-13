@@ -242,9 +242,9 @@ const cardGridObject = {
   ]
 }
 
-const imageCard = {
-  text: 'Der Klagsverband ist vom Zusperren bedroht'
-}
+// const imageCard = {
+//   text: 'Der Klagsverband ist vom Zusperren bedroht'
+// }
 
 const mainInfo = {
   text:
@@ -263,7 +263,6 @@ class Home extends Component {
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
-      console.log(activeLanguage)
     }
     return (
       <div className={styles['main-content']}>

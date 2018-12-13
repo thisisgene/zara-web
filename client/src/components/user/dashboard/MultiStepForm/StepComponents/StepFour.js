@@ -32,7 +32,7 @@ class Step4 extends Component {
         }
 
         if (
-          this.props.getStore().emailEmergency !=
+          this.props.getStore().emailEmergency !==
           this.getValidatorData().emailEmergency
         ) {
           // only update store of something changed

@@ -1,7 +1,7 @@
 .header-container
   width: 100vw
   background: #EDEDED  
-  z-index: 1
+  z-index: 11
   box-sizing: border-box
   .mobile-menu-container
     display: none
@@ -18,7 +18,7 @@
     align-items: center
     height: 5.2rem
     max-width: 1080px
-    margin: 0 auto
+    margin: 0 auto 1rem
     padding: 0 2rem
     z-index: 3
     
@@ -62,7 +62,9 @@
         &--menu
           a
             // font-family: 'HK Grotesk', sans-serif
-            font-size: 1.1rem
+            font:
+              size: 1rem
+              weight: normal
             color: #ED522B
             padding: 0 .5rem
             &:first-child 
@@ -113,7 +115,7 @@
           transform: translateX(-100%)
           transition: 300ms all ease-in-out
           opacity: 0
-          z-index: 1
+          z-index: 21
           &.open
             transform: translateX(0)
             opacity: 1
@@ -158,6 +160,7 @@
             a
               padding: 0 .3rem
               color: #aaa
+              font-weight: normal
               &:hover
                 text-decoration: none
               &.active

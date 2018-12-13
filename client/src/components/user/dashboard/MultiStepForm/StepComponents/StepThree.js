@@ -22,7 +22,7 @@ export default class Step3 extends Component {
         })
       )
     })
-    if (this.props.getStore().files != files) {
+    if (this.props.getStore().files !== files) {
       // only update store of something changed
       // this.setState({ files: files })
       this.props.updateStore({
@@ -58,7 +58,11 @@ export default class Step3 extends Component {
       <div key={file.name}>
         <div className={commonStyles['thumb']}>
           <div className={commonStyles['thumbInner']}>
-            <img src={file.preview} className={commonStyles['img']} />
+            <img
+              src={file.preview}
+              className={commonStyles['img']}
+              alt={`preview ${file.name}`}
+            />
           </div>
           <button
             className={commonStyles['delete-button']}

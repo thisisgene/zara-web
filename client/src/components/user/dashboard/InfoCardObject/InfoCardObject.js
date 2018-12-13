@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import IconObject from '../IconObject/IconObject'
-import ActIcon from '../../common/img/act.png'
 
 import cx from 'classnames'
 import styles from './InfoCardObject.module.sass'

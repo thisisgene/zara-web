@@ -66,7 +66,7 @@ class Login extends Component {
 
     return (
       <div>
-        <div className="login">
+        <div className={styles['login']}>
           <div className="container">
             <div className="row">
               <div className="col-md-6 m-auto form-dark">

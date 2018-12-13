@@ -5,13 +5,11 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getAllProjects, getProjectById } from '../../actions/projectActions'
 
-import { withLocalize, Translate } from 'react-localize-redux'
+import { withLocalize } from 'react-localize-redux'
 import globalTranslations from './common/translations/global.json'
 import { renderToStaticMarkup } from 'react-dom/server'
 
 import Header from './layout/Header'
-// import Landing from './dashboard/Landing'
-import MainContent from './layout/MainContent'
 import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
 import styles from './User.module.sass'
@@ -27,7 +25,7 @@ class User extends Component {
     const defaultLanguage =
       window.localStorage.getItem('languageCode') ||
       this.props.languages[0].code
-    console.log(defaultLanguage)
+    // console.log(defaultLanguage)
     this.props.initialize({
       languages,
       translation: globalTranslations,
@@ -47,7 +45,6 @@ class User extends Component {
     const hasLanguageChanged = prevLang !== curLang
     if (hasLanguageChanged) {
       window.localStorage.setItem('languageCode', curLang)
-      console.log('change: ', curLang)
     }
   }
   componentDidMount() {}
@@ -58,7 +55,6 @@ class User extends Component {
         <Header />
         <div className={styles['main-content']}>
           <Switch>
-            {/* <Route exact path="/user" component={Home} /> */}
             <Route exact path="/user/de" component={Home} />
             <Route exact path="/user/en" component={Home} />
             {activeLanguage && (
@@ -69,7 +65,6 @@ class User extends Component {
               />
             )}
             <Route path="/user/:lang/beratung" component={Consulting} />
-            <MainContent />
           </Switch>
         </div>
       </div>

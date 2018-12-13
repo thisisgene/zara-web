@@ -66,7 +66,7 @@ class Header extends Component {
         <nav
           className={cx(styles.header)}
           onMouseLeave={this.onLinkBlur.bind(this)}
-          onFocusOut={this.onLinkBlur.bind(this)}
+          onBlur={this.onLinkBlur.bind(this)}
         >
           <NavLink
             onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
@@ -103,9 +103,8 @@ class Header extends Component {
                 item =>
                   activeLanguage && (
                     //  TODO: Sub menu links focus on keyboard tab
-                    <div>
+                    <div key={item.id}>
                       <NavLink
-                        key={item.id}
                         activeClassName={styles.active}
                         to={`/user/${activeLanguage.code}/${item.link}`}
                         onMouseEnter={this.onLinkHover.bind(this, item.id)}
@@ -114,7 +113,7 @@ class Header extends Component {
                         <Translate id={`menu.item${item.id}`} />
                       </NavLink>
                       <nav
-                        role="submenu"
+                        role="menu"
                         className={cx(styles['sub-menu'], {
                           [styles['open']]: this.state.subMenuVisible
                         })}

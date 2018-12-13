@@ -29,7 +29,7 @@ export default class Step3 extends Component {
         return validateNewInput[k] === true
       })
     ) {
-      if (this.props.getStore().description != userInput.description) {
+      if (this.props.getStore().description !== userInput.description) {
         // only update store of something changed
         this.props.updateStore({
           ...userInput,
@@ -72,7 +72,7 @@ export default class Step3 extends Component {
 
   _validateData(data) {
     return {
-      descriptionVal: data.description != ''
+      descriptionVal: data.description !== ''
     }
   }
 
@@ -84,9 +84,6 @@ export default class Step3 extends Component {
   }
 
   render() {
-    // explicit class assigning based on validation
-    let notValidClasses = {}
-
     return (
       <div className="step step2">
         <div className="row">

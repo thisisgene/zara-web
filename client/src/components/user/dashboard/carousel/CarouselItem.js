@@ -30,6 +30,7 @@ class CarouselItem extends Component {
         src={Image1}
         onLoad={this.onLoad}
         style={{ opacity: 0, height: 0, width: 0 }}
+        alt={'carousel'}
       />
     )
     return (
@@ -74,7 +75,7 @@ class CarouselItem extends Component {
           ''
         ) : (
           <div className={styles['carousel-item--image']}>
-            <img src={Image1} />
+            <img src={Image1} alt={'carousel'} />
           </div>
         )}
       </div>
