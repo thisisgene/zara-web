@@ -263,8 +263,7 @@ class Home extends Component {
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
-      // console.log(activeLanguage)
-      console.log(fakeServerData)
+      console.log(activeLanguage)
     }
     return (
       <div className={styles['main-content']}>

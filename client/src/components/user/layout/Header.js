@@ -23,35 +23,13 @@ class Header extends Component {
   constructor(props) {
     super(props)
 
-    const languages = [
-      { name: 'Deutsch', code: 'de' },
-      { name: 'English', code: 'en' }
-    ]
-    // const defaultLanguage =
-    //   window.localStorage.getItem('languageCode') || this.props.languages[0]
-    this.props.initialize({
-      languages,
-      // translation: headerTranslations,
-      options: { renderToStaticMarkup } // TODO: Set defaultLanguage after reload!
-    })
-
-    this.props.addTranslation(headerTranslations)
+    // this.props.addTranslation(headerTranslations)
     this.state = {
       mobileExpand: false,
       subMenuContent: ''
     }
   }
-  componentDidUpdate(prevProps) {
-    const prevLangCode =
-      prevProps.activeLanguage && prevProps.activeLanguage.code
-    const curLangCode =
-      this.props.activeLanguage && this.props.activeLanguage.code
 
-    const hasLanguageChanged = prevLangCode !== curLangCode
-    if (hasLanguageChanged) {
-      window.localStorage.setItem('languageCode', curLangCode)
-    }
-  }
   onMobileNavClick = () => {
     this.setState({
       mobileExpand: !this.state.mobileExpand
@@ -122,9 +100,7 @@ class Header extends Component {
                       to={`/user/${activeLanguage.code}/${item.name}`}
                       onMouseOver={this.onLinkHover.bind(this, item.id)}
                     >
-                      <Translate id={`menu.item${item.id}`}>
-                        {item.name}
-                      </Translate>
+                      <Translate id={`menu.item${item.id}`} />
                     </NavLink>
                   )
               )}

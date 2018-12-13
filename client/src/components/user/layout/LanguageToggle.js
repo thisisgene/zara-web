@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 import { withLocalize } from 'react-localize-redux'
 
@@ -16,9 +16,9 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
       {languages.map(lang => (
         <div key={lang.code} className={styles['language-box--link']}>
           <NavLink
-            activeClassName={cx(styles.active)}
-            className={styles[getClass(lang.code)]}
-            to={lang.code === 'de' ? '/user' : `/user/${lang.code}`}
+            activeClassName={styles.active}
+            // className={styles[getClass(lang.code)]}
+            to={`/user/${lang.code}`}
             onClick={() => setActiveLanguage(lang.code)}
           >
             {lang.code}
@@ -29,4 +29,4 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
   )
 }
 
-export default withLocalize(LanguageToggle)
+export default withRouter(withLocalize(LanguageToggle))
