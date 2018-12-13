@@ -44,7 +44,6 @@ class Header extends Component {
     this.setState({
       subMenuVisible: false
     })
-    console.log('OUT!!')
   }
 
   render() {
@@ -66,7 +65,7 @@ class Header extends Component {
         <nav
           className={cx(styles.header)}
           onMouseLeave={this.onLinkBlur.bind(this)}
-          onBlur={this.onLinkBlur.bind(this)}
+          onFocusOut={this.onLinkBlur.bind(this)}
         >
           <NavLink
             onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
@@ -109,6 +108,7 @@ class Header extends Component {
                         to={`/user/${activeLanguage.code}/${item.link}`}
                         onMouseEnter={this.onLinkHover.bind(this, item.id)}
                         onFocus={this.onLinkHover.bind(this, item.id)}
+                        onClick={this.onLinkBlur}
                       >
                         <Translate id={`menu.item${item.id}`} />
                       </NavLink>

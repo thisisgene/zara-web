@@ -6,7 +6,6 @@ class Consulting extends Component {
   render() {
     return (
       <div>
-        <p>Beratung</p>
         <MultiStepForm />
       </div>
     )
