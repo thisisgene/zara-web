@@ -162,9 +162,9 @@ class Header extends Component {
               <a target="blank" href="http://youtube.com">
                 <IconObject image="ytLogo" />
               </a>
-              <a target="blank" href="http://mailchimp.com">
+              <label htmlFor="mce-EMAIL">
                 <IconObject image="newsletterLogo" />
-              </a>
+              </label>
             </div>
             <div className={styles['right-menu--bottom']}>
               <div className={styles['language-box']}>

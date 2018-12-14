@@ -18,8 +18,9 @@ const oneLineContent = {
       }
     },
     iconLinkBox: {
-      icon: 'lock',
-      text: 'Verschlüsselte Email an ZARA'
+      icon: 'LockIcon',
+      text: 'Verschlüsselte Email an ZARA',
+      link: '/verschlüsselte_mail'
     }
   }
 }

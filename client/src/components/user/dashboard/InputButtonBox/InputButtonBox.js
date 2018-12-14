@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
+import cx from 'classnames'
 import styles from './InputButtonBox.module.sass'
 
 const url = 'asdasd'
@@ -10,12 +11,21 @@ class InputButtonBox extends Component {
     super(props)
     this.state = {
       projectList: [],
-      EMAIL: ''
+      EMAIL: '',
+      inputFocus: false
     }
   }
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
+
+  onInputFocus = () => {
+    this.setState({ inputFocus: true })
+    setTimeout(() => {
+      this.setState({ inputFocus: false })
+    }, 300)
+  }
+
   render() {
     const { content } = this.props
     return (
@@ -33,7 +43,9 @@ class InputButtonBox extends Component {
               >
                 <div
                   id="mc_embed_signup_scroll"
-                  className={styles['signup-box']}
+                  className={cx(styles['signup-box'], {
+                    [styles['focused']]: this.state.inputFocus
+                  })}
                 >
                   <div>
                     <input
@@ -43,6 +55,8 @@ class InputButtonBox extends Component {
                       onChange={this.onChange}
                       name="EMAIL"
                       id="mce-EMAIL"
+                      onFocus={this.onInputFocus}
+                      // ref={(input) => { this.newsletterInput = input; }} />
                     />
                   </div>
                   <div id="mce-responses">

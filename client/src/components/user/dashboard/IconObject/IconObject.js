@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import ArrowIcon from '../../common/img/list_arrow.png'
 import ActIcon from '../../common/img/act.png'
+import LockIcon from '../../common/img/lock.svg'
 
 import fbLogo from '../../common/social media/facebook.svg'
 import instaLogo from '../../common/social media/instagram.svg'
@@ -16,6 +17,7 @@ class IconObject extends Component {
       ({
         act: ActIcon,
         listArrow: ArrowIcon,
+        LockIcon,
         fbLogo,
         instaLogo,
         twitterLogo,
