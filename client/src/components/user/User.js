@@ -12,6 +12,8 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import Header from './layout/Header/Header'
 import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
+import Footer from './layout/Footer/Footer'
+
 import styles from './User.module.sass'
 
 class User extends Component {
@@ -23,8 +25,7 @@ class User extends Component {
       { name: 'English', code: 'en' }
     ]
     const defaultLanguage =
-      window.localStorage.getItem('languageCode') ||
-      this.props.languages[0].code
+      window.localStorage.getItem('languageCode') || languages[0].code
     // console.log(defaultLanguage)
     this.props.initialize({
       languages,
@@ -67,6 +68,7 @@ class User extends Component {
             <Route path="/user/:lang/beratung" component={Consulting} />
           </Switch>
         </div>
+        {activeLanguage && <Footer lang={activeLanguage.code} />}
       </div>
     )
   }
