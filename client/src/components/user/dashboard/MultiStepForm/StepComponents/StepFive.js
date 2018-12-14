@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Promise from 'promise'
 
 import styles from '../MultiStepForm.module.sass'
@@ -44,16 +45,22 @@ class StepFive extends Component {
     this.props.sendReport(reportData)
 
     return new Promise((resolve, reject) => {
-      this.setState({
-        saving: true
-      })
+      console.log(this.props.report)
+      if (this.props.report && this.props.report.reportSent === true) {
+        console.log('resolved')
+        this.setState({
+          saving: false
+        })
 
-      this.props.updateStore({ savedToCloud: true }) // Update store here (this is just an example, in reality you will do it via redux or flux)
+        // this.props.updateStore({ savedToCloud: true }) // Update store here (this is just an example, in reality you will do it via redux or flux)
 
-      // call resolve() to indicate that server validation or other aync method was a success.
-      // ... only then will it move to the next step. reject() will indicate a fail
-      resolve()
-      // reject(); // or reject
+        // call resolve() to indicate that server validation or other aync method was a success.
+        // ... only then will it move to the next step. reject() will indicate a fail
+        resolve()
+        // reject(); // or reject
+      } else {
+        reject()
+      }
     })
   }
 
@@ -123,5 +130,5 @@ class StepFive extends Component {
 export default StepFive
 // export default connect(
 //   null,
-//   { sendReport }
+//   {}
 // )(StepFive)

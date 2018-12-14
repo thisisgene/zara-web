@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import StepZilla from 'react-stepzilla'
 import { connect } from 'react-redux'
 
-import { sendReport } from '../../../../actions/userActions'
+import { sendReport } from '../../../../actions/reportActions'
 
 import StepOne from './StepComponents/StepOne'
 import StepTwo from './StepComponents/StepTwo'
@@ -101,6 +101,7 @@ class MultiStepForm extends Component {
             updateStore={u => {
               this.updateStore(u)
             }}
+            report={this.props.report}
             sendReport={reportData => this.props.sendReport(reportData)}
           />
         )

@@ -1,31 +1,45 @@
 .info-card
   margin: 0 1rem
+  max-width: 22rem
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  &.white
+    .info-card--title-box
+      color: #050505
+    .info-card--link a
+      color: #050505
   &.default
     .info-card--title-box
       color: #1c7878
-    .info-card--body__link a
+    .info-card--link a
       color: #050505
   &.red
-    .info-card--title-box, .info-card--body__link a
+    .info-card--title-box
+      color: #EF542B
+      width: 50%      
+    .info-card--link a
       color: #EF542B
       
+
   &--title-box
+    // min-height: 3.8rem
     display: flex
     justify-content: flex-start
     align-items: flex-start
-    width: 50%
+    // width: 50%
     margin-bottom: 1rem
     div img
       width: 40px
     h2
       margin: 0
       font:
-        size: 1.3rem
+        size: 1.5rem
         weight: bold
 
   &--body
     &__text
-      font-size: .9rem
+      font-size: 1rem
       line-height: 1.2
       margin-bottom: .4rem
     &__list
@@ -33,13 +47,19 @@
       li
         display: flex
         flex-direction: row
-        align-items: center
+        align-items: flex-start
         justify-content: flex-start
         margin: .4rem 0
         img
+          margin-right: .4rem !important
+          margin-top: .3rem
           width: 14px !important
         span
           line-height: 1
           padding-top: 2px
-    &__link
-      text-decoration: underline
+  &--link
+    // margin-top: .5rem
+    font-weight: bold
+    text-decoration: underline
+  &--button
+    margin-top: 1rem

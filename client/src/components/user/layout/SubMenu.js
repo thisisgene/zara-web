@@ -27,6 +27,7 @@ class SubMenu extends Component {
                         <NavLink
                           to={`/user/${lang}/${item.link}/${subItem.link}`}
                           activeClassName={styles.active}
+                          onClick={this.props.onClick}
                         >
                           <Translate id={`menu.item${subItem.id}`} />
                         </NavLink>
@@ -43,6 +44,7 @@ class SubMenu extends Component {
                                   subItem.link
                                 }/${ssItem.link}`}
                                 activeClassName={styles.active}
+                                onClick={this.props.onClick}
                               >
                                 <Translate id={`menu.item${ssItem.id}`} />
                               </NavLink>

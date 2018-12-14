@@ -500,8 +500,9 @@ router.post('/report/send', async (req, res) => {
     .save()
     .then(report => {
       sendEmail(report)
-      res.json(report)
+      res.json({ report: report, msg: 'success' })
     })
+    .catch(err => res.send(err))
 })
 
 sendEmail = report => {
@@ -558,6 +559,7 @@ router.post('/report/images', async (req, res) => {
   const newImage = {
     originalName: imgName
   }
+  console.log('Report ID: ', body.id)
   Report.findOneAndUpdate(
     // FIXME: If project has no background image, make first image to upload the background image!
     { _id: body.id },
@@ -566,10 +568,11 @@ router.post('/report/images', async (req, res) => {
   )
     .then(report => {
       file.mv(`public/reports/${body.id}/${imgName}`)
-
-      res.json(report)
+      console.log('juhu succ')
+      res.send('success')
     })
     .catch(err => {
-      res.json(err)
+      console.log('noo fail')
+      res.send(err)
     })
 })

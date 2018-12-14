@@ -122,6 +122,7 @@ class Header extends Component {
                           menuItems={menuItems}
                           subMenuContent={this.state.subMenuContent}
                           lang={activeLanguage && activeLanguage.code}
+                          onClick={this.onLinkBlur}
                         />
                       </nav>
                     </div>

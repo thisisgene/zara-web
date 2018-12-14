@@ -22,11 +22,7 @@ class IconObject extends Component {
         ytLogo,
         newsletterLogo
       }[image])
-    return (
-      <div>
-        <img src={imageSrc(image)} alt={image} />
-      </div>
-    )
+    return <img src={imageSrc(image)} alt={image} />
   }
 }
 

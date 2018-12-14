@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import cx from 'classnames'
-import commonStyles from '../../common/Common.module.sass'
+import styles from './ButtonObject.module.sass'
 
 class ButtonObject extends Component {
   render() {
@@ -11,7 +11,7 @@ class ButtonObject extends Component {
       <div>
         <NavLink
           to={`/user/${button.link}`}
-          className={cx(commonStyles['button'], commonStyles[button.type])}
+          className={cx(styles['button'], styles[button.type])}
         >
           {button.text}
         </NavLink>
