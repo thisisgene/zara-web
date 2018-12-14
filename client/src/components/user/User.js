@@ -9,7 +9,7 @@ import { withLocalize } from 'react-localize-redux'
 import globalTranslations from './common/translations/global.json'
 import { renderToStaticMarkup } from 'react-dom/server'
 
-import Header from './layout/Header'
+import Header from './layout/Header/Header'
 import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
 import styles from './User.module.sass'

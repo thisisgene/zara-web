@@ -4,15 +4,15 @@ import { withLocalize, Translate } from 'react-localize-redux'
 
 import LanguageToggle from './LanguageToggle'
 
-import IconObject from '../dashboard/IconObject/IconObject'
+import IconObject from '../../dashboard/IconObject/IconObject'
 
-import Logo from '../common/zara_logo.png'
-import LogoAdd from '../common/zara_logo_add.png'
+import Logo from '../../common/zara_logo.png'
+import LogoAdd from '../../common/zara_logo_add.png'
 
 import menuItemsFromFile from './menuItems'
 import SubMenu from './SubMenu'
 
-import ActIcon from '../common/img/act.png'
+import ActIcon from '../../common/img/act.png'
 
 import cx from 'classnames'
 import styles from './Header.module.sass'
@@ -70,6 +70,7 @@ class Header extends Component {
           <NavLink
             onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
             to="/user"
+            onClick={this.onLinkBlur}
           >
             <div className={styles.logo}>
               <img className={styles['logo-img']} src={Logo} alt="Zara" />
@@ -83,16 +84,32 @@ class Header extends Component {
           <div className={styles['main-menu']}>
             <div className={styles['top-header']}>
               <div className={styles['top-header--menu']}>
-                <NavLink activeClassName={styles.active} to="/user/melden">
+                <NavLink
+                  activeClassName={styles.active}
+                  onClick={this.onLinkBlur}
+                  to="/user/melden"
+                >
                   <img src={ActIcon} alt="" />
                 </NavLink>
-                <NavLink activeClassName={styles.active} to="/user/melden">
+                <NavLink
+                  activeClassName={styles.active}
+                  onClick={this.onLinkBlur}
+                  to="/user/melden"
+                >
                   Melden
                 </NavLink>
-                <NavLink activeClassName={styles.active} to="/user/spenden">
+                <NavLink
+                  activeClassName={styles.active}
+                  onClick={this.onLinkBlur}
+                  to="/user/spenden"
+                >
                   Spenden
                 </NavLink>
-                <NavLink activeClassName={styles.active} to="/user/kontakt">
+                <NavLink
+                  activeClassName={styles.active}
+                  onClick={this.onLinkBlur}
+                  to="/user/kontakt"
+                >
                   Kontakt
                 </NavLink>
               </div>
