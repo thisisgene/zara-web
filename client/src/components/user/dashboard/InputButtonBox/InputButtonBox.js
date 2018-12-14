@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 import cx from 'classnames'
 import styles from './InputButtonBox.module.sass'
@@ -78,7 +77,7 @@ class InputButtonBox extends Component {
                     />
                   </div>
                   <div>
-                    <button type="submit">Newsletter abonnieren</button>
+                    <button type="submit">{content.button.text}</button>
                   </div>
                 </div>
               </form>
