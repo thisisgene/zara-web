@@ -1,0 +1,108 @@
+.mobile-menu
+  width: 100vw
+  position: fixed
+  z-index: 5
+  display: flex
+  flex-direction: column
+
+  .header
+    // display: flex
+    // flex-direction: column
+    flex: 1
+    .top-header
+      // flex: 1
+      height: 2.4rem
+      padding: .3rem 2rem
+      &--menu
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        a
+          color: #ef542b
+          margin: 0 .5rem
+          font-weight: bold
+
+        img
+          height: 1.6rem
+
+  .mobile-menu--header
+    flex: 1
+    z-index: 5
+    padding: 0 2rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: #EDEDED
+    .logo
+      img
+        height: 3.4rem
+    .mobile-menu-button
+
+        position: relative
+        z-index: 3
+        .nav-burger
+          position: relative
+          display: block
+          width: 1.6rem
+          height: 2px
+          background: #050505
+          // color: #222
+          transition: all 200ms
+          &:before
+            content: ''
+            background: #050505
+            position: absolute
+            left: 0
+            transform: translateY(-.6rem)
+            width: inherit
+            height: 2px
+            transition: all 300ms ease-in-out
+          &:after
+            content: ''
+            background: #050505
+            position: absolute
+            left: 0
+            transform: translateY(.6rem)            
+            width: inherit
+            height: 2px
+            transition: all 300ms ease-in-out
+
+          &.burger-expand
+            // right: 2rem
+            // position: fixed
+            background: rgba(0, 0, 0, 0)
+            &:before
+              transform: rotateZ(45deg) translateY(0)
+              background: #ef542b
+            &:after
+              transform: rotateZ(-45deg) translateY(0)
+              background: #ef542b
+
+  .main-menu-container
+    background: #EDEDED
+    padding: 1rem 2rem
+    border-top: 1px solid #050505
+    transform: translateX(-100%)
+    transition: transform 200ms ease-in-out
+    flex: 2
+    overflow-y: auto
+    &.expand
+      transform: translateX(0)
+    .main-menu
+      // height: 140vh // TODO: Scroll-x inside .main-menu
+      &--item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        a
+          display: block
+          margin: 1rem 0
+          font:
+            size: 1.2rem
+            weight: bold
+          color: #050505
+        &__arrow
+          color: #ef542b
+          font-size: 1.8rem 
