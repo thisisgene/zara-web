@@ -4,29 +4,52 @@
   width: 100vw
   padding: 0 2rem
   z-index: 2
+  
+  
   &.red
     .alert-text
       color: #ef542b
+  @media(min-width: 981px)
+    &-wrapper
+      display: flex
+      justify-content: space-between
+      align-items: center
+      max-width: 1080px
+      margin: 0 auto
+      padding: .8rem 0
       
-  &-wrapper
-    display: flex
-    justify-content: space-between
-    align-items: center
-    max-width: 1080px
-    margin: 0 auto
-    padding: .8rem 0
-  &--left
-    display: flex
-    align-items: center
-    img
-      position: absolute
-      width: 60px
-      height: 60px
-    .alert-text
-      font-size: .9rem
-      color: #010101
-      margin-left: 4.4rem
-    .alert-title
-      font-weight: bold
-      margin-left: 4.4rem
-  &--right
+    &--left
+      display: flex
+      align-items: center
+      img
+        position: absolute
+        width: 60px
+        height: 60px
+      .alert-text
+        font-size: .9rem
+        color: #010101
+        margin-left: 4.4rem
+      .alert-title
+        font-weight: bold
+        margin-left: 4.4rem
+    &--right
+
+  @media(max-width: 980px)
+    padding: 0 1rem
+    .alert-wrapper
+      text-align: center
+      display: block
+      padding: 2rem 0
+    .alert--left
+      // display: block
+      display: flex
+      align-items: center
+      justify-content: center
+      img
+        width: 60px
+        height: 60px
+        margin-bottom: 1rem
+      .alert-text
+        width: auto
+        margin-bottom: 1rem
+        text-align: left

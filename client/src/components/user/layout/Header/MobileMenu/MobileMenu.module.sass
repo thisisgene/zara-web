@@ -81,13 +81,17 @@
 
   .main-menu-container
     background: #EDEDED
-    padding: 1rem 2rem
+    padding: 0
     border-top: 1px solid #050505
     transform: translateX(-100%)
     transition: transform 200ms ease-in-out
     flex: 2
     overflow-y: auto
+    height: 0
     &.expand
+      padding: 1rem 2rem
+
+      height: auto
       transform: translateX(0)
     .main-menu
       // height: 140vh // TODO: Scroll-x inside .main-menu
