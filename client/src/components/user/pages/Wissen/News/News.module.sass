@@ -1,0 +1,52 @@
+.news-box
+  margin: 2rem 0 4rem
+  max-width: 1080px
+
+  &--filter-bar
+    padding: 1rem 2rem
+    display: flex
+    align-items: baseline
+    .reset-button
+      label
+        background: none
+        padding: .3rem
+        border: none
+      &.active label
+        border-bottom: 2px solid #ffc800
+    .filter-box
+      display: flex
+      
+      label
+        padding: .3rem
+        cursor: pointer
+      input
+        opacity: 0
+        &:checked ~ label
+          border-bottom: 2px solid #ffc800
+
+  .news-item
+    display: flex
+    align-items: flex-start
+    padding: 2rem 4rem 2rem 2rem
+    height: 14rem
+    &--image 
+      // width: 14rem
+      height: 100%
+      margin-right: 1rem
+      img
+        height: 100%
+    &--text
+      height: 100%
+      display: flex
+      box-sizing: border-box
+      flex-direction: column
+      justify-content: space-between
+      &__title
+        font-size: 1.6rem
+        font-weight: bold
+        line-height: 1
+        margin-bottom: .4rem
+
+      &__link a
+        color: #050505
+        text-decoration: underline

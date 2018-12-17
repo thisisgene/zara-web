@@ -77,7 +77,7 @@ class User extends Component {
             <Route path="/user/:lang/beratung" component={Consulting} />
             <Route exact path="/user/:lang/wissen" component={Wissen} />
             <Route exact path="/user/:lang/wissen/faq" component={Faq} />
-            <Route exact path="/user/:lang/wissen/news" component={News} />
+            <Route exact path="/user/:lang/wissen/aktuelles" component={News} />
           </Switch>
         </div>
         {activeLanguage && <Footer lang={activeLanguage.code} />}

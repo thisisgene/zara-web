@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-import FaqItem from './FaqItem'
+import NewsItem from './NewsItem'
 
 import cx from 'classnames'
-import styles from './FaqBox.module.sass'
+import styles from '../News.module.sass'
 
-class FaqBox extends Component {
+class NewsBox extends Component {
   constructor() {
     super()
     this.state = {
@@ -27,7 +27,7 @@ class FaqBox extends Component {
     }
   }
 
-  filterFaq = e => {
+  filterNews = e => {
     return this.indexOf(e) < 0
   }
 
@@ -43,8 +43,8 @@ class FaqBox extends Component {
     let filteredContent = []
 
     if (this.state.activeTags.length > 0) {
-      filteredContent = content.filter(filteredFaq => {
-        for (let tag of filteredFaq.tags) {
+      filteredContent = content.filter(filteredNews => {
+        for (let tag of filteredNews.tags) {
           if (this.state.activeTags.includes(tag) == true) return true
         }
         return false
@@ -54,18 +54,18 @@ class FaqBox extends Component {
     }
 
     console.log('filtered: ', filteredContent)
-    // TODO: Pagination if more than 10 faq items
+    // TODO: Pagination if more than 10 News items
 
     return (
-      <div className={styles['faq-box']}>
-        <div className={styles['faq-box--filter-bar']}>
+      <div className={styles['news-box']}>
+        <div className={styles['news-box--filter-bar']}>
           <div
             className={cx(styles['reset-button'], {
               [styles['active']]: this.state.activeTags.length === 0
             })}
           >
             <label onClick={this.resetTags} tabIndex="1">
-              Alle FAQs
+              Alle Beiträge
             </label>
           </div>
           <div className={styles['filter-box']}>
@@ -87,11 +87,11 @@ class FaqBox extends Component {
         <div>
           {content &&
             lang &&
-            filteredContent.map(faq => <FaqItem faq={faq[lang]} />)}
+            filteredContent.map(news => <NewsItem news={news} lang={lang} />)}
         </div>
       </div>
     )
   }
 }
 
-export default FaqBox
+export default NewsBox

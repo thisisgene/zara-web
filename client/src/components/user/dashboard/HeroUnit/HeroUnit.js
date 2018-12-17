@@ -33,9 +33,11 @@ class HeroUnit extends Component {
                     {data[lang].text}
                   </div>
                 </div>
-                <div className={styles['hero-unit--image']}>
-                  <img src={`/assets/img/${data.image}`} alt={data.image} />
-                </div>
+                {data.image && (
+                  <div className={styles['hero-unit--image']}>
+                    <img src={`/assets/img/${data.image}`} alt={data.image} />
+                  </div>
+                )}
               </div>
             )}
           </div>
