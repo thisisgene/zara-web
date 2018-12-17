@@ -21,7 +21,7 @@ class InfoBoxObject extends Component {
               <div className={styles['info-box--header']}>
                 <div className={styles['info-box--title-box']}>
                   {infoBox.image && <IconObject image={infoBox.image} />}
-                  <h1>{infoBox[lang].title}</h1>
+                  {/* {infoBox[lang].title && <h1>{infoBox[lang].title}</h1>} */}
                 </div>
                 <div className={styles['info-box--body']}>
                   {infoBox[lang].text}

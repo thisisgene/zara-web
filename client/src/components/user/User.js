@@ -3,7 +3,7 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getAllProjects, getProjectById } from '../../actions/projectActions'
+import { setActiveLanguage } from '../../actions/userActions'
 
 import { withLocalize } from 'react-localize-redux'
 import globalTranslations from './common/translations/global.json'
@@ -12,6 +12,8 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import Header from './layout/Header/Header'
 import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
+import Wissen from './pages/Wissen/Wissen'
+import Faq from './pages/Wissen/Faq'
 import Footer from './layout/Footer/Footer'
 
 import styles from './User.module.sass'
@@ -40,12 +42,17 @@ class User extends Component {
     }
   }
   componentDidUpdate(prevProps) {
+    if (this.props.activeLanguage) {
+      this.props.setActiveLanguage(this.props.activeLanguage.code)
+      console.log('actLang: ', this.props.activeLanguage.code)
+    }
     const prevLang = prevProps.activeLanguage && prevProps.activeLanguage.code
     const curLang = this.props.activeLanguage && this.props.activeLanguage.code
 
     const hasLanguageChanged = prevLang !== curLang
     if (hasLanguageChanged) {
       window.localStorage.setItem('languageCode', curLang)
+      this.props.setActiveLanguage(curLang)
     }
   }
   componentDidMount() {}
@@ -66,6 +73,8 @@ class User extends Component {
               />
             )}
             <Route path="/user/:lang/beratung" component={Consulting} />
+            <Route exact path="/user/:lang/wissen" component={Wissen} />
+            <Route exact path="/user/:lang/wissen/faq" component={Faq} />
           </Switch>
         </div>
         {activeLanguage && <Footer lang={activeLanguage.code} />}
@@ -75,12 +84,11 @@ class User extends Component {
 }
 
 User.propTypes = {
-  getAllProjects: PropTypes.func.isRequired,
-  getProjectById: PropTypes.func.isRequired,
-  project: PropTypes.object.isRequired
+  setActiveLanguage: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
+  lang: state.lang,
   project: state.project,
   hasBackgroundImage: state.hasBackgroundImage
 })
@@ -89,7 +97,7 @@ export default withRouter(
   withLocalize(
     connect(
       mapStateToProps,
-      { getAllProjects, getProjectById }
+      { setActiveLanguage }
     )(User)
   )
 )

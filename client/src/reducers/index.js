@@ -4,13 +4,15 @@ import errorReducer from './errorReducer'
 import projectReducer from './projectReducer'
 import { localizeReducer } from 'react-localize-redux'
 import { reducer as formReducer } from 'redux-form'
-import reportReducers from './reportReducers'
+import userReducer from './userReducer'
+import reportReducer from './reportReducer'
 
 export default combineReducers({
   form: formReducer,
   auth: authReducer,
   errors: errorReducer,
   project: projectReducer,
-  report: reportReducers,
+  user: userReducer,
+  report: reportReducer,
   localize: localizeReducer
 })

@@ -55,7 +55,18 @@ const menuItems = [
     id: '2'
   },
   { name: 'Mitmischen', id: '3' },
-  { name: 'Wissen', id: '4' },
+  {
+    name: 'Wissen',
+    id: '4',
+    link: 'wissen',
+    subMenuList: [
+      {
+        name: 'FAQs',
+        link: 'faq',
+        id: '4.1'
+      }
+    ]
+  },
   { name: 'Über ZARA', id: '5' }
 ]
 
