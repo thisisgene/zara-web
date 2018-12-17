@@ -64,6 +64,11 @@ const menuItems = [
         name: 'FAQs',
         link: 'faq',
         id: '4.1'
+      },
+      {
+        name: 'Aktuelles',
+        link: 'aktuelles',
+        id: '4.2'
       }
     ]
   },

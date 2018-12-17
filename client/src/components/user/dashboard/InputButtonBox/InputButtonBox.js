@@ -74,6 +74,7 @@ class InputButtonBox extends Component {
                       name="b_b9321a8c2677e57b97cfebee7_9dd567bfa5"
                       tabIndex="-1"
                       value=""
+                      onChange={this.onChange}
                     />
                   </div>
                   <div>

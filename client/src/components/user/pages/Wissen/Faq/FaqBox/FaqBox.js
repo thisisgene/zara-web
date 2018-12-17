@@ -55,6 +55,8 @@ class FaqBox extends Component {
     }
 
     console.log('filtered: ', filteredContent)
+    // TODO: Pagination if more than 10 faq items
+
     return (
       <div className={styles['faq-box']}>
         <div className={styles['faq-box--filter-bar']}>
@@ -69,8 +71,8 @@ class FaqBox extends Component {
           </div>
           <div className={styles['filter-box']}>
             {tags &&
-              tags.map(tag => (
-                <div className={styles['tag-item']}>
+              tags.map((tag, index) => (
+                <div key={index} className={styles['tag-item']}>
                   <input
                     name={tag.name}
                     type="checkbox"

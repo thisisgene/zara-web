@@ -13,7 +13,9 @@ import Header from './layout/Header/Header'
 import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
 import Wissen from './pages/Wissen/Wissen'
-import Faq from './pages/Wissen/Faq'
+import Faq from './pages/Wissen/Faq/Faq'
+import News from './pages/Wissen/News/News'
+
 import Footer from './layout/Footer/Footer'
 
 import styles from './User.module.sass'
@@ -75,6 +77,7 @@ class User extends Component {
             <Route path="/user/:lang/beratung" component={Consulting} />
             <Route exact path="/user/:lang/wissen" component={Wissen} />
             <Route exact path="/user/:lang/wissen/faq" component={Faq} />
+            <Route exact path="/user/:lang/wissen/news" component={News} />
           </Switch>
         </div>
         {activeLanguage && <Footer lang={activeLanguage.code} />}
