@@ -4,16 +4,20 @@
     "item1.1": ["Beratung & Melden", "Consulting & Report"],
     "item1.1.1": ["Rassismus", "Racism"],
     "item1.1.2": ["Hass im Netz", "Online Hate"],
-    "item1.2": ["KENNE DEINE RECHTE", "KNOW YOUR RIGHTS"],
-    "item1.2.1": ["Was können wir tun?", "What can we do?"],
-    "item1.2.2": ["Wissenswertes & Tipps", ""],
-    "item1.2.3": ["Hasspostings in Social Media melden", ""],
-    "item1.2.4": ["Folder Hass im Netz", ""],
+    "item1.2": ["Lass Uns was tun", "Let's do something"],
+    "item1.2.1": ["Was Du tun kannst", "What you can do"],
+    "item1.2.2": ["Was wir tun können", "What we can do"],
+    "item1.2.3": ["Kenne Deine Rechte", "Know your rights"],
     "item2": ["Training", "Training"],
+    "item2.1": [
+      "Training für Kinder & Jugendliche",
+      "Training for children & young adults"
+    ],
+    "item2.2": ["Training für Erwachsens", "Training for adults"],
     "item3": ["Mitmischen", "Participate"],
     "item4": ["Wissen", "Knowledge"],
-    "item4.1": ["FAQs", "FAQs"],
-    "item4.2": ["Aktuelles", "News"],
+    "item4.1": ["Aktuelles", "News"],
+    "item4.4": ["FAQs", "FAQs"],
     "item5": ["Über ZARA", "About ZARA"]
   }
 }

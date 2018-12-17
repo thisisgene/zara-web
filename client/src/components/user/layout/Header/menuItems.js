@@ -22,29 +22,24 @@ const menuItems = [
         ]
       },
       {
-        name: 'KENNE DEINE RECHTE',
-        link: 'kennedeinerechte',
+        name: 'Lass Uns was tun',
+        link: 'lassunswastun',
         id: '1.2',
         subMenuList: [
           {
-            name: 'Was können wir tun?',
-            link: 'waskoennenwirtun',
+            name: 'Was Du tun kannst',
+            link: 'wasdutunkannst',
             id: '1.2.1'
           },
           {
-            name: 'Wissenswertes & Tipps',
-            link: 'wissenswertes',
+            name: 'Was Wir tun können',
+            link: 'waswirtunkoennen',
             id: '1.2.2'
           },
           {
-            name: 'Hasspostings in Social Media melden',
-            link: 'hasspostingsmelden',
+            name: 'Kenne Deine Rechte',
+            link: 'kennedeinerechte',
             id: '1.2.3'
-          },
-          {
-            name: 'Folder Hass im Netz',
-            link: 'folderhassimnetz',
-            id: '1.2.4'
           }
         ]
       }
@@ -52,7 +47,19 @@ const menuItems = [
   },
   {
     name: 'Training',
-    id: '2'
+    id: '2',
+    subMenuList: [
+      {
+        name: 'Training für Kinder & Jugendliche',
+        link: 'training/kinder_jugendliche',
+        id: '2.1'
+      },
+      {
+        name: 'Training für Erwachsene',
+        link: 'training/erwachsene',
+        id: '2.2'
+      }
+    ]
   },
   { name: 'Mitmischen', id: '3' },
   {
@@ -61,14 +68,14 @@ const menuItems = [
     link: 'wissen',
     subMenuList: [
       {
-        name: 'FAQs',
-        link: 'faq',
+        name: 'Aktuelles',
+        link: 'aktuelles',
         id: '4.1'
       },
       {
-        name: 'Aktuelles',
-        link: 'aktuelles',
-        id: '4.2'
+        name: 'FAQs',
+        link: 'faq',
+        id: '4.4'
       }
     ]
   },

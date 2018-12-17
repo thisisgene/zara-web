@@ -24,8 +24,19 @@ class Header extends Component {
     this.state = {
       mobileExpand: false,
       subMenuVisible: false,
-      subMenuContent: ''
+      subMenuContent: '',
+      subTitleHide: false
     }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    this.setState({
+      subTitleHide: window.scrollY >= 30
+    })
   }
 
   onMobileNavClick = () => {
@@ -75,7 +86,9 @@ class Header extends Component {
             <div className={styles.logo}>
               <img className={styles['logo-img']} src={Logo} alt="Zara" />
               <img
-                className={styles['logo-add-img']}
+                className={cx(styles['logo-add-img'], {
+                  [styles['hide']]: this.state.subTitleHide
+                })}
                 src={LogoAdd}
                 alt="Zivilcourage und Anti-Rassismus-Arbeit"
               />
