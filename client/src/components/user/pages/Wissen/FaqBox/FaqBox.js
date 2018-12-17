@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import FaqItem from './FaqItem'
+
+import cx from 'classnames'
 import styles from './FaqBox.module.sass'
 
 class FaqBox extends Component {
@@ -53,34 +56,37 @@ class FaqBox extends Component {
 
     console.log('filtered: ', filteredContent)
     return (
-      <div>
-        <div className={styles['reset-button']}>
-          <button onClick={this.resetTags}>Alle FAQs</button>
-        </div>
-        <div className={styles['filter-box']}>
-          {tags &&
-            tags.map(tag => (
-              <div className={styles['tag-item']}>
-                <label htmlFor={`tag-${tag.name}`}>{tag[lang].title}</label>
-                <input
-                  name={tag.name}
-                  type="checkbox"
-                  id={`tag-${tag.name}`}
-                  onChange={this.onChange}
-                  checked={this.state.activeTags.includes(tag.name)}
-                />
-              </div>
-            ))}
+      <div className={styles['faq-box']}>
+        <div className={styles['faq-box--filter-bar']}>
+          <div
+            className={cx(styles['reset-button'], {
+              [styles['active']]: this.state.activeTags.length === 0
+            })}
+          >
+            <label onClick={this.resetTags} tabIndex="1">
+              Alle FAQs
+            </label>
+          </div>
+          <div className={styles['filter-box']}>
+            {tags &&
+              tags.map(tag => (
+                <div className={styles['tag-item']}>
+                  <input
+                    name={tag.name}
+                    type="checkbox"
+                    id={`tag-${tag.name}`}
+                    onChange={this.onChange}
+                    checked={this.state.activeTags.includes(tag.name)}
+                  />
+                  <label htmlFor={`tag-${tag.name}`}>{tag[lang].title}</label>
+                </div>
+              ))}
+          </div>
         </div>
         <div>
           {content &&
             lang &&
-            filteredContent.map(faq => (
-              <div>
-                <h2>{faq[lang].title}</h2>
-                <p>{faq[lang].text}</p>
-              </div>
-            ))}
+            filteredContent.map(faq => <FaqItem faq={faq[lang]} />)}
         </div>
       </div>
     )

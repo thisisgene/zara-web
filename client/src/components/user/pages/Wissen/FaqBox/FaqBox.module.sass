@@ -1,0 +1,60 @@
+.faq-box
+  margin: 2rem 0
+  max-width: 1080px
+
+  &--filter-bar
+    padding: 1rem 2rem
+    display: flex
+    align-items: baseline
+    .reset-button
+      label
+        background: none
+        padding: .3rem
+        border: none
+      &.active label
+        border-bottom: 2px solid #ffc800
+    .filter-box
+      display: flex
+      
+      label
+        padding: .3rem
+        cursor: pointer
+      input
+        opacity: 0
+        &:checked ~ label
+          border-bottom: 2px solid #ffc800
+  .faq-item
+    width: 100%
+    padding: 0 2rem
+    // background: rgba(0,0,0,.1)
+
+    &-top
+      font:
+        size: 1.1rem
+        weight: bold
+      padding: .5rem 3rem
+      border-bottom: 1px solid #bbb
+      display: flex
+      justify-content: space-between
+      align-items: center
+      cursor: pointer
+      &--head
+        display: flex
+        align-items: center
+        &__icon
+          font-size: 1.6rem
+        &__title
+          margin-left: 1rem
+
+      &--arrow
+        transition: transform 200ms ease-in-out
+        &.flipped
+          transform: rotateZ(180deg)
+    &--body
+      padding: 1.5rem 4rem .5rem
+      display: none
+      cursor: default
+      &.open
+        display: block
+      p
+        margin: .8rem 0
