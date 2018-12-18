@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
 import Logo from '../../../common/zara_logo.png'
-import LogoAdd from '../../../common/zara_logo_add.png'
 
 import ActIcon from '../../../common/img/act.png'
+
+import MobileSubMenu from './MobileSubMenu'
 
 import cx from 'classnames'
 import styles from './MobileMenu.module.sass'
@@ -14,7 +15,9 @@ export default class MobileMenu extends Component {
   constructor() {
     super()
     this.state = {
-      mobileExpand: false
+      mobileExpand: false,
+      subMenuVisible: false,
+      subMenuContent: ''
     }
   }
 
@@ -23,12 +26,35 @@ export default class MobileMenu extends Component {
     this.setState({
       mobileExpand: !this.state.mobileExpand
     })
+    if (this.state.subMenuVisible) {
+      this.setState({ subMenuVisible: false })
+    }
+  }
+
+  onLinkClick = (id, e) => {
+    // e.preventDefault()
+    console.log(id)
+    this.setState({
+      subMenuContent: id,
+      subMenuVisible: true
+    })
+  }
+
+  onSubLinkClick = () => {
+    this.setState({
+      // subMenuContent: id,
+      subMenuVisible: false
+    })
   }
 
   render() {
     const { menuItems, lang } = this.props
     return (
-      <div className={styles['mobile-menu']}>
+      <div
+        className={cx(styles['mobile-menu'], {
+          [styles['submenu-open']]: this.state.subMenuVisible
+        })}
+      >
         <nav className={cx(styles.header)}>
           <div className={styles['top-header']}>
             <div className={styles['top-header--menu']}>
@@ -49,7 +75,11 @@ export default class MobileMenu extends Component {
         </nav>
         <div className={styles['mobile-menu--header']}>
           <NavLink to="/user">
-            <div className={styles.logo}>
+            <div
+              className={cx(styles.logo, {
+                [styles['submenu-open']]: this.state.subMenuVisible
+              })}
+            >
               <img className={styles['logo-img']} src={Logo} alt="Zara" />
               {/* <img
                 className={cx(styles['logo-add-img'], {
@@ -70,7 +100,7 @@ export default class MobileMenu extends Component {
             </div>
           </div>
         </div>
-        <div />
+
         <div
           className={cx(styles['main-menu-container'], {
             [styles['expand']]: this.state.mobileExpand
@@ -85,29 +115,22 @@ export default class MobileMenu extends Component {
                     <div className={styles['main-menu--item']}>
                       <NavLink
                         activeClassName={styles.active}
-                        to={`/lang}/${item.link}`}
+                        to={`/user/${lang}/${item.link}`}
+                        onClick={this.onMobileNavClick}
                       >
                         <Translate id={`menu.item${item.id}`} />
                       </NavLink>
-                      <div className={styles['main-menu--item__arrow']}>
+                      <div
+                        className={styles['main-menu--item__arrow']}
+                        onClick={this.onLinkClick.bind(this, item.id)}
+                      >
                         <i className="fa fa-angle-right" />
                       </div>
                     </div>
-                    <nav
-                      role="menu"
-                      className={cx(styles['sub-menu'], {
-                        [styles['open']]: this.state.subMenuVisible
-                      })}
-                    >
-                      {/* <SubMenu
-                      menuItems={menuItems}
-                      // subMenuContent={this.state.subMenuContent}
-                      lang={lang}
-                    /> */}
-                    </nav>
                   </div>
                 )
             )}
+
             {/* <h1>Test</h1>
             <h1>Test</h1>
             <h1>Test</h1>
@@ -120,6 +143,20 @@ export default class MobileMenu extends Component {
             <h1>Test</h1> */}
           </div>
         </div>
+        <nav
+          role="menu"
+          className={cx(styles['mobile-sub-menu'], {
+            [styles['open']]: this.state.subMenuVisible
+          })}
+        >
+          <MobileSubMenu
+            menuItems={menuItems}
+            subMenuContent={this.state.subMenuContent}
+            lang={lang}
+            onSubLinkClick={this.onSubLinkClick}
+            onMobileNavClick={this.onMobileNavClick}
+          />
+        </nav>
       </div>
     )
   }
