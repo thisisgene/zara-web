@@ -1,16 +1,22 @@
 .action-bar
   // flex: 1
   height: 2.4rem
-  padding: .3rem 2rem
+  padding: .3rem 0
   &--menu
     width: 100%
     display: flex
     justify-content: center
     align-items: center
+    &.left
+      justify-content: flex-start
     a
       color: #ef542b
       margin: 0 .5rem
       font-weight: bold
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
 
     img
       height: 1.6rem

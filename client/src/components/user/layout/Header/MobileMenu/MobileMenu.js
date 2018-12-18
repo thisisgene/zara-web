@@ -107,6 +107,9 @@ class MobileMenu extends Component {
                   </div>
                 )
             )}
+            <div className={styles['bottom-action-bar-container']}>
+              <ActionBar align={'left'} />
+            </div>
           </div>
         </div>
         <nav
