@@ -28,8 +28,8 @@ class User extends Component {
       { name: 'Deutsch', code: 'de' },
       { name: 'English', code: 'en' }
     ]
-    const defaultLanguage =
-      window.localStorage.getItem('languageCode') || languages[0].code
+    const defaultLanguage = languages[0].code
+    // window.localStorage.getItem('languageCode') || languages[0].code
     // console.log(defaultLanguage)
     this.props.initialize({
       languages,
@@ -53,7 +53,7 @@ class User extends Component {
 
     const hasLanguageChanged = prevLang !== curLang
     if (hasLanguageChanged) {
-      window.localStorage.setItem('languageCode', curLang)
+      // window.localStorage.setItem('languageCode', curLang)
       this.props.setActiveLanguage(curLang)
     }
   }
