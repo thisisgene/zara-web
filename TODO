@@ -1,6 +1,5 @@
 
 Todo:
-  ☐ Implement News
   ☐ Force 'logout' when Token expired.
 
   Admin:
@@ -9,6 +8,6 @@ Todo:
     ☐ Make project and image list dragable
 
   User:
-    ☐ Change Menu color depending on background
+    ☐ Make default language cache working
 
   
