@@ -26,7 +26,7 @@ class InputButtonBox extends Component {
   }
 
   render() {
-    const { content } = this.props
+    const { content, id } = this.props
     return (
       <div className={styles['input-button-box']}>
         {content && (
@@ -53,7 +53,7 @@ class InputButtonBox extends Component {
                       value={this.state.EMAIL}
                       onChange={this.onChange}
                       name="EMAIL"
-                      id="mce-EMAIL"
+                      id={id ? id : 'mce-EMAIL'}
                       onFocus={this.onInputFocus}
                       // ref={(input) => { this.newsletterInput = input; }} />
                     />

@@ -24,15 +24,15 @@ class MobileMenu extends Component {
     }
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.handleScroll)
+  // }
 
-  handleScroll = () => {
-    this.setState({
-      stickyMenu: window.scrollY >= 38
-    })
-  }
+  // handleScroll = () => {
+  //   this.setState({
+  //     stickyMenu: window.scrollY >= 38
+  //   })
+  // }
 
   onMobileNavClick = () => {
     console.log('asd')
@@ -127,7 +127,10 @@ class MobileMenu extends Component {
                 <ActionBar align={'left'} />
               </div>
             </div>
-            <OneLineContainer contentObj={oneLineContent[lang]} />
+            <OneLineContainer
+              contentObj={oneLineContent[lang]}
+              newsletterInputId={'ninpu1'}
+            />
           </div>
           <nav
             role="menu"

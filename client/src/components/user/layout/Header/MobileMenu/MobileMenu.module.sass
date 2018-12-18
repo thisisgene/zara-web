@@ -4,20 +4,21 @@
   .header
     flex: 0 0 1
     z-index: 5
+    padding: .3rem 0
     background: #fff
     pointer-events: all
   .mobile-menu
     width: 100vw
-    top: 2.3rem
+    top: 2.9rem
     flex: 4 0 1
-    position: absolute
+    position: fixed
     z-index: 5
     display: flex
     flex-direction: column
     transition: transform 200ms ease-in-out
     pointer-events: none
     overflow-y: scroll
-    height: calc(100vh - 2.3rem)      
+    height: calc(100vh - 2.9rem)      
     // 
     &.sticky
       height: 100vh

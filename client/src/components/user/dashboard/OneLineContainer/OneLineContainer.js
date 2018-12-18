@@ -8,7 +8,7 @@ import styles from './OneLineContainer.module.sass'
 
 export default class OneLineContainer extends Component {
   render() {
-    const { contentObj } = this.props
+    const { contentObj, newsletterInputId } = this.props
     console.log(contentObj.socialMedia)
     return (
       <div className={styles['one-line-container']}>
@@ -18,7 +18,10 @@ export default class OneLineContainer extends Component {
               <SocialMediaFollowBox content={contentObj.socialMedia} />
             </div>
             <div className={styles['one-line-item']}>
-              <InputButtonBox content={contentObj.inputButtonBox} />
+              <InputButtonBox
+                content={contentObj.inputButtonBox}
+                id={newsletterInputId}
+              />
             </div>
             <div className={styles['one-line-item']}>
               <IconLinkBox content={contentObj.iconLinkBox} />

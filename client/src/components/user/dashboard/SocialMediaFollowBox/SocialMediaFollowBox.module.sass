@@ -1,6 +1,21 @@
 .social-media-box
   display: flex
   align-items: center
+  @media(max-width: 320px)
+    flex-direction: column
+    p
+      margin-bottom: .2rem
+  @media(max-width: 580px)
+    width: 100%
+    max-width: 360px
+    font-size: 1rem
+    // justify-content: center
+    .icon-box
+      flex: 2
+      justify-content: space-between
+    p
+      flex: 0 0 1
+      text-align: left
   p
     color: #1c7878
     font-weight: bold
