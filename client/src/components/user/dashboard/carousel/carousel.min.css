@@ -134,6 +134,7 @@
   -o-transition: height 0.15s ease-in;
   transition: height 0.15s ease-in;
 }
+
 .carousel .slider-wrapper.axis-horizontal .slider {
   -ms-box-orient: horizontal;
   display: -webkit-box;
@@ -261,4 +262,13 @@
 }
 .carousel:hover .slide .legend {
   opacity: 1;
+}
+
+@media (max-width: 820px) {
+  .carousel .slider-wrapper {
+    width: 100vw;
+  }
+  .carousel .control-dots {
+    display: none;
+  }
 }
