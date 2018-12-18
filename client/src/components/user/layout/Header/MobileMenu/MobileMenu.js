@@ -4,14 +4,13 @@ import { withLocalize, Translate } from 'react-localize-redux'
 
 import Logo from '../../../common/zara_logo.png'
 
-import ActIcon from '../../../common/img/act.png'
-
+import ActionBar from '../ActionBar/ActionBar'
 import MobileSubMenu from './MobileSubMenu'
 
 import cx from 'classnames'
 import styles from './MobileMenu.module.sass'
 
-export default class MobileMenu extends Component {
+class MobileMenu extends Component {
   constructor() {
     super()
     this.state = {
@@ -56,22 +55,7 @@ export default class MobileMenu extends Component {
         })}
       >
         <nav className={cx(styles.header)}>
-          <div className={styles['top-header']}>
-            <div className={styles['top-header--menu']}>
-              <NavLink activeClassName={styles.active} to="/user/melden">
-                <img src={ActIcon} alt="" />
-              </NavLink>
-              <NavLink activeClassName={styles.active} to="/user/melden">
-                Melden
-              </NavLink>
-              <NavLink activeClassName={styles.active} to="/user/spenden">
-                Spenden
-              </NavLink>
-              <NavLink activeClassName={styles.active} to="/user/kontakt">
-                Kontakt
-              </NavLink>
-            </div>
-          </div>
+          <ActionBar />
         </nav>
         <div className={styles['mobile-menu--header']}>
           <NavLink to="/user">
@@ -81,13 +65,6 @@ export default class MobileMenu extends Component {
               })}
             >
               <img className={styles['logo-img']} src={Logo} alt="Zara" />
-              {/* <img
-                className={cx(styles['logo-add-img'], {
-                  [styles['hide']]: this.state.subTitleHide
-                })}
-                src={LogoAdd}
-                alt="Zivilcourage und Anti-Rassismus-Arbeit"
-              /> */}
             </div>
           </NavLink>
           <div className={styles['mobile-menu-button']}>
@@ -130,17 +107,6 @@ export default class MobileMenu extends Component {
                   </div>
                 )
             )}
-
-            {/* <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1> */}
           </div>
         </div>
         <nav
@@ -161,3 +127,5 @@ export default class MobileMenu extends Component {
     )
   }
 }
+
+export default withLocalize(MobileMenu)
