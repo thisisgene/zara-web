@@ -9,7 +9,8 @@ class FaqBox extends Component {
   constructor() {
     super()
     this.state = {
-      activeTags: []
+      activeTags: [],
+      searchValue: ''
     }
   }
   onChange = e => {
@@ -25,6 +26,10 @@ class FaqBox extends Component {
         activeTags: activeTags.filter(tag => tag !== e.target.name)
       })
     }
+  }
+
+  searchContent = e => {
+    this.setState({ searchValue: e.target.value })
   }
 
   filterFaq = e => {
@@ -83,11 +88,24 @@ class FaqBox extends Component {
                 </div>
               ))}
           </div>
+          <div className={styles['search-box']}>
+            <input type="text" onChange={this.searchContent} />
+          </div>
         </div>
         <div>
           {content &&
             lang &&
-            filteredContent.map(faq => <FaqItem faq={faq[lang]} />)}
+            filteredContent
+              .filter(
+                faq =>
+                  faq[lang].title
+                    .toLowerCase()
+                    .includes(this.state.searchValue.toLowerCase()) ||
+                  faq[lang].text
+                    .toLowerCase()
+                    .includes(this.state.searchValue.toLowerCase())
+              )
+              .map(faq => <FaqItem faq={faq[lang]} />)}
         </div>
       </div>
     )
