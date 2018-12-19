@@ -63,3 +63,16 @@
     text-decoration: underline
   &--button
     margin-top: 1rem
+
+  @media(max-width: 900px)
+    margin: 0 0 2rem
+    max-width: 100%
+    width: 100%
+    &.red
+      .info-card--title-box
+        align-items: center
+        width: auto
+    &.default
+      .info-card--body
+        &__text
+          display: none
