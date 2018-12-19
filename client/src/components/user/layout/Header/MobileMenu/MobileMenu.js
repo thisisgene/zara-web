@@ -87,13 +87,13 @@ class MobileMenu extends Component {
               </div>
             </NavLink>
             <div className={styles['mobile-menu-button']}>
-              <a href="#menu" onClick={this.onMobileNavClick}>
+              <div onClick={this.onMobileNavClick}>
                 <span
                   className={cx(styles['nav-burger'], {
                     [styles['burger-expand']]: this.state.mobileExpand
                   })}
                 />
-              </a>
+              </div>
             </div>
           </div>
 
@@ -102,7 +102,7 @@ class MobileMenu extends Component {
               [styles['expand']]: this.state.mobileExpand
             })}
           >
-            <div className={styles['main-menu']} id="menu">
+            <div className={styles['main-menu']}>
               {menuItems.map(
                 item =>
                   lang && (

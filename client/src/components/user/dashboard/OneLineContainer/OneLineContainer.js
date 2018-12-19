@@ -9,7 +9,6 @@ import styles from './OneLineContainer.module.sass'
 export default class OneLineContainer extends Component {
   render() {
     const { contentObj, newsletterInputId } = this.props
-    console.log(contentObj.socialMedia)
     return (
       <div className={styles['one-line-container']}>
         {contentObj && (
