@@ -1,6 +1,41 @@
 .faq-box
   margin: 2rem 0 4rem
   max-width: 1080px
+  @media(max-width: 640px)
+    .faq-box--filter-bar
+      font-size: .9rem
+      flex-direction: column
+      .reset-button
+        width: 100%
+        label
+          width: 100%
+          text-align: center
+          background: rgba(#aaa, .1)
+          border-radius: .4rem
+        &.active label
+          border-bottom: 0 solid #ffc800
+          background: rgba(#ffc800, .5)
+      .filter-box
+        // justify-content: center
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        justify-items: stretch
+        align-items: start
+        grid-gap: .4rem .4rem
+        @media(max-width: 442px)
+          grid-template-columns: 1fr 1fr
+
+        label
+          width: 100%
+          text-align: center
+          background: rgba(#aaa, .1)
+          border-radius: .4rem
+          margin: 0
+        input
+          &:checked ~ label
+            border-bottom: 0 solid #ffc800
+            background: rgba(#ffc800, .5)
+  
 
   &--filter-bar
     padding: 1rem 2rem
@@ -21,13 +56,22 @@
         cursor: pointer
       input
         opacity: 0
+        width: 0
+        height: 0
         &:checked ~ label
           border-bottom: 2px solid #ffc800
   .faq-item
     width: 100%
     padding: 0 2rem
     // background: rgba(0,0,0,.1)
-
+    @media(max-width: 600px)
+      padding: 0 1rem
+    @media(max-width: 520px)
+      padding: 0
+      .faq-item-top
+        padding: .5rem 2rem
+      .faq-item--body
+        padding: 1.5rem 2rem .5rem
     &-top
       font:
         size: 1.1rem
