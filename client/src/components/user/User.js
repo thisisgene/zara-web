@@ -9,6 +9,8 @@ import { withLocalize } from 'react-localize-redux'
 import globalTranslations from './common/translations/global.json'
 import { renderToStaticMarkup } from 'react-dom/server'
 
+import ScrollToTop from './ScrollToTop'
+
 import Header from './layout/Header/Header'
 import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
@@ -63,23 +65,29 @@ class User extends Component {
     return (
       <div className={styles.user}>
         <Header />
-        <div className={styles['main-content']}>
-          <Switch>
-            <Route exact path="/user/de" component={Home} />
-            <Route exact path="/user/en" component={Home} />
-            {activeLanguage && (
-              <Redirect
+        <ScrollToTop>
+          <div className={styles['main-content']}>
+            <Switch>
+              <Route exact path="/user/de" component={Home} />
+              <Route exact path="/user/en" component={Home} />
+              {activeLanguage && (
+                <Redirect
+                  exact
+                  from="/user"
+                  to={`/user/${activeLanguage.code}`}
+                />
+              )}
+              <Route path="/user/:lang/beratung" component={Consulting} />
+              <Route exact path="/user/:lang/wissen" component={Wissen} />
+              <Route exact path="/user/:lang/wissen/faq" component={Faq} />
+              <Route
                 exact
-                from="/user"
-                to={`/user/${activeLanguage.code}`}
+                path="/user/:lang/wissen/aktuelles"
+                component={News}
               />
-            )}
-            <Route path="/user/:lang/beratung" component={Consulting} />
-            <Route exact path="/user/:lang/wissen" component={Wissen} />
-            <Route exact path="/user/:lang/wissen/faq" component={Faq} />
-            <Route exact path="/user/:lang/wissen/aktuelles" component={News} />
-          </Switch>
-        </div>
+            </Switch>
+          </div>
+        </ScrollToTop>
         {activeLanguage && <Footer lang={activeLanguage.code} />}
       </div>
     )
