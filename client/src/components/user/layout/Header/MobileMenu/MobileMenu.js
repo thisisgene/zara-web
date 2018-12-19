@@ -127,10 +127,12 @@ class MobileMenu extends Component {
                 <ActionBar align={'left'} />
               </div>
             </div>
-            <OneLineContainer
-              contentObj={oneLineContent[lang]}
-              newsletterInputId={'ninpu1'}
-            />
+            <div className="OneLineContainer">
+              <OneLineContainer
+                contentObj={oneLineContent[lang]}
+                newsletterInputId={'ninpu1'}
+              />
+            </div>
           </div>
           <nav
             role="menu"
