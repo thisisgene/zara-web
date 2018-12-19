@@ -89,7 +89,13 @@ class FaqBox extends Component {
               ))}
           </div>
           <div className={styles['search-box']}>
-            <input type="text" onChange={this.searchContent} />
+            <input
+              type="text"
+              onChange={this.searchContent}
+              placeholder={
+                lang === 'de' ? '"hass im netz..."' : '"online hate"'
+              }
+            />
           </div>
         </div>
         <div>
