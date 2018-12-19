@@ -3,7 +3,7 @@
   max-width: 1080px
   @media(max-width: 640px)
     .faq-box--filter-bar
-      font-size: .9rem
+      font-size: 1rem
       flex-direction: column
       .reset-button
         width: 100%
@@ -21,7 +21,7 @@
         grid-template-columns: 1fr 1fr 1fr
         justify-items: stretch
         align-items: start
-        grid-gap: .4rem .4rem
+        grid-gap: .6rem
         @media(max-width: 442px)
           grid-template-columns: 1fr 1fr
 
@@ -35,12 +35,19 @@
           &:checked ~ label
             border-bottom: 0 solid #ffc800
             background: rgba(#ffc800, .5)
-  
+      .search-box
+        width: 100%
+        margin: .8rem 0
+        font-size: 1.1rem
+        input
+          width: 100%
+          padding: .3rem .5rem
 
   &--filter-bar
     padding: 1rem 2rem
     display: flex
     align-items: baseline
+    justify-content: space-between
     .reset-button
       label
         background: none
@@ -50,10 +57,12 @@
         border-bottom: 2px solid #ffc800
     .filter-box
       display: flex
+      justify-content: space-between
       
       label
         padding: .3rem
         cursor: pointer
+        margin: 0 .5rem
       input
         opacity: 0
         width: 0
