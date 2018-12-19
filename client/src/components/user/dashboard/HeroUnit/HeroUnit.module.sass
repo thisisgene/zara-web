@@ -2,7 +2,7 @@
   display: flex
   justify-content: center
   margin: 8rem auto
-  width: 60vw
+  width: 70vw
   max-width: 1080px
   .hero-unit
     display: flex
@@ -14,6 +14,20 @@
     &--text
       color: #010101
       &__title
+        line-height: 1
+        margin-bottom: .5rem
         font:
           size: 2.4rem
           weight: bold
+
+  @media(max-width: 680px)
+    // display:
+    margin: 4rem auto
+    .hero-unit
+      display: block
+      &--image
+        width: 200px
+        margin: 0 auto
+        margin-bottom: 1rem
+      &--text
+        text-align: center
