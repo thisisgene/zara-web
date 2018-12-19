@@ -20,8 +20,10 @@ class MobileMenu extends Component {
       mobileExpand: false,
       subMenuVisible: false,
       subMenuContent: '',
-      stickyMenu: false
+      stickyMenu: false,
+      scrollToTop: false
     }
+    this.menu = React.createRef()
   }
 
   // componentDidMount() {
@@ -37,7 +39,8 @@ class MobileMenu extends Component {
   onMobileNavClick = () => {
     console.log('asd')
     this.setState({
-      mobileExpand: !this.state.mobileExpand
+      mobileExpand: !this.state.mobileExpand,
+      scrollToTop: true
     })
     if (this.state.subMenuVisible) {
       this.setState({ subMenuVisible: false })
@@ -84,13 +87,13 @@ class MobileMenu extends Component {
               </div>
             </NavLink>
             <div className={styles['mobile-menu-button']}>
-              <div onClick={this.onMobileNavClick}>
+              <a href="#menu" onClick={this.onMobileNavClick}>
                 <span
                   className={cx(styles['nav-burger'], {
                     [styles['burger-expand']]: this.state.mobileExpand
                   })}
                 />
-              </div>
+              </a>
             </div>
           </div>
 
@@ -99,7 +102,7 @@ class MobileMenu extends Component {
               [styles['expand']]: this.state.mobileExpand
             })}
           >
-            <div className={styles['main-menu']}>
+            <div className={styles['main-menu']} id="menu">
               {menuItems.map(
                 item =>
                   lang && (
