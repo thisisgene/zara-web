@@ -9,21 +9,37 @@ import styles from './ActionBar.module.sass'
 
 class ActionBar extends Component {
   render() {
-    const { align } = this.props
+    const { lang, align, onClick } = this.props
     return (
       <div className={styles['action-bar']}>
         <div className={cx(styles['action-bar--menu'], styles[align])}>
-          <NavLink activeClassName={styles.active} to="/user/melden">
+          <NavLink
+            activeClassName={styles.active}
+            to={`/user/${lang}/melden`}
+            onClick={onClick ? onClick : null}
+          >
             <img src={ActIcon} alt="" />
           </NavLink>
-          <NavLink activeClassName={styles.active} to="/user/melden">
-            Melden
+          <NavLink
+            activeClassName={styles.active}
+            to={`/user/${lang}/melden`}
+            onClick={onClick ? onClick : null}
+          >
+            <Translate id={`menu.item0.1`} />
           </NavLink>
-          <NavLink activeClassName={styles.active} to="/user/spenden">
-            Spenden
+          <NavLink
+            activeClassName={styles.active}
+            to={`/user/${lang}/spenden`}
+            onClick={onClick ? onClick : null}
+          >
+            <Translate id={`menu.item0.2`} />
           </NavLink>
-          <NavLink activeClassName={styles.active} to="/user/kontakt">
-            Kontakt
+          <NavLink
+            activeClassName={styles.active}
+            to={`/user/${lang}/kontakt`}
+            onClick={onClick ? onClick : null}
+          >
+            <Translate id={`menu.item0.3`} />
           </NavLink>
         </div>
       </div>

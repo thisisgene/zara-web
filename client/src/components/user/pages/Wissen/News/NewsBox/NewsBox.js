@@ -45,7 +45,7 @@ class NewsBox extends Component {
     if (this.state.activeTags.length > 0) {
       filteredContent = content.filter(filteredNews => {
         for (let tag of filteredNews.tags) {
-          if (this.state.activeTags.includes(tag) == true) return true
+          if (this.state.activeTags.includes(tag) === true) return true
         }
         return false
       })

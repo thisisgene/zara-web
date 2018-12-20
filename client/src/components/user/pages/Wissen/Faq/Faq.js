@@ -139,8 +139,4 @@ class Faq extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  lang: state.lang
-})
-
 export default withLocalize(Faq)

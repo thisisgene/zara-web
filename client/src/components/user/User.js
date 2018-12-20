@@ -49,7 +49,6 @@ class User extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.activeLanguage) {
       this.props.setActiveLanguage(this.props.activeLanguage.code)
-      console.log('actLang: ', this.props.activeLanguage.code)
     }
     const prevLang = prevProps.activeLanguage && prevProps.activeLanguage.code
     const curLang = this.props.activeLanguage && this.props.activeLanguage.code

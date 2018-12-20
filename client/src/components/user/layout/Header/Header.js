@@ -10,10 +10,9 @@ import MobileMenu from './MobileMenu/MobileMenu'
 import Logo from '../../common/zara_logo.png'
 import LogoAdd from '../../common/zara_logo_add.png'
 
+import ActionBar from './ActionBar/ActionBar'
 import menuItemsFromFile from './menuItems'
 import SubMenu from './SubMenu'
-
-import ActIcon from '../../common/img/act.png'
 
 import cx from 'classnames'
 import styles from './Header.module.sass'
@@ -73,9 +72,8 @@ class Header extends Component {
             <NavLink
               onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
               to="/user"
-              onClick={this.onLinkBlur}
             >
-              <div className={styles.logo}>
+              <div className={styles.logo} onClick={this.onLinkBlur}>
                 <img className={styles['logo-img']} src={Logo} alt="Zara" />
                 <img
                   className={cx(styles['logo-add-img'], {
@@ -89,7 +87,12 @@ class Header extends Component {
             <div className={styles['main-menu']}>
               <div className={styles['top-header']}>
                 <div className={styles['top-header--menu']}>
-                  <NavLink
+                  <ActionBar
+                    lang={activeLanguage && activeLanguage.code}
+                    align={'top'}
+                    onClick={this.onLinkBlur}
+                  />
+                  {/* <NavLink
                     activeClassName={styles.active}
                     onClick={this.onLinkBlur}
                     to="/user/melden"
@@ -116,7 +119,7 @@ class Header extends Component {
                     to="/user/kontakt"
                   >
                     Kontakt
-                  </NavLink>
+                  </NavLink> */}
                 </div>
               </div>
               <div className={styles['menu-container']}>

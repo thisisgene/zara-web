@@ -9,6 +9,11 @@
     align-items: center
     &.left
       justify-content: space-between
+    &.top
+      justify-content: flex-start
+      a
+        padding: 0 !important
+
     a
       color: #ef542b
       margin: 0 .5rem
@@ -17,6 +22,10 @@
         margin-left: 0
       &:last-child
         margin-right: 0
+      &.active
+        color: #ef542b
+        text-decoration: none
+        border-bottom: 1px solid #ef542b
 
     img
       height: 1.6em

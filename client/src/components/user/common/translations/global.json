@@ -1,5 +1,9 @@
 {
   "menu": {
+    "item0.1": ["Melden", "Report"],
+    "item0.2": ["Spenden", "Donate"],
+    "item0.3": ["Kontakt", "Contact"],
+
     "item1": ["Beratung", "Consulting"],
     "item1.1": ["Beratung & Melden", "Consulting & Report"],
     "item1.1.1": ["Rassismus", "Racism"],

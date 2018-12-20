@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import Promise from 'promise'
 
 import styles from '../MultiStepForm.module.sass'

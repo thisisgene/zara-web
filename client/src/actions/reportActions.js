@@ -38,7 +38,7 @@ export const sendReport = reportData => dispatch => {
         fileData.append('size', file.size)
         fileData.append('file', file)
         return axios.post('/api/projects/report/images', fileData).then(res => {
-          if (res.data == 'success') {
+          if (res.data === 'success') {
             console.log('images send')
             dispatch({
               type: SEND_REPORT
@@ -51,7 +51,7 @@ export const sendReport = reportData => dispatch => {
         })
       })
     } else {
-      if (res.data.msg == 'success') {
+      if (res.data.msg === 'success') {
         console.log('no images send')
         dispatch({
           type: SEND_REPORT

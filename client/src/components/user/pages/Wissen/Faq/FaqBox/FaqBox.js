@@ -50,7 +50,7 @@ class FaqBox extends Component {
     if (this.state.activeTags.length > 0) {
       filteredContent = content.filter(filteredFaq => {
         for (let tag of filteredFaq.tags) {
-          if (this.state.activeTags.includes(tag) == true) return true
+          if (this.state.activeTags.includes(tag) === true) return true
         }
         return false
       })

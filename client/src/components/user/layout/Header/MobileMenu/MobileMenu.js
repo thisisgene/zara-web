@@ -68,7 +68,7 @@ class MobileMenu extends Component {
     return (
       <div className={styles['mobile-menu-wrapper']}>
         <nav className={cx(styles.header)}>
-          <ActionBar />
+          <ActionBar lang={lang && lang} />
         </nav>
         <div
           className={cx(styles['mobile-menu'], {
@@ -127,7 +127,11 @@ class MobileMenu extends Component {
                   )
               )}
               <div className={styles['bottom-action-bar-container']}>
-                <ActionBar align={'left'} />
+                <ActionBar
+                  lang={lang && lang}
+                  align={'left'}
+                  onClick={this.onMobileNavClick}
+                />
               </div>
             </div>
             <div className="OneLineContainer">

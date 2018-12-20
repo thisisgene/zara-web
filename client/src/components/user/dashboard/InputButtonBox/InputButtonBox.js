@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import cx from 'classnames'
 import styles from './InputButtonBox.module.sass'
 
-const url = 'asdasd'
-
 class InputButtonBox extends Component {
   constructor(props) {
     super(props)
