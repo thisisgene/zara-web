@@ -83,11 +83,11 @@ export const teamData = {
           'Bianca Schönberger hat in Tübingen und Oxford Geschichte und Politik-wissenschaften studiert und anschließend viele Jahre für internationale und entwicklungspolitische Organisationen gearbeitet, u.a für das Entwicklunghilfeprogramm der UNO. Zudem erwarb sie als selbständige Beraterin umfangreiche Erfahrungen in EU-Projekten. Seit Februar 2014 ist sie Geschäftsführerin der neugegründeten GmbH.'
       },
       {
-        image: 'Alice Golub_ZARA.jpg',
+        image: 'Alice Golob_ZARA.jpg',
         field: 'training',
-        name: 'Alice Golub',
+        name: 'Alice Golob',
         text:
-          'Alice Golub unterstützt sein Juni 2018 die Geschäftsführung als Büroassistentin. Sie studiert Rechtswissenschaften an der Universität Wien und hat parallel bereits in diversen Praktika in den Bereichen Antirassismusarbeit, Flüchtlingshilfe und Minderheitenschutz erste Erfahrung gesammelt.'
+          'Alice Golob unterstützt sein Juni 2018 die Geschäftsführung als Büroassistentin. Sie studiert Rechtswissenschaften an der Universität Wien und hat parallel bereits in diversen Praktika in den Bereichen Antirassismusarbeit, Flüchtlingshilfe und Minderheitenschutz erste Erfahrung gesammelt.'
       }
     ],
     en: [
@@ -159,11 +159,11 @@ export const teamData = {
           'Bianca Schönberger hat in Tübingen und Oxford Geschichte und Politik-wissenschaften studiert und anschließend viele Jahre für internationale und entwicklungspolitische Organisationen gearbeitet, u.a für das Entwicklunghilfeprogramm der UNO. Zudem erwarb sie als selbständige Beraterin umfangreiche Erfahrungen in EU-Projekten. Seit Februar 2014 ist sie Geschäftsführerin der neugegründeten GmbH.'
       },
       {
-        image: 'Alice Golub_ZARA.jpg',
+        image: 'Alice Golob_ZARA.jpg',
         field: 'training',
-        name: 'Alice Golub',
+        name: 'Alice Golob',
         text:
-          'Alice Golub unterstützt sein Juni 2018 die Geschäftsführung als Büroassistentin. Sie studiert Rechtswissenschaften an der Universität Wien und hat parallel bereits in diversen Praktika in den Bereichen Antirassismusarbeit, Flüchtlingshilfe und Minderheitenschutz erste Erfahrung gesammelt.'
+          'Alice Golob unterstützt sein Juni 2018 die Geschäftsführung als Büroassistentin. Sie studiert Rechtswissenschaften an der Universität Wien und hat parallel bereits in diversen Praktika in den Bereichen Antirassismusarbeit, Flüchtlingshilfe und Minderheitenschutz erste Erfahrung gesammelt.'
       }
     ]
   }
