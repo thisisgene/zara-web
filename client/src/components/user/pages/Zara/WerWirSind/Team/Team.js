@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
+import { withLocalize } from 'react-localize-redux'
 
-export default class Team extends Component {
+import { teamData } from './team_data'
+
+import HeroUnit from '../../../../dashboard/HeroUnit/HeroUnit'
+
+class Team extends Component {
   render() {
+    const { activeLanguage } = this.props
+    let lang
+    if (activeLanguage && activeLanguage.code) {
+      lang = activeLanguage.code
+    }
     return (
       <div>
-        <p>Team</p>
+        {lang && teamData && <HeroUnit data={teamData.heroUnit} lang={lang} />}
       </div>
     )
   }
 }
+
+export default withLocalize(Team)

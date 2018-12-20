@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import cx from 'classnames'
 import styles from './HeroUnit.module.sass'
 
 class HeroUnit extends Component {
@@ -8,7 +9,9 @@ class HeroUnit extends Component {
     return (
       <div>
         {data && lang && (
-          <div className={styles['hero-unit-container']}>
+          <div
+            className={cx(styles['hero-unit-container'], styles[data.class])}
+          >
             {data.imageSide === 'left' ? (
               <div className={styles['hero-unit']}>
                 <div className={styles['hero-unit--image']}>

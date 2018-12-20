@@ -5,6 +5,7 @@ import { withLocalize, Translate } from 'react-localize-redux'
 import Logo from '../../../common/zara_logo.png'
 
 import ActionBar from '../ActionBar/ActionBar'
+import LanguageToggle from '../LanguageToggle'
 import MobileSubMenu from './MobileSubMenu'
 import OneLineContainer from '../../../dashboard/OneLineContainer/OneLineContainer'
 
@@ -86,13 +87,24 @@ class MobileMenu extends Component {
                 <img className={styles['logo-img']} src={Logo} alt="Zara" />
               </div>
             </NavLink>
-            <div className={styles['mobile-menu-button']}>
-              <div onClick={this.onMobileNavClick}>
-                <span
-                  className={cx(styles['nav-burger'], {
-                    [styles['burger-expand']]: this.state.mobileExpand
-                  })}
-                />
+            <div className={styles['mobile-menu--header__right']}>
+              <div className={styles['second-button']}>
+                {this.state.mobileExpand ? (
+                  <div className={styles['language-box']}>
+                    <LanguageToggle />
+                  </div>
+                ) : (
+                  <p>search</p>
+                )}
+              </div>
+              <div className={styles['mobile-menu-button']}>
+                <div onClick={this.onMobileNavClick}>
+                  <span
+                    className={cx(styles['nav-burger'], {
+                      [styles['burger-expand']]: this.state.mobileExpand
+                    })}
+                  />
+                </div>
               </div>
             </div>
           </div>

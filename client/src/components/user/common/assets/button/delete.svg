@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>button/delete</title>
+    <desc>Created with Sketch.</desc>
+    <g id="button/delete" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <path d="M8.34090909,8.34090909 L22.396951,22.396951" id="Line-8" stroke="#050505" stroke-width="2.5" fill-rule="nonzero"></path>
+        <path d="M8.34090909,8.34090909 L22.396951,22.396951" id="Line-8-Copy" stroke="#050505" stroke-width="2.5" fill-rule="nonzero" transform="translate(15.500000, 15.500000) scale(-1, 1) translate(-15.500000, -15.500000) "></path>
+    </g>
+</svg>

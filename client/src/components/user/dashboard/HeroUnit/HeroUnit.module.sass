@@ -4,11 +4,28 @@
   margin: 8rem auto
   width: 70vw
   max-width: 1080px
+  &.bigImage
+    width: auto
+    margin: 5rem auto 8rem
+    padding: 0 2rem
+      
+    .hero-unit
+      justify-content: center
+      align-items: center
+      // padding-right: 2rem
+      &--image
+        flex: 3
+        // width: 600px
+        img
+          width: 100%
+
+      &--text
+        flex: 2
   .hero-unit
     display: flex
     &--image
       width: 400px
-      margin: 0 2rem
+      margin-left: 2rem
       img
         width: 100%
     &--text
@@ -23,6 +40,18 @@
   @media(max-width: 680px)
     // display:
     margin: 4rem auto
+    &.bigImage
+      margin: 3rem auto
+      .hero-unit
+
+        &--image
+          margin-top: 1rem
+          width: auto
+          img
+            width: 100%
+
+        &--text
+          
     .hero-unit
       display: block
       &--image
