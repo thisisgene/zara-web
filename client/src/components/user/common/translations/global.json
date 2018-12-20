@@ -18,6 +18,9 @@
     "item4": ["Wissen", "Knowledge"],
     "item4.1": ["Aktuelles", "News"],
     "item4.4": ["FAQs", "FAQs"],
-    "item5": ["Über ZARA", "About ZARA"]
+    "item5": ["Über ZARA", "About ZARA"],
+    "item5.1": ["Was wir wollen", "What we want"],
+    "item5.2": ["Wer wir sind", "Who we are"],
+    "item5.2.1": ["Team", "Team"]
   }
 }

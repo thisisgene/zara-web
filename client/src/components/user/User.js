@@ -17,6 +17,7 @@ import Consulting from './pages/Consulting/Consulting'
 import Wissen from './pages/Wissen/Wissen'
 import Faq from './pages/Wissen/Faq/Faq'
 import News from './pages/Wissen/News/News'
+import Team from './pages/Zara/WerWirSind/Team/Team'
 
 import Footer from './layout/Footer/Footer'
 
@@ -84,6 +85,11 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/aktuelles"
                 component={News}
+              />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/wer_wir_sind/team"
+                component={Team}
               />
             </Switch>
           </div>

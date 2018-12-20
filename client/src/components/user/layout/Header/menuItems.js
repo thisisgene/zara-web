@@ -79,7 +79,30 @@ const menuItems = [
       }
     ]
   },
-  { name: 'Über ZARA', id: '5' }
+  {
+    name: 'Über ZARA',
+    id: '5',
+    link: 'ueber_ZARA',
+    subMenuList: [
+      {
+        name: 'Was wir wollen',
+        link: 'was_wir_wollen',
+        id: '5.1'
+      },
+      {
+        name: 'Wer wir sind',
+        link: 'wer_wir_sind',
+        id: '5.2',
+        subMenuList: [
+          {
+            name: 'Team',
+            link: 'team',
+            id: '5.2.1'
+          }
+        ]
+      }
+    ]
+  }
 ]
 
 export default menuItems
