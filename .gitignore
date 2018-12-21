@@ -5,7 +5,7 @@
 config/keys_dev.js
 
 
-# client/build
+client/build
 
 ### macOS ###
 # General

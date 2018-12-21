@@ -11,7 +11,7 @@ import fbLogo from '../../common/assets/icon/social/facebook.svg'
 import instaLogo from '../../common/assets/icon/social/instagram.svg'
 import newsletterLogo from '../../common/assets/icon/social/email.svg'
 import twitterLogo from '../../common/assets/icon/social/twitter.svg'
-import ytLogo from '../../common/assets/icon/social/youtube.svg'
+import ytLogo from '../../common/assets/icon/social/twitter.svg'
 
 class IconObject extends Component {
   render() {
