@@ -47,16 +47,17 @@ const menuItems = [
   },
   {
     name: 'Training',
+    link: 'training',
     id: '2',
     subMenuList: [
       {
         name: 'Training für Kinder & Jugendliche',
-        link: 'training/kinder_jugendliche',
+        link: 'kinder_jugendliche',
         id: '2.1'
       },
       {
         name: 'Training für Erwachsene',
-        link: 'training/erwachsene',
+        link: 'erwachsene',
         id: '2.2'
       }
     ]

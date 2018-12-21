@@ -103,34 +103,6 @@ class Header extends Component {
                     align={'top'}
                     onClick={this.onLinkBlur}
                   />
-                  {/* <NavLink
-                    activeClassName={styles.active}
-                    onClick={this.onLinkBlur}
-                    to="/user/melden"
-                  >
-                    <img src={ActIcon} alt="" />
-                  </NavLink>
-                  <NavLink
-                    activeClassName={styles.active}
-                    onClick={this.onLinkBlur}
-                    to="/user/melden"
-                  >
-                    Melden
-                  </NavLink>
-                  <NavLink
-                    activeClassName={styles.active}
-                    onClick={this.onLinkBlur}
-                    to="/user/spenden"
-                  >
-                    Spenden
-                  </NavLink>
-                  <NavLink
-                    activeClassName={styles.active}
-                    onClick={this.onLinkBlur}
-                    to="/user/kontakt"
-                  >
-                    Kontakt
-                  </NavLink> */}
                 </div>
               </div>
               <div className={styles['menu-container']}>

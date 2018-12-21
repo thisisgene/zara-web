@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { withRouter, Route, Switch, Redirect, NavLink } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -62,11 +62,43 @@ class User extends Component {
   componentDidMount() {}
   render() {
     const { activeLanguage } = this.props
+    const routes = [
+      {
+        path: '/user/de',
+        exact: false,
+        breadcrumb: () => <NavLink to="/user/de">ZARA</NavLink>,
+        main: Home
+      },
+      {
+        path: '/user/:lang/beratung',
+        exact: false,
+        breadcrumb: activeLanguage =>
+          activeLanguage && (
+            <NavLink to={`/user/${activeLanguage.code}/beratung`}>
+              Beratung
+            </NavLink>
+          ),
+        main: Home
+      }
+    ]
+
     return (
       <div className={styles.user}>
         <Header />
+
         <ScrollToTop>
           <div className={styles['main-content']}>
+            <div className={styles['breadcrumb-container']}>
+              {routes.map(route => (
+                <div className={styles['breadcrumb']}>
+                  <Route
+                    exact={route.exact}
+                    path={route.path}
+                    component={route.breadcrumb}
+                  />
+                </div>
+              ))}
+            </div>
             <Switch>
               <Route exact path="/user/de" component={Home} />
               <Route exact path="/user/en" component={Home} />
