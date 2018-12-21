@@ -8,14 +8,16 @@
   &--link
     display: flex
     flex-direction: row
-    align-items: center
+    align-items: flex-end
     display: inline-block
     a
+      font-size: 1.1rem
       // padding: 0 .3rem
       margin-right: 0.5rem
       color: #aaa
       font-weight: normal
-      
+      @media(max-width: 1020px)
+        font-size: 1rem
       @media(max-width: 980px)
         font-size: 1.3rem
         margin-right: .7rem

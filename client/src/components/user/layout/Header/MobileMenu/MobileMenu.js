@@ -4,6 +4,7 @@ import { withLocalize, Translate } from 'react-localize-redux'
 
 import Logo from '../../../common/zara_logo.png'
 
+import IconObject from '../../../dashboard/IconObject/IconObject'
 import ActionBar from '../ActionBar/ActionBar'
 import LanguageToggle from '../LanguageToggle'
 import MobileSubMenu from './MobileSubMenu'
@@ -94,7 +95,9 @@ class MobileMenu extends Component {
                     <LanguageToggle />
                   </div>
                 ) : (
-                  <p>search</p>
+                  <div className={styles['search-box']}>
+                    <IconObject image="search" />
+                  </div>
                 )}
               </div>
               <div className={styles['mobile-menu-button']}>

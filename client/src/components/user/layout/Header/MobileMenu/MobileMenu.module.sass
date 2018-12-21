@@ -58,46 +58,49 @@
           display: flex
           flex-direction: row
           align-items: baseline
+
+          .search-box
+            margin-right: .6rem
           
         .mobile-menu-button
 
+          position: relative
+          z-index: 3
+          .nav-burger
             position: relative
-            z-index: 3
-            .nav-burger
-              position: relative
-              display: block
-              width: 1.6rem
+            display: block
+            width: 1.6rem
+            height: 2px
+            background: rgba(#050505, 1)
+            transition: all 200ms
+            &:before
+              content: ''
+              background: #050505
+              position: absolute
+              left: 0
+              transform: translateY(-.6rem)
+              width: inherit
               height: 2px
-              background: rgba(#050505, 1)
+              transition: all 300ms ease-in-out
+            &:after
+              content: ''
+              background: #050505
+              position: absolute
+              left: 0
+              transform: translateY(.6rem)            
+              width: inherit
+              height: 2px
+              transition: all 300ms ease-in-out
+
+            &.burger-expand
+              background: rgba(#050505, 0)
               transition: all 200ms
               &:before
-                content: ''
-                background: #050505
-                position: absolute
-                left: 0
-                transform: translateY(-.6rem)
-                width: inherit
-                height: 2px
-                transition: all 300ms ease-in-out
+                transform: rotateZ(45deg) translateY(0)
+                background: #ef542b
               &:after
-                content: ''
-                background: #050505
-                position: absolute
-                left: 0
-                transform: translateY(.6rem)            
-                width: inherit
-                height: 2px
-                transition: all 300ms ease-in-out
-
-              &.burger-expand
-                background: rgba(#050505, 0)
-                transition: all 200ms
-                &:before
-                  transform: rotateZ(45deg) translateY(0)
-                  background: #ef542b
-                &:after
-                  transform: rotateZ(-45deg) translateY(0)
-                  background: #ef542b
+                transform: rotateZ(-45deg) translateY(0)
+                background: #ef542b
 
     .main-menu-container
       background: #EDEDED

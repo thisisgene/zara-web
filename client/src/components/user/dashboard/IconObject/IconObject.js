@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 
-import ArrowIcon from '../../common/img/list_arrow.png'
 import ActIcon from '../../common/img/act.png'
 import LockIcon from '../../common/img/lock.svg'
 
-import fbLogo from '../../common/social media/facebook.svg'
-import instaLogo from '../../common/social media/instagram.svg'
-import newsletterLogo from '../../common/social media/newsletter.svg'
-import twitterLogo from '../../common/social media/twitter.svg'
-import ytLogo from '../../common/social media/youtube.svg'
+import ArrowIcon from '../../common/assets/icon/arrow/tertiary.svg'
+
+import search from '../../common/assets/button/search.svg'
+
+import fbLogo from '../../common/assets/icon/social/facebook.svg'
+import instaLogo from '../../common/assets/icon/social/instagram.svg'
+import newsletterLogo from '../../common/assets/icon/social/email.svg'
+import twitterLogo from '../../common/assets/icon/social/twitter.svg'
+import ytLogo from '../../common/assets/icon/social/youtube.svg'
 
 class IconObject extends Component {
   render() {
@@ -18,6 +21,7 @@ class IconObject extends Component {
         act: ActIcon,
         listArrow: ArrowIcon,
         LockIcon,
+        search,
         fbLogo,
         instaLogo,
         twitterLogo,

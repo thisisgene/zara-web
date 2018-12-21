@@ -179,7 +179,7 @@ class Header extends Component {
                   <LanguageToggle />
                 </div>
                 <div className={styles['search-box']}>
-                  <i className="fa fa-search" />
+                  <IconObject image="search" />
                 </div>
               </div>
             </div>

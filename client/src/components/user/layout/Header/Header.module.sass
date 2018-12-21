@@ -88,6 +88,8 @@
                   size: 1rem
                 color: #ED522B
                 padding: 0 .5rem
+                @media(max-width: 1080px)
+                  font-size: .9rem
                 &:first-child 
                   padding: 0 .5rem 0 .2rem
                 &:last-child
@@ -115,11 +117,15 @@
             a
               // margin: 0
               line-height: 1
-              font-size: 1.1rem
+              font-size: 1.2rem
               padding: 0 .2rem .4rem
               border-bottom: 2px solid transparent
               color: #333
               transition: all 200ms ease-in-out
+              @media(max-width: 1080px)
+                font-size: 1.1rem
+              @media(max-width: 1020px)
+                font-size: 1rem
               &:hover
                 text-decoration: none
                 border-bottom: 2px solid #050505
@@ -153,17 +159,25 @@
             label
               cursor: pointer
             a, label
-              margin-right: .2rem
+              margin-right: .3rem
               &:last-child
                 margin-right: 0
               &:hover
                 opacity: .8
               img
-                width: 23px
+                width: 22px
           &--bottom
             display: flex
             flex-direction: row
             align-items: baseline
             justify-content: space-between
             width: 100%
+            .search-box
+              width: 22px
+              height: 22px
+              position: relative
+              img
+                position: absolute
+                top: 0
+                height: 100%
             
