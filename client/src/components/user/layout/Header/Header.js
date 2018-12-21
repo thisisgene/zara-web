@@ -7,8 +7,9 @@ import LanguageToggle from './LanguageToggle'
 import IconObject from '../../dashboard/IconObject/IconObject'
 import MobileMenu from './MobileMenu/MobileMenu'
 
-import Logo from '../../common/zara_logo.png'
-import LogoAdd from '../../common/zara_logo_add.png'
+import Logo from '../../common/assets/logo/collapsed.svg'
+import LogoAddDe from '../../common/assets/logo/claim-de.svg'
+import LogoAddEn from '../../common/assets/logo/claim-en.svg'
 
 import ActionBar from './ActionBar/ActionBar'
 import menuItemsFromFile from './menuItems'
@@ -75,13 +76,23 @@ class Header extends Component {
             >
               <div className={styles.logo} onClick={this.onLinkBlur}>
                 <img className={styles['logo-img']} src={Logo} alt="Zara" />
-                <img
-                  className={cx(styles['logo-add-img'], {
-                    [styles['hide']]: this.state.subTitleHide
-                  })}
-                  src={LogoAdd}
-                  alt="Zivilcourage und Anti-Rassismus-Arbeit"
-                />
+                {activeLanguage && activeLanguage.code === 'de' ? (
+                  <img
+                    className={cx(styles['logo-add-img'], {
+                      [styles['hide']]: this.state.subTitleHide
+                    })}
+                    src={LogoAddDe}
+                    alt="Zivilcourage und Anti-Rassismus-Arbeit"
+                  />
+                ) : (
+                  <img
+                    className={cx(styles['logo-add-img'], {
+                      [styles['hide']]: this.state.subTitleHide
+                    })}
+                    src={LogoAddEn}
+                    alt="Civil Courage and Anti-Racism-Work"
+                  />
+                )}
               </div>
             </NavLink>
             <div className={styles['main-menu']}>
