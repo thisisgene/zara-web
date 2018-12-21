@@ -182,7 +182,7 @@ class Consulting extends Component {
         <OneLineAlert content={oneLineAlert} lang={lang} />
         <InfoBoxObject infoBox={infoObj_default} lang={lang} />
         <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
-        <MultiStepForm />
+        {/* <MultiStepForm /> */}
       </div>
     )
   }
