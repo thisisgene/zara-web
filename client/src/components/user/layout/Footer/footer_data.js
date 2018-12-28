@@ -85,7 +85,7 @@ export const footerContent = {
           ]
         },
         right: {
-          header: 'Spenden',
+          header: 'Spenden an ZARA',
           icon: 'spenden',
           items: [
             {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import ActIcon from '../../common/img/act.png'
+import act from '../../common/assets/icon/act/act.svg'
+import spenden from '../../common/assets/icon/act/donate-text.svg'
 import LockIcon from '../../common/img/lock.svg'
 
 import ArrowIcon from '../../common/assets/icon/arrow/tertiary.svg'
@@ -11,6 +12,7 @@ import email from '../../common/assets/icon/contact/email.svg'
 import hours from '../../common/assets/icon/contact/hours.svg'
 import location from '../../common/assets/icon/contact/location.svg'
 import phone from '../../common/assets/icon/contact/phone.svg'
+import check from '../../common/assets/icon/contact/check.svg'
 
 import fbLogo from '../../common/assets/icon/social/facebook.svg'
 import instaLogo from '../../common/assets/icon/social/instagram.svg'
@@ -23,10 +25,12 @@ class IconObject extends Component {
     const { image } = this.props
     const imageSrc = image =>
       ({
-        act: ActIcon,
+        act,
+        spenden,
         listArrow: ArrowIcon,
         LockIcon,
         search,
+        check,
         email,
         hours,
         location,

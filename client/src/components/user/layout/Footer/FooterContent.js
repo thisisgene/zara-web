@@ -60,8 +60,34 @@ export default class FooterContent extends Component {
                 </div>
               </div>
               <div className={styles['footer-content--right__top--right']}>
-                <div className={styles['footer-content--header']}>
+                <div
+                  className={
+                    styles['footer-content--right__top--right--header']
+                  }
+                >
                   {content.right.top.right.header}
+                </div>
+                <div
+                  className={styles['footer-content--right__top--right__body']}
+                >
+                  <div className={styles['donate-box']}>
+                    <IconObject image={content.right.top.right.icon} />
+                    <div className={styles['donate-box--list']}>
+                      {content.right.top.right.items &&
+                        content.right.top.right.items.map(item => (
+                          <div className={styles['donate-box--list__item']}>
+                            <IconObject image={item.icon} />
+                            <span>{item.text}</span>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                  <div
+                    className={styles['bank-data']}
+                    dangerouslySetInnerHTML={{
+                      __html: content.right.top.right.text
+                    }}
+                  />
                 </div>
               </div>
             </div>
