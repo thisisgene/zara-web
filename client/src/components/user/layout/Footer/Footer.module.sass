@@ -1,5 +1,58 @@
 .footer
-  .footer-content
-    padding: 6rem 3rem
-    width: 100%
+  .footer-content-container
     background: rgba(#ffd300, .1)
+    .footer-content
+      padding: 2rem 0
+      margin: 0 auto
+      max-width: 1080px
+      width: 100%
+      display: flex
+
+      &--child
+        
+      &--header
+        font:
+          size: 1.3rem
+          // weight: bold
+        border-bottom: 2px solid #ffd300
+
+      
+
+      &--left
+        flex: 1
+        margin-right: 1.3rem
+        &__body
+          display: grid
+          grid-template-columns: 1fr 1fr
+          &__item
+            margin-top: 1rem
+            display: flex
+            align-items: flex-start
+            font-size: .9rem
+            &:nth-child(1)
+              grid-column: 1 / span 2
+            &:nth-child(2), &:nth-child(4)
+              grid-column: 1
+            &:nth-child(3)
+              grid-column: 2
+            img
+              width: 1.8rem
+              margin-right: .3rem
+            &--text
+              padding-top: .3rem
+      &--right
+        flex: 2
+        &__top
+          display: flex
+          margin-bottom: 1rem
+          &--left
+            flex: 2
+            margin-right: 1.3rem
+            &__body
+              margin-top: 1rem
+              a
+                color: #050505
+                font-size: .9rem
+                text-decoration: underline
+          &--right
+            flex: 3
