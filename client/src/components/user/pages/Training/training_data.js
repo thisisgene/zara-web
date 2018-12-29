@@ -69,8 +69,8 @@ export const trainingBoxData = {
   items: [
     {
       _id: 'ASnf39',
+      category: '1',
       de: {
-        category: '1',
         title: 'Vielfalt & Zivilcourage I',
         description:
           'Schon für die kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
@@ -78,8 +78,8 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
+      category: '1',
       en: {
-        category: '1',
         title: 'Vielfalt & Zivilcourage I',
         description:
           'Schon für die kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
@@ -90,8 +90,8 @@ export const trainingBoxData = {
     },
     {
       _id: 'AFnbfe2',
+      category: '1',
       de: {
-        category: '1',
         title: 'Vielfalt & Zivilcourage II',
         description:
           'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
@@ -99,8 +99,8 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
+      category: '1',
       en: {
-        category: '1',
         title: 'Vielfalt & Zivilcourage II',
         description:
           'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
@@ -111,8 +111,8 @@ export const trainingBoxData = {
     },
     {
       _id: 'AFnbfe2',
+      category: '1',
       de: {
-        category: '1',
         title: 'Sensibilisierung',
         description:
           'Sensibilisierung von SchülerInnen, um diskriminierende Stereotypsierungen im Alltag zu erkennen und zu vermeiden',
@@ -120,8 +120,8 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
+      category: '1',
       en: {
-        category: '1',
         title: 'Sensibilisierung',
         description:
           'Sensibilisierung von SchülerInnen, um diskriminierende Stereotypsierungen im Alltag zu erkennen und zu vermeiden',
@@ -132,8 +132,8 @@ export const trainingBoxData = {
     },
     {
       _id: 'AFnbfe2',
+      category: '1',
       de: {
-        category: '1',
         title: 'Zivilcourage',
         description:
           'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
@@ -141,8 +141,8 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
+      category: '1',
       en: {
-        category: '1',
         title: 'Zivilcourage',
         description:
           'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
@@ -153,16 +153,16 @@ export const trainingBoxData = {
     },
     {
       _id: 'AFnbfe2',
+      category: '1',
       de: {
-        category: '1',
         title: 'Zivilcourage on- & offline',
         description: 'Zivilcourage und Medienkompetenz gegen Hass im Netz',
         demographic: 'Jugendliche von 12 bis 16 Jahren',
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
+      category: '1',
       en: {
-        category: '1',
         title: 'Zivilcourage on- & offline',
         description: 'Zivilcourage und Medienkompetenz gegen Hass im Netz',
         demographic: 'Jugendliche von 12 bis 16 Jahren',
@@ -172,16 +172,16 @@ export const trainingBoxData = {
     },
     {
       _id: 'AFnb1f4a',
+      category: '2',
       de: {
-        category: '2',
         title: 'Vielfalt & Zivilcourage II',
         description: '… kann man lernen!',
         demographic: 'Jugendliche von 12 bis 16 Jahren',
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
+      category: '2',
       en: {
-        category: '2',
         title: 'Vielfalt & Zivilcourage II',
         description: '… kann man lernen!',
         demographic: 'Jugendliche von 12 bis 16 Jahren',

@@ -136,7 +136,7 @@ class MobileSubMenu extends Component {
                           </div>
                           {trainingBoxData.items &&
                             trainingBoxData.items
-                              .filter(item => item[lang].category === cat.index)
+                              .filter(item => item.category === cat.index)
                               .map((item, itemIndex) => (
                                 <div key={itemIndex}>
                                   {itemIndex <= 4 && (
