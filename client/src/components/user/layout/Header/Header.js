@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
 import LanguageToggle from './LanguageToggle'
-
+import globalTranslations from '../../common/translations/global.json'
+import { renderToStaticMarkup } from 'react-dom/server'
 import IconObject from '../../dashboard/IconObject/IconObject'
 import MobileMenu from './MobileMenu/MobileMenu'
 
@@ -21,6 +22,21 @@ import styles from './Header.module.sass'
 class Header extends Component {
   constructor(props) {
     super(props)
+    console.log('header', props.match.params.lang)
+
+    const languages = [
+      { name: 'Deutsch', code: 'de' },
+      { name: 'English', code: 'en' }
+    ]
+
+    const defaultLanguage = props.match.params.lang || languages[0].code
+    // window.localStorage.getItem('languageCode') || languages[0].code
+    // console.log(defaultLanguage)
+    this.props.initialize({
+      languages,
+      translation: globalTranslations,
+      options: { defaultLanguage, renderToStaticMarkup } // TODO: Set defaultLanguage after reload!
+    })
 
     this.state = {
       mobileExpand: false,

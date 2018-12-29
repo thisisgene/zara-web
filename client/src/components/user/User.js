@@ -6,8 +6,6 @@ import { connect } from 'react-redux'
 import { setActiveLanguage } from '../../actions/userActions'
 
 import { withLocalize } from 'react-localize-redux'
-import globalTranslations from './common/translations/global.json'
-import { renderToStaticMarkup } from 'react-dom/server'
 
 import ScrollToTop from './ScrollToTop'
 
@@ -26,19 +24,6 @@ import styles from './User.module.sass'
 class User extends Component {
   constructor(props) {
     super(props)
-
-    const languages = [
-      { name: 'Deutsch', code: 'de' },
-      { name: 'English', code: 'en' }
-    ]
-    const defaultLanguage = languages[0].code
-    // window.localStorage.getItem('languageCode') || languages[0].code
-    // console.log(defaultLanguage)
-    this.props.initialize({
-      languages,
-      translation: globalTranslations,
-      options: { defaultLanguage, renderToStaticMarkup } // TODO: Set defaultLanguage after reload!
-    })
 
     // this.props.addTranslation(headerTranslations)
     this.state = {
@@ -84,7 +69,8 @@ class User extends Component {
 
     return (
       <div className={styles.user}>
-        <Header />
+        <Route path="/user/:lang" component={Header} />
+        {/* <Header /> */}
 
         <ScrollToTop>
           <div className={styles['main-content']}>
@@ -100,8 +86,16 @@ class User extends Component {
               ))}
             </div>
             <Switch>
-              <Route exact path="/user/de" component={Home} />
-              <Route exact path="/user/en" component={Home} />
+              <Route exact path="/user/:lang" component={Home} />
+              {/* <Route exact path="/user/en" component={Home} /> */}
+
+              {/* <Route
+                path="/user/:lang/*"
+                action={() =>
+                  this.props.setActiveLanguage(this.props.match.params.lang)
+                }
+              /> */}
+
               {activeLanguage && (
                 <Redirect
                   exact
