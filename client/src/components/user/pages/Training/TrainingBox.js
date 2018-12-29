@@ -26,11 +26,12 @@ export default class TrainingBox extends Component {
         {content && lang && (
           <div className={styles['training-box']}>
             <div className={styles['training-box--text']}>
-              {content[lang].text}
+              <p>{content[lang].text}</p>
+              <p>{content[lang].text2}</p>
             </div>
             <h1>{content[lang].title}</h1>
 
-            <div className="training-box--categories">
+            <div className={styles['training-box--categories']}>
               {content[lang].categories &&
                 content[lang].categories.map((cat, index) => (
                   <div key={index} className={styles['cat-item']}>

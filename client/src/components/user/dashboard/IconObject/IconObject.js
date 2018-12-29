@@ -5,6 +5,7 @@ import spenden from '../../common/assets/icon/act/donate-text.svg'
 import LockIcon from '../../common/img/lock.svg'
 
 import ArrowIcon from '../../common/assets/icon/arrow/tertiary.svg'
+import arrowRight from '../../common/assets/icon/arrow/right.svg'
 
 import search from '../../common/assets/button/search.svg'
 
@@ -20,6 +21,9 @@ import newsletterLogo from '../../common/assets/icon/social/email.svg'
 import twitterLogo from '../../common/assets/icon/social/twitter.svg'
 import ytLogo from '../../common/assets/icon/social/youtube.svg'
 
+import participants from '../../common/assets/icon/workshop/participants.svg'
+import duration from '../../common/assets/icon/workshop/duration.svg'
+
 class IconObject extends Component {
   render() {
     const { image } = this.props
@@ -27,6 +31,7 @@ class IconObject extends Component {
       ({
         act,
         spenden,
+        arrowRight,
         listArrow: ArrowIcon,
         LockIcon,
         search,
@@ -39,7 +44,9 @@ class IconObject extends Component {
         instaLogo,
         twitterLogo,
         ytLogo,
-        newsletterLogo
+        newsletterLogo,
+        participants,
+        duration
       }[image])
     return <img src={imageSrc(image)} alt={image} />
   }

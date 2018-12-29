@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Redirect, NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
 import LanguageToggle from './LanguageToggle'
@@ -189,6 +189,9 @@ class Header extends Component {
             <MobileMenu menuItems={menuItems} lang={activeLanguage.code} />
           )}
         </div>
+        {activeLanguage && (
+          <Redirect exact from="/user" to={`/user/${activeLanguage.code}`} />
+        )}
       </div>
     )
   }

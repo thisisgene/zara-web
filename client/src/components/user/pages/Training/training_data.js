@@ -40,7 +40,9 @@ export const oneLineAlert = {
 export const trainingBoxData = {
   de: {
     text:
-      'ZARA Training gemeinnützige GmbH bietet in ganz Österreich zielgruppengerechte und individuell gestaltbare Aus- und Fortbildungen, Workshops und Projekte in den Bereichen Diversity, Bewusstseinsbildung, Anti-Rassismus und Zivilcourage an. Bedarfs- und praxisorientiert unterstützt die GmbH auf diese Weise Kompetenzvermehrung in Unternehmen, Schulen, Behörden, Vereinen uvm. ZARA Training wurde im Februar 2014 von ZARA – Zivilcourage und Anti-Rassismus-Arbeit – gegründet und führt dessen Präventionsarbeit fort.',
+      'ZARA Training gemeinnützige GmbH bietet in ganz Österreich zielgruppengerechte und individuell gestaltbare Aus- und Fortbildungen, Workshops und Projekte in den Bereichen Diversity, Bewusstseinsbildung, Anti-Rassismus und Zivilcourage an. Bedarfs- und praxisorientiert unterstützt die GmbH auf diese Weise Kompetenzvermehrung in Unternehmen, Schulen, Behörden, Vereinen uvm.',
+    text2:
+      'ZARA Training wurde im Februar 2014 von ZARA – Zivilcourage und Anti-Rassismus-Arbeit – gegründet und führt dessen Präventionsarbeit fort.',
     title: 'Unser Trainingsangebot',
     categories: [
       {
@@ -54,7 +56,9 @@ export const trainingBoxData = {
   },
   en: {
     text:
-      'ZARA Training gemeinnützige GmbH bietet in ganz Österreich zielgruppengerechte und individuell gestaltbare Aus- und Fortbildungen, Workshops und Projekte in den Bereichen Diversity, Bewusstseinsbildung, Anti-Rassismus und Zivilcourage an. Bedarfs- und praxisorientiert unterstützt die GmbH auf diese Weise Kompetenzvermehrung in Unternehmen, Schulen, Behörden, Vereinen uvm. ZARA Training wurde im Februar 2014 von ZARA – Zivilcourage und Anti-Rassismus-Arbeit – gegründet und führt dessen Präventionsarbeit fort.',
+      'ZARA Training gemeinnützige GmbH bietet in ganz Österreich zielgruppengerechte und individuell gestaltbare Aus- und Fortbildungen, Workshops und Projekte in den Bereichen Diversity, Bewusstseinsbildung, Anti-Rassismus und Zivilcourage an. Bedarfs- und praxisorientiert unterstützt die GmbH auf diese Weise Kompetenzvermehrung in Unternehmen, Schulen, Behörden, Vereinen uvm.',
+    text2:
+      'ZARA Training wurde im Februar 2014 von ZARA – Zivilcourage und Anti-Rassismus-Arbeit – gegründet und führt dessen Präventionsarbeit fort.',
     title: 'Our Trainingsangebot',
     categories: [
       {
@@ -78,7 +82,6 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
-      category: '1',
       en: {
         title: 'Vielfalt & Zivilcourage I',
         description:
@@ -99,7 +102,6 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
-      category: '1',
       en: {
         title: 'Vielfalt & Zivilcourage II',
         description:
@@ -120,7 +122,6 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
-      category: '1',
       en: {
         title: 'Sensibilisierung',
         description:
@@ -141,7 +142,6 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
-      category: '1',
       en: {
         title: 'Zivilcourage',
         description:
@@ -161,7 +161,6 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
-      category: '1',
       en: {
         title: 'Zivilcourage on- & offline',
         description: 'Zivilcourage und Medienkompetenz gegen Hass im Netz',
@@ -180,7 +179,6 @@ export const trainingBoxData = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop'
       },
-      category: '2',
       en: {
         title: 'Vielfalt & Zivilcourage II',
         description: '… kann man lernen!',

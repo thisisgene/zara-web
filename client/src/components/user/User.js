@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import { setActiveLanguage } from '../../actions/userActions'
 
 import { withLocalize } from 'react-localize-redux'
+import globalTranslations from './common/translations/global.json'
+import { renderToStaticMarkup } from 'react-dom/server'
 
 import ScrollToTop from './ScrollToTop'
 
@@ -25,6 +27,20 @@ import styles from './User.module.sass'
 class User extends Component {
   constructor(props) {
     super(props)
+
+    const languages = [
+      { name: 'Deutsch', code: 'de' },
+      { name: 'English', code: 'en' }
+    ]
+    console.log('langu', props.match.params)
+    const defaultLanguage = languages[0].code
+    // window.localStorage.getItem('languageCode') || languages[0].code
+    // console.log(defaultLanguage)
+    this.props.initialize({
+      languages,
+      translation: globalTranslations,
+      options: { defaultLanguage, renderToStaticMarkup } // TODO: Set defaultLanguage after reload!
+    })
 
     // this.props.addTranslation(headerTranslations)
     this.state = {
@@ -112,9 +128,7 @@ class User extends Component {
                 path="/user/:lang/wissen/aktuelles"
                 component={News}
               />
-
               <Route exact path="/user/:lang/training" component={Training} />
-
               <Route
                 exact
                 path="/user/:lang/ueber_ZARA/wer_wir_sind/team"
