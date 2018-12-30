@@ -1,6 +1,10 @@
 .training-detail
   // max-width: 1080px
   margin: 0 auto
+  h1
+    font:
+      size: 1.8rem
+      weight: bold
   &--text
     max-width: 800px
     margin: 2rem auto
@@ -10,10 +14,7 @@
     max-width: 1080px
     margin: 0 auto
     padding: 0 3rem
-    &__title
-      font:
-        size: 1.8rem
-        weight: bold
+    
 
     &__wrapper
       display: flex
@@ -23,7 +24,7 @@
         display: grid
         grid-template-columns: 1fr 1fr
         text-align: center
-        .testimonial
+        
       a
         color: #050505
         margin: 1rem
@@ -37,4 +38,24 @@
         border: 1px solid #ffc800
         &:first-child
           margin-left: 0
-        
+  &--suggestions
+    padding: 0 3rem
+    h1
+      margin-bottom: 2rem
+    a
+      &:hover
+        text-decoration: none
+        opacity: .8
+
+      .more-info
+        padding: 2rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+        h1
+          color: #050505
+          font-size: 1.4rem
+          margin-bottom: 1rem
+            

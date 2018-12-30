@@ -135,6 +135,7 @@ export const trainingBoxData = {
     {
       _id: 'ASnf39',
       category: '1',
+      related: [{ id: 'aeFErf2' }, { id: 'fwfsRG' }],
       de: {
         title: 'Vielfalt & Zivilcourage I',
         text:

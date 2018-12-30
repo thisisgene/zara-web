@@ -6,6 +6,7 @@ import LockIcon from '../../common/img/lock.svg'
 
 import ArrowIcon from '../../common/assets/icon/arrow/tertiary.svg'
 import arrowRight from '../../common/assets/icon/arrow/right.svg'
+import arrowButtonRight from '../../common/assets/icon/arrow-button/right.svg'
 
 import search from '../../common/assets/button/search.svg'
 
@@ -32,6 +33,7 @@ class IconObject extends Component {
         act,
         spenden,
         arrowRight,
+        arrowButtonRight,
         listArrow: ArrowIcon,
         LockIcon,
         search,

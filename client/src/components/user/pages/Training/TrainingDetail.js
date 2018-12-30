@@ -6,8 +6,12 @@ import { trainingBoxData, oneLineAlertDetail } from './training_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
+import TrainingItem from './TrainingItem'
+import IconObject from '../../dashboard/IconObject/IconObject'
 
+import cx from 'classnames'
 import styles from './TrainingDetail.module.sass'
+import parentStyles from './Training.module.sass'
 
 class TrainingDetail extends Component {
   constructor(props) {
@@ -41,9 +45,7 @@ class TrainingDetail extends Component {
               {training[lang].detailText}
             </div>
             <div className={styles['training-detail--testimonials']}>
-              <div className={styles['training-detail--testimonials__title']}>
-                {lang === 'de' ? 'Referenzen' : 'Testimonials'}
-              </div>
+              <h1>{lang === 'de' ? 'Referenzen' : 'Testimonials'}</h1>
               {trainingBoxData[lang].categories
                 .filter(cat => cat.index === training.category)
                 .map(cat => (
@@ -72,6 +74,47 @@ class TrainingDetail extends Component {
                   </div>
                 ))}
             </div>
+            {training.related && (
+              <div className={styles['training-detail--suggestions']}>
+                <h1>
+                  {lang === 'de'
+                    ? 'Weitere Workshop Empfehlungen'
+                    : 'More workshop suggestions'}
+                </h1>
+                <div
+                  className={cx(
+                    styles['training-detail--suggestions__wrapper'],
+                    parentStyles['training-box--content']
+                  )}
+                >
+                  {training.related.map(rel =>
+                    trainingBoxData.items
+                      .filter(item => item._id === rel.id)
+                      .map((item, index) => (
+                        <div key={index}>
+                          <TrainingItem content={item} lang={lang} />
+                        </div>
+                      ))
+                  )}
+
+                  <Link to={`/user/${lang}/trainings/kinder_jugendliche`}>
+                    <div
+                      className={cx(
+                        styles['more-info'],
+                        parentStyles['training-item']
+                      )}
+                    >
+                      <h1>
+                        {lang === 'de'
+                          ? 'Mehr zu Trainings für Kinder & Jugendliche'
+                          : 'More Trainings for Children'}
+                      </h1>
+                      <IconObject image="arrowButtonRight" />
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
