@@ -2,7 +2,8 @@
   display: flex
   flex-direction: column
   .header
-    position: fixed
+    // position: fixed
+    height: 3rem
     flex: 0 0 1
     width: 100%
     z-index: 5
@@ -13,19 +14,22 @@
     width: 100vw
     top: 2.9rem
     flex: 4 0 1
-    position: fixed
+    // position: fixed
+    position: absolute
+    top: 3rem
     z-index: 5
     display: flex
     flex-direction: column
     transition: transform 200ms ease-in-out
     pointer-events: none
     overflow-y: scroll
-    height: calc(100vh - 2.9rem)      
+    height: calc(100vh - 3rem)
     // 
-    &.sticky
-      height: 100vh
-      position: fixed
-      top: 0
+    &.submenu-open
+      height: auto
+
+      // position: fixed
+      // top: 0
     
       
     .mobile-menu--header
@@ -105,14 +109,17 @@
     .main-menu-container
       background: #EDEDED
       border-top: 1px solid #050505
+      
       transform: translateY(-120%)
       transition: transform 220ms ease-in-out
       flex: 1
-      // height: 100px
+      height: calc(100vh - 3.4rem)
       pointer-events: none
       position: relative
-      overflow-y: auto
+      overflow-y: scroll
+      
       &.expand
+        
         pointer-events: all
         transform: translateY(0)
         .main-menu
@@ -121,7 +128,6 @@
         padding: 1rem 2rem
         position: relative
         top: auto
-        
         &--item
           display: flex
           justify-content: space-between

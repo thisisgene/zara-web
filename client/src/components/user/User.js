@@ -87,7 +87,9 @@ class User extends Component {
 
     return (
       <div className={styles.user}>
-        <Route path="/user/:lang" component={Header} />
+        <div className={styles['user--header']}>
+          <Route path="/user/:lang" component={Header} />
+        </div>
         {/* <Header /> */}
 
         <ScrollToTop>

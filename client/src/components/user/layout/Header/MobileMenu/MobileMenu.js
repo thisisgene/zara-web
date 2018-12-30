@@ -74,8 +74,8 @@ class MobileMenu extends Component {
         </nav>
         <div
           className={cx(styles['mobile-menu'], {
-            [styles['submenu-open']]: this.state.subMenuVisible,
-            [styles['sticky']]: this.state.stickyMenu
+            [styles['submenu-open']]: this.state.mobileExpand
+            // [styles['sticky']]: this.state.stickyMenu
           })}
         >
           <div className={styles['mobile-menu--header']}>

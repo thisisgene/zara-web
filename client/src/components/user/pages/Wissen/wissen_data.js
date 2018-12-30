@@ -65,28 +65,28 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scale.png',
+        image: 'scales.png',
         title: 'Kenne Deine Rechte',
         link: 'beratung/lassunswastun/kennedeinerechte'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'books.png',
+        image: 'book.png',
         text: 'Publikationen',
         link: 'test'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'qna.png',
+        image: 'faq-bubble.png',
         text: 'FAQs',
         link: 'wissen/faq'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'list.png',
+        image: 'press.png',
         text: 'Presse',
         link: 'wissen/faq'
       }
