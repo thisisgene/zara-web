@@ -12,9 +12,9 @@ class SubMenu extends Component {
     const { menuItems, subMenuContent, lang } = this.props
     return (
       <div>
-        {menuItems.map(item => {
+        {menuItems.map((item, index) => {
           return (
-            <div>
+            <div key={index}>
               {item.name !== 'Training' ? (
                 <div
                   className={cx(styles['sub-menu-item'], {

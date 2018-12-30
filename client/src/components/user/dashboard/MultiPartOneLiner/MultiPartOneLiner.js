@@ -11,8 +11,8 @@ class MultiPartOneLiner extends Component {
     return (
       <div className={styles['multi-part-one-liner']}>
         {content &&
-          content.map(item => (
-            <div className={styles['multi-part-one-liner--item']}>
+          content.map((item, index) => (
+            <div key={index} className={styles['multi-part-one-liner--item']}>
               {item[lang].icon && <IconObject image={item[lang].icon} />}
               <div className={styles['multi-part-one-liner--item__text']}>
                 {item[lang].title && <h1>{item[lang].title}</h1>}

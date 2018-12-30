@@ -5,7 +5,6 @@ import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
 import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
-import MultiStepForm from '../../dashboard/MultiStepForm/MultiStepForm'
 
 const heroData = {
   image: 'consulting.jpg',

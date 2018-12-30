@@ -24,8 +24,11 @@ export default class FooterContent extends Component {
             </div>
             <div className={styles['footer-content--left__body']}>
               {content.left.items &&
-                content.left.items.map(item => (
-                  <div className={styles['footer-content--left__body__item']}>
+                content.left.items.map((item, index) => (
+                  <div
+                    key={index}
+                    className={styles['footer-content--left__body__item']}
+                  >
                     <IconObject image={item.icon} />
                     <div
                       className={
@@ -52,8 +55,8 @@ export default class FooterContent extends Component {
                   className={styles['footer-content--right__top--left__body']}
                 >
                   {content.right.top.left.items &&
-                    content.right.top.left.items.map(item => (
-                      <div>
+                    content.right.top.left.items.map((item, index) => (
+                      <div key={index}>
                         <Link to={item.link}>{item.linkText}</Link>
                       </div>
                     ))}
@@ -74,8 +77,11 @@ export default class FooterContent extends Component {
                     <IconObject image={content.right.top.right.icon} />
                     <div className={styles['donate-box--list']}>
                       {content.right.top.right.items &&
-                        content.right.top.right.items.map(item => (
-                          <div className={styles['donate-box--list__item']}>
+                        content.right.top.right.items.map((item, index) => (
+                          <div
+                            key={index}
+                            className={styles['donate-box--list__item']}
+                          >
                             <IconObject image={item.icon} />
                             <span>{item.text}</span>
                           </div>
