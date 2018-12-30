@@ -143,8 +143,8 @@ class MobileSubMenu extends Component {
                                     <div className={styles['sub-sub-item']}>
                                       <NavLink
                                         to={`/user/${lang}/training/${
-                                          cat.link
-                                        }/${item._id}`}
+                                          item._id
+                                        }`}
                                         activeClassName={styles.active}
                                         onClick={this.props.onMobileNavClick}
                                       >

@@ -189,9 +189,9 @@ class Header extends Component {
             <MobileMenu menuItems={menuItems} lang={activeLanguage.code} />
           )}
         </div>
-        {activeLanguage && (
+        {/* {activeLanguage && (
           <Redirect exact from="/user" to={`/user/${activeLanguage.code}`} />
-        )}
+        )} */}
       </div>
     )
   }

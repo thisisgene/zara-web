@@ -30,7 +30,13 @@ export default class TrainingBox extends Component {
               <p>{content[lang].text2}</p>
             </div>
             <h1>{content[lang].title}</h1>
-
+            <a
+              className={styles['training-box--privacy-link']}
+              href={content[lang].privacyPolicyLink}
+              target="blank"
+            >
+              {content[lang].privacyPolicyText}
+            </a>
             <div className={styles['training-box--categories']}>
               {content[lang].categories &&
                 content[lang].categories.map((cat, index) => (

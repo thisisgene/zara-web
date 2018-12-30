@@ -85,9 +85,7 @@ class SubMenu extends Component {
                                 {itemIndex <= 4 && (
                                   <div className={styles['sub-sub-item']}>
                                     <NavLink
-                                      to={`/user/${lang}/training/${cat.link}/${
-                                        item._id
-                                      }`}
+                                      to={`/user/${lang}/training/${item._id}`}
                                       activeClassName={styles.active}
                                       onClick={this.props.onClick}
                                     >

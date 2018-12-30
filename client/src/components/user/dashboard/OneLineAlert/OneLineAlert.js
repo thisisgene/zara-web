@@ -27,7 +27,10 @@ class OneLineAlert extends Component {
                     {content[lang].title}
                   </div>
                 )}
-                <div className={styles['alert-text']}>{content[lang].text}</div>
+                <div
+                  className={styles['alert-text']}
+                  dangerouslySetInnerHTML={{ __html: content[lang].text }}
+                />
               </div>
             )}
           </div>

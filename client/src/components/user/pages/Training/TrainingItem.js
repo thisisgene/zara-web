@@ -12,18 +12,20 @@ class TrainingItem extends Component {
     return (
       <div className={styles['training-item']}>
         <div className={styles['training-item--title']}>{item.title}</div>
-        <div className={styles['training-item--description']}>
-          {item.description}
-        </div>
+        <div className={styles['training-item--description']}>{item.text}</div>
         <div className={styles['training-item--info']}>
-          <div className={styles['training-item--info__child']}>
-            <IconObject image="participants" />
-            <div>{item.demographic}</div>
-          </div>
-          <div className={styles['training-item--info__child']}>
-            <IconObject image="duration" />
-            <div>{item.duration}</div>
-          </div>
+          {item.demographic && (
+            <div className={styles['training-item--info__child']}>
+              <IconObject image="participants" />
+              <div>{item.demographic}</div>
+            </div>
+          )}
+          {item.duration && (
+            <div className={styles['training-item--info__child']}>
+              <IconObject image="duration" />
+              <div>{item.duration}</div>
+            </div>
+          )}
         </div>
         <div className={styles['training-item--link']}>
           <Link to={`/user/${lang}/training/${content._id}`}>
