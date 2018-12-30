@@ -417,7 +417,7 @@ class Home extends Component {
     }
     return (
       <div className={styles['main-content']}>
-        <CarouselGroup serverData={fakeServerData} lang={lang} />
+        <CarouselGroup data={fakeServerData} lang={lang} />
         <OneLineAlert content={oneLineAlert} lang={lang} />
         <BigNewsObject content={mainInfo} />
         <InfoBoxObject infoBox={infoObj_default} lang={lang} />

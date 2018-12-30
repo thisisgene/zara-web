@@ -8,7 +8,7 @@ import styles from './CarouselGroup.module.sass'
 
 class CarouselGroup extends Component {
   render() {
-    const { serverData, lang } = this.props
+    const { data, lang } = this.props
 
     return (
       <div className={styles['carousel-container']}>
@@ -21,9 +21,9 @@ class CarouselGroup extends Component {
           transitionTime={1000}
           showStatus={false}
         >
-          {serverData &&
+          {data &&
             lang &&
-            serverData.map((item, index) => (
+            data.map((item, index) => (
               <CarouselItem key={index} item={item} lang={lang} />
             ))}
         </Carousel>

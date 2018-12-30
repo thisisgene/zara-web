@@ -14,7 +14,10 @@ class CompactInfoCardObject extends Component {
         <Link to={card.link}>
           {card.type === 'imageCard' && (
             <div className={styles['compact-card--image']}>
-              <img src={Image} alt="" />
+              <img
+                src={`/assets/img/info_cards/${card.image}`}
+                alt={card.image}
+              />
             </div>
           )}
           <div className={styles['compact-card--body']}>
