@@ -14,6 +14,7 @@ import ScrollToTop from './ScrollToTop'
 import Header from './layout/Header/Header'
 import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
+import Report from './pages/Consulting/Report'
 import Training from './pages/Training/Training'
 import TrainingDetail from './pages/Training/TrainingDetail'
 import Wissen from './pages/Wissen/Wissen'
@@ -107,14 +108,6 @@ class User extends Component {
             </div>
             <Switch>
               <Route exact path="/user/:lang" component={Home} />
-              {/* <Route exact path="/user/en" component={Home} /> */}
-
-              {/* <Route
-                path="/user/:lang/*"
-                action={() =>
-                  this.props.setActiveLanguage(this.props.match.params.lang)
-                }
-              /> */}
 
               {activeLanguage && (
                 <Redirect
@@ -123,7 +116,13 @@ class User extends Component {
                   to={`/user/${activeLanguage.code}`}
                 />
               )}
-              <Route path="/user/:lang/beratung" component={Consulting} />
+              <Route exact path="/user/:lang/beratung" component={Consulting} />
+              <Route
+                exact
+                path="/user/:lang/beratung/melden/:report"
+                component={Report}
+              />
+
               <Route exact path="/user/:lang/wissen" component={Wissen} />
               <Route exact path="/user/:lang/wissen/faq" component={Faq} />
               <Route
