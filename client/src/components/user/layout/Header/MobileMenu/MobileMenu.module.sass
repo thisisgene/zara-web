@@ -50,18 +50,22 @@
 
         &.submenu-open
           transform: translateX(-200%)
+          
         img
           height: 3.4rem
       &__right
         display: flex
         align-items: center
-        // justify-content: center
+ 
         .second-button
           // width: 10rem
           margin-right: 1rem
           display: flex
           flex-direction: row
           align-items: baseline
+          transition: transform 200ms ease-in-out
+          &.submenu-open
+            transform: translateX(400%)
 
           .search-box
             margin-right: .6rem
@@ -145,8 +149,8 @@
             font-size: 1.8rem 
 
     .mobile-sub-menu
-      position: fixed
-      top: 2.9rem
+      position: absolute
+      // top: 2.9rem
       z-index: 17
       width: 100vw
       transform: translateX(100%)

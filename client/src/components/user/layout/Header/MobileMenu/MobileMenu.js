@@ -75,7 +75,6 @@ class MobileMenu extends Component {
         <div
           className={cx(styles['mobile-menu'], {
             [styles['submenu-open']]: this.state.mobileExpand
-            // [styles['sticky']]: this.state.stickyMenu
           })}
         >
           <div className={styles['mobile-menu--header']}>
@@ -88,8 +87,16 @@ class MobileMenu extends Component {
                 <img className={styles['logo-img']} src={Logo} alt="Zara" />
               </div>
             </NavLink>
-            <div className={styles['mobile-menu--header__right']}>
-              <div className={styles['second-button']}>
+            <div
+              className={cx(styles['mobile-menu--header__right'], {
+                [styles['submenu-open']]: this.state.subMenuVisible
+              })}
+            >
+              <div
+                className={cx(styles['second-button'], {
+                  [styles['submenu-open']]: this.state.subMenuVisible
+                })}
+              >
                 {this.state.mobileExpand ? (
                   <div className={styles['language-box']}>
                     <LanguageToggle />
