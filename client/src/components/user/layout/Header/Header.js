@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
 import LanguageToggle from './LanguageToggle'

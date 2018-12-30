@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import IconObject from '../IconObject/IconObject'
 
@@ -9,7 +9,7 @@ import ButtonObject from '../ButtonObject/ButtonObject'
 
 class InfoCardObject extends Component {
   render() {
-    const { card } = this.props
+    const { card, lang } = this.props
     return (
       <div
         className={cx(styles['info-card'], {
@@ -38,11 +38,11 @@ class InfoCardObject extends Component {
 
         {card.linkType && card.linkType === 'button' && card.button ? (
           <div className={styles['info-card--button']}>
-            <ButtonObject button={card.button} />
+            <ButtonObject button={card.button} lang={lang} />
           </div>
         ) : (
           <div className={styles['info-card--link']}>
-            <NavLink to={card.link}>{card.linkText}</NavLink>
+            <Link to={`/user/${lang}/${card.link}`}>{card.linkText}</Link>
           </div>
         )}
       </div>

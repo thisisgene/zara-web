@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import Image from '../../common/img/klagsverband.jpg'
-
 import cx from 'classnames'
 import styles from './CompactInfoCardObject.module.sass'
 

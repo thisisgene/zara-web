@@ -6,11 +6,11 @@ import styles from './ButtonObject.module.sass'
 
 class ButtonObject extends Component {
   render() {
-    const { button } = this.props
+    const { button, lang } = this.props
     return (
       <div>
         <NavLink
-          to={`/user/${button.link}`}
+          to={`/user/${lang}/${button.link}`}
           className={cx(styles['button'], styles[button.type])}
         >
           {button.text}

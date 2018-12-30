@@ -52,7 +52,7 @@ const infoObj_default = {
         button: {
           text: 'Rassismus melden',
           type: 'cta',
-          link: '/beratung/melden/rassismus'
+          link: 'beratung/melden/rassismus'
         }
       },
       {
@@ -64,7 +64,7 @@ const infoObj_default = {
         button: {
           text: 'Hass im Netz melden',
           type: 'cta',
-          link: '/beratung/melden/hassimnetz'
+          link: 'beratung/melden/hassimnetz'
         }
       }
     ]
