@@ -91,7 +91,6 @@ class User extends Component {
         <div className={styles['user--header']}>
           <Route path="/user/:lang" component={Header} />
         </div>
-        {/* <Header /> */}
 
         <ScrollToTop>
           <div className={styles['main-content']}>
