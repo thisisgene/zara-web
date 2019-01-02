@@ -8,7 +8,13 @@ class CompactInfoCardObject extends Component {
   render() {
     const { card } = this.props
     return (
-      <div className={cx(styles['compact-card'], styles[card.type])}>
+      <div
+        className={cx(
+          styles['compact-card'],
+          styles[card.type],
+          styles[card.size]
+        )}
+      >
         <Link to={card.link}>
           {card.type === 'imageCard' && (
             <div className={styles['compact-card--image']}>

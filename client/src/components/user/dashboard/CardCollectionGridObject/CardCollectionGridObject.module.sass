@@ -19,13 +19,21 @@
     
     &.three
       grid-template-columns: 1fr 1fr 1fr
+    &.two
+      grid-template-columns: 1fr 1fr
+      // .grid-item, .wide
+      //   height: 600px !important
+
 
     .grid-item
       // width: 10rem
       height: 220px
       &.wide
         grid-column: span 2
-
+      &.large
+        grid-column: span 2
+        height: auto
+        
     &-link
       margin: 1rem 0 0
       a

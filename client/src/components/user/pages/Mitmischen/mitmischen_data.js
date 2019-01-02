@@ -120,3 +120,62 @@ export const quote = {
     'Es ist egal, woher die Menschen, die sich zu einem bestimmten Zeitpunkt in der Polis aufhalten, kommen und wie lange sie sich dort aufhalten. Wenn erst einmal die Zukunft im Vordergrund steht, dann kommt es nur noch darauf an, dass sie jetzt, in diesem Moment anwesend sind und zur gemeinsamen Zukunft beitragen.',
   author: 'Mark Terkessidis'
 }
+
+export const cardGridObject = {
+  de: {
+    count: 'two',
+    title: 'Mehr Wissen',
+    cards: [
+      {
+        size: 'large',
+        type: 'imageCard',
+        image: 'scales.png',
+        title: 'Werden Sie ein*e ZARAista!',
+        text:
+          'Anti-Rassismus-Arbeit braucht engagierte Menschen – und davon möglichst viele. Nutzen Sie die Möglichkeit, sich mit anderen aktiven Menschen auszutauschen, die daran interessiert sind, einen positiven Einfluss auf die Gesellschaft zu haben. Werden Sie Teil einer tatkräftigen Community!',
+        link: 'beratung/lassunswastun/kennedeinerechte'
+      },
+      {
+        size: 'large',
+        type: 'imageCard',
+        image: 'mixer_wide.jpg',
+        text:
+          'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit setzen wir von ZARA uns für eine rassismusfreie Gesellschaft und einen respektvollen Umgang miteinander ein. Mit u.a. unseren Beratungsleistungen wollen wir Betroffenen den Rücken stärken und auf strukturelle Mängel hinweisen. Mit Ihrer Spende ermöglichen Sie, dass wir unsere jahrelange Expertise und unser Engagement in unseren Arbeitsbereichen und Schwerpunkten einsetzen und weiter ausbauen können!',
+        link: 'test'
+      }
+    ]
+  },
+  en: {
+    title: 'More Knowledge',
+    cards: [
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'scale.png',
+        title: 'Kenne Deine Rechte',
+        link: 'beratung/lassunswastun/kennedeinerechte'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'books.png',
+        text: 'Publikationen',
+        link: 'test'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'qna.png',
+        text: 'FAQs',
+        link: 'wissen/faq'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'list.png',
+        text: 'Presse',
+        link: 'wissen/faq'
+      }
+    ]
+  }
+}
