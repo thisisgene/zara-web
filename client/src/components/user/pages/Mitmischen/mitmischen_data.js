@@ -124,7 +124,6 @@ export const quote = {
 export const cardGridObject = {
   de: {
     count: 'two',
-    title: 'Mehr Wissen',
     cards: [
       {
         size: 'large',

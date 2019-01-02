@@ -31,12 +31,12 @@ const fakeServerData = [
         {
           type: 'cta',
           text: 'Jetzt anmelden',
-          link: 'de/subscribe'
+          link: 'training'
         },
         {
           type: 'secondary',
           text: 'Details & Termine',
-          link: 'de/details'
+          link: 'training'
         }
       ]
     },
@@ -57,12 +57,12 @@ const fakeServerData = [
         {
           type: 'cta',
           text: 'Subscribe now',
-          link: 'en/subscribe'
+          link: 'training'
         },
         {
           type: 'secondary',
           text: 'Details & Dates',
-          link: 'en/details'
+          link: 'training'
         }
       ],
       image: 'test_img2.png'

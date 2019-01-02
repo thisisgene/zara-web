@@ -67,7 +67,7 @@ class CarouselItem extends Component {
           <div className={styles['button-group']}>
             {item[lang].buttons &&
               item[lang].buttons.map((button, i) => (
-                <ButtonObject key={`btn-${i}`} button={button} />
+                <ButtonObject key={`btn-${i}`} button={button} lang={lang} />
               ))}
           </div>
         </div>

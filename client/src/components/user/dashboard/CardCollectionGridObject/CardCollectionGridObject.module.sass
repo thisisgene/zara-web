@@ -33,7 +33,11 @@
       &.large
         grid-column: span 2
         height: auto
-        
+        padding: 2rem 0
+        @media(max-width: 860px)
+          grid-column: span 3
+          &:last-child
+            padding-top: 0
     &-link
       margin: 1rem 0 0
       a
