@@ -6,29 +6,34 @@ const menuItems = [
     subMenuList: [
       {
         name: 'Beratung & Melden',
-        link: 'melden',
+        link: null,
         id: '1.1',
         subMenuList: [
           {
             name: 'Rassismus',
-            link: 'rassismus',
+            link: 'melden/rassismus',
             id: '1.1.1'
           },
           {
             name: 'Hass im Netz',
-            link: 'hassimnetz',
+            link: 'melden/hassimnetz',
             id: '1.1.2'
+          },
+          {
+            name: 'Rassismus / Hass im Netz Beratung',
+            link: 'beratung_rassismus_hassimnetz',
+            id: '1.1.3'
           }
         ]
       },
       {
         name: 'Lass Uns was tun',
-        link: 'lassunswastun',
         id: '1.2',
+        link: null,
         subMenuList: [
           {
-            name: 'Was Du tun kannst',
-            link: 'wasdutunkannst',
+            name: 'Was Sie tun können',
+            link: 'wassietunkoennen',
             id: '1.2.1'
           },
           {
@@ -38,7 +43,8 @@ const menuItems = [
           },
           {
             name: 'Kenne Deine Rechte',
-            link: 'kennedeinerechte',
+            redirect: true,
+            redirectLink: 'wissen/kennedeinerechte',
             id: '1.2.3'
           }
         ]

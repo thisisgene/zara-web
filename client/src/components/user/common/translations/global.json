@@ -8,8 +8,12 @@
     "item1.1": ["Beratung & Melden", "Consulting & Report"],
     "item1.1.1": ["Rassismus", "Racism"],
     "item1.1.2": ["Hass im Netz", "Online Hate"],
+    "item1.1.3": [
+      "Rassismus / Hass im Netz Beratung",
+      "Racism / Online Hate Consulting"
+    ],
     "item1.2": ["Lass Uns was tun", "Let's do something"],
-    "item1.2.1": ["Was Du tun kannst", "What you can do"],
+    "item1.2.1": ["Was Sie tun können", "What you can do"],
     "item1.2.2": ["Was wir tun können", "What we can do"],
     "item1.2.3": ["Kenne Deine Rechte", "Know your rights"],
     "item2": ["Training", "Training"],

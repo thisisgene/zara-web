@@ -9,12 +9,22 @@ class ButtonObject extends Component {
     const { button, lang } = this.props
     return (
       <div>
-        <NavLink
-          to={`/user/${lang}/${button.link}`}
-          className={cx(styles['button'], styles[button.type])}
-        >
-          {button.text}
-        </NavLink>
+        {button.linkPath !== 'external' ? (
+          <NavLink
+            to={`/user/${lang}/${button.link}`}
+            className={cx(styles['button'], styles[button.type])}
+          >
+            {button.text}
+          </NavLink>
+        ) : (
+          <a
+            className={cx(styles['button'], styles[button.type])}
+            href={button.link}
+            target="blank"
+          >
+            {button.text}
+          </a>
+        )}
       </div>
     )
   }

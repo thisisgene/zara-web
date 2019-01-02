@@ -25,24 +25,41 @@ class InfoCardObject extends Component {
             <div className={styles['info-card--body__text']}>{card.text}</div>
             {card.listItems && (
               <ul className={styles['info-card--body__list']}>
-                {card.listItems.map((item, index) => (
-                  <li key={index}>
-                    <IconObject image="listArrow" />
-                    <span>{item.text}</span>
-                  </li>
-                ))}
+                {card.listItems &&
+                  card.listItems.map((item, index) => (
+                    <li key={index}>
+                      <IconObject image="listArrow" />
+                      <span>{item.text}</span>
+                    </li>
+                  ))}
               </ul>
             )}
           </div>
         </div>
 
-        {card.linkType && card.linkType === 'button' && card.button ? (
-          <div className={styles['info-card--button']}>
-            <ButtonObject button={card.button} lang={lang} />
-          </div>
+        {card.linkType && card.linkType === 'button' ? (
+          card.multiButton === true ? (
+            card.buttons.map(button => (
+              <div className={styles['info-card--button']}>
+                <ButtonObject button={button} lang={lang} />
+              </div>
+            ))
+          ) : (
+            card.button && (
+              <div className={styles['info-card--button']}>
+                <ButtonObject button={card.button} lang={lang} />
+              </div>
+            )
+          )
         ) : (
           <div className={styles['info-card--link']}>
-            <Link to={`/user/${lang}/${card.link}`}>{card.linkText}</Link>
+            {card.linkPath === 'external' ? (
+              <a target="blank" href={card.link}>
+                {card.linkText}
+              </a>
+            ) : (
+              <Link to={`/user/${lang}/${card.link}`}>{card.linkText}</Link>
+            )}
           </div>
         )}
       </div>

@@ -27,15 +27,23 @@ class SubMenu extends Component {
                     item.subMenuList.map(subItem => {
                       return (
                         <div className={styles['sub-item']} key={subItem.id}>
-                          <p className={styles['sub-item--title']}>
-                            <NavLink
-                              to={`/user/${lang}/${item.link}/${subItem.link}`}
-                              activeClassName={styles.active}
-                              onClick={this.props.onClick}
-                            >
-                              <Translate id={`menu.item${subItem.id}`} />
-                            </NavLink>
-                          </p>
+                          <div className={styles['sub-item--title']}>
+                            {subItem.link !== null ? (
+                              <NavLink
+                                to={`/user/${lang}/${item.link}/${
+                                  subItem.link
+                                }`}
+                                activeClassName={styles.active}
+                                onClick={this.props.onClick}
+                              >
+                                <Translate id={`menu.item${subItem.id}`} />
+                              </NavLink>
+                            ) : (
+                              <div className={styles['no-link']}>
+                                <Translate id={`menu.item${subItem.id}`} />
+                              </div>
+                            )}
+                          </div>
                           {subItem.subMenuList &&
                             subItem.subMenuList.map(ssItem => {
                               return (
@@ -44,9 +52,17 @@ class SubMenu extends Component {
                                   key={ssItem.id}
                                 >
                                   <NavLink
-                                    to={`/user/${lang}/${item.link}/${
-                                      subItem.link
-                                    }/${ssItem.link}`}
+                                    to={
+                                      ssItem.redirect
+                                        ? `/user/${lang}/${ssItem.redirectLink}`
+                                        : subItem.link !== null
+                                        ? `/user/${lang}/${item.link}/${
+                                            subItem.link
+                                          }/${ssItem.link}`
+                                        : `/user/${lang}/${item.link}/${
+                                            ssItem.link
+                                          }`
+                                    }
                                     activeClassName={styles.active}
                                     onClick={this.props.onClick}
                                   >

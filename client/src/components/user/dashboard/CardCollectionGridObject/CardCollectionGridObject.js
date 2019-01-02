@@ -17,7 +17,11 @@ export default class CardCollectionGridObject extends Component {
             <div className={styles['card-grid-title']}>
               {cardObject[lang].title}
             </div>
-            <div className={styles['card-grid']}>
+            <div
+              className={cx(styles['card-grid'], {
+                [styles[cardObject.count]]: cardObject.count
+              })}
+            >
               {cardObject[lang].cards &&
                 cardObject[lang].cards.map((card, index) => (
                   <div

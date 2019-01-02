@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
+import { oneLineAlert } from './beratung_data'
+
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
@@ -21,20 +23,6 @@ const heroData = {
   }
 }
 
-const oneLineAlert = {
-  type: 'info',
-  de: {
-    title: 'Persönliches Beratungsgespräch',
-    text:
-      'Wenn Sie für eine Beratung ein persönliches Treffen wahrnehmen wollen, vereinbaren sie bitte telefonisch unter +43 (1) 929 13 99 mit uns einen Termin.'
-  },
-  en: {
-    title: 'Persönliches Beratungsgespräch',
-    text:
-      'Wenn Sie für eine Beratung ein persönliches Treffen wahrnehmen wollen, vereinbaren sie bitte telefonisch unter +43 (1) 929 13 99 mit uns einen Termin.'
-  }
-}
-
 const infoObj_default = {
   color: 'white',
   de: {
@@ -48,11 +36,19 @@ const infoObj_default = {
         text:
           'Rassistische Diskriminierung bedeutet, dass eine Person aufgrund ihrer Hautfarbe, ihrer Sprache, ihres Aussehens, ihrer Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt wird.',
         linkType: 'button',
-        button: {
-          text: 'Rassismus melden',
-          type: 'cta',
-          link: 'beratung/melden/rassismus'
-        }
+        multiButton: true,
+        buttons: [
+          {
+            text: 'Rassismus melden',
+            type: 'cta',
+            link: 'beratung/rassismus/melden'
+          },
+          {
+            text: 'Beratung',
+            type: 'cta',
+            link: 'beratung/rassismus'
+          }
+        ]
       },
       {
         color: 'white',
@@ -60,11 +56,19 @@ const infoObj_default = {
         text:
           'Verhetzende und hassmotivierte Inhalte und Postings  auf Online Plattformen und sozialen Medien können uns auch gemeldet werden, wenn sie gegen bestimmte Gruppen,  z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
         linkType: 'button',
-        button: {
-          text: 'Hass im Netz melden',
-          type: 'cta',
-          link: 'beratung/melden/hassimnetz'
-        }
+        multiButton: true,
+        buttons: [
+          {
+            text: 'Hass im Netz melden',
+            type: 'cta',
+            link: 'beratung/hassimnetz/melden'
+          },
+          {
+            text: 'Beratung',
+            type: 'cta',
+            link: 'beratung/hassimnetz'
+          }
+        ]
       }
     ]
   },
@@ -79,11 +83,19 @@ const infoObj_default = {
         text:
           'Rassistische Diskriminierung bedeutet, dass eine Person aufgrund ihrer Hautfarbe, ihrer Sprache, ihres Aussehens, ihrer Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt wird.',
         linkType: 'button',
-        button: {
-          text: 'Rassismus melden',
-          type: 'cta',
-          link: '/beratung/melden/rassismus'
-        }
+        multiButton: true,
+        buttons: [
+          {
+            text: 'Rassismus melden',
+            type: 'cta',
+            link: 'beratung/rassismus/melden'
+          },
+          {
+            text: 'Beratung',
+            type: 'cta',
+            link: 'beratung/rassismus'
+          }
+        ]
       },
       {
         color: 'white',
@@ -91,11 +103,19 @@ const infoObj_default = {
         text:
           'Verhetzende und hassmotivierte Inhalte und Postings  auf Online Plattformen und sozialen Medien können uns auch gemeldet werden, wenn sie gegen bestimmte Gruppen,  z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
         linkType: 'button',
-        button: {
-          text: 'Hass im Netz melden',
-          type: 'cta',
-          link: '/beratung/melden/hassimnetz'
-        }
+        multiButton: true,
+        buttons: [
+          {
+            text: 'Hass im Netz melden',
+            type: 'cta',
+            link: 'beratung/hassimnetz/melden'
+          },
+          {
+            text: 'Beratung',
+            type: 'cta',
+            link: 'beratung/hassimnetz'
+          }
+        ]
       }
     ]
   }

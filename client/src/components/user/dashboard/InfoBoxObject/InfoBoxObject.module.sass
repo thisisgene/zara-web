@@ -17,6 +17,10 @@
   .info-box
     max-width: 1080px
     margin: 3rem 0
+
+    &.smallBottom
+      margin-bottom: 0
+
     
     img
       margin-right: .4rem
@@ -37,6 +41,13 @@
       margin-bottom: 1rem
     &--body
       line-height: 1.2
+
+    &--buttons
+      display: flex
+      justify-content: center
+      div
+        margin: 0 2rem
+      
     &--card-section
       display: flex
 
@@ -52,5 +63,11 @@
         text-align: center
     .info-box
       max-width: 500px
+      &--buttons
+        display: block
+        // justify-content: center
+        text-align: center
+        div
+          margin: 2rem 0
       &--card-section
         display: block

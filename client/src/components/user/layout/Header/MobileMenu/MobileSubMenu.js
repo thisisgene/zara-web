@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
 import { trainingBoxData } from '../../../pages/Training/training_data'
+import IconObject from '../../../dashboard/IconObject/IconObject'
 
 import cx from 'classnames'
 import styles from './MobileMenu.module.sass'
@@ -39,13 +40,36 @@ class MobileSubMenu extends Component {
                         return (
                           <div className={styles['sub-item']} key={subItem.id}>
                             <div className={styles['sub-item--title']}>
-                              <NavLink
-                                to={`/user/${lang}/${item.link}/${
-                                  subItem.link
-                                }`}
-                                activeClassName={styles.active}
-                                onClick={this.props.onMobileNavClick}
-                              >
+                              {subItem.link !== null ? (
+                                <NavLink
+                                  to={`/user/${lang}/${item.link}/${
+                                    subItem.link
+                                  }`}
+                                  activeClassName={styles.active}
+                                  onClick={this.props.onMobileNavClick}
+                                >
+                                  <div
+                                    className={styles['sub-item--title__link']}
+                                  >
+                                    <div
+                                      className={
+                                        styles['sub-item--title__link--text']
+                                      }
+                                    >
+                                      <Translate
+                                        id={`menu.item${subItem.id}`}
+                                      />
+                                    </div>
+                                    <div
+                                      className={
+                                        styles['sub-item--title__link--arrow']
+                                      }
+                                    >
+                                      <IconObject image="arrowRight" />
+                                    </div>
+                                  </div>
+                                </NavLink>
+                              ) : (
                                 <div
                                   className={styles['sub-item--title__link']}
                                 >
@@ -56,14 +80,8 @@ class MobileSubMenu extends Component {
                                   >
                                     <Translate id={`menu.item${subItem.id}`} />
                                   </div>
-                                  <div
-                                    className={
-                                      styles['sub-item--title__link--arrow']
-                                    }
-                                  />
-                                  <i className="fa fa-arrow-right" />
                                 </div>
-                              </NavLink>
+                              )}
                             </div>
                             {subItem.subMenuList &&
                               subItem.subMenuList.map(ssItem => {
@@ -73,9 +91,19 @@ class MobileSubMenu extends Component {
                                     key={ssItem.id}
                                   >
                                     <NavLink
-                                      to={`/user/${lang}/${item.link}/${
-                                        subItem.link
-                                      }/${ssItem.link}`}
+                                      to={
+                                        ssItem.redirect
+                                          ? `/user/${lang}/${
+                                              ssItem.redirectLink
+                                            }`
+                                          : subItem.link !== null
+                                          ? `/user/${lang}/${item.link}/${
+                                              subItem.link
+                                            }/${ssItem.link}`
+                                          : `/user/${lang}/${item.link}/${
+                                              ssItem.link
+                                            }`
+                                      }
                                       activeClassName={styles.active}
                                       onClick={this.props.onMobileNavClick}
                                     >
