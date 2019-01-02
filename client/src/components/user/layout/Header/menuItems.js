@@ -68,7 +68,7 @@ const menuItems = [
       }
     ]
   },
-  { name: 'Mitmischen', id: '3' },
+  { name: 'Mitmischen', link: 'mitmischen', id: '3' },
   {
     name: 'Wissen',
     id: '4',

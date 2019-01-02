@@ -37,7 +37,7 @@ class OneLineAlert extends Component {
 
           {lang && content[lang].button && (
             <div className={styles['alert--right']}>
-              <ButtonObject button={content[lang].button} />
+              <ButtonObject button={content[lang].button} lang={lang} />
             </div>
           )}
         </div>

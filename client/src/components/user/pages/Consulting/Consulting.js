@@ -41,12 +41,12 @@ const infoObj_default = {
           {
             text: 'Rassismus melden',
             type: 'cta',
-            link: 'beratung/rassismus/melden'
+            link: 'beratung/melden/rassismus'
           },
           {
             text: 'Beratung',
             type: 'cta',
-            link: 'beratung/rassismus'
+            link: 'beratung/beratung_rassismus_hassimnetz'
           }
         ]
       },
@@ -61,12 +61,12 @@ const infoObj_default = {
           {
             text: 'Hass im Netz melden',
             type: 'cta',
-            link: 'beratung/hassimnetz/melden'
+            link: 'beratung/melden/hassimnetz'
           },
           {
             text: 'Beratung',
             type: 'cta',
-            link: 'beratung/hassimnetz'
+            link: 'beratung/beratung_rassismus_hassimnetz'
           }
         ]
       }
@@ -88,12 +88,12 @@ const infoObj_default = {
           {
             text: 'Rassismus melden',
             type: 'cta',
-            link: 'beratung/rassismus/melden'
+            link: 'beratung/melden/rassismus'
           },
           {
             text: 'Beratung',
             type: 'cta',
-            link: 'beratung/rassismus'
+            link: 'beratung/beratung_rassismus_hassimnetz'
           }
         ]
       },
@@ -108,12 +108,12 @@ const infoObj_default = {
           {
             text: 'Hass im Netz melden',
             type: 'cta',
-            link: 'beratung/hassimnetz/melden'
+            link: 'beratung/melden/hassimnetz'
           },
           {
             text: 'Beratung',
             type: 'cta',
-            link: 'beratung/hassimnetz'
+            link: 'beratung/beratung_rassismus_hassimnetz'
           }
         ]
       }

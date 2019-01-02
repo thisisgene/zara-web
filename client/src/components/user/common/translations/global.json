@@ -6,8 +6,8 @@
 
     "item1": ["Beratung", "Consulting"],
     "item1.1": ["Beratung & Melden", "Consulting & Report"],
-    "item1.1.1": ["Rassismus", "Racism"],
-    "item1.1.2": ["Hass im Netz", "Online Hate"],
+    "item1.1.1": ["Rassismus melden", "Report Racism"],
+    "item1.1.2": ["Hass im Netz melden", "report Online Hate"],
     "item1.1.3": [
       "Rassismus / Hass im Netz Beratung",
       "Racism / Online Hate Consulting"

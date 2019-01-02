@@ -20,6 +20,7 @@ import WasSieTunKoennen from './pages/Consulting/WasSieTunKoennen'
 import WasWirTunKoennen from './pages/Consulting/WasWirTunKoennen'
 import Training from './pages/Training/Training'
 import TrainingDetail from './pages/Training/TrainingDetail'
+import Mitmischen from './pages/Mitmischen/Mitmischen'
 import Wissen from './pages/Wissen/Wissen'
 import Faq from './pages/Wissen/Faq/Faq'
 import News from './pages/Wissen/News/News'
@@ -121,7 +122,7 @@ class User extends Component {
               <Route exact path="/user/:lang/beratung" component={Consulting} />
               <Route
                 exact
-                path="/user/:lang/beratung/melden:report"
+                path="/user/:lang/beratung/melden/:report"
                 component={Report}
               />
               <Route
@@ -139,6 +140,17 @@ class User extends Component {
                 path="/user/:lang/beratung/waswirtunkoennen"
                 component={WasWirTunKoennen}
               />
+              <Route exact path="/user/:lang/training" component={Training} />
+              <Route
+                exact
+                path="/user/:lang/training/:trainingId"
+                component={TrainingDetail}
+              />
+              <Route
+                exact
+                path="/user/:lang/mitmischen"
+                component={Mitmischen}
+              />
 
               <Route exact path="/user/:lang/wissen" component={Wissen} />
               <Route exact path="/user/:lang/wissen/faq" component={Faq} />
@@ -146,12 +158,6 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/aktuelles"
                 component={News}
-              />
-              <Route exact path="/user/:lang/training" component={Training} />
-              <Route
-                exact
-                path="/user/:lang/training/:trainingId"
-                component={TrainingDetail}
               />
               <Route
                 exact

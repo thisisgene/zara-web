@@ -21,9 +21,10 @@ class HeroUnit extends Component {
                   <div className={styles['hero-unit--text__title']}>
                     {data[lang].title}
                   </div>
-                  <div className={styles['hero-unit--text__body']}>
-                    {data[lang].text}
-                  </div>
+                  <div
+                    className={styles['hero-unit--text__body']}
+                    dangerouslySetInnerHTML={{ __html: data[lang].text }}
+                  />
                 </div>
               </div>
             ) : (
