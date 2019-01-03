@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import IconObject from '../IconObject/IconObject'
 
+import cx from 'classnames'
 import styles from './IconLinkBox.module.sass'
 
 class IconLinkBox extends Component {
@@ -13,7 +14,7 @@ class IconLinkBox extends Component {
         <div className={styles['icon']}>
           <IconObject image={content.icon} />
         </div>
-        <div className={styles['link']}>
+        <div className={cx(styles['link'], styles[content.color])}>
           <Link to={content.link}>{content.text}</Link>{' '}
         </div>
       </div>

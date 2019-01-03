@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
 import { heroData, infoObj, cardGridObject } from './counterNarratives_data'
-
+import { oneLineAlert } from './hashtags_data'
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
+import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
 import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
@@ -19,6 +20,7 @@ class CounterNarratives extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
+            <OneLineAlert content={oneLineAlert} lang={lang} />
             <InfoBoxObject infoBox={infoObj} lang={lang} />
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>

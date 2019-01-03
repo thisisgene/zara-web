@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
 import { trainingBoxData } from '../../pages/Training/training_data'
+import ContactBox from '../../dashboard/ContactBox/ContactBox'
 
 import cx from 'classnames'
 import styles from './SubMenu.module.sass'
@@ -74,6 +75,11 @@ class SubMenu extends Component {
                         </div>
                       )
                     })}
+                  {item.contact && (
+                    <div className={styles['contact-box--container']}>
+                      <ContactBox content={item.contact} lang={lang} />
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div
@@ -113,6 +119,11 @@ class SubMenu extends Component {
                             ))}
                       </div>
                     ))}
+                  {item.contact && (
+                    <div className={styles['contact-box--container']}>
+                      <ContactBox content={item.contact} lang={lang} />
+                    </div>
+                  )}
                 </div>
               )}
             </div>

@@ -3,14 +3,15 @@
   flex-direction: row
   max-width: 1080px
   margin: 0 auto
+  justify-content: space-between
   
 
   &.visible
     display: flex
-    padding: 2rem 2rem 3rem
+    padding: 2rem 1rem 3rem
   .sub-item
     margin: 0 1rem
-
+    flex-grow: 1
     &--title 
       margin-bottom: 1rem
       .no-link
@@ -27,7 +28,9 @@
         border-bottom: 1px solid #aaa !important
         &:hover, &.active
           border-bottom: 2px solid #FFC52D !important
-        
+
+  .contact-box--container
+    // flex-grow: 1
         
   .sub-sub-item 
     margin-top: .3rem
