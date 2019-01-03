@@ -22,7 +22,10 @@ class InfoCardObject extends Component {
             <h2>{card.title}</h2>
           </div>
           <div className={styles['info-card--body']}>
-            <div className={styles['info-card--body__text']}>{card.text}</div>
+            <div
+              className={styles['info-card--body__text']}
+              dangerouslySetInnerHTML={{ __html: card.text }}
+            />
             {card.listItems && (
               <ul className={styles['info-card--body__list']}>
                 {card.listItems &&

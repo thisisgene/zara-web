@@ -21,6 +21,8 @@ import WasWirTunKoennen from './pages/Consulting/WasWirTunKoennen'
 import Training from './pages/Training/Training'
 import TrainingDetail from './pages/Training/TrainingDetail'
 import Mitmischen from './pages/Mitmischen/Mitmischen'
+import CounterNarratives from './pages/Mitmischen/CounterNarratives'
+import Hashtags from './pages/Mitmischen/Hashtags'
 import Wissen from './pages/Wissen/Wissen'
 import Faq from './pages/Wissen/Faq/Faq'
 import News from './pages/Wissen/News/News'
@@ -150,6 +152,16 @@ class User extends Component {
                 exact
                 path="/user/:lang/mitmischen"
                 component={Mitmischen}
+              />
+              <Route
+                exact
+                path="/user/:lang/mitmischen/counternarratives"
+                component={CounterNarratives}
+              />
+              <Route
+                exact
+                path="/user/:lang/mitmischen/hashtags"
+                component={Hashtags}
               />
 
               <Route exact path="/user/:lang/wissen" component={Wissen} />

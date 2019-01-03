@@ -153,21 +153,21 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Wissenswertes & Tipps',
+        title: 'Wissenswertes & Tipps',
         link: 'test'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'faq-bubble.png',
-        text: 'Mehr dazu',
+        title: 'Mehr dazu',
         link: 'wissen/faq'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'press.png',
-        text: 'Broschüre Hass im Netz',
+        title: 'Broschüre Hass im Netz',
         link: 'wissen/faq'
       }
     ]
@@ -186,21 +186,21 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Wissenswertes & Tipps',
+        title: 'Wissenswertes & Tipps',
         link: 'test'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'faq-bubble.png',
-        text: 'Mehr dazu',
+        title: 'Mehr dazu',
         link: 'wissen/faq'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'press.png',
-        text: 'Broschüre Hass im Netz',
+        title: 'Broschüre Hass im Netz',
         link: 'wissen/faq'
       }
     ]

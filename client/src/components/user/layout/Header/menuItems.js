@@ -68,7 +68,30 @@ const menuItems = [
       }
     ]
   },
-  { name: 'Mitmischen', link: 'mitmischen', id: '3' },
+  {
+    name: 'Mitmischen',
+    link: 'mitmischen',
+    id: '3',
+    subMenuList: [
+      {
+        name: 'Zivilcourage',
+        id: '3.1',
+        link: null,
+        subMenuList: [
+          {
+            name: 'Counter Narratives',
+            id: '3.1.1',
+            link: 'counternarratives'
+          },
+          {
+            name: 'Hashtags',
+            id: '3.1.2',
+            link: 'hashtags'
+          }
+        ]
+      }
+    ]
+  },
   {
     name: 'Wissen',
     id: '4',

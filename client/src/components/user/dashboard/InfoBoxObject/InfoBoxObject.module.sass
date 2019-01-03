@@ -20,6 +20,7 @@
 
     &.smallBottom
       margin-bottom: 0
+      
 
     
     img
@@ -50,12 +51,15 @@
         margin: 0 2rem
       
     &--card-section
-      display: flex
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      grid-row-gap: 2rem
 
   @media(max-width: 900px)
     
     &.red
       .info-box
+        
         &--header
           // margin: 0
           text-align: left
@@ -64,6 +68,8 @@
         text-align: center
     .info-box
       max-width: 500px
+      &.smallBottom
+        margin-bottom: -5rem
       &--buttons
         display: block
         // justify-content: center
