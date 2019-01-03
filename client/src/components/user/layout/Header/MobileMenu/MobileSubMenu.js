@@ -190,6 +190,11 @@ class MobileSubMenu extends Component {
                               ))}
                         </div>
                       ))}
+                    {item.contact && (
+                      <div className={styles['contact-box--container']}>
+                        <ContactBox content={item.contact} lang={lang} />
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
