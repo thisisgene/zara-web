@@ -4,6 +4,7 @@ import { withLocalize, Translate } from 'react-localize-redux'
 
 import { trainingBoxData } from '../../../pages/Training/training_data'
 import IconObject from '../../../dashboard/IconObject/IconObject'
+import ContactBox from '../../../dashboard/ContactBox/ContactBox'
 
 import cx from 'classnames'
 import styles from './MobileMenu.module.sass'
@@ -115,6 +116,11 @@ class MobileSubMenu extends Component {
                           </div>
                         )
                       })}
+                    {item.contact && (
+                      <div className={styles['contact-box--container']}>
+                        <ContactBox content={item.contact} lang={lang} />
+                      </div>
+                    )}
                   </div>
                 </div>
               ) : (

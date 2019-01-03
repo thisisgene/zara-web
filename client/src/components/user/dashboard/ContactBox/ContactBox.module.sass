@@ -10,6 +10,7 @@
     display: block
     .contact-box--right
       margin-left: 0
+
   a
     font-size: .8rem !important
     text-decoration: underline
@@ -26,6 +27,23 @@
     margin-left: 1rem
     .icon-link-box
       margin-top: 1rem !important
+      a
+        text-decoration: none !important
 
+  @media(max-width: 980px)
+    margin-left: 0
+    font-size: 1rem
     
-      
+    a
+      font-size: 1rem !important
+    .contact-box
+      &--left
+        &__title
+          font-size: 1.1rem
+        &__email
+          margin-top: 1rem
+      &--right
+        margin-left: 0    
+        .icon-link-box
+          margin: 2rem 0 !important
+
