@@ -100,42 +100,18 @@ const menuItems = [
     id: '2',
     contact: {
       de: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt Training',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'office@zara.or.at',
-        iconLinks: [
-          {
-            icon: 'actIcon',
-            text: 'Rassismus melden',
-            link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
-          }
-        ]
+        email: 'training@zara.or.at'
       },
       en: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt Training',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'office@zara.or.at',
-        iconLinks: [
-          {
-            icon: 'actIcon',
-            text: 'Rassismus melden',
-            link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
-          }
-        ]
+        email: 'training@zara.or.at'
       }
     },
     subMenuList: [
@@ -157,40 +133,30 @@ const menuItems = [
     id: '3',
     contact: {
       de: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
         email: 'office@zara.or.at',
         iconLinks: [
           {
-            icon: 'actIcon',
+            icon: 'act',
             text: 'Rassismus melden',
             link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
           }
         ]
       },
       en: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
         email: 'office@zara.or.at',
         iconLinks: [
           {
-            icon: 'actIcon',
+            icon: 'act',
             text: 'Rassismus melden',
             link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
           }
         ]
       }
@@ -226,42 +192,18 @@ const menuItems = [
     link: 'wissen',
     contact: {
       de: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt Presse & Wissen',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'office@zara.or.at',
-        iconLinks: [
-          {
-            icon: 'actIcon',
-            text: 'Rassismus melden',
-            link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
-          }
-        ]
+        email: 'presse@zara.or.at'
       },
       en: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt Presse & Wissen',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'office@zara.or.at',
-        iconLinks: [
-          {
-            icon: 'actIcon',
-            text: 'Rassismus melden',
-            link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
-          }
-        ]
+        email: 'presse@zara.or.at'
       }
     },
     subMenuList: [
@@ -283,42 +225,18 @@ const menuItems = [
     link: 'ueber_ZARA',
     contact: {
       de: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'office@zara.or.at',
-        iconLinks: [
-          {
-            icon: 'actIcon',
-            text: 'Rassismus melden',
-            link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
-          }
-        ]
+        email: 'office@zara.or.at'
       },
       en: {
-        title: 'Kontakt Beratung',
+        title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'office@zara.or.at',
-        iconLinks: [
-          {
-            icon: 'actIcon',
-            text: 'Rassismus melden',
-            link: '/beratung/rassismus/melden'
-          },
-          {
-            icon: 'LockIcon',
-            text: 'Verschlüsselte Email an ZARA',
-            link: '/verschlüsselte_mail'
-          }
-        ]
+        email: 'office@zara.or.at'
       }
     },
     subMenuList: [
