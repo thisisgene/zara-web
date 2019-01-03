@@ -5,14 +5,14 @@ import {
   heroData,
   oneLineAlert,
   longText,
-  infoObj,
+  videoBox,
   cardGridObject
 } from './hasspostings_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 import LongText from '../../dashboard/LongText/LongText'
-import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
+import VideoBox from '../../dashboard/VideoBox/VideoBox'
 import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 class HasspostingsMelden extends Component {
@@ -29,8 +29,8 @@ class HasspostingsMelden extends Component {
             <HeroUnit data={heroData} lang={lang} />
             <OneLineAlert content={oneLineAlert} lang={lang} />
             <LongText content={longText} lang={lang} />
-            {/* <InfoBoxObject infoBox={infoObj} lang={lang} /> */}
-            {/* <CardCollectionGridObject cardObject={cardGridObject} lang={lang} /> */}
+            <VideoBox content={videoBox} lang={lang} />
+            <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}
       </div>
