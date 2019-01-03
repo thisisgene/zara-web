@@ -25,6 +25,7 @@ const heroData = {
 
 const infoObj_default = {
   color: 'white',
+  count: 'two',
   de: {
     // title: 'Wie ich aktiv werden kann!',
     text:

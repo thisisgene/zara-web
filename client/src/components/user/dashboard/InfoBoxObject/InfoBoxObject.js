@@ -43,7 +43,12 @@ class InfoBoxObject extends Component {
                 </div>
               )}
               {infoBox[lang].cards && (
-                <div className={styles['info-box--card-section']}>
+                <div
+                  className={cx(
+                    styles['info-box--card-section'],
+                    styles[infoBox.count]
+                  )}
+                >
                   {infoBox[lang].cards.map((card, index) => (
                     <InfoCardObject key={index} card={card} lang={lang} />
                   ))}
