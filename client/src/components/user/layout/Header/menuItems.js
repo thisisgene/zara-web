@@ -87,6 +87,11 @@ const menuItems = [
             name: 'Hashtags',
             id: '3.1.2',
             link: 'hashtags'
+          },
+          {
+            name: 'Hasspostings melden',
+            id: '3.1.3',
+            link: 'hasspostings_melden'
           }
         ]
       }

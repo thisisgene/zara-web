@@ -1,7 +1,6 @@
 export const heroData = {
   image: 'hashtag.png',
   imageSide: 'left',
-  size: 'mediumTitle',
   de: {
     title: 'Was kann ein Hashtag schon bewirken?',
     text:
