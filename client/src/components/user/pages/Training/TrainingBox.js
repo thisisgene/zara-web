@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import TrainingItem from './TrainingItem'
+import TrainingItemBox from '../../dashboard/TrainingItemBox/TrainingItemBox'
 
 import styles from './Training.module.sass'
 
@@ -20,10 +20,10 @@ export default class TrainingBox extends Component {
   }
 
   render() {
-    const { content, lang } = this.props
+    const { content, trainingItems, lang } = this.props
     return (
       <div>
-        {content && lang && (
+        {content && trainingItems && lang && (
           <div className={styles['training-box']}>
             <div className={styles['training-box--text']}>
               <p>{content[lang].text}</p>
@@ -54,16 +54,11 @@ export default class TrainingBox extends Component {
                   // <div key={index}>{cat.text}</div>
                 ))}
             </div>
-            <div className={styles['training-box--content']}>
-              {content.items &&
-                content.items
-                  .filter(item => item.category === this.state.activeCat)
-                  .map((item, index) => (
-                    <div key={index}>
-                      <TrainingItem content={item} lang={lang} />
-                    </div>
-                  ))}
-            </div>
+            <TrainingItemBox
+              content={trainingItems}
+              category={this.state.activeCat}
+              lang={lang}
+            />
           </div>
         )}
       </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import IconObject from '../../dashboard/IconObject/IconObject'
 
-import styles from './Training.module.sass'
+import styles from './TrainingItemBox.module.sass'
 
 class TrainingItem extends Component {
   render() {

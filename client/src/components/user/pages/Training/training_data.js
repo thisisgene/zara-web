@@ -130,7 +130,9 @@ export const trainingBoxData = {
       { index: '2', text: 'Für Erwachsene', link: 'erwachsene' },
       { index: '3', text: 'Unternehmensarbeit', link: 'unternehmen' }
     ]
-  },
+  }
+}
+export const trainingItems = {
   items: [
     {
       _id: 'ASnf39',

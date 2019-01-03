@@ -6,7 +6,7 @@ import { trainingBoxData, oneLineAlertDetail } from './training_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
-import TrainingItem from './TrainingItem'
+import TrainingItem from '../../dashboard/TrainingItemBox/TrainingItem'
 import IconObject from '../../dashboard/IconObject/IconObject'
 
 import cx from 'classnames'
@@ -20,6 +20,18 @@ class TrainingDetail extends Component {
       trainingId: props.match.params.trainingId
     }
     console.log(this.state.trainingId)
+  }
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.match &&
+      this.props.match &&
+      prevProps.match.params.trainingId !== this.props.match.params.trainingId
+    ) {
+      console.log('UPDATE!')
+      this.setState({
+        trainingId: this.props.match.params.trainingId
+      })
+    }
   }
   render() {
     const { activeLanguage } = this.props

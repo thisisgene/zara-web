@@ -19,6 +19,8 @@ import Report from './pages/Consulting/Report'
 import WasSieTunKoennen from './pages/Consulting/WasSieTunKoennen'
 import WasWirTunKoennen from './pages/Consulting/WasWirTunKoennen'
 import Training from './pages/Training/Training'
+import TrainingChildren from './pages/Training/TrainingChildren'
+import TrainingAdults from './pages/Training/TrainingAdults'
 import TrainingDetail from './pages/Training/TrainingDetail'
 import Mitmischen from './pages/Mitmischen/Mitmischen'
 import CounterNarratives from './pages/Mitmischen/CounterNarratives'
@@ -144,6 +146,16 @@ class User extends Component {
                 component={WasWirTunKoennen}
               />
               <Route exact path="/user/:lang/training" component={Training} />
+              <Route
+                exact
+                path="/user/:lang/training/kinder_jugendliche"
+                component={TrainingChildren}
+              />
+              <Route
+                exact
+                path="/user/:lang/training/erwachsene"
+                component={TrainingAdults}
+              />
               <Route
                 exact
                 path="/user/:lang/training/:trainingId"

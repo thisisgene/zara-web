@@ -222,6 +222,7 @@ export const wasSieTunKoennenHeroData = {
 
 export const wasSieTunKoennenInfoBox1 = {
   size: 'smallBottom',
+  count: 'two',
   color: 'default',
   de: {
     cards: [
@@ -267,6 +268,7 @@ export const wasSieTunKoennenInfoBox1 = {
 
 export const wasSieTunKoennenInfoBox2 = {
   color: 'default',
+  count: 'two',
   de: {
     cards: [
       {

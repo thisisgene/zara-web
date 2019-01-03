@@ -52,7 +52,7 @@ export const infoObj = {
     ],
     cards: [
       {
-        color: 'red',
+        color: 'default',
         title: 'Counter Narratives',
         text:
           'Sehen Sie online Beiträge, die Ihrer Meinung nach nicht unwidersprochen bleiben sollen? Möchten Sie Betroffenen den Rücken stärken? Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives können Sie Trolle oder Hater entlarven und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind unerschöpflich. Werden Sie kreativ! Reden Sie mit! Setzen Sie sich mit uns in Kontakt! Gemeinsam sind wir stärker und lauter!',
@@ -60,7 +60,7 @@ export const infoObj = {
         linkText: 'Zu den Counter Narratives'
       },
       {
-        color: 'red',
+        color: 'default',
         title: 'Hashtags',
         text:
           'Hashtag-Kampagnen können zum Aktivwerden aufrufen und setzen sich häufig zum Ziel, aufzuzeigen wo was schief läuft. Sie bieten eine unkomplizierte Möglichkeit, mitzumachen und Stellung zu beziehen. Das liken wir. Machen Sie mit! Gemeinsam sind wir mehr!',
@@ -68,7 +68,7 @@ export const infoObj = {
         linkText: 'Zu den Hashtags'
       },
       {
-        color: 'red',
+        color: 'default',
         title: 'Hasspostings melden',
         text:
           'Sie stoßen auf hasserfüllte Beiträge auf unterschiedlichen online Plattformen oder Social Media oder Sie werden sogar selbst online beschimpft, beleidigt, aufgrund Ihres So-Seins angegriffen oder diskriminiert? Hass im Netz ist ein vergleichbar neues Phänomen, das noch nicht von allen ernst genommen wird. ABER das Internet ist kein rechtsfreier Raum. Social Media Plattformen und IT Unternehmen haben zudem Nutzungsbestimmungen, die gewisse Inhalte verbieten und solche Inhalte kann man direkt melden! Melden Sie am besten selber und leiten Sie die Meldung auch an uns weiter! Denn wir dokumentieren die Meldungen auch systematisch. Wir haben Videos gemacht, die Ihnen zeigen, wie das geht. Zeigen Sie auf, was weh tut und andere gefährdet!',
@@ -79,36 +79,41 @@ export const infoObj = {
     ]
   },
   en: {
-    title: 'Wie ich aktiv werden kann!',
+    title: '',
     text:
-      'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
+      'Zivilcourage zeigen, bedeutet sich für andere Personen einzusetzen – es bedeutet vor allem, sich für die eigenen Prinzipien einzusetzen. Zivilcourage ist notwendig, um Rassismus, Hass und Hetze, on- wie offline, entgegenzuwirken. Zivilcourage beginnt mit der Wahrnehmung von Unrecht und dem Verantwortungsgefühl für Fairness. Schauen Sie nicht weg und werden Sie aktiv!<br><br>Sich für jemanden einzusetzen braucht Mut. Schon scheinbar kleine Taten können eine große Wirkung haben. Es gibt verschiedene Möglichkeiten, wie Sie sich engagieren und Zivilcourage zeigen aber auch erlernen können.',
+    buttons: [
+      {
+        type: 'cta',
+        text: 'ZARA TRAINING Zivilcourage Workshop',
+        link: 'training/aeFErf2'
+      }
+    ],
     cards: [
       {
-        image: 'act',
-        color: 'red',
-        title: 'Rassismus melden',
+        color: 'default',
+        title: 'Counter Narratives',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
-        link: 'de/melden',
-        linkText: "Los geht's!"
+          'Sehen Sie online Beiträge, die Ihrer Meinung nach nicht unwidersprochen bleiben sollen? Möchten Sie Betroffenen den Rücken stärken? Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives können Sie Trolle oder Hater entlarven und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind unerschöpflich. Werden Sie kreativ! Reden Sie mit! Setzen Sie sich mit uns in Kontakt! Gemeinsam sind wir stärker und lauter!',
+        link: 'mitmischen/counternarratives',
+        linkText: 'Zu den Counter Narratives'
       },
       {
-        image: 'act',
-        color: 'red',
-        title: '(Online) Spenden',
+        color: 'default',
+        title: 'Hashtags',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
-        link: 'de/melden',
-        linkText: "Los geht's!"
+          'Hashtag-Kampagnen können zum Aktivwerden aufrufen und setzen sich häufig zum Ziel, aufzuzeigen wo was schief läuft. Sie bieten eine unkomplizierte Möglichkeit, mitzumachen und Stellung zu beziehen. Das liken wir. Machen Sie mit! Gemeinsam sind wir mehr!',
+        link: 'mitmischen/hashtags',
+        linkText: 'Zu den Hashtags'
       },
       {
-        image: 'act',
-        color: 'red',
-        title: 'Ehrenamtlich mitmischen',
+        color: 'default',
+        title: 'Hasspostings melden',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
-        link: 'de/melden',
-        linkText: "Los geht's!"
+          'Sie stoßen auf hasserfüllte Beiträge auf unterschiedlichen online Plattformen oder Social Media oder Sie werden sogar selbst online beschimpft, beleidigt, aufgrund Ihres So-Seins angegriffen oder diskriminiert? Hass im Netz ist ein vergleichbar neues Phänomen, das noch nicht von allen ernst genommen wird. ABER das Internet ist kein rechtsfreier Raum. Social Media Plattformen und IT Unternehmen haben zudem Nutzungsbestimmungen, die gewisse Inhalte verbieten und solche Inhalte kann man direkt melden! Melden Sie am besten selber und leiten Sie die Meldung auch an uns weiter! Denn wir dokumentieren die Meldungen auch systematisch. Wir haben Videos gemacht, die Ihnen zeigen, wie das geht. Zeigen Sie auf, was weh tut und andere gefährdet!',
+
+        link: 'beratung/melden/hassimnetz',
+        linkText: 'Hasspostings melden'
       }
     ]
   }

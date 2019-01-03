@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
-import { trainingBoxData } from '../../../pages/Training/training_data'
+import {
+  trainingBoxData,
+  trainingItems
+} from '../../../pages/Training/training_data'
 import IconObject from '../../../dashboard/IconObject/IconObject'
 import ContactBox from '../../../dashboard/ContactBox/ContactBox'
 
@@ -168,8 +171,8 @@ class MobileSubMenu extends Component {
                               </div>
                             </NavLink>
                           </div>
-                          {trainingBoxData.items &&
-                            trainingBoxData.items
+                          {trainingItems.items &&
+                            trainingItems.items
                               .filter(item => item.category === cat.index)
                               .map((item, itemIndex) => (
                                 <div key={itemIndex}>
