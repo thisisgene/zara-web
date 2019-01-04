@@ -42,7 +42,8 @@ class Header extends Component {
       mobileExpand: false,
       subMenuVisible: false,
       subMenuContent: '',
-      subTitleHide: false
+      subTitleHide: false,
+      showLanguageAlert: false
     }
   }
 
@@ -189,6 +190,7 @@ class Header extends Component {
             <MobileMenu menuItems={menuItems} lang={activeLanguage.code} />
           )}
         </div>
+
         {/* {activeLanguage && (
           <Redirect exact from="/user" to={`/user/${activeLanguage.code}`} />
         )} */}

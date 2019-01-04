@@ -25,6 +25,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.2",
     "react-stepzilla": "^4.8.0",
+    "react-tooltip": "^3.9.1",
     "react-validation-mixin": "^5.4.0",
     "react-youtube": "^7.8.0",
     "redux": "^4.0.1",
