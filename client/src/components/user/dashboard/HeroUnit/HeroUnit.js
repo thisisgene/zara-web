@@ -25,9 +25,10 @@ class HeroUnit extends Component {
                   <img src={`/assets/img/${data.image}`} alt={data.image} />
                 </div>
                 <div className={styles['hero-unit--text']}>
-                  <div className={styles['hero-unit--text__title']}>
-                    {data[lang].title}
-                  </div>
+                  <div
+                    className={styles['hero-unit--text__title']}
+                    dangerouslySetInnerHTML={{ __html: data[lang].title }}
+                  />
                   <div
                     className={styles['hero-unit--text__body']}
                     dangerouslySetInnerHTML={{ __html: data[lang].text }}

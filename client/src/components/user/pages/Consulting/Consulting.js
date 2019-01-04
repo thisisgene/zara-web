@@ -12,12 +12,12 @@ const heroData = {
   image: 'consulting.jpg',
   imageSide: 'left',
   de: {
-    title: 'Wir sind auf deiner Seite!',
+    title: 'Wir sind auf Ihrer Seite',
     text:
       'In der Beratungsstelle erhalten jährlich über 1.000 Opfer und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
   },
   en: {
-    title: 'We are on your side!',
+    title: 'We are on your side',
     text:
       'In der Beratungsstelle erhalten jährlich über 1.000 Opfer und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
   }
