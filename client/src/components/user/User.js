@@ -215,12 +215,17 @@ class User extends Component {
               <Redirect
                 exact
                 from="/user/:lang/ueber_ZARA"
-                to="/user/:lang/ueber_ZARA/was_wir_wollen"
+                to="/user/:lang/ueber_ZARA/wer_wir_sind"
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/was_wir_wollen"
+                path="/user/:lang/ueber_ZARA/wer_wir_sind"
                 component={WasWirWollen}
+              />
+              <Redirect
+                exact
+                from="/user/:lang/ueber_ZARA/was_wir_wollen"
+                to="/user/:lang/ueber_ZARA/was_wir_wollen/mission"
               />
               <Route
                 exact
