@@ -25,8 +25,8 @@ class ContactBox extends Component {
         </div>
         <div className={styles['contact-box--right']}>
           {contactIconLinks &&
-            contactIconLinks.map(link => (
-              <div className={styles['icon-link-box']}>
+            contactIconLinks.map((link, index) => (
+              <div key={index} className={styles['icon-link-box']}>
                 <IconLinkBox content={link} lang={lang} />
               </div>
             ))}
