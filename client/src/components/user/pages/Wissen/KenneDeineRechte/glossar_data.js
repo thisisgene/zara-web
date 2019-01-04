@@ -1,3 +1,17 @@
+export const heroData = {
+  image: 'zara_wide.png',
+  imageSide: 'left',
+  imageAlign: 'center',
+  de: {
+    title: 'Glossar',
+    text: 'Ausgewählte Begriffe aus RR Glossar 2017, 2016, 2015'
+  },
+  en: {
+    title: 'Glossar',
+    text: 'Ausgewählte Begriffe aus RR Glossar 2017, 2016, 2015'
+  }
+}
+
 export const glossarData = [
   {
     de: {

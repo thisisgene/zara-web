@@ -35,6 +35,7 @@ import Unterstuetzen from './pages/Mitmischen/Unterstuetzen'
 import Wissen from './pages/Wissen/Wissen'
 import News from './pages/Wissen/News/News'
 import KenneDeineRechte from './pages/Wissen/KenneDeineRechte/KenneDeineRechte'
+import Glossar from './pages/Wissen/KenneDeineRechte/Glossar'
 import Faq from './pages/Wissen/Faq/Faq'
 
 import WasWirWollen from './pages/Zara/WasWirWollen/WasWirWollen'
@@ -217,6 +218,11 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/kenne_deine_rechte"
                 component={KenneDeineRechte}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/glossar"
+                component={Glossar}
               />
               <Route exact path="/user/:lang/wissen/faq" component={Faq} />
 
