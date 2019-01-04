@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
+import ReactTooltip from 'react-tooltip'
 
 import LanguageToggle from './LanguageToggle'
 import globalTranslations from '../../common/translations/global.json'
@@ -178,9 +179,25 @@ class Header extends Component {
                 <div className={styles['language-box']}>
                   <LanguageToggle />
                 </div>
-                <div className={styles['search-box']}>
+                <div
+                  className={styles['search-box']}
+                  data-tip
+                  data-for="searchTT"
+                >
                   <IconObject image="search" />
                 </div>
+                <ReactTooltip
+                  id="searchTT"
+                  place="bottom"
+                  type="dark"
+                  delayHide={1000}
+                  effect="solid"
+                >
+                  <span>
+                    Die Suchfunktion wird demnächst zur Verfügung stehen. <br />{' '}
+                    Wir bitten um Ihr Verständnis.
+                  </span>
+                </ReactTooltip>
               </div>
             </div>
           </nav>
