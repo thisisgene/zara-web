@@ -29,7 +29,7 @@ class ActionBar extends Component {
           </NavLink>
           <NavLink
             activeClassName={styles.active}
-            to={`/user/${lang}/spenden`}
+            to={`/user/${lang}/mitmischen/unterstuetzen`}
             onClick={onClick ? onClick : null}
           >
             <Translate id={`menu.item0.2`} />

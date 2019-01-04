@@ -8,14 +8,16 @@ import styles from './IconLinkBox.module.sass'
 
 class IconLinkBox extends Component {
   render() {
-    const { content } = this.props
+    const { content, lang } = this.props
     return (
       <div className={styles['icon-link-box']}>
         <div className={styles['icon']}>
-          <IconObject image={content.icon} />
+          <IconObject image={content[lang].icon} />
         </div>
-        <div className={cx(styles['link'], styles[content.color])}>
-          <Link to={content.link}>{content.text}</Link>{' '}
+        <div className={cx(styles['link'], styles[content[lang].color])}>
+          <Link to={`/user/${lang}/${content[lang].link}`}>
+            {content[lang].text}
+          </Link>
         </div>
       </div>
     )

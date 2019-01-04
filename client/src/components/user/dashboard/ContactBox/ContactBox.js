@@ -5,7 +5,7 @@ import IconLinkBox from '../IconLinkBox/IconLinkBox'
 
 class ContactBox extends Component {
   render() {
-    const { content, lang } = this.props
+    const { content, contactIconLinks, lang } = this.props
     return (
       <div className={styles['contact-box']}>
         <div className={styles['contact-box--left']}>
@@ -24,10 +24,10 @@ class ContactBox extends Component {
           </div>
         </div>
         <div className={styles['contact-box--right']}>
-          {content[lang].iconLinks &&
-            content[lang].iconLinks.map(link => (
+          {contactIconLinks &&
+            contactIconLinks.map(link => (
               <div className={styles['icon-link-box']}>
-                <IconLinkBox content={link} />
+                <IconLinkBox content={link} lang={lang} />
               </div>
             ))}
         </div>

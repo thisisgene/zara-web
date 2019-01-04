@@ -15,7 +15,11 @@ class HeroUnit extends Component {
             })}
           >
             {data.imageSide === 'left' ? (
-              <div className={styles['hero-unit']}>
+              <div
+                className={cx(styles['hero-unit'], {
+                  [styles[data.imageAlign]]: data.imageAlign
+                })}
+              >
                 <div className={styles['hero-unit--image']}>
                   <img src={`/assets/img/${data.image}`} alt={data.image} />
                 </div>
@@ -35,9 +39,10 @@ class HeroUnit extends Component {
                   <div className={styles['hero-unit--text__title']}>
                     {data[lang].title}
                   </div>
-                  <div className={styles['hero-unit--text__body']}>
-                    {data[lang].text}
-                  </div>
+                  <div
+                    className={styles['hero-unit--text__body']}
+                    dangerouslySetInnerHTML={{ __html: data[lang].text }}
+                  />
                 </div>
                 {data.image && (
                   <div className={styles['hero-unit--image']}>

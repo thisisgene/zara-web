@@ -8,22 +8,22 @@ import styles from './OneLineContainer.module.sass'
 
 export default class OneLineContainer extends Component {
   render() {
-    const { contentObj, newsletterInputId } = this.props
+    const { contentObj, newsletterInputId, lang } = this.props
     return (
       <div className={styles['one-line-container']}>
         {contentObj && (
           <div className={styles['one-line-wrapper']}>
             <div className={styles['one-line-item']}>
-              <SocialMediaFollowBox content={contentObj.socialMedia} />
+              <SocialMediaFollowBox content={contentObj.socialMedia[lang]} />
             </div>
             <div className={styles['one-line-item']}>
               <InputButtonBox
-                content={contentObj.inputButtonBox}
+                content={contentObj.inputButtonBox[lang]}
                 id={newsletterInputId}
               />
             </div>
             <div className={styles['one-line-item']}>
-              <IconLinkBox content={contentObj.iconLinkBox} />
+              <IconLinkBox content={contentObj.iconLinkBox} lang={lang} />
             </div>
           </div>
         )}

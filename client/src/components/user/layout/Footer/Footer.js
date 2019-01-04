@@ -15,7 +15,7 @@ class Footer extends Component {
         {lang && (
           <div className={styles['footer']}>
             {oneLineContent && (
-              <OneLineContainer contentObj={oneLineContent[lang]} />
+              <OneLineContainer contentObj={oneLineContent} lang={lang} />
             )}
 
             <FooterContent content={footerContent[lang]} />

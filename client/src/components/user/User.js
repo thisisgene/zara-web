@@ -26,6 +26,8 @@ import Mitmischen from './pages/Mitmischen/Mitmischen'
 import CounterNarratives from './pages/Mitmischen/CounterNarratives'
 import Hashtags from './pages/Mitmischen/Hashtags'
 import HasspostingsMelden from './pages/Mitmischen/HasspostingsMelden'
+import Community from './pages/Mitmischen/Community'
+import Unterstuetzen from './pages/Mitmischen/Unterstuetzen'
 import Wissen from './pages/Wissen/Wissen'
 import Faq from './pages/Wissen/Faq/Faq'
 import News from './pages/Wissen/News/News'
@@ -180,6 +182,17 @@ class User extends Component {
                 exact
                 path="/user/:lang/mitmischen/hasspostings_melden"
                 component={HasspostingsMelden}
+              />
+
+              <Route
+                exact
+                path="/user/:lang/mitmischen/community"
+                component={Community}
+              />
+              <Route
+                exact
+                path="/user/:lang/mitmischen/unterstuetzen"
+                component={Unterstuetzen}
               />
 
               <Route exact path="/user/:lang/wissen" component={Wissen} />

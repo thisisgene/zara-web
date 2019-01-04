@@ -80,7 +80,11 @@ class SubMenu extends Component {
                     })}
                   {item.contact && (
                     <div className={styles['contact-box--container']}>
-                      <ContactBox content={item.contact} lang={lang} />
+                      <ContactBox
+                        content={item.contact}
+                        contactIconLinks={item.contactIconLinks}
+                        lang={lang}
+                      />
                     </div>
                   )}
                 </div>

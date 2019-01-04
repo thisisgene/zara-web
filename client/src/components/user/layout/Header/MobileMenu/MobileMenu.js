@@ -29,16 +29,6 @@ class MobileMenu extends Component {
     this.menu = React.createRef()
   }
 
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.handleScroll)
-  // }
-
-  // handleScroll = () => {
-  //   this.setState({
-  //     stickyMenu: window.scrollY >= 38
-  //   })
-  // }
-
   onMobileNavClick = () => {
     console.log('asd')
     this.setState({

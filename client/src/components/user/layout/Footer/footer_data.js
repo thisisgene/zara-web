@@ -1,36 +1,38 @@
 export const oneLineContent = {
-  de: {
-    socialMedia: {
+  socialMedia: {
+    de: {
       text: 'Folge uns:'
     },
-    inputButtonBox: {
+    en: {
+      text: 'Follow us:'
+    }
+  },
+  inputButtonBox: {
+    de: {
       inputPlaceholder: 'E-Mail-Adresse',
       button: {
         type: 'default',
         text: 'Newsletter abonnieren'
       }
     },
-    iconLinkBox: {
-      icon: 'LockIcon',
-      text: 'Verschlüsselte Email an ZARA',
-      link: '/verschlüsselte_mail'
-    }
-  },
-  en: {
-    socialMedia: {
-      text: 'Follow us:'
-    },
-    inputButtonBox: {
+    en: {
       inputPlaceholder: 'E-mail Address',
       button: {
         type: 'default',
         text: 'Subscribe to newsletter'
       }
+    }
+  },
+  iconLinkBox: {
+    de: {
+      icon: 'LockIcon',
+      text: 'Verschlüsselte Email an ZARA',
+      link: 'verschlüsselte_mail'
     },
-    iconLinkBox: {
+    en: {
       icon: 'LockIcon',
       text: 'Encrypted e-mail to ZARA',
-      link: '/verschlüsselte_mail'
+      link: 'verschlüsselte_mail'
     }
   }
 }

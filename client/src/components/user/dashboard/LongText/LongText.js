@@ -7,7 +7,11 @@ export default class LongText extends Component {
     const { content, lang } = this.props
     return (
       <div className={styles['long-text']}>
-        <div className={styles['long-text--title']}>{content[lang].title}</div>
+        {content[lang].title && (
+          <div className={styles['long-text--title']}>
+            {content[lang].title}
+          </div>
+        )}
         <div
           className={styles['long-text--text']}
           dangerouslySetInnerHTML={{ __html: content[lang].text }}
