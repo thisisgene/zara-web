@@ -220,7 +220,7 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/user/:lang/wissen/glossar"
+                path="/user/:lang/wissen/kenne_deine_rechte/glossar"
                 component={Glossar}
               />
               <Route exact path="/user/:lang/wissen/faq" component={Faq} />
