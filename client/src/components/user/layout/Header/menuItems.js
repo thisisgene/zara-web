@@ -263,6 +263,21 @@ const menuItems = [
             name: 'Mission',
             link: 'mission',
             id: '5.1.1'
+          },
+          {
+            name: 'Die ZARA Story',
+            link: 'geschichte',
+            id: '5.1.2'
+          },
+          {
+            name: 'ZARA Grundsätze',
+            link: 'grundsaetze',
+            id: '5.1.3'
+          },
+          {
+            name: 'Mitmischen',
+            link: 'mitmischen',
+            id: '3'
           }
         ]
       },

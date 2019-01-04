@@ -13,26 +13,33 @@ import ScrollToTop from './ScrollToTop'
 
 import Header from './layout/Header/Header'
 import Home from './pages/Home/Home'
+
 import Consulting from './pages/Consulting/Consulting'
 import Beratung from './pages/Consulting/Beratung'
 import Report from './pages/Consulting/Report'
 import WasSieTunKoennen from './pages/Consulting/WasSieTunKoennen'
 import WasWirTunKoennen from './pages/Consulting/WasWirTunKoennen'
+
 import Training from './pages/Training/Training'
 import TrainingChildren from './pages/Training/TrainingChildren'
 import TrainingAdults from './pages/Training/TrainingAdults'
 import TrainingDetail from './pages/Training/TrainingDetail'
+
 import Mitmischen from './pages/Mitmischen/Mitmischen'
 import CounterNarratives from './pages/Mitmischen/CounterNarratives'
 import Hashtags from './pages/Mitmischen/Hashtags'
 import HasspostingsMelden from './pages/Mitmischen/HasspostingsMelden'
 import Community from './pages/Mitmischen/Community'
 import Unterstuetzen from './pages/Mitmischen/Unterstuetzen'
+
 import Wissen from './pages/Wissen/Wissen'
 import Faq from './pages/Wissen/Faq/Faq'
 import News from './pages/Wissen/News/News'
+
 import WasWirWollen from './pages/Zara/WasWirWollen/WasWirWollen'
 import Mission from './pages/Zara/WasWirWollen/Mission'
+import History from './pages/Zara/WasWirWollen/History'
+import Grundsaetze from './pages/Zara/WasWirWollen/Grundsaetze'
 import Team from './pages/Zara/WerWirSind/Team/Team'
 
 import Footer from './layout/Footer/Footer'
@@ -217,8 +224,23 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/was_wir_wollen/Mission"
+                path="/user/:lang/ueber_ZARA/was_wir_wollen/mission"
                 component={Mission}
+              />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/was_wir_wollen/geschichte"
+                component={History}
+              />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/was_wir_wollen/grundsaetze"
+                component={Grundsaetze}
+              />
+              <Redirect
+                exact
+                from="/user/:lang/ueber_ZARA/was_wir_wollen/mitmischen"
+                to="/user/:lang/mitmischen"
               />
               <Route
                 exact
