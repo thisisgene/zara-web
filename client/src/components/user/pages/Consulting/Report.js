@@ -19,7 +19,6 @@ class Report extends Component {
     this.state = {
       reportType: props.match.params.report
     }
-    console.log(this.state.reportType)
   }
   componentDidUpdate(prevProps) {
     if (
@@ -27,7 +26,6 @@ class Report extends Component {
       this.props.match &&
       prevProps.match.params.report !== this.props.match.params.report
     ) {
-      console.log('UPDATE!')
       this.setState({
         reportType: this.props.match.params.report
       })

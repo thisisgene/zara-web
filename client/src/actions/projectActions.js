@@ -178,7 +178,6 @@ export const sortProjects = orderObj => dispatch => {
   axios
     .post('/api/projects/sort', orderObj)
     .then(res => {
-      console.log(res.data)
       dispatch({
         type: SORT_PROJECTS,
         payload: res.data

@@ -58,9 +58,7 @@ class ProjectContent extends Component {
     }
   }
 
-  onLocationClick = e => {
-    console.log(e.target.value)
-  }
+  onLocationClick = e => {}
 
   render() {
     const { project, loading, dynamicSave } = this.props.project

@@ -15,7 +15,6 @@ export default class Step3 extends Component {
   }
 
   onDrop = files => {
-    console.log(files)
     // this.props.uploadImages(files, this.state.id, 'project')
     this.setState({
       files: files.map(file =>

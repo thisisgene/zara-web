@@ -30,7 +30,6 @@ class MobileMenu extends Component {
   }
 
   onMobileNavClick = () => {
-    console.log('asd')
     this.setState({
       mobileExpand: !this.state.mobileExpand,
       scrollToTop: true
@@ -41,8 +40,6 @@ class MobileMenu extends Component {
   }
 
   onLinkClick = (id, e) => {
-    // e.preventDefault()
-    console.log(id)
     this.setState({
       subMenuContent: id,
       subMenuVisible: true

@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <LocalizeProvider store={store}>
-          <Router onUpdate={() => window.scrollTo(0, 0)}>
+          <Router>
             <div className="App">
               <Route exact path="/" component={NotFound} />
               <div className="User">

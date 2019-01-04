@@ -44,9 +44,7 @@ class StepFive extends Component {
     this.props.sendReport(reportData)
 
     return new Promise((resolve, reject) => {
-      console.log(this.props.report)
       if (this.props.report && this.props.report.reportSent === true) {
-        console.log('resolved')
         this.setState({
           saving: false
         })

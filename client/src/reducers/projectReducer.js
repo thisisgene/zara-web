@@ -81,7 +81,6 @@ export default function(state = initialState, action) {
         loading: false
       }
     case HAS_BACKGROUND_IMAGE:
-      console.log(action.payload)
       return {
         ...state,
         hasBackgroundImage: action.payload
@@ -110,7 +109,6 @@ export default function(state = initialState, action) {
         project: null
       }
     case SORT_PROJECTS:
-      console.log('update')
       return {
         ...state,
         projects: action.payload

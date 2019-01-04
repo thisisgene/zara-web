@@ -22,7 +22,6 @@ class ImageUpload extends Component {
   }
 
   onDrop = files => {
-    console.log(files)
     this.setState({ files: files })
     this.props.uploadImages(files, this.state.id, 'project')
   }

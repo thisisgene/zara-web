@@ -192,7 +192,6 @@ const cardGridObject = {
 class Consulting extends Component {
   constructor(props) {
     super(props)
-    console.log('langi', props.match.params)
   }
   render() {
     const { activeLanguage } = this.props

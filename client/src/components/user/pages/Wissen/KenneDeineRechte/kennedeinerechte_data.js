@@ -5,14 +5,14 @@ export const heroData = {
     title: 'Kenne Deine Rechte',
     text:
       'Hier finden Sie wichtige Informationen zur aktuellen Gesetzeslage rund um die Themenfelder rassistische Diskriminierung und Hass im Netz. Bei Fragen informiert ZARA über rechtliche sowie andere Schritte, die Betroffene und Zeug*innen setzen können.',
-    link: 'kontakt',
+    link: 'kontakt/#wissen',
     linkText: 'Zum Pressekontakt'
   },
   en: {
     title: 'Kenne Deine Rechte',
     text:
       'Hier finden Sie wichtige Informationen zur aktuellen Gesetzeslage rund um die Themenfelder rassistische Diskriminierung und Hass im Netz. Bei Fragen informiert ZARA über rechtliche sowie andere Schritte, die Betroffene und Zeug*innen setzen können.',
-    link: 'kontakt',
+    link: 'kontakt/#wissen',
     linkText: 'Zum Pressekontakt'
   }
 }

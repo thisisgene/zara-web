@@ -44,6 +44,7 @@ import History from './pages/Zara/WasWirWollen/History'
 import Grundsaetze from './pages/Zara/WasWirWollen/Grundsaetze'
 import Team from './pages/Zara/WerWirSind/Team/Team'
 
+import Kontakt from './pages/Zara/Kontakt/Kontakt'
 import Impressum from './pages/Other/Impressum'
 
 import Footer from './layout/Footer/Footer'
@@ -58,10 +59,8 @@ class User extends Component {
       { name: 'Deutsch', code: 'de' },
       { name: 'English', code: 'en' }
     ]
-    console.log('langu', props.match.params)
     const defaultLanguage = languages[0].code
     // window.localStorage.getItem('languageCode') || languages[0].code
-    // console.log(defaultLanguage)
     this.props.initialize({
       languages,
       translation: globalTranslations,
@@ -267,6 +266,7 @@ class User extends Component {
                 component={Team}
               />
 
+              <Route exact path="/user/:lang/kontakt" component={Kontakt} />
               <Route exact path="/user/:lang/impressum" component={Impressum} />
             </Switch>
           </div>

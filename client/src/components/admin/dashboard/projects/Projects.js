@@ -16,9 +16,7 @@ import styles from './Projects.module.sass'
 
 // TODO: If single project (props.project.project) exists -> Redirect to project view.
 class Projects extends Component {
-  componentDidMount() {
-    // console.log(this.props)
-  }
+  componentDidMount() {}
   render() {
     return (
       <div className={styles['projects']}>

@@ -9,7 +9,6 @@ const style = {
 class RestrictedPage extends Component {
   render() {
     const { accessLevel } = this.props
-    console.log(accessLevel)
     return (
       <div style={style}>
         <h3>Zugriff nicht erlaubt!</h3>

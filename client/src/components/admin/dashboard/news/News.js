@@ -10,9 +10,7 @@ import { getAllNewsItems, getNewsItemById } from '../../../actions/newsActions'
 import './news.css'
 
 class News extends Component {
-  componentDidMount() {
-    // console.log(this.props)
-  }
+  componentDidMount() {}
   render() {
     return (
       <div className="news">

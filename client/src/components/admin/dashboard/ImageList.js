@@ -50,7 +50,6 @@ class ImageList extends Component {
     this.props.setBackgroundImage(projectId, imageId)
   }
   onCheckboxClick = (projectId, imageId, e) => {
-    console.log(e.target.checked)
     this.props.setImageVisibility(projectId, imageId, e.target.checked)
   }
 

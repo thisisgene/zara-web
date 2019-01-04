@@ -14,7 +14,6 @@ class NewsBox extends Component {
   }
   onChange = e => {
     let activeTags = this.state.activeTags
-    console.log('target: ', e.target)
     if (e.target.checked) {
       activeTags.push(e.target.name)
       this.setState({
@@ -53,7 +52,6 @@ class NewsBox extends Component {
       filteredContent = content
     }
 
-    console.log('filtered: ', filteredContent)
     // TODO: Pagination if more than 10 News items
 
     return (

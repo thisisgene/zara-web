@@ -13,7 +13,6 @@ export default class TrainingBox extends Component {
   }
 
   onChange = e => {
-    console.log(e.target.value)
     this.setState({
       activeCat: e.target.value
     })

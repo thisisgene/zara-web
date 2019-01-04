@@ -19,7 +19,6 @@ class TrainingDetail extends Component {
     this.state = {
       trainingId: props.match.params.trainingId
     }
-    console.log(this.state.trainingId)
   }
   componentDidUpdate(prevProps) {
     if (
@@ -27,7 +26,6 @@ class TrainingDetail extends Component {
       this.props.match &&
       prevProps.match.params.trainingId !== this.props.match.params.trainingId
     ) {
-      console.log('UPDATE!')
       this.setState({
         trainingId: this.props.match.params.trainingId
       })
@@ -46,7 +44,6 @@ class TrainingDetail extends Component {
     if (lang) {
       training = trainingArray[0]
     }
-    console.log('training: ', training)
     return (
       <div>
         {training && lang && (
