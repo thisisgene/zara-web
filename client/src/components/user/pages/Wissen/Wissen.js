@@ -5,8 +5,7 @@ import { withLocalize } from 'react-localize-redux'
 import { carouselData, cardGridObject } from './wissen_data'
 
 import CarouselGroup from '../../dashboard/carousel/CarouselGroup'
-import IconObject from '../../dashboard/IconObject/IconObject'
-import InputButtonBox from '../../dashboard/InputButtonBox/InputButtonBox'
+import NewsletterOneLineObject from '../../dashboard/NewsletterOneLineObject/NewsletterOneLineObject'
 import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 import styles from './Wissen.module.sass'
@@ -30,29 +29,7 @@ class Wissen extends Component {
                   : 'More news, events, ...'}
               </Link>
             </div>
-            <div className={styles['newsletter-container']}>
-              <div>
-                <IconObject image="newsletterLogo" />
-                <span>
-                  {lang === 'de'
-                    ? 'Melden Sie sich für den ZARA Newsletter an'
-                    : 'Subscribe to the ZARA newsletter'}
-                </span>
-              </div>
-              <InputButtonBox
-                content={{
-                  inputPlaceholder:
-                    lang === 'de' ? 'E-Mail Adresse' : 'E-mail Address',
-                  button: {
-                    type: 'default',
-                    text:
-                      lang === 'de'
-                        ? 'Newsletter abonnieren'
-                        : 'Subscribe to newsletter'
-                  }
-                }}
-              />
-            </div>
+            <NewsletterOneLineObject lang={lang} />
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}

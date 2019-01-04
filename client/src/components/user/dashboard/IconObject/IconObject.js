@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
 import act from '../../common/assets/icon/act/act.svg'
+import alert from '../../common/assets/icon/act/important.svg'
 import spenden from '../../common/assets/icon/act/donate-text.svg'
+import donate_hand from '../../common/assets/icon/various/donate.png'
+import group from '../../common/assets/icon/various/group.png'
 import LockIcon from '../../common/img/lock.svg'
 
 import ArrowIcon from '../../common/assets/icon/arrow/tertiary.svg'
@@ -31,9 +34,12 @@ class IconObject extends Component {
     const imageSrc = image =>
       ({
         act,
+        alert,
+        donate_hand,
         spenden,
         arrowRight,
         arrowButtonRight,
+        group,
         listArrow: ArrowIcon,
         LockIcon,
         search,

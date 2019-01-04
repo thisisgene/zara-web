@@ -6,7 +6,7 @@ import styles from './CompactInfoCardObject.module.sass'
 
 class CompactInfoCardObject extends Component {
   render() {
-    const { card } = this.props
+    const { card, lang } = this.props
     return (
       <div
         className={cx(
@@ -15,7 +15,7 @@ class CompactInfoCardObject extends Component {
           styles[card.size]
         )}
       >
-        <Link to={card.link}>
+        <Link to={`/user/${lang}/${card.link}`}>
           {card.type === 'imageCard' && (
             <div className={styles['compact-card--image']}>
               <img

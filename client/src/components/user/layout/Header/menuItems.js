@@ -91,7 +91,7 @@ const menuItems = [
           {
             name: 'Kenne Deine Rechte',
             redirect: true,
-            redirectLink: 'wissen/kennedeinerechte',
+            redirectLink: 'wissen/kenne_deine_rechte',
             id: '1.2.3'
           }
         ]
@@ -225,6 +225,11 @@ const menuItems = [
         name: 'Aktuelles',
         link: 'aktuelles',
         id: '4.1'
+      },
+      {
+        name: 'Kenne Deine Rechte',
+        link: 'kenne_deine_rechte',
+        id: '4.3'
       },
       {
         name: 'FAQs',

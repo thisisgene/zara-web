@@ -199,7 +199,7 @@ const infoObj_red = {
       'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
     cards: [
       {
-        image: 'act',
+        image: 'alert',
         color: 'red',
         title: 'Rassismus melden',
         text:
@@ -208,7 +208,7 @@ const infoObj_red = {
         linkText: "Los geht's!"
       },
       {
-        image: 'act',
+        image: 'donate_hand',
         color: 'red',
         title: '(Online) Spenden',
         text:
@@ -217,7 +217,7 @@ const infoObj_red = {
         linkText: "Los geht's!"
       },
       {
-        image: 'act',
+        image: 'group',
         color: 'red',
         title: 'Ehrenamtlich mitmischen',
         text:
@@ -383,7 +383,7 @@ const cardGridObject = {
 const mainInfo = {
   text:
     'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
-  link: 'text',
+  link: 'ueber_ZARA/was_wir_wollen/mission',
   linkText: 'Mehr zur Mission'
 }
 
@@ -395,7 +395,7 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: '/beratung/melden/rassismus'
+      link: 'beratung/melden/rassismus'
     }
   },
   en: {
@@ -403,7 +403,7 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: '/beratung/melden/rassismus'
+      link: 'beratung/melden/rassismus'
     }
   }
 }
@@ -419,9 +419,11 @@ class Home extends Component {
       <div className={styles['main-content']}>
         <CarouselGroup data={fakeServerData} lang={lang} />
         <OneLineAlert content={oneLineAlert} lang={lang} />
-        <BigNewsObject content={mainInfo} />
+        <BigNewsObject content={mainInfo} lang={lang} />
         <InfoBoxObject infoBox={infoObj_default} lang={lang} />
-        <QuoteBox quote={quote} />
+        <div style={{ margin: '3rem auto' }}>
+          <QuoteBox quote={quote} />
+        </div>
         <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
         <InfoBoxObject infoBox={infoObj_red} lang={lang} />
       </div>

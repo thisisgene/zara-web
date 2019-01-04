@@ -30,7 +30,7 @@ export default class CardCollectionGridObject extends Component {
                       [styles[card.size]]: card.size
                     })}
                   >
-                    <CompactInfoCardObject card={card} />
+                    <CompactInfoCardObject card={card} lang={lang} />
                   </div>
                 ))}
             </div>

@@ -33,14 +33,17 @@ import Community from './pages/Mitmischen/Community'
 import Unterstuetzen from './pages/Mitmischen/Unterstuetzen'
 
 import Wissen from './pages/Wissen/Wissen'
-import Faq from './pages/Wissen/Faq/Faq'
 import News from './pages/Wissen/News/News'
+import KenneDeineRechte from './pages/Wissen/KenneDeineRechte/KenneDeineRechte'
+import Faq from './pages/Wissen/Faq/Faq'
 
 import WasWirWollen from './pages/Zara/WasWirWollen/WasWirWollen'
 import Mission from './pages/Zara/WasWirWollen/Mission'
 import History from './pages/Zara/WasWirWollen/History'
 import Grundsaetze from './pages/Zara/WasWirWollen/Grundsaetze'
 import Team from './pages/Zara/WerWirSind/Team/Team'
+
+import Impressum from './pages/Other/Impressum'
 
 import Footer from './layout/Footer/Footer'
 
@@ -205,12 +208,17 @@ class User extends Component {
               />
 
               <Route exact path="/user/:lang/wissen" component={Wissen} />
-              <Route exact path="/user/:lang/wissen/faq" component={Faq} />
               <Route
                 exact
                 path="/user/:lang/wissen/aktuelles"
                 component={News}
               />
+              <Route
+                exact
+                path="/user/:lang/wissen/kenne_deine_rechte"
+                component={KenneDeineRechte}
+              />
+              <Route exact path="/user/:lang/wissen/faq" component={Faq} />
 
               <Redirect
                 exact
@@ -252,6 +260,8 @@ class User extends Component {
                 path="/user/:lang/ueber_ZARA/wer_wir_sind/team"
                 component={Team}
               />
+
+              <Route exact path="/user/:lang/impressum" component={Impressum} />
             </Switch>
           </div>
         </ScrollToTop>

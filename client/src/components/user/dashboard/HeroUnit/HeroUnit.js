@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import cx from 'classnames'
 import styles from './HeroUnit.module.sass'
@@ -31,6 +32,13 @@ class HeroUnit extends Component {
                     className={styles['hero-unit--text__body']}
                     dangerouslySetInnerHTML={{ __html: data[lang].text }}
                   />
+                  {data[lang].link && (
+                    <div className={styles['hero-unit--text__link']}>
+                      <Link to={`/user/${lang}/${data[lang].link}`}>
+                        {data[lang].linkText}
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             ) : (

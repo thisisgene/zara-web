@@ -5,12 +5,12 @@ import styles from './BigNewsObject.module.sass'
 
 export default class BigNewsObject extends Component {
   render() {
-    const { content } = this.props
+    const { content, lang } = this.props
     return (
       <div className={styles['big-news']}>
         <div className={styles['big-news--text']}>{content.text}</div>
         <div className={styles['big-news--link']}>
-          <Link to={content.link}>{content.linkText}</Link>
+          <Link to={`/user/${lang}/${content.link}`}>{content.linkText}</Link>
         </div>
       </div>
     )
