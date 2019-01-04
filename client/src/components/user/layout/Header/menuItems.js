@@ -229,7 +229,14 @@ const menuItems = [
       {
         name: 'Kenne Deine Rechte',
         link: 'kenne_deine_rechte',
-        id: '4.3'
+        id: '4.3',
+        subMenuList: [
+          {
+            name: 'Glossar',
+            link: 'glossar',
+            id: '4.3.2'
+          }
+        ]
       },
       {
         name: 'FAQs',
