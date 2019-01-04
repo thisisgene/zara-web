@@ -43,8 +43,8 @@ class InfoCardObject extends Component {
         {card.linkType && card.linkType === 'button' ? (
           card.multiButton === true ? (
             <div>
-              {card.buttons.map(button => (
-                <div className={styles['info-card--button']}>
+              {card.buttons.map((button, index) => (
+                <div className={styles['info-card--button']} key={index}>
                   <ButtonObject button={button} lang={lang} />
                 </div>
               ))}

@@ -37,8 +37,8 @@ class InfoBoxObject extends Component {
               </div>
               {infoBox[lang].buttons && (
                 <div className={styles['info-box--buttons']}>
-                  {infoBox[lang].buttons.map(button => (
-                    <ButtonObject button={button} lang={lang} />
+                  {infoBox[lang].buttons.map((button, index) => (
+                    <ButtonObject key={index} button={button} lang={lang} />
                   ))}
                 </div>
               )}
