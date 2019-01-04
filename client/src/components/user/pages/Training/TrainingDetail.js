@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withLocalize } from 'react-localize-redux'
 
-import { trainingBoxData, oneLineAlertDetail } from './training_data'
+import {
+  trainingBoxData,
+  trainingItems,
+  oneLineAlertDetail
+} from './training_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
@@ -37,7 +41,7 @@ class TrainingDetail extends Component {
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
     }
-    const trainingArray = trainingBoxData.items.filter(
+    const trainingArray = trainingItems.items.filter(
       item => item._id === this.state.trainingId
     )
     let training
@@ -97,7 +101,7 @@ class TrainingDetail extends Component {
                   )}
                 >
                   {training.related.map(rel =>
-                    trainingBoxData.items
+                    trainingItems.items
                       .filter(item => item._id === rel.id)
                       .map((item, index) => (
                         <div key={index}>
