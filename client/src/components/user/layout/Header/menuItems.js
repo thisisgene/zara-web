@@ -257,7 +257,14 @@ const menuItems = [
       {
         name: 'Was wir wollen',
         link: 'was_wir_wollen',
-        id: '5.1'
+        id: '5.1',
+        subMenuList: [
+          {
+            name: 'Mission',
+            link: 'mission',
+            id: '5.1.1'
+          }
+        ]
       },
       {
         name: 'Wer wir sind',

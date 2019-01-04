@@ -31,6 +31,8 @@ import Unterstuetzen from './pages/Mitmischen/Unterstuetzen'
 import Wissen from './pages/Wissen/Wissen'
 import Faq from './pages/Wissen/Faq/Faq'
 import News from './pages/Wissen/News/News'
+import WasWirWollen from './pages/Zara/WasWirWollen/WasWirWollen'
+import Mission from './pages/Zara/WasWirWollen/Mission'
 import Team from './pages/Zara/WerWirSind/Team/Team'
 
 import Footer from './layout/Footer/Footer'
@@ -201,6 +203,22 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/aktuelles"
                 component={News}
+              />
+
+              <Redirect
+                exact
+                from="/user/:lang/ueber_ZARA"
+                to="/user/:lang/ueber_ZARA/was_wir_wollen"
+              />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/was_wir_wollen"
+                component={WasWirWollen}
+              />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/was_wir_wollen/Mission"
+                component={Mission}
               />
               <Route
                 exact
