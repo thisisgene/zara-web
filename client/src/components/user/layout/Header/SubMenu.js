@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
+import IconObject from '../../dashboard/IconObject/IconObject'
+
 import {
   trainingBoxData,
   trainingItems
@@ -41,10 +43,12 @@ class SubMenu extends Component {
                                 onClick={this.props.onClick}
                               >
                                 <Translate id={`menu.item${subItem.id}`} />
+                                <IconObject image="arrowRight" />
                               </NavLink>
                             ) : (
                               <div className={styles['no-link']}>
                                 <Translate id={`menu.item${subItem.id}`} />
+                                {/* <IconObject image="arrowRight" /> */}
                               </div>
                             )}
                           </div>
@@ -104,6 +108,7 @@ class SubMenu extends Component {
                             onClick={this.props.onClick}
                           >
                             {cat.text}
+                            <IconObject image="arrowRight" />
                           </NavLink>
                         </p>
                         {trainingItems.items &&

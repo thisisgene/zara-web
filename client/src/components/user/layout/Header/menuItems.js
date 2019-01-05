@@ -227,6 +227,11 @@ const menuItems = [
         id: '4.1'
       },
       {
+        name: 'Presse',
+        link: 'presse',
+        id: '4.2'
+      },
+      {
         name: 'Kenne Deine Rechte',
         link: 'kenne_deine_rechte',
         id: '4.3',
@@ -239,9 +244,14 @@ const menuItems = [
         ]
       },
       {
+        name: 'Publikationen',
+        link: 'publikationen',
+        id: '4.4'
+      },
+      {
         name: 'FAQs',
         link: 'faq',
-        id: '4.4'
+        id: '4.5'
       }
     ]
   },

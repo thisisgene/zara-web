@@ -27,7 +27,7 @@ const infoObj_default = {
   color: 'white',
   count: 'two',
   de: {
-    // title: 'Wie ich aktiv werden kann!',
+    title: 'Melden',
     text:
       'Möchten Sie was zu Rassismus oder zu Hass im Netz melden oder eine schriftliche Beratung bekommen? Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit anbieten, können wir Ihnen sagen welche Aktionen wir eingeleitet haben. Wir Beraten Sie auch gerne bei weiteren rechtlichen oder anderen Schritten. ',
     cards: [
@@ -74,7 +74,7 @@ const infoObj_default = {
     ]
   },
   en: {
-    // title: 'Wie ich aktiv werden kann!',
+    title: 'Melden',
     text:
       'Möchten Sie was zu Rassismus oder zu Hass im Netz melden oder eine schriftliche Beratung bekommen? Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit anbieten, können wir Ihnen sagen welche Aktionen wir eingeleitet haben. Wir Beraten Sie auch gerne bei weiteren rechtlichen oder anderen Schritten. ',
     cards: [
@@ -203,7 +203,9 @@ class Consulting extends Component {
       <div>
         <HeroUnit data={heroData} lang={lang} />
         <OneLineAlert content={oneLineAlert} lang={lang} />
-        <InfoBoxObject infoBox={infoObj_default} lang={lang} />
+        <div id="melden">
+          <InfoBoxObject infoBox={infoObj_default} lang={lang} />
+        </div>
         <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
         {/* <MultiStepForm /> */}
       </div>

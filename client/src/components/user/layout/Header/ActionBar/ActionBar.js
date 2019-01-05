@@ -15,14 +15,14 @@ class ActionBar extends Component {
         <div className={cx(styles['action-bar--menu'], styles[align])}>
           <NavLink
             activeClassName={styles.active}
-            to={`/user/${lang}/melden`}
+            to={`/user/${lang}/beratung/#melden`}
             onClick={onClick ? onClick : null}
           >
             <img src={ActIcon} alt="" />
           </NavLink>
           <NavLink
             activeClassName={styles.active}
-            to={`/user/${lang}/melden`}
+            to={`/user/${lang}/beratung/#melden`}
             onClick={onClick ? onClick : null}
           >
             <Translate id={`menu.item0.1`} />
