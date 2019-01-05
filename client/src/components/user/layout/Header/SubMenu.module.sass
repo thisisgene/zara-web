@@ -9,9 +9,16 @@
   &.visible
     display: flex
     padding: 2rem 1rem 3rem
+  &.second-row.visible
+    display: grid
+    grid-template-rows: 56px
+
   .sub-item
+    grid-row: 1
     margin: 0 1rem
     flex-grow: 1
+    &.two
+      grid-row: 2
     &--title 
       margin-bottom: 1rem
       width: 100%
@@ -36,6 +43,7 @@
         margin-left: .2rem
 
   .contact-box--container
+    grid-row: 1
     // flex-grow: 1
         
   .sub-sub-item 

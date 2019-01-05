@@ -23,16 +23,28 @@ class SubMenu extends Component {
             <div key={index}>
               {item.name !== 'Training' ? (
                 <div
-                  className={cx(styles['sub-menu-item'], {
-                    [styles[`visible`]]: subMenuContent === item.id
-                  })}
+                  className={cx(
+                    styles['sub-menu-item'],
+                    {
+                      [styles[`visible`]]: subMenuContent === item.id
+                    },
+                    {
+                      [styles['second-row']]: item.secondRow
+                    }
+                  )}
                   key={item.id}
                 >
                   {/* <h3>{item.name}</h3> */}
                   {item.subMenuList &&
                     item.subMenuList.map(subItem => {
                       return (
-                        <div className={styles['sub-item']} key={subItem.id}>
+                        <div
+                          className={cx(
+                            styles['sub-item'],
+                            styles[subItem.gridRow]
+                          )}
+                          key={subItem.id}
+                        >
                           <div className={styles['sub-item--title']}>
                             {subItem.link !== null ? (
                               <NavLink

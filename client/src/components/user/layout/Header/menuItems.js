@@ -204,6 +204,7 @@ const menuItems = [
     name: 'Wissen',
     id: '4',
     link: 'wissen',
+    secondRow: true,
     contact: {
       de: {
         title: 'Kontakt Presse & Wissen',
@@ -226,32 +227,63 @@ const menuItems = [
         link: 'aktuelles',
         id: '4.1'
       },
-      {
-        name: 'Presse',
-        link: 'presse',
-        id: '4.2'
-      },
+
       {
         name: 'Kenne Deine Rechte',
         link: 'kenne_deine_rechte',
-        id: '4.3',
+        id: '4.2',
         subMenuList: [
+          {
+            name: 'Recht & Ordnung',
+            link: 'recht_und_ordnung',
+            id: '4.2.1'
+          },
           {
             name: 'Glossar',
             link: 'glossar',
-            id: '4.3.2'
+            id: '4.2.2'
           }
         ]
       },
       {
         name: 'Publikationen',
         link: 'publikationen',
-        id: '4.4'
+        id: '4.3',
+        subMenuList: [
+          {
+            name: 'Rassismusreport',
+            link: 'rassismusreport',
+            id: '4.3.1'
+          }
+        ]
       },
       {
         name: 'FAQs',
         link: 'faq',
-        id: '4.5'
+        id: '4.4'
+      },
+      {
+        name: 'Presse',
+        link: 'presse',
+        id: '4.5',
+        gridRow: 'two',
+        subMenuList: [
+          {
+            name: 'Pressespiegel',
+            link: 'pressespiegel',
+            id: '4.5.1'
+          },
+          {
+            name: 'Logos & Kampagnenmaterial',
+            link: 'logos_und_kampagnenmaterial',
+            id: '4.5.2'
+          },
+          {
+            name: 'Fotos',
+            link: 'fotos',
+            id: '4.5.3'
+          }
+        ]
       }
     ]
   },
@@ -298,7 +330,8 @@ const menuItems = [
           },
           {
             name: 'Mitmischen',
-            link: 'mitmischen',
+            redirect: true,
+            redirectLink: 'mitmischen',
             id: '3'
           }
         ]
