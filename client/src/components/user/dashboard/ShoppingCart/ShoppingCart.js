@@ -15,9 +15,10 @@ export default class ShoppingCart extends Component {
       increaseCount,
       shoppingCartText
     } = this.props
+
     return (
       <div className={styles['shopping-cart']}>
-        {shoppingCartText && <div>{shoppingCartText[lang].text}</div>}
+        {/* {shoppingCartText && <div>{shoppingCartText[lang].text}</div>} */}
         <div className={styles['shopping-cart--title']}>
           {lang === 'de' ? 'Warenkorb' : 'Shopping Cart'}
         </div>
@@ -42,6 +43,14 @@ export default class ShoppingCart extends Component {
             )}
           </div>
         ))}
+        <div className={styles['shopping-cart--order-button']}>
+          <button
+
+          // onClick={toOrderForm}
+          >
+            {lang === 'de' ? 'Bestellen' : 'Order'}
+          </button>
+        </div>
       </div>
     )
   }

@@ -1,6 +1,6 @@
 .shopping-cart
   border: 2px solid #FFC803
-  background: rgba(#FFC803, .1)
+  background: #FFFAE9
   padding: 1rem
   margin: 2rem auto
   max-width: 800px
@@ -8,10 +8,11 @@
     font:
       size: 1.4rem
       weight: bold
-  &--empty-button button
-    border: none
-    background: #FFC803
-    padding: .2rem .6rem
+  &--empty-button, &--order-button 
+    button
+      border: none
+      background: #FFC803
+      padding: .2rem .6rem
 
   &--item
     display: flex

@@ -23,6 +23,15 @@ export default class ImageGridObject extends Component {
     })
   }
 
+  cartShouldBeVisible = () => {
+    let totalAmount = 0
+    let cartArray = this.state.cart
+
+    cartArray.map(item => (totalAmount += item.count))
+    totalAmount > 0
+      ? this.setState({ showCart: true })
+      : this.setState({ showCart: false })
+  }
   emptyCart = () => {
     let cartArray = this.state.cart
 
@@ -30,6 +39,7 @@ export default class ImageGridObject extends Component {
     this.setState({
       cart: cartArray
     })
+    this.cartShouldBeVisible()
   }
 
   increaseCount = id => {
@@ -39,6 +49,7 @@ export default class ImageGridObject extends Component {
     this.setState({
       cart: cartArray
     })
+    this.cartShouldBeVisible()
   }
   decreaseCount = id => {
     let cartArray = this.state.cart
@@ -47,6 +58,7 @@ export default class ImageGridObject extends Component {
     this.setState({
       cart: cartArray
     })
+    this.cartShouldBeVisible()
   }
 
   render() {
@@ -66,25 +78,29 @@ export default class ImageGridObject extends Component {
                   ))}
                 </div>
                 {item.toOrder && (
-                  <div
+                  <button
                     onClick={this.increaseCount.bind(this, item.id, this.title)}
                   >
                     {lang === 'de' ? 'In den Warenkorb' : 'Add to cart'}
-                  </div>
+                  </button>
                 )}
                 {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
               </div>
             </div>
           ))}
         </div>
-        <ShoppingCart
-          content={this.state.cart}
-          emptyCart={this.emptyCart}
-          lang={lang}
-          increaseCount={this.increaseCount}
-          decreaseCount={this.decreaseCount}
-          shoppingCartText={shoppingCartText}
-        />
+        {this.state.showCart && (
+          <div className={styles['shopping-cart-container']}>
+            <ShoppingCart
+              content={this.state.cart}
+              emptyCart={this.emptyCart}
+              lang={lang}
+              increaseCount={this.increaseCount}
+              decreaseCount={this.decreaseCount}
+              shoppingCartText={shoppingCartText}
+            />
+          </div>
+        )}
       </div>
     )
   }
