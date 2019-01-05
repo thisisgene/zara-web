@@ -73,21 +73,21 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Publikationen',
+        title: 'Publikationen',
         link: 'test'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'faq-bubble.png',
-        text: 'FAQs',
+        title: 'FAQs',
         link: 'wissen/faq'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'press.png',
-        text: 'Presse',
+        title: 'Presse',
         link: 'wissen/faq'
       }
     ]
@@ -106,21 +106,21 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'books.png',
-        text: 'Publikationen',
+        title: 'Publikationen',
         link: 'test'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'qna.png',
-        text: 'FAQs',
+        title: 'FAQs',
         link: 'wissen/faq'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'list.png',
-        text: 'Presse',
+        title: 'Presse',
         link: 'wissen/faq'
       }
     ]

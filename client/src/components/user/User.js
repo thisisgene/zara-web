@@ -36,6 +36,7 @@ import Wissen from './pages/Wissen/Wissen'
 import News from './pages/Wissen/News/News'
 import KenneDeineRechte from './pages/Wissen/KenneDeineRechte/KenneDeineRechte'
 import Glossar from './pages/Wissen/KenneDeineRechte/Glossar'
+import Publikationen from './pages/Wissen/Publikationen/Publikationen'
 import Faq from './pages/Wissen/Faq/Faq'
 
 import WasWirWollen from './pages/Zara/WasWirWollen/WasWirWollen'
@@ -50,6 +51,7 @@ import Impressum from './pages/Other/Impressum'
 import Footer from './layout/Footer/Footer'
 
 import styles from './User.module.sass'
+import RassismusReport from './pages/Wissen/Publikationen/RassismusReport'
 
 class User extends Component {
   constructor(props) {
@@ -222,6 +224,16 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/kenne_deine_rechte/glossar"
                 component={Glossar}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/publikationen"
+                component={Publikationen}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/publikationen/rassismusreport"
+                component={RassismusReport}
               />
               <Route exact path="/user/:lang/wissen/faq" component={Faq} />
 
