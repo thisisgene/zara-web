@@ -14,8 +14,9 @@ export default class ImageGridObject extends Component {
   }
   componentDidMount() {
     let cartArray = []
+    const lang = this.props.lang
     this.props.content.map(item => {
-      cartArray.push({ id: item.id, title: item.title, count: 0 })
+      cartArray.push({ id: item.id, title: item[lang].title, count: 0 })
     })
     this.setState({
       cart: cartArray
@@ -49,34 +50,40 @@ export default class ImageGridObject extends Component {
   }
 
   render() {
-    const { content, lang } = this.props
+    const { content, lang, shoppingCartText } = this.props
 
     return (
-      <div className={styles['grid-container']}>
-        {content.map((item, index) => (
-          <div key={index} className={styles['grid-item']}>
-            <img src={`/assets/img/${item.image}`} alt={item.image} />
-            <div className={styles['grid-item--links']}>
-              <span>Download:</span>
-              <div className={styles['grid-item--links__language']}>
-                {item.links.map(link => (
-                  <a href={link.link}>{link.linkText}</a>
-                ))}
+      <div>
+        <div className={styles['grid-container']}>
+          {content.map((item, index) => (
+            <div key={index} className={styles['grid-item']}>
+              <img src={`/assets/img/${item.image}`} alt={item.image} />
+              <div className={styles['grid-item--links']}>
+                <span>Download:</span>
+                <div className={styles['grid-item--links__language']}>
+                  {item.links.map(link => (
+                    <a href={link.link}>{link.linkText}</a>
+                  ))}
+                </div>
+                {item.toOrder && (
+                  <div
+                    onClick={this.increaseCount.bind(this, item.id, this.title)}
+                  >
+                    {lang === 'de' ? 'In den Warenkorb' : 'Add to cart'}
+                  </div>
+                )}
+                {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
               </div>
-              <span
-                onClick={this.increaseCount.bind(this, item.id, this.title)}
-              >
-                {lang === 'de' ? 'In den Warenkorb' : 'Add to cart'}
-              </span>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <ShoppingCart
           content={this.state.cart}
           emptyCart={this.emptyCart}
           lang={lang}
           increaseCount={this.increaseCount}
           decreaseCount={this.decreaseCount}
+          shoppingCartText={shoppingCartText}
         />
       </div>
     )

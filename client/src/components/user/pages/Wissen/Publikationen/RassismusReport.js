@@ -5,6 +5,7 @@ import {
   heroData,
   longText,
   cardGridObject,
+  shoppingCartText,
   reportGridData
 } from './rassismusReport_data'
 // import { oneLineAlert, trainingItems } from './training_data'
@@ -29,7 +30,11 @@ class RassismusReport extends Component {
             <HeroUnit data={heroData} lang={lang} />
             <NewsletterOneLineObject lang={lang} />
             <LongText content={longText} lang={lang} />
-            <ImageGridObject content={reportGridData} lang={lang} />
+            <ImageGridObject
+              shoppingCartText={shoppingCartText}
+              content={reportGridData}
+              lang={lang}
+            />
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
+import LongText from '../LongText/LongText'
+
 import styles from './ShoppingCart.module.sass'
+import { shoppingCartText } from '../../pages/Wissen/Publikationen/rassismusReport_data'
 
 export default class ShoppingCart extends Component {
   render() {
@@ -9,11 +12,16 @@ export default class ShoppingCart extends Component {
       lang,
       emptyCart,
       decreaseCount,
-      increaseCount
+      increaseCount,
+      shoppingCartText
     } = this.props
     return (
       <div className={styles['shopping-cart']}>
-        <div>
+        {shoppingCartText && <div>{shoppingCartText[lang].text}</div>}
+        <div className={styles['shopping-cart--title']}>
+          {lang === 'de' ? 'Warenkorb' : 'Shopping Cart'}
+        </div>
+        <div className={styles['shopping-cart--empty-button']}>
           <button onClick={emptyCart}>
             {lang === 'de' ? 'Warenkorb leeren' : 'Empty Cart'}
           </button>
@@ -27,7 +35,9 @@ export default class ShoppingCart extends Component {
                   {item.count}
                   <button onClick={() => increaseCount(item.id)}>+</button>
                 </div>
-                <div>{item.title}</div>
+                <div className={styles['shopping-cart--item__title']}>
+                  {item.title}
+                </div>
               </div>
             )}
           </div>

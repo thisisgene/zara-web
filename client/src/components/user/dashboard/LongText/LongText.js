@@ -9,7 +9,11 @@ export default class LongText extends Component {
   render() {
     const { content, lang } = this.props
     return (
-      <div className={cx(styles['long-text'], styles[content.type])}>
+      <div
+        className={cx(styles['long-text'], {
+          [styles[content.type]]: content.type
+        })}
+      >
         {content[lang].title && (
           <div className={styles['long-text--title']}>
             {content[lang].title}

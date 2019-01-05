@@ -30,35 +30,68 @@ export const longText = {
 export const reportGridData = [
   {
     id: 'da97cy',
-    title: 'RR2015',
-    text: '',
+    toOrder: true,
     image: 'publikationen.png',
     links: [
       { link: 'asd.com', linkText: 'deutsch' },
       { link: 'asd.com', linkText: 'englisch' }
-    ]
+    ],
+    de: {
+      title: 'RR2016',
+      text: ''
+    },
+    en: {
+      title: 'RR2016',
+      text: ''
+    }
   },
   {
     id: 'df47cy',
-    title: 'RR2015',
-    text: '',
+    toOrder: true,
     image: 'publikationen.png',
     links: [
       { link: 'asd.com', linkText: 'deutsch' },
       { link: 'asd.com', linkText: 'englisch' }
-    ]
+    ],
+    de: {
+      title: 'RR2015',
+      text: ''
+    },
+    en: {
+      title: 'RR2015',
+      text: ''
+    }
   },
   {
-    id: 'dahd6y',
-    title: 'RR2015',
-    text: '',
+    id: 'ds5cy',
     image: 'publikationen.png',
     links: [
       { link: 'asd.com', linkText: 'deutsch' },
       { link: 'asd.com', linkText: 'englisch' }
-    ]
+    ],
+    de: {
+      addInfo: 'Druckauflage vergriffen',
+      title: 'RR2014',
+      text: ''
+    },
+    en: {
+      addInfo: 'Not available as print',
+      title: 'RR2014',
+      text: ''
+    }
   }
 ]
+
+export const shoppingCartText = {
+  de: {
+    text:
+      'Gerne senden wir Ihnen  auch eine oder mehrere gedruckte Exemplare des Rassismus Report zu. Allerdings müssen wir Sie  aufgrund unserer schwierigen finanziellen Situation bitten die Portokosten zu übernehmen. Bestellungen von mehr als insgesamt fünf  Exemplaren können nur unfrei als Paket versandt werden.'
+  },
+  en: {
+    text:
+      'Gerne senden wir Ihnen  auch eine oder mehrere gedruckte Exemplare des Rassismus Report zu. Allerdings müssen wir Sie  aufgrund unserer schwierigen finanziellen Situation bitten die Portokosten zu übernehmen. Bestellungen von mehr als insgesamt fünf  Exemplaren können nur unfrei als Paket versandt werden.'
+  }
+}
 
 export const cardGridObject = {
   count: 'two',
