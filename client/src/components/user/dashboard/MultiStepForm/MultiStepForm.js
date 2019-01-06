@@ -22,8 +22,10 @@ class MultiStepForm extends Component {
 
     this.sampleStore = {
       email: '',
+      // userName: '',
       description: '',
       files: [],
+      links: '',
       savedToCloud: false
     }
   }
@@ -119,6 +121,7 @@ class MultiStepForm extends Component {
         )
       }
     ]
+    const { lang } = this.props
     return (
       <div className={styles['multi-step-container']}>
         <div className={cx('step-progress', styles['multi-step-form'])}>
@@ -126,6 +129,8 @@ class MultiStepForm extends Component {
             steps={steps}
             startAtStep={0}
             nextButtonCls={'next-button'}
+            nextButtonText={lang === 'de' ? 'Weiter' : 'Next'}
+            backButtonText={lang === 'de' ? 'Zurück' : 'Back'}
             nextTextOnFinalActionStep={'Absenden'}
           />
         </div>

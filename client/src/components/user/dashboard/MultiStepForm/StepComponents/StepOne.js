@@ -17,7 +17,10 @@ const infoCard = {
     },
     {
       text:
-        'Ihren Namen und Ihre Kontaktdaten für eventuelle Nachfragen  (optional)'
+        'Insofern Sie es wünschen, Ihren Namen und Ihre Kontaktdaten für eventuelle Nachfragen bzw. um Sie über Ergebnisse zu informieren'
+    },
+    {
+      text: 'Sie können, wenn Sie es wünschen, auch anonym melden!'
     }
   ]
 }

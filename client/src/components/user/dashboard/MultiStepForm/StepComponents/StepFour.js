@@ -11,7 +11,8 @@ class Step4 extends Component {
     super(props)
 
     this.state = {
-      emailEmergency: props.getStore().emailEmergency
+      emailEmergency: props.getStore().emailEmergency,
+      userName: props.getStore().userName
     }
 
     this.validatorTypes = {
@@ -64,7 +65,7 @@ class Step4 extends Component {
   renderHelpText(message, id) {
     return (
       <div className="val-err-tooltip" key={id}>
-        <span>{message}</span>
+        <span>Keine gültige E-mail Adresse</span>
       </div>
     )
   }
@@ -87,6 +88,7 @@ class Step4 extends Component {
             </div>
             <div className="form-group col-md-12 content form-block-holder">
               <div className={notValidClasses.emailEmergencyCls}>
+                <p>E-mail Adresse</p>
                 <input
                   ref="emailEmergency"
                   name="emailEmergency"
@@ -99,10 +101,23 @@ class Step4 extends Component {
                   onBlur={this.props.handleValidation('emailEmergency')}
                   onChange={this.onChange.bind(this)}
                 />
-
                 {this.props
                   .getValidationMessages('emailEmergency')
                   .map(this.renderHelpText)}
+              </div>
+            </div>
+            <div className="form-group col-md-12 content form-block-holder">
+              <div>
+                <p>Name</p>
+                <input
+                  ref="userName"
+                  name="userName"
+                  autoComplete="off"
+                  type="text"
+                  className="form-control"
+                  defaultValue={this.state.userName}
+                  onChange={this.onChange.bind(this)}
+                />
               </div>
             </div>
           </form>

@@ -131,6 +131,7 @@ ol.progtrckr li.progtrckr-done:hover:before {
   border: none;
   padding: 0.3rem 0.5rem;
   margin-right: 0.4rem;
+  margin-left: auto;
   font-size: 0.9rem;
   background: #ffc800;
   text-transform: uppercase;

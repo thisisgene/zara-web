@@ -90,8 +90,11 @@ export default class Step3 extends Component {
       <div className={styles['step']}>
         <div className="row">
           <form id="Form" className="form-horizontal">
-            <h1>Was ist vorgefallen?</h1>
-
+            <h1>Was ist passiert?</h1>
+            <p>
+              Bitte beschreiben Sie uns den Vorfall möglichst genau,
+              idealerweise auch unter Angabe von Ort und Zeit:
+            </p>
             <div>
               <textarea
                 ref="description"

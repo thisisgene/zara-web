@@ -77,7 +77,16 @@ class StepFive extends Component {
           <form id="Form" className="form-horizontal">
             <div className="form-group">
               <label className="col-md-12 control-label">
-                <h1>Step 4: Review your Details and 'Save'</h1>
+                <h1>Einverstanden?</h1>
+                <p>
+                  Ihre Daten sind bei uns sicher. Wir behandeln Ihre Meldung
+                  streng vertraulich und geben ihren Namen noch ihre
+                  Kontaktdaten an Dritte weiter.
+                </p>
+                <p>
+                  Die Übertragung erfolgt über eine sichere Verbindung zu
+                  unserem Webserver, der sich innerhalb der europäischen
+                </p>
               </label>
             </div>
             <div className="form-group">
@@ -99,6 +108,21 @@ class StepFive extends Component {
                         ))}
                   </div>
                 </div>
+                <div className="col-md-12 txt">
+                  <div className="col-md-4">Links</div>
+                  <div className="col-md-4">
+                    {this.props
+                      .getStore()
+                      .links.split(',')
+                      .map(link => (
+                        <p>{link}</p>
+                      ))}
+                  </div>
+                </div>
+                {/* <div className="col-md-12 txt">
+                  <div className="col-md-4">Name</div>
+                  <div className="col-md-4">{this.props.getStore().name}</div>
+                </div> */}
                 {/* <div className="col-md-12 txt">
                   <div className="col-md-4">Emergency Email</div>
                   <div className="col-md-4">

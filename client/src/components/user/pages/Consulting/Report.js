@@ -51,7 +51,7 @@ class Report extends Component {
             {multiPartOneLinerData && (
               <MultiPartOneLiner content={multiPartOneLinerData} lang={lang} />
             )}
-            {MultiStepForm && <MultiStepForm />}
+            {MultiStepForm && <MultiStepForm lang={lang} />}
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}
