@@ -54,39 +54,87 @@ class TrainingDetail extends Component {
           <div className={styles['training-detail']}>
             <HeroUnit data={training} lang={lang} />
             <OneLineAlert content={oneLineAlertDetail} lang={lang} />
-            <div className={styles['training-detail--text']}>
-              {training[lang].detailText}
-            </div>
-            <div className={styles['training-detail--testimonials']}>
-              <h1>{lang === 'de' ? 'Referenzen' : 'Testimonials'}</h1>
-              {trainingBoxData[lang].categories
-                .filter(cat => cat.index === training.category)
-                .map(cat => (
-                  <div
-                    className={styles['training-detail--testimonials__wrapper']}
-                  >
-                    {cat.testimonials &&
-                      cat.testimonials.map((testimonial, index) => (
-                        <div key={index}>
-                          {index <= 3 && (
-                            <div className={styles['testimonial-item']}>
-                              {testimonial.link ? (
-                                <a href={testimonial.link}>
-                                  {testimonial.name}
-                                </a>
-                              ) : (
-                                <div>{testimonial.name}</div>
-                              )}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    <Link to={`/user/${lang}/training/referenzen`}>
-                      {lang === 'de' ? 'Mehr anzeigen' : 'Show more'}
-                    </Link>
-                  </div>
-                ))}
-            </div>
+            <div
+              className={styles['training-detail--text']}
+              dangerouslySetInnerHTML={{ __html: training[lang].detailText }}
+            />
+            {training[lang].list1 && (
+              <div className={styles['training-detail--list']}>
+                <ul>
+                  {training[lang].list1.map((item, index) => (
+                    <li key={index}>
+                      <IconObject image="arrowRight" />
+                      {item.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {training[lang].detailText2 && (
+              <div
+                className={styles['training-detail--text']}
+                dangerouslySetInnerHTML={{ __html: training[lang].detailText2 }}
+              />
+            )}
+            {training[lang].list2 && (
+              <div className={styles['training-detail--list']}>
+                <ul>
+                  {training[lang].list2.map((item, index) => (
+                    <li key={index}>
+                      <IconObject image="arrowRight" />
+                      {item.text}
+                    </li>
+                  ))}
+                </ul>{' '}
+              </div>
+            )}
+            {training[lang].goals && (
+              <div className={styles['training-detail--goals']}>
+                <div>{training[lang].goals.title}</div>
+                <ul className={styles['training-detail--list']}>
+                  {training[lang].goals.list.map((item, index) => (
+                    <li key={index}>
+                      <IconObject image="arrowRight" />
+                      {item.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {training[lang].testimonials && (
+              <div className={styles['training-detail--testimonials']}>
+                <h1>{lang === 'de' ? 'Referenzen' : 'Testimonials'}</h1>
+                {trainingBoxData[lang].categories
+                  .filter(cat => cat.index === training.category)
+                  .map(cat => (
+                    <div
+                      className={
+                        styles['training-detail--testimonials__wrapper']
+                      }
+                    >
+                      {cat.testimonials &&
+                        cat.testimonials.map((testimonial, index) => (
+                          <div key={index}>
+                            {index <= 3 && (
+                              <div className={styles['testimonial-item']}>
+                                {testimonial.link ? (
+                                  <a href={testimonial.link}>
+                                    {testimonial.name}
+                                  </a>
+                                ) : (
+                                  <div>{testimonial.name}</div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      <Link to={`/user/${lang}/training/referenzen`}>
+                        {lang === 'de' ? 'Mehr anzeigen' : 'Show more'}
+                      </Link>
+                    </div>
+                  ))}
+              </div>
+            )}
             {training.related && (
               <div className={styles['training-detail--suggestions']}>
                 <h1>

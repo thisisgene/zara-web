@@ -22,8 +22,12 @@ class Kontakt extends Component {
         <div className={styles['contact-box']}>
           {lang &&
             menuItems &&
-            menuItems.map(item => (
-              <div id={item.link} className={styles['contact-item']}>
+            menuItems.map((item, index) => (
+              <div
+                id={item.link}
+                key={index}
+                className={styles['contact-item']}
+              >
                 <div className={styles['contact-item--inner']}>
                   <ContactBox
                     content={item.contact}

@@ -142,7 +142,7 @@ export const trainingItems = {
         title: 'Vielfalt & Zivilcourage I',
         text:
           'Schon für die kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
-        demographic: 'Kinder von 6 bis 11 Jahren',
+        demographic: 'Kinder von 6 bis 10 Jahren',
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
@@ -152,7 +152,7 @@ export const trainingItems = {
         title: 'Vielfalt & Zivilcourage I',
         text:
           'Schon für die kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
-        demographic: 'Kinder von 6 bis 11 Jahren',
+        demographic: 'Kinder von 6 bis 10 Jahren',
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
@@ -166,17 +166,21 @@ export const trainingItems = {
         title: 'Vielfalt & Zivilcourage II',
         text:
           'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        demographic: 'Jugendliche ab 11 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Der erste Halbtag ist den Themen soziale Kompetenz, Teamfähigkeit, und Zivilcourage gewidmet. Im Rahmen dieses Workshopteils erarbeiten die Schüler*innen neue Möglichkeiten, mit „unangenehmen“ Situationen in der Öffentlichkeit umzugehen und erweitern ihre Handlungskompetenzen in diskriminierenden Situationen. Am zweiten Halbtag stehen die Themenfelder Diversität, Diskriminierung und Rassismus im Mittelpunkt. Ziele des Workshops sind das Erkennen und Anerkennen von Vielfalt und das Sichtbarmachen von Diskriminierungen und institutionellem Rassismus. Es werden Handlungskompetenzen in diskriminierenden Situationen erworben und Strategien im Umgang mit Vielfalt erarbeitet. Darüber hinaus zielt der Workshop auf eine Stärkung des Selbstwerts und der Selbstbehauptung.'
       },
       en: {
         title: 'Vielfalt & Zivilcourage II',
         text:
           'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        demographic: 'Jugendliche ab 11 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Der erste Halbtag ist den Themen soziale Kompetenz, Teamfähigkeit, und Zivilcourage gewidmet. Im Rahmen dieses Workshopteils erarbeiten die Schüler*innen neue Möglichkeiten, mit „unangenehmen“ Situationen in der Öffentlichkeit umzugehen und erweitern ihre Handlungskompetenzen in diskriminierenden Situationen. Am zweiten Halbtag stehen die Themenfelder Diversität, Diskriminierung und Rassismus im Mittelpunkt. Ziele des Workshops sind das Erkennen und Anerkennen von Vielfalt und das Sichtbarmachen von Diskriminierungen und institutionellem Rassismus. Es werden Handlungskompetenzen in diskriminierenden Situationen erworben und Strategien im Umgang mit Vielfalt erarbeitet. Darüber hinaus zielt der Workshop auf eine Stärkung des Selbstwerts und der Selbstbehauptung.'
       }
     },
     {
@@ -186,17 +190,21 @@ export const trainingItems = {
         title: 'Sensibilisierung',
         text:
           'Sensibilisierung von SchülerInnen, um diskriminierende Stereotypsierungen im Alltag zu erkennen und zu vermeiden',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        demographic: 'Jugendliche ab 16 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Sensibilisierungs-Workshops ermöglichen eine intensive Auseinandersetzung mit den Themen Vorurteile, Fremd-/Anderssein und Diskriminierung: Welche Vorurteile habe ich selbst und wie gehe ich damit um? Was macht meine Identität aus? Wie wirkt sich Diskriminierung auf Einzelne aus? Ziel ist es, Vielfalt zu erkennen und anzuerkennen sowie sich mit dem Entstehen von Vorurteilen zu beschäftigen und Auswirkungen von Diskriminierung und institutionellem Rassismus sichtbar zu machen. Dabei werden Vorurteile reflektiert und Strategien im Umgang mit Vielfalt erarbeitet.'
       },
       en: {
         title: 'Sensibilisierung',
         text:
           'Sensibilisierung von SchülerInnen, um diskriminierende Stereotypsierungen im Alltag zu erkennen und zu vermeiden',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        demographic: 'Jugendliche ab 16 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Sensibilisierungs-Workshops ermöglichen eine intensive Auseinandersetzung mit den Themen Vorurteile, Fremd-/Anderssein und Diskriminierung: Welche Vorurteile habe ich selbst und wie gehe ich damit um? Was macht meine Identität aus? Wie wirkt sich Diskriminierung auf Einzelne aus? Ziel ist es, Vielfalt zu erkennen und anzuerkennen sowie sich mit dem Entstehen von Vorurteilen zu beschäftigen und Auswirkungen von Diskriminierung und institutionellem Rassismus sichtbar zu machen. Dabei werden Vorurteile reflektiert und Strategien im Umgang mit Vielfalt erarbeitet.'
       }
     },
     {
@@ -204,19 +212,21 @@ export const trainingItems = {
       category: '1',
       de: {
         title: 'Zivilcourage',
-        text:
-          'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        text: '.. kann man lernen!',
+        demographic: 'Jugendliche ab 16 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Der Zivilcourage-Workshop beschäftigt sich mit dem Mut des/der Einzelnen, in der Öffentlichkeit in „unangenehmen“ Situationen einzugreifen. Auf Basis der inhaltlichen Auseinandersetzung mit dem Thema Zivilcourage erlernen die Teilnehmer*innen, wie man mit Angriffen, Ohnmacht, Aggression und Angst umgehen kann. Es wird erarbeitet, was man in solchen Situationen tun kann bzw. wo die eigenen Grenzen liegen. Ziel des Workshops ist der Erwerb von Handlungskompetenzen in diskriminierenden Situationen sowie die Stärkung des Selbstwerts und der Selbstbehauptung.'
       },
       en: {
         title: 'Zivilcourage',
-        text:
-          'Positive Impulse für ein respektvolles Zusammenleben im (Schul-)Alltag',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        text: '.. kann man lernen!',
+        demographic: 'Jugendliche ab 16 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Der Zivilcourage-Workshop beschäftigt sich mit dem Mut des/der Einzelnen, in der Öffentlichkeit in „unangenehmen“ Situationen einzugreifen. Auf Basis der inhaltlichen Auseinandersetzung mit dem Thema Zivilcourage erlernen die Teilnehmer*innen, wie man mit Angriffen, Ohnmacht, Aggression und Angst umgehen kann. Es wird erarbeitet, was man in solchen Situationen tun kann bzw. wo die eigenen Grenzen liegen. Ziel des Workshops ist der Erwerb von Handlungskompetenzen in diskriminierenden Situationen sowie die Stärkung des Selbstwerts und der Selbstbehauptung.'
       }
     },
     {
@@ -225,16 +235,20 @@ export const trainingItems = {
       de: {
         title: 'Zivilcourage on- & offline',
         text: 'Zivilcourage und Medienkompetenz gegen Hass im Netz',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        demographic: 'Jugendliche ab 12 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen: Wie treten radikale/rechtsextreme/rassistische Gruppen im Internet auf und woran erkenne ich sie? Welche Codes werden verwendet und wie kann ich selbst aktiv dagegen vorgehen? Was ist Cybermobbing, und was kann ich dagegen tun?<br>Die Schüler*innen haben die Möglichkeit, durch Eigenrecherche und Online-Übungen die Tragweite und Radikalität der Themen im Netz selbst zu erleben. Ziel des Workshops ist es, Handlungskompetenzen zu vermitteln und der ungeschützten Konfrontation mit rassistischen Inhalten und Hass-Botschaften im Internet entgegenwirken.'
       },
       en: {
         title: 'Zivilcourage on- & offline',
         text: 'Zivilcourage und Medienkompetenz gegen Hass im Netz',
-        demographic: 'Jugendliche von 12 bis 16 Jahren',
+        demographic: 'Jugendliche ab 12 Jahren',
         duration: 'zwei halbtägige Workshops',
-        detailLinkText: 'Details zum Workshop'
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen: Wie treten radikale/rechtsextreme/rassistische Gruppen im Internet auf und woran erkenne ich sie? Welche Codes werden verwendet und wie kann ich selbst aktiv dagegen vorgehen? Was ist Cybermobbing, und was kann ich dagegen tun?<br>Die Schüler*innen haben die Möglichkeit, durch Eigenrecherche und Online-Übungen die Tragweite und Radikalität der Themen im Netz selbst zu erleben. Ziel des Workshops ist es, Handlungskompetenzen zu vermitteln und der ungeschützten Konfrontation mit rassistischen Inhalten und Hass-Botschaften im Internet entgegenwirken.'
       }
     },
     {
@@ -334,6 +348,318 @@ export const trainingItems = {
             {
               text:
                 'Handlungssicherheit im Umgang mit Personen anderer ethnischer/kultureller/sozialer Hintergründe'
+            }
+          ]
+        }
+      }
+    },
+    {
+      _id: 'h4s4nyva',
+      category: '2',
+      de: {
+        title: 'Digitale Zivilcourage',
+        text:
+          'Der Workshop vermittelt mit interaktiven Methoden Medienkompetenzen gegen Hass im Netz.',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Der Workshop vermittelt mit interaktiven Methoden <b>Medienkompetenzen</b> für folgende Fragestellungen:',
+        list1: [
+          { text: 'Wie begegne ich Angriffen und Aggression im Netz?' },
+          {
+            text:
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+          },
+          { text: 'Wie erkenne ich Fake News?' },
+          {
+            text:
+              'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?'
+          },
+          {
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+          },
+          {
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
+          }
+        ],
+
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+            },
+            {
+              text:
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+            },
+            {
+              text:
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
+            }
+          ]
+        }
+      },
+      en: {
+        title: 'Digitale Zivilcourage',
+        text:
+          'Der Workshop vermittelt mit interaktiven Methoden Medienkompetenzen gegen Hass im Netz.',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Der Workshop vermittelt mit interaktiven Methoden <b>Medienkompetenzen</b> für folgende Fragestellungen:',
+        list1: [
+          { text: 'Wie begegne ich Angriffen und Aggression im Netz?' },
+          {
+            text:
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+          },
+          { text: 'Wie erkenne ich Fake News?' },
+          {
+            text:
+              'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?'
+          },
+          {
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+          },
+          {
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
+          }
+        ],
+
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+            },
+            {
+              text:
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+            },
+            {
+              text:
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
+            }
+          ]
+        }
+      }
+    },
+    {
+      _id: 'h4daenyva',
+      category: '2',
+      de: {
+        title: 'Zivilcourage',
+        text: '…kann man lernen!',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Bedrohung, Mobbing und Diskriminierung sind Alltagserscheinungen. Doch kaum eine/r schaut hin oder greift ein – oft bleibt es nur bei guten Absichten.  Wie kann ich helfen, wenn jemand angegriffen wird, ohne mich selbst in Gefahr zu bringen? Antworten auf diese und weitere Fragen erhalten die TeilnehmerInnen des ZARA-Workshops „Zivilcourage” – dieses Training beschäftigt sich mit den konkreten Möglichkeiten des/der Einzelnen, an der Arbeitsstelle oder in der Öffentlichkeit in “unangenehmen” Situationen einzugreifen. Denn sich mutig für andere einzusetzen und zivilcouragiert zu handeln, lässt sich trainieren!<br /><br />Basierend auf den individuellen Erfahrungen  der TeilnehmerInnen widmet sich der Workshop folgenden Themen:',
+        list1: [
+          { text: 'Was ist Zivilcourage?' },
+          {
+            text: 'Was ist Gewalt – welche Arten gibt es?'
+          },
+          {
+            text:
+              'Wie begegne ich Angriffen, Ohnmacht, Aggression oder z.B. der Situation Einer gegen Alle?'
+          },
+          {
+            text: 'Was kann ich wann tun?'
+          },
+          {
+            text: 'Wo sind meine Grenzen?'
+          }
+        ],
+
+        goals: {
+          title:
+            'Ziele - Die TeilnehmerInnen erweitern ihren ganz persönlichen Handlungsspielraum, indem sie',
+          list: [
+            {
+              text: 'lernen, was zivilcouragiertes Handeln ausmacht'
+            },
+            {
+              text: 'eigene Grenzen und Möglichkeiten ausloten'
+            },
+            {
+              text: 'körperliche wie verbale Selbstbehauptung  trainieren'
+            },
+            {
+              text:
+                'wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen  Situationen und Äußerungen entwickeln.'
+            }
+          ]
+        }
+      },
+      en: {
+        title: 'Zivilcourage',
+        text: '…kann man lernen!',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Bedrohung, Mobbing und Diskriminierung sind Alltagserscheinungen. Doch kaum eine/r schaut hin oder greift ein – oft bleibt es nur bei guten Absichten.  Wie kann ich helfen, wenn jemand angegriffen wird, ohne mich selbst in Gefahr zu bringen? Antworten auf diese und weitere Fragen erhalten die TeilnehmerInnen des ZARA-Workshops „Zivilcourage” – dieses Training beschäftigt sich mit den konkreten Möglichkeiten des/der Einzelnen, an der Arbeitsstelle oder in der Öffentlichkeit in “unangenehmen” Situationen einzugreifen. Denn sich mutig für andere einzusetzen und zivilcouragiert zu handeln, lässt sich trainieren!<br /><br />Basierend auf den individuellen Erfahrungen  der TeilnehmerInnen widmet sich der Workshop folgenden Themen:',
+        list1: [
+          { text: 'Was ist Zivilcourage?' },
+          {
+            text: 'Was ist Gewalt – welche Arten gibt es?'
+          },
+          {
+            text:
+              'Wie begegne ich Angriffen, Ohnmacht, Aggression oder z.B. der Situation Einer gegen Alle?'
+          },
+          {
+            text: 'Was kann ich wann tun?'
+          },
+          {
+            text: 'Wo sind meine Grenzen?'
+          }
+        ],
+
+        goals: {
+          title:
+            'Ziele - Die TeilnehmerInnen erweitern ihren ganz persönlichen Handlungsspielraum, indem sie',
+          list: [
+            {
+              text: 'lernen, was zivilcouragiertes Handeln ausmacht'
+            },
+            {
+              text: 'eigene Grenzen und Möglichkeiten ausloten'
+            },
+            {
+              text: 'körperliche wie verbale Selbstbehauptung  trainieren'
+            },
+            {
+              text:
+                'wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen  Situationen und Äußerungen entwickeln.'
+            }
+          ]
+        }
+      }
+    },
+    {
+      _id: 'h4dae5ya',
+      category: '2',
+      de: {
+        title: 'Argumentationstraining',
+        text:
+          'Die Teilnehmer*innen erarbeiten wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen Äußerungen.',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Die TeilnehmerInnen erarbeiten wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen Äußerungen, probieren unterschiedliche Argumentationsstrategien aus und  erweitern so die persönlichen Kommunikationskompetenzen im Falle von verbalen Konflikten oder populistischen Parolen.<br><br>Zur Anwendung kommen:',
+        list1: [
+          { text: 'Grundlagen der Interkulturellen Kommunikation' },
+          {
+            text: 'Erfahrungsaustausch'
+          },
+          {
+            text: 'Praktische Übungen'
+          }
+        ],
+
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Sensibilisierung und Wissenstransfer rund um den Themenbereich Vielfalt, Kultur, Identität, Rassismus & Diskriminierung'
+            },
+            {
+              text:
+                'Verbesserung der Argumentation auf emotionaler und inhaltlich-sachlicher Ebene'
+            },
+            {
+              text:
+                'Erweitern der Kommunikationskompetenzen und rhetorischen Fähigkeiten'
+            }
+          ]
+        }
+      },
+      en: {
+        title: 'Argumentationstraining',
+        text:
+          'Die Teilnehmer*innen erarbeiten wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen Äußerungen.',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Die TeilnehmerInnen erarbeiten wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen Äußerungen, probieren unterschiedliche Argumentationsstrategien aus und  erweitern so die persönlichen Kommunikationskompetenzen im Falle von verbalen Konflikten oder populistischen Parolen.<br><br>Zur Anwendung kommen:',
+        list1: [
+          { text: 'Grundlagen der Interkulturellen Kommunikation' },
+          {
+            text: 'Erfahrungsaustausch'
+          },
+          {
+            text: 'Praktische Übungen'
+          }
+        ],
+
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Sensibilisierung und Wissenstransfer rund um den Themenbereich Vielfalt, Kultur, Identität, Rassismus & Diskriminierung'
+            },
+            {
+              text:
+                'Verbesserung der Argumentation auf emotionaler und inhaltlich-sachlicher Ebene'
+            },
+            {
+              text:
+                'Erweitern der Kommunikationskompetenzen und rhetorischen Fähigkeiten'
+            }
+          ]
+        }
+      }
+    },
+    {
+      _id: 'h4fh38ya',
+      category: '2',
+      de: {
+        title: 'Meine Rechte kennen',
+        text:
+          'Die rechtlichen Möglichkeiten zur Bekämpfung von Rassismus und rassistischen Diskriminierungen stehen im Mittelpunkt dieses Workshops.',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Nach einer kurzen Vorstellung der Arbeit der ZARA-Beratungsstelle für Opfer und ZeugInnen von Rassismus werden Begriffe und Konzepte zum Thema Rassismus be- und erarbeitet. Die rechtlichen Möglichkeiten zur Bekämpfung von Rassismus und rassistischen Diskriminierungen werden dargelegt. Dabei wird Recht als Werkzeug vermittelt, um als Opfer oder ZeugInnen von Rassismus adäquat reagieren zu können.',
+
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Wissenstransfer rund um das Gleichgehandlungsgesetz und andere relevante Texte'
+            },
+            {
+              text:
+                'Erweitern der Handlungskompetenzen als ZeugInnen oder Opfer von Diskriminierung und Rassismus'
+            }
+          ]
+        }
+      },
+      en: {
+        title: 'Meine Rechte kennen',
+        text:
+          'Die rechtlichen Möglichkeiten zur Bekämpfung von Rassismus und rassistischen Diskriminierungen stehen im Mittelpunkt dieses Workshops.',
+        demographic: 'Erwachsene',
+        detailLinkText: 'Details zum Workshop',
+        detailText:
+          'Nach einer kurzen Vorstellung der Arbeit der ZARA-Beratungsstelle für Opfer und ZeugInnen von Rassismus werden Begriffe und Konzepte zum Thema Rassismus be- und erarbeitet. Die rechtlichen Möglichkeiten zur Bekämpfung von Rassismus und rassistischen Diskriminierungen werden dargelegt. Dabei wird Recht als Werkzeug vermittelt, um als Opfer oder ZeugInnen von Rassismus adäquat reagieren zu können.',
+
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Wissenstransfer rund um das Gleichgehandlungsgesetz und andere relevante Texte'
+            },
+            {
+              text:
+                'Erweitern der Handlungskompetenzen als ZeugInnen oder Opfer von Diskriminierung und Rassismus'
             }
           ]
         }

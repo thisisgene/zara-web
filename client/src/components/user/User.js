@@ -53,6 +53,7 @@ import Footer from './layout/Footer/Footer'
 import styles from './User.module.sass'
 import RassismusReport from './pages/Wissen/Publikationen/RassismusReport'
 import Jobs from './pages/Zara/WerWirSind/Jobs/Jobs'
+import TrainingUnternehmen from './pages/Training/TrainingUnternehmen'
 
 class User extends Component {
   constructor(props) {
@@ -172,6 +173,11 @@ class User extends Component {
                 exact
                 path="/user/:lang/training/erwachsene"
                 component={TrainingAdults}
+              />
+              <Route
+                exact
+                path="/user/:lang/training/unternehmen"
+                component={TrainingUnternehmen}
               />
               <Route
                 exact
