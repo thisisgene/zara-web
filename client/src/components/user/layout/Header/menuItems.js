@@ -350,6 +350,11 @@ const menuItems = [
             name: 'Jobs',
             link: 'jobs',
             id: '5.2.3'
+          },
+          {
+            name: 'Praktikum & Zivildienst',
+            link: 'jobs',
+            id: '5.2.4'
           }
         ]
       }
