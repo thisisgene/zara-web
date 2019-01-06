@@ -12,94 +12,73 @@ import styles from './Home.module.sass'
 
 const fakeServerData = [
   {
-    image: 'test_img2.png',
-    de: {
-      lang: 'de',
-      date: {
-        month: 'Oktober',
-        day: 20,
-        time: {
-          startTime: 10,
-          endTime: 17
-        }
-      },
-      category: 'Workshop',
-      title: 'Digitale Zivilcourage',
-      text:
-        'Hetze, Diskriminierung und Rassismus sind Teil des digitalen Alltags, aber was kannst Du als User*in dagegen tun? Wie kann diesem Phänomen entgegentreten und anderen online zur Seite gestanden werden?',
-      buttons: [
-        {
-          type: 'cta',
-          text: 'Jetzt anmelden',
-          link: 'training'
-        },
-        {
-          type: 'secondary',
-          text: 'Details & Termine',
-          link: 'training'
-        }
-      ]
-    },
-    en: {
-      lang: 'en',
-      date: {
-        month: 'Octobre',
-        day: 20,
-        time: {
-          startTime: 10,
-          endTime: 17
-        }
-      },
-      category: 'Workshop',
-      title: 'Digitale Zivilcourage',
-      text: 'this is a text.',
-      buttons: [
-        {
-          type: 'cta',
-          text: 'Subscribe now',
-          link: 'training'
-        },
-        {
-          type: 'secondary',
-          text: 'Details & Dates',
-          link: 'training'
-        }
-      ],
-      image: 'test_img2.png'
-    }
+    imageAsBackground: true,
+    image: 'mixer_new.jpg',
+    mainLink: 'mitmischen'
+    // de: {
+    //   lang: 'de',
+    //   date: {
+    //     month: 'Oktober',
+    //     day: 20,
+    //     time: {
+    //       startTime: 10,
+    //       endTime: 17
+    //     }
+    //   },
+    //   category: 'Workshop',
+    //   title: 'Digitale Zivilcourage',
+    //   text:
+    //     'Hetze, Diskriminierung und Rassismus sind Teil des digitalen Alltags, aber was kannst Du als User*in dagegen tun? Wie kann diesem Phänomen entgegentreten und anderen online zur Seite gestanden werden?',
+    //   buttons: [
+    //     {
+    //       type: 'cta',
+    //       text: 'Jetzt anmelden',
+    //       link: 'training'
+    //     },
+    //     {
+    //       type: 'secondary',
+    //       text: 'Details & Termine',
+    //       link: 'training'
+    //     }
+    //   ]
+    // },
+    // en: {
+    //   lang: 'en',
+    //   date: {
+    //     month: 'Octobre',
+    //     day: 20,
+    //     time: {
+    //       startTime: 10,
+    //       endTime: 17
+    //     }
+    //   },
+    //   category: 'Workshop',
+    //   title: 'Digitale Zivilcourage',
+    //   text: 'this is a text.',
+    //   buttons: [
+    //     {
+    //       type: 'cta',
+    //       text: 'Subscribe now',
+    //       link: 'training'
+    //     },
+    //     {
+    //       type: 'secondary',
+    //       text: 'Details & Dates',
+    //       link: 'training'
+    //     }
+    //   ],
+    //   image: 'test_img2.png'
+    // }
   },
   {
     imageAsBackground: true,
-    image: 'test_img2.png',
-    de: {
-      lang: 'de',
-      date: {
-        month: 'Dezember',
-        day: 22,
-        time: {
-          startTime: 13,
-          endTime: 19
-        }
-      },
-      category: 'Netzwerktreffen',
-      title: 'Anderer Titel',
-      text: 'Das ist der Text. Der hat noch bisschen mehr Buchstaben.'
-    },
-    en: {
-      lang: 'en',
-      date: {
-        month: 'December',
-        day: 22,
-        time: {
-          startTime: 13,
-          endTime: 19
-        }
-      },
-      category: 'Network meeting',
-      title: 'Other title',
-
-      text: 'this is a text. It has more character.'
-    }
+    image: 'baustein-digitale_zivilcourage.jpg',
+    mainLink: 'wissen/aktuelles'
+  },
+  {
+    imageAsBackground: true,
+    image: 'sofa_hate_speech.jpg',
+    mainLink: 'wissen/aktuelles'
   }
 ]
 
