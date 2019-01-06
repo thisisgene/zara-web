@@ -62,6 +62,27 @@ export const teamData = {
           'Philippe Schennach hat seinen Bachelor in Politikwissenschaft an der Universität Warwick und seinen Master im Studienfach „Ostasiatische Gesellschaft und Wirtschaft“ an der Universität Wien absolviert. Nach einigen Praktika in internationalen Organisationen ist er nun bei ZARA für die Outreach-Aktivitäten, u. a. der Newsletter, die ZARA-Webseite und ZARA’s Social Media Kanäle, verantwortlich. Zusätzlich ist er auch für Kooperationen und Lobbyingarbeit zuständig. <br><br><i>Sollten Sie eine Informationsanfrage haben oder mit ZARA eine Medienkooperation eingehen wollen, dann sind Sie bei ihm richtig.</i>'
       },
       {
+        image: 'CaeciliaKappel_ZARA.jpg',
+        field: 'gok',
+        name: 'Cäcilia Kappel, BA',
+        text:
+          'hat maßgeblich zum Aufbau der Onlineplattform <a href="http://www.counteract.or.at/">CounterACT! – Aktiv gegen Hass und Hetze im Netz</a> beigetragen und füllt diese heute kontinuierlich mit neuen Inhalten. Weiters hilft sie bei verschiedenen Publikationen wie den Rassismus Report mit und vertritt ZARA im No Hate Speech Komitee Austria.<br />Zusätzlich zu ihren Tätigkeiten bei ZARA studiert sie im Master Politikwissenschaften und Kultur- und Sozialanthropologie an der Universität Wien.<br /><i>Informationen, Materialien und/oder Veranstaltungstipps Ihrer Organisation zum Thema Online Hate Speech können Sie ihr gerne zukommen lassen. Diese werden auf CounterACT! mit einem kurzen Teaser online gestellt und verlinkt.</i>'
+      },
+      {
+        // image: 'CaeciliaKappel_ZARA.jpg',
+        field: 'gok',
+        name: 'Georg List',
+        text:
+          'studiert Kultur- und Sozialanthropologie an der Universität Wien. Als ehrenamtlicher Mitarbeiter der Öffentlichkeitsarbeit trägt Georg List seit Sommer 2012 mit Texten zu Publikationen wie dem Rassismus Report bei und repräsentiert ZARA bei Veranstaltungen, Netzwerktreffen und Aktionen. Unter anderem betreut er das ZARA-Fußballteam.'
+      },
+      {
+        // image: 'CaeciliaKappel_ZARA.jpg',
+        field: 'gok',
+        name: 'Emily Zens',
+        text:
+          'unterstützt aktuell die Öffentlichkeits- sowie Projektarbeit als engagierte Praktikantin. Sie studiert Publizistik und Kommunikationswissenschaften an der Universität Wien. In ihren Nebenfächern Geschichte und Gender Studies spezialisiert sie sich auf neuzeitliche Geschichte, Rassismus-Ursprünge sowie genderspezifische Kontexte.'
+      },
+      {
         image: 'Caroline Kerschbaumer_ZARA.jpg',
         field: 'beratung',
         name: 'Mag.a Caroline Kerschbaumer, E.MA (Leitung)',
@@ -76,7 +97,50 @@ export const teamData = {
           'arbeitet in den ZARA-Beratungsstellen und leitet den Fachbereich Rechtliches. Er informiert als versierter Jurist Betroffene und Zeug*innen über ihre Handlungsmöglichkeiten. <br><br> Er hat Rechtswissenschaften in Wien studiert und danach an der Universität Wien und in Projekten für die Parlamentsdirektion gearbeitet. Einige seiner Publikationen befassten sich mit gleichheitsrechtlichen Fragen im Zusammenhang mit der rechtlichen Elternschaft. <br><br>Bereits während des Studiums legte er einen Schwerpunkt auf Mediation und verfestigt die erworbenen Kompetenzen durch eine dahingehende Ausbildung.<i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, sind Sie bei ihm gut beraten.</i>'
       },
       {
+        image: 'Dunia Khalil_ZARA.jpg',
+        field: 'beratung',
+        name: 'Dunia Khalil',
+        text:
+          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br /><br />Sie studiert Rechtswissenschaften an der Universität Wien. Erste Erfahrungen und Kenntnisse in den Themenfeldern Menschen- und Gleichbehandlungsrecht hat sie bei zahlreichen Praktika erworben, unter anderem beim Ludwig Boltzmann Institut für Menschenrechte und der Arbeiterkammer. Zusätzlich engagiert sie sich im Charity-Bereich, wo sie bereits einige Projekte in unterschiedlichsten Vereinen umgesetzt und geleitet hat. In den letzten Jahren war sie insbesondere in der Flüchtlingshilfe aktiv. Sie hat sich bereits vor ihrer Zeit bei ZARA für Opfer von Rassismus stark gemacht.<br /><br /><i>Sie setzt sich schon sehr lange mit dem Thema Rassismus und seinen Folgen auseinander und übt ihre Tätigkeit als ZARA-Beraterin daher sehr fundiert und leidenschaftlich aus. Sie bietet Beratung in deutscher, englischer und arabischer Sprache an.</i>'
+      },
+      {
+        image: 'Felicitas Rachinger_ZARA.jpg',
+        field: 'beratung',
+        name: 'Felicitas Rachinger',
+        text:
+          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br /><br />Sie studiert erfolgreich Rechtswissenschaften an der Universität Wien und spezialisiert sich dort unter anderem auf Grund- und Menschenrechte. Auf Grund ihres Interesses für Antidiskriminierungsrecht setzt sie sich gegen Rassismus ein.<i>Wenn Sie Opfer oder Zeug*in von rassistischen Vorfällen oder Online-Hass sind, bietet sie Ihnen kompetente Beratung.</i>'
+      },
+      {
+        image: 'Sophie Haidinger_ZARA.jpg',
+        field: 'beratung',
+        name: 'Mag.a Sophie Haidinger',
+        text:
+          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br /><br />Sie hat Rechtswissenschaften an der Universität Wien studiert. Im Zuge ihres Studiums hat sie sich auf Grund- und Menschenrechte, Religionsrecht sowie auf Mediation spezialisiert. Durch ihre Tätigkeit als Anwaltsanwärterin konnte sie bereits Erfahrung in vielen verschiedenen rechtlichen Bereichen sammeln.<br />br /><i>Wenn Sie einen rassistischen Vorfall oder Hass im Netz beobachtet oder selbst miterlebt haben, zögern Sie nicht, sich an sie zu wenden.</i>'
+      },
+      {
+        image: 'Isabell Bickel_ZARA.jpg',
+        field: 'beratung',
+        name: 'Isabell Bickel, BA MSc',
+        text:
+          'arbeitet in den ZARA-Beratungsstellen. Darüber hinaus ist sie seit vielen Jahren als Supervisorin und Beraterin tätig.<br /><br />Sie hat Kultur- und Sozialanthropologie studiert und ein Masterstudium in Supervision und Coaching absolviert. Sie informiert Betroffene und Zeug*innen von Rassismus und Hass im Netz über die rechtlichen Rahmenbedingungen und ihre Handlungsmöglichkeiten. Darüber hinaus steht sie für eine vertiefende Beratung zur Verfügung,  wenn es darum geht, Ihr konkretes Anliegen zu klären oder eine Entscheidung bezüglich weiterer Schritte zu treffen.<br /><br /><i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, oder klären wollen, wie Sie weiter vorgehen möchten, sind Sie bei ihr gut beraten.'
+      },
+      {
+        // image: 'Bianca Schoenberger_ZARA.jpg',
+        field: 'training',
+        name: 'Mag.a Lilian Levai',
+        text:
+          '(derzeit in Karenz)<br /><br />hat Afrikawissenschaften mit dem Schwerpunkt Rassismusforschung studiert und absolvierte zahlreiche juristische Lehrveranstaltungen insbesondere zu den Themen Antidiskriminierungsrecht und Mediation. Außerdem ist sie zertifizierte Mediatorin. Sie ist als juristische Beraterin in den ZARA-Beratungsstellen tätig.<br /><br />Trainingsschwerpunkte: interkulturelle Sensibilisierung, Antidiskriminierungsrecht, Zivilcourage und die Kombination von Anti-Rassismus-Arbeit mit Sport.'
+      },
+      {
+        // image: 'Bianca Schoenberger_ZARA.jpg',
+        field: 'training',
+        name: 'Mag.a Barbara Unterlerchner, MA',
+        text:
+          '(derzeit in Mutterschutz)<br /><br />Leitete vor dem Mutterschutz die ZARA Beratungsstelle und ist langjährige ZARA Trainerin.<br /><br />Sie ist Juristin und Kriminologin. Ihre beruflichen Schwerpunkte liegen vorrangig in der Unterstützung und Beratung von Verbrechensopfern, im Fremden- und Asylrecht und Training. Sie wirkte an zahlreichen europäischen Projekten zu den Themen Rassismus und Anti-Diskriminierung, Gewalt an Frauen, Gewalt in Gefängnissen, Hasskriminalität und Opferrechten mit und hält dazu regelmäßig Vorträge im In- und Ausland.'
+      },
+      {
         image: 'Bianca Schoenberger_ZARA.jpg',
+        title: 'Geschäftsführerin',
         field: 'training',
         name: 'Dr.in Bianca Schönberger',
         text:
@@ -84,6 +148,7 @@ export const teamData = {
       },
       {
         image: 'Alice Golob_ZARA.jpg',
+        title: 'Büroassistentin',
         field: 'training',
         name: 'Alice Golob',
         text:
