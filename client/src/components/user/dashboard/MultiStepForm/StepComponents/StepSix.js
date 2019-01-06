@@ -22,7 +22,7 @@ export default class StepSix extends Component {
   render() {
     return (
       <div className={styles['step']}>
-        <h1>Vielen Dank für Ihren Einsatz</h1>
+        <h1>Vielen Dank für Ihren Einsatz!</h1>
         <p>
           Vielen Dank für Ihre Meldung. Wir werden uns umgehend mit dem Vorfall
           beschäftigen und Sie gegebenenfalls kontaktieren.
@@ -32,7 +32,7 @@ export default class StepSix extends Component {
           wollen, vereinbaren Sie bitte telefonisch unter: +43 (1) 929 13 99
           einen Termin mit unseren Beratungsteam.
         </p>
-        <button onClick={this.onClick}>Erneut Melden</button>
+        <button onClick={this.onClick}>Weiteren Vorfall melden</button>
       </div>
     )
   }

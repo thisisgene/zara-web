@@ -113,65 +113,87 @@ class StepFive extends Component {
             </div>
             <div className="form-group">
               <div className="col-md-12 control-label">
-                <div className="col-md-12 txt">
-                  <div className="col-md-4">Beschreibung</div>
-                  <div className="col-md-4">
+                <div className={styles['review-item']}>
+                  <div className={styles['review-item--title']}>
+                    Beschreibung
+                  </div>
+                  <div className={styles['review-item--text']}>
                     {this.props.getStore().description}
                   </div>
                 </div>
-                <div className="col-md-12 txt">
-                  <div className="col-md-4">Dateien</div>
-                  <div className="col-md-4">
-                    {this.props.getStore().files &&
-                      this.props
+                <div className={styles['review-item']}>
+                  <div className={styles['review-item--title']}>Dateien</div>
+                  {this.props.getStore().files.length > 0 ? (
+                    <div className={styles['review-item--text']}>
+                      {this.props.getStore().files &&
+                        this.props
+                          .getStore()
+                          .files.map((file, index) => (
+                            <p key={index}>{file.name}</p>
+                          ))}
+                    </div>
+                  ) : (
+                    <div className={styles['review-item--text']}>---</div>
+                  )}
+                </div>
+                <div className={styles['review-item']}>
+                  <div className={styles['review-item--title']}>Links</div>
+                  {this.props.getStore().links !== '' ? (
+                    <div className={styles['review-item--text']}>
+                      {this.props
                         .getStore()
-                        .files.map((file, index) => (
-                          <p key={index}>{file.name}</p>
+                        .links.split(',')
+                        .map(link => (
+                          <p>{link}</p>
                         ))}
-                  </div>
+                    </div>
+                  ) : (
+                    <div className={styles['review-item--text']}>---</div>
+                  )}
                 </div>
-                <div className="col-md-12 txt">
-                  <div className="col-md-4">Links</div>
-                  <div className="col-md-4">
-                    {this.props
-                      .getStore()
-                      .links.split(',')
-                      .map(link => (
-                        <p>{link}</p>
-                      ))}
+                <div className={styles['review-item']}>
+                  <div className={styles['review-item--title']}>
+                    Kontaktdaten
                   </div>
+                  {this.props.getStore().selectedOption !== 'anonym' ? (
+                    <div>
+                      {this.props.getStore().userName !== '' && (
+                        <div className={styles['review-item']}>
+                          <div className={styles['review-item--title']}>
+                            Name
+                          </div>
+                          <div className={styles['review-item--text']}>
+                            {this.props.getStore().userName}
+                          </div>
+                        </div>
+                      )}
+                      {this.props.getStore().email !== '' && (
+                        <div className={styles['review-item']}>
+                          <div className={styles['review-item--title']}>
+                            Email
+                          </div>
+                          <div className={styles['review-item--text']}>
+                            {this.props.getStore().email}
+                          </div>
+                        </div>
+                      )}
+                      {this.props.getStore().phone !== '' && (
+                        <div className={styles['review-item']}>
+                          <div className={styles['review-item--title']}>
+                            Telefonnummer
+                          </div>
+                          <div className={styles['review-item--text']}>
+                            {this.props.getStore().phone}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className={styles['review-item--text']}>
+                      Ich möchte anonym bleiben.
+                    </div>
+                  )}
                 </div>
-                <p>Kontaktdaten</p>
-                {this.props.getStore().selectedOption !== 'anonym' ? (
-                  <div>
-                    {this.props.getStore().userName !== '' && (
-                      <div className="col-md-12 txt">
-                        <div className="col-md-4">Name</div>
-                        <div className="col-md-4">
-                          {this.props.getStore().userName}
-                        </div>
-                      </div>
-                    )}
-                    {this.props.getStore().email !== '' && (
-                      <div className="col-md-12 txt">
-                        <div className="col-md-4">Email</div>
-                        <div className="col-md-4">
-                          {this.props.getStore().email}
-                        </div>
-                      </div>
-                    )}
-                    {this.props.getStore().phone !== '' && (
-                      <div className="col-md-12 txt">
-                        <div className="col-md-4">Telefonnummer</div>
-                        <div className="col-md-4">
-                          {this.props.getStore().phone}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div>Ich möchte anonym bleiben.</div>
-                )}
                 {/* <div className="col-md-12 eg-jump-lnk">
                   <a href="#" onClick={() => this.jumpToStep(1)}>
                     e.g. showing how we use the jumpToStep method helper method
