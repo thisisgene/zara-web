@@ -19,9 +19,10 @@ export default class NewsItem extends Component {
           <div className={styles['news-item--text__title']}>
             {news[lang].title}
           </div>
-          <div className={styles['news-item--text__body']}>
-            {news[lang].shortContent}
-          </div>
+          <div
+            className={styles['news-item--text__body']}
+            dangerouslySetInnerHTML={{ __html: news[lang].shortContent }}
+          />
 
           <div className={styles['news-item--text__link']}>
             <Link to={news.link}>{news[lang].linkText}</Link>

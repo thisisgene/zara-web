@@ -19,9 +19,13 @@ export default class FaqItem extends Component {
 
   render() {
     const { faq, lang } = this.props
-    if (faq[lang].links && faq[lang].links.map(link => {
-      {faq[lang].text.includes(link.text) &&
-    }))
+    // if (
+    //   faq[lang].links &&
+    //   faq[lang].links.map(link => {
+    //     // {faq[lang].text.includes(link.text) &&
+    //     // TODO: links inside FAQ text
+    //   })
+    // )
     return (
       <div className={styles['faq-item']}>
         <div className={styles['faq-item-top']} onClick={this.toggleOpen}>

@@ -117,7 +117,7 @@ const infoObj_default = {
         color: 'default',
         title: 'Kostenlose, persönliche Beratung',
         text:
-          'In der Beratungsstelle erhalten jährlich über 1.000 Opfer und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
+          'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
         link: 'beratung',
         linkText: 'Mehr zu Beratung',
         listItems: [
@@ -156,7 +156,7 @@ const infoObj_default = {
         color: 'default',
         title: 'Kostenlose, persönliche Beratung',
         text:
-          'In der Beratungsstelle erhalten jährlich über 1.000 Opfer und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
+          'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
         link: 'beratung',
         linkText: 'Mehr zu Beratung',
         listItems: [
@@ -391,7 +391,8 @@ const oneLineAlert = {
   type: 'red',
   icon: 'alert',
   de: {
-    text: 'Ich bin Opfer oder Zeug*in eines rassistischen Vorfalls geworden',
+    text:
+      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls geworden',
     button: {
       text: 'Jetzt melden',
       type: 'alert',
@@ -399,7 +400,8 @@ const oneLineAlert = {
     }
   },
   en: {
-    text: 'Ich bin Opfer oder Zeug*in eines rassistischen Vorfalls geworden',
+    text:
+      'Ich bin Betroffene oder Zeug*in eines rassistischen Vorfalls geworden',
     button: {
       text: 'Jetzt melden',
       type: 'alert',

@@ -6,10 +6,14 @@ import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import NewsBox from './NewsBox/NewsBox.js'
 
 const heroData = {
+  image: 'zara_wide.png',
+  imageSide: 'left',
   de: {
-    title: 'News, Veranstaltungen & Kolumne',
+    title: 'News, Veranstaltungen & Mehr',
     text:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum.'
+      'Hier finden Sie wichtige Informationen zu aktuellen Entwicklungen rund um die Themenfelder Rassismus und Hass im Netz, sowie Informationen über interessante Veranstaltungen und aktuelle Workshops. Zusätzlich setzt sich die ZARA Kolumne – None of the Above – tiefgehend mit aktuellen aber auch lang eingesessenen rassistischen Argumentationslogiken und Thematiken auseinander.',
+    linkText: 'Zum Pressekontakt',
+    link: 'kontakt/#presse'
   },
   en: {
     title: 'Frequently asked questions',
