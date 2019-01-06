@@ -233,11 +233,11 @@ const menuItems = [
         link: 'kenne_deine_rechte',
         id: '4.2',
         subMenuList: [
-          {
-            name: 'Recht & Ordnung',
-            link: 'recht_und_ordnung',
-            id: '4.2.1'
-          },
+          // {
+          //   name: 'Recht & Ordnung',
+          //   link: 'recht_und_ordnung',
+          //   id: '4.2.1'
+          // },
           {
             name: 'Glossar',
             link: 'glossar',
@@ -345,6 +345,11 @@ const menuItems = [
             name: 'Team',
             link: 'team',
             id: '5.2.1'
+          },
+          {
+            name: 'Jobs',
+            link: 'jobs',
+            id: '5.2.3'
           }
         ]
       }

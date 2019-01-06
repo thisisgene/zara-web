@@ -1,0 +1,20 @@
+.job-item
+  max-width: 800px
+  margin: 2rem auto 3rem
+  padding: 1rem 2rem
+  background: rgba(#FFC803, .1)
+  &--title
+    margin-bottom: 1rem
+    font:
+      size: 1.3rem
+      weight: bold
+  &--data
+    display: flex
+    margin: 1rem 0
+    @media(max-width: 800px)
+      flex-direction: column
+    &__title
+      font-weight: bold
+      flex: 1
+    &__text
+      flex: 2

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import IconObject from '../IconObject/IconObject'
+
 import cx from 'classnames'
 import styles from './LongText.module.sass'
-import IconObject from '../IconObject/IconObject'
 
 export default class LongText extends Component {
   render() {
@@ -19,10 +20,23 @@ export default class LongText extends Component {
             {content[lang].title}
           </div>
         )}
+        {content[lang].list && (
+          <div className={styles['long-text--list']}>
+            <ul>
+              {content[lang].list.map((item, index) => (
+                <li key={index}>
+                  <IconObject image="arrowRight" />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div
           className={styles['long-text--text']}
           dangerouslySetInnerHTML={{ __html: content[lang].text }}
         />
+
         {content[lang].link && (
           <div className={styles['long-text--link']}>
             <IconObject image="arrowRight" />
