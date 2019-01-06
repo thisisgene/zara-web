@@ -22,10 +22,12 @@ class MultiStepForm extends Component {
 
     this.sampleStore = {
       email: '',
-      // userName: '',
+      userName: '',
+      phone: '',
       description: '',
       files: [],
       links: '',
+      selectedOption: 'anonym',
       savedToCloud: false
     }
   }
@@ -127,7 +129,7 @@ class MultiStepForm extends Component {
         <div className={cx('step-progress', styles['multi-step-form'])}>
           <StepZilla
             steps={steps}
-            startAtStep={0}
+            startAtStep={3}
             nextButtonCls={'next-button'}
             nextButtonText={lang === 'de' ? 'Weiter' : 'Next'}
             backButtonText={lang === 'de' ? 'Zurück' : 'Back'}

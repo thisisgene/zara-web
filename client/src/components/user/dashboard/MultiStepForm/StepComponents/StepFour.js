@@ -11,72 +11,78 @@ class Step4 extends Component {
     super(props)
 
     this.state = {
-      emailEmergency: props.getStore().emailEmergency,
-      userName: props.getStore().userName
+      email: props.getStore().email,
+      userName: props.getStore().userName,
+      phone: props.getStore().phone,
+      selectedOption: props.getStore().selectedOption
     }
 
-    this.validatorTypes = {
-      emailEmergency: Joi.string()
-        .email()
-        .required()
-    }
+    this._validateOnDemand = true // this flag enables onBlur validation as user fills forms
 
-    this.getValidatorData = this.getValidatorData.bind(this)
-    this.renderHelpText = this.renderHelpText.bind(this)
     this.isValidated = this.isValidated.bind(this)
   }
-
   isValidated() {
-    return new Promise((resolve, reject) => {
-      this.props.validate(error => {
-        if (error) {
-          reject() // form contains errors
-          return
-        }
+    let isDataValid = true
+    if (this.props.getStore().selectedOption !== 'anonym') {
+      const userInput = this._grabUserInput()
+      if (
+        this.props.getStore().email !== userInput.email ||
+        this.props.getStore().userName !== userInput.userName ||
+        this.props.getStore().phone !== userInput.phone
+      ) {
+        // only update store of something changed
+        this.props.updateStore({
+          ...userInput,
+          savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+        }) // Update store here (this is just an example, in reality you will do it via redux or flux)
+      }
+    }
 
-        if (
-          this.props.getStore().emailEmergency !==
-          this.getValidatorData().emailEmergency
-        ) {
-          // only update store of something changed
-          this.props.updateStore({
-            ...this.getValidatorData(),
-            savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
-          }) // Update store here (this is just an example, in reality you will do it via redux or flux)
-        }
+    isDataValid = true
+    // } else {
+    //   // if anything fails then update the UI validation state but NOT the UI Data State
+    //   this.setState(
+    //     Object.assign(
+    //       userInput,
+    //       validateNewInput,
+    //       this._validationErrors(validateNewInput)
+    //     )
+    //   )
+    // }
 
-        resolve() // form is valid, fire action
-      })
-    })
+    return isDataValid
   }
-
-  getValidatorData() {
+  _grabUserInput() {
     return {
-      emailEmergency: this.refs.emailEmergency.value
+      email: this.refs.email.value,
+      userName: this.refs.userName.value,
+      phone: this.refs.phone.value
     }
   }
 
-  onChange(e) {
+  onChange = e => {
     let newState = {}
     newState[e.target.name] = e.target.value
     this.setState(newState)
   }
 
-  renderHelpText(message, id) {
-    return (
-      <div className="val-err-tooltip" key={id}>
-        <span>Keine gültige E-mail Adresse</span>
-      </div>
-    )
+  optionChange = e => {
+    this.setState({
+      selectedOption: e.target.value
+    })
+    this.props.updateStore({
+      selectedOption: e.target.value,
+      savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+    })
+    // if (e.target.option === 'anonym') {
+    //   this.setState({
+    //     userName: '',
+    //     email: ''
+    //   })
+    // }
   }
 
   render() {
-    // explicit class assigning based on validation
-    let notValidClasses = {}
-    notValidClasses.emailEmergencyCls = this.props.isValid('emailEmergency')
-      ? 'no-error col-md-8'
-      : 'has-error col-md-8'
-
     return (
       <div className={styles['step']}>
         <div className="row">
@@ -86,40 +92,81 @@ class Step4 extends Component {
                 <h1>Wie können wir Sie erreichen (optional)?</h1>
               </label>
             </div>
-            <div className="form-group col-md-12 content form-block-holder">
-              <div className={notValidClasses.emailEmergencyCls}>
-                <p>E-mail Adresse</p>
+            <div>
+              <label>
                 <input
-                  ref="emailEmergency"
-                  name="emailEmergency"
-                  autoComplete="off"
-                  type="email"
-                  className="form-control"
-                  placeholder="john.smith@example.com"
-                  required
-                  defaultValue={this.state.emailEmergency}
-                  onBlur={this.props.handleValidation('emailEmergency')}
-                  onChange={this.onChange.bind(this)}
+                  type="radio"
+                  value="anonym"
+                  checked={this.state.selectedOption === 'anonym'}
+                  onChange={this.optionChange}
                 />
-                {this.props
-                  .getValidationMessages('emailEmergency')
-                  .map(this.renderHelpText)}
-              </div>
+                Ich will lieber anonym bleiben
+              </label>
+              <br />
+              <label>
+                <input
+                  type="radio"
+                  value="contactInfo"
+                  checked={this.state.selectedOption === 'contactInfo'}
+                  onChange={this.optionChange}
+                />
+                Ich möchte schriftlich und/oder telefonisch beraten werden.
+              </label>
             </div>
-            <div className="form-group col-md-12 content form-block-holder">
+            {this.state.selectedOption === 'contactInfo' ? (
               <div>
-                <p>Name</p>
-                <input
-                  ref="userName"
-                  name="userName"
-                  autoComplete="off"
-                  type="text"
-                  className="form-control"
-                  defaultValue={this.state.userName}
-                  onChange={this.onChange.bind(this)}
-                />
+                <div className="form-group col-md-12 content form-block-holder">
+                  <p>E-mail Adresse</p>
+                  <input
+                    ref="email"
+                    autoComplete="off"
+                    type="email"
+                    className="form-control"
+                    defaultValue={this.state.email}
+                  />
+                </div>
+                <div className="form-group col-md-12 content form-block-holder">
+                  <div>
+                    <p>Name</p>
+                    <input
+                      ref="userName"
+                      autoComplete="off"
+                      type="text"
+                      className="form-control"
+                      defaultValue={this.state.userName}
+                    />
+                  </div>
+                </div>
+                <div className="form-group col-md-12 content form-block-holder">
+                  <div>
+                    <p>Telefonnummer</p>
+                    <input
+                      ref="phone"
+                      autoComplete="off"
+                      type="text"
+                      className="form-control"
+                      defaultValue={this.state.phone}
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div>
+                <p style={{ fontWeight: 'bold' }}>
+                  Sie können selbstverständlich auch anonym melden!
+                </p>
+                <p>
+                  Ohne Kontaktdaten ist es uns allerding nicht möglich, Sie über
+                  den weiteren Verlauf des Vorfalls zu informieren und am
+                  Laufenden zu halten.
+                  <br />
+                  <br />
+                  Ebenso können wir zur genaueren Klärung des Vorfalls nicht
+                  mehr nachfragen. Wir bitten um Ihr Verständnis, dass wir bei
+                  Unklarheiten nicht tätig werden können.
+                </p>
+              </div>
+            )}
           </form>
         </div>
       </div>
@@ -138,4 +185,4 @@ Step4.propTypes = {
   updateStore: PropTypes.func
 }
 
-export default validation(strategy)(Step4)
+export default Step4

@@ -18,39 +18,23 @@ class Step3 extends Component {
     }
     this._validateOnDemand = true // this flag enables onBlur validation as user fills forms
 
-    this.validationCheck = this.validationCheck.bind(this)
+    // this.validationCheck = this.validationCheck.bind(this)
     this.isValidated = this.isValidated.bind(this)
   }
   isValidated() {
     const userInput = this._grabUserInput() // grab user entered vals
-    const validateNewInput = this._validateData(userInput) // run the new input against the validator
     let isDataValid = true
+    console.log('HALLOO: ', userInput)
 
-    // if full validation passes then save to store and pass as valid
-    if (
-      Object.keys(validateNewInput).every(k => {
-        return validateNewInput[k] === true
-      })
-    ) {
-      if (this.props.getStore().links !== userInput.links) {
-        // only update store of something changed
-        this.props.updateStore({
-          ...userInput,
-          savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
-        }) // Update store here (this is just an example, in reality you will do it via redux or flux)
-      }
-
-      isDataValid = true
-    } else {
-      // if anything fails then update the UI validation state but NOT the UI Data State
-      this.setState(
-        Object.assign(
-          userInput,
-          validateNewInput,
-          this._validationErrors(validateNewInput)
-        )
-      )
+    if (this.props.getStore().links !== userInput.links) {
+      // only update store of something changed
+      this.props.updateStore({
+        ...userInput,
+        savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+      }) // Update store here (this is just an example, in reality you will do it via redux or flux)
     }
+
+    isDataValid = true
 
     return isDataValid
   }
@@ -58,32 +42,6 @@ class Step3 extends Component {
     return {
       links: this.refs.links.value
     }
-  }
-  validationCheck() {
-    if (!this._validateOnDemand) return
-
-    const userInput = this._grabUserInput() // grab user entered vals
-    const validateNewInput = this._validateData(userInput) // run the new input against the validator
-    this.setState(
-      Object.assign(
-        userInput,
-        validateNewInput,
-        this._validationErrors(validateNewInput)
-      )
-    )
-  }
-
-  _validateData(data) {
-    return {
-      linksVal: data.links !== ''
-    }
-  }
-
-  _validationErrors(val) {
-    const errMsgs = {
-      linksValMsg: val.linksVal ? '' : 'Darf nicht leer sein'
-    }
-    return errMsgs
   }
 
   onDrop = files => {
@@ -196,10 +154,9 @@ class Step3 extends Component {
             ref="links"
             autoComplete="off"
             className="form-control"
-            required
             defaultValue={this.state.links}
-            onBlur={this.validationCheck}
-            onChange={this.validationCheck}
+            // onBlur={this.validationCheck}
+            // onChange={this.validationCheck}
           />
           <div>{this.state.linksValMsg}</div>
         </form>

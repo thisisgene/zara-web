@@ -119,16 +119,37 @@ class StepFive extends Component {
                       ))}
                   </div>
                 </div>
-                {/* <div className="col-md-12 txt">
-                  <div className="col-md-4">Name</div>
-                  <div className="col-md-4">{this.props.getStore().name}</div>
-                </div> */}
-                {/* <div className="col-md-12 txt">
-                  <div className="col-md-4">Emergency Email</div>
-                  <div className="col-md-4">
-                    {this.props.getStore().emailEmergency}
+                <p>Kontaktdaten</p>
+                {this.props.getStore().selectedOption !== 'anonym' ? (
+                  <div>
+                    {this.props.getStore().userName !== '' && (
+                      <div className="col-md-12 txt">
+                        <div className="col-md-4">Name</div>
+                        <div className="col-md-4">
+                          {this.props.getStore().userName}
+                        </div>
+                      </div>
+                    )}
+                    {this.props.getStore().email !== '' && (
+                      <div className="col-md-12 txt">
+                        <div className="col-md-4">Email</div>
+                        <div className="col-md-4">
+                          {this.props.getStore().email}
+                        </div>
+                      </div>
+                    )}
+                    {this.props.getStore().phone !== '' && (
+                      <div className="col-md-12 txt">
+                        <div className="col-md-4">Telefonnummer</div>
+                        <div className="col-md-4">
+                          {this.props.getStore().phone}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>*/}
+                ) : (
+                  <div>Ich möchte anonym bleiben.</div>
+                )}
                 {/* <div className="col-md-12 eg-jump-lnk">
                   <a href="#" onClick={() => this.jumpToStep(1)}>
                     e.g. showing how we use the jumpToStep method helper method
