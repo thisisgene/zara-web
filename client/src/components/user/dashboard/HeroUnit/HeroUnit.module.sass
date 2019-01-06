@@ -18,7 +18,7 @@
       // padding-right: 2rem
       &--image
         flex: 3
-        // width: 600px
+        // max-width: 300px
         img
           width: 100%
 
@@ -26,14 +26,19 @@
         flex: 2
   .hero-unit
     display: flex
+    justify-content: center
+    
     &.center
       align-items: center
     &--image
-      width: 400px
+      width: 200px
+      text-align: right
       margin: 0 2rem
       img
+        max-width: 200px
         width: 100%
     &--text
+      width: 60%
       color: #050505
       &__title
         line-height: 1
@@ -74,7 +79,7 @@
         margin-bottom: 1rem
       &--text
         text-align: center
-
+        width: auto
         &__title
           font-size: 1.8rem
           margin-bottom: 1rem

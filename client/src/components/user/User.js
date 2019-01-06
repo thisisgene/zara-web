@@ -121,7 +121,8 @@ class User extends Component {
 
         <ScrollToTop>
           <div className={styles['main-content']}>
-            <div className={styles['breadcrumb-container']}>
+            {/* TODO: BREADCRUMBS */}
+            {/* <div className={styles['breadcrumb-container']}>
               {routes.map((route, index) => (
                 <div key={index} className={styles['breadcrumb']}>
                   <Route
@@ -131,7 +132,7 @@ class User extends Component {
                   />
                 </div>
               ))}
-            </div>
+            </div> */}
             <Switch>
               <Route exact path="/user/:lang" component={Home} />
 

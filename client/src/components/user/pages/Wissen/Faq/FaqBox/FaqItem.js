@@ -18,7 +18,10 @@ export default class FaqItem extends Component {
   }
 
   render() {
-    const { faq } = this.props
+    const { faq, lang } = this.props
+    if (faq[lang].links && faq[lang].links.map(link => {
+      {faq[lang].text.includes(link.text) &&
+    }))
     return (
       <div className={styles['faq-item']}>
         <div className={styles['faq-item-top']} onClick={this.toggleOpen}>
@@ -27,7 +30,7 @@ export default class FaqItem extends Component {
               <i className="far fa-question-circle" />
             </div>
             <div className={styles['faq-item-top--head__title']}>
-              {faq.title}
+              {faq[lang].title}
             </div>
           </div>
           <div
@@ -42,7 +45,7 @@ export default class FaqItem extends Component {
           className={cx(styles['faq-item--body'], {
             [styles['open']]: this.state.isOpen
           })}
-          dangerouslySetInnerHTML={{ __html: faq.text }}
+          dangerouslySetInnerHTML={{ __html: faq[lang].text }}
         />
       </div>
     )

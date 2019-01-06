@@ -16,6 +16,7 @@ import IconObject from '../../dashboard/IconObject/IconObject'
 import cx from 'classnames'
 import styles from './TrainingDetail.module.sass'
 import parentStyles from './Training.module.sass'
+import TrainingUnternehmen from './TrainingUnternehmen'
 
 class TrainingDetail extends Component {
   constructor(props) {
@@ -47,6 +48,10 @@ class TrainingDetail extends Component {
     let training
     if (lang) {
       training = trainingArray[0]
+      if (!training.image) {
+        training.imageSide = 'left'
+        training.image = 'training.png'
+      }
     }
     return (
       <div>

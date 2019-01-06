@@ -107,7 +107,7 @@ class FaqBox extends Component {
                     .toLowerCase()
                     .includes(this.state.searchValue.toLowerCase())
               )
-              .map(faq => <FaqItem faq={faq[lang]} />)}
+              .map(faq => <FaqItem faq={faq} lang={lang} />)}
         </div>
       </div>
     )
