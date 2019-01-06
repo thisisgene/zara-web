@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Promise from 'promise'
 
+import Spinner from '../../../common/assets/img/spinner.gif'
+
 import cx from 'classnames'
 import styles from '../MultiStepForm.module.sass'
 
@@ -90,7 +92,9 @@ class StepFive extends Component {
           className={cx(styles['saving-screen'], {
             [styles['visible']]: this.state.saving
           })}
-        />
+        >
+          <img src={Spinner} alt={Spinner} />
+        </div>
         <div className="row">
           <form id="Form" className="form-horizontal">
             <div className="form-group">
