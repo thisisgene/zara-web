@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Promise from 'promise'
 
+import cx from 'classnames'
 import styles from '../MultiStepForm.module.sass'
 
 class StepFive extends Component {
@@ -40,24 +41,40 @@ class StepFive extends Component {
     this.setState({
       saving: true
     })
+    // if (this.props.getStore().selectedOption === 'anonym') {
+    //   this.props.updateStore({
+    //     name: '',
+    //     email: '',
+    //     phone: ''
+    //   })
+    // }
     const reportData = this.props.getStore()
-    this.props.sendReport(reportData)
+    // return new Promise(resolve => {
+    //   var start_time = Date.now();
+    //   function checkFlag() {
+    //     if (conditionObj.arg == conditionObj.test) {
+    //       console.log('met');
+    //       resolve();
+    //     } else if (Date.now() > start_time + 3000) {
+    //       console.log('not met, time out');
+    //       resolve();
+    //     } else {
+    //       window.setTimeout(checkFlag, 1000);
+    //     }
+    //   }
+    //   checkFlag();
+    // });
 
-    return new Promise((resolve, reject) => {
-      if (this.props.report && this.props.report.reportSent === true) {
-        this.setState({
-          saving: false
-        })
-
-        // this.props.updateStore({ savedToCloud: true }) // Update store here (this is just an example, in reality you will do it via redux or flux)
-
-        // call resolve() to indicate that server validation or other aync method was a success.
-        // ... only then will it move to the next step. reject() will indicate a fail
-        resolve()
-        // reject(); // or reject
-      } else {
-        reject()
-      }
+    return new Promise(async (resolve, reject) => {
+      this.props.sendReport(reportData)
+      console.log(this.props.getStore().reportSent)
+      setTimeout(() => {
+        if (this.props.getStore().reportSent) {
+          resolve()
+        } else {
+          reject()
+        }
+      }, 2000)
     })
   }
 
@@ -67,12 +84,13 @@ class StepFive extends Component {
   }
 
   render() {
-    // const savingCls = this.state.saving
-    //   ? 'saving col-md-12 show'
-    //   : 'saving col-md-12 hide'
-
     return (
       <div className={styles['step']}>
+        <div
+          className={cx(styles['saving-screen'], {
+            [styles['visible']]: this.state.saving
+          })}
+        />
         <div className="row">
           <form id="Form" className="form-horizontal">
             <div className="form-group">

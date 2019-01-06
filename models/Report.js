@@ -5,18 +5,19 @@ const ReportSchema = new Schema({
   description: {
     type: String
   },
+  anonym: {
+    type: Boolean
+  },
   email: {
     type: String
   },
   user: {
     type: String
   },
-  firstName: {
+  userName: {
     type: String
   },
-  lastName: {
-    type: String
-  },
+
   phone: {
     type: String
   },

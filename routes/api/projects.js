@@ -495,6 +495,11 @@ router.post('/report/send', async (req, res) => {
   const date = new Date()
   const newReport = new Report({
     description: body.description,
+    anonym: body.anonym,
+    name: body.name,
+    email: body.email,
+    phone: body.phone,
+    links: body.links,
     date: date
   })
     .save()

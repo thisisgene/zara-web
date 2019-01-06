@@ -28,13 +28,28 @@ class MultiStepForm extends Component {
       files: [],
       links: '',
       selectedOption: 'anonym',
-      savedToCloud: false
+      savedToCloud: false,
+      reportSent: false
     }
   }
 
   componentDidMount() {}
 
   componentWillUnmount() {}
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.report &&
+      prevProps.report.reportSent !== this.props.report.reportSent
+    ) {
+      console.log('pre', this.getStore().reportSent)
+
+      this.updateStore({
+        reportSent: this.props.report.reportSent
+      })
+      console.log('post', this.getStore().reportSent)
+    }
+  }
 
   getStore() {
     return this.sampleStore
@@ -105,7 +120,7 @@ class MultiStepForm extends Component {
             updateStore={u => {
               this.updateStore(u)
             }}
-            report={this.props.report}
+            report={this.props.report.reportSent}
             sendReport={reportData => this.props.sendReport(reportData)}
           />
         )
@@ -129,7 +144,8 @@ class MultiStepForm extends Component {
         <div className={cx('step-progress', styles['multi-step-form'])}>
           <StepZilla
             steps={steps}
-            startAtStep={3}
+            startAtStep={5}
+            prevBtnOnLastStep={false}
             nextButtonCls={'next-button'}
             nextButtonText={lang === 'de' ? 'Weiter' : 'Next'}
             backButtonText={lang === 'de' ? 'Zurück' : 'Back'}
@@ -140,8 +156,10 @@ class MultiStepForm extends Component {
     )
   }
 }
-
+const mapStateToProps = state => ({
+  report: state.report
+})
 export default connect(
-  null,
+  mapStateToProps,
   { sendReport }
 )(MultiStepForm)

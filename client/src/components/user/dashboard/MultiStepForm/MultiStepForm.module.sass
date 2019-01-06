@@ -17,7 +17,18 @@
       width: 90%
       margin: 0 auto
       text-align: left
-    
+
+      .saving-screen
+        position: fixed
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+        z-index: 4
+        background: rgba(white, .5)
+        display: none
+        &.visible
+          display: block
       textarea
         border: 1px solid #ccc
         width: 100%
