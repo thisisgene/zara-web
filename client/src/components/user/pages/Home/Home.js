@@ -265,119 +265,222 @@ const infoObj_red = {
 
 const cardGridObject = {
   de: {
-    title: 'Aktuell',
-    link: 'test',
-    linkText: 'Alle News & Presseaussendungen',
+    title: '',
+    link: '',
+    linkText: '',
     cards: [
       {
         size: 'wide',
-        type: 'titleCard',
-        text:
-          'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
-        link: 'test'
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        title: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        title: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'newsCard',
-        category: 'News',
-        date: '24. Juni 2018',
-        title:
-          'ZARA-Forderung für besseren Schutz bei grober sexueller Belästigung',
-        text:
-          'Der Fall von Sigi Maurer hat gezeigt, dass es einen besseren rechtlichen Schutz bei grober sexueller Belästigung durch Privatnachrichten benötigt. Laut Barbara Unterlerchner, Leiterin der Beratungsstelle #GegenHassimNetz, haben wir “immer wieder Fälle …',
-        link: 'test'
+        size: '',
+        type: '',
+        category: '',
+        date: '',
+        title: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       }
     ]
   },
   en: {
-    title: 'Aktuell',
-    link: 'test',
-    linkText: 'Alle News & Presseaussendungen',
+    title: '',
+    link: '',
+    linkText: '',
     cards: [
       {
-        size: 'wide',
-        type: 'titleCard',
-        text:
-          'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        title: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        title: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'newsCard',
-        category: 'News',
-        date: '24. Juni 2018',
-        title:
-          'ZARA-Forderung für besseren Schutz bei grober sexueller Belästigung',
-        text:
-          'Der Fall von Sigi Maurer hat gezeigt, dass es einen besseren rechtlichen Schutz bei grober sexueller Belästigung durch Privatnachrichten benötigt. Laut Barbara Unterlerchner, Leiterin der Beratungsstelle #GegenHassimNetz, haben wir “immer wieder Fälle …',
-        link: 'test'
+        size: '',
+        type: '',
+        category: '',
+        date: '',
+        title: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       },
       {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        size: '',
+        type: '',
+        text: '',
+        link: ''
       }
     ]
   }
 }
 
-// const imageCard = {
-//   text: 'Der Klagsverband ist vom Zusperren bedroht'
+// const cardGridObject = {
+//   de: {
+//     title: 'Aktuell',
+//     link: 'test',
+//     linkText: 'Alle News & Presseaussendungen',
+//     cards: [
+//       {
+//         size: 'wide',
+//         type: 'titleCard',
+//         text:
+//           'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         title: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'newsCard',
+//         category: 'News',
+//         date: '24. Juni 2018',
+//         title:
+//           'ZARA-Forderung für besseren Schutz bei grober sexueller Belästigung',
+//         text:
+//           'Der Fall von Sigi Maurer hat gezeigt, dass es einen besseren rechtlichen Schutz bei grober sexueller Belästigung durch Privatnachrichten benötigt. Laut Barbara Unterlerchner, Leiterin der Beratungsstelle #GegenHassimNetz, haben wir “immer wieder Fälle …',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       }
+//     ]
+//   },
+//   en: {
+//     title: 'Aktuell',
+//     link: 'test',
+//     linkText: 'Alle News & Presseaussendungen',
+//     cards: [
+//       {
+//         size: 'wide',
+//         type: 'titleCard',
+//         text:
+//           'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         title: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'newsCard',
+//         category: 'News',
+//         date: '24. Juni 2018',
+//         title:
+//           'ZARA-Forderung für besseren Schutz bei grober sexueller Belästigung',
+//         text:
+//           'Der Fall von Sigi Maurer hat gezeigt, dass es einen besseren rechtlichen Schutz bei grober sexueller Belästigung durch Privatnachrichten benötigt. Laut Barbara Unterlerchner, Leiterin der Beratungsstelle #GegenHassimNetz, haben wir “immer wieder Fälle …',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       },
+//       {
+//         size: 'default',
+//         type: 'imageCard',
+//         text: 'Der Klagsverband ist vom Zusperren bedroht',
+//         link: 'test'
+//       }
+//     ]
+//   }
 // }
 
 const mainInfo = {
