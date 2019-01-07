@@ -14,12 +14,7 @@ const heroData = {
   de: {
     title: 'Häufig gestellte Fragen',
     text:
-      'Hier haben wir ein paar Fragen für Sie gesammelt, die uns häufig gestellt werden. Um sich diesbezüglich gut zurechtfinden zu können, haben wir die FAQs in unsere zwei Schwerpunkte sowie spezifische Fragen über ZARA gegliedert: <br><br><b>FAQ I – Rassistische Diskriminierung</b><br><b>FAQ II – Hass im Netz</b><br><b>FAQ III - Fragen über ZARA</b>',
-    list: [
-      { text: 'FAQ I – Rassistische Diskriminierung' },
-      { text: 'FAQ II – Hass im Netz' },
-      { text: 'FAQ III - Fragen über ZARA ' }
-    ]
+      'Hier haben wir ein paar Fragen für Sie gesammelt, die uns häufig gestellt werden. Um sich diesbezüglich gut zurechtfinden zu können, haben wir die FAQs in unsere zwei Schwerpunkte sowie spezifische Fragen über ZARA gegliedert:'
   },
   en: {
     title: 'Häufig gestellte Fragen',
