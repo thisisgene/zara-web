@@ -12,7 +12,7 @@ const heroData = {
   image: 'consulting.jpg',
   imageSide: 'left',
   de: {
-    title: 'Wir sind auf Ihrer Seite',
+    title: 'Wir stehen Ihnen bei!',
     text:
       'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
   },
