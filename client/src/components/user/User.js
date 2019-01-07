@@ -23,6 +23,7 @@ import WasWirTunKoennen from './pages/Consulting/WasWirTunKoennen'
 import Training from './pages/Training/Training'
 import TrainingChildren from './pages/Training/TrainingChildren'
 import TrainingAdults from './pages/Training/TrainingAdults'
+import TrainingUnternehmen from './pages/Training/TrainingUnternehmen'
 import TrainingDetail from './pages/Training/TrainingDetail'
 
 import Mitmischen from './pages/Mitmischen/Mitmischen'
@@ -34,9 +35,13 @@ import Unterstuetzen from './pages/Mitmischen/Unterstuetzen'
 
 import Wissen from './pages/Wissen/Wissen'
 import News from './pages/Wissen/News/News'
+import Presse from './pages/Wissen/Presse/Presse'
+import Pressespiegel from './pages/Wissen/Presse/Pressespiegel'
+import Fotos from './pages/Wissen/Presse/Fotos'
 import KenneDeineRechte from './pages/Wissen/KenneDeineRechte/KenneDeineRechte'
 import Glossar from './pages/Wissen/KenneDeineRechte/Glossar'
 import Publikationen from './pages/Wissen/Publikationen/Publikationen'
+import RassismusReport from './pages/Wissen/Publikationen/RassismusReport'
 import Faq from './pages/Wissen/Faq/Faq'
 
 import WasWirWollen from './pages/Zara/WasWirWollen/WasWirWollen'
@@ -44,6 +49,7 @@ import Mission from './pages/Zara/WasWirWollen/Mission'
 import History from './pages/Zara/WasWirWollen/History'
 import Grundsaetze from './pages/Zara/WasWirWollen/Grundsaetze'
 import Team from './pages/Zara/WerWirSind/Team/Team'
+import Jobs from './pages/Zara/WerWirSind/Jobs/Jobs'
 
 import Kontakt from './pages/Zara/Kontakt/Kontakt'
 import Impressum from './pages/Other/Impressum'
@@ -51,9 +57,6 @@ import Impressum from './pages/Other/Impressum'
 import Footer from './layout/Footer/Footer'
 
 import styles from './User.module.sass'
-import RassismusReport from './pages/Wissen/Publikationen/RassismusReport'
-import Jobs from './pages/Zara/WerWirSind/Jobs/Jobs'
-import TrainingUnternehmen from './pages/Training/TrainingUnternehmen'
 
 class User extends Component {
   constructor(props) {
@@ -232,6 +235,21 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/kenne_deine_rechte/glossar"
                 component={Glossar}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/presse"
+                component={Presse}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/presse/pressespiegel"
+                component={Pressespiegel}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/presse/fotos"
+                component={Fotos}
               />
               <Route
                 exact

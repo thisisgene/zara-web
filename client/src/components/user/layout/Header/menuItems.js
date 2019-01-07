@@ -204,7 +204,7 @@ const menuItems = [
     name: 'Wissen',
     id: '4',
     link: 'wissen',
-    // secondRow: true,
+    secondRow: true,
     contact: {
       de: {
         title: 'Kontakt Presse & Wissen',
@@ -261,30 +261,30 @@ const menuItems = [
         name: 'FAQs',
         link: 'faq',
         id: '4.4'
+      },
+      {
+        name: 'Presse',
+        link: 'presse',
+        id: '4.5',
+        gridRow: 'two',
+        subMenuList: [
+          {
+            name: 'Pressespiegel',
+            link: 'pressespiegel',
+            id: '4.5.1'
+          },
+          {
+            name: 'Logos & Kampagnenmaterial',
+            link: 'logos_und_kampagnenmaterial',
+            id: '4.5.2'
+          },
+          {
+            name: 'Fotos',
+            link: 'fotos',
+            id: '4.5.3'
+          }
+        ]
       }
-      // {
-      //   name: 'Presse',
-      //   link: 'presse',
-      //   id: '4.5',
-      //   gridRow: 'two',
-      //   subMenuList: [
-      //     {
-      //       name: 'Pressespiegel',
-      //       link: 'pressespiegel',
-      //       id: '4.5.1'
-      //     },
-      //     {
-      //       name: 'Logos & Kampagnenmaterial',
-      //       link: 'logos_und_kampagnenmaterial',
-      //       id: '4.5.2'
-      //     },
-      //     {
-      //       name: 'Fotos',
-      //       link: 'fotos',
-      //       id: '4.5.3'
-      //     }
-      //   ]
-      // }
     ]
   },
   {
