@@ -25,7 +25,7 @@ class SocialMediaFollowBox extends Component {
               >
                 <IconObject image="instaLogo" />
               </a>
-              <a target="blank" href="http://youtube.com">
+              <a target="blank" href="https://www.youtube.com/user/VereinZara">
                 <IconObject image="ytLogo" />
               </a>
             </div>
