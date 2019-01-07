@@ -117,15 +117,37 @@ const infoObj_default = {
         text:
           'ZARA Training gemeinnützige GmbH bietet in ganz Österreich zielgruppengerechte und individuell gestaltbare Aus- und Fortbildungen, Workshops und Projekte in den Bereichen Diversity, Bewusstseins- bildung, Anti-Rassismus und Zivilcourage an.',
         link: 'training',
-        linkText: 'Mehr zu Trainings'
+        linkText: 'Mehr zu Trainings',
+        listItems: [
+          {
+            text: 'Workshops für Kinder & Jugendliche'
+          },
+          {
+            text: 'Training für Erwachsene'
+          },
+          {
+            text: 'Unternehmensarbeit'
+          }
+        ]
       },
       {
         color: 'default',
         title: 'Öffentlichkeitsarbeit & Sensibilisierung',
         text:
           'Kontinuierliche Medienarbeit ist ein zentraler Bestandteil der Präventionsarbeit von ZARA. Denn das Sichtbarmachen von Rassismus in Österreich steigert das Problembewusstsein und trägt zur Sensibilisierung für die Themen Rassismus/Anti-Rassismus bei.',
-        link: 'oeffentlichkeit',
-        linkText: 'Mehr zu Öffentlichkeitsarbeit'
+        link: 'ueber_ZARA',
+        linkText: 'Mehr zu Öffentlichkeitsarbeit',
+        listItems: [
+          {
+            text: 'News & Presseaussendungen'
+          },
+          {
+            text: 'Projekte & Initiativen'
+          },
+          {
+            text: 'Rassismus-Report'
+          }
+        ]
       }
     ]
   },
@@ -182,25 +204,26 @@ const infoObj_red = {
         color: 'red',
         title: 'Rassismus melden',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
+          'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
         link: 'de/melden',
-        linkText: "Los geht's!"
+        linkText: 'Melden!'
       },
       {
         image: 'donate_hand',
         color: 'red',
         title: '(Online) Spenden',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
-        link: 'de/melden',
-        linkText: "Los geht's!"
+          'Spenden Sie jetzt – damit Betroffene von Rassismus mit dem Unrecht und der Demütigung nicht alleine gelassen werden!',
+        linkPath: 'external',
+        link: 'https://www.mpay24.com/app/bin/checkout/n2i3mmfkntkznq',
+        linkText: 'Jetzt online spenden!'
       },
       {
         image: 'group',
         color: 'red',
         title: 'Ehrenamtlich mitmischen',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
+          'Werden Sie ein*e ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam aktiv zu werden. Werden Sie Teil einer tatkräftigen Community!',
         link: 'de/melden',
         linkText: "Los geht's!"
       }

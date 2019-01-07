@@ -14,12 +14,17 @@ const heroData = {
   de: {
     title: 'Häufig gestellte Fragen',
     text:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum.'
+      'Hier haben wir ein paar Fragen für Sie gesammelt, die uns häufig gestellt werden. Um sich diesbezüglich gut zurechtfinden zu können, haben wir die FAQs in unsere zwei Schwerpunkte sowie spezifische Fragen über ZARA gegliedert: <br><br><b>FAQ I – Rassistische Diskriminierung</b><br><b>FAQ II – Hass im Netz</b><br><b>FAQ III - Fragen über ZARA</b>',
+    list: [
+      { text: 'FAQ I – Rassistische Diskriminierung' },
+      { text: 'FAQ II – Hass im Netz' },
+      { text: 'FAQ III - Fragen über ZARA ' }
+    ]
   },
   en: {
-    title: 'Frequently asked questions',
+    title: 'Häufig gestellte Fragen',
     text:
-      'In der Beratungsstelle erhalten jährlich über 1.000 Opfer und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
+      'Hier haben wir ein paar Fragen für Sie gesammelt, die uns häufig gestellt werden. Um sich diesbezüglich gut zurechtfinden zu können, haben wir die FAQs in unsere zwei Schwerpunkte sowie spezifische Fragen über ZARA gegliedert:'
   }
 }
 
@@ -27,7 +32,8 @@ const oneLineAlert = {
   type: 'red',
   icon: 'alert',
   de: {
-    text: 'Ich bin Opfer oder Zeug*in eines rassistischen Vorfalls geworden',
+    text:
+      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls geworden',
     button: {
       text: 'Jetzt melden',
       type: 'alert',
@@ -35,7 +41,8 @@ const oneLineAlert = {
     }
   },
   en: {
-    text: 'Ich bin Opfer oder Zeug*in eines rassistischen Vorfalls geworden',
+    text:
+      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls geworden',
     button: {
       text: 'Jetzt melden',
       type: 'alert',
