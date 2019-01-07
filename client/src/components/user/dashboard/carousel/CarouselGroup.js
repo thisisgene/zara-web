@@ -16,7 +16,7 @@ class CarouselGroup extends Component {
           showArrows={false}
           showThumbs={false}
           infiniteLoop
-          // autoPlay
+          autoPlay
           interval={10000}
           transitionTime={1000}
           showStatus={false}
