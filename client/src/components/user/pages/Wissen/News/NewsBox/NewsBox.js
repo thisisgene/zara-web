@@ -9,21 +9,25 @@ class NewsBox extends Component {
   constructor() {
     super()
     this.state = {
-      activeTags: []
+      activeTag: ''
     }
   }
   onChange = e => {
-    let activeTags = this.state.activeTags
-    if (e.target.checked) {
-      activeTags.push(e.target.name)
-      this.setState({
-        activeTags: activeTags
-      })
-    } else {
-      this.setState({
-        activeTags: activeTags.filter(tag => tag !== e.target.name)
-      })
-    }
+    // let activeTags = this.state.activeTags
+    // if (e.target.checked) {
+    //   activeTags.push(e.target.name)
+    //   this.setState({
+    //     activeTags: activeTags
+    //   })
+    // } else {
+    //   this.setState({
+    //     activeTags: activeTags.filter(tag => tag !== e.target.name)
+    //   })
+    // }
+    this.setState({
+      activeTag: e.target.value
+    })
+    console.log('HALLO')
   }
 
   filterNews = e => {
@@ -32,7 +36,7 @@ class NewsBox extends Component {
 
   resetTags = () => {
     this.setState({
-      activeTags: []
+      activeTag: ''
     })
   }
 
@@ -41,10 +45,10 @@ class NewsBox extends Component {
 
     let filteredContent = []
 
-    if (this.state.activeTags.length > 0) {
+    if (this.state.activeTag !== '') {
       filteredContent = content.filter(filteredNews => {
         for (let tag of filteredNews.tags) {
-          if (this.state.activeTags.includes(tag) === true) return true
+          if (this.state.activeTag === tag) return true
         }
         return false
       })
@@ -59,7 +63,7 @@ class NewsBox extends Component {
         <div className={styles['news-box--filter-bar']}>
           <div
             className={cx(styles['reset-button'], {
-              [styles['active']]: this.state.activeTags.length === 0
+              [styles['active']]: this.state.activeTag === ''
             })}
           >
             <label onClick={this.resetTags} tabIndex="1">
@@ -71,11 +75,11 @@ class NewsBox extends Component {
               tags.map((tag, index) => (
                 <div key={index} className={styles['tag-item']}>
                   <input
-                    name={tag.name}
-                    type="checkbox"
+                    value={tag.name}
+                    type="radio"
                     id={`tag-${tag.name}`}
                     onChange={this.onChange}
-                    checked={this.state.activeTags.includes(tag.name)}
+                    checked={this.state.activeTag === tag.name}
                   />
                   <label htmlFor={`tag-${tag.name}`}>{tag[lang].title}</label>
                 </div>
@@ -85,7 +89,9 @@ class NewsBox extends Component {
         <div>
           {content &&
             lang &&
-            filteredContent.map(news => <NewsItem news={news} lang={lang} />)}
+            filteredContent.map((news, index) => (
+              <NewsItem key={index} news={news} lang={lang} />
+            ))}
         </div>
       </div>
     )
