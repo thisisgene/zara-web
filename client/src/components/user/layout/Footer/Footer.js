@@ -18,7 +18,7 @@ class Footer extends Component {
               <OneLineContainer contentObj={oneLineContent} lang={lang} />
             )}
 
-            <FooterContent content={footerContent[lang]} />
+            <FooterContent content={footerContent[lang]} lang={lang} />
           </div>
         )}
       </div>

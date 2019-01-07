@@ -69,19 +69,19 @@ export const footerContent = {
           header: 'Presse',
           items: [
             {
-              link: '/presse',
+              link: 'wissen/presse',
               linkText: 'Pressemeldungen'
             },
             {
-              link: '/presse',
+              link: 'wissen/presse/pressespiegel',
               linkText: 'Pressespiegel'
             },
             {
-              link: '/presse',
+              link: 'wissen/presse/logos',
               linkText: 'Logos & Kampagnen'
             },
             {
-              link: '/presse',
+              link: 'wissen/presse/fotos',
               linkText: 'Fotos'
             }
           ]

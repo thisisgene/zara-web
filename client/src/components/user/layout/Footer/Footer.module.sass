@@ -1,8 +1,8 @@
 .footer
   .footer-content-container
     background: rgba(#ffd300, .1)
+    padding: 2rem 1rem
     .footer-content
-      padding: 2rem 1rem
       margin: 0 auto
       max-width: 1080px
       width: 100%
@@ -92,3 +92,37 @@
                   display: flex
                   align-items: baseline
             .bank-date
+
+    .bottom-bar
+      max-width: 1080px
+      margin: 0 auto
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      font-size: .8rem
+      padding: .6rem 1rem
+      
+          
+
+      &--left
+        display: flex
+        align-items: center
+        img
+          height: 1.8rem
+      &--right
+        a
+          color: #050505
+          
+          margin-left: 1rem
+      @media(max-width: 750px)
+        font-size: 1rem
+        display: block
+        &--left
+          margin-bottom: 1rem
+          display: block
+          img
+            margin-bottom: .3rem
+        &--right
+          a:first-child
+            margin-left: 0

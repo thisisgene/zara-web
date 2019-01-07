@@ -9,7 +9,8 @@ import styles from './Footer.module.sass'
 
 export default class FooterContent extends Component {
   render() {
-    const { content } = this.props
+    const { content, lang } = this.props
+    const currentYear = new Date().getFullYear()
     return (
       <div className={styles['footer-content-container']}>
         <div className={styles['footer-content']}>
@@ -57,7 +58,9 @@ export default class FooterContent extends Component {
                   {content.right.top.left.items &&
                     content.right.top.left.items.map((item, index) => (
                       <div key={index}>
-                        <Link to={item.link}>{item.linkText}</Link>
+                        <Link to={`/user/${lang}/${item.link}`}>
+                          {item.linkText}
+                        </Link>
                       </div>
                     ))}
                 </div>
@@ -102,6 +105,24 @@ export default class FooterContent extends Component {
                 {content.right.bottom.header}
               </div>
             </div>
+          </div>
+        </div>
+        <div className={styles['bottom-bar']}>
+          <div className={styles['bottom-bar--left']}>
+            <div>
+              <img src="/assets/img/assets/logo/plain.svg" alt="ZARA Logo" />
+            </div>
+            <div>
+              © ZARA - Zivilcourage und Anti-Rassismus-Arbeit {currentYear}
+            </div>
+          </div>
+          <div className={styles['bottom-bar--right']}>
+            <Link to={`/user/${lang}/impressum`}>Impressum</Link>
+            <Link to={`/user/${lang}/datenschutzerklärung`}>
+              {lang === 'de'
+                ? 'Datenschutzerklärung'
+                : 'Data Privacy Statement'}
+            </Link>
           </div>
         </div>
       </div>
