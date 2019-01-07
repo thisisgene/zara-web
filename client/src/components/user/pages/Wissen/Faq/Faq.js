@@ -37,7 +37,7 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: '/beratung/melden/rassismus'
+      link: 'beratung/melden/rassismus'
     }
   },
   en: {
@@ -46,12 +46,13 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: '/beratung/melden/rassismus'
+      link: 'beratung/melden/rassismus'
     }
   }
 }
 
 const cardGridObject = {
+  count: 'two',
   de: {
     title: 'Mehr Wissen',
     // link: 'test',
@@ -59,28 +60,17 @@ const cardGridObject = {
     cards: [
       {
         size: 'default',
-        type: 'titleCard',
-        text:
-          'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
-        link: 'test'
+        type: 'imageCard',
+        image: 'scales.png',
+        title: 'Recht & Ordnung',
+        link: 'wissen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        title: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
-      },
-      {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
-      },
-      {
-        size: 'default',
-        type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        image: 'book.png',
+        text: 'Glossar',
+        link: 'wissen'
       }
     ]
   },

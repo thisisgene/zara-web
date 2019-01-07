@@ -23,7 +23,7 @@ export const oneLineAlert = {
     button: {
       text: 'Jetzt spenden',
       type: 'default',
-      link: 'beratung/melden/rassismus'
+      link: 'mitmischen/unterstuetzen'
     }
   },
   en: {
@@ -33,7 +33,7 @@ export const oneLineAlert = {
     button: {
       text: 'Jetzt spenden',
       type: 'default',
-      link: 'beratung/melden/rassismus'
+      link: 'mitmischen/unterstuetzen'
     }
   }
 }

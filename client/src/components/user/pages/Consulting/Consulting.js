@@ -124,34 +124,37 @@ const infoObj_default = {
 
 const cardGridObject = {
   de: {
-    title: 'KENNE DEINE RECHTE',
+    title: 'Lass und was tun',
     // link: 'test',
     // linkText: 'Alle News & Presseaussendungen',
     cards: [
       {
         size: 'default',
-        type: 'titleCard',
-        text:
-          'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
-        link: 'test'
+        type: 'imageCard',
+        image: 'scales.png',
+        title: 'Was Sie Tun Können',
+        link: 'beratung/wassietunkoennen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        title: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        image: 'book.png',
+        title: 'Was Wir Dann Tun Können',
+        link: 'beratung/waswirtunkoennen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        image: 'scales.png',
+        title: 'Mitmischen',
+        link: 'mitmischen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        image: 'book.png',
+        title: 'Wissen',
+        link: 'wissen'
       }
     ]
   },
