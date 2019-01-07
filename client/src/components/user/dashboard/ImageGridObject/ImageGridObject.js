@@ -62,7 +62,7 @@ export default class ImageGridObject extends Component {
   }
 
   render() {
-    const { content, lang, shoppingCartText } = this.props
+    const { content, lang, shoppingCartText, withCart } = this.props
 
     return (
       <div>
@@ -89,7 +89,7 @@ export default class ImageGridObject extends Component {
             </div>
           ))}
         </div>
-        {this.state.showCart && (
+        {withCart && this.state.showCart && (
           <div className={styles['shopping-cart-container']}>
             <ShoppingCart
               content={this.state.cart}

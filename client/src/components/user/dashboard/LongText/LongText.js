@@ -16,12 +16,27 @@ export default class LongText extends Component {
         })}
       >
         {content[lang].title && (
-          <div className={styles['long-text--title']}>
-            {content[lang].title}
+          <div
+            className={styles['long-text--title']}
+            dangerouslySetInnerHTML={{ __html: content[lang].title }}
+          />
+        )}
+        {content.image && (
+          <div
+            className={cx(styles['long-text--image'], {
+              [styles['big']]: content.bigImage
+            })}
+          >
+            <img src={`/assets/img/${content.image}`} alt="" />
           </div>
         )}
         {content[lang].list && (
           <div className={styles['long-text--list']}>
+            {content[lang].listTitle && (
+              <div className={styles['long-text--list__title']}>
+                {content[lang].listTitle}
+              </div>
+            )}
             <ul>
               {content[lang].list.map((item, index) => (
                 <li key={index}>
@@ -43,6 +58,13 @@ export default class LongText extends Component {
             <Link to={`/user/${lang}/${content[lang].link}`}>
               {content[lang].linkText}
             </Link>
+          </div>
+        )}
+        {content.bottomImages && (
+          <div className={styles['long-text--bottom-images']}>
+            {content.bottomImages.map(image => (
+              <img src={`/assets/img/${image.image}`} alt={image.image} />
+            ))}
           </div>
         )}
       </div>

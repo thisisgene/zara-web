@@ -9,16 +9,20 @@ import styles from './Footer.module.sass'
 
 class Footer extends Component {
   render() {
-    const { lang } = this.props
+    const { lang, type } = this.props
     return (
       <div>
         {lang && (
           <div className={styles['footer']}>
-            {oneLineContent && (
+            {oneLineContent && !type && type !== 'small' && (
               <OneLineContainer contentObj={oneLineContent} lang={lang} />
             )}
 
-            <FooterContent content={footerContent[lang]} lang={lang} />
+            <FooterContent
+              type={type}
+              content={footerContent[lang]}
+              lang={lang}
+            />
           </div>
         )}
       </div>

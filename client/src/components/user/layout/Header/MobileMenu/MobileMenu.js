@@ -10,8 +10,10 @@ import ActionBar from '../ActionBar/ActionBar'
 import LanguageToggle from '../LanguageToggle'
 import MobileSubMenu from './MobileSubMenu'
 import OneLineContainer from '../../../dashboard/OneLineContainer/OneLineContainer'
+import Footer from '../../../layout/Footer/Footer'
 
 import { oneLineContent } from '../../Footer/footer_data'
+import { footerContent } from '../../Footer/footer_data'
 
 import cx from 'classnames'
 import styles from './MobileMenu.module.sass'
@@ -55,6 +57,11 @@ class MobileMenu extends Component {
 
   render() {
     const { menuItems, lang } = this.props
+    let zaraContact
+    menuItems
+      .filter(item => item.link === 'ueber_ZARA')
+      .map(item => (zaraContact = item.contact))
+    console.log(zaraContact)
     return (
       <div className={styles['mobile-menu-wrapper']}>
         <nav className={cx(styles.header)}>
@@ -160,13 +167,16 @@ class MobileMenu extends Component {
                 />
               </div>
             </div>
+            <Footer type="small" content={footerContent} lang={lang} />
             <div className="OneLineContainer">
               <OneLineContainer
-                contentObj={oneLineContent[lang]}
+                contentObj={oneLineContent}
+                lang={lang}
                 newsletterInputId={'ninpu1'}
               />
             </div>
           </div>
+
           <nav
             role="menu"
             className={cx(styles['mobile-sub-menu'], {

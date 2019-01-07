@@ -33,6 +33,7 @@ class RassismusReport extends Component {
             <ImageGridObject
               shoppingCartText={shoppingCartText}
               content={reportGridData}
+              withCart={true}
               lang={lang}
             />
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
-import { longText } from './impressum_data'
+import { longText } from './datenschutz_data'
 
 import LongText from '../../dashboard/LongText/LongText'
 
-class Impressum extends Component {
+class Datenschutz extends Component {
   render() {
     const { activeLanguage } = this.props
     let lang
@@ -25,4 +25,4 @@ class Impressum extends Component {
   }
 }
 
-export default withLocalize(Impressum)
+export default withLocalize(Datenschutz)

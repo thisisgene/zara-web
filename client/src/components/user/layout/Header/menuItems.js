@@ -357,6 +357,28 @@ const menuItems = [
             id: '5.2.4'
           }
         ]
+      },
+      {
+        name: 'Projekte & Kooperation',
+        link: 'projekte_und_kooperation',
+        id: '5.3',
+        subMenuList: [
+          {
+            name: 'Netzwerke & Initiativen',
+            link: 'netzwerke_und_initiativen',
+            id: '5.3.1'
+          },
+          {
+            name: 'Projekte',
+            link: 'projekte',
+            id: '5.3.2'
+          },
+          {
+            name: 'Befreundete Organisationen',
+            link: 'befreundete_organisationen',
+            id: '5.3.3'
+          }
+        ]
       }
     ]
   }

@@ -57,6 +57,10 @@ import Impressum from './pages/Other/Impressum'
 import Footer from './layout/Footer/Footer'
 
 import styles from './User.module.sass'
+import Datenschutz from './pages/Other/Datenschutz'
+import Netzwerke from './pages/Zara/ProjekteUndKooperationen/Netzwerke'
+import Projekte from './pages/Zara/ProjekteUndKooperationen/Projekte'
+import Organisationen from './pages/Zara/ProjekteUndKooperationen/Organisationen'
 
 class User extends Component {
   constructor(props) {
@@ -308,9 +312,29 @@ class User extends Component {
                 path="/user/:lang/ueber_ZARA/wer_wir_sind/jobs"
                 component={Jobs}
               />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/projekte_und_kooperation/netzwerke_und_initiativen"
+                component={Netzwerke}
+              />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/projekte_und_kooperation/projekte"
+                component={Projekte}
+              />
+              <Route
+                exact
+                path="/user/:lang/ueber_ZARA/projekte_und_kooperation/befreundete_organisationen"
+                component={Organisationen}
+              />
 
               <Route exact path="/user/:lang/kontakt" component={Kontakt} />
               <Route exact path="/user/:lang/impressum" component={Impressum} />
+              <Route
+                exact
+                path="/user/:lang/datenschutzerklaerung"
+                component={Datenschutz}
+              />
             </Switch>
           </div>
         </ScrollToTop>
