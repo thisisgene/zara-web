@@ -45,22 +45,32 @@ class Step3 extends Component {
   }
 
   onDrop = files => {
-    // this.props.uploadImages(files, this.state.id, 'project')
-    this.setState({
-      files: files.map(file =>
-        Object.assign(file, {
-          preview: URL.createObjectURL(file)
-        })
+    files.map(file => {
+      Object.assign(file, {
+        preview: URL.createObjectURL(file)
+      })
+      this.setState(
+        state => ({
+          files: [...state.files, file]
+        }),
+        () => {
+          this.props.updateStore({
+            files: this.state.files,
+            savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+          })
+        }
       )
     })
-    if (this.props.getStore().files !== files) {
-      // only update store of something changed
-      // this.setState({ files: files })
-      this.props.updateStore({
-        files: files,
-        savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
-      }) // Update store here (this is just an example, in reality you will do it via redux or flux)
-    }
+
+    // if (this.props.getStore().files !== files) {
+    //   // only update store of something changed
+    //   // this.setState({ files: files })
+
+    //   this.props.updateStore({
+    //     files: files,
+    //     savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+    //   }) // Update store here (this is just an example, in reality you will do it via redux or flux)
+    // }
   }
 
   onCancel() {
