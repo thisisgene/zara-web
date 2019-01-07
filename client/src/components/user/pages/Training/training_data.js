@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'training.png',
+  image: '01-zara_training-logo.png',
   imageSide: 'left',
   de: {
     title: 'ZARA Training GmbH:<br />Kompetenz für gleiche Chancen',
