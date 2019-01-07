@@ -43,33 +43,11 @@ class StepFive extends Component {
     this.setState({
       saving: true
     })
-    // if (this.props.getStore().selectedOption === 'anonym') {
-    //   this.props.updateStore({
-    //     name: '',
-    //     email: '',
-    //     phone: ''
-    //   })
-    // }
+
     const reportData = this.props.getStore()
-    // return new Promise(resolve => {
-    //   var start_time = Date.now();
-    //   function checkFlag() {
-    //     if (conditionObj.arg == conditionObj.test) {
-    //       console.log('met');
-    //       resolve();
-    //     } else if (Date.now() > start_time + 3000) {
-    //       console.log('not met, time out');
-    //       resolve();
-    //     } else {
-    //       window.setTimeout(checkFlag, 1000);
-    //     }
-    //   }
-    //   checkFlag();
-    // });
 
     return new Promise(async (resolve, reject) => {
       this.props.sendReport(reportData)
-      console.log(this.props.getStore().reportSent)
       setTimeout(() => {
         if (this.props.getStore().reportSent) {
           resolve()

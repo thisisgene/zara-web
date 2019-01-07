@@ -42,12 +42,9 @@ class MultiStepForm extends Component {
       prevProps.report &&
       prevProps.report.reportSent !== this.props.report.reportSent
     ) {
-      console.log('pre', this.getStore().reportSent)
-
       this.updateStore({
         reportSent: this.props.report.reportSent
       })
-      console.log('post', this.getStore().reportSent)
     }
   }
 

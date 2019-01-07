@@ -27,7 +27,6 @@ class NewsBox extends Component {
     this.setState({
       activeTag: e.target.value
     })
-    console.log('HALLO')
   }
 
   filterNews = e => {

@@ -61,7 +61,6 @@ class MobileMenu extends Component {
     menuItems
       .filter(item => item.link === 'ueber_ZARA')
       .map(item => (zaraContact = item.contact))
-    console.log(zaraContact)
     return (
       <div className={styles['mobile-menu-wrapper']}>
         <nav className={cx(styles.header)}>
