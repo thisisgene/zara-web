@@ -31,24 +31,9 @@ export const faqData = [
         'Es gibt sehr viele Definitionen von Rassismus, die sich mit unterschiedlichen Aspekten und Ebenen beschäftigen. Rassismus bezeichnet eine Ideologie, anhand welcher Menschen aufgrund ihrer Hautfarbe, der Sprache, der Religionszugehörigkeit oder der Herkunft eingeteilt und niedergestuft werden. Rassismus ist ein langewährendes Phänomen, das seit Jahrhunderten auch strukturell verankert ist. ZARAs Verständnis von Rassismus bezieht die zu differenzierenden Phänomene Antiziganismus, Antisemitismus, Antimuslimischen Rassismus mit ein.<br><br>Für ZARA heißt rassistische Diskriminierung, wenn Einzelpersonen und/oder eine Gruppe aufgrund der Hautfarbe, der Sprache, der Religionszugehörigkeit oder der Herkunft in irgendeiner Form benachteiligt wird. Hier handelt es sich um eine Handlung bzw. eine Praxis.<br><br>Anders als Rassismus ist rassistische Diskriminierung nicht unbedingt zwingend ideologisch begründet.<br><br>Wichtig ist, dass Rassismus auch institutionell, strukturelle und individuelle Formen hat. Das heißt z.B.:, dass Personen häufig aufgrund ihrer Herkunft, Hautfarbe, Sprache oder Religionszugehörigkeit weniger Zugang zu Ressourcen und Partizipationsmöglichkeit haben. Sie erleben alltagsrassistische Situationen und erfahren rassistische Übergriffe und Gewalt.<br><br>Rassismus sowie rassistische Diskriminierung sind nicht nur „am rechten Rand“ der Gesellschaft zu finden, sondern Bestandteil des Alltags – an vielen Orten dieser Welt und genauso auch in Österreich.'
     }
   },
+
   {
     id: '2',
-    tags: ['rassismus'],
-    de: {
-      title:
-        'Warum spricht man bei Fällen, die einen religiös/ ethnischen Bezug haben (z.B. Kopftuch), von Rassismus?',
-      text:
-        'Zunehmend ersetzt in rassistischen Diskursen der Begriff “Kultur” (oder auch „Religion“) den Begriff “Rasse” – das bedeutet, dass die Rede von “unvereinbaren” Kulturen oder unveränderbaren kulturellen Hintergründen ebenfalls rassistisch ist, ohne sich explizit auf “Rassen” zu beziehen.  Dieser kulturell argumentierende Rassismus geht von natürlich gegebenen, homogenen und statischen Kulturen aus und versteht sie als „genetisch“ verankert. So sind viele Fälle, die sich auf ethnische oder religiöse Aspekte beziehen, als rassistisch zu bezeichnen.<br><br>Antimuslimischer Rassismus bezeichnet die Stigmatisierung und rassistische Diskriminierungspraxis gegenüber Muslim*iInnen oder Personen, die als Muslim*iInnen wahrgenommen werden, die sie anhand bestimmter „Merkmale“ (Kopftuch, nicht österreichisch klingender Name, Nicht-Weiß-Sein) als eine ethnisch-religiös „andere“ Gruppe verweist und diese als traditionell, parallel, nicht „österreichisch“ und daher problematisch konstruiert. Diese Abwertung verschleiert konkrete soziale Ungleichheiten (zum Beispiel Bildungschancen) und dient dazu, in der gesellschaftlichen Aufspaltung „wir“-„sie/ die anderen“ das Eigene aufzuwerten und als modern, emanzipiert und „österreichisch“ darzustellen.'
-    },
-    en: {
-      title:
-        'Warum spricht man bei Fällen, die einen religiös/ ethnischen Bezug haben (z.B. Kopftuch), von Rassismus?',
-      text:
-        'Zunehmend ersetzt in rassistischen Diskursen der Begriff “Kultur” (oder auch „Religion“) den Begriff “Rasse” – das bedeutet, dass die Rede von “unvereinbaren” Kulturen oder unveränderbaren kulturellen Hintergründen ebenfalls rassistisch ist, ohne sich explizit auf “Rassen” zu beziehen.  Dieser kulturell argumentierende Rassismus geht von natürlich gegebenen, homogenen und statischen Kulturen aus und versteht sie als „genetisch“ verankert. So sind viele Fälle, die sich auf ethnische oder religiöse Aspekte beziehen, als rassistisch zu bezeichnen.<br><br>Antimuslimischer Rassismus bezeichnet die Stigmatisierung und rassistische Diskriminierungspraxis gegenüber Muslim*iInnen oder Personen, die als Muslim*iInnen wahrgenommen werden, die sie anhand bestimmter „Merkmale“ (Kopftuch, nicht österreichisch klingender Name, Nicht-Weiß-Sein) als eine ethnisch-religiös „andere“ Gruppe verweist und diese als traditionell, parallel, nicht „österreichisch“ und daher problematisch konstruiert. Diese Abwertung verschleiert konkrete soziale Ungleichheiten (zum Beispiel Bildungschancen) und dient dazu, in der gesellschaftlichen Aufspaltung „wir“-„sie/ die anderen“ das Eigene aufzuwerten und als modern, emanzipiert und „österreichisch“ darzustellen.'
-    }
-  },
-  {
-    id: '3',
     tags: ['rassismus', 'zara'],
     de: {
       title:
@@ -72,6 +57,7 @@ export const faqData = [
     }
   },
   {
+    id: '3',
     tags: ['rassismus'],
     de: {
       title: 'Welche Diskriminierungsgründe sind verboten?',
