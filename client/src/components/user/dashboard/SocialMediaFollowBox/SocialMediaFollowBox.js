@@ -13,13 +13,16 @@ class SocialMediaFollowBox extends Component {
           <div className={styles['social-media-box']}>
             <p>{content.text}</p>
             <div className={styles['icon-box']}>
-              <a target="blank" href="http://facebook.com">
+              <a target="blank" href="https://www.facebook.com/zara.or.at/">
                 <IconObject image="fbLogo" />
               </a>
-              <a target="blank" href="http://twitter.com">
+              <a target="blank" href="https://twitter.com/counteract_hass">
                 <IconObject image="twitterLogo" />
               </a>
-              <a target="blank" href="http://instagram.com">
+              <a
+                target="blank"
+                href="https://www.instagram.com/zara.zivilcourage/"
+              >
                 <IconObject image="instaLogo" />
               </a>
               <a target="blank" href="http://youtube.com">

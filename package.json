@@ -20,6 +20,7 @@
   "dependencies": {
     "aws-s3": "^1.5.5",
     "aws-sdk": "^2.369.0",
+    "babel-polyfill": "^6.26.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "common": "^0.2.5",
@@ -39,6 +40,7 @@
     "npm": "^6.4.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "raf": "^3.4.1",
     "request": "^2.88.0",
     "s3-proxy": "^1.1.1",
     "validator": "^9.4.1"
