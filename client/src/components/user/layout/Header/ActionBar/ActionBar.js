@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 
+import IconObject from '../../../dashboard/IconObject/IconObject'
 import ActIcon from '../../../common/img/act.png'
 
 import cx from 'classnames'
@@ -18,7 +19,7 @@ class ActionBar extends Component {
             to={`/user/${lang}/beratung/#melden`}
             onClick={onClick ? onClick : null}
           >
-            <img src={ActIcon} alt="" />
+            <IconObject image="act" />
           </NavLink>
           <NavLink
             activeClassName={styles.active}

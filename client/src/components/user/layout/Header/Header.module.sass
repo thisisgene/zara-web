@@ -21,9 +21,12 @@
       position: fixed
 
       
+      &.submenu-open
+        border-bottom: 1px solid #050505
       
-      
-
+        .header .logo-add-img
+          opacity: 0
+          pointer-events: none
       .header 
         font:
           family: 'HK Grotesk', sans-serif
@@ -37,7 +40,8 @@
         max-width: 1130px
         margin: 0 auto
         padding: 0 1rem
-        z-index: 3
+        background: #EDEDED 
+        // z-index: 0
         
         .logo
           margin-right: 3rem
@@ -64,6 +68,7 @@
               width: 100%
             &.hide
               // transform: translateX(-600%) scale(.3)
+              pointer-events: none
               opacity: 0
         .main-menu
           display: flex
@@ -71,6 +76,7 @@
           padding: .4rem 0
           flex-grow: 1
           margin-right: 8rem
+          background: #EDEDED 
           .top-header
             font-size: .9rem
             display: flex
@@ -89,6 +95,7 @@
                   size: 1rem
                 color: #ED522B
                 padding: 0 .5rem
+                text-decoration: none
                 @media(max-width: 1080px)
                   font-size: .9rem
                 &:first-child 
@@ -123,6 +130,7 @@
               border-bottom: 2px solid transparent
               color: #333
               transition: all 200ms ease-in-out
+              text-decoration: none
               @media(max-width: 1080px)
                 font-size: 1.1rem
               @media(max-width: 1020px)
@@ -138,16 +146,18 @@
               width: 100%
               background: #EDEDED 
               position: absolute
-              border-top: 1px solid #050505
+              // border-top: 1px solid #050505
               top: 5.2rem
               left: 0
-              transform: translateX(-100%)
-              transition: 300ms all ease-in-out
+              transform: translateY(-100%)
+              transition: all 200ms ease-in-out
               opacity: 0
-              z-index: 21
+              z-index: -1
+              pointer-events: none
               &.open
-                transform: translateX(0)
+                transform: translateY(1px)
                 opacity: 1
+                pointer-events: auto
         
             
         .right-menu

@@ -124,7 +124,7 @@ const infoObj_default = {
 
 const cardGridObject = {
   de: {
-    title: 'Lass und was tun',
+    title: 'Lass uns was tun',
     // link: 'test',
     // linkText: 'Alle News & Presseaussendungen',
     cards: [

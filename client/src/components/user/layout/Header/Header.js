@@ -80,7 +80,11 @@ class Header extends Component {
 
     return (
       <div className={styles['nav-wrapper']}>
-        <div className={styles['header-container']}>
+        <div
+          className={cx(styles['header-container'], {
+            [styles['submenu-open']]: this.state.subMenuVisible
+          })}
+        >
           <nav
             className={cx(styles.header)}
             onMouseLeave={this.onLinkBlur.bind(this)}

@@ -268,105 +268,77 @@ export const reportGridData = [
   },
   {
     id: 'rr2003',
-    toOrder: true,
+    // toOrder: true,
     image: 'zara_rr/covers/Deckblatt_RR2003.jpg',
     links: [
       { link: 'pdf/rassismus-report-2003.pdf', linkText: 'deutsch' },
       { link: 'pdf/racism-report-2003.pdf', linkText: 'englisch' }
     ],
     de: {
+      addInfo: 'Druckauflage vergriffen',
       title: 'RR2003',
       text: ''
     },
     en: {
+      addInfo: 'Not available as print',
       title: 'RR2003',
       text: ''
     }
   },
   {
     id: 'rr2002',
-    toOrder: true,
+    // toOrder: true,
     image: 'zara_rr/covers/Deckblatt_RR2002.jpg',
     links: [
       { link: 'pdf/rassismus-report-2002.pdf', linkText: 'deutsch' },
       { link: 'pdf/racism-report-2002.pdf', linkText: 'englisch' }
     ],
     de: {
+      addInfo: 'Druckauflage vergriffen',
       title: 'RR2002',
       text: ''
     },
     en: {
+      addInfo: 'Not available as print',
       title: 'RR2002',
       text: ''
     }
   },
   {
     id: 'rr2001',
-    toOrder: true,
+    // toOrder: true,
     image: 'zara_rr/covers/Deckblatt_RR2001.jpg',
     links: [
       { link: 'pdf/rassismus-report-2001.pdf', linkText: 'deutsch' },
       { link: 'pdf/racism-report-2001.pdf', linkText: 'englisch' }
     ],
     de: {
+      addInfo: 'Druckauflage vergriffen',
       title: 'RR2001',
       text: ''
     },
     en: {
+      addInfo: 'Not available as print',
       title: 'RR2001',
       text: ''
     }
   },
   {
     id: 'rr2000',
-    toOrder: true,
-    image: 'zara_rr/covers/Deckblatt_RR2000.jpg',
+    // toOrder: true,
+    image: 'publikationen.png',
     links: [
       { link: 'pdf/rassismus-report-2000.pdf', linkText: 'deutsch' },
       { link: 'pdf/racism-report-2000.pdf', linkText: 'englisch' }
     ],
     de: {
-      title: 'RR2000',
-      text: ''
-    },
-    en: {
-      title: 'RR2000',
-      text: ''
-    }
-  },
-
-  {
-    id: 'df47cy',
-    toOrder: true,
-    image: 'publikationen.png',
-    links: [
-      { link: 'asd.com', linkText: 'deutsch' },
-      { link: 'asd.com', linkText: 'englisch' }
-    ],
-    de: {
-      title: 'RR2015',
-      text: ''
-    },
-    en: {
-      title: 'RR2015',
-      text: ''
-    }
-  },
-  {
-    id: 'ds5cy',
-    image: 'publikationen.png',
-    links: [
-      { link: 'asd.com', linkText: 'deutsch' },
-      { link: 'asd.com', linkText: 'englisch' }
-    ],
-    de: {
       addInfo: 'Druckauflage vergriffen',
-      title: 'RR2014',
+      title: 'RR2000',
       text: ''
     },
     en: {
       addInfo: 'Not available as print',
-      title: 'RR2014',
+      title: 'RR2000',
       text: ''
     }
   }
