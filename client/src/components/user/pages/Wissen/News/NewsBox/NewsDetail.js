@@ -45,13 +45,20 @@ class NewsDetail extends Component {
     return (
       <div>
         {lang && (
-          <div>
+          <div className={styles['news-detail']}>
             <HeroUnit data={news} lang={lang} />
             <OneLineAlert content={oneLineAlert} lang={lang} />
             <div
               className={styles['news-detail--text']}
               dangerouslySetInnerHTML={{ __html: news[lang].content }}
             />
+            {news.bottomImages && (
+              <div className={styles['news-detail--bottom-images']}>
+                {news.bottomImages.map(image => (
+                  <img src={`/assets/img/${image.image}`} alt="{image.image}" />
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

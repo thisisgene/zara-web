@@ -207,6 +207,12 @@ export const newsData = [
     // size: 'big-image',
     imageSide: 'left',
     imageAlign: 'center',
+    bottomImages: [
+      {
+        image: '/sponsor/eu_commission.png',
+        image: '/sponsor/BM_Arbeit.png'
+      }
+    ],
     id: 'ZARA_EU-Projekt_sCAN',
     de: {
       date: '12. September 2018',
@@ -262,8 +268,12 @@ export const newsData = [
     // size: 'big-image',
     imageSide: 'left',
     imageAlign: 'center',
-    id:
-      'Trusted_Flagger-Status_ermöglicht_höhere_Löschraten_in_den_sozialen_Medien',
+    bottomImages: [
+      {
+        image: '/sponsor/eu_commission.png'
+      }
+    ],
+    id: 'ZARA_EU-Projekt_V-START',
     de: {
       date: '03. August 2018',
       title: 'ZARA EU-Projekt V-START',

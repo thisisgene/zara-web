@@ -1,4 +1,5 @@
 .news-detail
+  margin: 4rem 0
   &--text
     max-width: 800px
     margin: 4rem auto
@@ -8,3 +9,16 @@
       margin: 1rem 0 1rem 2rem
     p
       margin: 1rem 0
+  &--bottom-images
+    margin: 2rem 0 1rem
+    display: flex
+    justify-content: center
+    @media(max-width: 320px)
+      display: block
+      text-align: center
+      img
+        margin: 1rem !important
+    // height: 200px
+    img
+      height: 100px
+      margin: 0 2rem
