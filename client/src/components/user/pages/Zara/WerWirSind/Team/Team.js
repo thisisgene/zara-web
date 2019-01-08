@@ -26,7 +26,7 @@ class Team extends Component {
               ) : (
                 <h1>ZARA Vorstand</h1>
               )}
-              <div className={styles['team--vorstand']}>
+              <div id="vorstand" className={styles['team--vorstand']}>
                 {teamData.teamMembers[lang]
                   .filter(member => member.field === 'vorstand')
                   .map(member => (
@@ -44,7 +44,7 @@ class Team extends Component {
                   Kooperationskoordination
                 </h1>
               )}
-              <div className={styles['team--gok']}>
+              <div id="gok" className={styles['team--gok']}>
                 {teamData.teamMembers[lang]
                   .filter(member => member.field === 'gok')
                   .map(member => (
@@ -56,7 +56,7 @@ class Team extends Component {
               ) : (
                 <h1>ZARA Consulting</h1>
               )}
-              <div className={styles['team--gok']}>
+              <div id="beratung" className={styles['team--gok']}>
                 {teamData.teamMembers[lang]
                   .filter(member => member.field === 'beratung')
                   .map(member => (
@@ -68,7 +68,7 @@ class Team extends Component {
               ) : (
                 <h1>ZARA Training</h1>
               )}
-              <div className={styles['team--gok']}>
+              <div id="training" className={styles['team--gok']}>
                 {teamData.teamMembers[lang]
                   .filter(member => member.field === 'training')
                   .map(member => (

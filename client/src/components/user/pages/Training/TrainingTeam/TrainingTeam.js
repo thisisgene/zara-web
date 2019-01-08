@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { withLocalize } from 'react-localize-redux'
 
-import { teamData } from './trainingteam_data'
+import { teamData, bottomData } from './trainingteam_data'
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
+import LongText from '../../../dashboard/LongText/LongText'
 import TeamMember from '../../Zara/WerWirSind/Team/TeamMember'
 
-import styles from './TrainingTeam.module.sass'
+import styles from '../../Zara/WerWirSind/Team/Team.module.sass'
 
 class Team extends Component {
   render() {
@@ -22,51 +24,9 @@ class Team extends Component {
             <HeroUnit data={teamData.heroUnit} lang={lang} />
             <div className={styles['team-member-container']}>
               {lang && lang === 'de' ? (
-                <h1>ZARA Vorstand</h1>
+                <h1>ZARA Trainer*innen</h1>
               ) : (
-                <h1>ZARA Vorstand</h1>
-              )}
-              <div className={styles['team--vorstand']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'vorstand')
-                  .map(member => (
-                    <TeamMember content={member} />
-                  ))}
-              </div>
-              {lang && lang === 'de' ? (
-                <h1>
-                  ZARA Geschäftsführung, Öffentlichkeitsarbeit &
-                  Kooperationskoordination
-                </h1>
-              ) : (
-                <h1>
-                  ZARA Geschäftsführung, Öffentlichkeitsarbeit &
-                  Kooperationskoordination
-                </h1>
-              )}
-              <div className={styles['team--gok']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'gok')
-                  .map(member => (
-                    <TeamMember content={member} />
-                  ))}
-              </div>
-              {lang && lang === 'de' ? (
-                <h1>ZARA Beratung</h1>
-              ) : (
-                <h1>ZARA Consulting</h1>
-              )}
-              <div className={styles['team--gok']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'beratung')
-                  .map(member => (
-                    <TeamMember content={member} />
-                  ))}
-              </div>
-              {lang && lang === 'de' ? (
-                <h1>ZARA Training</h1>
-              ) : (
-                <h1>ZARA Training</h1>
+                <h1>ZARA Trainers</h1>
               )}
               <div className={styles['team--gok']}>
                 {teamData.teamMembers[lang]
@@ -75,25 +35,25 @@ class Team extends Component {
                     <TeamMember content={member} />
                   ))}
               </div>
-              {lang && lang === 'de' ? (
-                <div>
-                  <h1>Unterstützer*innen ab 2018</h1>
-                  <p>
-                    ZARA wird stets von vielen ehrenamtlichen Mitarbeiter*innen
-                    und Unterstützer*innen begleitet, die nicht alle auf dieser
-                    Seite genannt werden können.
-                  </p>
+              <div className={styles['bottom-box']}>
+                <div className={styles['bottom-box--image']}>
+                  <img
+                    src={`/assets/img/team/training/ZARA Training Team.jpg`}
+                    alt="ZARA Training Team"
+                  />
                 </div>
-              ) : (
-                <div>
-                  <h1>Supporters since 2018</h1>
-                  <p>
-                    ZARA wird stets von vielen ehrenamtlichen Mitarbeiter*innen
-                    und Unterstützer*innen begleitet, die nicht alle auf dieser
-                    Seite genannt werden können.
-                  </p>
+                <div className={styles['bottom-box--text']}>
+                  {bottomData &&
+                    bottomData.map((item, index) => (
+                      <div key={index}>
+                        <h1>{item[lang].title}</h1>
+                        <Link to={`/user/${lang}/${item[lang].textLink}`}>
+                          {item[lang].text}
+                        </Link>
+                      </div>
+                    ))}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         )}
