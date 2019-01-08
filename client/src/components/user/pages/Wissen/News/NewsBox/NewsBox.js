@@ -84,12 +84,27 @@ class NewsBox extends Component {
               ))}
           </div>
         </div>
-        <div>
-          {content &&
-            lang &&
-            filteredContent.map((news, index) => (
-              <NewsItem key={index} news={news} newsTags={tags} lang={lang} />
-            ))}
+        <div className={styles['news-item-container']}>
+          {content && lang && (
+            <div>
+              {filteredContent.length > 0 ? (
+                filteredContent.map((news, index) => (
+                  <NewsItem
+                    key={index}
+                    news={news}
+                    newsTags={tags}
+                    lang={lang}
+                  />
+                ))
+              ) : (
+                <div className={styles['no-entries']}>
+                  {lang === 'de'
+                    ? 'Zur Zeit keine Einträge'
+                    : 'No entries at the moment'}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     )
