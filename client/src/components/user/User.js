@@ -61,6 +61,7 @@ import Datenschutz from './pages/Other/Datenschutz'
 import Netzwerke from './pages/Zara/ProjekteUndKooperationen/Netzwerke'
 import Projekte from './pages/Zara/ProjekteUndKooperationen/Projekte'
 import Organisationen from './pages/Zara/ProjekteUndKooperationen/Organisationen'
+import TrainingTeam from './pages/Training/TrainingTeam/TrainingTeam'
 
 class User extends Component {
   constructor(props) {
@@ -189,9 +190,15 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/user/:lang/training/:trainingId"
+                path="/user/:lang/training/detail/:trainingId"
                 component={TrainingDetail}
               />
+              <Route
+                exact
+                path="/user/:lang/training/trainer_innen"
+                component={TrainingTeam}
+              />
+
               <Route
                 exact
                 path="/user/:lang/mitmischen"

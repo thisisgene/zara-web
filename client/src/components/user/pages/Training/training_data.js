@@ -95,7 +95,20 @@ export const trainingBoxData = {
         ]
       },
       { index: '2', text: 'Für Erwachsene', link: 'erwachsene' },
-      { index: '3', text: 'Unternehmensarbeit', link: 'unternehmen' }
+      { index: '3', text: 'Für Unternehmen', link: 'unternehmen' },
+      {
+        index: '4',
+        text: 'Mehr',
+        link: null,
+        subMenuList: [
+          {
+            index: '4.1',
+            text: 'Aktuelle Trainingsprojekte',
+            link: 'trainingsprojekte'
+          },
+          { index: '4.2', text: 'Trainer*innen-Pool', link: 'trainer_innen' }
+        ]
+      }
     ]
   },
   en: {
@@ -110,7 +123,7 @@ export const trainingBoxData = {
     categories: [
       {
         index: '1',
-        text: 'Für Kinder & Jugendliche',
+        text: 'For Children & Young Adults',
         link: 'kinder_jugendliche',
         testimonials: [
           {
@@ -127,8 +140,8 @@ export const trainingBoxData = {
           }
         ]
       },
-      { index: '2', text: 'Für Erwachsene', link: 'erwachsene' },
-      { index: '3', text: 'Unternehmensarbeit', link: 'unternehmen' }
+      { index: '2', text: 'For Adults', link: 'erwachsene' },
+      { index: '3', text: 'For Businesses', link: 'unternehmen' }
     ]
   }
 }

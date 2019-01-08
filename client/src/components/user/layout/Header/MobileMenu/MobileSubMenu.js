@@ -149,11 +149,31 @@ class MobileSubMenu extends Component {
                       trainingBoxData[lang].categories.map((cat, index) => (
                         <div className={styles['sub-item']} key={index}>
                           <div className={styles['sub-item--title']}>
-                            <NavLink
-                              to={`/user/${lang}/training/${cat.link}`}
-                              activeClassName={styles.active}
-                              onClick={this.props.onMobileNavClick}
-                            >
+                            {cat.link !== null ? (
+                              <NavLink
+                                to={`/user/${lang}/training/${cat.link}`}
+                                activeClassName={styles.active}
+                                onClick={this.props.onMobileNavClick}
+                              >
+                                <div
+                                  className={styles['sub-item--title__link']}
+                                >
+                                  <div
+                                    className={
+                                      styles['sub-item--title__link--text']
+                                    }
+                                  >
+                                    {cat.text}
+                                  </div>
+                                  <div
+                                    className={
+                                      styles['sub-item--title__link--arrow']
+                                    }
+                                  />
+                                  <i className="fa fa-arrow-right" />
+                                </div>
+                              </NavLink>
+                            ) : (
                               <div className={styles['sub-item--title__link']}>
                                 <div
                                   className={
@@ -162,35 +182,65 @@ class MobileSubMenu extends Component {
                                 >
                                   {cat.text}
                                 </div>
-                                <div
-                                  className={
-                                    styles['sub-item--title__link--arrow']
-                                  }
-                                />
-                                <i className="fa fa-arrow-right" />
                               </div>
-                            </NavLink>
+                            )}
                           </div>
-                          {trainingItems.items &&
-                            trainingItems.items
-                              .filter(item => item.category === cat.index)
-                              .map((item, itemIndex) => (
-                                <div key={itemIndex}>
-                                  {itemIndex <= 4 && (
-                                    <div className={styles['sub-sub-item']}>
-                                      <NavLink
-                                        to={`/user/${lang}/training/${
-                                          item._id
-                                        }`}
-                                        activeClassName={styles.active}
-                                        onClick={this.props.onMobileNavClick}
-                                      >
-                                        {item[lang].title}
-                                      </NavLink>
+                          {cat.index !== '4' ? (
+                            <div>
+                              {trainingItems.items &&
+                                trainingItems.items
+                                  .filter(item => item.category === cat.index)
+                                  .map((item, itemIndex) => (
+                                    <div key={itemIndex}>
+                                      {itemIndex <= 4 && (
+                                        <div className={styles['sub-sub-item']}>
+                                          <NavLink
+                                            to={`/user/${lang}/training/detail/${
+                                              item._id
+                                            }`}
+                                            activeClassName={styles.active}
+                                            onClick={
+                                              this.props.onMobileNavClick
+                                            }
+                                          >
+                                            {item[lang].title}
+                                          </NavLink>
+                                        </div>
+                                      )}
                                     </div>
-                                  )}
-                                </div>
-                              ))}
+                                  ))}
+                            </div>
+                          ) : (
+                            <div>
+                              {cat.subMenuList &&
+                                cat.subMenuList.map((ssItem, index) => (
+                                  <div
+                                    className={styles['sub-sub-item']}
+                                    key={ssItem.id}
+                                  >
+                                    <NavLink
+                                      to={
+                                        ssItem.redirect
+                                          ? `/user/${lang}/${
+                                              ssItem.redirectLink
+                                            }`
+                                          : cat.link !== null
+                                          ? `/user/${lang}/${item.link}/${
+                                              cat.link
+                                            }/${ssItem.link}`
+                                          : `/user/${lang}/${item.link}/${
+                                              ssItem.link
+                                            }`
+                                      }
+                                      activeClassName={styles.active}
+                                      onClick={this.props.onMobileNavClick}
+                                    >
+                                      {ssItem.text}
+                                    </NavLink>
+                                  </div>
+                                ))}
+                            </div>
+                          )}
                         </div>
                       ))}
                     {item.contact && (
