@@ -209,9 +209,9 @@ export const newsData = [
     imageAlign: 'center',
     bottomImages: [
       {
-        image: '/sponsor/eu_commission.png',
-        image: '/sponsor/BM_Arbeit.png'
-      }
+        image: '/sponsor/eu_commission.png'
+      },
+      { image: '/sponsor/BM_Arbeit.png' }
     ],
     id: 'ZARA_EU-Projekt_sCAN',
     de: {
@@ -224,10 +224,10 @@ export const newsData = [
       linkText: 'weiterlesen'
     },
     en: {
-      date: '15. Oktober 2018',
-      title: 'Sigi Maurer – Rechtshilfefonds gegen Hass im Netz – Phase 2',
+      date: '12. September 2018',
+      title: 'ZARA EU-Projekt sCAN',
       shortContent:
-        'Sigi Maurer hat sich gegen Hass im Netz gewehrt und wurde dafür in erster Instanz verurteilt. Der Rechtshilfefonds soll ihre Prozesskosten finanzieren und weitere Betroffene bei Klagen unterstützen.',
+        'Mit dem EU-Projekt sCAN – Specialised Cyber Activists Network (2018-2020) setzt sich ZARA gemeinsam mit europäischen Partner*innenorganisationen auf unterschiedlichen Ebenen gegen Hass und Hetze im Internet ein.',
       content:
         '<p>Mit dem EU-Projekt sCAN – Specialised Cyber Activists Network (2018-2020) setzt sich ZARA – Zivilcourage und Anti-Rassismus-Arbeit gemeinsam mit europäischen Partner*innenorganisationen auf unterschiedlichen Ebenen gegen Hass und Hetze im Internet ein. Das Projekt zielt darauf ab, online hate speech durch automatisierte Tools besser erkennen zu können, sowie Wissen über Cyber Hate und (trans-)nationale Entwicklungen zu sammeln und somit Gegenmaßnahmen auszubauen.</p><p>Das Projekt stützt sich auf erfolgreich abgeschlossene europäischer Projekte, wie zum Beispiel <em><a href="https://zara.or.at/index.php/projekte/aktuelles/research-report-remove-countering-cyber-hate-phenomena">Research – Report – Remove: Countering Cyber Hate Phenomena</a></em> und <em>Facing Facts!</em>, und strebt danach, all diese zivilgesellschaftlichen Initiativen fortzuführen, hervorzuheben und somit Online Hate Speech entgegenzuwirken. Durch die europaweite Kooperation werden die Projektpartner*innen ihre Zusammenarbeit (auch) im Rahmen des <a href="http://www.inach.net/">Internationalen Netzwerks gegen Cyber Hate</a> (INACH) vertiefen und (weiter) intensivieren. Die #sCAN-Projektpartner*innen werden dazu beitragen, relevante automatisierte Monitoring-Tools zu testen, auszuwählen und bereitzustellen, um die großflächige Erkennung hasserfüllter Inhalte zu verbessern. Ein weiterer wichtiger Aspekt von sCAN wird darin bestehen, die Monitroing-Tätigkeiten des Konsortiums generell zu verstärken. Darüber hinaus zielt dieses Projekt auf die Entwicklung des europaweiten Capacity-Building ab, indem E-Learning-Kurse für Cyberaktivist*innen, Moderator*innen und Tutor*innen über die <strong><em><a href="https://www.facingfacts.eu/">Facing Facts!</a> </em></strong>Online Plattform angeboten werden.</p><p>sCAN wird unter Beteiligung von zehn verschiedenen europäischen Partnern durchgeführt, nämlich <a href="http://www.licra.org/">LICRA</a> (Frankreich), <a href="http://www.ceji.org/">CEJI – A Jewish Contribution to an Inclusive Europe</a> (Belgien), <a href="https://humanrightshouse.org/human-rights-houses/zagreb/">Human Rights House Zagreb</a> (Kroatien), <a href="http://www.romea.cz/en/">Romea</a> (Tschechien), <a href="https://www.respectzone.org/en/">Respect Zone</a> (Frankreich), <a href="https://www.jugendschutz.net/">jugendschutz.net</a> (Deutschland), <a href="http://cesie.org/en/">CESIE</a> (Italien), <a href="http://cilvektiesibas.org.lv/en/">Latvian Centre for Human Rights</a> (Lettland) und <a href="https://www.spletno-oko.si/english">Spletno Oko</a> (Slowenien).</p><p>Mehr dazu finden Sie hier: <a href="http://scan-project.eu/project">scan-project.eu/project</a></p><p>sCAN ist ein vom European Commission Directorate – General for Justice and Consumers finanziertes Projekt im Rahmen des Rights, Equality and Citizenship (REC)-Programms der Europäischen Union. Das Projekt wurde von dem Bundesministerium für Arbeit, Soziales, Gesundheit und Konsumentenschutz co-finanziert.</p>',
       linkText: 'weiterlesen'
