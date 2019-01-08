@@ -4,8 +4,8 @@ import { withLocalize } from 'react-localize-redux'
 import { heroData, longText } from './kolumne_data'
 // import { oneLineAlert, trainingItems } from './training_data'
 
-import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
-import LongText from '../../../dashboard/LongText/LongText'
+import HeroUnit from '../../../../dashboard/HeroUnit/HeroUnit'
+import LongText from '../../../../dashboard/LongText/LongText'
 
 class Kolumne extends Component {
   render() {
