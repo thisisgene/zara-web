@@ -9,6 +9,7 @@ class ReportList extends Component {
     const { reports } = this.props
     return (
       <div className={styles['report-list']}>
+        <p>{reports && reports.length}</p>
         {reports &&
           reports.map((report, index) => (
             <ReportListItem key={index} report={report} />

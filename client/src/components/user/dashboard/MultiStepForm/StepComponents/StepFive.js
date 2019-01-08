@@ -19,7 +19,9 @@ class StepFive extends Component {
 
   componentDidMount() {}
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    // FIXME: set reportSent to false!
+  }
 
   // This review screen had the 'Save' button, on clicking this is called
   isValidated() {
