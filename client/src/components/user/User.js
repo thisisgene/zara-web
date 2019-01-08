@@ -65,6 +65,7 @@ import Organisationen from './pages/Zara/ProjekteUndKooperationen/Organisationen
 import TrainingTeam from './pages/Training/TrainingTeam/TrainingTeam'
 import NewsDetail from './pages/Wissen/News/NewsBox/NewsDetail'
 import Kolumne from './pages/Wissen/News/Kolumne/Kolumne'
+import Logos from './pages/Wissen/Presse/Logos'
 
 class User extends Component {
   constructor(props) {
@@ -274,6 +275,11 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/presse/pressespiegel"
                 component={Pressespiegel}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/presse/logos_und_kampagnenmaterial"
+                component={Logos}
               />
               <Route
                 exact
