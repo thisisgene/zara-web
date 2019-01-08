@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
-import { oneLineAlert } from './newsdetail_data'
+import { oneLineAlert, cardGrid } from './newsdetail_data'
 import { newsData } from '../news_data'
 
 import HeroUnit from '../../../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../../../dashboard/OneLineAlert/OneLineAlert'
+import CardCollectionGridObject from '../../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 import styles from './NewsDetail.module.sass'
 
@@ -59,6 +60,7 @@ class NewsDetail extends Component {
                 ))}
               </div>
             )}
+            <CardCollectionGridObject cardObject={cardGrid} lang={lang} />
           </div>
         )}
       </div>
