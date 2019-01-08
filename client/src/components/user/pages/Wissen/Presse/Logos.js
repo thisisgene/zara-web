@@ -34,10 +34,15 @@ class Logos extends Component {
                           <div>{logo.title}</div>
                           <a
                             target="blank"
-                            href={`/download/logos/${logo.image}`}
+                            href={`https://assets.seriouspigeon.com/download/logos/${
+                              // CHANGE TO CORRECT PROXY ON zara.or.at
+                              logo.image
+                            }`}
                           >
                             <img
-                              src={`/download/logos/${logo.image}`}
+                              src={`https://assets.seriouspigeon.com/download/logos/${
+                                logo.image
+                              }`}
                               alt={logo.image}
                             />
                           </a>
