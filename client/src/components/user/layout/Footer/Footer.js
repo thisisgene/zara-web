@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import OneLineContainer from '../../dashboard/OneLineContainer/OneLineContainer'
 import FooterContent from './FooterContent'
 
-import { oneLineContent, footerContent } from './footer_data'
+import { oneLineContent, footerContent, sponsorLogos } from './footer_data'
 
 import styles from './Footer.module.sass'
 
@@ -21,6 +21,7 @@ class Footer extends Component {
             <FooterContent
               type={type}
               content={footerContent[lang]}
+              sponsorLogos={sponsorLogos}
               lang={lang}
             />
           </div>

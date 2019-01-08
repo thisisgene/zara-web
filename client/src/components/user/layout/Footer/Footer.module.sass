@@ -1,7 +1,7 @@
 .footer
   .footer-content-container
     background: rgba(#ffd300, .1)
-    padding: 2rem 1rem
+    padding: 2rem 1rem 0
     .footer-content
       margin: 0 auto
       max-width: 1080px
@@ -92,6 +92,31 @@
                   display: flex
                   align-items: baseline
             .bank-date
+        &__bottom
+          .sponsor-box
+            display: flex
+            margin: 1rem auto 2rem
+            @media(max-width: 680px)
+              width: 90vw
+              margin: 2rem auto 4rem
+              display: grid
+              grid-gap: 1rem
+              grid-template-columns: 1fr 1fr
+              align-items: center
+              &--image
+                // max-width: 40vw
+                height: auto !important
+                // margin: 0 !important
+                &.wide
+                  grid-column: 1 / span 2
+                img
+                  height: auto !important
+                  max-width: 100%
+            &--image
+              height: 60px
+              margin-right: 1rem
+              img
+                height: 100%
 
     .bottom-bar
       max-width: 1080px

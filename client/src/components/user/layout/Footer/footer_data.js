@@ -197,3 +197,22 @@ export const footerContent = {
     }
   }
 }
+
+export const sponsorLogos = [
+  {
+    image: 'BMEIA_Logo.png'
+  },
+  {
+    image: 'EU_flag.png'
+  },
+  {
+    image: 'MA17_Logo.gif'
+  },
+  {
+    image: 'sozial_ministerium_logo.png'
+  },
+  {
+    image: 'rd-foundation-logo.jpg',
+    size: 'wide'
+  }
+]

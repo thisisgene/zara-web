@@ -225,7 +225,8 @@ const menuItems = [
       {
         name: 'Aktuelles',
         link: 'aktuelles',
-        id: '4.1'
+        id: '4.1',
+        subMenuList: [{ name: 'ZARA Kolumne', link: 'kolumne', id: '4.1.1' }]
       },
 
       {

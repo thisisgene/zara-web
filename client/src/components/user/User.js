@@ -64,6 +64,7 @@ import Projekte from './pages/Zara/ProjekteUndKooperationen/Projekte'
 import Organisationen from './pages/Zara/ProjekteUndKooperationen/Organisationen'
 import TrainingTeam from './pages/Training/TrainingTeam/TrainingTeam'
 import NewsDetail from './pages/Wissen/News/NewsBox/NewsDetail'
+import Kolumne from './pages/Wissen/News/Kolumne/Kolumne'
 
 class User extends Component {
   constructor(props) {
@@ -243,6 +244,11 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/aktuelles"
                 component={News}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/aktuelles/kolumne"
+                component={Kolumne}
               />
               <Route
                 exact

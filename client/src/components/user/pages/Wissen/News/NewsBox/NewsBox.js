@@ -84,6 +84,7 @@ class NewsBox extends Component {
               ))}
           </div>
         </div>
+        {/* ADD PAGEINATION! */}
         <div className={styles['news-item-container']}>
           {content && lang && (
             <div>

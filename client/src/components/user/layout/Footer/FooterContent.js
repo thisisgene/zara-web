@@ -9,7 +9,7 @@ import styles from './Footer.module.sass'
 
 export default class FooterContent extends Component {
   render() {
-    const { content, lang, type } = this.props
+    const { content, sponsorLogos, lang, type } = this.props
     const currentYear = new Date().getFullYear()
     return (
       <div className={styles['footer-content-container']}>
@@ -108,6 +108,21 @@ export default class FooterContent extends Component {
               <div className={styles['footer-content--right__bottom']}>
                 <div className={styles['footer-content--header']}>
                   {content.right.bottom.header}
+                </div>
+                <div className={styles['sponsor-box']}>
+                  {sponsorLogos &&
+                    sponsorLogos.map(logo => (
+                      <div
+                        className={cx(styles['sponsor-box--image'], {
+                          [styles['wide']]: logo.size === 'wide'
+                        })}
+                      >
+                        <img
+                          src={`/assets/img/sponsor/${logo.image}`}
+                          alt={logo.image}
+                        />
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
