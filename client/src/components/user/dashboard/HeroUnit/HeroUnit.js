@@ -11,9 +11,13 @@ class HeroUnit extends Component {
       <div>
         {data && lang && (
           <div
-            className={cx(styles['hero-unit-container'], styles[data.class], {
-              [styles[data.size]]: data.size
-            })}
+            className={cx(
+              styles['hero-unit-container'],
+              { [styles[data.class]]: data.class },
+              {
+                [styles[data.size]]: data.size
+              }
+            )}
           >
             {data.imageSide === 'left' ? (
               <div
