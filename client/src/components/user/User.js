@@ -25,6 +25,7 @@ import TrainingChildren from './pages/Training/TrainingChildren'
 import TrainingAdults from './pages/Training/TrainingAdults'
 import TrainingUnternehmen from './pages/Training/TrainingUnternehmen'
 import TrainingDetail from './pages/Training/TrainingDetail'
+import TrainingsProjekte from './pages/Training/TrainingsProjekte/TrainingsProjekte'
 
 import Mitmischen from './pages/Mitmischen/Mitmischen'
 import CounterNarratives from './pages/Mitmischen/CounterNarratives'
@@ -192,6 +193,11 @@ class User extends Component {
                 exact
                 path="/user/:lang/training/detail/:trainingId"
                 component={TrainingDetail}
+              />
+              <Route
+                exact
+                path="/user/:lang/training/trainingsprojekte"
+                component={TrainingsProjekte}
               />
               <Route
                 exact
