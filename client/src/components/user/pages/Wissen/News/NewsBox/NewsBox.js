@@ -46,9 +46,8 @@ class NewsBox extends Component {
 
     if (this.state.activeTag !== '') {
       filteredContent = content.filter(filteredNews => {
-        for (let tag of filteredNews.tags) {
-          if (this.state.activeTag === tag) return true
-        }
+        if (this.state.activeTag === filteredNews.tag) return true
+
         return false
       })
     } else {
@@ -89,7 +88,7 @@ class NewsBox extends Component {
           {content &&
             lang &&
             filteredContent.map((news, index) => (
-              <NewsItem key={index} news={news} lang={lang} />
+              <NewsItem key={index} news={news} newsTags={tags} lang={lang} />
             ))}
         </div>
       </div>

@@ -31,7 +31,7 @@ class InputButtonBox extends Component {
           <div className={styles['box-input']}>
             <div id="mc_embed_signup">
               <form
-                action="https://eugenedelta.us15.list-manage.com/subscribe/post?u=b9321a8c2677e57b97cfebee7&amp;id=9dd567bfa5"
+                action="https://zara.us16.list-manage.com/subscribe/post?u=7f4957180e74dc32f93037f0d&amp;id=812c7c0509"
                 method="post"
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
