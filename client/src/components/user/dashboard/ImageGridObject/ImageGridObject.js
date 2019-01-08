@@ -70,11 +70,22 @@ export default class ImageGridObject extends Component {
           {content.map((item, index) => (
             <div key={index} className={styles['grid-item']}>
               <img src={`/assets/img/${item.image}`} alt={item.image} />
+              {/* https://serpig-space.ams3.digitaloceanspaces.com/img/zara_rr/pdf/racism-report-2015.pdf */}
               <div className={styles['grid-item--links']}>
+                <div className={styles['grid-item--title']}>
+                  {item[lang].title}
+                </div>
                 <span>Download:</span>
                 <div className={styles['grid-item--links__language']}>
                   {item.links.map(link => (
-                    <a href={link.link}>{link.linkText}</a>
+                    <a
+                      target="blank"
+                      href={`https://assets.seriouspigeon.com/download/${
+                        link.link
+                      }`}
+                    >
+                      {link.linkText}
+                    </a>
                   ))}
                 </div>
                 {item.toOrder && (

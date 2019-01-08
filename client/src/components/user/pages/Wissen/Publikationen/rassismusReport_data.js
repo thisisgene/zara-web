@@ -29,12 +29,29 @@ export const longText = {
 
 export const reportGridData = [
   {
-    id: 'da97cy',
+    id: 'rr2017',
     toOrder: true,
-    image: 'publikationen.png',
+    image: 'zara_rr/covers/Deckblatt_RR2017.jpg',
     links: [
-      { link: 'asd.com', linkText: 'deutsch' },
-      { link: 'asd.com', linkText: 'englisch' }
+      { link: 'pdf/rassismus-report-2017.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2017.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2017',
+      text: ''
+    },
+    en: {
+      title: 'RR2017',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2016',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2016.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2016.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2016.pdf', linkText: 'englisch' }
     ],
     de: {
       title: 'RR2016',
@@ -45,6 +62,279 @@ export const reportGridData = [
       text: ''
     }
   },
+  {
+    id: 'rr2015',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2015.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2015.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2015.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2015',
+      text: ''
+    },
+    en: {
+      title: 'RR2015',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2014',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2014.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2014.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2014.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2014',
+      text: ''
+    },
+    en: {
+      title: 'RR2014',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2013',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2013.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2013.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2013.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2013',
+      text: ''
+    },
+    en: {
+      title: 'RR2013',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2012',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2012.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2012.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2012.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2012',
+      text: ''
+    },
+    en: {
+      title: 'RR2012',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2011',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2011.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2011.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2011.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2011',
+      text: ''
+    },
+    en: {
+      title: 'RR2011',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2010',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2010.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2010.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2010.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2010',
+      text: ''
+    },
+    en: {
+      title: 'RR2010',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2009',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2009.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2009.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2009.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2009',
+      text: ''
+    },
+    en: {
+      title: 'RR2009',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2008',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2008.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2008.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2008.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2008',
+      text: ''
+    },
+    en: {
+      title: 'RR2008',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2007',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2007.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2007.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2007.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2007',
+      text: ''
+    },
+    en: {
+      title: 'RR2007',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2006',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2006.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2006.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2006.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2006',
+      text: ''
+    },
+    en: {
+      title: 'RR2006',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2005',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2005.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2005.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2005.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2005',
+      text: ''
+    },
+    en: {
+      title: 'RR2005',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2004',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2004.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2004.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2004.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2004',
+      text: ''
+    },
+    en: {
+      title: 'RR2004',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2003',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2003.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2003.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2003.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2003',
+      text: ''
+    },
+    en: {
+      title: 'RR2003',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2002',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2002.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2002.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2002.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2002',
+      text: ''
+    },
+    en: {
+      title: 'RR2002',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2001',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2001.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2001.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2001.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2001',
+      text: ''
+    },
+    en: {
+      title: 'RR2001',
+      text: ''
+    }
+  },
+  {
+    id: 'rr2000',
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2000.jpg',
+    links: [
+      { link: 'pdf/rassismus-report-2000.pdf', linkText: 'deutsch' },
+      { link: 'pdf/racism-report-2000.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2000',
+      text: ''
+    },
+    en: {
+      title: 'RR2000',
+      text: ''
+    }
+  },
+
   {
     id: 'df47cy',
     toOrder: true,
