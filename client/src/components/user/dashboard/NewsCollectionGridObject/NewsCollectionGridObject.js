@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import NewsCard from './NewsCard'
-import CompactInfoCardObject from '../CompactInfoCardObject/CompactInfoCardObject'
 
 import styles from './NewsCollection.module.sass'
 
@@ -22,8 +21,8 @@ export default class NewsCollectionGridObject extends Component {
                   index < 7 &&
                   (item[lang].linkText && item[lang].linkText !== '' ? (
                     <Link
-                      to={`/user/${lang}/wissen/aktuelles/${content.tag}/${
-                        content.id
+                      to={`/user/${lang}/wissen/aktuelles/${item.tag}/${
+                        item.id
                       }`}
                     >
                       <NewsCard key={index} content={item} lang={lang} />

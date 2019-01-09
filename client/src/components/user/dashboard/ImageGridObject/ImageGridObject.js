@@ -166,7 +166,7 @@ class ImageGridObject extends Component {
                   <button
                     onClick={this.increaseCount.bind(this, item.id, this.title)}
                   >
-                    {lang === 'de' ? 'In den Warenkorb' : 'Add to cart'}
+                    {lang === 'de' ? 'In den Bestellkorb' : 'Add to cart'}
                   </button>
                 )}
                 {item[lang].addInfo && <div>{item[lang].addInfo}</div>}

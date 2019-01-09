@@ -21,11 +21,11 @@ export default class ShoppingCart extends Component {
       <div className={styles['shopping-cart']}>
         {/* {shoppingCartText && <div>{shoppingCartText[lang].text}</div>} */}
         <div className={styles['shopping-cart--title']}>
-          {lang === 'de' ? 'Warenkorb' : 'Shopping Cart'}
+          {lang === 'de' ? 'Bestellkorb' : 'Shopping Cart'}
         </div>
         <div className={styles['shopping-cart--empty-button']}>
           <button onClick={emptyCart}>
-            {lang === 'de' ? 'Warenkorb leeren' : 'Empty Cart'}
+            {lang === 'de' ? 'Bestellkorb leeren' : 'Empty Cart'}
           </button>
         </div>
         {content.map(item => (
