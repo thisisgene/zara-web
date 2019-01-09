@@ -3,6 +3,7 @@ import {
   GET_ALL_REPORTS,
   GET_REPORT_BY_ID,
   SEND_REPORT,
+  RESET_REPORT,
   REPORT_FAIL
 } from './types'
 
@@ -21,6 +22,12 @@ export const getReportById = id => dispatch => {
       type: GET_REPORT_BY_ID,
       payload: res.data
     })
+  })
+}
+
+export const resetReport = () => dispatch => {
+  dispatch({
+    type: RESET_REPORT
   })
 }
 

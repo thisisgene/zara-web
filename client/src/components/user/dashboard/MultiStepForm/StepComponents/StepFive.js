@@ -20,7 +20,8 @@ class StepFive extends Component {
   componentDidMount() {}
 
   componentWillUnmount() {
-    // FIXME: set reportSent to false!
+    // Reset sentReport to FALSE
+    this.props.resetReport()
   }
 
   // This review screen had the 'Save' button, on clicking this is called
@@ -39,8 +40,6 @@ class StepFive extends Component {
     resolve(): validation/save has passed. Move to next step.
     reject(): validation/save failed. Stay on current step
     */
-
-    // TODO: Give user feedback after send!
 
     this.setState({
       saving: true

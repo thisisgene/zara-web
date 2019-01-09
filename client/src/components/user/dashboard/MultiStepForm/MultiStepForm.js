@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import StepZilla from 'react-stepzilla'
 import { connect } from 'react-redux'
 
-import { sendReport } from '../../../../actions/reportActions'
+import { sendReport, resetReport } from '../../../../actions/reportActions'
 
 import StepOne from './StepComponents/StepOne'
 import StepTwo from './StepComponents/StepTwo'
@@ -118,6 +118,7 @@ class MultiStepForm extends Component {
               this.updateStore(u)
             }}
             report={this.props.report.reportSent}
+            resetReport={() => this.props.resetReport()}
             sendReport={reportData => this.props.sendReport(reportData)}
           />
         )
@@ -158,5 +159,5 @@ const mapStateToProps = state => ({
 })
 export default connect(
   mapStateToProps,
-  { sendReport }
+  { sendReport, resetReport }
 )(MultiStepForm)

@@ -2,6 +2,7 @@ import {
   GET_ALL_REPORTS,
   GET_REPORT_BY_ID,
   SEND_REPORT,
+  RESET_REPORT,
   REPORT_FAIL
 } from '../actions/types'
 
@@ -26,6 +27,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         reportSent: true
+      }
+    case RESET_REPORT:
+      return {
+        ...state,
+        reportSent: false
       }
     case REPORT_FAIL:
       return {
