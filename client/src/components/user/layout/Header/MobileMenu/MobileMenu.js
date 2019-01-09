@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { withLocalize, Translate } from 'react-localize-redux'
 import ReactTooltip from 'react-tooltip'
 
+// import { browserHistory } from 'react-router'
+
 import Logo from '../../../common/zara_logo.png'
 
 import IconObject from '../../../dashboard/IconObject/IconObject'
@@ -19,8 +21,8 @@ import cx from 'classnames'
 import styles from './MobileMenu.module.sass'
 
 class MobileMenu extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       mobileExpand: false,
       subMenuVisible: false,
@@ -29,6 +31,24 @@ class MobileMenu extends Component {
       scrollToTop: false
     }
     this.menu = React.createRef()
+  }
+
+  componentDidMount() {
+    // this.props.history &&
+    //   this.props.history.listen((location, action) => {
+    //     console.log('location')
+    //     this.setState({
+    //       subMenuVisible: false
+    //     })
+    //   })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.location !== this.props.location) {
+      this.setState({
+        mobileExpand: false
+      })
+    }
   }
 
   onMobileNavClick = () => {

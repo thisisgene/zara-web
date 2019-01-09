@@ -48,6 +48,10 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
+    // this.props.history.listen((location, action) => {
+    //   // console.log(location)
+    //   // console.log(`The last navigation action was ${action}`)
+    // })
   }
 
   handleScroll = () => {
@@ -212,7 +216,11 @@ class Header extends Component {
         </div>
         <div className={styles['mobile-menu-container']}>
           {activeLanguage && (
-            <MobileMenu menuItems={menuItems} lang={activeLanguage.code} />
+            <MobileMenu
+              location={this.props.location}
+              menuItems={menuItems}
+              lang={activeLanguage.code}
+            />
           )}
         </div>
 
