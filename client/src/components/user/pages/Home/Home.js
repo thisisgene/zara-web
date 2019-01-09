@@ -15,8 +15,9 @@ import styles from './Home.module.sass'
 const fakeServerData = [
   {
     imageAsBackground: true,
-    image: 'mixer_new.jpg',
-    mainLink: 'mitmischen'
+    image: 'Rechtshilfefond_Karussell.jpg',
+    mainLink:
+      'wissen/aktuelles/news/Sigi_Maurer_–_Rechtshilfefonds_gegen_Hass_im_Netz_–_Phase_2'
     // de: {
     //   lang: 'de',
     //   date: {
@@ -74,13 +75,13 @@ const fakeServerData = [
   },
   {
     imageAsBackground: true,
-    image: 'baustein-digitale_zivilcourage.jpg',
-    mainLink: 'wissen/aktuelles'
+    image: 'RR17_Karussell.jpg',
+    mainLink: 'wissen/publikationen/rassismusreport'
   },
   {
     imageAsBackground: true,
-    image: 'sofa_hate_speech.jpg',
-    mainLink: 'wissen/aktuelles'
+    image: 'Zivilcourage_Karussell.jpg',
+    mainLink: 'mitmischen/community'
   }
 ]
 
