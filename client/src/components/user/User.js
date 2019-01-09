@@ -106,12 +106,17 @@ class User extends Component {
       this.props.setActiveLanguage(curLang)
     }
   }
-  componentDidMount() {}
+  componentDidMount() {
+    this.setState({
+      showCookieConsent: !localStorage.getItem('cookieAccept')
+    })
+  }
 
   cookieAccept = () => {
     this.setState({
       showCookieConsent: false
     })
+    localStorage.setItem('cookieAccept', true)
   }
 
   render() {
@@ -391,8 +396,11 @@ class User extends Component {
             </Switch>
           </div>
         </ScrollToTop>
-        {this.state.showCookieConsent && (
-          <CookieConsent handleClick={this.cookieAccept} />
+        {activeLanguage && this.state.showCookieConsent && (
+          <CookieConsent
+            handleClick={this.cookieAccept}
+            lang={activeLanguage.code}
+          />
         )}
         {activeLanguage && <Footer lang={activeLanguage.code} />}
       </div>

@@ -6,6 +6,8 @@
   font-size: .9rem
   background: #FFF4CC
   z-index: 100
+  a
+    color: #050505
   &--content
     max-width: 1080px
     margin: 0 auto
@@ -15,9 +17,12 @@
     &__text
       margin-right: 2rem
     &__button button
+      cursor: pointer
       border: none
       background: #FFC803
       padding: .2rem .6rem
+      &:hover
+        opacity: .8
   @media(max-width: 940px)
     padding: 2rem
     font-size: 1rem
