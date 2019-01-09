@@ -32,7 +32,9 @@ export default class StepSix extends Component {
           wollen, vereinbaren Sie bitte telefonisch unter: +43 (1) 929 13 99
           einen Termin mit unseren Beratungsteam.
         </p>
-        <button onClick={this.onClick}>Weiteren Vorfall melden</button>
+        <button className={styles['reset-button']} onClick={this.onClick}>
+          Weiteren Vorfall melden
+        </button>
       </div>
     )
   }
