@@ -94,14 +94,14 @@ const infoObj_default = {
     cards: [
       {
         color: 'default',
-        title: 'Kostenlose, persönliche Beratung',
+        title: 'Kostenlose, persönliche Beratung',
         text:
-          'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
+          'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
         link: 'beratung',
         linkText: 'Mehr zu Beratung',
         listItems: [
           {
-            text: 'Persönliche Beratung'
+            text: 'Persönliche Beratung'
           },
           {
             text: 'Melden in Social Media'
@@ -115,7 +115,7 @@ const infoObj_default = {
         color: 'default',
         title: 'Workshops & Trainings',
         text:
-          'ZARA Training gemeinnützige GmbH bietet in ganz Österreich zielgruppengerechte und individuell gestaltbare Aus- und Fortbildungen, Workshops und Projekte in den Bereichen Diversity, Bewusstseins- bildung, Anti-Rassismus und Zivilcourage an.',
+          'ZARA Training gemeinnützige GmbH bietet in ganz Österreich zielgruppengerechte und individuell gestaltbare Aus- und Fortbildungen, Workshops und Projekte in den Bereichen Diversity, Bewusstseins- bildung, Anti-Rassismus und Zivilcourage an.',
         link: 'training',
         linkText: 'Mehr zu Trainings',
         listItems: [
@@ -132,9 +132,9 @@ const infoObj_default = {
       },
       {
         color: 'default',
-        title: 'Öffentlichkeitsarbeit & Sensibilisierung',
+        title: 'Öffentlichkeitsarbeit & Sensibilisierung',
         text:
-          'Kontinuierliche Medienarbeit ist ein zentraler Bestandteil der Präventionsarbeit von ZARA. Denn das Sichtbarmachen von Rassismus in Österreich steigert das Problembewusstsein und trägt zur Sensibilisierung für die Themen Rassismus/Anti-Rassismus bei.',
+          'Kontinuierliche Medienarbeit ist ein zentraler Bestandteil der Präventionsarbeit von ZARA. Denn das Sichtbarmachen von Rassismus in Österreich steigert das Problembewusstsein und trägt zur Sensibilisierung für die Themen Rassismus/Anti-Rassismus bei.',
         link: 'ueber_ZARA',
         linkText: 'Mehr zu Öffentlichkeitsarbeit',
         listItems: [
@@ -184,7 +184,7 @@ const infoObj_default = {
         color: 'default',
         title: 'Öffentlichkeitsarbeit & Sensibilisierung',
         text:
-          'Kontinuierliche Medienarbeit ist ein zentraler Bestandteil der Präventionsarbeit von ZARA. Denn das Sichtbarmachen von Rassismus in Österreich steigert das Problembewusstsein und trägt zur Sensibilisierung für die Themen Rassismus/Anti-Rassismus bei.',
+          'Kontinuierliche Medienarbeit ist ein zentraler Bestandteil der Präventionsarbeit von ZARA. Denn das Sichtbarmachen von Rassismus in Österreich steigert das Problembewusstsein und trägt zur Sensibilisierung für die Themen Rassismus/Anti-Rassismus bei.',
         link: 'oeffentlichkeit',
         linkText: 'Mehr zu Öffentlichkeitsarbeit'
       }
@@ -197,7 +197,7 @@ const infoObj_red = {
   de: {
     title: 'Wie ich aktiv werden kann!',
     text:
-      'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
+      'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
     cards: [
       {
         image: 'alert',

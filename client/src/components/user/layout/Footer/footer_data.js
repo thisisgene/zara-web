@@ -77,7 +77,7 @@ export const footerContent = {
               linkText: 'Pressespiegel'
             },
             {
-              link: 'wissen/presse/logos',
+              link: 'wissen/presse/logos_und_kampagnenmaterial',
               linkText: 'Logos & Kampagnen'
             },
             {
@@ -148,20 +148,20 @@ export const footerContent = {
           header: 'Press',
           items: [
             {
-              link: '/presse',
-              text: 'Pressemeldungen'
+              link: 'wissen/presse',
+              linkText: 'Pressemeldungen'
             },
             {
-              link: '/presse',
-              text: 'Pressespiegel'
+              link: 'wissen/presse/pressespiegel',
+              linkText: 'Pressespiegel'
             },
             {
-              link: '/presse',
-              text: 'Logos & Kampagnen'
+              link: 'wissen/presse/logos_und_kampagnenmaterial',
+              linkText: 'Logos & Kampagnen'
             },
             {
-              link: '/presse',
-              text: 'Fotos'
+              link: 'wissen/presse/fotos',
+              linkText: 'Fotos'
             }
           ]
         },
