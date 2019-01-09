@@ -47,7 +47,7 @@ export const oneLineAlertDetail = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      link: '/beratung/melden/rassismus'
+      link: 'kontakt/#training'
     }
   },
   en: {
@@ -57,7 +57,7 @@ export const oneLineAlertDetail = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      link: '/beratung/melden/rassismus'
+      link: 'kontakt/#training'
     }
   }
 }

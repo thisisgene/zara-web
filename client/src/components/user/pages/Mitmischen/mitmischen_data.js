@@ -138,7 +138,7 @@ export const cardGridObject = {
         title: 'Werden Sie ein*e ZARAista!',
         text:
           'Anti-Rassismus-Arbeit braucht engagierte Menschen – und davon möglichst viele. Nutzen Sie die Möglichkeit, sich mit anderen aktiven Menschen auszutauschen, die daran interessiert sind, einen positiven Einfluss auf die Gesellschaft zu haben. Werden Sie Teil einer tatkräftigen Community!',
-        link: 'beratung/lassunswastun/kennedeinerechte'
+        link: 'mitmischen/community'
       },
       {
         size: 'large',
