@@ -1,8 +1,8 @@
 export const carouselData = [
   {
     imageAsBackground: true,
-    image: 'baustein-digitale_zivilcourage.jpg',
-    mainLink: 'wissen/aktuelles'
+    image: 'RR17_Karussell.jpg',
+    mainLink: 'wissen/publikationen/rassismusreport'
   },
   {
     imageAsBackground: true,
