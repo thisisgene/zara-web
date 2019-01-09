@@ -7,14 +7,16 @@ export default class TeamMember extends Component {
     const { content } = this.props
     return (
       <div className={styles['team-member']}>
-        <div className={styles['team-member--image']}>
-          {content.image && (
-            <img
-              src={`/assets/img/team/${content.image}`}
-              alt={content.image}
-            />
-          )}
-        </div>
+        {content.field !== 'vorstand' && (
+          <div className={styles['team-member--image']}>
+            {content.image && (
+              <img
+                src={`/assets/img/team/${content.image}`}
+                alt={content.image}
+              />
+            )}
+          </div>
+        )}
         <div className={styles['team-member--body']}>
           <p className={styles['team-member--body__name']}>{content.name}</p>
           {content.title && (
