@@ -72,15 +72,15 @@ class MobileMenu extends Component {
           })}
         >
           <div className={styles['mobile-menu--header']}>
-            <NavLink to="/user">
-              <div
-                className={cx(styles.logo, {
-                  [styles['submenu-open']]: this.state.subMenuVisible
-                })}
-              >
+            <div
+              className={cx(styles.logo, {
+                [styles['submenu-open']]: this.state.subMenuVisible
+              })}
+            >
+              <NavLink to="/user">
                 <img className={styles['logo-img']} src={Logo} alt="Zara" />
-              </div>
-            </NavLink>
+              </NavLink>
+            </div>
             <div
               className={cx(styles['mobile-menu--header__right'], {
                 [styles['submenu-open']]: this.state.subMenuVisible
@@ -119,11 +119,13 @@ class MobileMenu extends Component {
               </div>
               <div className={styles['mobile-menu-button']}>
                 <div onClick={this.onMobileNavClick}>
-                  <span
+                  <div
                     className={cx(styles['nav-burger'], {
                       [styles['burger-expand']]: this.state.mobileExpand
                     })}
-                  />
+                  >
+                    <span />
+                  </div>
                 </div>
               </div>
             </div>

@@ -35,3 +35,5 @@ export const GET_REPORT_BY_ID = 'GET_REPORT_BY_ID'
 export const SEND_REPORT = 'SEND_REPORT'
 export const RESET_REPORT = 'RESET_REPORT'
 export const REPORT_FAIL = 'REPORT_FAIL'
+
+export const SEND_ORDER = 'SEND_ORDER'

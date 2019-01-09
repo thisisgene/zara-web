@@ -581,3 +581,29 @@ router.post('/report/images', async (req, res) => {
       res.send(err)
     })
 })
+
+router.post('/order', (req, res) => {
+  const body = req.body
+  let itemsHtml = ''
+  const date = new Date()
+  body.items.map(item => (itemsHtml += `<p>${item.count}x ${item.title}</p>`))
+  const outputHtml = `
+    <h1>Bestellung</h1>
+    <h2>Rassismus Reports</h2>
+    <div>${itemsHtml}</div>
+    <h2>Kontakt</h2>
+    <h3>Vorname</h3>
+    <div>${body.fname}</div>
+    <h3>Nachname</h3>
+    <div>${body.lname}</div>
+    <h3>Straße</h3>
+    <div>${body.street}</div>
+    <h3>PLZ / Ort</h3>
+    <div>${body.city}</div>
+    <h3>E-mail Adresse</h3>
+    <div>${body.email}</div>
+    <h3>Anmerkungen</h3>
+    <div>${body.addInfo}</div>
+  `
+  console.log(outputHtml)
+})

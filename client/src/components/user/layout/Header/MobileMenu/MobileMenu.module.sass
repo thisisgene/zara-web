@@ -51,6 +51,7 @@
 
         &.submenu-open
           transform: translateX(-200%)
+          pointer-events: none
           
         img
           height: 3.4rem
@@ -75,33 +76,39 @@
 
           position: relative
           z-index: 3
-          .nav-burger
-            position: relative
-            display: block
-            width: 1.6rem
-            height: 2px
-            background: rgba(#050505, 1)
-            transition: all 200ms
-            &:before
-              content: ''
-              background: #050505
-              position: absolute
-              left: 0
-              transform: translateY(-.6rem)
-              width: inherit
+          .nav-burger 
+            height: 1.6rem
+            display: flex
+            flex-direction: column
+            justify-content: center
+            cursor: pointer
+            span
+              position: relative
+              display: block
+              width: 1.6rem
               height: 2px
-              transition: all 300ms ease-in-out
-            &:after
-              content: ''
-              background: #050505
-              position: absolute
-              left: 0
-              transform: translateY(.6rem)            
-              width: inherit
-              height: 2px
-              transition: all 300ms ease-in-out
+              background: rgba(#050505, 1)
+              transition: all 200ms
+              &:before
+                content: ''
+                background: #050505
+                position: absolute
+                left: 0
+                transform: translateY(-.6rem)
+                width: inherit
+                height: 2px
+                transition: all 300ms ease-in-out
+              &:after
+                content: ''
+                background: #050505
+                position: absolute
+                left: 0
+                transform: translateY(.6rem)            
+                width: inherit
+                height: 2px
+                transition: all 300ms ease-in-out
 
-            &.burger-expand
+            &.burger-expand span
               background: rgba(#050505, 0)
               transition: all 200ms
               &:before
