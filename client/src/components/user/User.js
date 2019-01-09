@@ -68,6 +68,7 @@ import Kolumne from './pages/Wissen/News/Kolumne/Kolumne'
 import Logos from './pages/Wissen/Presse/Logos'
 import VerschluesselteEmail from './pages/Other/VerschluesselteEmail'
 import OrderDone from './dashboard/ImageGridObject/OrderDone'
+import CookieConsent from './pages/Other/CookieConsent'
 
 class User extends Component {
   constructor(props) {
@@ -88,7 +89,8 @@ class User extends Component {
     // this.props.addTranslation(headerTranslations)
     this.state = {
       mobileExpand: false,
-      subMenuContent: ''
+      subMenuContent: '',
+      showCookieConsent: true
     }
   }
   componentDidUpdate(prevProps) {
@@ -105,6 +107,13 @@ class User extends Component {
     }
   }
   componentDidMount() {}
+
+  cookieAccept = () => {
+    this.setState({
+      showCookieConsent: false
+    })
+  }
+
   render() {
     const { activeLanguage } = this.props
     const routes = [
@@ -382,6 +391,9 @@ class User extends Component {
             </Switch>
           </div>
         </ScrollToTop>
+        {this.state.showCookieConsent && (
+          <CookieConsent handleClick={this.cookieAccept} />
+        )}
         {activeLanguage && <Footer lang={activeLanguage.code} />}
       </div>
     )
