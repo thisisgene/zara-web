@@ -5,8 +5,10 @@ import { connect } from 'react-redux'
 import { sendOrder, resetOrder } from '../../../../actions/userActions'
 
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
+import Spinner from '../Spinner/Spinner'
 import TextFieldGroup from '../InputGroups/TextFieldGroup'
 import TextareaFieldGroup from '../InputGroups/TextareaFieldGroup'
+
 import styles from './ImageGridObject.module.sass'
 
 class ImageGridObject extends Component {
@@ -15,6 +17,7 @@ class ImageGridObject extends Component {
     this.state = {
       cart: [],
       showCart: false,
+      saving: false,
       orderSent: false,
       fname: '',
       lname: '',
@@ -59,6 +62,7 @@ class ImageGridObject extends Component {
     this.setState({
       cart: [],
       showCart: false,
+      saving: false,
       orderSent: false,
       fname: '',
       lname: '',
@@ -76,6 +80,9 @@ class ImageGridObject extends Component {
   }
   onSubmit = e => {
     e.preventDefault()
+
+    this.setState({ saving: true })
+
     const order = this.state.cart.filter(item => item.count > 0)
     const newOrder = {
       items: order,
@@ -86,7 +93,6 @@ class ImageGridObject extends Component {
       email: this.state.email,
       addInfo: this.state.addInfo
     }
-
     this.props.sendOrder(newOrder, this.props.history)
   }
 
@@ -133,6 +139,7 @@ class ImageGridObject extends Component {
     const { errors } = this.state
     return (
       <div>
+        <Spinner nowActive={this.state.saving} />
         <div className={styles['grid-container']}>
           {content.map((item, index) => (
             <div key={index} className={styles['grid-item']}>
