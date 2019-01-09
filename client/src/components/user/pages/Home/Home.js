@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
+import { newsData } from '../Wissen/News/news_data'
+
 import CarouselGroup from '../../dashboard/carousel/CarouselGroup'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 import QuoteBox from '../../dashboard/QuoteBox/QuoteBox'
 import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
-import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
+import NewsCollectionGridObject from '../../dashboard/NewsCollectionGridObject/NewsCollectionGridObject'
 import BigNewsObject from '../../dashboard/BigNewsObject/BigNewsObject'
 
 import styles from './Home.module.sass'
@@ -531,7 +533,7 @@ class Home extends Component {
         <div style={{ margin: '3rem auto' }}>
           <QuoteBox quote={quote} />
         </div>
-        <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
+        <NewsCollectionGridObject content={newsData} lang={lang} />
         <InfoBoxObject infoBox={infoObj_red} lang={lang} />
       </div>
     )

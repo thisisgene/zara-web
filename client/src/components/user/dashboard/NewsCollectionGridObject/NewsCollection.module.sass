@@ -1,0 +1,109 @@
+.news-grid-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 1.4rem 2rem 2rem
+  background: rgba(#ffd300, .2)
+  width: 100vw
+
+  h1
+    font:
+      family: Vision, sans-serif
+      size: 1.8rem
+      margin: 0
+  
+  .news-grid
+    margin: 1rem auto
+    max-width: 1080px
+    width: 100%
+    display: grid
+    grid-gap: 2rem 1rem
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    a
+      color: #050505
+      text-decoration: none
+      &:hover
+        opacity: .8
+    .news-card
+      // padding: 1px
+      background: #fff
+      height: 100%
+      // width: 100%
+      // overflow: hidden
+      // position: relative
+      &.no-img
+        
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        // padding: 1rem 3rem
+        .news-card--body
+          
+          font-size: 1.1rem !important
+      &.wide
+        grid-column: span 2 !important
+        padding: 1rem 3rem
+      &:after
+        content: ''
+        width: 100%
+        // height: .8rem
+        position: absolute
+        bottom: 0
+        background: #fff
+      a
+        color: #050505
+        text-decoration: none
+        &:hover
+          color: #050505
+          opacity: .9
+      &--image
+        
+        img
+          height: 9rem
+          width: 100%
+          object-fit: cover
+      &.titleCard
+        padding: 1rem
+        display: flex
+        align-items: center
+        .compact-card--body
+          font:
+            size: 1.2rem
+            // weight: bold
+      
+      &--body
+        padding: 1rem 1rem
+        font-size: .8rem
+        line-height: 1
+        position: relative
+        
+
+
+        &__title
+          font-weight: bold
+          margin-bottom: .4rem
+
+  @media(max-width: 980px)
+    .news-grid
+      grid-template-columns: 1fr 1fr 1fr
+
+  @media(max-width: 630px)
+    .news-grid
+      margin: 2rem 1rem
+      grid-template-columns: 1fr 1fr
+  @media(max-width: 430px)
+    .news-grid
+      margin: 2rem 1rem
+      display: block
+      
+      .news-card
+        margin: 2rem auto
+      .news-card:first-child
+        
+
+
+        
+
+        

@@ -29,7 +29,10 @@ export const newsTags = [
 export const newsData = [
   {
     tag: 'event',
+    onNewsBox: true,
+    newsBoxSize: 'wide',
     param: 'veranstaltung',
+
     // image: 'vstart.jpg',
     id: 'Pressekonferenz_Rassismus_Report_2018',
     de: {
@@ -53,6 +56,7 @@ export const newsData = [
   },
   {
     tag: 'news',
+    onNewsBox: true,
     image: 'news/news1.jpg',
     imageSide: 'left',
     id: 'Zivilgesellschaftliches_Netzwerk_um_hate_crime_sichtbar_zu_machen',
@@ -130,6 +134,7 @@ export const newsData = [
   },
   {
     tag: 'news',
+    onNewsBox: true,
     image: 'news/Facing_Facts.jpg',
     imageSide: 'left',
     id: 'Facing_Facts_Online',
@@ -178,6 +183,7 @@ export const newsData = [
   },
   {
     tag: 'news',
+    onNewsBox: true,
     image: 'news/sigi.jpg',
     size: 'big-image',
     // imageSide: 'left',
@@ -203,6 +209,7 @@ export const newsData = [
   },
   {
     tag: 'news',
+    onNewsBox: true,
     image: 'news/scan.jpg',
     // size: 'big-image',
     imageSide: 'left',
@@ -235,6 +242,8 @@ export const newsData = [
   },
   {
     tag: 'news',
+
+    onNewsBox: true,
     image: 'news/trusted_flagger.png',
     // size: 'big-image',
     imageSide: 'left',
@@ -264,6 +273,7 @@ export const newsData = [
   },
   {
     tag: 'news',
+    onNewsBox: true,
     image: 'news/V-Start.png',
     // size: 'big-image',
     imageSide: 'left',
