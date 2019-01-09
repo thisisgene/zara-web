@@ -66,6 +66,8 @@ import TrainingTeam from './pages/Training/TrainingTeam/TrainingTeam'
 import NewsDetail from './pages/Wissen/News/NewsBox/NewsDetail'
 import Kolumne from './pages/Wissen/News/Kolumne/Kolumne'
 import Logos from './pages/Wissen/Presse/Logos'
+import VerschluesselteEmail from './pages/Other/VerschluesselteEmail'
+import PublicKey from './pages/Other/PublicKey'
 
 class User extends Component {
   constructor(props) {
@@ -360,6 +362,16 @@ class User extends Component {
               />
 
               <Route exact path="/user/:lang/kontakt" component={Kontakt} />
+              <Route
+                exact
+                path="/user/:lang/verschluesselte_email"
+                component={VerschluesselteEmail}
+              />
+              <Route
+                exact
+                path="/user/:lang/pgp/public_key"
+                component={PublicKey}
+              />
               <Route exact path="/user/:lang/impressum" component={Impressum} />
               <Route
                 exact

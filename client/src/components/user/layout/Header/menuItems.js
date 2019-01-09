@@ -23,13 +23,13 @@ const menuItems = [
           icon: 'LockIcon',
           color: 'petrol',
           text: 'Verschlüsselte Email an ZARA',
-          link: 'verschlüsselte_mail'
+          link: 'verschluesselte_email'
         },
         en: {
           icon: 'LockIcon',
           color: 'petrol',
           text: 'Verschlüsselte Email an ZARA',
-          link: 'verschlüsselte_mail'
+          link: 'verschluesselte_email'
         }
       }
     ],

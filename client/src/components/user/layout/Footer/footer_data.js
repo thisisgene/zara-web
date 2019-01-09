@@ -27,12 +27,12 @@ export const oneLineContent = {
     de: {
       icon: 'LockIcon',
       text: 'Verschlüsselte Email an ZARA',
-      link: 'verschlüsselte_mail'
+      link: 'verschluesselte_email'
     },
     en: {
       icon: 'LockIcon',
       text: 'Encrypted e-mail to ZARA',
-      link: 'verschlüsselte_mail'
+      link: 'verschluesselte_email'
     }
   }
 }
