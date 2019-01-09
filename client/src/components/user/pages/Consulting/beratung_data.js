@@ -276,16 +276,17 @@ export const wasSieTunKoennenInfoBox2 = {
         title: 'ZIVILCOURAGE ZEIGEN',
         text:
           'Bei rassistischer Diskriminierung sowie bei Hass im Netz ist Eingreifen gefragt! Zivilcourage heißt in “unangenehmen” Situationen in der Öffentlichkeit - on- & offline - einzugreifen. Eingreifen kann bedeuten, dass man nicht weg sieht, Betroffenen Unterstützung anbietet, Vorfälle dokumentiert, Unterstützung holt, und vieles mehr. Auch in der online Welt ist zivilcouragiertes Handeln gefragt, um Hass im Netz in Grenzen zu halten, Räume nicht stillschweigend aufzugeben und wiederum Betroffenen den Rücken zu stärken. Es erfordert Mut! Wichtig ist dabei stets die eigenen Grenzen und Fähigkeiten sowie den Wunsch der Betroffenen zu erkennen und danach zu handeln.',
-        link: 'beratung/melden',
-        linkText: 'Melden'
+        link: 'mitmischen',
+        linkText: 'Mitmischen'
       },
       {
         color: 'default',
         title: 'WEITERSAGEN',
         text:
           'Zu einer Sensibilisierung und Aufklärung der Gesellschaft über rassistische Diskriminierung bedarf es öffentliche Diskurse. Auch bei Hass im Netz ist das Wissen, dass es sich dabei oft um strafrechtlich relevante Tatbestände handelt, nach wie vor nicht bei allen angekommen. Weil Rassismus und Hass im Netz am besten durch Aufklärungsarbeit bekämpft werden können, freuen wir uns, wenn Sie uns dabei unterstützen, unser Beratungs- und Trainingsangebot an so viele Personen wie möglich weiterzuleiten.',
-        link: 'beratung',
-        linkText: 'Beratungstermin vereinbaren'
+        linkPath: 'external',
+        link: 'http://google.com',
+        linkText: 'Mach auf unser Beratungsangebot aufmerksam'
       }
     ]
   },

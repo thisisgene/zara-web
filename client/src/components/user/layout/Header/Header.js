@@ -88,12 +88,10 @@ class Header extends Component {
           className={cx(styles['header-container'], {
             [styles['submenu-open']]: this.state.subMenuVisible
           })}
+          onMouseLeave={this.onLinkBlur.bind(this)}
+          onFocusOut={this.onLinkBlur.bind(this)}
         >
-          <nav
-            className={cx(styles.header)}
-            onMouseLeave={this.onLinkBlur.bind(this)}
-            onFocusOut={this.onLinkBlur.bind(this)}
-          >
+          <nav className={cx(styles.header)}>
             <NavLink
               onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
               to="/user"

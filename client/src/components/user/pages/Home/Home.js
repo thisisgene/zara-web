@@ -208,7 +208,7 @@ const infoObj_red = {
         title: 'Rassismus melden',
         text:
           'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
-        link: 'de/melden',
+        link: 'melden',
         linkText: 'Melden!'
       },
       {
@@ -227,7 +227,7 @@ const infoObj_red = {
         title: 'Ehrenamtlich mitmischen',
         text:
           'Werden Sie ein*e ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam aktiv zu werden. Werden Sie Teil einer tatkräftigen Community!',
-        link: 'de/melden',
+        link: 'mitmischen',
         linkText: "Los geht's!"
       }
     ]
@@ -238,30 +238,31 @@ const infoObj_red = {
       'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
     cards: [
       {
-        image: 'act',
+        image: 'alert',
         color: 'red',
         title: 'Rassismus melden',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
-        link: 'de/melden',
-        linkText: "Los geht's!"
+          'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
+        link: 'melden',
+        linkText: 'Melden!'
       },
       {
-        image: 'act',
+        image: 'donate_hand',
         color: 'red',
         title: '(Online) Spenden',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
-        link: 'de/melden',
-        linkText: "Los geht's!"
+          'Spenden Sie jetzt – damit Betroffene von Rassismus mit dem Unrecht und der Demütigung nicht alleine gelassen werden!',
+        linkPath: 'external',
+        link: 'https://www.mpay24.com/app/bin/checkout/n2i3mmfkntkznq',
+        linkText: 'Jetzt online spenden!'
       },
       {
-        image: 'act',
+        image: 'group',
         color: 'red',
         title: 'Ehrenamtlich mitmischen',
         text:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ad soluta saepe ab magnam minus! Eveniet, libero. Recusandae aliquam, ut temporibus numquam dolores pariatur qui esse. Quisquam rerum porro aut!',
-        link: 'de/melden',
+          'Werden Sie ein*e ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam aktiv zu werden. Werden Sie Teil einer tatkräftigen Community!',
+        link: 'mitmischen',
         linkText: "Los geht's!"
       }
     ]
