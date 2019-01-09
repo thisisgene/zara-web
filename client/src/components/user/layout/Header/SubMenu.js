@@ -129,10 +129,7 @@ class SubMenu extends Component {
                               <IconObject image="arrowRight" />
                             </NavLink>
                           ) : (
-                            <div className={styles['no-link']}>
-                              {cat.text}
-                              <IconObject image="arrowRight" />
-                            </div>
+                            <div className={styles['no-link']}>{cat.text}</div>
                           )}
                         </div>
                         {cat.index !== '4' ? (

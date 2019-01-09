@@ -99,7 +99,7 @@ export const trainingBoxData = {
       { index: '3', text: 'Für Unternehmen', link: 'unternehmen' },
       {
         index: '4',
-        text: 'Mehr',
+        text: 'Training & mehr',
         link: null,
         subMenuList: [
           {

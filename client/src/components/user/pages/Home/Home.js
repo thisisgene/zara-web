@@ -15,63 +15,8 @@ import styles from './Home.module.sass'
 const fakeServerData = [
   {
     imageAsBackground: true,
-    image: 'Rechtshilfefond_Karussell.jpg',
-    mainLink:
-      'wissen/aktuelles/news/Sigi_Maurer_–_Rechtshilfefonds_gegen_Hass_im_Netz_–_Phase_2'
-    // de: {
-    //   lang: 'de',
-    //   date: {
-    //     month: 'Oktober',
-    //     day: 20,
-    //     time: {
-    //       startTime: 10,
-    //       endTime: 17
-    //     }
-    //   },
-    //   category: 'Workshop',
-    //   title: 'Digitale Zivilcourage',
-    //   text:
-    //     'Hetze, Diskriminierung und Rassismus sind Teil des digitalen Alltags, aber was kannst Du als User*in dagegen tun? Wie kann diesem Phänomen entgegentreten und anderen online zur Seite gestanden werden?',
-    //   buttons: [
-    //     {
-    //       type: 'cta',
-    //       text: 'Jetzt anmelden',
-    //       link: 'training'
-    //     },
-    //     {
-    //       type: 'secondary',
-    //       text: 'Details & Termine',
-    //       link: 'training'
-    //     }
-    //   ]
-    // },
-    // en: {
-    //   lang: 'en',
-    //   date: {
-    //     month: 'Octobre',
-    //     day: 20,
-    //     time: {
-    //       startTime: 10,
-    //       endTime: 17
-    //     }
-    //   },
-    //   category: 'Workshop',
-    //   title: 'Digitale Zivilcourage',
-    //   text: 'this is a text.',
-    //   buttons: [
-    //     {
-    //       type: 'cta',
-    //       text: 'Subscribe now',
-    //       link: 'training'
-    //     },
-    //     {
-    //       type: 'secondary',
-    //       text: 'Details & Dates',
-    //       link: 'training'
-    //     }
-    //   ],
-    //   image: 'test_img2.png'
-    // }
+    image: 'Zivilcourage_Karussell.jpg',
+    mainLink: 'mitmischen/community'
   },
   {
     imageAsBackground: true,
@@ -80,9 +25,64 @@ const fakeServerData = [
   },
   {
     imageAsBackground: true,
-    image: 'Zivilcourage_Karussell.jpg',
-    mainLink: 'mitmischen/community'
+    image: 'Rechtshilfefond_Karussell.jpg',
+    mainLink:
+      'wissen/aktuelles/news/Sigi_Maurer_–_Rechtshilfefonds_gegen_Hass_im_Netz_–_Phase_2'
   }
+  // de: {
+  //   lang: 'de',
+  //   date: {
+  //     month: 'Oktober',
+  //     day: 20,
+  //     time: {
+  //       startTime: 10,
+  //       endTime: 17
+  //     }
+  //   },
+  //   category: 'Workshop',
+  //   title: 'Digitale Zivilcourage',
+  //   text:
+  //     'Hetze, Diskriminierung und Rassismus sind Teil des digitalen Alltags, aber was kannst Du als User*in dagegen tun? Wie kann diesem Phänomen entgegentreten und anderen online zur Seite gestanden werden?',
+  //   buttons: [
+  //     {
+  //       type: 'cta',
+  //       text: 'Jetzt anmelden',
+  //       link: 'training'
+  //     },
+  //     {
+  //       type: 'secondary',
+  //       text: 'Details & Termine',
+  //       link: 'training'
+  //     }
+  //   ]
+  // },
+  // en: {
+  //   lang: 'en',
+  //   date: {
+  //     month: 'Octobre',
+  //     day: 20,
+  //     time: {
+  //       startTime: 10,
+  //       endTime: 17
+  //     }
+  //   },
+  //   category: 'Workshop',
+  //   title: 'Digitale Zivilcourage',
+  //   text: 'this is a text.',
+  //   buttons: [
+  //     {
+  //       type: 'cta',
+  //       text: 'Subscribe now',
+  //       link: 'training'
+  //     },
+  //     {
+  //       type: 'secondary',
+  //       text: 'Details & Dates',
+  //       link: 'training'
+  //     }
+  //   ],
+  //   image: 'test_img2.png'
+  // }
 ]
 
 const quote = {
