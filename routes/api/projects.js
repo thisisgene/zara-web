@@ -10,6 +10,8 @@ const Jimp = require('jimp')
 
 const nodemailer = require('nodemailer')
 
+const validateOrderInput = require('../../validation/order')
+
 // Load project model
 const Project = require('../../models/Project')
 
@@ -583,6 +585,12 @@ router.post('/report/images', async (req, res) => {
 })
 
 router.post('/order', (req, res) => {
+  const { errors, isValid } = validateOrderInput(req.body)
+
+  // Check validation
+  if (!isValid) {
+    return res.status(400).json(errors)
+  }
   const body = req.body
   let itemsHtml = ''
 
@@ -605,10 +613,10 @@ router.post('/order', (req, res) => {
     <h3>Anmerkungen</h3>
     <div>${body.addInfo}</div>
   `
-  sendOrderEmail(outputHtml)
+  sendOrderEmail(outputHtml, body, res)
 })
 
-sendOrderEmail = order => {
+sendOrderEmail = (order, body, res) => {
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -637,6 +645,7 @@ sendOrderEmail = order => {
     }
     console.log('Message sent: %s', info.messageId)
     // Preview only available when sending through an Ethereal account
+    res.json(body)
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
 
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>

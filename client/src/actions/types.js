@@ -37,3 +37,4 @@ export const RESET_REPORT = 'RESET_REPORT'
 export const REPORT_FAIL = 'REPORT_FAIL'
 
 export const SEND_ORDER = 'SEND_ORDER'
+export const RESET_ORDER = 'RESET_ORDER'

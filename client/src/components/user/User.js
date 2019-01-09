@@ -67,6 +67,7 @@ import NewsDetail from './pages/Wissen/News/NewsBox/NewsDetail'
 import Kolumne from './pages/Wissen/News/Kolumne/Kolumne'
 import Logos from './pages/Wissen/Presse/Logos'
 import VerschluesselteEmail from './pages/Other/VerschluesselteEmail'
+import OrderDone from './dashboard/ImageGridObject/OrderDone'
 
 class User extends Component {
   constructor(props) {
@@ -296,6 +297,11 @@ class User extends Component {
                 exact
                 path="/user/:lang/wissen/publikationen/rassismusreport"
                 component={RassismusReport}
+              />
+              <Route
+                exact
+                path="/user/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
+                component={OrderDone}
               />
               <Route exact path="/user/:lang/wissen/faq" component={Faq} />
 

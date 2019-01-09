@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { sendOrder } from '../../../../actions/userActions'
+import { sendOrder, resetOrder } from '../../../../actions/userActions'
 
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
 import TextFieldGroup from '../InputGroups/TextFieldGroup'
@@ -14,6 +15,7 @@ class ImageGridObject extends Component {
     this.state = {
       cart: [],
       showCart: false,
+      orderSent: false,
       fname: '',
       lname: '',
       street: '',
@@ -33,7 +35,40 @@ class ImageGridObject extends Component {
       cart: cartArray
     })
   }
+  componentWillUnmount() {
+    this.props.resetOrder()
+    this.resetOrder()
+  }
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.user &&
+      prevProps !== this.props &&
+      this.props.user.orderSent
+    ) {
+      console.log('UPDATE')
+      this.setState({
+        orderSent: true
+      })
+    }
 
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors })
+    }
+  }
+  resetOrder = () => {
+    this.setState({
+      cart: [],
+      showCart: false,
+      orderSent: false,
+      fname: '',
+      lname: '',
+      street: '',
+      city: '',
+      email: '',
+      addInfo: '',
+      errors: {}
+    })
+  }
   onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -144,80 +179,95 @@ class ImageGridObject extends Component {
                 shoppingCartText={shoppingCartText}
               />
             </div>
+            {!this.state.orderSent ? (
+              <div id="bestellen" className={styles['order-form']}>
+                <form onSubmit={this.onSubmit}>
+                  <h2>
+                    {lang === 'de'
+                      ? 'Ich möchte folgende Artikel bestellen'
+                      : ''}
+                  </h2>
+                  {this.state.cart.map(item => (
+                    <div>
+                      {item.count > 0 && (
+                        <div className={styles['shopping-cart--item']}>
+                          <div className={styles['shopping-cart--item__count']}>
+                            {item.count}x
+                          </div>
+                          <div className={styles['shopping-cart--item__title']}>
+                            {item.title}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  <div>
+                    <TextFieldGroup
+                      placeholder={lang === 'de' ? 'Vorname' : 'First Name'}
+                      name="fname"
+                      value={this.state.fname}
+                      onChange={this.onChange}
+                      error={errors.fname}
+                    />
+                    <TextFieldGroup
+                      placeholder={lang === 'de' ? 'Nachname' : 'Last Name'}
+                      name="lname"
+                      value={this.state.lname}
+                      onChange={this.onChange}
+                      error={errors.lname}
+                    />
+                    <TextFieldGroup
+                      placeholder={lang === 'de' ? 'Straße' : 'Street'}
+                      name="street"
+                      value={this.state.street}
+                      onChange={this.onChange}
+                      error={errors.street}
+                    />
+                    <TextFieldGroup
+                      placeholder={
+                        lang === 'de' ? 'PLZ / Ort' : 'Area Code / City'
+                      }
+                      name="city"
+                      value={this.state.city}
+                      onChange={this.onChange}
+                      error={errors.city}
+                    />
+                    <TextFieldGroup
+                      placeholder="E-mail Adresse"
+                      name="email"
+                      type="email"
+                      value={this.state.email}
+                      onChange={this.onChange}
+                      error={errors.email}
+                    />
+                    <TextareaFieldGroup
+                      name="addInfo"
+                      placeholder="Anmerkungen"
+                      value={this.state.addInfo}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <input type="submit" value="Abschicken" />
+                </form>
+              </div>
+            ) : (
+              <Redirect
+                to={`/user/${lang}/wissen/publikationen/rassismusreport/bestellung_abgeschlossen`}
+              />
+            )}
           </div>
         )}
-        <div className={styles['order-form']}>
-          <form onSubmit={this.onSubmit}>
-            <h2>
-              {lang === 'de' ? 'Ich möchte folgende Artikel bestellen' : ''}
-            </h2>
-            {this.state.cart.map(item => (
-              <div>
-                {item.count > 0 && (
-                  <div className={styles['shopping-cart--item']}>
-                    <div className={styles['shopping-cart--item__count']}>
-                      {item.count}x
-                    </div>
-                    <div className={styles['shopping-cart--item__title']}>
-                      {item.title}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-            <div>
-              <TextFieldGroup
-                placeholder={lang === 'de' ? 'Vorname' : 'First Name'}
-                name="fname"
-                value={this.state.fname}
-                onChange={this.onChange}
-                error={errors.name}
-              />
-              <TextFieldGroup
-                placeholder={lang === 'de' ? 'Nachname' : 'Last Name'}
-                name="lname"
-                value={this.state.lname}
-                onChange={this.onChange}
-                error={errors.name}
-              />
-              <TextFieldGroup
-                placeholder={lang === 'de' ? 'Straße' : 'Street'}
-                name="street"
-                value={this.state.street}
-                onChange={this.onChange}
-                error={errors.name}
-              />
-              <TextFieldGroup
-                placeholder={lang === 'de' ? 'PLZ / Ort' : 'Area Code / City'}
-                name="city"
-                value={this.state.city}
-                onChange={this.onChange}
-                error={errors.name}
-              />
-              <TextFieldGroup
-                placeholder="E-mail Adresse"
-                name="email"
-                type="email"
-                value={this.state.email}
-                onChange={this.onChange}
-                error={errors.email}
-              />
-              <TextareaFieldGroup
-                name="addInfo"
-                placeholder="Anmerkungen"
-                value={this.state.addInfo}
-                onChange={this.onChange}
-              />
-            </div>
-            <input type="submit" value="Abschicken" />
-          </form>
-        </div>
       </div>
     )
   }
 }
 
+const mapStateToProps = state => ({
+  user: state.user,
+  errors: state.errors
+})
+
 export default connect(
-  null,
-  { sendOrder }
+  mapStateToProps,
+  { sendOrder, resetOrder }
 )(ImageGridObject)

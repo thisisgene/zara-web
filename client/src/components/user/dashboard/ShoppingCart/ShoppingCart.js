@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import LongText from '../LongText/LongText'
 
@@ -44,12 +45,14 @@ export default class ShoppingCart extends Component {
           </div>
         ))}
         <div className={styles['shopping-cart--order-button']}>
-          <button
+          <Link to="#bestellen">
+            <button
 
-          // onClick={toOrderForm}
-          >
-            {lang === 'de' ? 'Bestellen' : 'Order'}
-          </button>
+            // onClick={toOrderForm}
+            >
+              {lang === 'de' ? 'Zum Bestellformular' : 'Order'}
+            </button>
+          </Link>
         </div>
       </div>
     )
