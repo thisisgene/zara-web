@@ -585,7 +585,7 @@ router.post('/report/images', async (req, res) => {
 router.post('/order', (req, res) => {
   const body = req.body
   let itemsHtml = ''
-  const date = new Date()
+
   body.items.map(item => (itemsHtml += `<p>${item.count}x ${item.title}</p>`))
   const outputHtml = `
     <h1>Bestellung</h1>
@@ -605,5 +605,41 @@ router.post('/order', (req, res) => {
     <h3>Anmerkungen</h3>
     <div>${body.addInfo}</div>
   `
-  console.log(outputHtml)
+  sendOrderEmail(outputHtml)
 })
+
+sendOrderEmail = order => {
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: 'serpig.testuser@gmail.com', // generated ethereal user
+      pass: 'serPig1dev' // generated ethereal password
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: '"Serious Pigeon Testuser" <serpig.testuser@gmail.com>', // sender address
+    to: 'emdo2000+rrorder@gmail.com', // list of receivers
+    subject: 'Neue Bestellung', // Subject line
+    html: order // html body
+  }
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error)
+    }
+    console.log('Message sent: %s', info.messageId)
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  })
+}
