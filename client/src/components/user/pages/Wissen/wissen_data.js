@@ -6,8 +6,13 @@ export const carouselData = [
   },
   {
     imageAsBackground: true,
-    image: 'sofa_hate_speech.jpg',
-    mainLink: 'wissen/aktuelles'
+    image: 'facing_facts_banner.jpg',
+    mainLink: 'wissen/aktuelles/news/Facing_Facts_Online'
+  },
+  {
+    imageAsBackground: true,
+    image: 'KYR_banner.jpg',
+    mainLink: 'wissen/aktuelles/news/Know_Your_Rights-Brosch%C3%BCren'
   }
 ]
 

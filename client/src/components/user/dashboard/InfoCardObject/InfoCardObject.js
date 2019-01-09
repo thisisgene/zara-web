@@ -20,6 +20,11 @@ class InfoCardObject extends Component {
           <div className={styles['info-card--title-box']}>
             {card.image && <IconObject image={card.image} />}
             <h2>{card.title}</h2>
+            {card.titleImage && (
+              <div className={styles['title-image']}>
+                <img src={`/assets/img/${card.titleImage}`} alt="" />
+              </div>
+            )}
           </div>
           <div className={styles['info-card--body']}>
             <div
