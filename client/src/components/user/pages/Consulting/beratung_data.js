@@ -147,7 +147,7 @@ export const cardGridObject = {
         type: 'imageCard',
         image: 'scales.png',
         title: 'Was können wir tun?',
-        link: 'beratung/lassunswastun/waswirtunkoennen'
+        link: 'beratung/lassunswastun/waswirdanntun'
       },
       {
         size: 'default',
@@ -180,7 +180,7 @@ export const cardGridObject = {
         type: 'imageCard',
         image: 'scales.png',
         title: 'Was können wir tun?',
-        link: 'beratung/lassunswastun/waswirtunkoennen'
+        link: 'beratung/lassunswastun/waswirdanntun'
       },
       {
         size: 'default',
@@ -209,14 +209,14 @@ export const cardGridObject = {
 
 export const wasSieTunKoennenHeroData = {
   de: {
-    title: 'Wir sind auf Ihrer Seite',
+    title: 'Werden Sie aktiv',
     text:
-      'Melden Sie ZARA rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne kostenlos beraten.'
+      'Die ZARA Beratungsstellen dokumentieren rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing und ergreifen weitere Maßnahmen. Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln wird Betroffenen der Rücken gestärkt und unterschiedliche Räume können verteidigt und zurückgewonnen werden.'
   },
   en: {
-    title: 'Wir sind auf Ihrer Seite',
+    title: 'Werden Sie aktiv',
     text:
-      'Melden Sie ZARA rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne kostenlos beraten.'
+      'Die ZARA Beratungsstellen dokumentieren rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing und ergreifen weitere Maßnahmen. Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln wird Betroffenen der Rücken gestärkt und unterschiedliche Räume können verteidigt und zurückgewonnen werden.'
   }
 }
 
@@ -320,8 +320,8 @@ export const wasSieTunKoennenCardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'scales.png',
-        title: 'Was Wir Dann Tun Können',
-        link: 'beratung/lassunswastun/waswirtunkoennen'
+        title: 'Was Wir Dann Tun',
+        link: 'beratung/lassunswastun/waswirdanntun'
       },
       {
         size: 'default',
@@ -346,8 +346,8 @@ export const wasSieTunKoennenCardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'scales.png',
-        title: 'Was Wir Dann Tun Können',
-        link: 'beratung/lassunswastun/waswirtunkoennen'
+        title: 'Was Wir Dann Tun',
+        link: 'beratung/lassunswastun/waswirdanntun'
       },
       {
         size: 'default',
@@ -364,6 +364,19 @@ export const wasSieTunKoennenCardGridObject = {
         link: 'wissen'
       }
     ]
+  }
+}
+
+export const wasWirTunKoennenHeroData = {
+  de: {
+    title: 'Was Wir dann tun'
+    // text:
+    //   'Die ZARA Beratungsstellen dokumentieren rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing und ergreifen weitere Maßnahmen. Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln wird Betroffenen der Rücken gestärkt und unterschiedliche Räume können verteidigt und zurückgewonnen werden.'
+  },
+  en: {
+    title: 'Was Wir dann tun'
+    // text:
+    //   'Die ZARA Beratungsstellen dokumentieren rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing und ergreifen weitere Maßnahmen. Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln wird Betroffenen der Rücken gestärkt und unterschiedliche Räume können verteidigt und zurückgewonnen werden.'
   }
 }
 

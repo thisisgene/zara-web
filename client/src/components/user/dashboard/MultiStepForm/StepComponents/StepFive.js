@@ -82,12 +82,12 @@ class StepFive extends Component {
                 <h1>Einverstanden?</h1>
                 <p>
                   Ihre Daten sind bei uns sicher. Wir behandeln Ihre Meldung
-                  streng vertraulich und geben ihren Namen noch ihre
+                  streng vertraulich und geben weder Ihren Namen noch ihre
                   Kontaktdaten an Dritte weiter.
                 </p>
                 <p>
                   Die Übertragung erfolgt über eine sichere Verbindung zu
-                  unserem Webserver, der sich innerhalb der europäischen
+                  unserem Webserver.
                 </p>
               </label>
             </div>

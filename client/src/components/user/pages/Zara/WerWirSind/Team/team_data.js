@@ -126,17 +126,17 @@ export const teamData = {
       },
       {
         // image: 'Bianca Schoenberger_ZARA.jpg',
-        field: 'training',
+        field: 'beratung',
         name: 'Mag.a Lilian Levai',
         text:
           '(derzeit in Karenz)<br /><br />hat Afrikawissenschaften mit dem Schwerpunkt Rassismusforschung studiert und absolvierte zahlreiche juristische Lehrveranstaltungen insbesondere zu den Themen Antidiskriminierungsrecht und Mediation. Außerdem ist sie zertifizierte Mediatorin. Sie ist als juristische Beraterin in den ZARA-Beratungsstellen tätig.<br /><br />Trainingsschwerpunkte: interkulturelle Sensibilisierung, Antidiskriminierungsrecht, Zivilcourage und die Kombination von Anti-Rassismus-Arbeit mit Sport.'
       },
       {
         // image: 'Bianca Schoenberger_ZARA.jpg',
-        field: 'training',
+        field: 'beratung',
         name: 'Mag.a Barbara Unterlerchner, MA',
         text:
-          '(derzeit in Mutterschutz)<br /><br />Leitete vor dem Mutterschutz die ZARA Beratungsstelle und ist langjährige ZARA Trainerin.<br /><br />Sie ist Juristin und Kriminologin. Ihre beruflichen Schwerpunkte liegen vorrangig in der Unterstützung und Beratung von Verbrechensopfern, im Fremden- und Asylrecht und Training. Sie wirkte an zahlreichen europäischen Projekten zu den Themen Rassismus und Anti-Diskriminierung, Gewalt an Frauen, Gewalt in Gefängnissen, Hasskriminalität und Opferrechten mit und hält dazu regelmäßig Vorträge im In- und Ausland.'
+          '(derzeit in Karenz)<br /><br />Leitete vor der Karenz die ZARA Beratungsstelle und ist langjährige ZARA Trainerin.<br /><br />Sie ist Juristin und Kriminologin. Ihre beruflichen Schwerpunkte liegen vorrangig in der Unterstützung und Beratung von Verbrechensopfern, im Fremden- und Asylrecht und Training. Sie wirkte an zahlreichen europäischen Projekten zu den Themen Rassismus und Anti-Diskriminierung, Gewalt an Frauen, Gewalt in Gefängnissen, Hasskriminalität und Opferrechten mit und hält dazu regelmäßig Vorträge im In- und Ausland.'
       },
       {
         image: 'Bianca Schoenberger_ZARA.jpg',

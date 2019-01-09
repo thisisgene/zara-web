@@ -6,7 +6,7 @@ import styles from './HeroUnit.module.sass'
 
 class HeroUnit extends Component {
   render() {
-    const { data, lang } = this.props
+    const { data, lang, special } = this.props
     return (
       <div>
         {data && lang && (
@@ -16,6 +16,9 @@ class HeroUnit extends Component {
               { [styles[data.class]]: data.class },
               {
                 [styles[data.size]]: data.size
+              },
+              {
+                [styles['narrow']]: special === 'narrow'
               }
             )}
           >

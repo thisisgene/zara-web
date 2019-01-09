@@ -122,9 +122,9 @@ export const infoData3 = {
       },
       {
         color: 'white',
-        title: 'V. Mainstreaming',
+        title: 'V. Gender* Mainstreaming',
         text:
-          'ZARA bekennt sich im Sinne von Gender Mainstreaming zur Gleichstellung von Frauen und Männern. Dies bedeutet, dass bei der Organisation, Konzeption, Umsetzung sowie bei der Evaluierung aller Maßnahmen die unterschiedlichen Bedingungen, Situationen und Bedürfnisse von Frauen und Männern systematisch berücksichtigt werden. Es wird ausdrücklich darauf geachtet, Maßnahmen so zu gestalten, dass sie die Gleichstellung der Geschlechter fördern.<br /><br />ZARA möchte LGBTIQ Anliegen als Querschnittsmaterie betrachtet und versucht zu gewährleisten, dass diese in allen geeigneten Aktivitäten und Programmen Berücksichtigung finden.'
+          'ZARA bekennt sich im Sinne von Gender Mainstreaming zur Gleichstellung von Frauen*, Männern*, Inter* und Trans* Personen. Dies bedeutet, dass bei der Organisation, Konzeption, Umsetzung sowie bei der Evaluierung aller Maßnahmen die unterschiedlichen Bedingungen, Situationen und Bedürfnisse von Personen aller Geschlechtersystematisch berücksichtigt werden. Es wird ausdrücklich darauf geachtet, Maßnahmen so zu gestalten, dass sie die Gleichstellung der Geschlechter fördern.<br><br>ZARA möchte LGBTIQ Anliegen als Querschnittsmaterie betrachtet und versucht zu gewährleisten, dass diese in allen geeigneten Aktivitäten und Programmen Berücksichtigung finden.<br><br>Wir, von ZARA verwenden Gender- und diversitätsgerechte Sprache, weil wireinen sensiblen Umgang mit Sprache als wichtig und wertvoll erachten.Mit dem * (Sternchen) nach Gender-"Kategorien" bzw. zur Verfeinerung von Fließtexten wollen wir sichergehen, dass alle* Personen miteinbezogen und wahrgenommen werden.'
       }
     ]
   },
@@ -139,9 +139,9 @@ export const infoData3 = {
       },
       {
         color: 'white',
-        title: 'V. Mainstreaming',
+        title: 'V. Gender* Mainstreaming',
         text:
-          'ZARA bekennt sich im Sinne von Gender Mainstreaming zur Gleichstellung von Frauen und Männern. Dies bedeutet, dass bei der Organisation, Konzeption, Umsetzung sowie bei der Evaluierung aller Maßnahmen die unterschiedlichen Bedingungen, Situationen und Bedürfnisse von Frauen und Männern systematisch berücksichtigt werden. Es wird ausdrücklich darauf geachtet, Maßnahmen so zu gestalten, dass sie die Gleichstellung der Geschlechter fördern.<br /><br />ZARA möchte LGBTIQ Anliegen als Querschnittsmaterie betrachtet und versucht zu gewährleisten, dass diese in allen geeigneten Aktivitäten und Programmen Berücksichtigung finden.'
+          'ZARA bekennt sich im Sinne von Gender Mainstreaming zur Gleichstellung von Frauen*, Männern*, Inter* und Trans* Personen. Dies bedeutet, dass bei der Organisation, Konzeption, Umsetzung sowie bei der Evaluierung aller Maßnahmen die unterschiedlichen Bedingungen, Situationen und Bedürfnisse von Personen aller Geschlechtersystematisch berücksichtigt werden. Es wird ausdrücklich darauf geachtet, Maßnahmen so zu gestalten, dass sie die Gleichstellung der Geschlechter fördern.<br><br>ZARA möchte LGBTIQ Anliegen als Querschnittsmaterie betrachtet und versucht zu gewährleisten, dass diese in allen geeigneten Aktivitäten und Programmen Berücksichtigung finden.<br><br>Wir, von ZARA verwenden Gender- und diversitätsgerechte Sprache, weil wireinen sensiblen Umgang mit Sprache als wichtig und wertvoll erachten.Mit dem * (Sternchen) nach Gender-"Kategorien" bzw. zur Verfeinerung von Fließtexten wollen wir sichergehen, dass alle* Personen miteinbezogen und wahrgenommen werden.'
       }
     ]
   }

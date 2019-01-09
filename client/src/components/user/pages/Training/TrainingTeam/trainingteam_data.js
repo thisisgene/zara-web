@@ -149,13 +149,13 @@ export const bottomData = [
   {
     de: {
       title: 'Büroassistentin',
-      text: 'Alice Golub',
+      text: 'Alice Golob',
       textIsLink: true,
       textLink: 'ueber_ZARA/wer_wir_sind/team/#training'
     },
     en: {
       title: 'Büroassistentin',
-      text: 'Alice Golub',
+      text: 'Alice Golob',
       textIsLink: true,
       textLink: 'ueber_ZARA/wer_wir_sind/team/#training'
     }

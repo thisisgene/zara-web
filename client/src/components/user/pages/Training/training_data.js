@@ -2,12 +2,13 @@ export const heroData = {
   image: '01-zara_training-logo.png',
   imageSide: 'left',
   de: {
-    title: 'ZARA Training GmbH:<br />Kompetenz für gleiche Chancen',
+    title:
+      'ZARA Training gemeinnützige GmbH:<br />Kompetenz für gleiche Chancen',
     text:
       'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.'
   },
   en: {
-    title: 'ZARA Training GmbH: Kompetenz für gleiche Chancen',
+    title: 'ZARA Training gemeinnützige GmbH: Kompetenz für gleiche Chancen',
     text:
       'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.'
   }

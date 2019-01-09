@@ -54,40 +54,14 @@ export const glossarData = [
 
   {
     de: {
-      title: 'Bezirksverwaltungsbehörde (BVB)',
-      text:
-        'Die Bezirksverwaltungsbehörden sind grundsätzlich die Bezirkshauptmannschaften oder das Magistrat (in Städten mit eigenem Statut – in Wien übernehmen die einzelnen Magistratischen Bezirksämter diese Aufgabe), manche BVB-Agenden werden auch von den Landespolizeidirektionen übernommen, soweit der Sachverhalt in deren örtlichen Wirkungsbereich fällt. Die Bezirksverwaltungsbehörden sind generell zur Ahndung von Verwaltungsübertretungen in erster Instanz zuständig.'
-    },
-    en: {
-      title: 'Bezirksverwaltungsbehörde (BVB)',
-      text:
-        'Die Bezirksverwaltungsbehörden sind grundsätzlich die Bezirkshauptmannschaften oder das Magistrat (in Städten mit eigenem Statut – in Wien übernehmen die einzelnen Magistratischen Bezirksämter diese Aufgabe), manche BVB-Agenden werden auch von den Landespolizeidirektionen übernommen, soweit der Sachverhalt in deren örtlichen Wirkungsbereich fällt. Die Bezirksverwaltungsbehörden sind generell zur Ahndung von Verwaltungsübertretungen in erster Instanz zuständig.'
-    }
-  },
-
-  {
-    de: {
-      title: 'Bundesamt für Verfassungsschutz und Terrorismusbekämpfung (BVT)',
-      text:
-        'Das Bundesamt für Verfassungsschutz und Terrorismusbekämpfung ist eine im Bundesministerium für Inneres angesiedelte Sicherheitsbehörde, der unter anderem die Bekämpfung extremistischer und terroristischer Phänomene obliegt. Das Bundesamt und die ihm unterstehenden Landesämter beobachten daher auch die rechtsextreme Szene in Österreich und ermitteln bei Verstößen gegen das Verbotsgesetz durch Wiederbetätigung im nationalsozialistischen Sinn. Bei der vom BVT betriebenen Meldestelle für NS-Wiederbetätigung können Beiträge im Internet mit neonazistischen, rassistischen und antisemitischen Inhalten gemeldet werden.'
-    },
-    en: {
-      title: 'Bundesamt für Verfassungsschutz und Terrorismusbekämpfung (BVT)',
-      text:
-        'Das Bundesamt für Verfassungsschutz und Terrorismusbekämpfung ist eine im Bundesministerium für Inneres angesiedelte Sicherheitsbehörde, der unter anderem die Bekämpfung extremistischer und terroristischer Phänomene obliegt. Das Bundesamt und die ihm unterstehenden Landesämter beobachten daher auch die rechtsextreme Szene in Österreich und ermitteln bei Verstößen gegen das Verbotsgesetz durch Wiederbetätigung im nationalsozialistischen Sinn. Bei der vom BVT betriebenen Meldestelle für NS-Wiederbetätigung können Beiträge im Internet mit neonazistischen, rassistischen und antisemitischen Inhalten gemeldet werden.'
-    }
-  },
-
-  {
-    de: {
       title: 'cyber hate',
       text:
-        'Der Begriff cyber hate bezeichnet die Verbreitung von beleidigenden, diskriminierenden, verhetzenden und bedrohenden Inhalten im Internet. Zu diesem Zweck werden neben E-Mails und Websites in letzter Zeit vermehrt soziale Medien missbraucht.'
+        'Der Begriff cyber hate bezeichnet die Verbreitung von beleidigenden, diskriminierenden, verhetzenden und bedrohenden Inhalten im Internet. Zu diesem Zweck werden neben E-Mails und etwaigen Websites in erheblichem Ausmaß soziale Medien missbraucht.'
     },
     en: {
       title: 'cyber hate',
       text:
-        'Der Begriff cyber hate bezeichnet die Verbreitung von beleidigenden, diskriminierenden, verhetzenden und bedrohenden Inhalten im Internet. Zu diesem Zweck werden neben E-Mails und Websites in letzter Zeit vermehrt soziale Medien missbraucht.'
+        'Der Begriff cyber hate bezeichnet die Verbreitung von beleidigenden, diskriminierenden, verhetzenden und bedrohenden Inhalten im Internet. Zu diesem Zweck werden neben E-Mails und etwaigen Websites in erheblichem Ausmaß soziale Medien missbraucht.'
     }
   },
 
@@ -181,32 +155,6 @@ export const glossarData = [
       title: 'hate speech',
       text:
         'Hate speech bezeichnet Äußerungen, die zu Hass anstiften, verhetzend oder für bestimmte Gruppen verletzend sind. Je nach konkretem Inhalt und der Rechtslage des jeweiligen Landes können solche Äußerungen auch strafrechtlich relevant sein.'
-    }
-  },
-
-  {
-    de: {
-      title: 'Landesämter für Verfassungsschutz',
-      text:
-        'Die Landesämter für Verfassungsschutz unterstehen dem Bundesamt für Verfassungsschutz und Terrorismusbekämpfung (BVT). '
-    },
-    en: {
-      title: 'Landesämter für Verfassungsschutz',
-      text:
-        'Die Landesämter für Verfassungsschutz unterstehen dem Bundesamt für Verfassungsschutz und Terrorismusbekämpfung (BVT). '
-    }
-  },
-
-  {
-    de: {
-      title: 'Landesverwaltungsgerichte (LVwG)',
-      text:
-        'Durch die Verwaltungsgerichtsbarkeits-Novelle 2012 wurde die Verwaltungsgerichtsbarkeit in Österreich umfassend reformiert. Mit Tätigkeitsbeginn 2014 wurde eine zweistufige Verwaltungsgerichtsbarkeit mit zwei Verwaltungsgerichten des Bundes und neun Landesverwaltungsgerichten geschaffen. Die Unabhängigen Verwaltungssenate (UVS) wurden aufgelöst und ihr Tätigkeitsbereich den neu geschaffenen Verwaltungsgerichten übertragen. Die Gerichte dienen als Beschwerdeinstanzen in Verwaltungsangelegenheiten, und zwar sowohl in Verwaltungsstrafsachen als auch in Administrativangelegenheiten.'
-    },
-    en: {
-      title: 'Landesverwaltungsgerichte (LVwG)',
-      text:
-        'Durch die Verwaltungsgerichtsbarkeits-Novelle 2012 wurde die Verwaltungsgerichtsbarkeit in Österreich umfassend reformiert. Mit Tätigkeitsbeginn 2014 wurde eine zweistufige Verwaltungsgerichtsbarkeit mit zwei Verwaltungsgerichten des Bundes und neun Landesverwaltungsgerichten geschaffen. Die Unabhängigen Verwaltungssenate (UVS) wurden aufgelöst und ihr Tätigkeitsbereich den neu geschaffenen Verwaltungsgerichten übertragen. Die Gerichte dienen als Beschwerdeinstanzen in Verwaltungsangelegenheiten, und zwar sowohl in Verwaltungsstrafsachen als auch in Administrativangelegenheiten.'
     }
   },
 
@@ -383,12 +331,12 @@ export const glossarData = [
     de: {
       title: 'Wiener Pflege-, Patientinnen- und Patientenanwaltschaft (WPPA)',
       text:
-        'Die WPPA bietet Information und Beratung zu verschiedenen Rechtsfragen von PatientInnen sowie BewohnerInnen von Pflegeeinrichtungen in Wien. Sie unterstützt kostenlos bei Beschwerden, vermittelt bei Konflikten im Gesundheits- und Pflegebereich und vertritt außergerichtlich bei Behandlungsfehlern.'
+        'Die WPPA bietet Information und Beratung zu verschiedenen Rechtsfragen von Patient*innen sowie Bewohner*innen von Pflegeeinrichtungen in Wien. Sie unterstützt kostenlos bei Beschwerden, vermittelt bei Konflikten im Gesundheits- und Pflegebereich und vertritt außergerichtlich bei Behandlungsfehlern.'
     },
     en: {
       title: 'Wiener Pflege-, Patientinnen- und Patientenanwaltschaft (WPPA)',
       text:
-        'Die WPPA bietet Information und Beratung zu verschiedenen Rechtsfragen von PatientInnen sowie BewohnerInnen von Pflegeeinrichtungen in Wien. Sie unterstützt kostenlos bei Beschwerden, vermittelt bei Konflikten im Gesundheits- und Pflegebereich und vertritt außergerichtlich bei Behandlungsfehlern.'
+        'Die WPPA bietet Information und Beratung zu verschiedenen Rechtsfragen von Patient*innen sowie Bewohner*innen von Pflegeeinrichtungen in Wien. Sie unterstützt kostenlos bei Beschwerden, vermittelt bei Konflikten im Gesundheits- und Pflegebereich und vertritt außergerichtlich bei Behandlungsfehlern.'
     }
   },
 

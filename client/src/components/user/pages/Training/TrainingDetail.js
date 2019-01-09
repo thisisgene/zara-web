@@ -57,7 +57,7 @@ class TrainingDetail extends Component {
       <div>
         {training && lang && (
           <div className={styles['training-detail']}>
-            <HeroUnit data={training} lang={lang} />
+            <HeroUnit special="narrow" data={training} lang={lang} />
             <OneLineAlert content={oneLineAlertDetail} lang={lang} />
             <div
               className={styles['training-detail--text']}

@@ -85,7 +85,7 @@ const menuItems = [
           },
           {
             name: 'Was Wir tun können',
-            link: 'waswirtunkoennen',
+            link: 'waswirdanntun',
             id: '1.2.2'
           },
           {
@@ -106,16 +106,16 @@ const menuItems = [
       de: {
         title: 'Kontakt Training',
         address:
-          'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
+          'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'training@zara.or.at'
+        email: 'info@zara-training.at'
       },
       en: {
         title: 'Kontakt Training',
         address:
-          'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
+          'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (1) 929 13 99',
-        email: 'training@zara.or.at'
+        email: 'info@zara-training.at'
       }
     },
     subMenuList: [

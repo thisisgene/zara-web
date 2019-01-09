@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
 import {
-  wasSieTunKoennenHeroData,
+  wasWirTunKoennenHeroData,
   wasWirTunKoennenInfoBox1,
   wasWirTunKoennenInfoBox2,
   wasWirTunKoennenCardGridObject
@@ -22,9 +22,9 @@ class WasWirTunKoennen extends Component {
     }
     return (
       <div>
-        {lang && wasSieTunKoennenHeroData && (
+        {lang && wasWirTunKoennenHeroData && (
           <div>
-            <HeroUnit data={wasSieTunKoennenHeroData} lang={lang} />
+            <HeroUnit data={wasWirTunKoennenHeroData} lang={lang} />
             <InfoBoxObject infoBox={wasWirTunKoennenInfoBox1} lang={lang} />
             <InfoBoxObject infoBox={wasWirTunKoennenInfoBox2} lang={lang} />
             <CardCollectionGridObject

@@ -3,14 +3,15 @@ export const heroData = {
   imageSide: 'left',
   de: {
     title:
-      'Mit Zivilcourage gemeinsam Rassismus, Hass und Hetze im Netz stoppen',
+      'Mit Zivilcourage gemeinsam Rassismus sowie Hass und Hetze im Netz entgegentreten!',
     text:
       'Werden Sie ein*e  ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam  aktiv zu werden. Hier können Sie mehr über zivilcouragiertes Auftreten erfahren, sogenannte Counter-Narratives (Gegenmaßnahmen) ausprobieren, Informationen über unterschiedliche Initiativen erhalten und herausfrinden, wie Sie in Sozialen Medien Hass und Hetze melden können. Werden Sie Teil einer tatkräftigen Community!'
   },
   en: {
-    title: 'ZARA Training GmbH: Kompetenz für gleiche Chancen',
+    title:
+      'Mit Zivilcourage gemeinsam Rassismus sowie Hass und Hetze im Netz entgegentreten!',
     text:
-      'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.'
+      'Werden Sie ein*e  ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam  aktiv zu werden. Hier können Sie mehr über zivilcouragiertes Auftreten erfahren, sogenannte Counter-Narratives (Gegenmaßnahmen) ausprobieren, Informationen über unterschiedliche Initiativen erhalten und herausfrinden, wie Sie in Sozialen Medien Hass und Hetze melden können. Werden Sie Teil einer tatkräftigen Community!'
   }
 }
 
@@ -47,7 +48,7 @@ export const infoObj = {
       {
         type: 'cta',
         text: 'ZARA TRAINING Zivilcourage Workshop',
-        link: 'training/aeFErf2'
+        link: 'training/detail/aeFErf2'
       }
     ],
     cards: [
@@ -69,12 +70,12 @@ export const infoObj = {
       },
       {
         color: 'default',
-        title: 'Hasspostings melden',
+        title: 'Warum Hasspostings melden',
         text:
           'Sie stoßen auf hasserfüllte Beiträge auf unterschiedlichen online Plattformen oder Social Media oder Sie werden sogar selbst online beschimpft, beleidigt, aufgrund Ihres So-Seins angegriffen oder diskriminiert? Hass im Netz ist ein vergleichbar neues Phänomen, das noch nicht von allen ernst genommen wird. ABER das Internet ist kein rechtsfreier Raum. Social Media Plattformen und IT Unternehmen haben zudem Nutzungsbestimmungen, die gewisse Inhalte verbieten und solche Inhalte kann man direkt melden! Melden Sie am besten selber und leiten Sie die Meldung auch an uns weiter! Denn wir dokumentieren die Meldungen auch systematisch. Wir haben Videos gemacht, die Ihnen zeigen, wie das geht. Zeigen Sie auf, was weh tut und andere gefährdet!',
 
         link: 'beratung/melden/hassimnetz',
-        linkText: 'Hasspostings melden'
+        linkText: 'Warum Hasspostings melden'
       }
     ]
   },
@@ -145,40 +146,29 @@ export const cardGridObject = {
         image: 'mixer_wide.jpg',
         text:
           'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit setzen wir von ZARA uns für eine rassismusfreie Gesellschaft und einen respektvollen Umgang miteinander ein. Mit u.a. unseren Beratungsleistungen wollen wir Betroffenen den Rücken stärken und auf strukturelle Mängel hinweisen. Mit Ihrer Spende ermöglichen Sie, dass wir unsere jahrelange Expertise und unser Engagement in unseren Arbeitsbereichen und Schwerpunkten einsetzen und weiter ausbauen können!',
-        link: 'test'
+        link: 'beratung'
       }
     ]
   },
   en: {
-    title: 'More Knowledge',
+    count: 'two',
     cards: [
       {
-        size: 'default',
+        size: 'large',
         type: 'imageCard',
-        image: 'scale.png',
-        title: 'Kenne Deine Rechte',
+        image: 'scales.png',
+        title: 'Werden Sie ein*e ZARAista!',
+        text:
+          'Anti-Rassismus-Arbeit braucht engagierte Menschen – und davon möglichst viele. Nutzen Sie die Möglichkeit, sich mit anderen aktiven Menschen auszutauschen, die daran interessiert sind, einen positiven Einfluss auf die Gesellschaft zu haben. Werden Sie Teil einer tatkräftigen Community!',
         link: 'beratung/lassunswastun/kennedeinerechte'
       },
       {
-        size: 'default',
+        size: 'large',
         type: 'imageCard',
-        image: 'books.png',
-        text: 'Publikationen',
-        link: 'test'
-      },
-      {
-        size: 'default',
-        type: 'imageCard',
-        image: 'qna.png',
-        text: 'FAQs',
-        link: 'wissen/faq'
-      },
-      {
-        size: 'default',
-        type: 'imageCard',
-        image: 'list.png',
-        text: 'Presse',
-        link: 'wissen/faq'
+        image: 'mixer_wide.jpg',
+        text:
+          'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit setzen wir von ZARA uns für eine rassismusfreie Gesellschaft und einen respektvollen Umgang miteinander ein. Mit u.a. unseren Beratungsleistungen wollen wir Betroffenen den Rücken stärken und auf strukturelle Mängel hinweisen. Mit Ihrer Spende ermöglichen Sie, dass wir unsere jahrelange Expertise und unser Engagement in unseren Arbeitsbereichen und Schwerpunkten einsetzen und weiter ausbauen können!',
+        link: 'beratung'
       }
     ]
   }

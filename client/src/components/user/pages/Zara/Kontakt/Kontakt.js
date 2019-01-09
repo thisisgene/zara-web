@@ -23,18 +23,22 @@ class Kontakt extends Component {
           {lang &&
             menuItems &&
             menuItems.map((item, index) => (
-              <div
-                id={item.link}
-                key={index}
-                className={styles['contact-item']}
-              >
-                <div className={styles['contact-item--inner']}>
-                  <ContactBox
-                    content={item.contact}
-                    contactIconLinks={item.contactIconLinks}
-                    lang={lang}
-                  />
-                </div>
+              <div>
+                {item.id !== '3' && (
+                  <div
+                    id={item.link}
+                    key={index}
+                    className={styles['contact-item']}
+                  >
+                    <div className={styles['contact-item--inner']}>
+                      <ContactBox
+                        content={item.contact}
+                        contactIconLinks={item.contactIconLinks}
+                        lang={lang}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
         </div>
