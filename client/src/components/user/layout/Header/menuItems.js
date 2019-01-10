@@ -107,14 +107,14 @@ const menuItems = [
         title: 'Kontakt Training',
         address:
           'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (1) 929 13 99 19',
         email: 'info@zara-training.at'
       },
       en: {
         title: 'Kontakt Training',
         address:
           'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (1) 929 13 99 19',
         email: 'info@zara-training.at'
       }
     },

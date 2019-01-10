@@ -75,7 +75,7 @@ export const networkData = [
     }
   },
   {
-    // image: 'network/logo-civic.png',
+    image: 'network/LOGO_V_START.jpg',
     de: {
       title:
         'Victim Support Through Awareness-Raising and neTworking <br>(V-Start)',

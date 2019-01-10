@@ -213,12 +213,12 @@ export const wasSieTunKoennenHeroData = {
   de: {
     title: 'Werden Sie aktiv',
     text:
-      'Die ZARA Beratungsstellen dokumentieren rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing und ergreifen weitere Maßnahmen. Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln wird Betroffenen der Rücken gestärkt und unterschiedliche Räume können verteidigt und zurückgewonnen werden.'
+      'Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing an die ZARA Beratungsstellen. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln stärken Sie Betroffenen den Rücken.'
   },
   en: {
     title: 'Werden Sie aktiv',
     text:
-      'Die ZARA Beratungsstellen dokumentieren rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing und ergreifen weitere Maßnahmen. Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln wird Betroffenen der Rücken gestärkt und unterschiedliche Räume können verteidigt und zurückgewonnen werden.'
+      'Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cybermobbing an die ZARA Beratungsstellen. Bei Bedarf stehen Ihnen die psychosozial und juristisch geschulten Berater*innen gerne kostenlos zur Seite. Sowohl online als auch offline ist Eingreifen gefragt. Durch zivilcouragiertes Handeln stärken Sie Betroffenen den Rücken.'
   }
 }
 
@@ -503,20 +503,20 @@ export const wasWirTunKoennenCardGridObject = {
         type: 'imageCard',
         image: 'scales.png',
         title: 'Was Sie Tun Können',
-        link: 'beratung/lassunswastun/wassietunkoennen'
+        link: 'beratung/wassietunkoennen'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Mitmischen',
+        title: 'Mitmischen',
         link: 'mitmischen'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'faq-bubble.png',
-        text: 'Wissen',
+        title: 'Wissen',
         link: 'wissen'
       }
     ]
@@ -529,20 +529,20 @@ export const wasWirTunKoennenCardGridObject = {
         type: 'imageCard',
         image: 'scales.png',
         title: 'Was Sie Tun Können',
-        link: 'beratung/lassunswastun/wassietunkoennen'
+        link: 'beratung/wassietunkoennen'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Mitmischen',
+        title: 'Mitmischen',
         link: 'mitmischen'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'faq-bubble.png',
-        text: 'Wissen',
+        title: 'Wissen',
         link: 'wissen'
       }
     ]

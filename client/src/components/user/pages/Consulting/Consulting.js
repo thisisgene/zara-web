@@ -14,12 +14,12 @@ const heroData = {
   de: {
     title: 'Wir stehen Ihnen bei!',
     text:
-      'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen. Die Beratung ist kostenlos.'
+      'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus und Hass im Netz rechtliche Unterstützung. Das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen. Die Beratung ist kostenlos.'
   },
   en: {
     title: 'We are on your side',
     text:
-      'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen. Die Beratung ist kostenlos.'
+      'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus und Hass im Netz rechtliche Unterstützung. Das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen. Die Beratung ist kostenlos.'
   }
 }
 
@@ -29,7 +29,7 @@ const infoObj_default = {
   de: {
     title: 'Melden',
     text:
-      'Möchten Sie was zu Rassismus oder zu Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Ihre Meldung wird/Alle Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit geben können wir Sie darüber informieren  welche Aktionen wir eingeleitet haben. Gerne beraten wir Sie auch bei weiteren rechtlichen Schritten.',
+      'Möchten Sie was zu Rassismus oder zu Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Alle Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit geben können wir Sie darüber informieren, welche Aktionen wir eingeleitet haben. Gerne beraten wir Sie auch bei weiteren rechtlichen Schritten.',
     cards: [
       {
         color: 'white',
@@ -56,7 +56,7 @@ const infoObj_default = {
         title: 'Hass im Netz',
         titleImage: 'Beratungsstelle_GHiN_Logo.jpg',
         text:
-          'Hass im Netz umfasst verhetzende oder hassmotivierte Inhalte und Postings auf Online Plattformen und sozialen Medien die gegen bestimmte Gruppen z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
+          'Hass im Netz umfasst verhetzende oder hassmotivierte Inhalte und Postings auf Online Plattformen und sozialen Medien die gegen bestimmte Gruppen, z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
         linkType: 'button',
         multiButton: true,
         buttons: [
@@ -77,7 +77,7 @@ const infoObj_default = {
   en: {
     title: 'Melden',
     text:
-      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden und/oder schriftlich beraten werden? Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit anbieten, können wir Ihnen sagen welche Aktionen wir eingeleitet haben. Wir Beraten Sie auch gerne bei weiteren rechtlichen oder anderen Schritten. ',
+      'Möchten Sie was zu Rassismus oder zu Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Alle Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit geben können wir Sie darüber informieren, welche Aktionen wir eingeleitet haben. Gerne beraten wir Sie auch bei weiteren rechtlichen Schritten.',
     cards: [
       {
         color: 'white',
@@ -103,7 +103,7 @@ const infoObj_default = {
         color: 'white',
         title: 'Hass im Netz',
         text:
-          'Verhetzende und hassmotivierte Inhalte bzw. Postings auf Online Plattformen und in sozialen Medien können uns auch gemeldet werden, wenn sie gegen bestimmte Gruppen oder Einzelpersonen, z.B. aufgrund der sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
+          'Hass im Netz umfasst verhetzende oder hassmotivierte Inhalte und Postings auf Online Plattformen und sozialen Medien die gegen bestimmte Gruppen, z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
         linkType: 'button',
         multiButton: true,
         buttons: [

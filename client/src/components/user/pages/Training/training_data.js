@@ -19,7 +19,7 @@ export const oneLineAlert = {
   de: {
     title: 'Termine & Trainings-Buchung',
     text:
-      'Bitte kontaktieren sie uns um gemeinsam einen passenden Traingings-Termin zu vereinbaren. ',
+      'Bitte kontaktieren Sie uns um gemeinsam einen passenden Traingings-Termin zu vereinbaren. ',
     button: {
       text: 'Anfragen',
       type: 'default',
@@ -29,7 +29,7 @@ export const oneLineAlert = {
   en: {
     title: 'Termine & Trainings-Buchung',
     text:
-      'Bitte kontaktieren sie uns um gemeinsam einen passenden Traingings-Termin zu vereinbaren. ',
+      'Bitte kontaktieren Sie uns um gemeinsam einen passenden Traingings-Termin zu vereinbaren. ',
     button: {
       text: 'Anfragen',
       type: 'default',
@@ -72,6 +72,9 @@ export const trainingBoxData = {
     privacyPolicyText: 'Datenschutzerklärung ZARA Training',
     privacyPolicyLink:
       'https://zara-training.at/wp-content/uploads/Datenschutzerkl%C3%A4rung-von-ZARA-Training-Mai-2018.pdf',
+    agbText: 'ZARA Training AGBs',
+    agbLink:
+      'https://zara-training.at/wp-content/uploads/AGB-ZARA-Training.pdf',
     categories: [
       {
         index: '1',
@@ -253,7 +256,44 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen: Wie treten radikale/rechtsextreme/rassistische Gruppen im Internet auf und woran erkenne ich sie? Welche Codes werden verwendet und wie kann ich selbst aktiv dagegen vorgehen? Was ist Cybermobbing, und was kann ich dagegen tun?<br>Die Schüler*innen haben die Möglichkeit, durch Eigenrecherche und Online-Übungen die Tragweite und Radikalität der Themen im Netz selbst zu erleben. Ziel des Workshops ist es, Handlungskompetenzen zu vermitteln und der ungeschützten Konfrontation mit rassistischen Inhalten und Hass-Botschaften im Internet entgegenwirken.'
+          'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen:',
+        list1: [
+          {
+            text: 'Wie begegne ich Angriffen und Aggression im Netz?'
+          },
+          {
+            text:
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+          },
+          { text: 'Wie erkenne ich Fake News?' },
+          { text: 'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen?' },
+          {
+            text: 'Wie ist die rechtliche Situation in Österreich?'
+          },
+          {
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+          },
+          {
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
+          }
+        ],
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+            },
+            {
+              text:
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+            },
+            {
+              text:
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
+            }
+          ]
+        }
       },
       en: {
         title: 'Zivilcourage on- & offline',
@@ -262,7 +302,44 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen: Wie treten radikale/rechtsextreme/rassistische Gruppen im Internet auf und woran erkenne ich sie? Welche Codes werden verwendet und wie kann ich selbst aktiv dagegen vorgehen? Was ist Cybermobbing, und was kann ich dagegen tun?<br>Die Schüler*innen haben die Möglichkeit, durch Eigenrecherche und Online-Übungen die Tragweite und Radikalität der Themen im Netz selbst zu erleben. Ziel des Workshops ist es, Handlungskompetenzen zu vermitteln und der ungeschützten Konfrontation mit rassistischen Inhalten und Hass-Botschaften im Internet entgegenwirken.'
+          'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen:',
+        list1: [
+          {
+            text: 'Wie begegne ich Angriffen und Aggression im Netz?'
+          },
+          {
+            text:
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+          },
+          { text: 'Wie erkenne ich Fake News?' },
+          { text: 'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen?' },
+          {
+            text: 'Wie ist die rechtliche Situation in Österreich?'
+          },
+          {
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+          },
+          {
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
+          }
+        ],
+        goals: {
+          title: 'Ziele',
+          list: [
+            {
+              text:
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+            },
+            {
+              text:
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+            },
+            {
+              text:
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
+            }
+          ]
+        }
       }
     },
     {

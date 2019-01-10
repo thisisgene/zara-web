@@ -36,6 +36,13 @@ export default class TrainingBox extends Component {
             >
               {content[lang].privacyPolicyText}
             </a>
+            <a
+              className={styles['training-box--agb-link']}
+              href={content[lang].agbLink}
+              target="blank"
+            >
+              {content[lang].agbText}
+            </a>
             <div className={styles['training-box--categories']}>
               {content[lang].categories &&
                 content[lang].categories.map((cat, index) => (
