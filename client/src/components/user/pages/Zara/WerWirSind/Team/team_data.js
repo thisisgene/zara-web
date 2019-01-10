@@ -5,12 +5,12 @@ export const teamData = {
     de: {
       title: 'Team',
       text:
-        'Das ZARA Team besteht aus engagierten Personen, die sich mit unterschiedlichen Schwerpunkten, der Bekämpfung von Rassismus und Hass im Netz verschrieben haben. Der gesamte ZARA Vorstand widmet sich dieser Arbeit ehrenamtlich.'
+        'Das ZARA Team besteht aus Expert*innen mit unterschiedlichen Schwerpunkten sowie engagierten Einzelpersonen, die sich der Bekämpfung von Rassismus und Hass im Netz verschrieben haben. Der gesamte ZARA Vorstand widmet sich dieser Arbeit ehrenamtlich.'
     },
     en: {
       title: 'Team',
       text:
-        'Das ZARA Team besteht aus engagierten Personen, die sich mit unterschiedlichen Schwerpunkten, der Bekämpfung von Rassismus und Hass im Netz verschrieben haben. Der gesamte ZARA Vorstand widmet sich dieser Arbeit ehrenamtlich.'
+        'Das ZARA Team besteht aus Expert*innen mit unterschiedlichen Schwerpunkten sowie engagierten Einzelpersonen, die sich der Bekämpfung von Rassismus und Hass im Netz verschrieben haben. Der gesamte ZARA Vorstand widmet sich dieser Arbeit ehrenamtlich.'
     }
   },
   teamMembers: {
@@ -85,7 +85,7 @@ export const teamData = {
       {
         image: 'Caroline Kerschbaumer_ZARA.jpg',
         field: 'beratung',
-        name: 'Mag.a Caroline Kerschbaumer, E.MA (Leitung)',
+        name: 'Mag.a Caroline Kerschbaumer, E.MA',
         text:
           'leitet die ZARA Beratungsstellen, ist langjährige ZARA Trainerin und die Datenschutzbeauftragte des Vereins. <br><br>Sie hat Rechtswissenschaften studiert und ist Absolventin des European Master for Human Rights and Democratisation. Seit vielen Jahren arbeitet sie im Menschenrechtsbereich, u.a. in einer Rechtsanwaltskanzlei, in Wissenschaft und Lehre, als Trainerin und in der präventiven Menschenrechtskontrolle der Volksanwaltschaft. <br><br><i>Gerne steht sie Ihnen mit Informationen über die Beratungsstellen zur Verfügung. Sie ist Ansprechpartnerin für Fragen zu Gleichbehandlung und Diskriminierung.</i>'
       },
@@ -94,7 +94,7 @@ export const teamData = {
         field: 'beratung',
         name: 'Mag. Lukas Gottschamel',
         text:
-          'arbeitet in den ZARA-Beratungsstellen und leitet den Fachbereich Rechtliches. Er informiert als versierter Jurist Betroffene und Zeug*innen über ihre Handlungsmöglichkeiten. <br><br> Er hat Rechtswissenschaften in Wien studiert und danach an der Universität Wien und in Projekten für die Parlamentsdirektion gearbeitet. Einige seiner Publikationen befassten sich mit gleichheitsrechtlichen Fragen im Zusammenhang mit der rechtlichen Elternschaft. <br><br>Bereits während des Studiums legte er einen Schwerpunkt auf Mediation und verfestigt die erworbenen Kompetenzen durch eine dahingehende Ausbildung.<i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, sind Sie bei ihm gut beraten.</i>'
+          'arbeitet in den ZARA-Beratungsstellen und leitet den Fachbereich Rechtliches. Er informiert als versierter Jurist Betroffene und Zeug*innen über ihre Handlungsmöglichkeiten. <br><br>Er hat Rechtswissenschaften in Wien studiert und danach an der Universität Wien und in Projekten für die Parlamentsdirektion gearbeitet. Einige seiner Publikationen befassten sich mit gleichheitsrechtlichen Fragen im Zusammenhang mit der rechtlichen Elternschaft. Bereits während des Studiums legte er einen Schwerpunkt auf Mediation und verfestigt die erworbenen Kompetenzen durch eine dahingehende Ausbildung.<br><br><i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, sind Sie bei ihm gut beraten.</i>'
       },
       {
         image: 'Dunia Khalil_ZARA.jpg',
@@ -108,14 +108,14 @@ export const teamData = {
         field: 'beratung',
         name: 'Felicitas Rachinger',
         text:
-          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br /><br />Sie studiert erfolgreich Rechtswissenschaften an der Universität Wien und spezialisiert sich dort unter anderem auf Grund- und Menschenrechte. Auf Grund ihres Interesses für Antidiskriminierungsrecht setzt sie sich gegen Rassismus ein.<i>Wenn Sie Opfer oder Zeug*in von rassistischen Vorfällen oder Online-Hass sind, bietet sie Ihnen kompetente Beratung.</i>'
+          ' ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br><br>Sie studiert erfolgreich Rechtswissenschaften an der Universität Wien und spezialisiert sich dort unter anderem auf Grund- und Menschenrechte. Auf Grund ihres Interesses für Antidiskriminierungsrecht setzt sie sich gegen Rassismus ein.<br><br><i>Wenn Sie Opfer oder Zeug*in von rassistischen Vorfällen oder Online-Hass sind, bietet sie Ihnen kompetente Beratung.</i>'
       },
       {
         image: 'Sophie Haidinger_ZARA.jpg',
         field: 'beratung',
         name: 'Mag.a Sophie Haidinger',
         text:
-          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br /><br />Sie hat Rechtswissenschaften an der Universität Wien studiert. Im Zuge ihres Studiums hat sie sich auf Grund- und Menschenrechte, Religionsrecht sowie auf Mediation spezialisiert. Durch ihre Tätigkeit als Anwaltsanwärterin konnte sie bereits Erfahrung in vielen verschiedenen rechtlichen Bereichen sammeln.<br />br /><i>Wenn Sie einen rassistischen Vorfall oder Hass im Netz beobachtet oder selbst miterlebt haben, zögern Sie nicht, sich an sie zu wenden.</i>'
+          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA. <br><br>Sie hat Rechtswissenschaften an der Universität Wien studiert. Im Zuge ihres Studiums hat sie sich auf Grund- und Menschenrechte, Religionsrecht sowie auf Mediation spezialisiert. Durch ihre Tätigkeit als Anwaltsanwärterin konnte sie bereits Erfahrung in vielen verschiedenen rechtlichen Bereichen sammeln.<br><br><i>Wenn Sie einen rassistischen Vorfall oder Hass im Netz beobachtet oder selbst miterlebt haben, zögern Sie nicht, sich an sie zu wenden.</i>'
       },
       {
         image: 'Isabell Bickel_ZARA.jpg',
@@ -144,7 +144,7 @@ export const teamData = {
         field: 'training',
         name: 'Dr.in Bianca Schönberger',
         text:
-          'Bianca Schönberger hat in Tübingen und Oxford Geschichte und Politik-wissenschaften studiert und anschließend viele Jahre für internationale und entwicklungspolitische Organisationen gearbeitet, u.a für das Entwicklunghilfeprogramm der UNO. Zudem erwarb sie als selbständige Beraterin umfangreiche Erfahrungen in EU-Projekten. Seit Februar 2014 ist sie Geschäftsführerin der neugegründeten GmbH.'
+          'Bianca Schönberger hat in Tübingen und Oxford Geschichte und Politikwissenschaften studiert und anschließend viele Jahre für internationale und entwicklungspolitische Organisationen gearbeitet, u.a für das Entwicklunghilfeprogramm der UNO. Zudem erwarb sie als selbständige Beraterin umfangreiche Erfahrungen in EU-Projekten. Seit Februar 2014 ist sie Geschäftsführerin der neugegründeten GmbH.'
       },
       {
         image: 'Alice Golob_ZARA.jpg',
@@ -155,6 +155,7 @@ export const teamData = {
           'Alice Golob unterstützt sein Juni 2018 die Geschäftsführung als Büroassistentin. Sie studiert Rechtswissenschaften an der Universität Wien und hat parallel bereits in diversen Praktika in den Bereichen Antirassismusarbeit, Flüchtlingshilfe und Minderheitenschutz erste Erfahrung gesammelt.'
       }
     ],
+
     en: [
       {
         field: 'vorstand',
@@ -205,7 +206,7 @@ export const teamData = {
       {
         image: 'Caroline Kerschbaumer_ZARA.jpg',
         field: 'beratung',
-        name: 'Mag.a Caroline Kerschbaumer, E.MA (Leitung)',
+        name: 'Mag.a Caroline Kerschbaumer, E.MA',
         text:
           'leitet die ZARA Beratungsstellen, ist langjährige ZARA Trainerin und die Datenschutzbeauftragte des Vereins. <br><br>Sie hat Rechtswissenschaften studiert und ist Absolventin des European Master for Human Rights and Democratisation. Seit vielen Jahren arbeitet sie im Menschenrechtsbereich, u.a. in einer Rechtsanwaltskanzlei, in Wissenschaft und Lehre, als Trainerin und in der präventiven Menschenrechtskontrolle der Volksanwaltschaft. <br><br><i>Gerne steht sie Ihnen mit Informationen über die Beratungsstellen zur Verfügung. Sie ist Ansprechpartnerin für Fragen zu Gleichbehandlung und Diskriminierung.</i>'
       },
@@ -232,4 +233,9 @@ export const teamData = {
       }
     ]
   }
+}
+
+export const supporters = {
+  text:
+    'Unterstützer*innen seit 2018<br>ZARA wird seit jeher von vielen ehrenamtlich Engagierten begleitet und unterstützt. Wir können hier leider nicht alle Personen, die ZARA seit seiner Gründung unterstützt haben, nennen. Hier die Namen jener, die uns seit 2018 unterstützen. <br>Wir danken jedoch euch allen von ganzem Herzen - für Euer Engagement und Euren Einsatz!<br><br>Alice Golub (ehem. Volontärin)<br>Christoph Autenhuber (Web Konzeption)<br>Desiree Al-Mahayni (Monitoring-Volontariat)<br>Elisabeth Wanek (ehem. Volontärin)<br>Emanuel Donner (Web Development und Design)<br>Emily Zens (Volontärin)<br>Fabian Lang (Web Design & Grafik)<br>Felicitas Rachinger (ehem. Praktikantin)<br>Irene Krenn (Ehrenmitglied & langjähriger Unterstützerin)<br>Jakob Listabarth (Design- & Videounterstützung) <br>Lina Zierlinger (ehem. Volontärin)<br>Marion Guerrero (operative Unterstützung)<br>Meysara Majdoub (Monitorin-Volontariat)<br>Simon Schwaighofer (Design Koordination)<br>Johannes Zinner (Fotografie)<br>Ulrich Frey (Fotografie & Beratung)<br><br>An dieser Stelle möchten wir im Angesicht dessen, dass wir uns hier auf der ZARA Website befinden, dem Website-Team speziell danken!<br>Herzlichen Dank an Christoph Autengruber für die ehrenamtliche Konzeption dieser Website. Wir danken für die faszinierende Eigeninitiative, das Engagement, Feingefühl und Expertise!<br>Ohne ihn und seine Arbeit bei <a href="http://www.sidekick-ux.com">www.sidekick-ux.com</a> wäre dieses Projekt niemals möglich gewesen. <br>Zudem bedanken wir uns bei Emanuel Donner und Fabian Lang (Web Development und Web Design), die viel mehr Arbeitszeit eingebracht haben, als jemals vereinbart war und weil sie uns stets geduldig und unterstützend beiseite standen!'
 }

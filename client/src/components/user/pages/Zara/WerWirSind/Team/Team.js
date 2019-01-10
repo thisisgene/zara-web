@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
-import { teamData } from './team_data'
+import { teamData, supporters } from './team_data'
 
 import HeroUnit from '../../../../dashboard/HeroUnit/HeroUnit'
 import TeamMember from './TeamMember'
@@ -78,11 +78,10 @@ class Team extends Component {
               {lang && lang === 'de' ? (
                 <div>
                   <h1>Unterstützer*innen ab 2018</h1>
-                  <p>
-                    ZARA wird stets von vielen ehrenamtlichen Mitarbeiter*innen
-                    und Unterstützer*innen begleitet, die nicht alle auf dieser
-                    Seite genannt werden können.
-                  </p>
+                  <div
+                    style={{ marginBottom: '6rem' }}
+                    dangerouslySetInnerHTML={{ __html: supporters.text }}
+                  />
                 </div>
               ) : (
                 <div>

@@ -113,7 +113,7 @@ export const longText = {
       }
     ],
     text:
-      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hindurch (6 Monate oder länger) bei uns Praktikum zu machen.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
+      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Praktikum bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
   },
   de: {
     title: 'ZARA bietet:',
@@ -135,6 +135,6 @@ export const longText = {
       }
     ],
     text:
-      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hindurch (6 Monate oder länger) bei uns Praktikum zu machen.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
+      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Praktikum bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
   }
 }

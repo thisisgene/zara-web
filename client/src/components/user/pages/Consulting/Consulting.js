@@ -12,14 +12,14 @@ const heroData = {
   image: 'consulting.jpg',
   imageSide: 'left',
   de: {
-    title: 'Wir stehen Ihnen bei!',
+    title: 'Das Team der ZARA Beratungsstellen steht Ihnen bei!',
     text:
-      'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus und Hass im Netz rechtliche Unterstützung. Das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen. Die Beratung ist kostenlos.'
+      'In der Beratungsstelle erhalten jährlich über 2.000 Betroffene und Zeug*innen von Rassismus und Hass und Hetze im Netz rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
   },
   en: {
     title: 'We are on your side',
     text:
-      'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus und Hass im Netz rechtliche Unterstützung. Das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen. Die Beratung ist kostenlos.'
+      'In der Beratungsstelle erhalten jährlich über 2.000 Betroffene und Zeug*innen von Rassismus und Hass und Hetze im Netz rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
   }
 }
 
@@ -29,7 +29,7 @@ const infoObj_default = {
   de: {
     title: 'Melden',
     text:
-      'Möchten Sie was zu Rassismus oder zu Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Alle Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit geben können wir Sie darüber informieren, welche Aktionen wir eingeleitet haben. Gerne beraten wir Sie auch bei weiteren rechtlichen Schritten.',
+      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Ihre Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit anbieten, können wir Ihnen sagen welche Aktionen wir eingeleitet haben. Wir beraten Sie auch gerne bei weiteren rechtlichen oder anderen Schritten.',
     cards: [
       {
         color: 'white',
@@ -77,7 +77,7 @@ const infoObj_default = {
   en: {
     title: 'Melden',
     text:
-      'Möchten Sie was zu Rassismus oder zu Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Alle Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit geben können wir Sie darüber informieren, welche Aktionen wir eingeleitet haben. Gerne beraten wir Sie auch bei weiteren rechtlichen Schritten.',
+      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Ihre Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit anbieten, können wir Ihnen sagen welche Aktionen wir eingeleitet haben. Wir beraten Sie auch gerne bei weiteren rechtlichen oder anderen Schritten.',
     cards: [
       {
         color: 'white',

@@ -17,8 +17,8 @@ export const heroData = {
 export const oneLineAlert = {
   type: 'info',
   de: {
-    title: 'Hasspostings Melden',
-    text: 'Hier können Sie Hasspostings melden!',
+    title: 'Hass im Netz melden',
+    text: 'Hier können Sie Hass im Netz melden!',
     button: {
       text: 'Jetzt melden',
       type: 'default',
@@ -26,8 +26,8 @@ export const oneLineAlert = {
     }
   },
   en: {
-    title: 'Hasspostings Melden!',
-    text: 'Hier können Sie Hasspostings melden!',
+    title: 'Hass im Netz melden!',
+    text: 'Hier können Sie Hass im Netz melden!',
     button: {
       text: 'Jetzt melden',
       type: 'default',
@@ -81,8 +81,8 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'scales.png',
-        title: 'Hashtags',
-        link: 'mitmischen/hashtags'
+        title: 'Hass im Netz melden',
+        link: 'beratung/melden/hassimnetz'
       },
       {
         size: 'default',

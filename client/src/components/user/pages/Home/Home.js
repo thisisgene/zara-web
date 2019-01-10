@@ -99,7 +99,7 @@ const infoObj_default = {
         color: 'default',
         title: 'Kostenlose, persönliche Beratung',
         text:
-          'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
+          'In der Beratungsstelle erhalten jährlich über 2.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
         link: 'beratung',
         linkText: 'Mehr zu Beratung',
         listItems: [
@@ -160,7 +160,7 @@ const infoObj_default = {
         color: 'default',
         title: 'Kostenlose, persönliche Beratung',
         text:
-          'In der Beratungsstelle erhalten jährlich über 1.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
+          'In der Beratungsstelle erhalten jährlich über 2.000 Betroffene und Zeug*innen von Rassismus rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.',
         link: 'beratung',
         linkText: 'Mehr zu Beratung',
         listItems: [
@@ -491,7 +491,7 @@ const cardGridObject = {
 
 const mainInfo = {
   text:
-    'ZARA – Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen.',
+    'ZARA Zivilcourage und Anti-Rassismus-Arbeit wurde im Jahr 1999 mit dem Ziel gegründet, Zivilcourage und eine rassismusfreie Gesellschaft in Österreich zu fördern sowie alle Formen von Rassismus zu bekämpfen. Seit 2017 betreibt ZARA zudem die Beratungsstelle #GegenHassimNetz.',
   link: 'ueber_ZARA/was_wir_wollen/mission',
   linkText: 'Mehr zur Mission'
 }
@@ -501,7 +501,7 @@ const oneLineAlert = {
   icon: 'alert',
   de: {
     text:
-      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls geworden',
+      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
       text: 'Jetzt melden',
       type: 'alert',
@@ -510,7 +510,7 @@ const oneLineAlert = {
   },
   en: {
     text:
-      'Ich bin Betroffene oder Zeug*in eines rassistischen Vorfalls geworden',
+      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
       text: 'Jetzt melden',
       type: 'alert',

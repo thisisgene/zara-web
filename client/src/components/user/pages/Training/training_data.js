@@ -19,7 +19,7 @@ export const oneLineAlert = {
   de: {
     title: 'Termine & Trainings-Buchung',
     text:
-      'Bitte kontaktieren Sie uns um gemeinsam einen passenden Traingings-Termin zu vereinbaren. ',
+      'Bitte kontaktieren Sie uns, um gemeinsam einen passenden Trainings-Termin zu vereinbaren. ',
     button: {
       text: 'Anfragen',
       type: 'default',
@@ -29,7 +29,7 @@ export const oneLineAlert = {
   en: {
     title: 'Termine & Trainings-Buchung',
     text:
-      'Bitte kontaktieren Sie uns um gemeinsam einen passenden Traingings-Termin zu vereinbaren. ',
+      'Bitte kontaktieren Sie uns, um gemeinsam einen passenden Trainings-Termin zu vereinbaren. ',
     button: {
       text: 'Anfragen',
       type: 'default',
@@ -158,22 +158,22 @@ export const trainingItems = {
       de: {
         title: 'Vielfalt & Zivilcourage I',
         text:
-          'Schon für die kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
+          'Schon für die Kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
         demographic: 'Kinder von 6 bis 10 Jahren',
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.'
+          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten, Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.'
       },
       en: {
         title: 'Vielfalt & Zivilcourage I',
         text:
-          'Schon für die kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
+          'Schon für die Kleinsten - Unterschiede wertschätzen, sowie Teamfähigkeit und Selbstbehauptung stärken',
         demographic: 'Kinder von 6 bis 10 Jahren',
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.'
+          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten, Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.'
       }
     },
     {

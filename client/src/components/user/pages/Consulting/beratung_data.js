@@ -3,12 +3,12 @@ export const oneLineAlert = {
   de: {
     title: 'Persönliches Beratungsgespräch',
     text:
-      'Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (1) 929 13 99 – einen Termin.'
+      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (1) 929 13 99 – einen Termin.'
   },
   en: {
     title: 'Persönliches Beratungsgespräch',
     text:
-      'Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (1) 929 13 99 – einen Termin.'
+      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (1) 929 13 99 – einen Termin.'
   }
 }
 
@@ -16,12 +16,12 @@ export const heroDataBeratungRassismus = {
   de: {
     title: 'Wir stehen Ihnen bei!',
     text:
-      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder von Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.'
+      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.'
   },
   en: {
     title: 'Wir stehen Ihnen bei!',
     text:
-      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder von Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.'
+      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.'
   }
 }
 
@@ -90,12 +90,12 @@ export const heroDataHassImNetz = {
   image: 'Beratungsstelle_GHiN_Logo.jpg',
   imageSide: 'left',
   de: {
-    title: 'Unterstützung bei Hass im Netz',
+    title: 'Hass im Netz melden',
     text:
       'Unter Hass im Netz versteht ZARA hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen richten. Diese Inhalte beziehen sich häufig auf die ethnische Zugehörigkeit, die Hautfarbe, sexuelle Orientierung, das Geschlecht, die Religion, eine Behinderung oder auf das Alter. Oft erfüllen solche Inhalte einen rechtlichen Straftatbestand. ZARA arbeitet gegen legale sowie illegale Formen von Hass im Netz.'
   },
   en: {
-    title: 'Unterstützung bei Hass im Netz',
+    title: 'Hass im Netz melden',
     text:
       'Unter Hass im Netz versteht ZARA hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen richten. Diese Inhalte beziehen sich häufig auf die ethnische Zugehörigkeit, die Hautfarbe, sexuelle Orientierung, das Geschlecht, die Religion, eine Behinderung oder auf das Alter. Oft erfüllen solche Inhalte einen rechtlichen Straftatbestand. ZARA arbeitet gegen legale sowie illegale Formen von Hass im Netz.'
   }
@@ -392,7 +392,7 @@ export const wasWirTunKoennenInfoBox1 = {
         color: 'default',
         title: 'BERATUNG',
         text:
-          'Die Mitarbeiter*innen der Beratungsstellen beraten Sie kostenlos und vertraulich bei Vorfällen von Hass im Netz sowie bei rassistischer Diskriminierung. Bei einer Beratung beschreiben Sie den Vorfall und besprechen gemeinsam mit der Berater*in mögliche weitere Schritte. Die Beratungen können persönlich, telefonisch, per Chat oder per E-Mail stattfinden. Sie können dabei gerne anonym bleiben, wenn Sie das möchten. Für persönliche Beratungen vereinbaren Sie bitte telefonisch einen Termin. Das Beratungsteam bemüht sich, Ihre Anfrage möglichst rasch zu bearbeiten - je nach Anzahl der Meldungen kann es manchmal länger dauern. Wenn Sie kein Deutsch sprechen, versuchen wir die Beratung mit Unterstützung eines*r Dolmetscher*in durchzuführen.',
+          'Die Mitarbeiter*innen der Beratungsstellen beraten Sie kostenlos und vertraulich bei Vorfällen von Hass im Netz sowie bei rassistischer Diskriminierung. Bei einer Beratung beschreiben Sie den Vorfall und besprechen gemeinsam mit dem*der Berater*in mögliche weitere Schritte. Die Beratungen können persönlich, telefonisch, per Chat oder per E-Mail stattfinden. Sie können dabei gerne anonym bleiben, wenn Sie das möchten. Für persönliche Beratungen vereinbaren Sie bitte telefonisch einen Termin. Das Beratungsteam bemüht sich, Ihre Anfrage möglichst rasch zu bearbeiten - je nach Anzahl der Meldungen kann es manchmal länger dauern. Wenn Sie kein Deutsch sprechen, versuchen wir die Beratung mit Unterstützung eines*r Dolmetscher*in durchzuführen.',
         link: 'beratung',
         linkText: 'Zur Beratung'
       },
@@ -406,7 +406,7 @@ export const wasWirTunKoennenInfoBox1 = {
         color: 'default',
         title: 'BEGLEITUNG ZU GERICHT/BEHÖRDEN',
         text:
-          'Gerne begleiten die Mitarbeiter*innen der Beratungsstelle Sie zu Terminen bei der Polizei, bei Gericht oder bei sonstigen Behörden wenn es um rassistische Diskriminierung oder um Hass im Netz geht. Als Vertrauensperson kann der*die Berater*in Sie gut unterstützen und mit Ihnen danach weitere Schritte besprechen.'
+          'Gerne begleiten Sie Mitarbeiter*innen der Beratungsstelle zu Terminen bei der Polizei, bei Gericht oder bei sonstigen Behörden, wenn es um rassistische Diskriminierung oder um Hass im Netz geht. Als Vertrauensperson kann der*die Berater*in Sie gut unterstützen und mit Ihnen danach weitere Schritte besprechen.'
       }
     ]
   },
@@ -430,7 +430,7 @@ export const wasWirTunKoennenInfoBox1 = {
         color: 'default',
         title: 'BEGLEITUNG ZU GERICHT/BEHÖRDEN',
         text:
-          'Gerne begleiten die Mitarbeiter*innen der Beratungsstelle Sie zu Terminen bei der Polizei, bei Gericht oder bei sonstigen Behörden wenn es um rassistische Diskriminierung oder um Hass im Netz geht. Als Vertrauensperson kann der*die Berater*in Sie gut unterstützen und mit Ihnen danach weitere Schritte besprechen.'
+          'Gerne begleiten Sie Mitarbeiter*innen der Beratungsstelle zu Terminen bei der Polizei, bei Gericht oder bei sonstigen Behörden, wenn es um rassistische Diskriminierung oder um Hass im Netz geht. Als Vertrauensperson kann der*die Berater*in Sie gut unterstützen und mit Ihnen danach weitere Schritte besprechen.'
       }
     ]
   }
@@ -455,7 +455,7 @@ export const wasWirTunKoennenInfoBox2 = {
         color: 'default',
         title: 'RECHTSHILFEFOND HASS IM NETZ',
         text:
-          'Gemeinsam mit Sigrid Maurer hat der Verein ZARA im Oktober 2018 einen Rechtshilfefonds eingerichtet, mit dem zivilrechtliche Klagen bei Fällen von Hass im Netz finanziert werden können. Sind Sie von Hass im Netz betroffen wenden Sie sich an ein*e Berater*in, der*die mit Ihnen bespricht, ob es möglich ist, eine Klage einzubringen und ob die Kosten vom Rechtshilfefonds übernommen werden können.',
+          'Gemeinsam mit Sigrid Maurer hat der Verein ZARA im Oktober 2018 einen Rechtshilfefonds eingerichtet, mit dem zivilrechtliche Klagen bei Fällen von Hass im Netz finanziert werden können. Sind Sie von Hass im Netz betroffen wenden Sie sich an eine*n Berater*in, der*die mit Ihnen bespricht, ob es möglich ist, eine Klage einzubringen und ob die Kosten vom Rechtshilfefonds übernommen werden können.',
         link:
           'https://www.respekt.net/projekte-unterstuetzen/details/projekt/1780/',
         linkPath: 'external',

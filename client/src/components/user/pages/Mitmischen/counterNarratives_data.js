@@ -4,13 +4,13 @@ export const heroData = {
     title:
       'Sehen Sie online Beiträge, die Ihrer Meinung nach nicht unwidersprochen bleiben sollen? Möchten Sie Betroffenen den Rücken stärken?',
     text:
-      'Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch z.B. koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives - Gegenmaßnahmen - können Sie z.B. Trolle oder Hater*innen entlarven, Gegenrede starten, einen respektvollen Umgang miteinander vorantreiben und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind grenzenlos.'
+      'Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives können Sie Trolle oder Hater entlarven und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind unerschöpflich. Werden Sie kreativ! Reden Sie mit! Setzen Sie sich mit uns in Kontakt! Gemeinsam sind wir stärker und lauter!'
   },
   en: {
     title:
       'Sehen Sie online Beiträge, die Ihrer Meinung nach nicht unwidersprochen bleiben sollen? Möchten Sie Betroffenen den Rücken stärken?',
     text:
-      'Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch z.B. koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives - Gegenmaßnahmen - können Sie z.B. Trolle oder Hater*innen entlarven, Gegenrede starten, einen respektvollen Umgang miteinander vorantreiben und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind grenzenlos.'
+      'Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives können Sie Trolle oder Hater entlarven und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind unerschöpflich. Werden Sie kreativ! Reden Sie mit! Setzen Sie sich mit uns in Kontakt! Gemeinsam sind wir stärker und lauter!'
   }
 }
 
@@ -19,7 +19,7 @@ export const infoObj = {
     title:
       'Werden Sie kreativ! Reden Sie mit! Setzen Sie sich mit uns in Kontakt! Gemeinsam sind wir stärker und lauter!',
     text:
-      'Immer mehr Akteur*innen setzen sich mit effektiver Gegenrede auseinander - so auch wir von ZARA. Wir sind davon überzeugt, dass wir es nicht zulassen dürfen, gesamte Oonline- Räume von Hass besetzen zu lassen. Wir wollen diese Räume wieder erobern und Platz für Alle schaffen. Expert*innen, wie z.B. Ingrid Brodnig zufolge, ist das Internet kein Ebenbild des sogenannten analogen Lebensbereichs, es ist wohl eher ein Zerrbild. Dieses Wissen kann uns dabei unterstützen, uns nicht lähmen zu lassen, aber das Phänomen trotzdem ernst zu nehmen und uns für einen respektvollen, anti-rassistischen Umgang miteinander einzusetzen.<br><br>Hier finden Sie Initiativen von ZARA sowie anderen Initiativen, Projekten und Organisationen, die uns effektive Counter-Narratives näher bringen. Halten Sie sich auf dem Laufenden.',
+      'Immer mehr Akteur*innen setzen sich mit effektiver Gegenrede auseinander - so auch wir von ZARA. Wir sind davon überzeugt, dass wir es nicht zulassen dürfen, gesamte Online- Räume von Hass besetzen zu lassen. Wir wollen diese Räume wieder erobern und Platz für Alle schaffen. Expert*innen, wie z.B. Ingrid Brodnig zufolge, ist das Internet kein Ebenbild des sogenannten analogen Lebensbereichs, es ist wohl eher ein Zerrbild. Dieses Wissen kann uns dabei unterstützen, uns nicht lähmen zu lassen, aber das Phänomen trotzdem ernst zu nehmen und uns für einen respektvollen, anti-rassistischen Umgang miteinander einzusetzen.<br><br>Hier finden Sie Initiativen von ZARA sowie anderen Initiativen, Projekten und Organisationen, die uns effektive Counter-Narratives näher bringen. Halten Sie sich auf dem Laufenden.',
 
     cards: [
       {
@@ -34,7 +34,7 @@ export const infoObj = {
         color: 'default',
         title: 'FACING FACTS ONLINE! KURS - Hate Speech - Was tun!',
         text:
-          'Der Facing Facts Online! Kurs wurde auf Deutsch ersetzt und von jugendschutz.net und ZARA für den regionalen Kontext ergänzt. Die neue Version - Hate Speech - Was tun! - beschäftigt sich mit Überlegungen zur eigenen Sicherheit, zum eigenen Wohlbefinden, mit Monitoring und DoOkumentation sowie mit Couunter-Narratives und nationaler sowie internationaler Gesetzgebung.<br><br>Sie können den Basiskurs belegen und den Kurs 45 Tage kostenlos belegen. Wenn Sie de Premiumkurs belegen, können Sie den Kurs langfristig und immer wieder belegen sowie ein Zertifikat ergattern. Probieren Sie es mal aus!',
+          'Der Facing Facts Online! Kurs wurde auf Deutsch übersetzt und von jugendschutz.net und ZARA für den regionalen Kontext ergänzt. Die neue Version - Hate Speech - Was tun! - beschäftigt sich mit Überlegungen zur eigenen Sicherheit, zum eigenen Wohlbefinden, mit Monitoring und Dokumentation sowie mit Counter-Narratives und nationaler sowie internationaler Gesetzgebung.<br><br>Sie können den Basiskurs belegen und den Kurs 45 Tage kostenlos belegen. Wenn Sie den Premiumkurs belegen, können Sie ihn langfristig und immer wieder belegen sowie ein Zertifikat ergattern. Probieren Sie es mal aus!',
         linkPath: 'external',
         link: 'https://www.facingfactsonline.eu/enrol/index.php?id=24',
         linkText: 'Zu "Hate Speech - Was tun!"'
@@ -63,7 +63,7 @@ export const infoObj = {
         title:
           'Ein How-to für Kommunikationsverantwortliche - Tipps von Internetexpertin für Kommunikationsverantwortliche',
         text:
-          'In ihrem How-to für Kommunikationsverantwortliche stellt Ingrid Brodnig, Digital Champion und Internetexpertin, Tipps für einen professionellen Umgang mit Postings zur Verfügung. Dieses Handbuch widmet sich Fragen wie: “Wer hat eine Antwort verdient, was sollte man löschen? Wie reagiert man professionell auf Kritik in digitalen Zeiten.',
+          'In ihrem How-to für Kommunikationsverantwortliche stellt Ingrid Brodnig, Digital Champion und Internetexpertin, Tipps für einen professionellen Umgang mit Postings zur Verfügung. Dieses Handbuch widmet sich Fragen wie: “Wer hat eine Antwort verdient, was sollte man löschen? Wie reagiert man professionell auf Kritik in digitalen Zeiten?',
         linkPath: 'external',
         link:
           'https://www.cccv.at/Dossier_Web.pdf?fbclid=IwAR3DnHC_9f5flsoC8pwLwiwHR3X8dHBYpQRX22AfaSDfscFOlVevxz_Bx5A',
@@ -119,7 +119,7 @@ export const infoObj = {
         title:
           'Ein How-to für Kommunikationsverantwortliche - Tipps von Internetexpertin für Kommunikationsverantwortliche',
         text:
-          'In ihrem How-to für Kommunikationsverantwortliche stellt Ingrid Brodnig, Digital Champion und Internetexpertin, Tipps für einen professionellen Umgang mit Postings zur Verfügung. Dieses Handbuch widmet sich Fragen wie: “Wer hat eine Antwort verdient, was sollte man löschen? Wie reagiert man professionell auf Kritik in digitalen Zeiten.',
+          'In ihrem How-to für Kommunikationsverantwortliche stellt Ingrid Brodnig, Digital Champion und Internetexpertin, Tipps für einen professionellen Umgang mit Postings zur Verfügung. Dieses Handbuch widmet sich Fragen wie: “Wer hat eine Antwort verdient, was sollte man löschen? Wie reagiert man professionell auf Kritik in digitalen Zeiten?',
         linkPath: 'external',
         link:
           'https://www.cccv.at/Dossier_Web.pdf?fbclid=IwAR3DnHC_9f5flsoC8pwLwiwHR3X8dHBYpQRX22AfaSDfscFOlVevxz_Bx5A',

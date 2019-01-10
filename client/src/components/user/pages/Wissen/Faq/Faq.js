@@ -28,7 +28,7 @@ const oneLineAlert = {
   icon: 'alert',
   de: {
     text:
-      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls geworden',
+      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
       text: 'Jetzt melden',
       type: 'alert',
@@ -37,7 +37,7 @@ const oneLineAlert = {
   },
   en: {
     text:
-      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls geworden',
+      'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
       text: 'Jetzt melden',
       type: 'alert',
