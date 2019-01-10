@@ -537,8 +537,8 @@ sendEmail = report => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"Serious Pigeon Testuser" <serpig.testuser@gmail.com>', // sender address
-    to: 'emdo2000@gmail.com', // list of receivers
+    from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
+    to: 'beratung@zara.or.at', // list of receivers
     subject: 'New Report', // Subject line
     text: outputPlain, // plain text body
     html: outputHtml // html body
@@ -632,8 +632,8 @@ sendOrderEmail = (order, body, res) => {
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: '"Serious Pigeon Testuser" <serpig.testuser@gmail.com>', // sender address
-    to: 'emdo2000+rrorder@gmail.com', // list of receivers
+    from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
+    to: 'office@zara.or.at', // list of receivers
     subject: 'Neue Bestellung', // Subject line
     html: order // html body
   }
