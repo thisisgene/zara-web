@@ -2,14 +2,14 @@ export const heroData = {
   image: 'zara_wide.png',
   imageSide: 'left',
   de: {
-    title: 'Kenne Deine Rechte',
+    title: 'Eigene Rechte kennen',
     text:
       'Hier finden Sie wichtige Informationen zur aktuellen Gesetzeslage rund um die Themenfelder rassistische Diskriminierung und Hass im Netz. Bei Fragen informiert ZARA über rechtliche sowie andere Schritte, die Betroffene und Zeug*innen setzen können.',
     link: 'kontakt/#wissen',
     linkText: 'Zum Pressekontakt'
   },
   en: {
-    title: 'Kenne Deine Rechte',
+    title: 'Eigene Rechte kennen',
     text:
       'Hier finden Sie wichtige Informationen zur aktuellen Gesetzeslage rund um die Themenfelder rassistische Diskriminierung und Hass im Netz. Bei Fragen informiert ZARA über rechtliche sowie andere Schritte, die Betroffene und Zeug*innen setzen können.',
     link: 'kontakt/#wissen',
@@ -34,7 +34,7 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Glossar',
+        title: 'Glossar',
         link: 'wissen'
       }
     ]
@@ -53,7 +53,7 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Glossar',
+        title: 'Glossar',
         link: 'wissen'
       }
     ]

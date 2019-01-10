@@ -274,12 +274,12 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/user/:lang/wissen/kenne_deine_rechte"
+                path="/user/:lang/wissen/eigene_rechte_kennen"
                 component={KenneDeineRechte}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/kenne_deine_rechte/glossar"
+                path="/user/:lang/wissen/eigene_rechte_kennen/glossar"
                 component={Glossar}
               />
               <Route

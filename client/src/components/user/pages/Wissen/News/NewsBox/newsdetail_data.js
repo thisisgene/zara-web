@@ -45,8 +45,8 @@ export const cardGrid = {
         size: 'default',
         type: 'imageCard',
         image: 'scales.png',
-        title: 'Kenne Deine Rechte',
-        link: 'wissen/kenne_deine_rechte'
+        title: 'Eigene Rechte kennen',
+        link: 'wissen/eigene_rechte_kennen'
       },
       {
         size: 'default',

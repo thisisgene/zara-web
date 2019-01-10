@@ -142,7 +142,7 @@ export const multiPartOneLinerData = [
 
 export const cardGridObject = {
   de: {
-    title: 'Kenne deine Rechte',
+    title: 'Eigene Rechte kennen',
     cards: [
       {
         size: 'default',
@@ -330,14 +330,14 @@ export const wasSieTunKoennenCardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'book.png',
-        text: 'Mitmischen',
+        title: 'Mitmischen',
         link: 'mitmischen'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'faq-bubble.png',
-        text: 'Wissen',
+        title: 'Wissen',
         link: 'wissen'
       }
     ]

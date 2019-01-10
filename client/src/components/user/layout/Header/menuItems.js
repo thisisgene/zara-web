@@ -89,9 +89,9 @@ const menuItems = [
             id: '1.2.2'
           },
           {
-            name: 'Kenne Deine Rechte',
+            name: 'Eigene Rechte kennen',
             redirect: true,
-            redirectLink: 'wissen/kenne_deine_rechte',
+            redirectLink: 'wissen/eigene_rechte_kennen',
             id: '1.2.3'
           }
         ]
@@ -230,8 +230,8 @@ const menuItems = [
       },
 
       {
-        name: 'Kenne Deine Rechte',
-        link: 'kenne_deine_rechte',
+        name: 'Eigene Rechte kennen',
+        link: 'eigene_rechte_kennen',
         id: '4.2',
         subMenuList: [
           // {

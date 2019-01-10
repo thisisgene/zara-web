@@ -24,7 +24,7 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'scales.png',
-        title: 'Kenne Deine Rechte',
+        title: 'Eigene Rechte kennen',
         link: 'beratung/lassunswastun/kennedeinerechte'
       },
       {
@@ -57,7 +57,7 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'scale.png',
-        title: 'Kenne Deine Rechte',
+        title: 'Eigene Rechte kennen',
         link: 'beratung/lassunswastun/kennedeinerechte'
       },
       {

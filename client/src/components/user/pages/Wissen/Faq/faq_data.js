@@ -119,13 +119,13 @@ export const faqData = [
       title:
         'Was sind die wichtigsten rechtlichen Rahmenbedingungen, um gegen rassistische Diskriminierung vorzugehen?',
       text:
-        'Es gibt mehrere rechtliche Rahmenbedingungen, um gegen rassistische Diskriminierung und Hass im Netz vorzugehen. Es gibt die Beleidigung, die qualifizierte Beleidigung, Verhetzung, das Verbotsgesetz, Cyber Mobbing, Cyber Stalking, üble Nachrede, Kreditschädigung und das Diskriminierungsverbot im Gleichbehandlungsgesetz.<br><br>Sie können die ZARA Beratungstellen kontaktieren um sich informieren zu lassen. Sie können auch mehr über Ihre Rechte erfahren: [Kenne Deine Rechte]'
+        'Es gibt mehrere rechtliche Rahmenbedingungen, um gegen rassistische Diskriminierung und Hass im Netz vorzugehen. Es gibt die Beleidigung, die qualifizierte Beleidigung, Verhetzung, das Verbotsgesetz, Cyber Mobbing, Cyber Stalking, üble Nachrede, Kreditschädigung und das Diskriminierungsverbot im Gleichbehandlungsgesetz.<br><br>Sie können die ZARA Beratungstellen kontaktieren um sich informieren zu lassen. Sie können auch mehr über Ihre Rechte erfahren: [Eigene Rechte kennen]'
     },
     en: {
       title:
         'Was sind die wichtigsten rechtlichen Rahmenbedingungen, um gegen rassistische Diskriminierung vorzugehen?',
       text:
-        'Es gibt mehrere rechtliche Rahmenbedingungen, um gegen rassistische Diskriminierung und Hass im Netz vorzugehen. Es gibt die Beleidigung, die qualifizierte Beleidigung, Verhetzung, das Verbotsgesetz, Cyber Mobbing, Cyber Stalking, üble Nachrede, Kreditschädigung und das Diskriminierungsverbot im Gleichbehandlungsgesetz.<br><br>Sie können die ZARA Beratungstellen kontaktieren um sich informieren zu lassen. Sie können auch mehr über Ihre Rechte erfahren: [Kenne Deine Rechte]'
+        'Es gibt mehrere rechtliche Rahmenbedingungen, um gegen rassistische Diskriminierung und Hass im Netz vorzugehen. Es gibt die Beleidigung, die qualifizierte Beleidigung, Verhetzung, das Verbotsgesetz, Cyber Mobbing, Cyber Stalking, üble Nachrede, Kreditschädigung und das Diskriminierungsverbot im Gleichbehandlungsgesetz.<br><br>Sie können die ZARA Beratungstellen kontaktieren um sich informieren zu lassen. Sie können auch mehr über Ihre Rechte erfahren: [Eigene Rechte kennen]'
     }
   },
   {
