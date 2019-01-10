@@ -50,7 +50,7 @@ app.use(
 )
 app.use('/public', express.static(__dirname + '/public'))
 
-app.use('/assets', proxy('https://assets.seriouspigeon.com'))
+app.use('/assets', proxy('https://assets.zara.or.at'))
 app.use('/download', proxy('https://zara-download.ams3.digitaloceanspaces.com'))
 
 // DB Config

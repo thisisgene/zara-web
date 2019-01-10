@@ -22,7 +22,7 @@ class VerschluesselteEmail extends Component {
             <div style={{ textAlign: 'center', margin: '-3rem auto 5rem' }}>
               <a
                 style={{ color: '#050505' }}
-                href="https://assets.seriouspigeon.com/pgp/public_key.txt"
+                href="https://assets.zara.or.at/pgp/public_key.txt"
               >
                 ZARA-BERATUNG Public Key
               </a>

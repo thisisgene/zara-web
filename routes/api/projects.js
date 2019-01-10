@@ -513,7 +513,7 @@ router.post('/report/send', async (req, res) => {
 })
 
 sendEmail = report => {
-  const link = `https://zara-web.seriouspigeon.com/admin/reports/${report.id}`
+  const link = `https://zara-web.zara.or.at/admin/reports/${report.id}`
   const outputPlain = `Neue Meldung empfangen. Link: ${link}`
   const outputHtml = `
     <p>Neue Meldung empfangen.</p>

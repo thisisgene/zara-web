@@ -154,9 +154,7 @@ class ImageGridObject extends Component {
                   {item.links.map(link => (
                     <a
                       target="blank"
-                      href={`https://assets.seriouspigeon.com/download/${
-                        link.link
-                      }`}
+                      href={`https://assets.zara.or.at/download/${link.link}`}
                     >
                       {link.linkText}
                     </a>
