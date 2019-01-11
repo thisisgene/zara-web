@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'zara_wide.png',
+  image: '/main_icons/big/ueber_zara.png',
   imageSide: 'left',
   de: {
     title: 'ZARA – Zivilcourage und Anti-Rassismus-Arbeit',

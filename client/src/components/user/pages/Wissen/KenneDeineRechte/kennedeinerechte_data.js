@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'zara_wide.png',
+  image: 'main_icons/big/rechte.png',
   imageSide: 'left',
   de: {
     title: 'Eigene Rechte kennen',
@@ -26,16 +26,16 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/recht und ordnung.png',
         title: 'Recht & Ordnung',
         link: 'wissen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/glossar.png',
         title: 'Glossar',
-        link: 'wissen'
+        link: 'wissen/eigene_rechte_kennen/glossar'
       }
     ]
   },
@@ -45,16 +45,16 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/recht und ordnung.png',
         title: 'Recht & Ordnung',
         link: 'wissen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/glossar.png',
         title: 'Glossar',
-        link: 'wissen'
+        link: 'wissen/eigene_rechte_kennen/glossar'
       }
     ]
   }

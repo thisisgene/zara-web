@@ -1,5 +1,7 @@
 export const heroData = {
   size: 'mediumTitle',
+  image: 'main_icons/big/counter-narratives.png',
+  imageSide: 'left',
   de: {
     title:
       'Sehen Sie online Beiträge, die Ihrer Meinung nach nicht unwidersprochen bleiben sollen? Möchten Sie Betroffenen den Rücken stärken?',
@@ -136,28 +138,28 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/hashtags.png',
         title: 'Hashtags',
         link: 'mitmischen/hashtags'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/Hasspostings Online Melden.png',
         title: 'Hasspostings Online Melden',
         link: 'mitmischen/hasspostings_melden'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'faq-bubble.png',
+        image: 'icons/community.png',
         title: 'Community Beitreten',
         link: 'mitmischen/community'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'press.png',
+        image: 'icons/unterstuetzen.png',
         title: 'Unterstützen',
         link: 'mitmischen/unterstuetzen'
       }
@@ -169,28 +171,28 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/hashtags.png',
         title: 'Hashtags',
         link: 'mitmischen/hashtags'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/Hasspostings Online Melden.png',
         title: 'Hasspostings Online Melden',
         link: 'mitmischen/hasspostings_melden'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'faq-bubble.png',
+        image: 'icons/community.png',
         title: 'Community Beitreten',
         link: 'mitmischen/community'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'press.png',
+        image: 'icons/unterstuetzen.png',
         title: 'Unterstützen',
         link: 'mitmischen/unterstuetzen'
       }

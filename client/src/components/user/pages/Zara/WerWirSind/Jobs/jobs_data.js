@@ -77,11 +77,11 @@ export const jobData = [
   }
 ]
 
-export const longTextPraktikum = {
+export const longTextVolontariat = {
   de: {
-    title: 'Praktikum',
+    title: 'Volontariat',
     text:
-      'Du hast Interesse an Antidiskriminierungsarbeit und wolltest schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Praktikums oder Zivildiensts haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Praktika zu absolvieren.'
+      'Du hast Interesse an Antidiskriminierungsarbeit und wolltest schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats oder Zivildiensts haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Praktika zu absolvieren.'
   }
 }
 export const longTextZivildienst = {
@@ -113,7 +113,7 @@ export const longText = {
       }
     ],
     text:
-      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Praktikum bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
+      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Volontariat bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
   },
   de: {
     title: 'ZARA bietet:',
@@ -135,6 +135,6 @@ export const longText = {
       }
     ],
     text:
-      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Praktikum bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
+      'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Volontariat bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.'
   }
 }

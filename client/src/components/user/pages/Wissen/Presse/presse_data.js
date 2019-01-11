@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'publikationen.png',
+  image: 'main_icons/big/presse.png',
   imageSide: 'left',
   de: {
     title: 'Presse',

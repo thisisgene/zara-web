@@ -15,6 +15,11 @@ import styles from './Home.module.sass'
 const fakeServerData = [
   {
     imageAsBackground: true,
+    image: 'welcome_banner.jpg',
+    mainLink: 'kontakt'
+  },
+  {
+    imageAsBackground: true,
     image: 'Zivilcourage_Karussell.jpg',
     mainLink: 'mitmischen/community'
   },

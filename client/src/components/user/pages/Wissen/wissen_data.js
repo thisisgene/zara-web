@@ -23,14 +23,14 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/beratung.png',
         title: 'Eigene Rechte kennen',
-        link: 'beratung/lassunswastun/kennedeinerechte'
+        link: 'wissen/eigene_rechte_kennen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/publikationen.png',
         title: 'Publikationen',
         link: 'test'
       },
@@ -56,9 +56,9 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scale.png',
+        image: 'icons/recht und ordnung.png',
         title: 'Eigene Rechte kennen',
-        link: 'beratung/lassunswastun/kennedeinerechte'
+        link: 'wissen/eigene_rechte_kennen'
       },
       {
         size: 'default',

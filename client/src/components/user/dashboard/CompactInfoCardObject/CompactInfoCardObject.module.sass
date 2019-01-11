@@ -3,6 +3,7 @@
   background: #fff
   height: 100%
   width: 100%
+  max-width: 200px
   overflow: hidden
   position: relative
   &:after
@@ -18,6 +19,8 @@
     &:hover
       color: #050505
       opacity: .9
+  &.two
+    
   &.newsCard
     padding: .4rem
     .compact-card--news-head
@@ -36,7 +39,7 @@
         // weight: bold
   &.imageCard 
     &.large
-      
+      max-width: 800px !important
       .compact-card--body
         padding: 1.5rem 1rem 1.5rem
         font-size: 1rem
@@ -49,12 +52,15 @@
       height: 100%
       display: flex
       flex-direction: column
-      justify-content: space-between
+      justify-content: center
       align-items: center
       .compact-card--image
         // flex-grow: 1
+        height: 50%
+        text-align: center
+        margin-top: 1.5rem
         img
-          width: 100%
+          height: 100%
           object-fit: contain
       .compact-card--body
         padding: 0 1rem

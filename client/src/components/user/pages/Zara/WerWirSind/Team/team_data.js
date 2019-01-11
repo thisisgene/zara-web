@@ -140,7 +140,7 @@ export const teamData = {
       },
       {
         image: 'Bianca Schoenberger_ZARA.jpg',
-        title: 'Geschäftsführerin',
+        // title: 'Geschäftsführerin',
         field: 'training',
         name: 'Dr.in Bianca Schönberger',
         text:
@@ -148,7 +148,7 @@ export const teamData = {
       },
       {
         image: 'Alice Golob_ZARA.jpg',
-        title: 'Büroassistentin',
+        // title: 'Büroassistentin',
         field: 'training',
         name: 'Alice Golob',
         text:
@@ -237,5 +237,5 @@ export const teamData = {
 
 export const supporters = {
   text:
-    'Unterstützer*innen seit 2018<br>ZARA wird seit jeher von vielen ehrenamtlich Engagierten begleitet und unterstützt. Wir können hier leider nicht alle Personen, die ZARA seit seiner Gründung unterstützt haben, nennen. Hier die Namen jener, die uns seit 2018 unterstützen. <br>Wir danken jedoch euch allen von ganzem Herzen - für Euer Engagement und Euren Einsatz!<br><br>Alice Golob (ehem. Volontärin)<br>Christoph Autenhuber (Web Konzeption)<br>Desiree Al-Mahayni (Monitoring-Volontariat)<br>Elisabeth Wanek (ehem. Volontärin)<br>Emanuel Donner (Web Development und Design)<br>Emily Zens (Volontärin)<br>Fabian Lang (Web Design & Grafik)<br>Felicitas Rachinger (ehem. Praktikantin)<br>Irene Krenn (Ehrenmitglied & langjähriger Unterstützerin)<br>Jakob Listabarth (Design- & Videounterstützung) <br>Lina Zierlinger (ehem. Volontärin)<br>Marion Guerrero (operative Unterstützung)<br>Meysara Majdoub (Monitorin-Volontariat)<br>Simon Schwaighofer (Design Koordination)<br>Johannes Zinner (Fotografie)<br>Ulrich Frey (Fotografie & Beratung)<br><br>An dieser Stelle möchten wir im Angesicht dessen, dass wir uns hier auf der ZARA Website befinden, dem Website-Team speziell danken!<br>Herzlichen Dank an Christoph Autengruber für die ehrenamtliche Konzeption dieser Website. Wir danken für die faszinierende Eigeninitiative, das Engagement, Feingefühl und Expertise!<br>Ohne ihn und seine Arbeit bei <a href="http://www.sidekick-ux.com">www.sidekick-ux.com</a> wäre dieses Projekt niemals möglich gewesen. <br>Zudem bedanken wir uns bei Emanuel Donner und Fabian Lang (Web Development und Web Design), die viel mehr Arbeitszeit eingebracht haben, als jemals vereinbart war und weil sie uns stets geduldig und unterstützend beiseite standen!'
+    'ZARA wird seit jeher von vielen ehrenamtlich Engagierten begleitet und unterstützt. Wir können hier leider nicht alle Personen, die ZARA seit seiner Gründung unterstützt haben, nennen. Hier die Namen jener, die uns seit 2018 unterstützen. <br><br>Wir danken jedoch euch allen von ganzem Herzen - für Euer Engagement und Euren Einsatz!<br><br>Alice Golob (ehem. ehrenamtliche Mitarbeiterin)<br>Christoph Autenhuber (Web Infrastruktur)<br>Desiree Al-Mahayni (ehrenamtliche Monitoring- & ÖA-Mitarbeiterin)<br>Elisabeth Wanek (ehem. ehrenamtliche Mitarbeiterin)<br>Emanuel Donner (Web Development & Design)<br>Emily Zens (ehrenamtliche ÖA Mitarbeiterin)<br>Fabian Lang (Web Design & Grafik)<br>Felicitas Rachinger (ehem. ehrenamtliche Mitarbeiterin)<br>Irene Krenn (Ehrenmitglied & langjähriger Unterstützerin)<br>Jakob Listabarth (Design- & Videounterstützung) <br>Lina Zierlinger (ehem. ehrenamtliche Mitarbeiterin)<br>Marion Guerrero (operative Unterstützung)<br>Meysara Majdoub (ehrenamtliche Monitoring- & ÖA-Mitarbeiterin)<br>Simon Schwaighofer (Design Koordination)<br>Johannes Zinner (Fotografie)<br>Ulrich Frey (Fotografie & Beratung)<br><br><br>An dieser Stelle möchten wir im Angesicht dessen, dass wir uns hier auf der ZARA Website befinden, dem Website-Team speziell danken!<br><br>Herzlichen Dank an Christoph Autengruber (Web Infrastruktur, <a href="www.sidekick-ux.com">www.sidekick-ux.com</a>) für die ehrenamtliche Konzeption dieser Website. Wir danken für die faszinierende Eigeninitiative, das Engagement, Feingefühl und Expertise!<br><br>Zudem bedanken wir uns bei Emanuel Donner (Web Development, <a href="seriouspigeon.at">seriouspigeon.at</a>) und Fabian Lang (Web Design, <a href="www.dergestalt.at">www.dergestalt.at</a>), die viel mehr Arbeitszeit eingebracht haben, als jemals vereinbart war und weil sie uns stets geduldig und unterstützend beiseite standen!'
 }

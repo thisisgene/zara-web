@@ -134,13 +134,13 @@ export const teamData = {
 export const bottomData = [
   {
     de: {
-      title: '',
+      title: 'Geschäftsführerin',
       text: 'Dr.in Bianca Schönberger',
       textIsLink: true,
       textLink: 'ueber_ZARA/wer_wir_sind/team/#training'
     },
     en: {
-      title: '',
+      title: 'Geschäftsführerin',
       text: 'Dr.in Bianca Schönberger',
       textIsLink: true,
       textLink: 'ueber_ZARA/wer_wir_sind/team/#training'
@@ -148,13 +148,13 @@ export const bottomData = [
   },
   {
     de: {
-      title: '',
+      title: 'Büroassistentin',
       text: 'Alice Golob',
       textIsLink: true,
       textLink: 'ueber_ZARA/wer_wir_sind/team/#training'
     },
     en: {
-      title: '',
+      title: 'Büroassistentin',
       text: 'Alice Golob',
       textIsLink: true,
       textLink: 'ueber_ZARA/wer_wir_sind/team/#training'

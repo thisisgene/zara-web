@@ -9,7 +9,7 @@ import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
 import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 const heroData = {
-  image: 'consulting.jpg',
+  image: 'main_icons/big/beratung.png',
   imageSide: 'left',
   de: {
     title: 'Das Team der ZARA Beratungsstellen steht Ihnen bei!',
@@ -132,28 +132,28 @@ const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/beratung.png',
         title: 'Was Sie Tun Können',
         link: 'beratung/wassietunkoennen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/beratung.png',
         title: 'Was Wir Dann Tun',
         link: 'beratung/waswirdanntun'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/mitmischen.png',
         title: 'Mitmischen',
         link: 'mitmischen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/wissen.png',
         title: 'Wissen',
         link: 'wissen'
       }

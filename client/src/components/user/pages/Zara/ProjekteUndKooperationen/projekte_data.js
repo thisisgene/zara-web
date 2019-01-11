@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'publikationen.png',
+  image: 'main_icons/big/Projekte und Kooperationen.png',
   imageSide: 'left',
   de: {
     title: 'Projekte',

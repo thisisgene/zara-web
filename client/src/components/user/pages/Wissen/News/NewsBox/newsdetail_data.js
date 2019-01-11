@@ -44,28 +44,28 @@ export const cardGrid = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/rechte.png',
         title: 'Eigene Rechte kennen',
         link: 'wissen/eigene_rechte_kennen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/wissen.png',
         title: 'Publikationen',
         link: 'wissen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/faq.png',
         title: 'FAQs',
         link: 'wissen/faq'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/presse.png',
         title: 'Presse',
         link: 'wissen/presse'
       }

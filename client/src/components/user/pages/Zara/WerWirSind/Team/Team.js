@@ -77,7 +77,7 @@ class Team extends Component {
               </div>
               {lang && lang === 'de' ? (
                 <div>
-                  <h1>Unterstützer*innen ab 2018</h1>
+                  <h1>Unterstützer*innen seit 2018</h1>
                   <div
                     style={{ marginBottom: '6rem' }}
                     dangerouslySetInnerHTML={{ __html: supporters.text }}

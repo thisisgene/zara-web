@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'mitmischen.png',
+  image: 'main_icons/big/mitmischen.png',
   imageSide: 'left',
   de: {
     title:
@@ -134,7 +134,7 @@ export const cardGridObject = {
       {
         size: 'large',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/community.png',
         title: 'Werden Sie ein*e ZARAista!',
         text:
           'Anti-Rassismus-Arbeit braucht engagierte Menschen – und davon möglichst viele. Nutzen Sie die Möglichkeit, sich mit anderen aktiven Menschen auszutauschen, die daran interessiert sind, einen positiven Einfluss auf die Gesellschaft zu haben. Werden Sie Teil einer tatkräftigen Community!',
@@ -143,7 +143,7 @@ export const cardGridObject = {
       {
         size: 'large',
         type: 'imageCard',
-        image: 'mixer_wide.jpg',
+        image: 'icons/beratung.png',
         text:
           'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit setzen wir von ZARA uns für eine rassismusfreie Gesellschaft und einen respektvollen Umgang miteinander ein. Mit u.a. unseren Beratungsleistungen wollen wir Betroffenen den Rücken stärken und auf strukturelle Mängel hinweisen. Mit Ihrer Spende ermöglichen Sie, dass wir unsere jahrelange Expertise und unser Engagement in unseren Arbeitsbereichen und Schwerpunkten einsetzen und weiter ausbauen können!',
         link: 'beratung'
@@ -156,16 +156,16 @@ export const cardGridObject = {
       {
         size: 'large',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/community.png',
         title: 'Werden Sie ein*e ZARAista!',
         text:
           'Anti-Rassismus-Arbeit braucht engagierte Menschen – und davon möglichst viele. Nutzen Sie die Möglichkeit, sich mit anderen aktiven Menschen auszutauschen, die daran interessiert sind, einen positiven Einfluss auf die Gesellschaft zu haben. Werden Sie Teil einer tatkräftigen Community!',
-        link: 'beratung/lassunswastun/kennedeinerechte'
+        link: 'mitmischen/community'
       },
       {
         size: 'large',
         type: 'imageCard',
-        image: 'mixer_wide.jpg',
+        image: 'icons/beratung.png',
         text:
           'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit setzen wir von ZARA uns für eine rassismusfreie Gesellschaft und einen respektvollen Umgang miteinander ein. Mit u.a. unseren Beratungsleistungen wollen wir Betroffenen den Rücken stärken und auf strukturelle Mängel hinweisen. Mit Ihrer Spende ermöglichen Sie, dass wir unsere jahrelange Expertise und unser Engagement in unseren Arbeitsbereichen und Schwerpunkten einsetzen und weiter ausbauen können!',
         link: 'beratung'

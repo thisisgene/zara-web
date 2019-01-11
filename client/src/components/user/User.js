@@ -346,6 +346,11 @@ class User extends Component {
                 path="/:lang/ueber_ZARA/wer_wir_sind/jobs"
                 component={Jobs}
               />
+              <Redirect
+                exact
+                from="/:lang/ueber_ZARA/projekte_und_kooperation"
+                to="/:lang/ueber_ZARA/projekte_und_kooperation/netzwerke_und_initiativen"
+              />
               <Route
                 exact
                 path="/:lang/ueber_ZARA/projekte_und_kooperation/netzwerke_und_initiativen"

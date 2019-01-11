@@ -363,14 +363,14 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/publikationen.png',
         title: 'ZARA Publikationen',
         link: 'wissen/publikationen/zara'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/publikationen.png',
         title: 'Weitere Publikationen',
         link: 'wissen/publikationen/weitere'
       }
@@ -382,14 +382,14 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/publikationen.png',
         title: 'ZARA Publikationen',
         link: 'wissen/publikationen/zara'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/publikationen.png',
         title: 'Weitere Publikationen',
         link: 'wissen/publikationen/weitere'
       }

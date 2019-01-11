@@ -36,14 +36,13 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
             effect="solid"
           >
             <span>
-              Die ZARA Website wird ab Jänner 2019 auch auf Englisch zur
-              Verfügung gestellt werden.
+              Die ZARA Website wird in Kürze auch auf Englisch zur Verfügung
+              gestellt werden.
               <br />
               Wir bitten um Ihr Verständnis.
               <br />
               <br />
-              As of January 2019, the ZARA website will also be available in
-              English. <br />
+              The ZARA website will also be available in English soon. <br />
               Thank you for your understanding.
             </span>
           </ReactTooltip>

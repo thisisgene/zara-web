@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'hashtag.png',
+  image: 'main_icons/big/hashtags.png',
   imageSide: 'left',
   de: {
     title: 'Was kann ein Hashtag schon bewirken?',
@@ -135,28 +135,28 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/counter-narratives.png',
         title: 'Counternarratives',
         link: 'mitmischen/counternarratives'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/Hasspostings Online Melden.png',
         title: 'Hasspostings Online Melden',
         link: 'mitmischen/hasspostings_melden'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'faq-bubble.png',
+        image: 'icons/community.png',
         title: 'Community Beitreten',
         link: 'mitmischen/community'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'press.png',
+        image: 'icons/unterstuetzen.png',
         title: 'Unterstützen',
         link: 'mitmischen/unterstuetzen'
       }
@@ -168,28 +168,28 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/counter-narratives.png',
         title: 'Counternarratives',
         link: 'mitmischen/counternarratives'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/Hasspostings Online Melden.png',
         title: 'Hasspostings Online Melden',
         link: 'mitmischen/hasspostings_melden'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'faq-bubble.png',
+        image: 'icons/community.png',
         title: 'Community Beitreten',
         link: 'mitmischen/community'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'press.png',
+        image: 'icons/unterstuetzen.png',
         title: 'Unterstützen',
         link: 'mitmischen/unterstuetzen'
       }

@@ -56,14 +56,14 @@ const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/recht und ordnung.png',
         title: 'Recht & Ordnung',
         link: 'wissen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/wissen.png',
         text: 'Glossar',
         link: 'wissen'
       }

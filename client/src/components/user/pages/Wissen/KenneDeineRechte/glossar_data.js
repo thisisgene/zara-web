@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'zara_wide.png',
+  image: 'main_icons/big/glossar.png',
   imageSide: 'left',
   imageAlign: 'center',
   de: {

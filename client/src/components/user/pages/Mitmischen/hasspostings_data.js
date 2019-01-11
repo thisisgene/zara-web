@@ -1,6 +1,6 @@
 export const heroData = {
-  // image: 'hashtag.png',
-  // imageSide: 'left',
+  image: 'main_icons/big/Hasspostings Online Melden.png',
+  imageSide: 'left',
   size: 'mediumTitle',
   de: {
     title: 'Warum Hasspostings melden?',
@@ -80,28 +80,28 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/beratung.png',
         title: 'Hass im Netz melden',
         link: 'beratung/melden/hassimnetz'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
+        image: 'icons/hashtags.png',
         title: 'Hashtags',
         link: 'mitmischen/hashtags'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'faq-bubble.png',
+        image: 'icons/community.png',
         title: 'Community Beitreten',
         link: 'mitmischen/community'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'press.png',
+        image: 'icons/unterstuetzen.png',
         title: 'Unterstützen',
         link: 'mitmischen/unterstuetzen'
       }
@@ -113,28 +113,28 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'scales.png',
+        image: 'icons/beratung.png',
+        title: 'Hass im Netz melden',
+        link: 'beratung/melden/hassimnetz'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/hashtags.png',
         title: 'Hashtags',
         link: 'mitmischen/hashtags'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'book.png',
-        title: 'Hashtags',
-        link: 'mitmischen/hashtags'
-      },
-      {
-        size: 'default',
-        type: 'imageCard',
-        image: 'faq-bubble.png',
+        image: 'icons/community.png',
         title: 'Community Beitreten',
         link: 'mitmischen/community'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'press.png',
+        image: 'icons/unterstuetzen.png',
         title: 'Unterstützen',
         link: 'mitmischen/unterstuetzen'
       }

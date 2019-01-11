@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'community.png',
+  image: '/main_icons/big/community.png',
   imageAlign: 'center',
   imageSide: 'left',
   de: {
