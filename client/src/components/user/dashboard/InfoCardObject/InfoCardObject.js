@@ -68,7 +68,7 @@ class InfoCardObject extends Component {
                 {card.linkText}
               </a>
             ) : (
-              <Link to={`/user/${lang}/${card.link}`}>{card.linkText}</Link>
+              <Link to={`/${lang}/${card.link}`}>{card.linkText}</Link>
             )}
           </div>
         )}

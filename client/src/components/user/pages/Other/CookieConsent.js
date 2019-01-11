@@ -11,7 +11,7 @@ export default function CookieConsent({ handleClick, lang }) {
           Um diese Website optimal zu gestalten und verbessern zu können,
           verwenden wir Cookies. Durch die weitere Nutzung unserer Website
           erklären Sie sich mit dem Einsatz von Cookies und unseren{' '}
-          <Link to={`/user/${lang}/datenschutzerklaerung`}>
+          <Link to={`/${lang}/datenschutzerklaerung`}>
             Datenschutzrichtlinien
           </Link>{' '}
           einverstanden.

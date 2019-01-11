@@ -133,7 +133,7 @@ class TrainingDetail extends Component {
                             )}
                           </div>
                         ))}
-                      <Link to={`/user/${lang}/training/referenzen`}>
+                      <Link to={`/${lang}/training/referenzen`}>
                         {lang === 'de' ? 'Mehr anzeigen' : 'Show more'}
                       </Link>
                     </div>
@@ -163,7 +163,7 @@ class TrainingDetail extends Component {
                       ))
                   )}
 
-                  <Link to={`/user/${lang}/trainings/kinder_jugendliche`}>
+                  <Link to={`/${lang}/trainings/kinder_jugendliche`}>
                     <div
                       className={cx(
                         styles['more-info'],

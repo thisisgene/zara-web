@@ -17,7 +17,7 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
           <NavLink
             activeClassName={styles.active}
             // className={styles[getClass(lang.code)]}
-            to={`/user/${lang.code}`}
+            to={`/${lang.code}`}
             data-tip
             data-for={lang.code === 'en' && 'langTT'}
             onClick={e => {

@@ -97,7 +97,7 @@ class MobileMenu extends Component {
                 [styles['submenu-open']]: this.state.subMenuVisible
               })}
             >
-              <NavLink to="/user">
+              <NavLink to="/">
                 <img className={styles['logo-img']} src={Logo} alt="Zara" />
               </NavLink>
             </div>
@@ -165,7 +165,7 @@ class MobileMenu extends Component {
                       <div className={styles['main-menu--item']}>
                         <NavLink
                           activeClassName={styles.active}
-                          to={`/user/${lang}/${item.link}`}
+                          to={`/${lang}/${item.link}`}
                           onClick={this.onMobileNavClick}
                         >
                           <Translate id={`menu.item${item.id}`} />

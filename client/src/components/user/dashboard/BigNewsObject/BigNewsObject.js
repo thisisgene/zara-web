@@ -10,7 +10,7 @@ export default class BigNewsObject extends Component {
       <div className={styles['big-news']}>
         <div className={styles['big-news--text']}>{content.text}</div>
         <div className={styles['big-news--link']}>
-          <Link to={`/user/${lang}/${content.link}`}>{content.linkText}</Link>
+          <Link to={`/${lang}/${content.link}`}>{content.linkText}</Link>
         </div>
       </div>
     )

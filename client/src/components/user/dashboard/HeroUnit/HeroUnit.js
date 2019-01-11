@@ -42,7 +42,7 @@ class HeroUnit extends Component {
                   />
                   {data[lang].link && (
                     <div className={styles['hero-unit--text__link']}>
-                      <Link to={`/user/${lang}/${data[lang].link}`}>
+                      <Link to={`/${lang}/${data[lang].link}`}>
                         {data[lang].linkText}
                       </Link>
                     </div>

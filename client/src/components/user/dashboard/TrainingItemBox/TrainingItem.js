@@ -11,7 +11,7 @@ class TrainingItem extends Component {
     const item = content[lang]
     return (
       <div>
-        <Link to={`/user/${lang}/training/detail/${content._id}`}>
+        <Link to={`/${lang}/training/detail/${content._id}`}>
           <div className={styles['training-item']}>
             <div className={styles['training-item--title']}>{item.title}</div>
             <div className={styles['training-item--description']}>

@@ -36,11 +36,7 @@ class CarouselItem extends Component {
     )
     return (
       <div>
-        <Link
-          to={
-            item.mainLink ? `/user/${lang}/${item.mainLink}` : `/user/${lang}`
-          }
-        >
+        <Link to={item.mainLink ? `/${lang}/${item.mainLink}` : `/${lang}`}>
           <div
             className={cx(
               styles['carousel-item'],

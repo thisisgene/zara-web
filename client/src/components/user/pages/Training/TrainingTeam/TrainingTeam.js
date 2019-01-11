@@ -47,7 +47,7 @@ class Team extends Component {
                     bottomData.map((item, index) => (
                       <div key={index}>
                         <h1>{item[lang].title}</h1>
-                        <Link to={`/user/${lang}/${item[lang].textLink}`}>
+                        <Link to={`/${lang}/${item[lang].textLink}`}>
                           {item[lang].text}
                         </Link>
                       </div>

@@ -15,7 +15,7 @@ class CompactInfoCardObject extends Component {
           styles[card.size]
         )}
       >
-        <Link to={`/user/${lang}/${card.link}`}>
+        <Link to={`/${lang}/${card.link}`}>
           {card.type === 'imageCard' && (
             <div className={styles['compact-card--image']}>
               <img

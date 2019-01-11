@@ -31,7 +31,7 @@ export default class NewsItem extends Component {
           />
 
           <div className={styles['news-item--text__link']}>
-            <Link to={`/user/${lang}/wissen/aktuelles/${news.tag}/${news.id}`}>
+            <Link to={`/${lang}/wissen/aktuelles/${news.tag}/${news.id}`}>
               {news[lang].linkText}
             </Link>
           </div>

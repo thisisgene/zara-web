@@ -21,9 +21,7 @@ export default class NewsCollectionGridObject extends Component {
                   index < 7 &&
                   (item[lang].linkText && item[lang].linkText !== '' ? (
                     <Link
-                      to={`/user/${lang}/wissen/aktuelles/${item.tag}/${
-                        item.id
-                      }`}
+                      to={`/${lang}/wissen/aktuelles/${item.tag}/${item.id}`}
                     >
                       <NewsCard key={index} content={item} lang={lang} />
                     </Link>

@@ -123,19 +123,17 @@ class User extends Component {
     const { activeLanguage } = this.props
     const routes = [
       {
-        path: '/user/de',
+        path: '//de',
         exact: false,
-        breadcrumb: () => <NavLink to="/user/de">ZARA</NavLink>,
+        breadcrumb: () => <NavLink to="/de">ZARA</NavLink>,
         main: Home
       },
       {
-        path: '/user/:lang/beratung',
+        path: '//:lang/beratung',
         exact: false,
         breadcrumb: activeLanguage =>
           activeLanguage && (
-            <NavLink to={`/user/${activeLanguage.code}/beratung`}>
-              Beratung
-            </NavLink>
+            <NavLink to={`/${activeLanguage.code}/beratung`}>Beratung</NavLink>
           ),
         main: Home
       }
@@ -144,7 +142,7 @@ class User extends Component {
     return (
       <div className={styles.user}>
         <div className={styles['user--header']}>
-          <Route path="/user/:lang" component={Header} />
+          <Route path="/:lang" component={Header} />
         </div>
 
         <ScrollToTop>
@@ -162,235 +160,219 @@ class User extends Component {
               ))}
             </div> */}
             <Switch>
-              <Route exact path="/user/:lang" component={Home} />
+              <Route exact path="/:lang" component={Home} />
 
               {activeLanguage && (
-                <Redirect
-                  exact
-                  from="/user"
-                  to={`/user/${activeLanguage.code}`}
-                />
+                <Redirect exact from="/" to={`/${activeLanguage.code}`} />
               )}
-              <Route exact path="/user/:lang/beratung" component={Consulting} />
+              <Route exact path="/:lang/beratung" component={Consulting} />
               <Route
                 exact
-                path="/user/:lang/beratung/melden/:report"
+                path="/:lang/beratung/melden/:report"
                 component={Report}
               />
               <Route
                 exact
-                path="/user/:lang/beratung/beratung_rassismus_hassimnetz"
+                path="/:lang/beratung/beratung_rassismus_hassimnetz"
                 component={Beratung}
               />
               <Route
                 exact
-                path="/user/:lang/beratung/wassietunkoennen"
+                path="/:lang/beratung/wassietunkoennen"
                 component={WasSieTunKoennen}
               />
               <Route
                 exact
-                path="/user/:lang/beratung/waswirdanntun"
+                path="/:lang/beratung/waswirdanntun"
                 component={WasWirTunKoennen}
               />
-              <Route exact path="/user/:lang/training" component={Training} />
+              <Route exact path="/:lang/training" component={Training} />
               <Route
                 exact
-                path="/user/:lang/training/kinder_jugendliche"
+                path="/:lang/training/kinder_jugendliche"
                 component={TrainingChildren}
               />
               <Route
                 exact
-                path="/user/:lang/training/erwachsene"
+                path="/:lang/training/erwachsene"
                 component={TrainingAdults}
               />
               <Route
                 exact
-                path="/user/:lang/training/unternehmen"
+                path="/:lang/training/unternehmen"
                 component={TrainingUnternehmen}
               />
               <Route
                 exact
-                path="/user/:lang/training/detail/:trainingId"
+                path="/:lang/training/detail/:trainingId"
                 component={TrainingDetail}
               />
               <Route
                 exact
-                path="/user/:lang/training/trainingsprojekte"
+                path="/:lang/training/trainingsprojekte"
                 component={TrainingsProjekte}
               />
               <Route
                 exact
-                path="/user/:lang/training/trainer_innen"
+                path="/:lang/training/trainer_innen"
                 component={TrainingTeam}
               />
 
+              <Route exact path="/:lang/mitmischen" component={Mitmischen} />
               <Route
                 exact
-                path="/user/:lang/mitmischen"
-                component={Mitmischen}
-              />
-              <Route
-                exact
-                path="/user/:lang/mitmischen/counternarratives"
+                path="/:lang/mitmischen/counternarratives"
                 component={CounterNarratives}
               />
               <Route
                 exact
-                path="/user/:lang/mitmischen/hashtags"
+                path="/:lang/mitmischen/hashtags"
                 component={Hashtags}
               />
               <Route
                 exact
-                path="/user/:lang/mitmischen/hasspostings_melden"
+                path="/:lang/mitmischen/hasspostings_melden"
                 component={HasspostingsMelden}
               />
 
               <Route
                 exact
-                path="/user/:lang/mitmischen/community"
+                path="/:lang/mitmischen/community"
                 component={Community}
               />
               <Route
                 exact
-                path="/user/:lang/mitmischen/unterstuetzen"
+                path="/:lang/mitmischen/unterstuetzen"
                 component={Unterstuetzen}
               />
 
-              <Route exact path="/user/:lang/wissen" component={Wissen} />
+              <Route exact path="/:lang/wissen" component={Wissen} />
+              <Route exact path="/:lang/wissen/aktuelles" component={News} />
               <Route
                 exact
-                path="/user/:lang/wissen/aktuelles"
-                component={News}
-              />
-              <Route
-                exact
-                path="/user/:lang/wissen/aktuelles/kolumne"
+                path="/:lang/wissen/aktuelles/kolumne"
                 component={Kolumne}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/aktuelles/:category/:newsId"
+                path="/:lang/wissen/aktuelles/:category/:newsId"
                 component={NewsDetail}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/eigene_rechte_kennen"
+                path="/:lang/wissen/eigene_rechte_kennen"
                 component={KenneDeineRechte}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/eigene_rechte_kennen/glossar"
+                path="/:lang/wissen/eigene_rechte_kennen/glossar"
                 component={Glossar}
               />
+              <Route exact path="/:lang/wissen/presse" component={Presse} />
               <Route
                 exact
-                path="/user/:lang/wissen/presse"
-                component={Presse}
-              />
-              <Route
-                exact
-                path="/user/:lang/wissen/presse/pressespiegel"
+                path="/:lang/wissen/presse/pressespiegel"
                 component={Pressespiegel}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/presse/logos_und_kampagnenmaterial"
+                path="/:lang/wissen/presse/logos_und_kampagnenmaterial"
                 component={Logos}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/presse/fotos"
+                path="/:lang/wissen/presse/fotos"
                 component={Fotos}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/publikationen"
+                path="/:lang/wissen/publikationen"
                 component={Publikationen}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/publikationen/rassismusreport"
+                path="/:lang/wissen/publikationen/rassismusreport"
                 component={RassismusReport}
               />
               <Route
                 exact
-                path="/user/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
+                path="/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
                 component={OrderDone}
               />
-              <Route exact path="/user/:lang/wissen/faq" component={Faq} />
+              <Route exact path="/:lang/wissen/faq" component={Faq} />
 
               <Redirect
                 exact
-                from="/user/:lang/ueber_ZARA"
-                to="/user/:lang/ueber_ZARA/wer_wir_sind"
+                from="/:lang/ueber_ZARA"
+                to="/:lang/ueber_ZARA/wer_wir_sind"
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/wer_wir_sind"
+                path="/:lang/ueber_ZARA/wer_wir_sind"
                 component={WasWirWollen}
               />
               <Redirect
                 exact
-                from="/user/:lang/ueber_ZARA/was_wir_wollen"
-                to="/user/:lang/ueber_ZARA/was_wir_wollen/mission"
+                from="/:lang/ueber_ZARA/was_wir_wollen"
+                to="/:lang/ueber_ZARA/was_wir_wollen/mission"
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/was_wir_wollen/mission"
+                path="/:lang/ueber_ZARA/was_wir_wollen/mission"
                 component={Mission}
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/was_wir_wollen/geschichte"
+                path="/:lang/ueber_ZARA/was_wir_wollen/geschichte"
                 component={History}
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/was_wir_wollen/grundsaetze"
+                path="/:lang/ueber_ZARA/was_wir_wollen/grundsaetze"
                 component={Grundsaetze}
               />
               <Redirect
                 exact
-                from="/user/:lang/ueber_ZARA/was_wir_wollen/mitmischen"
-                to="/user/:lang/mitmischen"
+                from="/:lang/ueber_ZARA/was_wir_wollen/mitmischen"
+                to="/:lang/mitmischen"
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/wer_wir_sind/team"
+                path="/:lang/ueber_ZARA/wer_wir_sind/team"
                 component={Team}
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/wer_wir_sind/jobs"
+                path="/:lang/ueber_ZARA/wer_wir_sind/jobs"
                 component={Jobs}
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/projekte_und_kooperation/netzwerke_und_initiativen"
+                path="/:lang/ueber_ZARA/projekte_und_kooperation/netzwerke_und_initiativen"
                 component={Netzwerke}
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/projekte_und_kooperation/projekte"
+                path="/:lang/ueber_ZARA/projekte_und_kooperation/projekte"
                 component={Projekte}
               />
               <Route
                 exact
-                path="/user/:lang/ueber_ZARA/projekte_und_kooperation/befreundete_organisationen"
+                path="/:lang/ueber_ZARA/projekte_und_kooperation/befreundete_organisationen"
                 component={Organisationen}
               />
 
-              <Route exact path="/user/:lang/kontakt" component={Kontakt} />
+              <Route exact path="/:lang/kontakt" component={Kontakt} />
               <Route
                 exact
-                path="/user/:lang/verschluesselte_email"
+                path="/:lang/verschluesselte_email"
                 component={VerschluesselteEmail}
               />
 
-              <Route exact path="/user/:lang/impressum" component={Impressum} />
+              <Route exact path="/:lang/impressum" component={Impressum} />
               <Route
                 exact
-                path="/user/:lang/datenschutzerklaerung"
+                path="/:lang/datenschutzerklaerung"
                 component={Datenschutz}
               />
             </Switch>

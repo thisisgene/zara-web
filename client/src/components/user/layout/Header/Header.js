@@ -94,7 +94,7 @@ class Header extends Component {
           <nav className={cx(styles.header)}>
             <NavLink
               onClick={this.state.mobileExpand ? this.onMobileNavClick : null}
-              to="/user"
+              to="/"
             >
               <div className={styles.logo} onClick={this.onLinkBlur}>
                 <img className={styles['logo-img']} src={Logo} alt="Zara" />
@@ -135,7 +135,7 @@ class Header extends Component {
                       <div key={item.id}>
                         <NavLink
                           activeClassName={styles.active}
-                          to={`/user/${activeLanguage.code}/${item.link}`}
+                          to={`/${activeLanguage.code}/${item.link}`}
                           onMouseEnter={this.onLinkHover.bind(this, item.id)}
                           onFocus={this.onLinkHover.bind(this, item.id)}
                           onClick={this.onLinkBlur}
@@ -223,7 +223,7 @@ class Header extends Component {
         </div>
 
         {/* {activeLanguage && (
-          <Redirect exact from="/user" to={`/user/${activeLanguage.code}`} />
+          <Redirect exact from="/" to={`/${activeLanguage.code}`} />
         )} */}
       </div>
     )

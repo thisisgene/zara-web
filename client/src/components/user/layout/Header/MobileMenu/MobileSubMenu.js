@@ -46,9 +46,7 @@ class MobileSubMenu extends Component {
                             <div className={styles['sub-item--title']}>
                               {subItem.link !== null ? (
                                 <NavLink
-                                  to={`/user/${lang}/${item.link}/${
-                                    subItem.link
-                                  }`}
+                                  to={`/${lang}/${item.link}/${subItem.link}`}
                                   activeClassName={styles.active}
                                   onClick={this.props.onMobileNavClick}
                                 >
@@ -97,14 +95,12 @@ class MobileSubMenu extends Component {
                                     <NavLink
                                       to={
                                         ssItem.redirect
-                                          ? `/user/${lang}/${
-                                              ssItem.redirectLink
-                                            }`
+                                          ? `/${lang}/${ssItem.redirectLink}`
                                           : subItem.link !== null
-                                          ? `/user/${lang}/${item.link}/${
+                                          ? `/${lang}/${item.link}/${
                                               subItem.link
                                             }/${ssItem.link}`
-                                          : `/user/${lang}/${item.link}/${
+                                          : `/${lang}/${item.link}/${
                                               ssItem.link
                                             }`
                                       }
@@ -151,7 +147,7 @@ class MobileSubMenu extends Component {
                           <div className={styles['sub-item--title']}>
                             {cat.link !== null ? (
                               <NavLink
-                                to={`/user/${lang}/training/${cat.link}`}
+                                to={`/${lang}/training/${cat.link}`}
                                 activeClassName={styles.active}
                                 onClick={this.props.onMobileNavClick}
                               >
@@ -195,7 +191,7 @@ class MobileSubMenu extends Component {
                                       {itemIndex <= 4 && (
                                         <div className={styles['sub-sub-item']}>
                                           <NavLink
-                                            to={`/user/${lang}/training/detail/${
+                                            to={`/${lang}/training/detail/${
                                               item._id
                                             }`}
                                             activeClassName={styles.active}
@@ -221,14 +217,12 @@ class MobileSubMenu extends Component {
                                     <NavLink
                                       to={
                                         ssItem.redirect
-                                          ? `/user/${lang}/${
-                                              ssItem.redirectLink
-                                            }`
+                                          ? `/${lang}/${ssItem.redirectLink}`
                                           : cat.link !== null
-                                          ? `/user/${lang}/${item.link}/${
+                                          ? `/${lang}/${item.link}/${
                                               cat.link
                                             }/${ssItem.link}`
-                                          : `/user/${lang}/${item.link}/${
+                                          : `/${lang}/${item.link}/${
                                               ssItem.link
                                             }`
                                       }

@@ -61,7 +61,7 @@ export default class FooterContent extends Component {
                     {content.right.top.left.items &&
                       content.right.top.left.items.map((item, index) => (
                         <div key={index}>
-                          <Link to={`/user/${lang}/${item.link}`}>
+                          <Link to={`/${lang}/${item.link}`}>
                             {item.linkText}
                           </Link>
                         </div>
@@ -144,8 +144,8 @@ export default class FooterContent extends Component {
               [styles['inMobileMenu']]: type === 'small'
             })}
           >
-            <Link to={`/user/${lang}/impressum`}>Impressum</Link>
-            <Link to={`/user/${lang}/datenschutzerklaerung`}>
+            <Link to={`/${lang}/impressum`}>Impressum</Link>
+            <Link to={`/${lang}/datenschutzerklaerung`}>
               {lang === 'de'
                 ? 'Datenschutzerklärung'
                 : 'Data Privacy Statement'}

@@ -1,16 +1,16 @@
 export const routes = [
   {
-    path: '/user/de',
+    path: '//de',
     exact: false,
-    breadcrumb: () => <NavLink to="/user/de">ZARA</NavLink>,
+    breadcrumb: () => <NavLink to="/de">ZARA</NavLink>,
     main: Home
   },
   {
-    path: '/user/:lang/beratung',
+    path: '//:lang/beratung',
     exact: false,
     breadcrumb: activeLanguage =>
       activeLanguage && (
-        <NavLink to={`/user/${activeLanguage.code}/beratung`}>Beratung</NavLink>
+        <NavLink to={`/${activeLanguage.code}/beratung`}>Beratung</NavLink>
       ),
     main: Home
   }

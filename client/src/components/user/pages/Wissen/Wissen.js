@@ -23,7 +23,7 @@ class Wissen extends Component {
           <div className={styles['wissen']}>
             <CarouselGroup data={carouselData} lang={lang} />
             <div className={styles['more-link']}>
-              <Link to={`/user/${lang}/wissen/aktuelles`}>
+              <Link to={`/${lang}/wissen/aktuelles`}>
                 {lang === 'de'
                   ? 'Weitere News, Veranstaltungen und Mehr'
                   : 'More news, events, ...'}

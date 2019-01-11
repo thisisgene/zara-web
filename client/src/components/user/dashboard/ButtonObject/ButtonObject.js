@@ -11,7 +11,7 @@ class ButtonObject extends Component {
       <div>
         {button.linkPath !== 'external' ? (
           <NavLink
-            to={`/user/${lang}/${button.link}`}
+            to={`/${lang}/${button.link}`}
             className={cx(styles['button'], styles[button.type])}
           >
             {button.text}
