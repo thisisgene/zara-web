@@ -75,6 +75,9 @@ class Team extends Component {
                     <TeamMember content={member} />
                   ))}
               </div>
+              <div style={{ margin: '2rem 0 4rem' }}>
+                <i>Fotos: © Johannes Zinner</i>
+              </div>
               {lang && lang === 'de' ? (
                 <div>
                   <h1>Unterstützer*innen seit 2018</h1>

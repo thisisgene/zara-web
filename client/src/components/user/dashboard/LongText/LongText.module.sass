@@ -2,6 +2,9 @@
   max-width: 880px
   padding: 2rem 1.5rem
   margin: 2rem auto
+
+  
+
   &.noHead
     margin-top: 0
   &--title
@@ -10,13 +13,27 @@
       weight: bold
     line-height: 1.1
     margin-bottom: 1.4rem
+    word-break: break-all
   &--image
     height: 5rem
     margin: 1rem 0
+    max-width: 90vw
     &.big
       height: 12rem
     img
       height: 100%
+  
+  &--link
+    word-break: break-all
+
+  @media(max-width: 400px)
+    &--image
+      height: auto
+      max-width: 90vw
+      img
+        height: auto
+        width: 100%
+
   &--list
     margin: 1rem 0
     &__title
