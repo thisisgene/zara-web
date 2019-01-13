@@ -147,7 +147,7 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'beratung.png',
+        image: 'icons/beratung.png',
         title: 'Was können wir tun?',
         link: 'beratung/lassunswastun/waswirdanntun'
       },

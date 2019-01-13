@@ -213,7 +213,7 @@ const infoObj_red = {
         title: 'Rassismus melden',
         text:
           'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
-        link: 'melden',
+        link: 'beratung/melden/rassismus',
         linkText: 'Melden!'
       },
       {
