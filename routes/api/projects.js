@@ -613,7 +613,6 @@ router.post('/order', (req, res) => {
     <h3>Anmerkungen</h3>
     <div>${body.addInfo}</div>
   `
-  console.log('SHOULD NOT HAPPEN IF ERROR')
   sendOrderEmail(outputHtml, body, res)
 })
 
