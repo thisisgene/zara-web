@@ -613,6 +613,7 @@ router.post('/order', (req, res) => {
     <h3>Anmerkungen</h3>
     <div>${body.addInfo}</div>
   `
+  console.log('SHOULD NOT HAPPEN IF ERROR')
   sendOrderEmail(outputHtml, body, res)
 })
 
@@ -633,7 +634,7 @@ sendOrderEmail = (order, body, res) => {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: 'office@zara.or.at', // list of receivers
+    to: 'emdo2000@gmail.com', // list of receivers // office@zara.or.at
     subject: 'Neue Bestellung', // Subject line
     html: order // html body
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+
+import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { sendOrder, resetOrder } from '../../../../actions/userActions'
@@ -25,6 +26,7 @@ class ImageGridObject extends Component {
       city: '',
       email: '',
       addInfo: '',
+      approved: false,
       errors: {}
     }
   }
@@ -70,18 +72,27 @@ class ImageGridObject extends Component {
       city: '',
       email: '',
       addInfo: '',
+      approved: false,
       errors: {}
     })
   }
   onChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
+    if (e.target.name !== 'approved') {
+      this.setState({
+        [e.target.name]: e.target.value
+      })
+    } else {
+      this.setState({
+        [e.target.name]: e.target.checked
+      })
+    }
+    console.log(this.state.approved)
   }
   onSubmit = e => {
     e.preventDefault()
 
-    this.setState({ saving: true })
+    // if (this.state.errors.length == 0) {
+    this.setState({ errors: {}, saving: true })
 
     const order = this.state.cart.filter(item => item.count > 0)
     const newOrder = {
@@ -94,6 +105,7 @@ class ImageGridObject extends Component {
       addInfo: this.state.addInfo
     }
     this.props.sendOrder(newOrder, this.props.history)
+    // }
   }
 
   cartShouldBeVisible = () => {
@@ -139,7 +151,11 @@ class ImageGridObject extends Component {
     const { errors } = this.state
     return (
       <div>
-        <Spinner nowActive={this.state.saving} />
+        <Spinner
+          nowActive={
+            this.state.saving && Object.keys(this.state.errors).length == 0
+          }
+        />
         <div className={styles['grid-container']}>
           {content.map((item, index) => (
             <div key={index} className={styles['grid-item']}>
@@ -189,7 +205,7 @@ class ImageGridObject extends Component {
                 <form onSubmit={this.onSubmit}>
                   <h2>
                     {lang === 'de'
-                      ? 'Ich möchte folgende Artikel bestellen'
+                      ? 'Ich möchte folgende Artikel kostenlos bestellen'
                       : ''}
                   </h2>
                   {this.state.cart.map(item => (
@@ -252,7 +268,28 @@ class ImageGridObject extends Component {
                       onChange={this.onChange}
                     />
                   </div>
-                  <input type="submit" value="Abschicken" />
+                  <input
+                    id="approved"
+                    type="checkbox"
+                    name="approved"
+                    // checked={this.state.approved}
+                    onChange={this.onChange}
+                  />
+                  <label htmlFor="approved">
+                    Ich stimme der Verarbeitung der von mir angegebenen Daten
+                    gemäß Art 6 Abs 1 lit a DSGVO zum Zweck der
+                    Weiterverarbeitung zu.
+                  </label>
+                  <Link target="blank" to={`/${lang}/datenschutzerklaerung`}>
+                    Nähere Information in der Datenschutzerklärung
+                  </Link>
+                  <br />
+                  <br />
+                  <input
+                    disabled={!this.state.approved}
+                    type="submit"
+                    value="Abschicken"
+                  />
                 </form>
               </div>
             ) : (
