@@ -36,7 +36,7 @@ class ReportContent extends Component {
               </div>
               <p>Datum & Uhrzeit</p>
               <div className={styles['report-message']}>
-                <Moment format="YYYY/MM/DD - HH:MM">{report.date}</Moment>
+                <Moment format="YYYY/MM/DD - HH:mm">{report.date}</Moment>
               </div>
               <p>Nachricht</p>
               <div className={styles['report-message']}>
