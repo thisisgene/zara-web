@@ -32,7 +32,7 @@ export const cardGridObject = {
         type: 'imageCard',
         image: 'icons/publikationen.png',
         title: 'Publikationen',
-        link: 'test'
+        link: 'wissen/publikationen'
       },
       {
         size: 'default',
@@ -46,7 +46,7 @@ export const cardGridObject = {
         type: 'imageCard',
         image: 'press.png',
         title: 'Presse',
-        link: 'wissen/faq'
+        link: 'wissen/presse'
       }
     ]
   },

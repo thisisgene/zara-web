@@ -9,22 +9,25 @@ class FaqBox extends Component {
   constructor() {
     super()
     this.state = {
-      activeTags: [],
+      activeTag: '',
       searchValue: ''
     }
   }
   onChange = e => {
-    let activeTags = this.state.activeTags
-    if (e.target.checked) {
-      activeTags.push(e.target.name)
-      this.setState({
-        activeTags: activeTags
-      })
-    } else {
-      this.setState({
-        activeTags: activeTags.filter(tag => tag !== e.target.name)
-      })
-    }
+    // let activeTags = this.state.activeTags
+    // if (e.target.checked) {
+    //   activeTags.push(e.target.name)
+    //   this.setState({
+    //     activeTags: activeTags
+    //   })
+    // } else {
+    //   this.setState({
+    //     activeTags: activeTags.filter(tag => tag !== e.target.name)
+    //   })
+    // }
+    this.setState({
+      activeTag: e.target.value
+    })
   }
 
   searchContent = e => {
@@ -37,7 +40,7 @@ class FaqBox extends Component {
 
   resetTags = () => {
     this.setState({
-      activeTags: []
+      activeTag: ''
     })
   }
 
@@ -46,10 +49,10 @@ class FaqBox extends Component {
 
     let filteredContent = []
 
-    if (this.state.activeTags.length > 0) {
+    if (this.state.activeTag !== '') {
       filteredContent = content.filter(filteredFaq => {
         for (let tag of filteredFaq.tags) {
-          if (this.state.activeTags.includes(tag) === true) return true
+          if (this.state.activeTag === tag) return true
         }
         return false
       })
@@ -64,7 +67,7 @@ class FaqBox extends Component {
         <div className={styles['faq-box--filter-bar']}>
           <div
             className={cx(styles['reset-button'], {
-              [styles['active']]: this.state.activeTags.length === 0
+              [styles['active']]: this.state.activeTag === ''
             })}
           >
             <label onClick={this.resetTags} tabIndex="1">
@@ -76,11 +79,11 @@ class FaqBox extends Component {
               tags.map((tag, index) => (
                 <div key={index} className={styles['tag-item']}>
                   <input
-                    name={tag.name}
-                    type="checkbox"
+                    value={tag.name}
+                    type="radio"
                     id={`tag-${tag.name}`}
                     onChange={this.onChange}
-                    checked={this.state.activeTags.includes(tag.name)}
+                    checked={this.state.activeTag === tag.name}
                   />
                   <label htmlFor={`tag-${tag.name}`}>{tag[lang].title}</label>
                 </div>

@@ -5,12 +5,41 @@ export const heroData = {
   de: {
     title: 'Publikationen',
     text:
-      'Hier finden Sie  unseren Rassismus Report, weitere Publikationen sowie Stellungnahmen und Forderungen.'
+      'Hier finden Sie unseren Rassismus Report, weitere Publikationen sowie Stellungnahmen und Forderungen.'
   },
   en: {
     title: 'Publikationen',
     text:
-      'Hier finden Sie  unseren Rassismus Report, weitere Publikationen sowie Stellungnahmen und Forderungen.'
+      'Hier finden Sie unseren Rassismus Report, weitere Publikationen sowie Stellungnahmen und Forderungen.'
+  }
+}
+
+export const weitereHeroData = {
+  image: 'publikationen.png',
+  imageSide: 'left',
+  imageAlign: 'center',
+  de: {
+    title: 'Weitere Publikationen',
+    text:
+      'Hier finden Sie demnächst weitere Publikationen sowie Stellungnahmen und Forderungen.'
+  },
+  en: {
+    title: 'Weitere Publikationen',
+    text:
+      'Hier finden Sie demnächst weitere Publikationen sowie Stellungnahmen und Forderungen.'
+  }
+}
+export const zaraHeroData = {
+  image: 'publikationen.png',
+  imageSide: 'left',
+  imageAlign: 'center',
+  de: {
+    title: 'ZARA Publikationen',
+    text: 'Hier finden Sie demnächst ZARAs und weitere Publikationen.'
+  },
+  en: {
+    title: 'ZARA Publikationen',
+    text: 'Hier finden Sie demnächst ZARAs und weitere Publikationen.'
   }
 }
 

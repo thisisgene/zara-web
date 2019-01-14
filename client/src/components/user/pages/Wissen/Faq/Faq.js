@@ -64,8 +64,8 @@ const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/wissen.png',
-        text: 'Glossar',
-        link: 'wissen'
+        title: 'Glossar',
+        link: 'wissen/glossar'
       }
     ]
   },

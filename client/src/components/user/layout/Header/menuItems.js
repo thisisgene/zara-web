@@ -255,6 +255,16 @@ const menuItems = [
             name: 'Rassismusreport',
             link: 'rassismusreport',
             id: '4.3.1'
+          },
+          {
+            name: 'ZARA Publikationen',
+            link: 'zara',
+            id: '4.3.2'
+          },
+          {
+            name: 'Weitere Publikationen',
+            link: 'weitere',
+            id: '4.3.3'
           }
         ]
       },

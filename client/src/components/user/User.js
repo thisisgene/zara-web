@@ -69,6 +69,8 @@ import Logos from './pages/Wissen/Presse/Logos'
 import VerschluesselteEmail from './pages/Other/VerschluesselteEmail'
 import OrderDone from './dashboard/ImageGridObject/OrderDone'
 import CookieConsent from './pages/Other/CookieConsent'
+import WeiterePublikationen from './pages/Wissen/Publikationen/WeiterePublikationen'
+import ZaraPublikationen from './pages/Wissen/Publikationen/ZaraPublikationen'
 
 class User extends Component {
   constructor(props) {
@@ -293,6 +295,16 @@ class User extends Component {
                 exact
                 path="/:lang/wissen/publikationen/rassismusreport"
                 component={RassismusReport}
+              />
+              <Route
+                exact
+                path="/:lang/wissen/publikationen/weitere"
+                component={WeiterePublikationen}
+              />
+              <Route
+                exact
+                path="/:lang/wissen/publikationen/zara"
+                component={ZaraPublikationen}
               />
               <Route
                 exact
