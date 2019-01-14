@@ -502,12 +502,13 @@ router.get(
   }
 )
 
-router.post('/report/send', async (req, res) => {
+router.post('/report/send', (req, res) => {
   const body = req.body
   const date = new Date()
+  console.log('LINKS:', body.links)
   const newReport = new Report({
     description: body.description,
-    anonym: body.anonym,
+    anonym: body.selectedOption === 'anonym',
     name: body.name,
     email: body.email,
     phone: body.phone,
@@ -589,7 +590,7 @@ router.post('/report/images', async (req, res) => {
   const upload = multer({
     storage: multerS3({
       s3: s3,
-      bucket: 'serpig-test',
+      bucket: 'serpig-space',
       acl: 'public-read',
       key: function(req, file, cb) {
         console.log('body: ', req.body)

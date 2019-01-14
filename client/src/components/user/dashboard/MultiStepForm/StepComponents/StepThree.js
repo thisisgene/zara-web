@@ -24,7 +24,7 @@ class Step3 extends Component {
   isValidated() {
     const userInput = this._grabUserInput() // grab user entered vals
     let isDataValid = true
-
+    console.log('LINKS', userInput.links)
     if (this.props.getStore().links !== userInput.links) {
       // only update store of something changed
       this.props.updateStore({

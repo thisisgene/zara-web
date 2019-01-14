@@ -21,6 +21,9 @@ const ReportSchema = new Schema({
   phone: {
     type: String
   },
+  links: {
+    type: String
+  },
   date: {
     type: Date
   },

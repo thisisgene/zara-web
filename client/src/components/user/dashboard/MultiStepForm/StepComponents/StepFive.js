@@ -55,7 +55,7 @@ class StepFive extends Component {
         } else {
           reject()
         }
-      }, 2000)
+      }, 4000)
     })
   }
 

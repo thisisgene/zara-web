@@ -40,7 +40,16 @@ class ReportContent extends Component {
               </div>
               <p>Nachricht</p>
               <div className={styles['report-message']}>
-                {report.description}{' '}
+                {report.description}
+              </div>
+              <p>Links</p>
+              <div className={styles['report-links']}>
+                {report.links &&
+                  report.links.split(',').map(link => (
+                    <div>
+                      <a href={link}>{link}</a>
+                    </div>
+                  ))}
               </div>
             </div>
             <p>Bilder</p>

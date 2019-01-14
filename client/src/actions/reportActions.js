@@ -33,16 +33,16 @@ export const resetReport = () => dispatch => {
 
 export const sendReport = reportData => dispatch => {
   let formData = new FormData()
-  formData.append('description', reportData.description)
-  formData.append('links', reportData.links)
-  if (reportData.selectedOption === 'anonym') {
-    formData.append('anonym', true)
-  } else {
-    formData.append('name', reportData.name)
-    formData.append('email', reportData.email)
-    formData.append('phone', reportData.phone)
-  }
-  axios.post('/api/projects/report/send', formData).then(res => {
+  // formData.append('description', reportData.description)
+  // formData.append('links', reportData.links)
+  // if (reportData.selectedOption === 'anonym') {
+  //   formData.append('anonym', true)
+  // } else {
+  //   formData.append('name', reportData.name)
+  //   formData.append('email', reportData.email)
+  //   formData.append('phone', reportData.phone)
+  // }
+  axios.post('/api/projects/report/send', reportData).then(res => {
     const id = res.data.report._id
     const files = reportData.files
     if (files.length > 0) {
