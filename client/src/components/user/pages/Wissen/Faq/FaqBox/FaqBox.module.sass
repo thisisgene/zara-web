@@ -71,10 +71,21 @@
         height: 0
         &:checked ~ label
           border-bottom: 2px solid #ffc800
+  .faq-item--margin  
+    display: block 
+    // content: " " 
+    margin-top: -5rem
+    height: 10rem
+    // width: 100%
+    // background: blue
+    visibility: hidden 
+    pointer-events: none
   .faq-item
     width: 100%
     padding: 0 2rem
+    margin-top: -5rem
     // background: rgba(0,0,0,.1)
+    
     @media(max-width: 600px)
       padding: 0 1rem
     @media(max-width: 520px)

@@ -146,7 +146,7 @@ export const cardGridObject = {
         image: 'icons/beratung.png',
         text:
           'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit setzen wir von ZARA uns für eine rassismusfreie Gesellschaft und einen respektvollen Umgang miteinander ein. Mit u.a. unseren Beratungsleistungen wollen wir Betroffenen den Rücken stärken und auf strukturelle Mängel hinweisen. Mit Ihrer Spende ermöglichen Sie, dass wir unsere jahrelange Expertise und unser Engagement in unseren Arbeitsbereichen und Schwerpunkten einsetzen und weiter ausbauen können!',
-        link: 'beratung'
+        link: 'mitmischen/unterstuetzen'
       }
     ]
   },

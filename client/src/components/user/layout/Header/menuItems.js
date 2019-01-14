@@ -140,12 +140,24 @@ const menuItems = [
         de: {
           icon: 'act',
           text: 'Rassismus melden',
-          link: 'beratung/rassismus/melden'
+          link: 'beratung/melden/rassismus'
         },
         en: {
           icon: 'act',
           text: 'Rassismus melden',
-          link: 'beratung/rassismus/melden'
+          link: 'beratung/melden/rassismus'
+        }
+      },
+      {
+        de: {
+          icon: 'act',
+          text: 'Hass im Netz melden',
+          link: 'beratung/melden/hassimnetz'
+        },
+        en: {
+          icon: 'act',
+          text: 'Rassismus melden',
+          link: 'beratung/melden/hassimnetz'
         }
       }
     ],
@@ -338,12 +350,6 @@ const menuItems = [
             name: 'ZARA Grundsätze',
             link: 'grundsaetze',
             id: '5.1.3'
-          },
-          {
-            name: 'Mitmischen',
-            redirect: true,
-            redirectLink: 'mitmischen',
-            id: '3'
           }
         ]
       },

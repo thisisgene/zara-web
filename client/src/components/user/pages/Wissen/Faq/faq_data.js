@@ -39,13 +39,14 @@ export const faqData = [
       title:
         'Was macht ZARA überhaupt? Wie setzt sich ZARA gegen rassistische Diskriminierung ein?',
       text:
-        'ZARA Berater*innen beraten Betroffene und Zeug*innen von Rassismus kostenlos auf alltäglicher Basis. Seit 2017 beraten ZARA-Berater*innen #GegenHassimNetz auch Betroffene und Zeug*innen von Hass im Netz. Hier beraten Sie Personen nicht nur wenn Sie im Internet rassistische Diskriminierung oder Rassismus (mehr über den Unterschied finden Sie in Frage 1: "Was ist rassistische Diskriminierung? Was ist Rassismus?") erleben.<br><br>Neben den Beratungstätigkeiten bemüht sich ZARA darum, über Öffentlichkeits- und Informationsarbeit Personen über die ZARA Schwerpunkte zu informieren, auf Probleme hinzuweisen sowie Ungleichheiten sichtbar zu machen. <br><br>ZARA und vor allem ZARA Training gemeinnützige GmbH arbeitet zudem präventiv. ZARA Training bietet das ganze Jahr lang Trainings und Workshops für Schüler*innen, Studierende, Erwachsene und Unternehmen an. In diesen Trainings geht es um die Themen: Rassismus, Diversität, (digitale) Zivilcourage und vieles mehr. <br><br>ZARA ist Teil von nationalen sowie internationalen Plattformen, Netzwerken, Gremien und Arbeitsgruppen, um gemeinsam mit anderen Organisationen und Einzelpersonen so effektiv wie möglich gegen rassistische Diskriminierung vorzugehen. Nur wenn wir viele sind, können wir Großes erreichen!',
+        'ZARA Berater*innen beraten Betroffene und Zeug*innen von Rassismus kostenlos auf alltäglicher Basis. Seit 2017 beraten ZARA-Berater*innen #GegenHassimNetz auch Betroffene und Zeug*innen von Hass im Netz. Hier beraten Sie Personen nicht nur wenn Sie im Internet rassistische Diskriminierung oder Rassismus (mehr über den Unterschied finden Sie [[link1]]) erleben.<br><br>Neben den Beratungstätigkeiten bemüht sich ZARA darum, über Öffentlichkeits- und Informationsarbeit Personen über die ZARA Schwerpunkte zu informieren, auf Probleme hinzuweisen sowie Ungleichheiten sichtbar zu machen. <br><br>ZARA und vor allem ZARA Training gemeinnützige GmbH arbeitet zudem präventiv. ZARA Training bietet das ganze Jahr lang Trainings und Workshops für Schüler*innen, Studierende, Erwachsene und Unternehmen an. In diesen Trainings geht es um die Themen: Rassismus, Diversität, (digitale) Zivilcourage und vieles mehr. <br><br>ZARA ist Teil von nationalen sowie internationalen Plattformen, Netzwerken, Gremien und Arbeitsgruppen, um gemeinsam mit anderen Organisationen und Einzelpersonen so effektiv wie möglich gegen rassistische Diskriminierung vorzugehen. Nur wenn wir viele sind, können wir Großes erreichen!',
+      linksToFaq: true,
       links: [
         {
           type: 'faq',
-          ref: '[link1]',
+          ref: 'link1',
           text: 'hier',
-          to: '1'
+          toID: '1'
         }
       ]
     },

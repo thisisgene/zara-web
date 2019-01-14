@@ -33,12 +33,32 @@ export default class FooterContent extends Component {
                     className={styles['footer-content--left__body__item']}
                   >
                     <IconObject image={item.icon} />
-                    <div
-                      className={
-                        styles['footer-content--left__body__item--text']
-                      }
-                      dangerouslySetInnerHTML={{ __html: item.text }}
-                    />
+                    {item.isLink ? (
+                      <a href={item.link}>
+                        <div
+                          className={
+                            styles['footer-content--left__body__item--text']
+                          }
+                          dangerouslySetInnerHTML={{ __html: item.text }}
+                        />
+                      </a>
+                    ) : (
+                      <div>
+                        <div
+                          className={
+                            styles['footer-content--left__body__item--text']
+                          }
+                          dangerouslySetInnerHTML={{ __html: item.text }}
+                        />
+                        {item.addLink && (
+                          <div style={{ marginTop: '.3rem' }}>
+                            <a target="blank" href={item.link}>
+                              {item.linkText}
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 ))}
             </div>
@@ -82,7 +102,9 @@ export default class FooterContent extends Component {
                     }
                   >
                     <div className={styles['donate-box']}>
-                      <IconObject image={content.right.top.right.icon} />
+                      <Link to={`/${lang}/${content.right.top.right.link}`}>
+                        <IconObject image={content.right.top.right.icon} />
+                      </Link>
                       <div className={styles['donate-box--list']}>
                         {content.right.top.right.items &&
                           content.right.top.right.items.map((item, index) => (

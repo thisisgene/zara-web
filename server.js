@@ -41,17 +41,18 @@ app.use(bodyParser.json())
 // })
 
 // FileUpload middleware
-app.use(
-  fileUpload({
-    createParentPath: true,
-    safeFileNames: true,
-    preserveExtension: true
-  })
-)
+// app.use(
+//   fileUpload({
+//     createParentPath: true,
+//     safeFileNames: true,
+//     preserveExtension: true
+//   })
+// )
 app.use('/public', express.static(__dirname + '/public'))
 
 app.use('/assets', proxy('https://assets.zara.or.at'))
 app.use('/download', proxy('https://zara-download.ams3.digitaloceanspaces.com'))
+// app.use('/assets', proxy('https://serpig-test.ams3.digitaloceanspaces.com')) // <= TEST SERVER
 
 // DB Config
 const db = require('./config/keys').mongoURI

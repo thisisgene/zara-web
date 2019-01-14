@@ -55,7 +55,7 @@ class ReportContent extends Component {
                       <div className={styles['thumb']}>
                         <div className={styles['thumbInner']}>
                           <img
-                            src={`/public/reports/${report._id}/${
+                            src={`/assets/reports/${report._id}/${
                               image.originalName
                             }`}
                             className={styles['img']}

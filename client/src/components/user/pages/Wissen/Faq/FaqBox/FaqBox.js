@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
 import FaqItem from './FaqItem'
 
@@ -13,6 +14,13 @@ class FaqBox extends Component {
       searchValue: ''
     }
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match !== this.props.match) {
+      console.log(this.props.match.params)
+    }
+  }
+
   onChange = e => {
     // let activeTags = this.state.activeTags
     // if (e.target.checked) {
@@ -117,4 +125,4 @@ class FaqBox extends Component {
   }
 }
 
-export default FaqBox
+export default withRouter(FaqBox)

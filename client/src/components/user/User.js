@@ -72,6 +72,7 @@ import CookieConsent from './pages/Other/CookieConsent'
 import WeiterePublikationen from './pages/Wissen/Publikationen/WeiterePublikationen'
 import ZaraPublikationen from './pages/Wissen/Publikationen/ZaraPublikationen'
 
+import PageNotFound from './pages/Other/PageNotFound'
 class User extends Component {
   constructor(props) {
     super(props)
@@ -311,7 +312,8 @@ class User extends Component {
                 path="/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
                 component={OrderDone}
               />
-              <Route exact path="/:lang/wissen/faq" component={Faq} />
+              <Route exact path="/:lang/wissen/faq/:faqId?" component={Faq} />
+              {/* <Route exact path="/:lang/wissen/faq/:faqId" component={Faq} /> */}
 
               <Redirect
                 exact
@@ -392,6 +394,8 @@ class User extends Component {
                 path="/:lang/datenschutzerklaerung"
                 component={Datenschutz}
               />
+
+              <Route component={PageNotFound} />
             </Switch>
           </div>
         </ScrollToTop>

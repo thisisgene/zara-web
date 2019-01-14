@@ -5,7 +5,7 @@ const marked = require('marked')
 
 const multer = require('multer')
 const multerS3 = require('multer-s3')
-const AWS = require('aws-sdk')
+const aws = require('aws-sdk')
 const Jimp = require('jimp')
 
 const nodemailer = require('nodemailer')
@@ -202,6 +202,7 @@ router.post(
     const newImage = {
       originalName: imgName
     }
+
     Project.findOneAndUpdate(
       // FIXME: If project has no background image, make first image to upload the background image!
       { _id: body.id },
@@ -209,26 +210,35 @@ router.post(
       { safe: true, new: true }
     )
       .then(project => {
-        file.mv(`public/${body.id}/${imgName}`, function(err) {
-          if (err) {
-            return res.status(500).send(err)
-          }
-          Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
-            if (err) throw err
-            img
-              .resize(600, Jimp.AUTO) // resize
-              .quality(88) // set JPEG quality
-              .write(`public/${body.id}/med/${imgName}`) // save
-          })
-          Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
-            if (err) throw err
-            img
-              .resize(100, Jimp.AUTO) // resize
-              .quality(60) // set JPEG quality
-              .blur(3) // set blur
-              .write(`public/${body.id}/min/${imgName}`) // save
-          })
-        })
+        // file.mv(`public/${body.id}/${imgName}`, function(err) {
+        //   if (err) {
+        //     return res.status(500).send(err)
+        //   }
+        //   Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
+        //     if (err) throw err
+        //     img
+        //       .resize(600, Jimp.AUTO) // resize
+        //       .quality(88) // set JPEG quality
+        //       .write(`public/${body.id}/med/${imgName}`) // save
+        //   })
+        //   Jimp.read(`public/${body.id}/${imgName}`, (err, img) => {
+        //     if (err) throw err
+        //     img
+        //       .resize(100, Jimp.AUTO) // resize
+        //       .quality(60) // set JPEG quality
+        //       .blur(3) // set blur
+        //       .write(`public/${body.id}/min/${imgName}`) // save
+        //   })
+        // })
+        // upload(req, res, function(error) {
+        //   console.log('UPLOAD')
+        //   if (error) {
+        //     console.log(error)
+        //     // return response.redirect('/error')
+        //   }
+        //   console.log('File uploaded successfully.')
+        //   // response.redirect("/success");
+        // })
         res.json(project)
       })
       .catch(err => {
@@ -513,7 +523,7 @@ router.post('/report/send', async (req, res) => {
 })
 
 sendEmail = report => {
-  const link = `https://zara-web.zara.or.at/admin/reports/${report.id}`
+  const link = `https://zara.or.at/admin/reports/${report.id}`
   const outputPlain = `Neue Meldung empfangen. Link: ${link}`
   const outputHtml = `
     <p>Neue Meldung empfangen.</p>
@@ -538,7 +548,7 @@ sendEmail = report => {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: 'beratung@zara.or.at', // list of receivers
+    to: 'emdo2000@gmail.com', // list of receivers //beratung@zara.or.at
     subject: 'New Report', // Subject line
     text: outputPlain, // plain text body
     html: outputHtml // html body
@@ -559,29 +569,69 @@ sendEmail = report => {
 }
 
 router.post('/report/images', async (req, res) => {
-  console.log('hier')
-  const file = req.files.file
-  const body = req.body
-  const imgName = body.name.replace(/ /g, '_')
-  const newImage = {
-    originalName: imgName
-  }
-  console.log('Report ID: ', body.id)
-  Report.findOneAndUpdate(
-    // FIXME: If project has no background image, make first image to upload the background image!
-    { _id: body.id },
-    { $push: { images: newImage } },
-    { safe: true, new: true }
-  )
-    .then(report => {
-      file.mv(`public/reports/${body.id}/${imgName}`)
-      console.log('juhu succ')
-      res.send('success')
+  let body
+  // const file = req.files.file
+  // const body = req.body
+  // const imgName = body.name.replace(/ /g, '_')
+  // const newImage = {
+  //   originalName: imgName
+  // }
+  // console.log('Report ID: ', body.id)
+  const s3secret = require('../../config/keys').s3secret
+  const s3key = require('../../config/keys').s3key
+  const spacesEndpoint = new aws.Endpoint('ams3.digitaloceanspaces.com')
+  const s3 = new aws.S3({
+    endpoint: spacesEndpoint,
+    signatureVersion: 'v4',
+    accessKeyId: s3key,
+    secretAccessKey: s3secret
+  })
+  const upload = multer({
+    storage: multerS3({
+      s3: s3,
+      bucket: 'serpig-test',
+      acl: 'public-read',
+      key: function(req, file, cb) {
+        console.log('body: ', req.body)
+        body = req.body
+        cb(null, `reports/${body.id}/${file.originalname}`)
+      }
     })
-    .catch(err => {
-      console.log('noo fail')
+  }).array('file', 1)
+  // const newImage = {
+  //   originalName: imgName
+  // }
+
+  upload(req, res, function(error) {
+    if (error) {
       res.send(err)
-    })
+      // return response.redirect('/error')
+    }
+    console.log('File uploaded successfully.')
+    // res.send('success')
+    const body = req.body
+    const imgName = body.name.replace(/ /g, '_')
+    const newImage = {
+      originalName: imgName
+    }
+    Report.findOneAndUpdate(
+      { _id: body.id },
+      { $push: { images: newImage } },
+      { safe: true, new: true }
+    )
+      .then(report => {
+        res.send('success')
+      })
+      .catch(err => {
+        console.log('noo fail')
+        res.send(err)
+      })
+  })
+
+  // file.mv(`public/reports/${body.id}/${imgName}`)
+  // console.log('juhu succ')
+
+  // res.send('success')
 })
 
 router.post('/order', (req, res) => {
