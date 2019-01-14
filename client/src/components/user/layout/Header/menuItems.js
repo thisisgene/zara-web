@@ -363,7 +363,7 @@ const menuItems = [
             id: '5.2.3'
           },
           {
-            name: 'Praktikum & Zivildienst',
+            name: 'Volontariat & Zivildienst',
             link: 'jobs',
             id: '5.2.4'
           }
