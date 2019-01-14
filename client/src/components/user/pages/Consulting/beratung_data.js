@@ -454,9 +454,9 @@ export const wasWirTunKoennenInfoBox2 = {
       },
       {
         color: 'default',
-        title: 'RECHTSHILFEFOND HASS IM NETZ',
+        title: 'RECHTSHILFEFONDS HASS IM NETZ',
         text:
-          'Gemeinsam mit Sigrid Maurer hat der Verein ZARA im Oktober 2018 einen Rechtshilfefonds eingerichtet, mit dem zivilrechtliche Klagen bei Fällen von Hass im Netz finanziert werden können. Sind Sie von Hass im Netz betroffen wenden Sie sich an eine*n Berater*in, der*die mit Ihnen bespricht, ob es möglich ist, eine Klage einzubringen und ob die Kosten vom Rechtshilfefonds übernommen werden können.',
+          'Gemeinsam mit Sigrid Maurer hat der Verein ZARA im Oktober 2018 einen Rechtshilfefonds eingerichtet, mit dem zivilrechtliche Klagen bei Fällen von Hass im Netz finanziert werden können. Sind Sie von Hass im Netz betroffen wenden Sie sich an eine*n Berater*in, der*die mit Ihnen bespricht, ob es möglich ist, eine Klage einzubringen und ob die Kosten vom Rechtshilfefonds übernommen werden können.<br><a href="https://assets.zara.or.at/download/pdf/Kriterienrechtshilfefonds.pdf" target="blank">Kriterien für die Inanspruchnahme des Rechtshilfefonds</a>',
         link:
           'https://www.respekt.net/projekte-unterstuetzen/details/projekt/1780/',
         linkPath: 'external',

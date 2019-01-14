@@ -15,6 +15,32 @@ export const heroData = {
   }
 }
 
+export const oneLineAlert = {
+  type: 'info',
+  de: {
+    title: 'Spenden Sie online',
+    text:
+      'damit Betroffene von Rassismus und Hass im Netz mit dem Unrecht und der Demütigung nicht alleine gelassen werden!',
+    button: {
+      text: 'Jetzt online spenden',
+      type: 'default',
+      linkPath: 'external',
+      link: 'https://www.mpay24.com/app/bin/checkout/n2i3mmfkntkznq'
+    }
+  },
+  en: {
+    title: 'Spenden Sie online',
+    text:
+      'damit Betroffene von Rassismus und Hass im Netz mit dem Unrecht und der Demütigung nicht alleine gelassen werden!',
+    button: {
+      text: 'Jetzt online spenden',
+      type: 'default',
+      linkPath: 'external',
+      link: 'https://www.mpay24.com/app/bin/checkout/n2i3mmfkntkznq'
+    }
+  }
+}
+
 export const longText = {
   de: {
     title: 'Förderndes ZARA-Mitglied werden',

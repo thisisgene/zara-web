@@ -37,7 +37,7 @@ export const newsData = [
     id: 'Pressekonferenz_Rassismus_Report_2018',
     de: {
       category: 'Veranstaltgung',
-      date: '14. Dezember 2018',
+      date: '21. März 2019',
       title: 'Pressekonferenz Rassismus Report 2018',
       shortContent:
         'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 10:00 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
@@ -46,7 +46,7 @@ export const newsData = [
     },
     en: {
       category: 'Veranstaltgung',
-      date: '14. Dezember 2018',
+      date: '21. März 2019',
       title: 'Pressekonferenz Rassismus Report 2018',
       shortContent:
         'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 10:00 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
@@ -144,7 +144,7 @@ export const newsData = [
       shortContent:
         'Sie möchten mehr über hate speech und effektive Gegenmaßnahmen erfahren? Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.',
       content:
-        '<p>Du möchtest mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie kannst Du am Kurs teilnehmen?<ul><li>Registriere Dich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Du ein Profil erstellt hast, kannst du den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
+        '<p>Sie möchten mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie können Sie am Kurs teilnehmen?<ul><li>Registrieren Sie sich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Sie ein Profil erstellt hast, können Sie den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
       linkText: 'weiterlesen'
     },
     en: {
@@ -153,7 +153,7 @@ export const newsData = [
       shortContent:
         'Sie möchten mehr über hate speech und effektive Gegenmaßnahmen erfahren? Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.',
       content:
-        '<p>Du möchtest mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie kannst Du am Kurs teilnehmen?<ul><li>Registriere Dich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Du ein Profil erstellt hast, kannst du den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
+        '<p>Sie möchten mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie können Sie am Kurs teilnehmen?<ul><li>Registrieren Sie sich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Sie ein Profil erstellt hast, können Sie den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
       linkText: 'weiterlesen'
     }
   },

@@ -56,9 +56,9 @@ const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'icons/recht und ordnung.png',
-        title: 'Recht & Ordnung',
-        link: 'wissen'
+        image: 'icons/rechte.png',
+        title: 'Eigene Rechte kennen',
+        link: 'wissen/eigene_rechte_kennen'
       },
       {
         size: 'default',
@@ -121,7 +121,7 @@ class Faq extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
-            <OneLineAlert content={oneLineAlert} lang={lang} />
+            {/* <OneLineAlert content={oneLineAlert} lang={lang} /> */}
             {faqData && <FaqBox content={faqData} tags={faqTags} lang={lang} />}
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>

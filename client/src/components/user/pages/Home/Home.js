@@ -221,7 +221,7 @@ const infoObj_red = {
         color: 'red',
         title: '(Online) Spenden',
         text:
-          'Spenden Sie jetzt – damit Betroffene von Rassismus mit dem Unrecht und der Demütigung nicht alleine gelassen werden!',
+          'Spenden Sie online – damit Betroffene von Rassismus und Hass im Netz mit dem Unrecht und der Demütigung nicht alleine gelassen werden!',
         linkPath: 'external',
         link: 'https://www.mpay24.com/app/bin/checkout/n2i3mmfkntkznq',
         linkText: 'Jetzt online spenden!'

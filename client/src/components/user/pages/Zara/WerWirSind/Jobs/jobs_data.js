@@ -5,12 +5,12 @@ export const heroData = {
   de: {
     title: 'Jobs',
     text:
-      'Hier findest Du aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese kannst Du an <a href="mailto:office@zara.or.at">office@zara.or.at</a> schicken.'
+      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:office@zara.or.at">office@zara.or.at</a> schicken.'
   },
   en: {
     title: 'Jobs',
     text:
-      'Hier findest Du aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese kannst Du an <a href="mailto:office@zara.or.at">office@zara.or.at</a> schicken.'
+      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:office@zara.or.at">office@zara.or.at</a> schicken.'
   }
 }
 
@@ -81,14 +81,14 @@ export const longTextVolontariat = {
   de: {
     title: 'Volontariat',
     text:
-      'Du hast Interesse an Antidiskriminierungsarbeit und wolltest schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats oder Zivildiensts haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Praktika zu absolvieren.'
+      'Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats oder Zivildiensts haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.'
   }
 }
 export const longTextZivildienst = {
   de: {
     title: 'Zivildienst',
     text:
-      '<b>Der Posten für Zivildiener ab 02. Juli 2018 ist vergeben.</b><br /><br />Die nächste Zivildienststelle wird bei uns am 01. April 2019 besetzt. Bei Interesse an einer Mitarbeit im Rahmen des darauffolgenden Zivildienstzyklus, geben Sie bitte bei der <a href="http://www.bmi.gv.at/cms/zivildienst">Zivildienstagentur</a> Ihren Zuweisungswunsch für ZARA – Zivilcourage und Anti-Rassismus-Arbeit bekannt und senden zusätzlich Ihre Unterlagen (Motivationsschreiben und Lebenslauf) an uns: <a href="mailto:office@zara.or.at>office@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!'
+      '<b>Der Posten für Zivildiener ab 02. Juli 2018 ist vergeben.</b><br /><br />Die nächste Zivildienststelle wird bei uns am 01. April 2019 besetzt. Bei Interesse an einer Mitarbeit im Rahmen des darauffolgenden Zivildienstzyklus, geben Sie bitte bei der <a href="http://www.bmi.gv.at/cms/zivildienst">Zivildienstagentur</a> Ihren Zuweisungswunsch für ZARA – Zivilcourage und Anti-Rassismus-Arbeit bekannt und senden zusätzlich Ihre Unterlagen (Motivationsschreiben und Lebenslauf) an uns: <a href="mailto:office@zara.or.at">office@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!'
   }
 }
 

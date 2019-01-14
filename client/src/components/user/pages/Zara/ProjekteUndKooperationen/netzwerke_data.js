@@ -28,14 +28,14 @@ export const networkData = [
     de: {
       title: 'International Network Against Cyber Hate (INACH)',
       text:
-        'Das International Network Against Cyber Hate (INACH) wurde 2002 von Magenta (NL) und jugendschutz.net (DE) gegründet. INACH vereint Organisationen aus aller Welt, die sich für die Bekämpfung von Hassrede im Internet einsetzen. Aus einer multinationalen und multikulturellen Perspektive wendet sich INACH sämtlichen Formen von Online-Diskriminierung zu. Mit der konsequenten Durchsetzung von Menschenrechten im virtuellen Raum soll das Internet zu einem respektvolleren Ort gemacht werden.<br><br>Die Partner*innen arbeiten nicht nur praktisch zusammen, sondern beteiligen sich auch an der internationalen Diskussion auf der Ebene von EU und OSZE.<br><br>',
+        'Das International Network Against Cyber Hate (INACH) wurde 2002 von Magenta (NL) und jugendschutz.net (DE) gegründet. INACH vereint Organisationen aus aller Welt, die sich für die Bekämpfung von Hassrede im Internet einsetzen. Aus einer multinationalen und multikulturellen Perspektive wendet sich INACH sämtlichen Formen von Online-Diskriminierung zu. Mit der konsequenten Durchsetzung von Menschenrechten im virtuellen Raum soll das Internet zu einem respektvolleren Ort gemacht werden.<br><br>Die Partner*innen arbeiten nicht nur praktisch zusammen, sondern beteiligen sich auch an der internationalen Diskussion auf der Ebene von EU und OSZE.',
       link: 'http://www.inach.net/',
       linkText: 'www.inach.net'
     },
     en: {
       title: 'International Network Against Cyber Hate (INACH)',
       text:
-        'Das International Network Against Cyber Hate (INACH) wurde 2002 von Magenta (NL) und jugendschutz.net (DE) gegründet. INACH vereint Organisationen aus aller Welt, die sich für die Bekämpfung von Hassrede im Internet einsetzen. Aus einer multinationalen und multikulturellen Perspektive wendet sich INACH sämtlichen Formen von Online-Diskriminierung zu. Mit der konsequenten Durchsetzung von Menschenrechten im virtuellen Raum soll das Internet zu einem respektvolleren Ort gemacht werden.<br><br>Die Partner*innen arbeiten nicht nur praktisch zusammen, sondern beteiligen sich auch an der internationalen Diskussion auf der Ebene von EU und OSZE.<br><br>',
+        'Das International Network Against Cyber Hate (INACH) wurde 2002 von Magenta (NL) und jugendschutz.net (DE) gegründet. INACH vereint Organisationen aus aller Welt, die sich für die Bekämpfung von Hassrede im Internet einsetzen. Aus einer multinationalen und multikulturellen Perspektive wendet sich INACH sämtlichen Formen von Online-Diskriminierung zu. Mit der konsequenten Durchsetzung von Menschenrechten im virtuellen Raum soll das Internet zu einem respektvolleren Ort gemacht werden.<br><br>Die Partner*innen arbeiten nicht nur praktisch zusammen, sondern beteiligen sich auch an der internationalen Diskussion auf der Ebene von EU und OSZE.',
       link: 'http://www.inach.net/',
       linkText: 'www.inach.net'
     }
