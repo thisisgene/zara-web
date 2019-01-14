@@ -32,7 +32,7 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: 'beratung/melden/rassismus'
+      link: 'beratung/#melden'
     }
   },
   en: {
@@ -41,7 +41,7 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: 'beratung/melden/rassismus'
+      link: 'beratung/#melden'
     }
   }
 }

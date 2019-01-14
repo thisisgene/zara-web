@@ -5,13 +5,13 @@ export const heroData = {
     title:
       'Mit Zivilcourage gemeinsam Rassismus sowie Hass und Hetze im Netz entgegentreten!',
     text:
-      'Werden Sie ein*e  ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam  aktiv zu werden. Hier können Sie mehr über zivilcouragiertes Auftreten erfahren, sogenannte Counter-Narratives (Gegenmaßnahmen) ausprobieren, Informationen über unterschiedliche Initiativen erhalten und herausfrinden, wie Sie in Sozialen Medien Hass und Hetze melden können. Werden Sie Teil einer tatkräftigen Community!'
+      'Werden Sie ein*e  ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam  aktiv zu werden. Hier können Sie mehr über zivilcouragiertes Auftreten erfahren, sogenannte Counter-Narratives (Gegenmaßnahmen) ausprobieren, Informationen über unterschiedliche Initiativen erhalten und herausfinden, wie Sie in Sozialen Medien Hass und Hetze melden können. Werden Sie Teil einer tatkräftigen Community!'
   },
   en: {
     title:
       'Mit Zivilcourage gemeinsam Rassismus sowie Hass und Hetze im Netz entgegentreten!',
     text:
-      'Werden Sie ein*e  ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam  aktiv zu werden. Hier können Sie mehr über zivilcouragiertes Auftreten erfahren, sogenannte Counter-Narratives (Gegenmaßnahmen) ausprobieren, Informationen über unterschiedliche Initiativen erhalten und herausfrinden, wie Sie in Sozialen Medien Hass und Hetze melden können. Werden Sie Teil einer tatkräftigen Community!'
+      'Werden Sie ein*e  ZARAista und nutzen Sie die zahlreichen Möglichkeiten, um mit uns gemeinsam  aktiv zu werden. Hier können Sie mehr über zivilcouragiertes Auftreten erfahren, sogenannte Counter-Narratives (Gegenmaßnahmen) ausprobieren, Informationen über unterschiedliche Initiativen erhalten und herausfinden, wie Sie in Sozialen Medien Hass und Hetze melden können. Werden Sie Teil einer tatkräftigen Community!'
   }
 }
 
@@ -56,7 +56,7 @@ export const infoObj = {
         color: 'default',
         title: 'Counter Narratives',
         text:
-          'Sehen Sie online Beiträge, die Ihrer Meinung nach nicht unwidersprochen bleiben sollen? Möchten Sie Betroffenen den Rücken stärken? Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives können Sie Trolle oder Hater entlarven und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind unerschöpflich. Werden Sie kreativ! Reden Sie mit! Setzen Sie sich mit uns in Kontakt! Gemeinsam sind wir stärker und lauter!',
+          'Trolle und andere Haters vernetzen sich oft im Netz, um so systematisch Hass, Fake News und eine fremdenfeindliche Ideologie zu verbreiten. Solche Beiträge sollten nicht unkommentiert bleiben! Stehen Sie Betroffenen unterstützend beiseite, werden Sie kreativ und reden Sie mit!',
         link: 'mitmischen/counternarratives',
         linkText: 'Zu den Counter Narratives'
       },
@@ -72,10 +72,10 @@ export const infoObj = {
         color: 'default',
         title: 'Warum Hasspostings melden',
         text:
-          'Sie stoßen auf hasserfüllte Beiträge auf unterschiedlichen online Plattformen oder Social Media oder Sie werden sogar selbst online beschimpft, beleidigt, aufgrund Ihres So-Seins angegriffen oder diskriminiert? Hass im Netz ist ein vergleichbar neues Phänomen, das noch nicht von allen ernst genommen wird. ABER das Internet ist kein rechtsfreier Raum. Social Media Plattformen und IT Unternehmen haben zudem Nutzungsbestimmungen, die gewisse Inhalte verbieten und solche Inhalte kann man direkt melden! Melden Sie am besten selber und leiten Sie die Meldung auch an uns weiter! Denn wir dokumentieren die Meldungen auch systematisch. Wir haben Videos gemacht, die Ihnen zeigen, wie das geht. Zeigen Sie auf, was weh tut und andere gefährdet!',
+          'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite.',
 
         link: 'beratung/melden/hassimnetz',
-        linkText: 'Warum Hasspostings melden'
+        linkText: 'Hasspostings melden'
       }
     ]
   },
@@ -95,7 +95,7 @@ export const infoObj = {
         color: 'default',
         title: 'Counter Narratives',
         text:
-          'Sehen Sie online Beiträge, die Ihrer Meinung nach nicht unwidersprochen bleiben sollen? Möchten Sie Betroffenen den Rücken stärken? Fremdenfeindliche und hasserfüllte Inhalte, die sich gegen Einzelpersonen oder Gruppen aufgrund Ihres So-Seins richten, können leicht über das Internet verbreitet werden und durch koordinierte Strategien ein großes Publikum erreichen. Doch mit unterschiedlichen Counter Narratives können Sie Trolle oder Hater entlarven und somit Mitleser*innen zeigen, dass es immer auch Alternativen zu menschenverachtender Hetze gibt. Sie können Betroffene stärken und unterstützende Worte aussprechen. Die Möglichkeiten sind unerschöpflich. Werden Sie kreativ! Reden Sie mit! Setzen Sie sich mit uns in Kontakt! Gemeinsam sind wir stärker und lauter!',
+          'Trolle und andere Haters vernetzen sich oft im Netz, um so systematisch Hass, Fake News und eine fremdenfeindliche Ideologie zu verbreiten. Solche Beiträge sollten nicht unkommentiert bleiben! Stehen Sie Betroffenen unterstützend beiseite, werden Sie kreativ und reden Sie mit!',
         link: 'mitmischen/counternarratives',
         linkText: 'Zu den Counter Narratives'
       },
@@ -111,7 +111,7 @@ export const infoObj = {
         color: 'default',
         title: 'Hasspostings melden',
         text:
-          'Sie stoßen auf hasserfüllte Beiträge auf unterschiedlichen online Plattformen oder Social Media oder Sie werden sogar selbst online beschimpft, beleidigt, aufgrund Ihres So-Seins angegriffen oder diskriminiert? Hass im Netz ist ein vergleichbar neues Phänomen, das noch nicht von allen ernst genommen wird. ABER das Internet ist kein rechtsfreier Raum. Social Media Plattformen und IT Unternehmen haben zudem Nutzungsbestimmungen, die gewisse Inhalte verbieten und solche Inhalte kann man direkt melden! Melden Sie am besten selber und leiten Sie die Meldung auch an uns weiter! Denn wir dokumentieren die Meldungen auch systematisch. Wir haben Videos gemacht, die Ihnen zeigen, wie das geht. Zeigen Sie auf, was weh tut und andere gefährdet!',
+          'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite.',
 
         link: 'beratung/melden/hassimnetz',
         linkText: 'Hasspostings melden'

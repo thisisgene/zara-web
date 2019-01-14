@@ -143,7 +143,7 @@ const infoObj_default = {
         title: 'Öffentlichkeitsarbeit & Sensibilisierung',
         text:
           'Kontinuierliche Medienarbeit ist ein zentraler Bestandteil der Präventionsarbeit von ZARA. Denn das Sichtbarmachen von Rassismus in Österreich steigert das Problembewusstsein und trägt zur Sensibilisierung für die Themen Rassismus/Anti-Rassismus bei.',
-        link: 'ueber_ZARA',
+        link: 'wissen',
         linkText: 'Mehr zu Öffentlichkeitsarbeit',
         listItems: [
           {
@@ -193,7 +193,7 @@ const infoObj_default = {
         title: 'Öffentlichkeitsarbeit & Sensibilisierung',
         text:
           'Kontinuierliche Medienarbeit ist ein zentraler Bestandteil der Präventionsarbeit von ZARA. Denn das Sichtbarmachen von Rassismus in Österreich steigert das Problembewusstsein und trägt zur Sensibilisierung für die Themen Rassismus/Anti-Rassismus bei.',
-        link: 'oeffentlichkeit',
+        link: 'wissen',
         linkText: 'Mehr zu Öffentlichkeitsarbeit'
       }
     ]
@@ -213,7 +213,7 @@ const infoObj_red = {
         title: 'Rassismus melden',
         text:
           'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
-        link: 'beratung/melden/rassismus',
+        link: 'beratung/#melden',
         linkText: 'Melden!'
       },
       {
@@ -510,7 +510,7 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: 'beratung/melden/rassismus'
+      link: 'beratung/#melden'
     }
   },
   en: {
@@ -519,7 +519,7 @@ const oneLineAlert = {
     button: {
       text: 'Jetzt melden',
       type: 'alert',
-      link: 'beratung/melden/rassismus'
+      link: 'beratung/#melden'
     }
   }
 }

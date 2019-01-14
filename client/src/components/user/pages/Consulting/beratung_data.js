@@ -233,7 +233,7 @@ export const wasSieTunKoennenInfoBox1 = {
         title: 'MELDEN',
         text:
           'Melden Sie rassistische Diskriminierung - on- sowie offline - und Hass im Netz an ZARA. ZARA dokumentiert alle Meldungen in einer eigen dafür vorgesehen Falldatenbank, welche wiederum für Berichte und Analysen anonymisiert aufgearbeitet werden. Diese Berichte sind eine wichtige qualitative Quelle, um auf das Ausmaß von Rassismus sowie Hass im Netz hinzuweisen und sichtbar zu machen. So ist ZARA in der Lage, Problematiken bzw. Tendenzen zu erkennen und mit Aktivitäten, Initiativen und Kampagnen dagegen vorzugehen.',
-        link: 'beratung/melden/rassismus',
+        link: 'beratung/#melden',
         linkText: 'Melden'
       },
       {
@@ -253,7 +253,7 @@ export const wasSieTunKoennenInfoBox1 = {
         title: 'MELDEN',
         text:
           'Melden Sie rassistische Diskriminierung - on- sowie offline - und Hass im Netz an ZARA. ZARA dokumentiert alle Meldungen in einer eigen dafür vorgesehen Falldatenbank, welche wiederum für Berichte und Analysen anonymisiert aufgearbeitet werden. Diese Berichte sind eine wichtige qualitative Quelle, um auf das Ausmaß von Rassismus sowie Hass im Netz hinzuweisen und sichtbar zu machen. So ist ZARA in der Lage, Problematiken bzw. Tendenzen zu erkennen und mit Aktivitäten, Initiativen und Kampagnen dagegen vorzugehen.',
-        link: 'beratung/melden/rassismus',
+        link: 'beratung/#melden',
         linkText: 'Melden'
       },
       {
@@ -285,7 +285,7 @@ export const wasSieTunKoennenInfoBox2 = {
         color: 'default',
         title: 'WEITERSAGEN',
         text:
-          'Zu einer Sensibilisierung und Aufklärung der Gesellschaft über rassistische Diskriminierung bedarf es öffentliche Diskurse. Auch bei Hass im Netz ist das Wissen, dass es sich dabei oft um strafrechtlich relevante Tatbestände handelt, nach wie vor nicht bei allen angekommen. Weil Rassismus und Hass im Netz am besten durch Aufklärungsarbeit bekämpft werden können, freuen wir uns, wenn Sie uns dabei unterstützen, unser Beratungs- und Trainingsangebot an so viele Personen wie möglich weiterzuleiten.',
+          'Zu einer Sensibilisierung und Aufklärung der Gesellschaft über rassistische Diskriminierung bedarf es öffentlicher Diskurse. Auch bei Hass im Netz ist das Wissen, dass es sich dabei oft um strafrechtlich relevante Tatbestände handelt, nach wie vor nicht bei allen angekommen. Weil Rassismus und Hass im Netz am besten durch Aufklärungsarbeit bekämpft werden können, freuen wir uns, wenn Sie uns dabei unterstützen, unser Beratungs- und Trainingsangebot an so viele Personen wie möglich weiterzuleiten.',
         linkPath: 'external',
         link: 'mitmischen',
         linkText: 'Mach auf unser Beratungsangebot aufmerksam'
@@ -306,7 +306,7 @@ export const wasSieTunKoennenInfoBox2 = {
         color: 'default',
         title: 'WEITERSAGEN',
         text:
-          'Zu einer Sensibilisierung und Aufklärung der Gesellschaft über rassistische Diskriminierung bedarf es öffentliche Diskurse. Auch bei Hass im Netz ist das Wissen, dass es sich dabei oft um strafrechtlich relevante Tatbestände handelt, nach wie vor nicht bei allen angekommen. Weil Rassismus und Hass im Netz am besten durch Aufklärungsarbeit bekämpft werden können, freuen wir uns, wenn Sie uns dabei unterstützen, unser Beratungs- und Trainingsangebot an so viele Personen wie möglich weiterzuleiten.',
+          'Zu einer Sensibilisierung und Aufklärung der Gesellschaft über rassistische Diskriminierung bedarf es öffentlicher Diskurse. Auch bei Hass im Netz ist das Wissen, dass es sich dabei oft um strafrechtlich relevante Tatbestände handelt, nach wie vor nicht bei allen angekommen. Weil Rassismus und Hass im Netz am besten durch Aufklärungsarbeit bekämpft werden können, freuen wir uns, wenn Sie uns dabei unterstützen, unser Beratungs- und Trainingsangebot an so viele Personen wie möglich weiterzuleiten.',
         linkPath: 'external',
         link: 'mitmischen',
         linkText: 'Mach auf unser Beratungsangebot aufmerksam'

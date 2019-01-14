@@ -45,7 +45,7 @@ export const infoObj = {
         color: 'default',
         title: 'Hasspostings melden',
         text:
-          'Sie stoßen auf hasserfüllte Beiträge auf unterschiedlichen online Plattformen oder Social Media oder Sie werden sogar selbst online beschimpft, beleidigt, aufgrund Ihres So-Seins angegriffen oder diskriminiert? Hass im Netz ist ein vergleichbar neues Phänomen, das noch nicht von allen ernst genommen wird. ABER das Internet ist kein rechtsfreier Raum. Social Media Plattformen und IT Unternehmen haben zudem Nutzungsbestimmungen, die gewisse Inhalte verbieten und solche Inhalte kann man direkt melden! Melden Sie am besten selber und leiten Sie die Meldung auch an uns weiter! Denn wir dokumentieren die Meldungen auch systematisch. Wir haben Videos gemacht, die Ihnen zeigen, wie das geht. Zeigen Sie auf, was weh tut und andere gefährdet!',
+          'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite. ',
 
         link: 'beratung/melden/hassimnetz',
         linkText: 'Hasspostings melden'

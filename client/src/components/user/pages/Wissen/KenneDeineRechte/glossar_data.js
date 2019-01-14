@@ -4,11 +4,13 @@ export const heroData = {
   imageAlign: 'center',
   de: {
     title: 'Glossar',
-    text: 'Ausgewählte Begriffe aus RR Glossar 2017, 2016, 2015'
+    text:
+      'Hier haben wir für Sie ein paar Begriffe erklärt. Wenden Sie sich an uns, wenn Sie möchten, dass wir weitere, spezifische Begriffe in unserem Glossar für Sie erklären. '
   },
   en: {
     title: 'Glossar',
-    text: 'Ausgewählte Begriffe aus RR Glossar 2017, 2016, 2015'
+    text:
+      'Hier haben wir für Sie ein paar Begriffe erklärt. Wenden Sie sich an uns, wenn Sie möchten, dass wir weitere, spezifische Begriffe in unserem Glossar für Sie erklären. '
   }
 }
 
