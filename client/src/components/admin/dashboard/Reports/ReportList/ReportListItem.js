@@ -16,7 +16,7 @@ class ReportListItem extends Component {
           to={`/admin/reports/${report._id}`}
           onClick={() => this.props.getReportById(report._id)}
         >
-          <Moment format="YYYY/MM/DD - HH:MM">{report.date}</Moment>
+          <Moment format="YYYY/MM/DD - HH:mm">{report.date}</Moment>
         </NavLink>
       </div>
     )

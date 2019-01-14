@@ -479,6 +479,8 @@ router.get(
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     Report.find()
+      .sort('-date')
+      .exec()
       .then(reports => {
         res.json(reports)
       })
