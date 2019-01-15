@@ -33,7 +33,9 @@ export const newsData = [
     newsBoxSize: 'wide',
     param: 'veranstaltung',
 
-    // image: 'vstart.jpg',
+    image: 'main_icons/big/training.png',
+    imageSide: 'left',
+    imageAlign: 'center',
     id: 'Weiterbildung_hate_crime_erkennen_und_aktiv_entgegentreten',
     de: {
       category: 'News',
