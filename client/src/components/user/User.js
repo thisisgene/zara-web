@@ -73,6 +73,7 @@ import WeiterePublikationen from './pages/Wissen/Publikationen/WeiterePublikatio
 import ZaraPublikationen from './pages/Wissen/Publikationen/ZaraPublikationen'
 
 import PageNotFound from './pages/Other/PageNotFound'
+import JobDetail from './pages/Zara/WerWirSind/Jobs/JobDetail'
 class User extends Component {
   constructor(props) {
     super(props)
@@ -359,6 +360,11 @@ class User extends Component {
                 exact
                 path="/:lang/ueber_ZARA/wer_wir_sind/jobs"
                 component={Jobs}
+              />
+              <Route
+                exact
+                path="/:lang/ueber_ZARA/wer_wir_sind/jobs/:jobId"
+                component={JobDetail}
               />
               <Redirect
                 exact

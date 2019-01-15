@@ -40,6 +40,7 @@ class NewsDetail extends Component {
       news = newsArray[0]
       if (!news.image) {
         news.imageSide = 'left'
+        news.imageAlign = 'center'
         news.image = 'news.png'
       }
     }

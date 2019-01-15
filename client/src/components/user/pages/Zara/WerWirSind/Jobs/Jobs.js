@@ -33,14 +33,16 @@ class RechtUndOrdnung extends Component {
             <LongText content={longTextVolontariat} lang={lang} />
             <div className={styles['job-container']}>
               {jobData &&
-                jobData.map((job, index) => (
-                  <JobItem
-                    key={index}
-                    index={index}
-                    content={job}
-                    lang={lang}
-                  />
-                ))}
+                jobData
+                  .filter(job => job.category === 'volontariat')
+                  .map((job, index) => (
+                    <JobItem
+                      key={index}
+                      index={index}
+                      content={job}
+                      lang={lang}
+                    />
+                  ))}
             </div>
             {/* <NewsletterOneLineObject lang={lang} /> */}
             <LongText content={longText} lang={lang} />

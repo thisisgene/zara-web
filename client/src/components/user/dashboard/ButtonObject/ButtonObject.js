@@ -20,7 +20,7 @@ class ButtonObject extends Component {
           <a
             className={cx(styles['button'], styles[button.type])}
             href={button.link}
-            target="blank"
+            target={button.target === 'internal' ? '_self' : 'blank'}
           >
             {button.text}
           </a>
