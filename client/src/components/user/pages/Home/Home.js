@@ -214,7 +214,7 @@ const infoObj_red = {
         text:
           'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
         link: 'beratung/#melden',
-        linkText: 'Melden!'
+        linkText: 'Anonym melden!'
       },
       {
         image: 'donate_hand',
@@ -249,7 +249,7 @@ const infoObj_red = {
         text:
           'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
         link: 'melden',
-        linkText: 'Melden!'
+        linkText: 'Anonym melden!'
       },
       {
         image: 'donate_hand',
@@ -508,7 +508,7 @@ const oneLineAlert = {
     text:
       'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
-      text: 'Jetzt melden',
+      text: 'Jetzt anonym melden',
       type: 'alert',
       link: 'beratung/#melden'
     }
@@ -517,7 +517,7 @@ const oneLineAlert = {
     text:
       'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
-      text: 'Jetzt melden',
+      text: 'Jetzt anonym melden',
       type: 'alert',
       link: 'beratung/#melden'
     }

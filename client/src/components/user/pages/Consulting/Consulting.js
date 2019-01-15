@@ -40,7 +40,7 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
-            text: 'Rassismus melden',
+            text: 'Rassismus anonym melden',
             type: 'cta',
             link: 'beratung/melden/rassismus'
           },
@@ -61,7 +61,7 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
-            text: 'Hass im Netz melden',
+            text: 'Hass im Netz anonym melden',
             type: 'cta',
             link: 'beratung/melden/hassimnetz'
           },
@@ -88,7 +88,7 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
-            text: 'Rassismus melden',
+            text: 'Rassismus anonym melden',
             type: 'cta',
             link: 'beratung/melden/rassismus'
           },
@@ -108,7 +108,7 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
-            text: 'Hass im Netz melden',
+            text: 'Hass im Netz anonym melden',
             type: 'cta',
             link: 'beratung/melden/hassimnetz'
           },

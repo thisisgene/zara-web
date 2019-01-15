@@ -20,7 +20,7 @@ export const oneLineAlert = {
     title: 'Hass im Netz melden',
     text: 'Hier können Sie Hass im Netz melden!',
     button: {
-      text: 'Jetzt melden',
+      text: 'Jetzt anonym melden',
       type: 'default',
       link: 'beratung/melden/hassimnetz'
     }
@@ -29,7 +29,7 @@ export const oneLineAlert = {
     title: 'Hass im Netz melden!',
     text: 'Hier können Sie Hass im Netz melden!',
     button: {
-      text: 'Jetzt melden',
+      text: 'Jetzt anonym melden',
       type: 'default',
       link: 'beratung/melden/hassimnetz'
     }
@@ -81,7 +81,7 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/beratung.png',
-        title: 'Hass im Netz melden',
+        title: 'Hass im Netz anonym melden',
         link: 'beratung/melden/hassimnetz'
       },
       {
@@ -114,7 +114,7 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/beratung.png',
-        title: 'Hass im Netz melden',
+        title: 'Hass im Netz anonym melden',
         link: 'beratung/melden/hassimnetz'
       },
       {

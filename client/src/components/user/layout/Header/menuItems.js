@@ -8,13 +8,13 @@ const menuItems = [
         de: {
           icon: 'act',
           color: 'red',
-          text: 'Rassismus melden',
+          text: 'Rassismus anonym melden',
           link: 'beratung/melden/rassismus'
         },
         en: {
           icon: 'act',
           color: 'red',
-          text: 'Rassismus melden',
+          text: 'Rassismus anonym melden',
           link: 'beratung/melden/rassismus'
         }
       },
@@ -139,12 +139,12 @@ const menuItems = [
       {
         de: {
           icon: 'act',
-          text: 'Rassismus melden',
+          text: 'Rassismus anonym melden',
           link: 'beratung/melden/rassismus'
         },
         en: {
           icon: 'act',
-          text: 'Rassismus melden',
+          text: 'Rassismus anonym melden',
           link: 'beratung/melden/rassismus'
         }
       },
@@ -156,7 +156,7 @@ const menuItems = [
         },
         en: {
           icon: 'act',
-          text: 'Rassismus melden',
+          text: 'Rassismus anonym melden',
           link: 'beratung/melden/hassimnetz'
         }
       }
