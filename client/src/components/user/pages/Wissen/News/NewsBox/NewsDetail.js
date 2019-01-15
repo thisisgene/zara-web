@@ -17,6 +17,11 @@ class NewsDetail extends Component {
       newsId: props.match.params.newsId
     }
   }
+  componentDidMount() {
+    let docTitle = 'ZARA | ' + this.state.newsId
+    docTitle = docTitle.replace(/_/g, ' ')
+    document.title = docTitle
+  }
   componentDidUpdate(prevProps) {
     if (
       prevProps.match &&
@@ -26,6 +31,9 @@ class NewsDetail extends Component {
       this.setState({
         newsId: this.props.match.params.newsId
       })
+      let docTitle = 'ZARA | ' + this.state.newsId
+      docTitle = docTitle.replace(/_/g, ' ')
+      document.title = docTitle
     }
   }
   render() {
