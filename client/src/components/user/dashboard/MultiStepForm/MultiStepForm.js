@@ -21,9 +21,9 @@ class MultiStepForm extends Component {
     this.state = {}
 
     this.sampleStore = {
-      email: '',
-      userName: '',
-      phone: '',
+      // email: '',
+      // userName: '',
+      // phone: '',
       description: '',
       files: [],
       links: '',
@@ -60,20 +60,20 @@ class MultiStepForm extends Component {
   }
   render() {
     const steps = [
+      // {
+      //   name: 'Schritt 1',
+      //   component: (
+      //     <StepOne
+      //       className={styles['step']}
+      //       getStore={() => this.getStore()}
+      //       updateStore={u => {
+      //         this.updateStore(u)
+      //       }}
+      //     />
+      //   )
+      // },
       {
-        name: 'Schritt 1',
-        component: (
-          <StepOne
-            className={styles['step']}
-            getStore={() => this.getStore()}
-            updateStore={u => {
-              this.updateStore(u)
-            }}
-          />
-        )
-      },
-      {
-        name: 'Schritt 2',
+        name: 'Vorfallbeschreibung',
         component: (
           <StepTwo
             className={styles['step']}
@@ -85,7 +85,7 @@ class MultiStepForm extends Component {
         )
       },
       {
-        name: 'Schritt 3',
+        name: 'Links/Anhänge',
         component: (
           <StepThree
             className={styles['step']}
@@ -96,20 +96,20 @@ class MultiStepForm extends Component {
           />
         )
       },
+      // {
+      //   name: 'Schritt 4',
+      //   component: (
+      //     <StepFour
+      //       className={styles['step']}
+      //       getStore={() => this.getStore()}
+      //       updateStore={u => {
+      //         this.updateStore(u)
+      //       }}
+      //     />
+      //   )
+      // },
       {
-        name: 'Schritt 4',
-        component: (
-          <StepFour
-            className={styles['step']}
-            getStore={() => this.getStore()}
-            updateStore={u => {
-              this.updateStore(u)
-            }}
-          />
-        )
-      },
-      {
-        name: 'Schritt 5',
+        name: 'Check',
         component: (
           <StepFive
             className={styles['step']}
@@ -124,7 +124,7 @@ class MultiStepForm extends Component {
         )
       },
       {
-        name: 'Schritt 6',
+        name: 'Fertig',
         component: (
           <StepSix
             className={styles['step']}

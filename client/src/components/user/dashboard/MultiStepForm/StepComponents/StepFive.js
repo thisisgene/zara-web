@@ -125,7 +125,7 @@ class StepFive extends Component {
                   )}
                 </div>
                 <div className={styles['review-item']}>
-                  <div className={styles['review-item--title']}>
+                  {/* <div className={styles['review-item--title']}>
                     Kontaktdaten
                   </div>
                   {this.props.getStore().selectedOption !== 'anonym' ? (
@@ -165,7 +165,7 @@ class StepFive extends Component {
                     <div className={styles['review-item--text']}>
                       Ich möchte anonym bleiben.
                     </div>
-                  )}
+                  )} */}
                 </div>
                 {/* <div className="col-md-12 eg-jump-lnk">
                   <a href="#" onClick={() => this.jumpToStep(1)}>

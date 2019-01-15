@@ -541,7 +541,7 @@ sendEmail = report => {
     secure: true, // true for 465, false for other ports
     auth: {
       user: 'serpig.testuser@gmail.com', // generated ethereal user
-      pass: 'serPig1dev' // generated ethereal password
+      pass: 'serPig1dev2019' // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false
@@ -551,7 +551,7 @@ sendEmail = report => {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: 'beratung@zara.or.at', // list of receivers //beratung@zara.or.at
+    to: 'emdo2000@gmail.com', // list of receivers //beratung@zara.or.at
     subject: 'New Report', // Subject line
     text: outputPlain, // plain text body
     html: outputHtml // html body
