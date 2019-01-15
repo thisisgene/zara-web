@@ -4,9 +4,13 @@ ol.progtrckr {
   display: flex;
   justify-content: center;
 }
+/* 
+ol.progtrckr:nth-child(3) {
+  display: none;
+} */
 
 ol.progtrckr span {
-  /* display: none; */
+  /* display: none */
 }
 
 ol.progtrckr li {
@@ -22,18 +26,26 @@ ol.progtrckr li span {
 
 @media (max-width: 650px) {
   .progtrckr li span {
+    margin: 0;
+
+    padding: 0 !important;
+  }
+}
+@media (max-width: 500px) {
+  .progtrckr li span {
     display: none;
   }
 }
 .progtrckr em {
   display: none;
   font-weight: 700;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
 }
 
-@media (max-width: 650px) {
+@media (max-width: 500px) {
   .progtrckr em {
     display: inline;
+    padding: 0 1rem;
   }
 }
 

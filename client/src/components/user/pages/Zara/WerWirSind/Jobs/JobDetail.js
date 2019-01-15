@@ -17,6 +17,13 @@ class JobDetail extends Component {
       jobId: props.match.params.jobId
     }
   }
+
+  componentDidMount() {
+    let docTitle = 'ZARA | ' + this.state.jobId
+    docTitle = docTitle.replace(/_/g, ' ')
+    console.log(docTitle)
+    document.title = docTitle
+  }
   componentDidUpdate(prevProps) {
     if (
       prevProps.match &&
@@ -26,6 +33,9 @@ class JobDetail extends Component {
       this.setState({
         jobId: this.props.match.params.jobId
       })
+      let docTitle = 'ZARA | ' + this.state.jobId
+      docTitle = docTitle.replace(/_/g, ' ')
+      document.title = docTitle
     }
   }
   render() {

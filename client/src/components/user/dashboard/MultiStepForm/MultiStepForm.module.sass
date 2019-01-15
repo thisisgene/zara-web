@@ -8,7 +8,6 @@
     max-width: 880px
     margin: 0 auto 2rem
     
-
     .step
       display: flex
       flex-direction: column
@@ -17,6 +16,7 @@
       width: 90%
       margin: 0 auto
       text-align: left
+      
       .reset-button
         margin-top: 3rem
         border: none
@@ -79,3 +79,12 @@
           justify-content: center
           div
             margin: .3rem .5rem
+  @media(max-width: 980px)
+    padding: 0 1rem
+    .multi-step-form
+      padding: 0 !important
+      .step
+        text-align: center
+        width: 100%
+        .review-item
+          text-align: left
