@@ -41,7 +41,7 @@ class NewsDetail extends Component {
       if (!news.image) {
         news.imageSide = 'left'
         news.imageAlign = 'center'
-        news.image = 'news.png'
+        news.image = 'news/news_placeholder.png'
       }
     }
     return (
