@@ -12,11 +12,11 @@ export default class FaqItem extends Component {
     }
   }
 
-  toggleOpen = () => {
-    this.setState(prevState => ({
-      isOpen: !prevState.isOpen
-    }))
-  }
+  // toggleOpen = () => {
+  //   this.setState(prevState => ({
+  //     isOpen: !prevState.isOpen
+  //   }))
+  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
@@ -24,7 +24,7 @@ export default class FaqItem extends Component {
   }
 
   render() {
-    const { faq, lang } = this.props
+    const { faq, lang, open, toggleOpen } = this.props
     let replacedText = faq[lang].text
     // faq[lang].links &&
     //   faq[lang].links.map(link => {
@@ -38,12 +38,16 @@ export default class FaqItem extends Component {
 
     const query = /\[\[([^)]+)\]\]/
     let textArray = faq[lang].text.split(query)
-    // console.log(string)
+
+    const isOpen = open[0]
     return (
       <div>
         <span id={faq.id} className={styles['faq-item--margin']} />
         <div className={styles['faq-item']}>
-          <div className={styles['faq-item-top']} onClick={this.toggleOpen}>
+          <div
+            className={styles['faq-item-top']}
+            onClick={() => toggleOpen(faq.id)}
+          >
             <div className={styles['faq-item-top--head']} tabIndex="2">
               <div className={styles['faq-item-top--head__icon']}>
                 <i className="far fa-question-circle" />
@@ -54,7 +58,7 @@ export default class FaqItem extends Component {
             </div>
             <div
               className={cx(styles['faq-item-top--arrow'], {
-                [styles['flipped']]: this.state.isOpen
+                [styles['flipped']]: isOpen
               })}
             >
               <i className="fa fa-angle-double-down" />
@@ -62,12 +66,12 @@ export default class FaqItem extends Component {
           </div>
           <div
             className={cx(styles['faq-item--body'], {
-              [styles['open']]: this.state.isOpen
+              [styles['open']]: isOpen
             })}
           >
             {textArray &&
               textArray.map(item => (
-                <div>
+                <span>
                   {faq[lang].links &&
                   faq[lang].links.filter(link => link.ref === item).length >
                     0 ? (
@@ -75,6 +79,7 @@ export default class FaqItem extends Component {
                       .filter(link => link.ref === item)
                       .map(link => (
                         <Link
+                          className={styles['inner-text-link']}
                           to={`/${lang}/wissen/faq/#${link.toID}`}
                           // onClick={this.openFaq.bind(this, link.toID)}
                         >
@@ -84,7 +89,7 @@ export default class FaqItem extends Component {
                   ) : (
                     <span dangerouslySetInnerHTML={{ __html: item }} />
                   )}
-                </div>
+                </span>
               ))}
           </div>
         </div>

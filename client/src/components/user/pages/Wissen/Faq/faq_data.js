@@ -114,7 +114,7 @@ export const faqData = [
     }
   },
   {
-    id: '6',
+    id: '7',
     tags: ['rassismus', 'zara'],
     de: {
       title:
@@ -130,7 +130,7 @@ export const faqData = [
     }
   },
   {
-    id: '7',
+    id: '8',
     tags: ['rassismus', 'zara'],
     de: {
       title: 'Berät ZARA nur rechtlich?',
@@ -144,7 +144,7 @@ export const faqData = [
     }
   },
   {
-    id: '8',
+    id: '9',
     tags: ['hassimnetz'],
     de: {
       title: 'Was ist eigentlich Hass im Netz?',
@@ -158,7 +158,7 @@ export const faqData = [
     }
   },
   {
-    id: '9',
+    id: '10',
     tags: ['hassimnetz', 'zara'],
     de: {
       title: 'Warum gibt es die Beratungsstelle #GegenHassimNetz?',
@@ -172,7 +172,7 @@ export const faqData = [
     }
   },
   {
-    id: '10',
+    id: '11',
     tags: ['hassimnetz', 'zara'],
     de: {
       title:
@@ -188,7 +188,7 @@ export const faqData = [
     }
   },
   {
-    id: '11',
+    id: '12',
     tags: ['hassimnetz', 'zara'],
     de: {
       title:
@@ -204,7 +204,7 @@ export const faqData = [
     }
   },
   {
-    id: '12',
+    id: '13',
     tags: ['hassimnetz', 'zara'],
     de: {
       title: 'Wer betreibt eigentlich die Beratungsstelle #GegenHassimNetz?',
@@ -218,7 +218,7 @@ export const faqData = [
     }
   },
   {
-    id: '13',
+    id: '14',
     tags: ['hassimnetz', 'zara'],
     de: {
       title:
@@ -234,7 +234,7 @@ export const faqData = [
     }
   },
   {
-    id: '14',
+    id: '15',
     tags: ['rassismus', 'hassimnetz', 'zara'],
     de: {
       title:
@@ -250,7 +250,7 @@ export const faqData = [
     }
   },
   {
-    id: '15',
+    id: '16',
     tags: ['zara'],
     de: {
       title: 'Kann man einfach so an ZARA spenden?',

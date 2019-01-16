@@ -11,14 +11,48 @@ class FaqBox extends Component {
     super()
     this.state = {
       activeTag: '',
-      searchValue: ''
+      searchValue: '',
+      faqToggle: []
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.match !== this.props.match) {
-      console.log(this.props.match.params)
+  componentDidMount() {
+    let thisId
+    if (this.props.location.hash) {
+      thisId = this.props.location.hash
+      thisId = thisId.replace('#', '')
     }
+    let faqToggleArray = []
+    const lang = this.props.lang
+    this.props.content.map(item => {
+      faqToggleArray.push({ id: item.id, open: false })
+    })
+    this.setState(
+      {
+        faqToggle: faqToggleArray
+      },
+      () => this.toggleOpen(thisId)
+    )
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.location !== this.props.location) {
+      let thisId = this.props.location.hash
+      thisId = thisId.replace('#', '')
+      this.toggleOpen(thisId)
+    }
+  }
+
+  toggleOpen = id => {
+    let faqToggleArray = this.state.faqToggle
+    console.log('id:', this.state.faqToggle)
+
+    faqToggleArray
+      .filter(item => item.id === id)
+      .map(item => (item.open = !item.open))
+    this.setState({
+      faqToggle: faqToggleArray
+    })
+    console.log(faqToggleArray)
   }
 
   onChange = e => {
@@ -108,6 +142,8 @@ class FaqBox extends Component {
         <div>
           {content &&
             lang &&
+            this.state.faqToggle &&
+            this.state.faqToggle.length > 0 &&
             filteredContent
               .filter(
                 faq =>
@@ -118,7 +154,18 @@ class FaqBox extends Component {
                     .toLowerCase()
                     .includes(this.state.searchValue.toLowerCase())
               )
-              .map(faq => <FaqItem faq={faq} lang={lang} />)}
+              .map(faq => (
+                <div>
+                  <FaqItem
+                    open={this.state.faqToggle
+                      .filter(item => item.id === faq.id)
+                      .map(item => item.open)}
+                    faq={faq}
+                    lang={lang}
+                    toggleOpen={this.toggleOpen}
+                  />
+                </div>
+              ))}
         </div>
       </div>
     )
