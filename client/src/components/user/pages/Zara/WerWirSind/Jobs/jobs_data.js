@@ -5,12 +5,12 @@ export const heroData = {
   de: {
     title: 'Jobs',
     text:
-      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:office@zara.or.at">office@zara.or.at</a> schicken.'
+      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.'
   },
   en: {
     title: 'Jobs',
     text:
-      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:office@zara.or.at">office@zara.or.at</a> schicken.'
+      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.'
   }
 }
 

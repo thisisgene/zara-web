@@ -76,7 +76,7 @@ class Team extends Component {
                   ))}
               </div>
               <div style={{ margin: '2rem 0 4rem' }}>
-                <i>Fotos: © Johannes Zinner</i>
+                <i>Photo Credit: Johannes Zinner</i>
               </div>
               {lang && lang === 'de' ? (
                 <div>
