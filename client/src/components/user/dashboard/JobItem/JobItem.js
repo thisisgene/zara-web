@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from './JobItem.module.sass'
 
@@ -11,27 +12,42 @@ export default class JobItem extends Component {
           {index + 1}. {content[lang].title}
         </div>
         <div className={styles['job-item--data']}>
-          <div className={styles['job-item--data__title']}>
-            {lang === 'de'
-              ? 'Vorwiegende Aufgabengebiete'
-              : 'Vorwiegende Aufgabengebiete'}
-            :
-          </div>
-          <div className={styles['job-item--data__text']}>
-            {content[lang].area}
-          </div>
+          {content[lang].shortContent && (
+            <div
+              className={styles['job-item--data__text']}
+              dangerouslySetInnerHTML={{ __html: content[lang].shortContent }}
+            />
+          )}
+          {content[lang].area && (
+            <div>
+              <div className={styles['job-item--data__title']}>
+                {lang === 'de'
+                  ? 'Vorwiegende Aufgabengebiete'
+                  : 'Vorwiegende Aufgabengebiete'}
+                :
+              </div>
+              <div className={styles['job-item--data__text']}>
+                {content[lang].area}
+              </div>
+            </div>
+          )}
         </div>
         <div className={styles['job-item--data']}>
-          <div className={styles['job-item--data__title']}>
-            {lang === 'de'
-              ? 'Erwünschte Qualifikationen'
-              : 'Erwünschte Qualifikationen'}
-            :
-          </div>
-          <div className={styles['job-item--data__text']}>
-            {content[lang].qualifications}
-          </div>
+          {content[lang].area && (
+            <div>
+              <div className={styles['job-item--data__title']}>
+                {lang === 'de'
+                  ? 'Erwünschte Qualifikationen'
+                  : 'Erwünschte Qualifikationen'}
+                :
+              </div>
+              <div className={styles['job-item--data__text']}>
+                {content[lang].qualifications}
+              </div>
+            </div>
+          )}
         </div>
+
         <div className={styles['job-item--data']}>
           <div className={styles['job-item--data__title']}>
             {lang === 'de' ? 'Zeitaufwand' : 'Zeitaufwand'}:
@@ -50,6 +66,14 @@ export default class JobItem extends Component {
             </a>
           </div>
         </div>
+
+        {content[lang].link && (
+          <div className={styles['job-item--data']}>
+            <Link to={`/${lang}/ueber_ZARA/wer_wir_sind/jobs/${content.id}`}>
+              {content[lang].linkText}
+            </Link>
+          </div>
+        )}
       </div>
     )
   }
