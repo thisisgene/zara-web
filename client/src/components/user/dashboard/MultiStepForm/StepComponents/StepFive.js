@@ -74,9 +74,10 @@ class StepFive extends Component {
               <label className="col-md-12 control-label">
                 <h1>Einverstanden?</h1>
                 <p>
-                  Ihre Daten sind bei uns sicher. Wir behandeln Ihre Meldung
-                  streng vertraulich und geben weder Ihren Namen noch ihre
-                  Kontaktdaten an Dritte weiter.
+                  Ihre Daten sind bei uns sicher. Personenbezogene Daten (z.B.
+                  falls Sie Namen in der Beschreibung nennen) behandeln wir
+                  streng vertraulich. Diese werden nur mit Ihrer Zustimmung an
+                  Dritte weitergegeben.
                 </p>
                 <p>
                   Die Übertragung erfolgt über eine sichere Verbindung zu

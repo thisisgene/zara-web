@@ -127,7 +127,7 @@ class MultiStepForm extends Component {
         name: 'Fertig',
         component: (
           <StepSix
-            className={styles['step']}
+            className={cx(styles['step'], 'step6')}
             getStore={() => this.getStore()}
             updateStore={u => {
               this.updateStore(u)

@@ -45,7 +45,7 @@ const infoObj_default = {
             link: 'beratung/melden/rassismus'
           },
           {
-            text: 'Beratung',
+            text: 'Beratung: anonym möglich',
             type: 'cta',
             link: 'beratung/beratung_rassismus_hassimnetz'
           }
@@ -66,7 +66,7 @@ const infoObj_default = {
             link: 'beratung/melden/hassimnetz'
           },
           {
-            text: 'Beratung',
+            text: 'Beratung: anonym möglich',
             type: 'cta',
             link: 'beratung/beratung_rassismus_hassimnetz'
           }

@@ -4,10 +4,10 @@ ol.progtrckr {
   display: flex;
   justify-content: center;
 }
-/* 
-ol.progtrckr:nth-child(3) {
+
+ol.progtrckr li:last-child {
   display: none;
-} */
+}
 
 ol.progtrckr span {
   /* display: none */
