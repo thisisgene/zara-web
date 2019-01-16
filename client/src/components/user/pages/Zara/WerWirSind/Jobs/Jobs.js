@@ -30,6 +30,19 @@ class RechtUndOrdnung extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
+            <div className={styles['job-container']}>
+              {jobData &&
+                jobData
+                  .filter(job => job.category === 'job')
+                  .map((job, index) => (
+                    <JobItem
+                      key={index}
+                      index={index}
+                      content={job}
+                      lang={lang}
+                    />
+                  ))}
+            </div>
             <LongText content={longTextVolontariat} lang={lang} />
             <div className={styles['job-container']}>
               {jobData &&

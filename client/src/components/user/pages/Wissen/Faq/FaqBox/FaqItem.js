@@ -24,7 +24,7 @@ export default class FaqItem extends Component {
   }
 
   render() {
-    const { faq, lang, open, toggleOpen } = this.props
+    const { faq, lang, open, glow, setGlow, toggleOpen } = this.props
     let replacedText = faq[lang].text
     // faq[lang].links &&
     //   faq[lang].links.map(link => {
@@ -40,6 +40,7 @@ export default class FaqItem extends Component {
     let textArray = faq[lang].text.split(query)
 
     const isOpen = open[0]
+    const hasGlow = glow[0]
     return (
       <div>
         <span id={faq.id} className={styles['faq-item--margin']} />
@@ -65,32 +66,35 @@ export default class FaqItem extends Component {
             </div>
           </div>
           <div
-            className={cx(styles['faq-item--body'], {
-              [styles['open']]: isOpen
-            })}
+            className={cx(
+              styles['faq-item--body'],
+              {
+                [styles['open']]: isOpen
+              },
+              {
+                [styles['glow']]: hasGlow
+              }
+            )}
           >
             {textArray &&
-              textArray.map(item => (
-                <span>
-                  {faq[lang].links &&
-                  faq[lang].links.filter(link => link.ref === item).length >
-                    0 ? (
-                    faq[lang].links
-                      .filter(link => link.ref === item)
-                      .map(link => (
-                        <Link
-                          className={styles['inner-text-link']}
-                          to={`/${lang}/wissen/faq/#${link.toID}`}
-                          // onClick={this.openFaq.bind(this, link.toID)}
-                        >
-                          {link.text}
-                        </Link>
-                      ))
-                  ) : (
-                    <span dangerouslySetInnerHTML={{ __html: item }} />
-                  )}
-                </span>
-              ))}
+              textArray.map(item =>
+                faq[lang].links &&
+                faq[lang].links.filter(link => link.ref === item).length > 0 ? (
+                  faq[lang].links
+                    .filter(link => link.ref === item)
+                    .map(link => (
+                      <Link
+                        className={styles['inner-text-link']}
+                        to={`/${lang}/wissen/faq/#${link.toID}`}
+                        onClick={() => setGlow(link.toID)}
+                      >
+                        {link.text}
+                      </Link>
+                    ))
+                ) : (
+                  <span dangerouslySetInnerHTML={{ __html: item }} />
+                )
+              )}
           </div>
         </div>
       </div>

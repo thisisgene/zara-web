@@ -25,21 +25,37 @@ class FaqBox extends Component {
     let faqToggleArray = []
     const lang = this.props.lang
     this.props.content.map(item => {
-      faqToggleArray.push({ id: item.id, open: false })
+      faqToggleArray.push({ id: item.id, open: false, glow: false })
     })
     this.setState(
       {
         faqToggle: faqToggleArray
       },
-      () => this.toggleOpen(thisId)
+      () => {
+        this.setOpen(thisId)
+        this.setGlow(thisId)
+      }
     )
   }
   componentDidUpdate(prevProps) {
     if (prevProps.location !== this.props.location) {
       let thisId = this.props.location.hash
       thisId = thisId.replace('#', '')
-      this.toggleOpen(thisId)
+      this.setOpen(thisId)
     }
+  }
+
+  setOpen = id => {
+    let faqToggleArray = this.state.faqToggle
+    console.log('id:', this.state.faqToggle)
+
+    faqToggleArray
+      .filter(item => item.id === id)
+      .map(item => (item.open = true))
+    this.setState({
+      faqToggle: faqToggleArray
+    })
+    console.log(faqToggleArray)
   }
 
   toggleOpen = id => {
@@ -53,6 +69,24 @@ class FaqBox extends Component {
       faqToggle: faqToggleArray
     })
     console.log(faqToggleArray)
+  }
+
+  toggleGlow = id => {
+    let faqToggleArray = this.state.faqToggle
+
+    faqToggleArray
+      .filter(item => item.id === id)
+      .map(item => (item.glow = !item.glow))
+    this.setState({
+      faqToggle: faqToggleArray
+    })
+  }
+
+  setGlow = id => {
+    this.toggleGlow(id)
+    setTimeout(() => {
+      this.toggleGlow(id)
+    }, 2000)
   }
 
   onChange = e => {
@@ -160,9 +194,13 @@ class FaqBox extends Component {
                     open={this.state.faqToggle
                       .filter(item => item.id === faq.id)
                       .map(item => item.open)}
+                    glow={this.state.faqToggle
+                      .filter(item => item.id === faq.id)
+                      .map(item => item.glow)}
                     faq={faq}
                     lang={lang}
                     toggleOpen={this.toggleOpen}
+                    setGlow={this.setGlow}
                   />
                 </div>
               ))}
