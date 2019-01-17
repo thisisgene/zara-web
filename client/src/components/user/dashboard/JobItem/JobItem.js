@@ -67,10 +67,10 @@ export default class JobItem extends Component {
           </div>
         </div>
 
-        {content[lang].link && (
+        {content[lang].moreLink && (
           <div className={styles['job-item--data']}>
             <Link to={`/${lang}/ueber_ZARA/wer_wir_sind/jobs/${content.id}`}>
-              {content[lang].linkText}
+              {content[lang].moreLinkText}
             </Link>
           </div>
         )}
