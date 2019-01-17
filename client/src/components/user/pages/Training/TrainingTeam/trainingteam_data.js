@@ -126,6 +126,13 @@ export const teamData = {
         name: 'Monika Lohfeyer',
         text:
           'studierte Pädagogik in Salzburg und Bremen. Längere Auslandsaufenthalte, u.a. mehrjährige Lehrtätigkeit, Europäischer Freiwilligendienst, LernEinsatz der DKA. Langjährige Erfahrung in prozessorientierten Trainings mit Jugendlichen,seit einigen Jahren in der außerschulischen Jugendarbeit hauptberuflich tätig – Qualitätssicherung, Projektkoordination und Konzipierung von Trainings mit unterschiedlichen thematischen Schwerpunkten für junge Erwachsene.'
+      },
+      {
+        field: 'training',
+        image: 'training/Peymane_Saghari.jpg',
+        name: 'Mag.a Peymane Saghari',
+        text:
+          'Peymane Saghari hat Ethnologie, Kultur- und Sozialanthropologie an der Uni Wien studiert und im Anschluss die Ausbildung zur Psychoanalytikerin am Wiener Arbeitskreis für Psychoanalyse begonnen. Mittlerweile ist sie als Psychotherapeutin in Ausbildung unter Supervision in freier Praxis und beim Verein TAMAR tätig.<br>Sie hat zudem berufliche Erfahrungen im Opferschutz, Frauen- und Menschenrechtsbereich gesammelt durch ihre langjährige Mitarbeit bei LEFÖ IBF Interventionsstelle für Betroffene des Frauenhandels und bei ZARA.'
       }
     ]
   }
