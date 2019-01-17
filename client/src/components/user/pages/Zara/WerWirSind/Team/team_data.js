@@ -136,7 +136,7 @@ export const teamData = {
         field: 'beratung',
         name: 'Mag.a Lilian Levai',
         text:
-          '(derzeit in Karenz)<br /><br />hat Afrikawissenschaften mit dem Schwerpunkt Rassismusforschung studiert und absolvierte zahlreiche juristische Lehrveranstaltungen insbesondere zu den Themen Antidiskriminierungsrecht und Mediation. Außerdem ist sie zertifizierte Mediatorin. Sie ist als juristische Beraterin in den ZARA-Beratungsstellen tätig.<br /><br />Trainingsschwerpunkte: interkulturelle Sensibilisierung, Antidiskriminierungsrecht, Zivilcourage und die Kombination von Anti-Rassismus-Arbeit mit Sport.'
+          '(derzeit in Karenz)<br /><br />ist juristische Beraterin in den ZARA-Beratungsstellen, leitet den Fachbereich Beratung mit Fokus auf Onlineberatung und hält Workshops für die ZARA-Training gGesmbH.<br /><br />Sie hat Afrikawissenschaften mit dem Schwerpunkt Rassismusforschung studiert, absolvierte zahlreiche juristische Lehrveranstaltungen insbesondere zu den Themen Antidiskriminierungsrecht und Mediation, ist zertifizierte Mediatorin und verfügt über das Hochschulzertifikat Onlineberatung der Technischen Hochschule Nürnberg. Aktuell vertieft sie ihre Beratungskompetenzen im psychosozialen Bereich über das Psychotherapeutische Propädeutikum.'
       },
       {
         // image: 'Bianca Schoenberger_ZARA.jpg',
