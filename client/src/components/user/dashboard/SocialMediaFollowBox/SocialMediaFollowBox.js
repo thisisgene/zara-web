@@ -16,7 +16,7 @@ class SocialMediaFollowBox extends Component {
               <a target="blank" href="https://www.facebook.com/zara.or.at/">
                 <IconObject image="fbLogo" />
               </a>
-              <a target="blank" href="https://twitter.com/counteract_hass">
+              <a target="blank" href="https://twitter.com/Verein_ZARA">
                 <IconObject image="twitterLogo" />
               </a>
               <a
