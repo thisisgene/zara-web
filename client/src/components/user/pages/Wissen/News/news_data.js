@@ -29,6 +29,86 @@ export const newsTags = [
 export const newsData = [
   {
     tag: 'news',
+    newsBoxSize: 'wide',
+    param: 'news',
+
+    image: 'main_icons/big/Hasspostings Online Melden.png',
+    imageSide: 'left',
+    imageAlign: 'center',
+    id: 'Hass_im_Netz_ist_kein_Maerchen',
+    de: {
+      category: 'News',
+      date: '24.01.2019',
+      title: 'Hass im Netz ist kein Märchen',
+      shortContent:
+        'Hass im Netz ist kein Märchen! Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cyber Mobbing an <a href="../beratung">ZARA</a>. Es besteht die Möglichkeit, anonym zu melden oder von ZARA Berater*innen kostenlos beraten zu werden.',
+      content:
+        '<p>Hass im Netz ist kein Märchen! Melden Sie rassistische Diskriminierung, Online Hass und Hetze sowie Cyber Mobbing an <a href="../beratung">ZARA</a>. Es besteht die Möglichkeit, anonym zu melden oder von ZARA Berater*innen kostenlos beraten zu werden.</p><p>Wir haben drei Videos produziert, um auf die am häufigsten vorkommenden Tatbestände aufmerksam zu machen, die im Zeitraum von September 2017 bis September 2018 von der ZARA #GegenHassimNetz Beratungsstelle dokumentiert wurden.<ul><li>Der Wolf und die Beleidigung</li><li>Schneewittchen und das Cyber Mobbing</li><li>Die Bremer Stadtmusikant*innen und die Verhetzung</li></ul></p>',
+      videos: [
+        {
+          vTitle: 'Der Wolf und die Beleidigung',
+          id: 'CI9v-UZhyPU',
+          text:
+            '<p>In einem Jahr Beratungsstelle #GegenHassimnetz, erfüllten 17,4% der von ZARA dokumentierten Postings den Tatbestand der Beleidigung. Aus allen dokumentierten Beleidigungen sind qualifizierte Beleidigungen besonders häufig (31%).</p><p>Bei einem Posting kann es sich um eine qualifizierte Beleidigung handeln, wenn jemand u.a. aufgrund der Hautfarbe, Sprache, Religion, Weltanschauung, Staatsangehörigkeit, Abstammung, nationalen oder ethnischen Herkunft, einer Behinderung, des Alters, Geschlecht oder der sexuellen Ausrichtung beleidigt wird. Eine Beleidigung kann durch eine Misshandlung am Körper (z.B. Stoßen, Anspucken), eine Androhung einer Misshandlung, durch eine Beschimpfung oder eine Verspottung erfolgen. Verspottungen und Beschimpfungen müssen von höherer Intensität sein, damit es ein sogenanntes Ermächtigungsdelikt wird.</p>'
+        },
+        {
+          vTitle: 'Schneewittchen und das Cyber Mobbing',
+          id: 'MpBMl-IjYus',
+          text:
+            '<p>In einem Jahr Beratungsstelle #GegenHassimNetz waren Frauen weit häufiger von Cyber Mobbing betroffen als Männer. Von den an ZARA gemeldeten Cyber Mobbing fällen, betrafen 64% den Diskriminierungsgrund "Gender". Davon richteten sich 85,3% gegen Frauen.</p><p>Cyber Mobbing als Tatbestand wird durch mehrere Postings verwirklicht. Das gilt aus rechtlicher Sicht nur wenn dadurch eine Person über einen längeren Zeitraum in ihrer Ehre verletzt wird oder Bilder bzw. Tatsachen des höchstpersönlichen Lebensbereichs ohne Zustimmung öffentlich gemacht werden. Zudem müssen die Inhalte - nach dem Gesetz - für mind. 10 Person wahrnehmbar sein. Die Posts müssen geeignet sein, die Lebensführung unzumutbar zu beeinträchtigen. Das können u.a. ein Rückzug aus den Social Media, Angstzustände und/oder Schlaflosigkeit sein.</p>'
+        },
+        {
+          vTitle: 'Die Bremer Stadtmusikant*innen und die Verhetzung',
+          id: 'YEddSOQe7ak',
+          text:
+            '<p>In einem Jahr Beratungsstelle #GegenHassimNetz erfüllten 26,5% der von ZARA dokumentierten Postings den Tatbestand der Verhetzung. Aus den dokumentierten Verhetzungsfällen waren geflüchtete Personen (35,8%) und Muslim*innen (30,6%) besonders häufig betroffen.</p><p>Verhetzung als Tatbestand ist dann erfüllt, wenn gegen eine Einzelperson oder eine Gruppe vor ca. 30 Menschen - aufgrund der Kriterien der ethnischen Zugehörigkeit, Religion, Geschlecht, Alter, Sexualität, Hautfarbe, Sprache, Weltanschauung, Staatsangehörigkeit, der Abstammung oder Behinderung zu Hass aufstachelt oder Gewalt aufgerufen wird.</p>'
+        }
+      ],
+      bottomText:
+        '<p>An dieser Stelle wollen wir jenen herzlichst danken, die diese Videos möglich gemacht und co-produziert haben. </p><p><b>Vielen Dank an:</b></p><p>Jakob Listabarth, Beratung sowie Design- & Videounterstützung <br>Eva Prosek, Voiceover <br>Simon Schwaighofer, Design Koordination <br>Johannes Zinner, Fotografie <br>Marie Pöstelberger, Foto-Assistenz<br>Christoph Proksch, Creative Design</p>',
+      linkText: 'weiterlesen'
+    },
+    en: {
+      category: 'News',
+      date: '24.01.2019',
+      title:
+        "Einladung: Weiterbildung 'hate crime erkennen und aktiv entgegentreten'",
+      shortContent:
+        "Im Rahmen des EU-Projekts V-START bieten wir eine kostenlose, zweitägige Weiterbildung an, in der Sie hate crime erkennen lernen sowie Handlungsoptionen erforschen können, um somit die Unterstützungsmaßnahmen für Betroffene zu verbessern und sogenanntem 'underreporting' entgegenzuwirken.",
+      content:
+        '<p>Hiermit möchten wir, ZARA – Zivilcourage & Anti-Rassismus-Arbeit und ZARA Training gemeinnützige GmbH, zivilgesellschaftliche Vertreter*innen herzlich zur kostenlosen zweitägigen Weiterbildung zum Thema</p><p><strong> </strong></p><p><strong>Hassverbrechen | <em>hate crime</em> |Vorurteilskriminalität erkennen und aktiv entgegentreten!</strong></p><p> </p><p>einladen, die am Montag, dem 25. März 2019 und Montag, dem 01.04.2019, in Wien stattfinden wird.</p><p> </p><p>Die Weiterbildung wird im Rahmen des EU-Projekts <strong>V-START – Victim Support Through Awareness-Raising and neTworking</strong> von Lilian Levai (ZARA Beraterin & Trainingsexpertin) und Volker Frey (Generalsekretär des Klagsverbands & Trainingsexperte) konzipiert und durchgeführt. </p><p> </p><p>Mit dieser Einladung wenden wir uns konkret an zivilgesellschaftliche Vertreter*innen, da wir gemeinsam mit Ihnen die Unterstützung für von hate crime Betroffene verbessern wollen. Wir halten dabei den bereichsübergreifenden Austausch von Expertise zivilgesellschaftlicher Vertreter*innen für äußerst wertvoll. Auf den Austausch von Erfahrungen und Best Practices freuen wir uns.</p><p> </p><p>Mit der Absolvierung des zweitägigen Weiterbildungsangebots, das mit einem ZARA Trainingszertifikat abgeschlossen wird, lernen Teilnehmer*innen Handlungsoptionen, um mehr Sichtbarkeit und verbesserte Unterstützungsmaßnahmen für Betroffene von vorurteilsmotivierter Gewalt zu bewirken und Schritte für bessere Präventionsarbeit zu setzen.</p><p> </p><p>Die Schwerpunkte der Weiterbildung liegen auf der Erkennung von Hassverbrechen, der Auseinandersetzung mit Vorurteilsmotiven, einer Übersicht des nationalen sowie internationalen Rechtsrahmens sowie auf Handlungsstrategien und Unterstützungsmaßnahmen – on- und offline.</p><p> </p><p> </p><table>  <tr>   <td>        <p style="text-align: right"><strong>Wann:</strong></p>   </td>   <td>        Termin 1: 25.03.2019, 10:00 – 16:30 Uhr<p>        Termin 2: 01.04.2019, 10:00 – 16:30 Uhr<p>        Eine Teilnahme an beiden Tagen ist erwünscht.   </td>  </tr>  <tr>   <td>        <p style="text-align: right"><strong>Wo:</strong></p>   </td>   <td>        Kardinal König Haus, <p>        Kardinal-König-Platz 3, 1130 Wien   </td>  </tr>  <tr>   <td>        <p style="text-align: right"><strong>Reisekosten:</strong></p>   </td>   <td>        Wir freuen uns, mitteilen zu können, dass wir Ihnen die <strong>Reisekosten</strong>, die durch die Teilnahme entstehen, <strong>rückerstatten</strong> können. Leider können wir <strong><span style="text-decoration:underline;">keine </span>Übernachtungskosten</strong> abdecken.    </td>  </tr>  <tr>   <td>        <p style="text-align: right"><strong>Zugang</strong></p>   </td>   <td>        Die Teilnahme am Training ist <strong>kostenlos</strong>. Der Veranstaltungsort ist barrierefrei zugänglich. ÖGS-Dolmetschung wird angeboten. Es wird darum gebeten, bei der Anmeldung bekannt  zu geben, ob ÖGS-Dolmetschung oder andere Unterstützung in Anspruch genommen wird.       </td>  </tr></table><p> </p><p> </p><p>Für die Anmeldung (nach „first-come-first-serve"-Prinzip bis einschließlich 10.02.2018), bzgl. der Rückerstattung von Reisekosten sowie für Anregungen und Nachfragen steht die folgende Kontaktperson jederzeit zur Verfügung:</p><p> </p><p>Anna Schreilechner, </p><p>ZARA-Koordinatorin Transnationaler Kooperationen, <a href="mailto:anna.schreilechner@zara.or.at">anna.schreilechner@zara.or.at</a></p><p><a href="">Hier</a> steht die offizielle Einladung zum Download zur Verfügung</p><p><a href="../ueber_ZARA/projekte">Hier</a> mehr Information zum V-START-Projekt.</p><p>Die offizielle Projektwebsite beinhaltet Information und Ergebnisse aus allen Projektländern: <a href="www.vstart.eu">www.vstart.eu</a></p>',
+      linkText: 'weiterlesen'
+    }
+  },
+  {
+    tag: 'event',
+    onNewsBox: true,
+    newsBoxSize: 'wide',
+    param: 'veranstaltung',
+
+    // image: 'vstart.jpg',
+    id: 'Pressekonferenz_Rassismus_Report_2018',
+    de: {
+      category: 'Veranstaltgung',
+      date: '21. März 2019',
+      title: 'Pressekonferenz Rassismus Report 2018',
+      shortContent:
+        'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 10:00 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
+      content: ''
+      // linkText: 'weiterlesen'
+    },
+    en: {
+      category: 'Veranstaltgung',
+      date: '21. März 2019',
+      title: 'Pressekonferenz Rassismus Report 2018',
+      shortContent:
+        'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 10:00 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
+      content: ''
+      // linkText: 'weiterlesen'
+    }
+  },
+  {
+    tag: 'news',
     onNewsBox: true,
     newsBoxSize: 'wide',
     param: 'veranstaltung',

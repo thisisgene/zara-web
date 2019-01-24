@@ -9,6 +9,8 @@ import OneLineAlert from '../../../../dashboard/OneLineAlert/OneLineAlert'
 import CardCollectionGridObject from '../../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 import styles from './NewsDetail.module.sass'
+import VideoItem from '../../../../dashboard/VideoBox/VideoItem'
+import LongText from '../../../../dashboard/LongText/LongText'
 
 class NewsDetail extends Component {
   constructor(props) {
@@ -62,6 +64,22 @@ class NewsDetail extends Component {
               className={styles['news-detail--text']}
               dangerouslySetInnerHTML={{ __html: news[lang].content }}
             />
+            {news[lang].videos &&
+              news[lang].videos.map(video => (
+                <div className={styles['news-detail--video']}>
+                  <h2>{video.vTitle}</h2>
+                  <div className={styles['news-detail--video__item']}>
+                    <VideoItem video={video} />
+                  </div>
+                  <div dangerouslySetInnerHTML={{ __html: video.text }} />
+                </div>
+              ))}
+            {news[lang].bottomText && (
+              <div
+                className={styles['news-detail--bottom-text']}
+                dangerouslySetInnerHTML={{ __html: news[lang].bottomText }}
+              />
+            )}
             {news.bottomImages && (
               <div className={styles['news-detail--bottom-images']}>
                 {news.bottomImages.map(image => (
