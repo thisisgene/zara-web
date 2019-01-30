@@ -133,6 +133,20 @@ export const teamData = {
         name: 'Mag.a Peymane Saghari',
         text:
           'Peymane Saghari hat Ethnologie, Kultur- und Sozialanthropologie an der Uni Wien studiert und im Anschluss die Ausbildung zur Psychoanalytikerin am Wiener Arbeitskreis für Psychoanalyse begonnen. Mittlerweile ist sie als Psychotherapeutin in Ausbildung unter Supervision in freier Praxis und beim Verein TAMAR tätig.<br>Sie hat zudem berufliche Erfahrungen im Opferschutz, Frauen- und Menschenrechtsbereich gesammelt durch ihre langjährige Mitarbeit bei LEFÖ IBF Interventionsstelle für Betroffene des Frauenhandels und bei ZARA.'
+      },
+      {
+        field: 'training',
+        image: 'training/Sassan Esmailzadeh.jpg',
+        name: 'Sassan Esmailzadeh',
+        text:
+          'Sassan arbeitet als Trainer für Basisbildung und Deutsch als Zweitsprache und als Administrator im rassismuskritischen Schulprojekt PROSA. Er hat Gedenkdienst im Anne Frank Zentrum Berlin gemacht und war im Vorstand des Verein Gedenkdienst aktiv. Arbeitsschwerpunkte: Rassismuskritische Kompetenz, Antisemitismus, Rechtsextremismus, Migrationsgesellschaft, Anti-Diskriminierung und Menschenrechte.'
+      },
+      {
+        field: 'training',
+        image: 'training/Lukas Gottschamel.jpg',
+        name: 'Mag. Lukas Gottschamel',
+        text:
+          'ist Jurist, arbeitet in der Beratungsstelle des Vereins ZARA – Zivilcourage und Anti-Rassismus-Arbeit und absolviert derzeit die Mediationsausbildung. Er war viele Jahre in der Kinder- und Jugendarbeit im pfarrlichen Kontext tätig. Im Rahmen seiner beruflichen und freiwilligen Arbeit trägt er zu Aspekten der Gleichberechtigungsarbeit vor, konzipiert und leitet Workshops zu verschiedenen Themen und für unterschiedliche Zielgruppen (ua Hass im Netz; Global Footprint; Mann, Frau, Gewalt).'
       }
     ]
   }
