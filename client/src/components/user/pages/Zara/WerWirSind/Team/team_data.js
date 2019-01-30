@@ -87,7 +87,7 @@ export const teamData = {
         field: 'gok',
         name: 'Ferhat Özbay',
         text:
-          'ist aktuell Zivildiener bei ZARA.<br><br>Er studiert Germanistik und Geographie und Wirtschaftskunde auf Lehramt an der Universität Wien.<br>Seit Beginn seines Studiums engagiert er sich für die Anliegen der Studierenden und Schüler*Innen und hat bisher zahlreiche Bildungs- und Beratungsaktivitäten umgesetzt und begleitet.<br><br>Als zukünftiger Lehrer möchte er sich intensiv gegen Benachteiligungen und für Gleichberechtigung im Schulwesen einsetzen.'
+          'ist aktuell Zivildiener bei ZARA.<br><br>Er studiert Germanistik, Geographie und Wirtschaftskunde auf Lehramt an der Universität Wien.<br>Seit Beginn seines Studiums engagiert er sich für die Anliegen von Studierenden und Schüler*innen und hat bisher zahlreiche Bildungs- und Beratungsaktivitäten umgesetzt und begleitet.<br><br>Als zukünftiger Lehrer möchte er sich intensiv gegen Benachteiligungen und für Gleichberechtigung im Schulwesen einsetzen.'
       },
       {
         image: 'Caroline Kerschbaumer_ZARA.jpg',
