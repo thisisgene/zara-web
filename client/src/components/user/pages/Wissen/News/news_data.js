@@ -31,6 +31,35 @@ export const newsData = [
     tag: 'news',
     newsBoxSize: 'wide',
     param: 'news',
+    size: 'big-image',
+    image: 'news/twitter_beitrag.jpg',
+    // imageSide: 'left',
+    imageAlign: 'center',
+    id: 'Innovatives_Twitter_Projekt_gegen_Hass_im_Netz',
+    de: {
+      category: 'News',
+      date: '30.01.2019',
+      title: 'Innovatives Twitter Projekt gegen Hass im Netz.',
+      shortContent:
+        'Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.',
+      content:
+        '<p>Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.</p><p>Im Rahmen des gemeinsamen Projekts mit <a href="https://www.tunnel23.com/">Tunnel23</a>, senden wir Personen, die Hass schürende Tweets von sich geben, eigens dafür produzierte ASMR (Autonomous Sensory Meridian Response) Videos. Diese ASMR-Videos werden von vielen Personen als beruhigend empfunden. Unsere Videos können Sie sich <a href="https://www.youtube.com/playlist?list=PLBP-yltexuhsFFM4LrJifRf7INJPdpS1M">hier</a> auf unserer YouTube-Seite anschauen. Durch eine Anbindung an die Twitter API können wir effektiv nach diesen Postings suchen und automatisiert unsere beruhigenden Videos mit einer Nachricht und dem Hashtag <a href="https://twitter.com/search?src=typd&q=%23calmdowninternet"> #calmdowninternet</a>. </p><p><strong>Entspannung gegen Online-Hass</strong></p><p>Mit einem KI-gestützten System, das von TUNNEL23 für dieses Projekt entwickelt wurde, werden hetzerische und hasserfüllte Tweets anhand vordefinierter Keywords identifiziert. Negative Beiträge werden dann mit einer Nachricht und einem von sechs beruhigenden ASMR-Videos kommentiert. ASMR steht für „Autonomous Sensory Meridian Response" und beschreibt einen Zustand völliger Entspannung, der vor allem durch Geräusche und auch visuelle Reize ausgelöst werden kann.</p><p><strong>Erste Erfolge</strong></p><p>Bereits wenige Tage nach dem Start des Projektes wurden über 1000 Postings beantwortet, die Hassbotschaften enthielten. Viele Beiträge wurden von den Autoren gelöscht. Der Hass im Netz wurde also bereits erfolgreich eingedämmt.</p>',
+      linkText: 'weiterlesen'
+    },
+    en: {
+      category: 'News',
+      date: '30.01.2019',
+      title: 'Innovatives Twitter Projekt gegen Hass im Netz.',
+      shortContent:
+        'Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.',
+      content:
+        '<p>Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.</p><p>Im Rahmen des gemeinsamen Projekts mit<a href="https://www.tunnel23.com/"> Tunnel23</a>, senden wir Personen, die Hass schürende Tweets von sich geben, eigens dafür produzierte ASMR (Autonomous Sensory Meridian Response) Videos. Diese ASMR-Videos werden von vielen Personen als beruhigend empfunden. Unsere Videos können Sie sich<a href="https://www.youtube.com/playlist?list=PLBP-yltexuhsFFM4LrJifRf7INJPdpS1M"> hier</a> auf unserer YouTube-Seite anschauen. Durch eine Anbindung an die Twitter API können wir effektiv nach diesen Postings suchen und automatisiert unsere beruhigenden Videos mit einer Nachricht und dem Hashtag<a href="https://twitter.com/search?src=typd&q=%23calmdowninternet"> #calmdowninternet</a>. </p><p><strong>Entspannung gegen Online-Hass</strong></p><p>Mit einem KI-gestützten System, das von TUNNEL23 für dieses Projekt entwickelt wurde, werden hetzerische und hasserfüllte Tweets anhand vordefinierter Keywords identifiziert. Negative Beiträge werden dann mit einer Nachricht und einem von sechs beruhigenden ASMR-Videos kommentiert. ASMR steht für „Autonomous Sensory Meridian Response" und beschreibt einen Zustand völliger Entspannung, der vor allem durch Geräusche und auch visuelle Reize ausgelöst werden kann.</p><p><strong>Erste Erfolge</strong></p><p>Bereits wenige Tage nach dem Start des Projektes wurden über 1000 Postings beantwortet, die Hassbotschaften enthielten. Viele Beiträge wurden von den Autoren gelöscht. Der Hass im Netz wurde also bereits erfolgreich eingedämmt.</p>'
+    }
+  },
+  {
+    tag: 'news',
+    newsBoxSize: 'wide',
+    param: 'news',
 
     image: 'main_icons/big/Hasspostings Online Melden.png',
     imageSide: 'left',
@@ -80,6 +109,7 @@ export const newsData = [
       linkText: 'weiterlesen'
     }
   },
+
   {
     tag: 'event',
     onNewsBox: true,
