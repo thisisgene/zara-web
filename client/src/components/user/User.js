@@ -42,6 +42,7 @@ import Fotos from './pages/Wissen/Presse/Fotos'
 import KenneDeineRechte from './pages/Wissen/KenneDeineRechte/KenneDeineRechte'
 import Glossar from './pages/Wissen/KenneDeineRechte/Glossar'
 import Publikationen from './pages/Wissen/Publikationen/Publikationen'
+import PubDetail from './pages/Wissen/Publikationen/PubDetail'
 import RassismusReport from './pages/Wissen/Publikationen/RassismusReport'
 import Faq from './pages/Wissen/Faq/Faq'
 
@@ -307,6 +308,11 @@ class User extends Component {
                 exact
                 path="/:lang/wissen/publikationen/zara"
                 component={ZaraPublikationen}
+              />
+              <Route
+                exact
+                path="/:lang/wissen/publikationen/:category/:pubId"
+                component={PubDetail}
               />
               <Route
                 exact

@@ -1,0 +1,56 @@
+.pub-detail
+  margin: 4rem 0
+  table
+    tbody tr
+      td
+        vertical-align: top
+        
+        padding: 1rem
+        p
+          margin-top: 0
+  &--text
+    max-width: 800px
+    margin: 4rem auto
+    padding: 0 2rem
+    ul
+      list-style: square
+      margin: 1rem 0 1rem 2rem
+    p
+      margin: 1rem 0
+    a
+      color: #050505
+  &--video
+    max-width: 800px
+    margin: 0 auto 4rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 0 2rem
+    h2
+      text-align: center
+    &__item
+      max-width: 600px
+      
+      // margin: 2rem 0 2rem
+      // text-align: center
+  &--bottom-text
+    max-width: 800px
+    margin: 0 auto 4rem
+    padding: 0 2rem
+
+    p
+      margin: 1rem 0
+  &--bottom-images
+    margin: 2rem 0 4rem
+    display: flex
+    justify-content: center
+    @media(max-width: 320px)
+      display: block
+      text-align: center
+      img
+        margin: 1rem !important
+    // height: 200px
+    img
+      height: 100px
+      margin: 0 2rem
