@@ -1,41 +1,40 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom'
+import PrivateRoute from '../../common/PrivateRoute'
 
-import NewsList from './NewsList'
-import NewsContent from './NewsContent'
-import { getAllNewsItems, getNewsItemById } from '../../../actions/newsActions'
+import { getAll } from '../../../../actions/adminActions'
 
-import './news.css'
+import ItemAddList from '../../common/ItemAddList/ItemAddList'
+import NewsList from './NewsList/NewsList'
+import NewsContent from './NewsContent/NewsContent'
+
+import styles from './News.module.sass'
 
 class News extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.getAll('news')
+  }
+
   render() {
     return (
-      <div className="news">
-        <NewsList />
-        <Route path="/news/:id" props={this.props} component={NewsContent} />
+      <div className={styles['news']}>
+        {this.props.news.news && (
+          <ItemAddList news={this.props.news.news} category={'news'} />
+        )}
+        <PrivateRoute
+          path="/admin/dashboard/news/:newsId"
+          component={NewsContent}
+        />
       </div>
     )
   }
 }
 
-News.propTypes = {
-  getAllNewsItems: PropTypes.func.isRequired,
-  getNewsItemById: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  newsItem: PropTypes.object.isRequired
-}
-
 const mapStateToProps = state => ({
-  newsItem: state.newsItem,
-  auth: state.auth
+  news: state.news
 })
 
 export default connect(
   mapStateToProps,
-  { getAllNewsItems, getNewsItemById }
+  { getAll }
 )(News)
-
-// export default Projects

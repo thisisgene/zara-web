@@ -9,13 +9,13 @@ class Dashboard extends Component {
 
     return (
       <div className={styles['category-nav']}>
-        <NavLink
+        {/* <NavLink
           className={styles['category-nav--link']}
           activeClassName={styles['cat-active']}
           to="/admin/dashboard/projects"
         >
           Projects
-        </NavLink>
+        </NavLink> */}
         <NavLink
           className={styles['category-nav--link']}
           activeClassName={styles['cat-active']}

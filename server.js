@@ -6,6 +6,7 @@ const proxy = require('express-http-proxy')
 const fileUpload = require('express-fileupload')
 const path = require('path')
 const users = require('./routes/api/users')
+const news = require('./routes/api/news')
 const projects = require('./routes/api/projects')
 const app = express()
 
@@ -71,6 +72,7 @@ require('./config/passport')(passport)
 
 // Use Routes
 app.use('/api/users', users)
+app.use('/api/news', news)
 app.use('/api/projects', projects)
 
 // Server static assets if on production

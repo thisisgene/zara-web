@@ -3,7 +3,7 @@ import { Link, NavLink, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { logoutUser } from '../../../actions/authActions'
-import { clearProjects } from '../../../actions/projectActions'
+// import { clearProjects } from '../../../actions/projectActions'
 
 import Logo from '../common/zara_logo.png'
 
@@ -118,7 +118,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  clearProjects: PropTypes.func.isRequired,
+  // clearProjects: PropTypes.func.isRequired,
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 }
@@ -130,6 +130,6 @@ const mapStateToProps = state => ({
 export default withRouter(
   connect(
     mapStateToProps,
-    { clearProjects, logoutUser }
+    { logoutUser }
   )(Header)
 )

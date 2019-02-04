@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import PrivateRoute from '../common/PrivateRoute'
 
 import CategoryNav from './CategoryNav'
-import Projects from './projects/Projects'
+import News from './news/News'
 
 import styles from './Dashboard.module.sass'
 
@@ -15,9 +15,8 @@ class Dashboard extends Component {
         <CategoryNav />
 
         <div className={styles['dashboard-content']}>
-          <PrivateRoute path="/admin/dashboard/projects" component={Projects} />
-          {/* <PrivateRoute path="/admin/reports" component={Reports} /> */}
-          {/* <PrivateRoute path="/admin/news" component={News} /> */}
+          {/* <PrivateRoute path="/admin/dashboard/projects" component={Projects} /> */}
+          <PrivateRoute path="/admin/dashboard/news" component={News} />
         </div>
       </div>
     )

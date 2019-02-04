@@ -18,6 +18,7 @@ import RestrictedPage from './RestrictedPage/RestrictedPage'
 import './Admin.css'
 
 import styles from './dashboard/Dashboard.module.sass'
+import News from './dashboard/news/News'
 
 class Admin extends Component {
   constructor() {
