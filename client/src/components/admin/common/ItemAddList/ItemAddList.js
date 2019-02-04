@@ -12,7 +12,7 @@ export default class ItemAddList extends Component {
   }
 
   render() {
-    const { category, news } = this.props
+    const { category, content } = this.props
     return (
       <div className={styles['item-add-list']}>
         <div>
@@ -26,11 +26,14 @@ export default class ItemAddList extends Component {
             </div>
           </Link>
         </div>
-        <div>
-          {news &&
-            news.map(item => (
-              <div>
-                <NavLink to={`/admin/dashboard/news/${item._id}`}>
+        <div className={styles['item-list']}>
+          {content &&
+            content.map(item => (
+              <div className={styles['item-list--item']}>
+                <NavLink
+                  to={`/admin/dashboard/${category}/${item._id}`}
+                  activeClassName={styles['active']}
+                >
                   {item.titleDE}
                 </NavLink>
               </div>

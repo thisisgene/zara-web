@@ -19,7 +19,7 @@ class News extends Component {
     return (
       <div className={styles['news']}>
         {this.props.news.news && (
-          <ItemAddList news={this.props.news.news} category={'news'} />
+          <ItemAddList content={this.props.news.news} category={'news'} />
         )}
         <PrivateRoute
           path="/admin/dashboard/news/:newsId"
