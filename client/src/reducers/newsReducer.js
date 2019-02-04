@@ -3,6 +3,7 @@ import {
   GET_NEWS_BY_ID,
   CREATE_NEW_NEWS,
   UPDATE_NEWS,
+  DELETE_NEWS_BY_ID,
   CLEAR_NEWS_ITEM
 } from '../actions/types'
 
@@ -28,12 +29,18 @@ export default function(state = initialState, action) {
     case CREATE_NEW_NEWS:
       return {
         ...state,
-        news: action.payload
+        newsItem: action.payload
       }
     case UPDATE_NEWS:
       return {
         ...state,
         newsItem: action.payload
+      }
+    case DELETE_NEWS_BY_ID:
+      return {
+        ...state,
+        newsItem: null,
+        news: action.payload
       }
     case CLEAR_NEWS_ITEM:
       return {

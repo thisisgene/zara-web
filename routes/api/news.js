@@ -27,9 +27,9 @@ router.get('/', (req, res) => {
     .sort('position')
     .exec()
     .then(news => {
-      if (news === undefined || news.length === 0) {
-        return res.json({ nonews: 'Noch keine Beiträge.' })
-      }
+      // if (news === undefined || news.length === 0) {
+      //   return res.json({ nonews: 'Noch keine Beiträge.' })
+      // }
       res.json(news)
     })
     .catch(err => res.status(404).json(err))
@@ -41,23 +41,22 @@ router.get('/', (req, res) => {
 router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
-  async (req, res) => {
+  (req, res) => {
     const body = req.body
     // Get fields
-    const newsFields = {}
+    const newsFields = { de: {}, en: {} }
     if (body.titleDE) {
-      newsFields.titleDE = body.titleDE
+      newsFields.de.title = body.titleDE
       newsFields.handle = body.titleDE.replace(/\s/g, '_')
     }
-    if (body.titleEN) newsFields.titleEN = body.titleEN
-    if (body.descriptionDE) newsFields.descriptionDE = body.descriptionDE
-    if (body.descriptionEN) newsFields.descriptionEN = body.descriptionEN
+    if (body.titleEN) newsFields.en.title = body.titleEN
+    if (body.descriptionDE) newsFields.de.description = body.descriptionDE
+    if (body.descriptionEN) newsFields.en.description = body.descriptionEN
 
     const newNewsItem = new News(newsFields)
-    newNewsItem.save(async newsItem => {
-      console.log(newsFields)
-      const news = await News.find()
-      res.json(news)
+    newNewsItem.save().then(newsItem => {
+      console.log(newsItem)
+      res.json(newsItem)
     })
   }
 )
@@ -77,6 +76,29 @@ router.get('/:id', (req, res) => {
       res.json(newsItem)
     })
     .catch(err => {
+      errors.news = 'Beitrag nicht gefunden.'
+      return res.status(404).json(errors)
+    })
+})
+
+// @route   GET api/news/delete/:id
+// @desc    Delete news by id
+// @access  Private
+router.get('/delete/:id', async (req, res) => {
+  const errors = {}
+  console.log(req.params.id)
+  News.findOneAndUpdate(
+    { _id: req.params.id },
+    { isDeleted: true },
+    { safe: true, new: true }
+  )
+    .then(async newsItem => {
+      console.log(newsItem)
+      const news = await News.find({ isDeleted: false })
+      res.json(news)
+    })
+    .catch(err => {
+      console.log('nicht fund')
       errors.news = 'Beitrag nicht gefunden.'
       return res.status(404).json(errors)
     })

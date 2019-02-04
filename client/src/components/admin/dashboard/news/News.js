@@ -18,7 +18,7 @@ class News extends Component {
   render() {
     return (
       <div className={styles['news']}>
-        {this.props.news.news && (
+        {this.props.news && (
           <ItemAddList content={this.props.news.news} category={'news'} />
         )}
         <PrivateRoute

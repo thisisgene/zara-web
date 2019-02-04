@@ -4,6 +4,7 @@ import {
   GET_ERRORS,
   GET_ALL_NEWS,
   GET_NEWS_BY_ID,
+  DELETE_NEWS_BY_ID,
   CREATE_NEW_NEWS,
   UPDATE_NEWS,
   CLEAR_NEWS_ITEM
@@ -93,6 +94,29 @@ export const saveContent = saveData => dispatch => {
 
       break
 
+    default:
+      return
+  }
+}
+
+export const deleteById = (id, category) => dispatch => {
+  switch (category) {
+    case 'news':
+      axios
+        .get(`/api/news/delete/${id}`) // Must redirect to /dashboard/news
+        .then(res => {
+          dispatch({
+            type: DELETE_NEWS_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     default:
       return
   }

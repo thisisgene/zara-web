@@ -2,21 +2,27 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const NewsSchema = new Schema({
-  titleDE: {
-    type: String
+  de: {
+    title: {
+      type: String
+    },
+    description: {
+      type: String
+    }
   },
-  titleEN: {
-    type: String
+  en: {
+    title: {
+      type: String
+    },
+    description: {
+      type: String
+    }
   },
+
   handle: {
     type: String
   },
-  descriptionDE: {
-    type: String
-  },
-  descriptionEN: {
-    type: String
-  },
+
   lastEdited: {
     user: {
       type: Schema.Types.ObjectId,
@@ -32,12 +38,6 @@ const NewsSchema = new Schema({
       originalName: {
         type: String,
         required: true
-      },
-      title: {
-        type: String
-      },
-      description: {
-        type: String
       },
       date: {
         type: Date,

@@ -27,17 +27,20 @@ export default class ItemAddList extends Component {
           </Link>
         </div>
         <div className={styles['item-list']}>
-          {content &&
+          {content && content.length > 0 ? (
             content.map(item => (
               <div className={styles['item-list--item']}>
                 <NavLink
                   to={`/admin/dashboard/${category}/${item._id}`}
                   activeClassName={styles['active']}
                 >
-                  {item.titleDE}
+                  {item.de.title}
                 </NavLink>
               </div>
-            ))}
+            ))
+          ) : (
+            <div>Noch keine Beiträge</div>
+          )}
         </div>
       </div>
     )

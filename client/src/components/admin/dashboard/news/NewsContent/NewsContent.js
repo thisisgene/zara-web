@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import RichTextEditor from 'react-rte'
-import ItemAddList from '../../../common/ItemAddList/ItemAddList'
-
 import {
   saveContent,
+  getAll,
   getById,
+  deleteById,
   clearSingle
 } from '../../../../../actions/adminActions'
 
 import { toolbarConfig } from './newsContentData'
 
+import RichTextEditor from 'react-rte'
+import { confirmAlert } from 'react-confirm-alert' // Import
+
 import cx from 'classnames'
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import './rte.sass'
+import commonStyles from '../../../common/Common.module.sass'
 import styles from './NewsContent.module.sass'
 
 class NewsContent extends Component {
@@ -30,7 +34,6 @@ class NewsContent extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.newsId)
     this.props.match.params.newsId !== 'neu' &&
       this.props.getById(this.props.match.params.newsId, 'news')
     // RichTextEditor.createValueFromString(
@@ -41,18 +44,27 @@ class NewsContent extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       if (this.props.news.newsItem) {
+        if (prevProps.match.params.newsId === 'neu') {
+          this.setState({
+            newsId: this.props.news.newsItem._id
+          })
+          this.props.getAll('news')
+          this.props.history.push(
+            `/admin/dashboard/news/${this.props.news.newsItem._id}`
+          )
+        }
         const item = this.props.news.newsItem
         this.setState({
           blankItem: false,
           id: item._id,
-          titleDE: item.titleDE,
-          titleEN: item.titleEN,
+          titleDE: item.de.title,
+          titleEN: item.en.title,
           descriptionDE: RichTextEditor.createValueFromString(
-            item.descriptionDE,
+            item.de.description,
             'html'
           ),
           descriptionEN: RichTextEditor.createValueFromString(
-            item.descriptionEn,
+            item.en.description,
             'html'
           )
         })
@@ -103,6 +115,26 @@ class NewsContent extends Component {
     // console.log(saveData)
   }
 
+  deleteNews = () => {
+    this.props.deleteById(this.state.newsId, 'news')
+  }
+
+  confirmDelete = callback => {
+    confirmAlert({
+      title: 'Beitrag löschen',
+      message: 'Wollen Sie diesen Beitrag wirklich löschen?',
+      buttons: [
+        {
+          label: 'Löschen',
+          onClick: () => this.deleteNews()
+        },
+        {
+          label: 'Abbrechen'
+        }
+      ]
+    })
+  }
+
   render() {
     return (
       <div
@@ -126,7 +158,18 @@ class NewsContent extends Component {
             onChange={this.onDescriptionChange.bind(this, 'de')}
           />
         </div>
-        <button onClick={this.saveContent}>Speichern</button>
+        <button
+          className={cx(commonStyles['button'], commonStyles['button--save'])}
+          onClick={this.saveContent}
+        >
+          Speichern
+        </button>
+        <button
+          className={cx(commonStyles['button'], commonStyles['button--delete'])}
+          onClick={this.confirmDelete.bind(this, this.deleteNews)}
+        >
+          Löschen
+        </button>
       </div>
     )
   }
@@ -138,5 +181,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { saveContent, getById, clearSingle }
+  { saveContent, getById, deleteById, clearSingle, getAll }
 )(NewsContent)

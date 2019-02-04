@@ -5,6 +5,7 @@ export const GET_ALL_USERS = 'GET_ALL_USERS'
 
 export const GET_ALL_NEWS = 'GET_ALL_NEWS'
 export const GET_NEWS_BY_ID = 'GET_NEWS_BY_ID'
+export const DELETE_NEWS_BY_ID = 'DELETE_NEWS_BY_ID'
 export const CREATE_NEW_NEWS = 'CREATE_NEW_NEWS'
 export const UPDATE_NEWS = 'UPDATE_NEWS'
 export const CLEAR_NEWS_ITEM = 'CLEAR_NEWS_ITEM'

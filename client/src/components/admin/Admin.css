@@ -14,3 +14,7 @@
 .header .navbar {
   background: #36373c !important;
 }
+
+a {
+  text-decoration: none;
+}
