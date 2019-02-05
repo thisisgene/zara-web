@@ -29,6 +29,36 @@ export const newsTags = [
 export const newsData = [
   {
     tag: 'news',
+    // newsBoxSize: 'wide',
+    // param: 'news',
+    // size: 'big-image',
+    image: 'news/twitter_beitrag.jpg',
+    imageSide: 'left',
+    imageAlign: 'center',
+    id: 'SaferInternetDay_-_Eine_Einheit_gegen_Hass_im_Netz',
+    de: {
+      category: 'News',
+      date: '05.02.2019',
+      title:
+        'SaferInternetDay - Eine Einheit gegen Hass im Netz - Q&A für Schüler*innen und Lehrpersonal',
+      shortContent:
+        'Den SaferInternetDay 2019 – mit dem Motto „Together for a better internet” – haben wir, ZARA – Zivilcourage und Anti-Rassismus-Arbeit und der WEISSER RING – Verbrechensopferhilfe – zum Anlass genommen, um eine Karten-Serie zum Thema „Hass im Netz“ zu erstellen.',
+      content:
+        '<p>Den SaferInternetDay 2019 – mit dem Motto „Together for a better internet" – haben wir, ZARA – Zivilcourage und Anti-Rassismus-Arbeit und der WEISSER RING – Verbrechensopferhilfe – zum Anlass genommen, um eine Karten-Serie zum Thema „Hass im Netz" zu erstellen.</p><p> </p><p>Diese Serie steht Lehrer*innen, Trainer*innen und Workshop-Leiter*innen als Lehrmaterial für eine bzw. zwei Einheit/en gegen Hass im Netz zur Verfügung.</p><p> </p><p>Sie können sich die 10 Social Media Cards – Q&A gegen Hass im Netz für Schüler*innen und Lehrpersonal – hier downloaden und Ihre ganz eigene Einheit zu Hass im Netz gestalten.</p><p> </p><p>Hier ein Vorschlag für eine oder zwei Einheit/en:</p><p> </p><ul><li>Schreiben Sie die Fragen auf die Tafel oder auf ein Arbeitsblatt und geben Sie Ihren Schüler*innen ausgiebig Zeit für Recherche, Ideensammlung und das Verfassen von Antworten.<li>Versammeln Sie sich anschließend mit der gesamten Klasse im Sesselkreis und diskutieren Sie die Fragen ausgiebig. Die Antworten der Schüler*innen werden bestimmt auch Sie überraschen. Auch wir, als Trainer*innen, lernen jedes Mal wieder etwas Neues von den Teilnehmer*innen der ZARA Schulworkshops.<li>Sollten Ihre Schüler*innen von Erfahrungen erzählen, die Sie besorgen, die Ihnen vielleicht sogar strafrechtlich relevant erscheinen, wenden Sie jederzeit gerne an die ZARA-Beratungsstelle #GegenHassimNetz.<li>Lassen Sie Ihre Schüler*innen wissen, dass Sie, falls Sie jemals von Hass im Netz oder Cyber Mobbing betroffen sein sollten, nicht alleine sind. Sie können sich immer kostenlos an die ZARA-Beratungsstellen und an den WEISSER RING wenden.</li></ul><p> </p><p> </p><p><strong><span>Hier die 10 Karten zum Download:</span></strong></p><p> </p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/I.jpg">I. Was kann ich gegen Hass im Netz unternehmen?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/II.jpg">II. Was ist digitale Zivilcourage?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/III.jpg">III. Wieso ist es wichtig, illegale Online-Inhalte zu melden?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/IV.jpg">IV. Wie kann Hass im Netz gegen das Gesetz verstoßen?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/V.jpg">V. Wie stehen Hass im Netz und Meinungsfreiheit in Verbindung?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/VI.jpg">VI. Gehört Hass im Netz einfach zum Internet dazu?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/VII.jpg">VII. Auf welche zwei komplett verschiedenen Arten könnten Betroffene auf Gewalt im Netz reagieren?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/VIII.jpg">VIII. Was macht Gewalt im Netz so schlimm, dass wir das Thema in der Schule diskutieren müssen?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/IX.jpg">IX. Wieso könnten Betroffene Gewalt im Netz schlimmer erleben als Beleidigungen im persönlichen Gespräch?</a></p><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/X.jpg">X. Wieso könnten Betroffene entscheiden, nicht von ihren schlechten Online-Erfahrungen zu erzählen?</a></p><p> </p><p> </p><br /><p><a target="blank" href="https://assets.zara.or.at/download/saferinternetday/Karten PDF.pdf">Hier können Sie die Karten gestaffelt downloaden</a> und sie direkt im richtigen Format ausdrucken.</p>',
+      linkText: 'weiterlesen'
+    },
+    en: {
+      category: 'News',
+      date: '30.01.2019',
+      title: 'Innovatives Twitter Projekt gegen Hass im Netz.',
+      shortContent:
+        'Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.',
+      content:
+        '<p>Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.</p><p>Im Rahmen des gemeinsamen Projekts mit<a href="https://www.tunnel23.com/"> Tunnel23</a>, senden wir Personen, die Hass schürende Tweets von sich geben, eigens dafür produzierte ASMR (Autonomous Sensory Meridian Response) Videos. Diese ASMR-Videos werden von vielen Personen als beruhigend empfunden. Unsere Videos können Sie sich<a href="https://www.youtube.com/playlist?list=PLBP-yltexuhsFFM4LrJifRf7INJPdpS1M"> hier</a> auf unserer YouTube-Seite anschauen. Durch eine Anbindung an die Twitter API können wir effektiv nach diesen Postings suchen und automatisiert unsere beruhigenden Videos mit einer Nachricht und dem Hashtag<a href="https://twitter.com/search?src=typd&q=%23calmdowninternet"> #calmdowninternet</a>. </p><p><strong>Entspannung gegen Online-Hass</strong></p><p>Mit einem KI-gestützten System, das von TUNNEL23 für dieses Projekt entwickelt wurde, werden hetzerische und hasserfüllte Tweets anhand vordefinierter Keywords identifiziert. Negative Beiträge werden dann mit einer Nachricht und einem von sechs beruhigenden ASMR-Videos kommentiert. ASMR steht für „Autonomous Sensory Meridian Response" und beschreibt einen Zustand völliger Entspannung, der vor allem durch Geräusche und auch visuelle Reize ausgelöst werden kann.</p><p><strong>Erste Erfolge</strong></p><p>Bereits wenige Tage nach dem Start des Projektes wurden über 1000 Postings beantwortet, die Hassbotschaften enthielten. Viele Beiträge wurden von den Autoren gelöscht. Der Hass im Netz wurde also bereits erfolgreich eingedämmt.</p>'
+    }
+  },
+  {
+    tag: 'news',
     newsBoxSize: 'wide',
     param: 'news',
     size: 'big-image',
