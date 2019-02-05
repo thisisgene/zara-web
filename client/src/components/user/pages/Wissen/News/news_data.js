@@ -32,7 +32,7 @@ export const newsData = [
     // newsBoxSize: 'wide',
     // param: 'news',
     // size: 'big-image',
-    // image: 'download/saferinternetday/I.jpg',
+    image: 'news/saferinternet.jpg',
     imageSide: 'left',
     imageAlign: 'center',
     id: 'SaferInternetDay_-_Eine_Einheit_gegen_Hass_im_Netz',
