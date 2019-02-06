@@ -19,6 +19,22 @@
       margin: 1rem 0
     a
       color: #050505
+    table
+      border: 1px solid #aaa
+      @media(max-width: 800px)
+        font-size: .7rem
+        max-width: 100%
+        td
+          word-break: break-all
+      tr:first-child td
+        vertical-align: middle
+        background: lighten(#FFC803, 20%)
+      tr
+        td
+          border: 1px solid #fff
+          background: lighten(#FFFF99, 10%)
+          &:first-child
+            background: lighten(#FFC803, 20%)
   &--video
     max-width: 800px
     margin: 0 auto 4rem
