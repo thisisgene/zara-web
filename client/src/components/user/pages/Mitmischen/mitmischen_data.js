@@ -72,7 +72,7 @@ export const infoObj = {
         color: 'default',
         title: 'Warum Hasspostings melden',
         text:
-          'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite.',
+          'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber-Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite.',
 
         link: 'beratung/melden/hassimnetz',
         linkText: 'Hasspostings melden'
@@ -111,7 +111,7 @@ export const infoObj = {
         color: 'default',
         title: 'Hasspostings melden',
         text:
-          'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite.',
+          'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber-Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite.',
 
         link: 'beratung/melden/hassimnetz',
         linkText: 'Hasspostings melden'
