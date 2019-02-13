@@ -23,6 +23,20 @@ export const teamData = {
       },
       {
         field: 'training',
+        image: 'training/resized/Sassan Esmailzadeh.jpg',
+        name: 'Sassan Esmailzadeh',
+        text:
+          'Sassan arbeitet als Trainer für Basisbildung und Deutsch als Zweitsprache und als Administrator im rassismuskritischen Schulprojekt PROSA. Er hat Gedenkdienst im Anne Frank Zentrum Berlin gemacht und war im Vorstand des Verein Gedenkdienst aktiv. Arbeitsschwerpunkte: Rassismuskritische Kompetenz, Antisemitismus, Rechtsextremismus, Migrationsgesellschaft, Anti-Diskriminierung und Menschenrechte.'
+      },
+      {
+        field: 'training',
+        image: 'training/resized/Jerry Jarvis Essandoh.jpg',
+        name: 'Mag. Jerry Jarvis Essandoh',
+        text:
+          'wurde in Wien geboren und hat seine kulturellen Wurzeln in Ghana, Westafrika. Er lebte fünf Jahre in Tema (Ghana) und wuchs die übrige Zeit in Wien auf. Er hat Kultur- und Sozialanthropologie an der Universität Wien studiert und Wahlfächer in Afrikanistik und Geschichte absolviert. Seit 2008 arbeitet er mit Jugendlichen in vielen verschiedeten Settings: Zunächst mehrere Jahre in der Parkbetreuung und einem Jugendtreff tätig, hält er seit 2010 Workshops im den Bereichen Vielfalt, Anti-Diskriminierung, globales Lernen und interkulturelle Kompetenzen im Sport. Seit 2014 arbeitet er beim Jugendparlament, einem Partizipationsprojekt für Jugendliche.<br />Jerry hat Ausbildungen als Jugendarbeiter, sportlicher Jugendübungsleiter und Multiplikator absolviert und arbeitet auch in der Erwachsenenbildung. Momentan ist er Mitarbeiter des Fairplay Teams Währing.'
+      },
+      {
+        field: 'training',
         image: 'training/resized/Volker.jpg',
         name: 'MMag. Volker Frey',
         text:
@@ -38,11 +52,19 @@ export const teamData = {
       },
       {
         field: 'training',
+        image: 'training/resized/Lukas Gottschamel.jpg',
+        name: 'Mag. Lukas Gottschamel',
+        text:
+          'ist Jurist, arbeitet in der Beratungsstelle des Vereins ZARA – Zivilcourage und Anti-Rassismus-Arbeit und absolviert derzeit die Mediationsausbildung. Er war viele Jahre in der Kinder- und Jugendarbeit im pfarrlichen Kontext tätig. Im Rahmen seiner beruflichen und freiwilligen Arbeit trägt er zu Aspekten der Gleichberechtigungsarbeit vor, konzipiert und leitet Workshops zu verschiedenen Themen und für unterschiedliche Zielgruppen (ua Hass im Netz; Global Footprint; Mann, Frau, Gewalt).'
+      },
+      {
+        field: 'training',
         image: 'training/resized/Dieter Gremel.jpg',
         name: 'Mag. Dieter Gremel',
         text:
           'hat das Studium der Philosophie und Politikwissenschaft an den Universitäten Wien und Klagenfurt absolviert. Er arbeitet als Psychologe und Mediator mit inhaltliche Schwerpunktsetzung im Bereich Sozialpsychologie, Genderforschung und Gruppendynamik. Trainingsschwerpunkte: Zivilcourage, Antidiskriminierung und Interkulturelle Kommunikation.'
       },
+
       {
         field: 'training',
         image: 'training/resized/Foto2_Ivanova_sw.jpg',
@@ -53,16 +75,24 @@ export const teamData = {
       {
         field: 'training',
         image: 'training/resized/margot kapfer_sw.jpg',
-        name: 'Margot Kapfer',
+        name: 'Mag.a Margot Kapfer',
         text:
           'ist Absolventin des Master-Lehrgangs Global Citizenship Education an der Universität Klagenfurt  und diplomierte Trainerin für Erwachsenenbildung. Sie war zuvor in einem internationalen Unternehmen für die Bereiche Kommunikation und Öffentlichkeitsarbeit verantwortlich. Umfassende Aus- und Weiterbildung im Bereich Kommunikation, einschließlich Kommunikation in interkulturellen Zusammenhängen und Krisenkommunikation.'
       },
+
       {
         field: 'training',
         // image: 'training/resized/margot kapfer_sw.jpg',
         name: 'Mag.a Lilian Levai',
         text:
           'ist Absolventin der Afrikawissenschaften an der Universität Wien und spezialisierte sich dabei auf Rassismusforschung und im Rahmen ihrer Diplomarbeit auf die Einsetzbarkeit von Literatur in der Anti-Rassismus-Arbeit. Neben ihrer Arbeit in der ZARA-Beratungsstelle setzt sie ihr Jusstudium fort. Trainingsschwerpunkte: interkulturelle Sensibilisierung, Kommunikation, Identität, Migration und der Kombination von Anti-Rassismus-Arbeit mit Sport.'
+      },
+      {
+        field: 'training',
+        // image: 'training/resized/Theresia Ulbrich.jpg',
+        name: 'Monika Lohfeyer',
+        text:
+          'studierte Pädagogik in Salzburg und Bremen. Längere Auslandsaufenthalte, u.a. mehrjährige Lehrtätigkeit, Europäischer Freiwilligendienst, LernEinsatz der DKA. Langjährige Erfahrung in prozessorientierten Trainings mit Jugendlichen,seit einigen Jahren in der außerschulischen Jugendarbeit hauptberuflich tätig – Qualitätssicherung, Projektkoordination und Konzipierung von Trainings mit unterschiedlichen thematischen Schwerpunkten für junge Erwachsene.'
       },
       {
         field: 'training',
@@ -80,20 +110,6 @@ export const teamData = {
       },
       {
         field: 'training',
-        // image: 'training/resized/Martina Mathe.jpg',
-        name: 'Mag.a Barbara Unterlerchner',
-        text:
-          'leitet die neugeschaffene österreichweite Beratungsstelle #GegenHassimNetz, die beim Verein ZARA angesiedelt ist. Sie ist Juristin, Trainerin und Mediatorin. Von 2010-2017 arbeitete sie beim Weißen Ring in Wien als Leiterin des Fachbereiches Opferbetreuung und Opferrechte. Sie hat berufliche Erfahrungen im Asyl- und Fremdenrechtsbereich, in der Beratung und Begleitung von Betroffenen von Gewalt im sozialen Nahraum und nahm an mehreren nationalen und europäischen Projekten zu den Themen Menschenhandel, Gewalt in der Familie und Unterstützung von Verbrechensopfern teil.'
-      },
-      {
-        field: 'training',
-        image: 'training/resized/johannaurban.jpg',
-        name: 'Johanna Urban, BA',
-        text:
-          'studierte Politikwissenschaft in Wien und Kopenhagen mit den Schwerpunkten Erinnerungspolitik, Politische Bildung u. Europäische Union. Sie ist zudem Absolventin der Schule für künstlerische Fotografie (Schule Friedl Kubelka). Seit 2017 Organisationsassistenz und wissenschaftliche Projektmitarbeit an der Universität Wien, zudem Guide im Rahmen des Vermittlungsprogramms "denk mal wien" des Mauthausen Komitee Österreich. Zuvor war sie als Mitarbeiterin am Demokratiezentrum Wien sowie Trainerin im Rahmen des Projektes "RESPECT! Gemeinsam verschieden sein" tätig.'
-      },
-      {
-        field: 'training',
         // image: 'training/resized/johannaurban.jpeg',
         name: 'Mag.a Lisa Oberbichler',
         text:
@@ -105,6 +121,13 @@ export const teamData = {
         name: 'Mag. Niko Reinberg',
         text:
           'ist Kultur- und Sozialanthropologe, Diversity Expert und Zivilcourage Trainer. Tätig in Graz bei ZEBRA Interkulturelles Beratungs-und Therapiezentrum und dort zuständig für Diversitätsorientierte Qualitätsentwicklung, Bildungsprojekte zu Asyl und Flucht und die Redaktion des Migrationsmagazins ZEBRATL. Außerdem tätig bei Caritas SIQ! Sport Integration Qualifikation, Lehrbeauftragter an der FH Joanneum im Master Lehrgang für Soziale Arbeit:und der Universität Wien am Institut für Kultur- und Sozialanthropologie.'
+      },
+      {
+        field: 'training',
+        image: 'training/resized/Peymane_Saghari.jpg',
+        name: 'Mag.a Peymane Saghari',
+        text:
+          'Peymane Saghari hat Ethnologie, Kultur- und Sozialanthropologie an der Uni Wien studiert und im Anschluss die Ausbildung zur Psychoanalytikerin am Wiener Arbeitskreis für Psychoanalyse begonnen. Mittlerweile ist sie als Psychotherapeutin in Ausbildung unter Supervision in freier Praxis und beim Verein TAMAR tätig.<br>Sie hat zudem berufliche Erfahrungen im Opferschutz, Frauen- und Menschenrechtsbereich gesammelt durch ihre langjährige Mitarbeit bei LEFÖ IBF Interventionsstelle für Betroffene des Frauenhandels und bei ZARA.'
       },
       {
         field: 'training',
@@ -122,31 +145,17 @@ export const teamData = {
       },
       {
         field: 'training',
-        // image: 'training/resized/Theresia Ulbrich.jpg',
-        name: 'Monika Lohfeyer',
+        // image: 'training/resized/Martina Mathe.jpg',
+        name: 'Mag.a Barbara Unterlerchner',
         text:
-          'studierte Pädagogik in Salzburg und Bremen. Längere Auslandsaufenthalte, u.a. mehrjährige Lehrtätigkeit, Europäischer Freiwilligendienst, LernEinsatz der DKA. Langjährige Erfahrung in prozessorientierten Trainings mit Jugendlichen,seit einigen Jahren in der außerschulischen Jugendarbeit hauptberuflich tätig – Qualitätssicherung, Projektkoordination und Konzipierung von Trainings mit unterschiedlichen thematischen Schwerpunkten für junge Erwachsene.'
+          'leitet die neugeschaffene österreichweite Beratungsstelle #GegenHassimNetz, die beim Verein ZARA angesiedelt ist. Sie ist Juristin, Trainerin und Mediatorin. Von 2010-2017 arbeitete sie beim Weißen Ring in Wien als Leiterin des Fachbereiches Opferbetreuung und Opferrechte. Sie hat berufliche Erfahrungen im Asyl- und Fremdenrechtsbereich, in der Beratung und Begleitung von Betroffenen von Gewalt im sozialen Nahraum und nahm an mehreren nationalen und europäischen Projekten zu den Themen Menschenhandel, Gewalt in der Familie und Unterstützung von Verbrechensopfern teil.'
       },
       {
         field: 'training',
-        image: 'training/resized/Peymane_Saghari.jpg',
-        name: 'Mag.a Peymane Saghari',
+        image: 'training/resized/johannaurban.jpg',
+        name: 'Mag.a Johanna Urban, BA',
         text:
-          'Peymane Saghari hat Ethnologie, Kultur- und Sozialanthropologie an der Uni Wien studiert und im Anschluss die Ausbildung zur Psychoanalytikerin am Wiener Arbeitskreis für Psychoanalyse begonnen. Mittlerweile ist sie als Psychotherapeutin in Ausbildung unter Supervision in freier Praxis und beim Verein TAMAR tätig.<br>Sie hat zudem berufliche Erfahrungen im Opferschutz, Frauen- und Menschenrechtsbereich gesammelt durch ihre langjährige Mitarbeit bei LEFÖ IBF Interventionsstelle für Betroffene des Frauenhandels und bei ZARA.'
-      },
-      {
-        field: 'training',
-        image: 'training/resized/Sassan Esmailzadeh.jpg',
-        name: 'Sassan Esmailzadeh',
-        text:
-          'Sassan arbeitet als Trainer für Basisbildung und Deutsch als Zweitsprache und als Administrator im rassismuskritischen Schulprojekt PROSA. Er hat Gedenkdienst im Anne Frank Zentrum Berlin gemacht und war im Vorstand des Verein Gedenkdienst aktiv. Arbeitsschwerpunkte: Rassismuskritische Kompetenz, Antisemitismus, Rechtsextremismus, Migrationsgesellschaft, Anti-Diskriminierung und Menschenrechte.'
-      },
-      {
-        field: 'training',
-        image: 'training/resized/Lukas Gottschamel.jpg',
-        name: 'Mag. Lukas Gottschamel',
-        text:
-          'ist Jurist, arbeitet in der Beratungsstelle des Vereins ZARA – Zivilcourage und Anti-Rassismus-Arbeit und absolviert derzeit die Mediationsausbildung. Er war viele Jahre in der Kinder- und Jugendarbeit im pfarrlichen Kontext tätig. Im Rahmen seiner beruflichen und freiwilligen Arbeit trägt er zu Aspekten der Gleichberechtigungsarbeit vor, konzipiert und leitet Workshops zu verschiedenen Themen und für unterschiedliche Zielgruppen (ua Hass im Netz; Global Footprint; Mann, Frau, Gewalt).'
+          'studierte Politikwissenschaft in Wien und Kopenhagen mit den Schwerpunkten Erinnerungspolitik, Politische Bildung u. Europäische Union. Sie ist zudem Absolventin der Schule für künstlerische Fotografie (Schule Friedl Kubelka). Seit 2017 Organisationsassistenz und wissenschaftliche Projektmitarbeit an der Universität Wien, zudem Guide im Rahmen des Vermittlungsprogramms "denk mal wien" des Mauthausen Komitee Österreich. Zuvor war sie als Mitarbeiterin am Demokratiezentrum Wien sowie Trainerin im Rahmen des Projektes "RESPECT! Gemeinsam verschieden sein" tätig.'
       }
     ]
   }
