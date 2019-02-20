@@ -22,9 +22,10 @@ export default class NewsItem extends Component {
               .map(tag => tag[lang].singular)}{' '}
             | {news[lang].date}
           </div>
-          <div className={styles['news-item--text__title']}>
-            {news[lang].title}
-          </div>
+          <div
+            className={styles['news-item--text__title']}
+            dangerouslySetInnerHTML={{ __html: news[lang].title }}
+          />
           <div
             className={styles['news-item--text__body']}
             dangerouslySetInnerHTML={{ __html: news[lang].shortContent }}

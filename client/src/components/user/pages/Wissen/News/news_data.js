@@ -32,6 +32,35 @@ export const newsData = [
     // newsBoxSize: 'wide',
     // param: 'news',
     // size: 'big-image',
+    image: 'news/Tickbox V-Start.jpg',
+    imageSide: 'left',
+    imageAlign: 'center',
+    id: 'Pressegespraech_Hate_crime_erkennen_und_entgegentreten',
+    de: {
+      category: 'News',
+      date: '22.02.2019',
+      title: 'Pressegespräch: <i>Hate crime</i> erkennen und entgegentreten',
+      shortContent:
+        'Am europäischen Tag für Kriminalitätsopfer zeigen ZARA – Zivilcourage und Anti-Rassismus-Arbeit und der WEISSE RING Verbrechensopferhilfe auf, dass in ganz Europa Nachholbedarf bei der Bekämpfung von hate crime besteht.',
+      content:
+        '<p>Am europäischen Tag für Kriminalitätsopfer zeigen ZARA – Zivilcourage und Anti-Rassismus-Arbeit und der<a target="blank" href="http://www.weisser-ring.at/"> WEISSE RING</a> Verbrechensopferhilfe auf, dass in ganz Europa Nachholbedarf bei der Bekämpfung von <em>hate crime </em>besteht. In einer gemeinsamen Videobotschaft formulieren die europäischen Partner*innen des Projekts<a target="blank" href="http://www.vstart.eu/"> V-START – Victim Support Through Awareness-Raising and neTworking</a> (Österreich, Italien, Deutschland & Kroatien) Empfehlungen für einen geschärften Blick auf Hasskriminalität und einen angemessenen Schutz für Opfer davon.</p><p>Häufig wird noch nicht erhoben, ob ein <em>hate crime </em>vorliegt, obwohl dies nötig ist, um besonders schutzbedürftigen Personen wie den Opfern von <em>hate crime</em> auch tatsächlich Schutz zu gewährleisten. Um <em>hate crime </em>sichtbar zu machen sowie effektiv und präventiv entgegenzutreten, hat ZARA, im Rahmen des EU-Projekts<a target="blank" href="http://www.vstart.eu/"> V-START</a>, mit 14 weiteren zivilgesellschaftlichen Organisationen ein österreichisches Netzwerk –<a target="blank" href="http://hatecrimekontern.at/"> www.hatecrimekontern.at</a> – ins Leben gerufen und wesentliche Empfehlungen formuliert. </p><p>Drei wesentliche Empfehlungen von ZARA und WEISSEM RING: </p><p><em>1. Die Polizei sollte für Anzeigen von Straftaten Formulare verwenden, die das Vorliegen von Vorurteilsmotiven abfragen. Diese einfache Maßnahme würde sicherstellen, dass der Aspekt routinemäßig beachtet wird. </em></p><p><em>2. Gerichte sollten potenzielle Vorurteilsmotive nicht nur am Schluss der Verhandlung, bei der Strafzumessung, berücksichtigen. Stattdessen sollte während des gesamten Strafverfahrens darauf eingegangen werden, damit Opferrechte angemessen gewährleistet und das Bewusstsein für die spezifischen Gefahren von hate crime geschärft werden kann. </em></p><p><em>3. Die diversen Einrichtungen der Zivilgesellschaft werden aufgerufen, sich mit dem Phänomen hate crime vermehrt auseinanderzusetzen, um sicherzugehen, dass adäquate Unterstützungsmaßnahmen für Betroffene getroffen werden. </em></p><p>Der WEISSE RING arbeitet im Rahmen des EU-Projekts „Hate no more – training and awareness raising to combat hate crime and hate speech" zwischen 2016 und 2018 intensiv zum Thema <em>hate crime. </em>Im Rahmen eines opferzentrierten Ansatzes wurden multidisziplinäre Methoden zur Sensibilisierung und Fortbildung zur Bekämpfung von Hasskriminalität und Hassrede erarbeitet. Zentrale Ergebnisse sind umfassende Schulungsunterlagen, auf deren Basis Mitarbeiter*innen von Strafverfolgungsbehörden und Opferhilfe-Einrichtungen auf die Arbeit mit Opfern von <em>hate crime </em>vorbereitet werden sowie ein diesbezügliches Handbuch. Insgesamt haben im Jahr 2018 bereits rund 200 Personen die elf vom WEISSEN RING angebotenen Trainings durchlaufen. </p><p>Außerdem wurde gemeinsam mit sieben Partner*innen unter der Federführung der portugiesischen Vereinigung für Opferhilfe APAV eine internationale Kampagne mit dem Titel #RespectBattles entwickelt.</p>',
+      linkText: 'weiterlesen'
+    },
+    en: {
+      category: 'News',
+      date: '30.01.2019',
+      title: 'Innovatives Twitter Projekt gegen Hass im Netz.',
+      shortContent:
+        'Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.',
+      content:
+        '<p>Wir setzen gemeinsam mit TUNNEL23 ein Zeichen gegen Hass im Netz. Dazu wurde ein KI-gestütztes System entwickelt, das Twitter nach Hasspostings durchsucht. Diese Hasspostings bekommen dann von uns beruhigende ASMR-Videos mit dem Hashtag #calmdowninternet.</p><p>Im Rahmen des gemeinsamen Projekts mit<a href="https://www.tunnel23.com/"> Tunnel23</a>, senden wir Personen, die Hass schürende Tweets von sich geben, eigens dafür produzierte ASMR (Autonomous Sensory Meridian Response) Videos. Diese ASMR-Videos werden von vielen Personen als beruhigend empfunden. Unsere Videos können Sie sich<a href="https://www.youtube.com/playlist?list=PLBP-yltexuhsFFM4LrJifRf7INJPdpS1M"> hier</a> auf unserer YouTube-Seite anschauen. Durch eine Anbindung an die Twitter API können wir effektiv nach diesen Postings suchen und automatisiert unsere beruhigenden Videos mit einer Nachricht und dem Hashtag<a href="https://twitter.com/search?src=typd&q=%23calmdowninternet"> #calmdowninternet</a>. </p><p><strong>Entspannung gegen Online-Hass</strong></p><p>Mit einem KI-gestützten System, das von TUNNEL23 für dieses Projekt entwickelt wurde, werden hetzerische und hasserfüllte Tweets anhand vordefinierter Keywords identifiziert. Negative Beiträge werden dann mit einer Nachricht und einem von sechs beruhigenden ASMR-Videos kommentiert. ASMR steht für „Autonomous Sensory Meridian Response" und beschreibt einen Zustand völliger Entspannung, der vor allem durch Geräusche und auch visuelle Reize ausgelöst werden kann.</p><p><strong>Erste Erfolge</strong></p><p>Bereits wenige Tage nach dem Start des Projektes wurden über 1000 Postings beantwortet, die Hassbotschaften enthielten. Viele Beiträge wurden von den Autoren gelöscht. Der Hass im Netz wurde also bereits erfolgreich eingedämmt.</p>'
+    }
+  },
+  {
+    tag: 'news',
+    // newsBoxSize: 'wide',
+    // param: 'news',
+    // size: 'big-image',
     // image: 'news/saferinternet.jpg',
     imageSide: 'left',
     imageAlign: 'center',
