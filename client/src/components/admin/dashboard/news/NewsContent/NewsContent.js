@@ -57,16 +57,15 @@ class NewsContent extends Component {
         this.setState({
           blankItem: false,
           id: item._id,
-          titleDE: item.de.title,
-          titleEN: item.en.title,
+          titleDE: item.de.title && item.de.title,
+          titleEN: item.en && item.en.title && item.en.title,
           descriptionDE: RichTextEditor.createValueFromString(
             item.de.description,
             'html'
           ),
-          descriptionEN: RichTextEditor.createValueFromString(
-            item.en.description,
-            'html'
-          )
+          descriptionEN:
+            item.en &&
+            RichTextEditor.createValueFromString(item.en.description, 'html')
         })
       }
       if (prevProps.match.params.newsId !== this.props.match.params.newsId) {

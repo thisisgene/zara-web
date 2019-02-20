@@ -50,10 +50,21 @@ router.post(
       newsFields.handle = body.titleDE.replace(/\s/g, '_')
     }
     if (body.titleEN) newsFields.en.title = body.titleEN
-    if (body.descriptionDE) newsFields.de.description = body.descriptionDE
-    if (body.descriptionEN) newsFields.en.description = body.descriptionEN
+    newsFields.de.description = body.descriptionDE
+    newsFields.en.description = body.descriptionEN
 
-    const newNewsItem = new News(newsFields)
+    const newNewsItem = new News({
+      handle: newsFields.handle,
+      de: {
+        title: newsFields.de.title,
+        description: newsFields.de.description
+      },
+      en: {
+        title: newsFields.de.title,
+        description: newsFields.de.description
+      }
+    })
+    console.log(newNewsItem)
     newNewsItem.save().then(newsItem => {
       console.log(newsItem)
       res.json(newsItem)
@@ -97,16 +108,37 @@ router.post(
       newsFields.handle = body.titleDE.replace(/\s/g, '_')
     }
     if (body.titleEN) newsFields.en.title = body.titleEN
-    if (body.descriptionDE) newsFields.de.description = body.descriptionDE
-    if (body.descriptionEN) newsFields.en.description = body.descriptionEN
+    newsFields.de.description = body.descriptionDE
+    newsFields.en.description = body.descriptionEN
 
+    // News.findById(body.id).then(newsItem => {
+    //   console.log(newsItem)
+    // })
+    // const updatedNews = new News({})
     News.findOneAndUpdate(
       { _id: body.id },
-      { $push: newsFields },
-      { safe: true, new: true }
-    ).then(newsItem => {
-      res.json(newsItem)
-    })
+      {
+        $set: {
+          handle: newsFields.handle,
+          de: {
+            title: newsFields.de.title,
+            description: newsFields.de.description
+          },
+          en: {
+            title: newsFields.de.title,
+            description: newsFields.de.description
+          }
+        }
+      },
+      { new: true },
+      (err, newsItem) => {
+        if (err) console.log('error: ', err)
+        if (!err) {
+          console.log('news', newsItem)
+          res.json(newsItem)
+        }
+      }
+    )
   }
 )
 
