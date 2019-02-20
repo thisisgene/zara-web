@@ -28,7 +28,7 @@ export const newsTags = [
 
 export const newsData = [
   {
-    tag: 'news',
+    tag: 'event',
     // newsBoxSize: 'wide',
     // param: 'news',
     // size: 'big-image',
