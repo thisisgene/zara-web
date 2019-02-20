@@ -81,27 +81,60 @@ router.get('/:id', (req, res) => {
     })
 })
 
+// @route   POST api/news/update/:id
+// @desc    Update news by id
+// @access  Private
+router.post(
+  '/update/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    console.log(req.body)
+    const body = req.body
+    // Get fields
+    const newsFields = { de: {}, en: {} }
+    if (body.titleDE) {
+      newsFields.de.title = body.titleDE
+      newsFields.handle = body.titleDE.replace(/\s/g, '_')
+    }
+    if (body.titleEN) newsFields.en.title = body.titleEN
+    if (body.descriptionDE) newsFields.de.description = body.descriptionDE
+    if (body.descriptionEN) newsFields.en.description = body.descriptionEN
+
+    News.findOneAndUpdate(
+      { _id: body.id },
+      { $push: newsFields },
+      { safe: true, new: true }
+    ).then(newsItem => {
+      res.json(newsItem)
+    })
+  }
+)
+
 // @route   GET api/news/delete/:id
 // @desc    Delete news by id
 // @access  Private
-router.get('/delete/:id', async (req, res) => {
-  const errors = {}
-  console.log(req.params.id)
-  News.findOneAndUpdate(
-    { _id: req.params.id },
-    { isDeleted: true },
-    { safe: true, new: true }
-  )
-    .then(async newsItem => {
-      console.log(newsItem)
-      const news = await News.find({ isDeleted: false })
-      res.json(news)
-    })
-    .catch(err => {
-      console.log('nicht fund')
-      errors.news = 'Beitrag nicht gefunden.'
-      return res.status(404).json(errors)
-    })
-})
+router.get(
+  '/delete/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {}
+    console.log(req.params.id)
+    News.findOneAndUpdate(
+      { _id: req.params.id },
+      { isDeleted: true },
+      { safe: true, new: true }
+    )
+      .then(async newsItem => {
+        console.log(newsItem)
+        const news = await News.find({ isDeleted: false })
+        res.json(news)
+      })
+      .catch(err => {
+        console.log('nicht fund')
+        errors.news = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
 
 module.exports = router

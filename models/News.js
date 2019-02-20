@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const NewsSchema = new Schema({
   de: {
+    type: Array,
     title: {
       type: String
     },
@@ -11,6 +12,7 @@ const NewsSchema = new Schema({
     }
   },
   en: {
+    type: Array,
     title: {
       type: String
     },

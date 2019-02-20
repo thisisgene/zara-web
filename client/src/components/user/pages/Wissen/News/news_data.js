@@ -32,7 +32,7 @@ export const newsData = [
     // newsBoxSize: 'wide',
     // param: 'news',
     // size: 'big-image',
-    image: 'news/Tickbox V-Start.jpg',
+    image: 'news/Tickbox V-Start2.jpg',
     imageSide: 'left',
     imageAlign: 'center',
     id: 'Pressegespraech_Hate_crime_erkennen_und_entgegentreten',
