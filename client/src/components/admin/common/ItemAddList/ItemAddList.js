@@ -28,8 +28,8 @@ export default class ItemAddList extends Component {
         </div>
         <div className={styles['item-list']}>
           {content && content.length > 0 ? (
-            content.map(item => (
-              <div className={styles['item-list--item']}>
+            content.map((item, index) => (
+              <div key={index} className={styles['item-list--item']}>
                 <NavLink
                   to={`/admin/dashboard/${category}/${item._id}`}
                   activeClassName={styles['active']}
