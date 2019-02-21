@@ -50,6 +50,8 @@ router.post(
       newsFields.handle = body.titleDE.replace(/\s/g, '_')
     }
     if (body.titleEN) newsFields.en.title = body.titleEN
+    newsFields.de.shortDescription = body.shortDescriptionDE
+    newsFields.en.shortDescription = body.shortDescriptionEN
     newsFields.de.description = body.descriptionDE
     newsFields.en.description = body.descriptionEN
 
@@ -57,11 +59,13 @@ router.post(
       handle: newsFields.handle,
       de: {
         title: newsFields.de.title,
+        shortDescription: newsFields.de.shortDescription,
         description: newsFields.de.description
       },
       en: {
-        title: newsFields.de.title,
-        description: newsFields.de.description
+        title: newsFields.en.title,
+        shortDescription: newsFields.en.shortDescription,
+        description: newsFields.en.description
       }
     })
     console.log(newNewsItem)
@@ -108,6 +112,8 @@ router.post(
       newsFields.handle = body.titleDE.replace(/\s/g, '_')
     }
     if (body.titleEN) newsFields.en.title = body.titleEN
+    newsFields.de.shortDescription = body.shortDescriptionDE
+    newsFields.en.shortDescription = body.shortDescriptionEN
     newsFields.de.description = body.descriptionDE
     newsFields.en.description = body.descriptionEN
 
@@ -122,11 +128,13 @@ router.post(
           handle: newsFields.handle,
           de: {
             title: newsFields.de.title,
+            shortDescription: newsFields.de.shortDescription,
             description: newsFields.de.description
           },
           en: {
-            title: newsFields.de.title,
-            description: newsFields.de.description
+            title: newsFields.en.title,
+            shortDescription: newsFields.en.shortDescription,
+            description: newsFields.en.description
           }
         }
       },

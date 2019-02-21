@@ -9,7 +9,7 @@ import {
   clearSingle
 } from '../../../../../actions/adminActions'
 
-import { toolbarConfig } from './newsContentData'
+import { toolbarConfig, toolbarExtConfig } from './newsContentData'
 
 import RichTextEditor from 'react-rte'
 import { confirmAlert } from 'react-confirm-alert' // Import
@@ -28,6 +28,8 @@ class NewsContent extends Component {
       newsId: props.match.params.newsId,
       titleDE: '',
       titleEN: '',
+      shortDescriptionDE: RichTextEditor.createEmptyValue(),
+      shortDescriptionEN: RichTextEditor.createEmptyValue(),
       descriptionDE: RichTextEditor.createEmptyValue(),
       descriptionEN: RichTextEditor.createEmptyValue()
     }
@@ -59,6 +61,16 @@ class NewsContent extends Component {
           id: item._id,
           titleDE: item.de.title && item.de.title,
           titleEN: item.en && item.en.title && item.en.title,
+          shortDescriptionDE: RichTextEditor.createValueFromString(
+            item.de.shortDescription,
+            'html'
+          ),
+          shortDescriptionEN:
+            item.en &&
+            RichTextEditor.createValueFromString(
+              item.en.shortDescription,
+              'html'
+            ),
           descriptionDE: RichTextEditor.createValueFromString(
             item.de.description,
             'html'
@@ -77,6 +89,8 @@ class NewsContent extends Component {
             newsId: this.props.match.params.newsId,
             titleDE: '',
             titleEN: '',
+            shortDescriptionDE: RichTextEditor.createEmptyValue(),
+            shortDescriptionEN: RichTextEditor.createEmptyValue(),
             descriptionDE: RichTextEditor.createEmptyValue(),
             descriptionEN: RichTextEditor.createEmptyValue()
           })
@@ -92,6 +106,11 @@ class NewsContent extends Component {
     })
   }
 
+  onShortDescriptionChange = (lang, value) => {
+    lang === 'de'
+      ? this.setState({ shortDescriptionDE: value })
+      : this.setState({ shortDescriptionEN: value })
+  }
   onDescriptionChange = (lang, value) => {
     lang === 'de'
       ? this.setState({ descriptionDE: value })
@@ -100,6 +119,8 @@ class NewsContent extends Component {
 
   saveContent = () => {
     console.log(this.state.descriptionDE.toString('html'))
+    const shortDescDE = this.state.shortDescriptionDE
+    const shortDescEN = this.state.shortDescriptionEN
     const descDE = this.state.descriptionDE
     const descEN = this.state.descriptionEN
     const saveData = {
@@ -107,6 +128,8 @@ class NewsContent extends Component {
       id: this.state.newsId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
+      shortDescriptionDE: shortDescDE.toString('html'),
+      shortDescriptionEN: shortDescEN.toString('html'),
       descriptionDE: descDE.toString('html'),
       descriptionEN: descEN.toString('html')
     }
@@ -137,25 +160,69 @@ class NewsContent extends Component {
   render() {
     return (
       <div
-        className={cx(styles['news-content'], {
+        className={cx(styles['news-content-container'], {
           [styles['blank-item']]: this.state.blankItem
         })}
       >
-        <div>
-          <input
-            type="text"
-            name="titleDE"
-            value={this.state.titleDE}
-            onChange={this.onChange}
-          />
-          {this.state.newsId === 'neu' ? 'Neuer Beitrag' : this.state.titleDE}
-        </div>
-        <div className={styles['news-content--description']}>
-          <RichTextEditor
-            toolbarConfig={toolbarConfig}
-            value={this.state.descriptionDE}
-            onChange={this.onDescriptionChange.bind(this, 'de')}
-          />
+        <div className={styles['news-content']}>
+          <div className={styles['news-content--box']}>
+            <div>
+              <input
+                type="text"
+                name="titleDE"
+                value={this.state.titleDE}
+                onChange={this.onChange}
+              />
+              {this.state.newsId === 'neu'
+                ? 'Neuer Beitrag'
+                : this.state.titleDE}
+            </div>
+            <div className={styles['news-content--box__short-description']}>
+              <RichTextEditor
+                className={styles['html-editor']}
+                toolbarConfig={toolbarConfig}
+                value={this.state.shortDescriptionDE}
+                onChange={this.onShortDescriptionChange.bind(this, 'de')}
+              />
+            </div>
+            <div className={styles['news-content--box__description']}>
+              <RichTextEditor
+                className={styles['html-editor']}
+                toolbarConfig={toolbarExtConfig}
+                value={this.state.descriptionDE}
+                onChange={this.onDescriptionChange.bind(this, 'de')}
+              />
+            </div>
+          </div>
+          <div className={styles['news-content--box']}>
+            <div>
+              <input
+                type="text"
+                name="titleEN"
+                value={this.state.titleEN}
+                onChange={this.onChange}
+              />
+              {this.state.newsId === 'neu'
+                ? 'Neuer Beitrag'
+                : this.state.titleEN}
+            </div>
+            <div className={styles['news-content--box__short-description']}>
+              <RichTextEditor
+                className={styles['html-editor']}
+                toolbarConfig={toolbarConfig}
+                value={this.state.shortDescriptionEN}
+                onChange={this.onShortDescriptionChange.bind(this, 'en')}
+              />
+            </div>
+            <div className={styles['news-content--box__description']}>
+              <RichTextEditor
+                className={styles['html-editor']}
+                toolbarConfig={toolbarExtConfig}
+                value={this.state.descriptionEN}
+                onChange={this.onDescriptionChange.bind(this, 'en')}
+              />
+            </div>
+          </div>
         </div>
         <button
           className={cx(commonStyles['button'], commonStyles['button--save'])}

@@ -1,11 +1,30 @@
-.news-content
+.news-content-container
+  width: 100%
   flex: 2
+.news-content
+  display: flex
+  flex: 2
+  width: 100%
   padding: .2rem
-  &.blank-item
-    background: rgba(#4BBC29, .9)
-  &--description
-    color: black
-    font-family: 'Helvetica', sans-serif
-    height: 50%
+  &--box
+    margin: 0 .3rem
+    flex: 2
+    &.blank-item
+      background: rgba(#4BBC29, .9)
+    &__short-description
+      color: #111
+      height: 130px
+      line-height: 1
+    &__description
+      color: #111
+      height: 400px
+      line-height: 1
+      margin-bottom: 1rem
+    .html-editor
+      // width: 50%
+      height: 100%
+      margin-top: .6rem
+      font-family: 'HK Grotesk', sans-serif
+
   button
     margin-right: 1rem
