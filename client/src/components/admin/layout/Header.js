@@ -3,7 +3,7 @@ import { Link, NavLink, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { logoutUser } from '../../../actions/authActions'
-// import { clearProjects } from '../../../actions/projectActions'
+import { clearAll } from '../../../actions/adminActions'
 
 import Logo from '../common/zara_logo.png'
 
@@ -14,7 +14,7 @@ import globalStyles from '../common/Bootstrap.module.css'
 class Header extends Component {
   onLogoutClick(e) {
     e.preventDefault()
-    this.props.clearProjects()
+    this.props.clearAll()
     this.props.logoutUser()
   }
 
@@ -130,6 +130,6 @@ const mapStateToProps = state => ({
 export default withRouter(
   connect(
     mapStateToProps,
-    { logoutUser }
+    { logoutUser, clearAll }
   )(Header)
 )

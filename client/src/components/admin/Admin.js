@@ -11,6 +11,7 @@ import Login from './auth/Login'
 import Settings from './auth/Settings'
 import Reports from './dashboard/Reports/Reports'
 import Dashboard from './dashboard/Dashboard'
+import Preview from './preview/Preview'
 import RestrictedPage from './RestrictedPage/RestrictedPage'
 
 // import News from './dashboard/news/News'
@@ -55,9 +56,21 @@ class Admin extends Component {
             <PrivateRoute path="/admin/reports" component={RestrictedPage} />
           )}
           {user.securityLevel <= 3 ? (
-            <PrivateRoute path="/admin/dashboard" component={Dashboard} />
+            <Switch>
+              <PrivateRoute path="/admin/dashboard" component={Dashboard} />
+              <PrivateRoute
+                path="/admin/preview/:category/:newsId"
+                component={Preview}
+              />
+            </Switch>
           ) : (
-            <PrivateRoute path="/admin/dashboard" component={RestrictedPage} />
+            <Switch>
+              <PrivateRoute
+                path="/admin/dashboard"
+                component={RestrictedPage}
+              />
+              <PrivateRoute path="/admin/preview" component={RestrictedPage} />
+            </Switch>
           )}
         </Switch>
         <Footer />

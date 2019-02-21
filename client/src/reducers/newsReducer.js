@@ -4,7 +4,8 @@ import {
   CREATE_NEW_NEWS,
   UPDATE_NEWS,
   DELETE_NEWS_BY_ID,
-  CLEAR_NEWS_ITEM
+  CLEAR_NEWS_ITEM,
+  CLEAR_ALL
 } from '../actions/types'
 
 const initialState = {
@@ -46,6 +47,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         newsItem: null
+      }
+    case CLEAR_ALL:
+      return {
+        ...state,
+        newsItem: null,
+        news: null
       }
     default:
       return state

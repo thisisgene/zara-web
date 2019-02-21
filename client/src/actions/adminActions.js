@@ -7,7 +7,8 @@ import {
   DELETE_NEWS_BY_ID,
   CREATE_NEW_NEWS,
   UPDATE_NEWS,
-  CLEAR_NEWS_ITEM
+  CLEAR_NEWS_ITEM,
+  CLEAR_ALL
 } from './types'
 
 // Get all
@@ -133,4 +134,10 @@ export const clearSingle = category => dispatch => {
     default:
       return
   }
+}
+
+export const clearAll = () => dispatch => {
+  dispatch({
+    type: CLEAR_ALL
+  })
 }
