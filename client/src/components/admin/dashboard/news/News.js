@@ -5,7 +5,7 @@ import PrivateRoute from '../../common/PrivateRoute'
 import { getAll } from '../../../../actions/adminActions'
 
 import ItemAddList from '../../common/ItemAddList/ItemAddList'
-import NewsList from './NewsList/NewsList'
+// import NewsList from './NewsList/NewsList'
 import NewsContent from './NewsContent/NewsContent'
 
 import styles from './News.module.sass'
