@@ -69,6 +69,7 @@ class NewsContent extends Component {
 
           newsId: item._id,
           category: item.tag,
+          // date: item.dateUnformatted, // GET DATE TO WORK!!!!
           titleDE: item.de.title && item.de.title,
           titleEN: item.en && item.en.title && item.en.title,
           shortDescriptionDE: RichTextEditor.createValueFromString(
@@ -98,7 +99,7 @@ class NewsContent extends Component {
             blankItem: true,
             newsId: this.props.match.params.newsId,
             category: 'news',
-            date: this.state.date,
+            date: new Date(),
             titleDE: '',
             titleEN: '',
             shortDescriptionDE: RichTextEditor.createEmptyValue(),
@@ -122,6 +123,7 @@ class NewsContent extends Component {
   }
 
   onDateChange = date => {
+    console.log(date)
     this.setState({ date })
   }
 
@@ -145,6 +147,7 @@ class NewsContent extends Component {
     const saveData = {
       category: 'news',
       tag: this.state.category,
+      date: this.state.date,
       id: this.state.newsId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
