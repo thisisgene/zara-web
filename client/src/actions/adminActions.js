@@ -61,6 +61,7 @@ export const getById = (id, category) => dispatch => {
 
 // Create or update content
 export const saveContent = saveData => dispatch => {
+  console.log(saveData)
   switch (saveData.category) {
     case 'news':
       saveData.id === 'neu'

@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+
+import DatePicker from 'react-date-picker'
+import DateTimePicker from 'react-datetime-picker'
 
 import {
   saveContent,
@@ -10,6 +14,7 @@ import {
 } from '../../../../../actions/adminActions'
 
 import { toolbarConfig, toolbarExtConfig } from './newsContentData'
+import { newsTags } from '../../../../user/pages/Wissen/News/news_data'
 
 import RichTextEditor from 'react-rte'
 import { confirmAlert } from 'react-confirm-alert' // Import
@@ -27,6 +32,8 @@ class NewsContent extends Component {
       isOnline: false,
       blankItem: true,
       newsId: props.match.params.newsId,
+      category: 'news',
+      date: new Date(),
       titleDE: '',
       titleEN: '',
       shortDescriptionDE: RichTextEditor.createEmptyValue(),
@@ -59,7 +66,9 @@ class NewsContent extends Component {
         const item = this.props.news.newsItem
         this.setState({
           blankItem: false,
-          id: item._id,
+
+          newsId: item._id,
+          category: item.tag,
           titleDE: item.de.title && item.de.title,
           titleEN: item.en && item.en.title && item.en.title,
           shortDescriptionDE: RichTextEditor.createValueFromString(
@@ -88,6 +97,8 @@ class NewsContent extends Component {
           this.setState({
             blankItem: true,
             newsId: this.props.match.params.newsId,
+            category: 'news',
+            date: this.state.date,
             titleDE: '',
             titleEN: '',
             shortDescriptionDE: RichTextEditor.createEmptyValue(),
@@ -105,6 +116,13 @@ class NewsContent extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+  onSelectChange = e => {
+    this.setState({ category: e.target.value })
+  }
+
+  onDateChange = date => {
+    this.setState({ date })
   }
 
   onShortDescriptionChange = (lang, value) => {
@@ -126,6 +144,7 @@ class NewsContent extends Component {
     const descEN = this.state.descriptionEN
     const saveData = {
       category: 'news',
+      tag: this.state.category,
       id: this.state.newsId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
@@ -140,6 +159,7 @@ class NewsContent extends Component {
 
   deleteNews = () => {
     this.props.deleteById(this.state.newsId, 'news')
+    this.props.history.push('/admin/dashboard/news/neu')
   }
 
   confirmDelete = callback => {
@@ -160,148 +180,196 @@ class NewsContent extends Component {
 
   render() {
     return (
-      <div
-        className={cx(styles['news-content-container'], {
-          [styles['blank-item']]: this.state.blankItem
-        })}
-      >
-        <div className={styles['news-content']}>
-          <div className={styles['news-content--text']}>
-            <div className={styles['news-content--text--box']}>
-              <div className={styles['news-content--text--box__title']}>
-                <input
-                  className={commonStyles['input']}
-                  type="text"
-                  name="titleDE"
-                  value={this.state.titleDE}
-                  onChange={this.onChange}
-                />
-                {/* {this.state.newsId === 'neu'
-                  ? 'Neuer Beitrag'
-                  : this.state.titleDE} */}
+      <div className={styles['news-wrapper']}>
+        <div
+          className={cx(styles['news-content-container'], {
+            [styles['blank-item']]: this.state.blankItem
+          })}
+        >
+          <div className={styles['news-content-main']}>
+            <div className={styles['news-utilities']}>
+              <div className={styles['news-utilities__category']}>
+                <select
+                  name="catSelect"
+                  value={this.state.category}
+                  onChange={this.onSelectChange}
+                >
+                  {newsTags &&
+                    newsTags.map(tag => (
+                      <option value={tag.name}>{tag.de.title}</option>
+                    ))}
+                </select>
               </div>
-              <div
-                className={styles['news-content--text--box__short-description']}
-              >
-                <RichTextEditor
-                  className={styles['html-editor']}
-                  toolbarConfig={toolbarConfig}
-                  value={this.state.shortDescriptionDE}
-                  onChange={this.onShortDescriptionChange.bind(this, 'de')}
-                />
-              </div>
-              <div className={styles['news-content--text--box__description']}>
-                <RichTextEditor
-                  className={styles['html-editor']}
-                  toolbarConfig={toolbarExtConfig}
-                  value={this.state.descriptionDE}
-                  onChange={this.onDescriptionChange.bind(this, 'de')}
+              <div className={styles['news-utilities__date']}>
+                <DatePicker
+                  className={styles['date-picker']}
+                  onChange={this.onDateChange}
+                  value={this.state.date}
+                  disableClock={true}
+                  locale={'de-DE'}
                 />
               </div>
             </div>
-            <div className={styles['news-content--text--box']}>
-              <div className={styles['news-content--text--box__title']}>
-                <input
-                  className={commonStyles['input']}
-                  type="text"
-                  name="titleEN"
-                  value={this.state.titleEN}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div
-                className={styles['news-content--text--box__short-description']}
-              >
-                <RichTextEditor
-                  className={styles['html-editor']}
-                  toolbarConfig={toolbarConfig}
-                  value={this.state.shortDescriptionEN}
-                  onChange={this.onShortDescriptionChange.bind(this, 'en')}
-                />
-              </div>
-              <div className={styles['news-content--text--box__description']}>
-                <RichTextEditor
-                  className={styles['html-editor']}
-                  toolbarConfig={toolbarExtConfig}
-                  value={this.state.descriptionEN}
-                  onChange={this.onDescriptionChange.bind(this, 'en')}
-                />
+            <div className={styles['news-content']}>
+              <div className={styles['news-content--text']}>
+                <div className={styles['news-content--text--box']}>
+                  <div className={styles['news-content--text--box__title']}>
+                    <input
+                      className={commonStyles['input']}
+                      placeholder="Titel deutsch"
+                      type="text"
+                      name="titleDE"
+                      value={this.state.titleDE}
+                      onChange={this.onChange}
+                    />
+                    {/* {this.state.newsId === 'neu'
+                  ? 'Neuer Beitrag'
+                  : this.state.titleDE} */}
+                  </div>
+                  <div
+                    className={
+                      styles['news-content--text--box__short-description']
+                    }
+                  >
+                    <RichTextEditor
+                      placeholder="Kurzbeschreibung deutsch"
+                      className={styles['html-editor']}
+                      toolbarConfig={toolbarConfig}
+                      value={this.state.shortDescriptionDE}
+                      onChange={this.onShortDescriptionChange.bind(this, 'de')}
+                    />
+                  </div>
+                  <div
+                    className={styles['news-content--text--box__description']}
+                  >
+                    <RichTextEditor
+                      placeholder="Hauptinhalt deutsch"
+                      className={styles['html-editor']}
+                      toolbarConfig={toolbarExtConfig}
+                      value={this.state.descriptionDE}
+                      onChange={this.onDescriptionChange.bind(this, 'de')}
+                    />
+                  </div>
+                </div>
+                <div className={styles['news-content--text--box']}>
+                  <div className={styles['news-content--text--box__title']}>
+                    <input
+                      placeholder="Titel englisch"
+                      className={commonStyles['input']}
+                      type="text"
+                      name="titleEN"
+                      value={this.state.titleEN}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <div
+                    className={
+                      styles['news-content--text--box__short-description']
+                    }
+                  >
+                    <RichTextEditor
+                      placeholder="Kurzbeschreibung englisch"
+                      className={styles['html-editor']}
+                      toolbarConfig={toolbarConfig}
+                      value={this.state.shortDescriptionEN}
+                      onChange={this.onShortDescriptionChange.bind(this, 'en')}
+                    />
+                  </div>
+                  <div
+                    className={styles['news-content--text--box__description']}
+                  >
+                    <RichTextEditor
+                      placeholder="Hauptinhalt englisch"
+                      className={styles['html-editor']}
+                      toolbarConfig={toolbarExtConfig}
+                      value={this.state.descriptionEN}
+                      onChange={this.onDescriptionChange.bind(this, 'en')}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className={styles['news-content--sidebar']}>
-            <div className={styles['news-content--sidebar__state-indicator']}>
-              <div
-                className={cx(
-                  styles['news-content--sidebar__state-indicator--sphere'],
-                  {
-                    [styles['online']]: this.state.online
+          <div>
+            <div className={styles['news-content--sidebar']}>
+              <div className={styles['news-content--sidebar__state-indicator']}>
+                <div
+                  className={cx(
+                    styles['news-content--sidebar__state-indicator--sphere'],
+                    {
+                      [styles['online']]: this.state.online
+                    }
+                  )}
+                />
+                <div
+                  className={
+                    styles['news-content--sidebar__state-indicator--text']
                   }
-                )}
-              />
-              <div
-                className={
-                  styles['news-content--sidebar__state-indicator--text']
-                }
-              >
-                {this.state.isOnline ? 'Online' : 'Offline'}
+                >
+                  {this.state.isOnline ? 'Online' : 'Offline'}
+                </div>
               </div>
-            </div>
-            <div
-              className={cx(
-                styles['news-content--sidebar__preview'],
-                styles['news-content--sidebar__section']
-              )}
-            >
-              <a
+              <div
                 className={cx(
-                  commonStyles['button'],
-                  commonStyles['button--preview'],
-                  commonStyles['button--fullwidth']
+                  styles['news-content--sidebar__preview'],
+                  styles['news-content--sidebar__section']
                 )}
-                // onClick={this.saveContent}
-                href={`/admin/preview/news/${this.state.newsId}`}
-                target="blank"
               >
-                <i className="far fa-eye" />
-                Preview
-              </a>
-            </div>
-            <div
-              className={cx(
-                styles['news-content--sidebar__publish'],
-                styles['news-content--sidebar__section']
-              )}
-            >
-              <button
+                <a
+                  className={cx(
+                    commonStyles['button'],
+                    commonStyles['button--preview'],
+                    commonStyles['button--fullwidth']
+                  )}
+                  // onClick={this.saveContent}
+                  href={`/admin/preview/news/${this.state.newsId}`}
+                  target="blank"
+                >
+                  <i className="far fa-eye" />
+                  Preview
+                </a>
+              </div>
+              <div
                 className={cx(
-                  commonStyles['button'],
-                  commonStyles['button--update'],
-                  commonStyles['button--fullwidth']
+                  styles['news-content--sidebar__publish'],
+                  styles['news-content--sidebar__section']
                 )}
-                // onClick={this.saveContent}
               >
-                Jetzt Posten
-              </button>
+                <button
+                  className={cx(
+                    commonStyles['button'],
+                    commonStyles['button--update'],
+                    commonStyles['button--fullwidth']
+                  )}
+                  // onClick={this.saveContent}
+                >
+                  Jetzt Posten
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div className={styles['news-content--buttons']}>
-          <button
-            className={cx(commonStyles['button'], commonStyles['button--save'])}
-            onClick={this.saveContent}
-          >
-            Speichern
-          </button>
-          <button
-            className={cx(
-              commonStyles['button'],
-              commonStyles['button--delete']
-            )}
-            onClick={this.confirmDelete.bind(this, this.deleteNews)}
-          >
-            Löschen
-          </button>
+        <div>
+          <div className={styles['news-content--buttons']}>
+            <button
+              className={cx(
+                commonStyles['button'],
+                commonStyles['button--save']
+              )}
+              onClick={this.saveContent}
+            >
+              Speichern
+            </button>
+            <button
+              className={cx(
+                commonStyles['button'],
+                commonStyles['button--delete']
+              )}
+              onClick={this.confirmDelete.bind(this, this.deleteNews)}
+            >
+              Löschen
+            </button>
+          </div>
         </div>
       </div>
     )

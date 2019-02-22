@@ -50,12 +50,14 @@ router.post(
       newsFields.handle = body.titleDE.replace(/\s/g, '_')
     }
     if (body.titleEN) newsFields.en.title = body.titleEN
+    newsFields.tag = body.tag
     newsFields.de.shortDescription = body.shortDescriptionDE
     newsFields.en.shortDescription = body.shortDescriptionEN
     newsFields.de.description = body.descriptionDE
     newsFields.en.description = body.descriptionEN
 
     const newNewsItem = new News({
+      tag: newsFields.tag,
       handle: newsFields.handle,
       de: {
         title: newsFields.de.title,
@@ -125,6 +127,7 @@ router.post(
       { _id: body.id },
       {
         $set: {
+          tag: body.tag,
           handle: newsFields.handle,
           de: {
             title: newsFields.de.title,

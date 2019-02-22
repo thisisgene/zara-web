@@ -1,20 +1,43 @@
+.news-wrapper
+  width: 100%
 .news-content-container
   width: 100%
   flex: 2
+  display: flex
+  
+  &.blank-item
+    background: rgba(#4BBC29, .4)
+  .news-content-main
+    width: 100%
+.news-utilities
+  display: flex
+  justify-content: center
+  align-items: baseline
+  margin-bottom: .5rem
+  &__category
+    width: 200px
+    text-align: right
+    margin-right: .25rem
+  &__date
+    width: 200px
+    margin-left: .25rem
+    .date-picker
+      background: #F8F8F8
 .news-content
   display: flex
   flex: 2
   width: 100%
   // padding: .2rem
+  
+        
   &--text
     width: 100%
-
+    flex: 2
     display: flex
     &--box
       margin: 0 .3rem
       flex: 2
-      &.blank-item
-        background: rgba(#4BBC29, .9)
+      
       &__title
         width: 100%
       &__short-description
@@ -23,7 +46,7 @@
         line-height: 1
       &__description
         color: #111
-        height: 400px
+        // height: 400px
         line-height: 1
         margin-bottom: 1rem
       .html-editor
@@ -58,7 +81,7 @@
           background: #03F395
           box-shadow: 0 0 4px #03F395
   &--buttons
-    padding: .2rem 100px 0 .3rem
+    padding: .2rem 114px 0 .3rem
     display: flex
     justify-content: space-between
     width: 100%
