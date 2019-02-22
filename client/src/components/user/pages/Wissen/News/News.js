@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
+
+import { getAll } from '../../../../../actions/adminActions'
 
 import { newsData, newsTags } from './news_data'
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
@@ -23,7 +26,12 @@ const heroData = {
 }
 
 class News extends Component {
+  componentDidMount() {
+    this.props.getAll('news')
+  }
+
   render() {
+    const { news } = this.props
     const { activeLanguage } = this.props
     let lang
     if (activeLanguage && activeLanguage.code) {
@@ -31,11 +39,16 @@ class News extends Component {
     }
     return (
       <div>
-        {lang && (
+        {lang && news && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
             {newsData && (
-              <NewsBox content={newsData} tags={newsTags} lang={lang} />
+              <NewsBox
+                content={newsData}
+                news={news.news}
+                tags={newsTags}
+                lang={lang}
+              />
             )}
           </div>
         )}
@@ -44,4 +57,13 @@ class News extends Component {
   }
 }
 
-export default withLocalize(News)
+const mapStateToProps = state => ({
+  news: state.news
+})
+
+export default withLocalize(
+  connect(
+    mapStateToProps,
+    { getAll }
+  )(News)
+)

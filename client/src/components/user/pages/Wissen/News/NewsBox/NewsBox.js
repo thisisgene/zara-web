@@ -40,7 +40,7 @@ class NewsBox extends Component {
   }
 
   render() {
-    const { content, tags, lang } = this.props
+    const { content, news, tags, lang } = this.props
 
     let filteredContent = []
 
@@ -86,26 +86,42 @@ class NewsBox extends Component {
         </div>
         {/* ADD PAGEINATION! */}
         <div className={styles['news-item-container']}>
-          {content && lang && (
+          {news && lang && (
             <div>
-              {filteredContent.length > 0 ? (
-                filteredContent.map((news, index) => (
+              {news
+                // .filter(news => news.isOnline)
+                .map((news, index) => (
                   <NewsItem
                     key={index}
                     news={news}
                     newsTags={tags}
                     lang={lang}
                   />
-                ))
-              ) : (
-                <div className={styles['no-entries']}>
-                  {lang === 'de'
-                    ? 'Zur Zeit keine Einträge'
-                    : 'No entries at the moment'}
-                </div>
-              )}
+                ))}
             </div>
           )}
+          <div>
+            {content && lang && (
+              <div>
+                {filteredContent.length > 0 ? (
+                  filteredContent.map((news, index) => (
+                    <NewsItem
+                      key={index}
+                      news={news}
+                      newsTags={tags}
+                      lang={lang}
+                    />
+                  ))
+                ) : (
+                  <div className={styles['no-entries']}>
+                    {lang === 'de'
+                      ? 'Zur Zeit keine Einträge'
+                      : 'No entries at the moment'}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     )

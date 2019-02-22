@@ -22,7 +22,9 @@ export default class PubItem extends Component {
             </div>
             <div
               className={styles['pub-item--text__body']}
-              dangerouslySetInnerHTML={{ __html: content[lang].shortContent }}
+              dangerouslySetInnerHTML={{
+                __html: content[lang].shortDescription
+              }}
             />
 
             <div className={styles['pub-item--text__link']}>

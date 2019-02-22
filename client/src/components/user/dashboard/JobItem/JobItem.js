@@ -12,10 +12,12 @@ export default class JobItem extends Component {
           {index + 1}. {content[lang].title}
         </div>
         <div className={styles['job-item--data']}>
-          {content[lang].shortContent && (
+          {content[lang].shortDescription && (
             <div
               className={styles['job-item--data__text']}
-              dangerouslySetInnerHTML={{ __html: content[lang].shortContent }}
+              dangerouslySetInnerHTML={{
+                __html: content[lang].shortDescription
+              }}
             />
           )}
           {content[lang].area && (

@@ -7,8 +7,8 @@ import styles from './NewsCollection.module.sass'
 export default function NewsCard({ content, lang }) {
   const shortText =
     content.newsBoxSize === 'wide'
-      ? content[lang].shortContent
-      : content[lang].shortContent.substr(0, 150) + '\u2026'
+      ? content[lang].shortDescription
+      : content[lang].shortDescription.substr(0, 150) + '\u2026'
   return (
     <div
       className={cx(
@@ -40,7 +40,7 @@ export default function NewsCard({ content, lang }) {
             {content[lang].title}
           </div>
         )}
-        {content[lang].shortContent && (
+        {content[lang].shortDescription && (
           <div
             className={styles['news-card--body__text']}
             dangerouslySetInnerHTML={{ __html: shortText }}
