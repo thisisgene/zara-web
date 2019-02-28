@@ -71,10 +71,10 @@ export const trainingBoxData = {
     title: 'Unser Trainingsangebot',
     privacyPolicyText: 'Datenschutzerklärung ZARA Training',
     privacyPolicyLink:
-      'https://zara-training.at/wp-content/uploads/Datenschutzerkl%C3%A4rung-von-ZARA-Training-Mai-2018.pdf',
+      'https://assets.zara.or.at/download/pdf/Training/ZARA%20Training_Datenschutzerkla%CC%88rung.pdf',
     agbText: 'ZARA Training AGBs',
     agbLink:
-      'https://zara-training.at/wp-content/uploads/AGB-ZARA-Training.pdf',
+      'https://assets.zara.or.at/download/pdf/Training/AGBs_ZARA%20Training.pdf',
     categories: [
       {
         index: '1',
