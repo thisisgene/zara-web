@@ -97,11 +97,11 @@ export const teamData = {
           'leitet die ZARA Beratungsstellen, ist langjährige ZARA Trainerin und die Datenschutzbeauftragte des Vereins. <br><br>Sie hat Rechtswissenschaften studiert und ist Absolventin des European Master for Human Rights and Democratisation. Seit vielen Jahren arbeitet sie im Menschenrechtsbereich, u.a. in einer Rechtsanwaltskanzlei, in Wissenschaft und Lehre, als Trainerin und in der präventiven Menschenrechtskontrolle der Volksanwaltschaft. <br><br><i>Gerne steht sie Ihnen mit Informationen über die Beratungsstellen zur Verfügung. Sie ist Ansprechpartnerin für Fragen zu Gleichbehandlung und Diskriminierung.</i>'
       },
       {
-        image: 'Lukas Gottschamel_ZARA.jpg',
+        // image: 'Bianca Schoenberger_ZARA.jpg',
         field: 'beratung',
-        name: 'Mag. Lukas Gottschamel',
+        name: 'Mag.a Lilian Levai',
         text:
-          'arbeitet in den ZARA-Beratungsstellen und leitet den Fachbereich Rechtliches. Er informiert als versierter Jurist Betroffene und Zeug*innen über ihre Handlungsmöglichkeiten. <br><br>Er hat Rechtswissenschaften in Wien studiert und danach an der Universität Wien und in Projekten für die Parlamentsdirektion gearbeitet. Einige seiner Publikationen befassten sich mit gleichheitsrechtlichen Fragen im Zusammenhang mit der rechtlichen Elternschaft. Bereits während des Studiums legte er einen Schwerpunkt auf Mediation und verfestigt die erworbenen Kompetenzen durch eine dahingehende Ausbildung.<br><br><i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, sind Sie bei ihm gut beraten.</i>'
+          'ist juristische Beraterin in den ZARA-Beratungsstellen, leitet den Fachbereich Beratung mit Fokus auf Onlineberatung und hält Workshops für die ZARA-Training gGesmbH.<br /><br />Sie hat Afrikawissenschaften mit dem Schwerpunkt Rassismusforschung studiert, absolvierte zahlreiche juristische Lehrveranstaltungen insbesondere zu den Themen Antidiskriminierungsrecht und Mediation, ist zertifizierte Mediatorin und verfügt über das Hochschulzertifikat Onlineberatung der Technischen Hochschule Nürnberg. Aktuell vertieft sie ihre Beratungskompetenzen im psychosozialen Bereich über das Psychotherapeutische Propädeutikum.'
       },
       {
         image: 'Dunia Khalil_ZARA.jpg',
@@ -132,12 +132,13 @@ export const teamData = {
           'arbeitet in den ZARA-Beratungsstellen. Darüber hinaus ist sie seit vielen Jahren als Supervisorin und Beraterin tätig.<br /><br />Sie hat Kultur- und Sozialanthropologie studiert und ein Masterstudium in Supervision und Coaching absolviert. Sie informiert Betroffene und Zeug*innen von Rassismus und Hass im Netz über die rechtlichen Rahmenbedingungen und ihre Handlungsmöglichkeiten. Darüber hinaus steht sie für eine vertiefende Beratung zur Verfügung,  wenn es darum geht, Ihr konkretes Anliegen zu klären oder eine Entscheidung bezüglich weiterer Schritte zu treffen.<br /><br /><i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, oder klären wollen, wie Sie weiter vorgehen möchten, sind Sie bei ihr gut beraten.'
       },
       {
-        // image: 'Bianca Schoenberger_ZARA.jpg',
+        image: 'Lukas Gottschamel_ZARA.jpg',
         field: 'beratung',
-        name: 'Mag.a Lilian Levai',
+        name: 'Mag. Lukas Gottschamel',
         text:
-          '(derzeit in Karenz)<br /><br />ist juristische Beraterin in den ZARA-Beratungsstellen, leitet den Fachbereich Beratung mit Fokus auf Onlineberatung und hält Workshops für die ZARA-Training gGesmbH.<br /><br />Sie hat Afrikawissenschaften mit dem Schwerpunkt Rassismusforschung studiert, absolvierte zahlreiche juristische Lehrveranstaltungen insbesondere zu den Themen Antidiskriminierungsrecht und Mediation, ist zertifizierte Mediatorin und verfügt über das Hochschulzertifikat Onlineberatung der Technischen Hochschule Nürnberg. Aktuell vertieft sie ihre Beratungskompetenzen im psychosozialen Bereich über das Psychotherapeutische Propädeutikum.'
+          '(derzeit in Karenz)<br /><br />arbeitet in den ZARA-Beratungsstellen und leitet den Fachbereich Rechtliches. Er informiert als versierter Jurist Betroffene und Zeug*innen über ihre Handlungsmöglichkeiten. <br><br>Er hat Rechtswissenschaften in Wien studiert und danach an der Universität Wien und in Projekten für die Parlamentsdirektion gearbeitet. Einige seiner Publikationen befassten sich mit gleichheitsrechtlichen Fragen im Zusammenhang mit der rechtlichen Elternschaft. Bereits während des Studiums legte er einen Schwerpunkt auf Mediation und verfestigt die erworbenen Kompetenzen durch eine dahingehende Ausbildung.<br><br><i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, sind Sie bei ihm gut beraten.</i>'
       },
+
       {
         // image: 'Bianca Schoenberger_ZARA.jpg',
         field: 'beratung',
