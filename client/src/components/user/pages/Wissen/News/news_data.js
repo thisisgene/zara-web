@@ -32,8 +32,9 @@ export const newsData = [
     onNewsBox: true,
     newsBoxSize: 'wide',
     param: 'veranstaltung',
-
     image: 'news/RR Cover Web.jpg',
+    // imageSide: 'left',
+    size: 'big-image',
     id: 'Pressekonferenz_Rassismus_Report_2018',
     de: {
       category: 'Veranstaltgung',
@@ -42,7 +43,7 @@ export const newsData = [
       shortDescription:
         'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 9:30 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
       content:
-        '<p>Am 21. März, dem Internationalen Tag gegen Rassismus, präsentiert ZARA den druckfrischen Rassismus Report 2018 im <a href="https://www.facebook.com/presseclubconcordia/">Presseclub Concordia</a>. Der Rassismus Report ist unsere wichtigste jährliche Publikation, in der wir durch konkrete Beispiele von Vorfällen zeigen, wie rassistische Erlebnisse in den verschiedensten Lebenswelten in Österreich aussehen.</p><p>Im zwanzigsten Jahr unserer Existenz wird die Pressekonferenz rund um den Rassismus Report besonders spannend werden. Wir freuen uns mit einem ehrfahrungsreichen Podium aufzeigen zu können, wo konkreter Handlungsbedarf besteht. In nächster Zeit werden wir mehr und mehr Informationen zu diesem Event preisgeben, also haltet Euch auf dem Laufenden! </p><p>Wir freuen uns auf Euer Kommen!</p>',
+        '<p>Am 21. März, dem Internationalen Tag gegen Rassismus, um 9:30 Uhr, präsentiert ZARA den druckfrischen Rassismus Report 2018 im <a target="blank" href="https://www.facebook.com/presseclubconcordia/">Presseclub Concordia</a>. Der Rassismus Report ist unsere wichtigste jährliche Publikation, in der wir durch konkrete Beispiele von Vorfällen zeigen, wie rassistische Erlebnisse in den verschiedensten Lebenswelten in Österreich aussehen.</p><p>Im zwanzigsten Jahr unserer Existenz wird die Pressekonferenz rund um den Rassismus Report besonders spannend werden. Wir freuen uns mit einem ehrfahrungsreichen Podium aufzeigen zu können, wo konkreter Handlungsbedarf besteht. In nächster Zeit werden wir mehr und mehr Informationen zu diesem Event preisgeben, also haltet Euch auf dem Laufenden! </p><p>Wir freuen uns auf Euer Kommen!</p>',
       linkText: 'weiterlesen'
     },
     en: {
