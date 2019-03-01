@@ -28,6 +28,35 @@ export const newsTags = [
 
 export const newsData = [
   {
+    tag: 'event',
+    onNewsBox: true,
+    newsBoxSize: 'wide',
+    param: 'veranstaltung',
+
+    image: 'news/RR Cover Web.jpg',
+    id: 'Pressekonferenz_Rassismus_Report_2018',
+    de: {
+      category: 'Veranstaltgung',
+      date: '21. März 2019',
+      title: 'Pressekonferenz Rassismus Report 2018',
+      shortDescription:
+        'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 9:30 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
+      content:
+        '<p>Am 21. März, dem Internationalen Tag gegen Rassismus, präsentiert ZARA den druckfrischen Rassismus Report 2018 im <a href="https://www.facebook.com/presseclubconcordia/">Presseclub Concordia</a>. Der Rassismus Report ist unsere wichtigste jährliche Publikation, in der wir durch konkrete Beispiele von Vorfällen zeigen, wie rassistische Erlebnisse in den verschiedensten Lebenswelten in Österreich aussehen.</p><p>Im zwanzigsten Jahr unserer Existenz wird die Pressekonferenz rund um den Rassismus Report besonders spannend werden. Wir freuen uns mit einem ehrfahrungsreichen Podium aufzeigen zu können, wo konkreter Handlungsbedarf besteht. In nächster Zeit werden wir mehr und mehr Informationen zu diesem Event preisgeben, also haltet Euch auf dem Laufenden! </p><p>Wir freuen uns auf Euer Kommen!</p>',
+      linkText: 'weiterlesen'
+    },
+    en: {
+      category: 'Veranstaltgung',
+      date: '21. März 2019',
+      title: 'Pressekonferenz Rassismus Report 2018',
+      shortDescription:
+        'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 10:00 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
+      content: ''
+      // linkText: 'weiterlesen'
+    }
+  },
+
+  {
     tag: 'pressemeldungen',
     // newsBoxSize: 'wide',
     // param: 'news',
@@ -258,33 +287,6 @@ export const newsData = [
       content:
         '<p>Hiermit möchten wir, ZARA – Zivilcourage & Anti-Rassismus-Arbeit und ZARA Training gemeinnützige GmbH, zivilgesellschaftliche Vertreter*innen herzlich zur kostenlosen zweitägigen Weiterbildung zum Thema</p><p><strong> </strong></p><p><strong>Hassverbrechen | <em>hate crime</em> |Vorurteilskriminalität erkennen und aktiv entgegentreten!</strong></p><p> </p><p>einladen, die am Montag, dem 25. März 2019 und Montag, dem 01.04.2019, in Wien stattfinden wird.</p><p> </p><p>Die Weiterbildung wird im Rahmen des EU-Projekts <strong>V-START – Victim Support Through Awareness-Raising and neTworking</strong> von Lilian Levai (ZARA Beraterin & Trainingsexpertin) und Volker Frey (Generalsekretär des Klagsverbands & Trainingsexperte) konzipiert und durchgeführt. </p><p> </p><p>Mit dieser Einladung wenden wir uns konkret an zivilgesellschaftliche Vertreter*innen, da wir gemeinsam mit Ihnen die Unterstützung für von hate crime Betroffene verbessern wollen. Wir halten dabei den bereichsübergreifenden Austausch von Expertise zivilgesellschaftlicher Vertreter*innen für äußerst wertvoll. Auf den Austausch von Erfahrungen und Best Practices freuen wir uns.</p><p> </p><p>Mit der Absolvierung des zweitägigen Weiterbildungsangebots, das mit einem ZARA Trainingszertifikat abgeschlossen wird, lernen Teilnehmer*innen Handlungsoptionen, um mehr Sichtbarkeit und verbesserte Unterstützungsmaßnahmen für Betroffene von vorurteilsmotivierter Gewalt zu bewirken und Schritte für bessere Präventionsarbeit zu setzen.</p><p> </p><p>Die Schwerpunkte der Weiterbildung liegen auf der Erkennung von Hassverbrechen, der Auseinandersetzung mit Vorurteilsmotiven, einer Übersicht des nationalen sowie internationalen Rechtsrahmens sowie auf Handlungsstrategien und Unterstützungsmaßnahmen – on- und offline.</p><p> </p><p> </p><table>  <tr>   <td>        <p style="text-align: right"><strong>Wann:</strong></p>   </td>   <td>        Termin 1: 25.03.2019, 10:00 – 16:30 Uhr<p>        Termin 2: 01.04.2019, 10:00 – 16:30 Uhr<p>        Eine Teilnahme an beiden Tagen ist erwünscht.   </td>  </tr>  <tr>   <td>        <p style="text-align: right"><strong>Wo:</strong></p>   </td>   <td>        Kardinal König Haus, <p>        Kardinal-König-Platz 3, 1130 Wien   </td>  </tr>  <tr>   <td>        <p style="text-align: right"><strong>Reisekosten:</strong></p>   </td>   <td>        Wir freuen uns, mitteilen zu können, dass wir Ihnen die <strong>Reisekosten</strong>, die durch die Teilnahme entstehen, <strong>rückerstatten</strong> können. Leider können wir <strong><span style="text-decoration:underline;">keine </span>Übernachtungskosten</strong> abdecken.    </td>  </tr>  <tr>   <td>        <p style="text-align: right"><strong>Zugang</strong></p>   </td>   <td>        Die Teilnahme am Training ist <strong>kostenlos</strong>. Der Veranstaltungsort ist barrierefrei zugänglich. ÖGS-Dolmetschung wird angeboten. Es wird darum gebeten, bei der Anmeldung bekannt  zu geben, ob ÖGS-Dolmetschung oder andere Unterstützung in Anspruch genommen wird.       </td>  </tr></table><p> </p><p> </p><p>Für die Anmeldung (nach „first-come-first-serve"-Prinzip bis einschließlich 10.02.2018), bzgl. der Rückerstattung von Reisekosten sowie für Anregungen und Nachfragen steht die folgende Kontaktperson jederzeit zur Verfügung:</p><p> </p><p>Anna Schreilechner, </p><p>ZARA-Koordinatorin Transnationaler Kooperationen, <a href="mailto:anna.schreilechner@zara.or.at">anna.schreilechner@zara.or.at</a></p><p><a href="">Hier</a> steht die offizielle Einladung zum Download zur Verfügung</p><p><a href="../ueber_ZARA/projekte">Hier</a> mehr Information zum V-START-Projekt.</p><p>Die offizielle Projektwebsite beinhaltet Information und Ergebnisse aus allen Projektländern: <a href="www.vstart.eu">www.vstart.eu</a></p>',
       linkText: 'weiterlesen'
-    }
-  },
-  {
-    tag: 'event',
-    onNewsBox: true,
-    newsBoxSize: 'wide',
-    param: 'veranstaltung',
-
-    // image: 'vstart.jpg',
-    id: 'Pressekonferenz_Rassismus_Report_2018',
-    de: {
-      category: 'Veranstaltgung',
-      date: '21. März 2019',
-      title: 'Pressekonferenz Rassismus Report 2018',
-      shortDescription:
-        'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 10:00 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
-      content: ''
-      // linkText: 'weiterlesen'
-    },
-    en: {
-      category: 'Veranstaltgung',
-      date: '21. März 2019',
-      title: 'Pressekonferenz Rassismus Report 2018',
-      shortDescription:
-        'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 10:00 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
-      content: ''
-      // linkText: 'weiterlesen'
     }
   },
 

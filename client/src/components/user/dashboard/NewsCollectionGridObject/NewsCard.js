@@ -10,14 +10,7 @@ export default function NewsCard({ content, lang }) {
       ? content[lang].shortDescription
       : content[lang].shortDescription.substr(0, 150) + '\u2026'
   return (
-    <div
-      className={cx(
-        styles['news-card'],
-        styles[content.type],
-        styles[content.newsBoxSize],
-        { [styles['no-img']]: !content.image }
-      )}
-    >
+    <div>
       <div className={styles['news-card--image']}>
         {content.image && (
           <img src={`/assets/img/${content.image}`} alt={content.image} />

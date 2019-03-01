@@ -44,7 +44,12 @@
           font-size: 1.1rem !important
       &.wide
         grid-column: span 2 !important
-        padding: 1rem 3rem
+        padding: 0
+        img
+          // object-fit: contain
+          object-position: center
+        &.no-img
+          padding: 1rem 3rem
       &:after
         content: ''
         width: 100%
@@ -64,6 +69,7 @@
           height: 9rem
           width: 100%
           object-fit: cover
+          // object-position: 0 0
       &.titleCard
         padding: 1rem
         display: flex

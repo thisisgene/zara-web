@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import NewsCard from './NewsCard'
 
+import cx from 'classnames'
 import styles from './NewsCollection.module.sass'
 
 export default class NewsCollectionGridObject extends Component {
@@ -20,13 +21,31 @@ export default class NewsCollectionGridObject extends Component {
                 (item, index) =>
                   index < 7 &&
                   (item[lang].linkText && item[lang].linkText !== '' ? (
-                    <Link
-                      to={`/${lang}/wissen/aktuelles/${item.tag}/${item.id}`}
+                    <div
+                      className={cx(
+                        styles['news-card'],
+                        styles[item.type],
+                        styles[item.newsBoxSize],
+                        { [styles['no-img']]: !item.image }
+                      )}
+                    >
+                      <Link
+                        to={`/${lang}/wissen/aktuelles/${item.tag}/${item.id}`}
+                      >
+                        <NewsCard key={index} content={item} lang={lang} />
+                      </Link>
+                    </div>
+                  ) : (
+                    <div
+                      className={cx(
+                        styles['news-card'],
+                        styles[content.type],
+                        styles[content.newsBoxSize],
+                        { [styles['no-img']]: !content.image }
+                      )}
                     >
                       <NewsCard key={index} content={item} lang={lang} />
-                    </Link>
-                  ) : (
-                    <NewsCard key={index} content={item} lang={lang} />
+                    </div>
                   ))
               )}
         </div>
