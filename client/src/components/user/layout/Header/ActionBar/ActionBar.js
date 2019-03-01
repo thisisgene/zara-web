@@ -37,17 +37,17 @@ class ActionBar extends Component {
           </NavLink>
           <NavLink
             activeClassName={styles.active}
-            to={`/${lang}/kontakt`}
-            onClick={onClick ? onClick : null}
-          >
-            <Translate id={`menu.item0.3`} />
-          </NavLink>
-          <NavLink
-            activeClassName={styles.active}
             to={`/${lang}/wissen/aktuelles`}
             onClick={onClick ? onClick : null}
           >
             <Translate id={`menu.item0.4`} />
+          </NavLink>
+          <NavLink
+            activeClassName={styles.active}
+            to={`/${lang}/kontakt`}
+            onClick={onClick ? onClick : null}
+          >
+            <Translate id={`menu.item0.3`} />
           </NavLink>
         </div>
       </div>
