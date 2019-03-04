@@ -78,7 +78,7 @@ export const networkData = [
     image: 'network/LOGO_V_START.jpg',
     de: {
       title:
-        'Victim Support Through Awareness-Raising and neTworking <br>(V-Start)',
+        'Netzwerk <br />‘um hate crime sichtbar zu machen sowie effektiv & präventiv entgegenzutreten’',
       listTitle: 'Zivilgesellschaftliches Netzwerk um hate crime',
       list: [
         {
@@ -120,14 +120,14 @@ export const networkData = [
   {
     // image: 'network/klav-logo2017.png',
     de: {
-      title: 'No Hate Speech Kommittee',
+      title: 'No Hate Speech Komittee',
       text:
         'Das österreichische No Hate Speech-Komitee will die Öffentlichkeit für das Thema Hassreden im Netz sensibilisieren.',
       link: 'https://www.nohatespeech.at/',
       linkText: 'www.nohatespeech.at/'
     },
     en: {
-      title: 'No Hate Speech Kommittee',
+      title: 'No Hate Speech Komittee',
       text:
         'Das österreichische No Hate Speech-Komitee will die Öffentlichkeit für das Thema Hassreden im Netz sensibilisieren.',
       link: 'https://www.nohatespeech.at/',
