@@ -75,13 +75,13 @@ export const teamData = {
         text:
           'studiert Kultur- und Sozialanthropologie an der Universität Wien. Als ehrenamtlicher Mitarbeiter der Öffentlichkeitsarbeit trägt Georg List seit Sommer 2012 mit Texten zu Publikationen wie dem Rassismus Report bei und repräsentiert ZARA bei Veranstaltungen, Netzwerktreffen und Aktionen. Unter anderem betreut er das ZARA-Fußballteam.'
       },
-      {
-        // image: 'CaeciliaKappel_ZARA.jpg',
-        field: 'gok',
-        name: 'Emily Zens',
-        text:
-          'unterstützt aktuell die Öffentlichkeits- sowie Projektarbeit als engagierte Praktikantin. Sie studiert Publizistik und Kommunikationswissenschaften an der Universität Wien. In ihren Nebenfächern Geschichte und Gender Studies spezialisiert sie sich auf neuzeitliche Geschichte, Rassismus-Ursprünge sowie genderspezifische Kontexte.'
-      },
+      // {
+      //   // image: 'CaeciliaKappel_ZARA.jpg',
+      //   field: 'gok',
+      //   name: 'Emily Zens',
+      //   text:
+      //     'unterstützt aktuell die Öffentlichkeits- sowie Projektarbeit als engagierte Praktikantin. Sie studiert Publizistik und Kommunikationswissenschaften an der Universität Wien. In ihren Nebenfächern Geschichte und Gender Studies spezialisiert sie sich auf neuzeitliche Geschichte, Rassismus-Ursprünge sowie genderspezifische Kontexte.'
+      // },
       {
         image: 'Ferhat Oezbay_ZARA.jpg',
         field: 'gok',

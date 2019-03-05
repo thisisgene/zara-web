@@ -303,18 +303,18 @@ export const glossarData = [
     }
   },
 
-  {
-    de: {
-      title: 'Viktimisierung',
-      text:
-        'Unter Viktimisierung wird eine Benachteiligung von Personen verstanden, die in einem Fall von Diskriminierung entweder als Betroffene oder als Zeug*innen insofern involviert waren, als sie den Fall aufgedeckt oder angezeigt haben oder für den*die Betroffene*n Stellung bezogen haben.'
-    },
-    en: {
-      title: 'Viktimisierung',
-      text:
-        'Unter Viktimisierung wird eine Benachteiligung von Personen verstanden, die in einem Fall von Diskriminierung entweder als Betroffene oder als Zeug*innen insofern involviert waren, als sie den Fall aufgedeckt oder angezeigt haben oder für den*die Betroffene*n Stellung bezogen haben.'
-    }
-  },
+  // {
+  //   de: {
+  //     title: 'Viktimisierung',
+  //     text:
+  //       'Unter Viktimisierung wird eine Benachteiligung von Personen verstanden, die in einem Fall von Diskriminierung entweder als Betroffene oder als Zeug*innen insofern involviert waren, als sie den Fall aufgedeckt oder angezeigt haben oder für den*die Betroffene*n Stellung bezogen haben.'
+  //   },
+  //   en: {
+  //     title: 'Viktimisierung',
+  //     text:
+  //       'Unter Viktimisierung wird eine Benachteiligung von Personen verstanden, die in einem Fall von Diskriminierung entweder als Betroffene oder als Zeug*innen insofern involviert waren, als sie den Fall aufgedeckt oder angezeigt haben oder für den*die Betroffene*n Stellung bezogen haben.'
+  //   }
+  // },
 
   {
     de: {
