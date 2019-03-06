@@ -4,7 +4,8 @@ import {
   PROJECT_LOADING,
   CLEAR_PROJECTS,
   GET_ERRORS,
-  GET_PROJECT
+  GET_PROJECT,
+  CLEAR_ERRORS
 } from './types'
 
 // Get all projects

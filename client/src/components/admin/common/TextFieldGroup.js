@@ -13,6 +13,7 @@ const TextFieldGroup = ({
   error,
   info,
   type,
+  colorScheme,
   onChange,
   disabled
 }) => {
@@ -21,7 +22,7 @@ const TextFieldGroup = ({
       <input
         className={cx(
           globalStyles['form-control'],
-          commonStyles['dark-input'],
+          { [commonStyles['dark-input']]: colorScheme !== 'light' },
           {
             [globalStyles['is-invalid']]: error
           }

@@ -54,7 +54,7 @@ class NewsContent extends Component {
   }
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      if (this.props.errors) {
+      if (this.props.errors !== prevProps.errors) {
         this.setState({ errors: this.props.errors })
       }
       if (this.props.news.newsItem) {
@@ -230,6 +230,7 @@ class NewsContent extends Component {
                   <div className={styles['news-content--text--box__title']}>
                     <TextFieldGroup
                       className={commonStyles['input']}
+                      colorScheme="light"
                       placeholder="Titel deutsch"
                       type="text"
                       name="titleDE"
@@ -268,9 +269,10 @@ class NewsContent extends Component {
                 </div>
                 <div className={styles['news-content--text--box']}>
                   <div className={styles['news-content--text--box__title']}>
-                    <input
+                    <TextFieldGroup
                       placeholder="Titel englisch"
                       className={commonStyles['input']}
+                      colorScheme="light"
                       type="text"
                       name="titleEN"
                       value={this.state.titleEN}

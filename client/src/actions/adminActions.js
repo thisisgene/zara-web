@@ -8,7 +8,8 @@ import {
   CREATE_NEW_NEWS,
   UPDATE_NEWS,
   CLEAR_NEWS_ITEM,
-  CLEAR_ALL
+  CLEAR_ALL,
+  CLEAR_ERRORS
 } from './types'
 
 // Get all
@@ -68,6 +69,7 @@ export const saveContent = saveData => dispatch => {
         ? axios
             .post('/api/news', saveData)
             .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_NEWS,
                 payload: res.data
