@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import moment from 'moment'
 
 import DatePicker from 'react-date-picker'
 import DateTimePicker from 'react-datetime-picker'
@@ -33,7 +34,7 @@ class NewsContent extends Component {
       blankItem: true,
       newsId: props.match.params.newsId,
       category: 'news',
-      date: new Date(),
+      date: moment(new Date()).format('YYYY-MM-DD'),
       titleDE: '',
       titleEN: '',
       shortDescriptionDE: RichTextEditor.createEmptyValue(),
@@ -64,12 +65,13 @@ class NewsContent extends Component {
           )
         }
         const item = this.props.news.newsItem
+        console.log('date: ', item.dateUnformatted)
         this.setState({
           blankItem: false,
 
           newsId: item._id,
           category: item.tag,
-          // date: item.dateUnformatted, // GET DATE TO WORK!!!!
+          date: moment(item.dateUnformatted).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
           titleDE: item.de.title && item.de.title,
           titleEN: item.en && item.en.title && item.en.title,
           shortDescriptionDE: RichTextEditor.createValueFromString(
@@ -122,9 +124,9 @@ class NewsContent extends Component {
     this.setState({ category: e.target.value })
   }
 
-  onDateChange = date => {
-    console.log(date)
-    this.setState({ date })
+  onDateChange = e => {
+    console.log(e.target.value)
+    this.setState({ date: e.target.value })
   }
 
   onShortDescriptionChange = (lang, value) => {
@@ -204,13 +206,19 @@ class NewsContent extends Component {
                 </select>
               </div>
               <div className={styles['news-utilities__date']}>
-                <DatePicker
+                <input
+                  type="date"
                   className={styles['date-picker']}
-                  onChange={this.onDateChange}
                   value={this.state.date}
-                  disableClock={true}
-                  locale={'de-DE'}
+                  onChange={this.onDateChange}
                 />
+                {/* <DatePicker
+                  className={styles['date-picker']}
+                  value={this.state.date}
+                  onChange={this.onDateChange}
+                  // dateFormat={'dd/MM/YYYY'}
+                  locale={'de-DE'}
+                /> */}
               </div>
             </div>
             <div className={styles['news-content']}>
