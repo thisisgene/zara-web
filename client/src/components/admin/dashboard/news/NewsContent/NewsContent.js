@@ -43,7 +43,8 @@ class NewsContent extends Component {
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
       descriptionDE: RichTextEditor.createEmptyValue(),
       descriptionEN: RichTextEditor.createEmptyValue(),
-      errors: {}
+      errors: {},
+      imageListOpen: false
     }
   }
 
@@ -146,6 +147,10 @@ class NewsContent extends Component {
     lang === 'de'
       ? this.setState({ descriptionDE: value })
       : this.setState({ descriptionEN: value })
+  }
+
+  onImageOpen = () => {
+    this.setState({ imageListOpen: !this.state.imageListOpen })
   }
 
   saveContent = () => {
@@ -393,11 +398,16 @@ class NewsContent extends Component {
                       // },
                       commonStyles['button--fullwidth']
                     )}
-                    onClick={this.openImageList}
+                    onClick={this.onImageOpen}
                   >
                     Bilder
                   </button>
-                  <ContentImageList id={this.state.newsId} category={'news'} />
+                  {this.state.imageListOpen && (
+                    <ContentImageList
+                      id={this.state.newsId}
+                      category={'news'}
+                    />
+                  )}
                 </div>
               </div>
             )}
