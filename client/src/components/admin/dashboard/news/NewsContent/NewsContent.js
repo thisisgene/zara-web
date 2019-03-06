@@ -20,6 +20,8 @@ import { newsTags } from '../../../../user/pages/Wissen/News/news_data'
 import RichTextEditor from 'react-rte'
 import { confirmAlert } from 'react-confirm-alert' // Import
 
+import ContentImageList from '../../ContentImageList'
+
 import cx from 'classnames'
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import './rte.sass'
@@ -377,6 +379,25 @@ class NewsContent extends Component {
                   >
                     {this.state.isOnline ? 'Offline nehmen' : 'Online stellen'}
                   </button>
+                </div>
+                <hr />
+                <div className={styles['image-box']}>
+                  <button
+                    className={cx(
+                      commonStyles['button'],
+                      // {
+                      //   [commonStyles['button--update']]: !this.state.isOnline
+                      // },
+                      // {
+                      //   [commonStyles['button--offline']]: this.state.isOnline
+                      // },
+                      commonStyles['button--fullwidth']
+                    )}
+                    onClick={this.openImageList}
+                  >
+                    Bilder
+                  </button>
+                  <ContentImageList id={this.state.newsId} category={'news'} />
                 </div>
               </div>
             )}
