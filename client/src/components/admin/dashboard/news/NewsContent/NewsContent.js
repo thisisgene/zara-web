@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import moment from 'moment'
 
-import DatePicker from 'react-date-picker'
-import DateTimePicker from 'react-datetime-picker'
+import TextFieldGroup from '../../../common/TextFieldGroup'
 
 import {
   saveContent,
@@ -40,7 +39,8 @@ class NewsContent extends Component {
       shortDescriptionDE: RichTextEditor.createEmptyValue(),
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
       descriptionDE: RichTextEditor.createEmptyValue(),
-      descriptionEN: RichTextEditor.createEmptyValue()
+      descriptionEN: RichTextEditor.createEmptyValue(),
+      errors: {}
     }
   }
 
@@ -54,6 +54,9 @@ class NewsContent extends Component {
   }
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
+      if (this.props.errors) {
+        this.setState({ errors: this.props.errors })
+      }
       if (this.props.news.newsItem) {
         if (prevProps.match.params.newsId === 'neu') {
           this.setState({
@@ -225,13 +228,14 @@ class NewsContent extends Component {
               <div className={styles['news-content--text']}>
                 <div className={styles['news-content--text--box']}>
                   <div className={styles['news-content--text--box__title']}>
-                    <input
+                    <TextFieldGroup
                       className={commonStyles['input']}
                       placeholder="Titel deutsch"
                       type="text"
                       name="titleDE"
                       value={this.state.titleDE}
                       onChange={this.onChange}
+                      error={this.state.errors.titleDE}
                     />
                     {/* {this.state.newsId === 'neu'
                   ? 'Neuer Beitrag'
@@ -388,7 +392,8 @@ class NewsContent extends Component {
 }
 
 const mapStateToProps = state => ({
-  news: state.news
+  news: state.news,
+  errors: state.errors
 })
 
 export default connect(

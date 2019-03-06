@@ -10,7 +10,7 @@ const Jimp = require('jimp')
 
 const nodemailer = require('nodemailer')
 
-const validateOrderInput = require('../../validation/order')
+const validateNewsInput = require('../../validation/news')
 
 const News = require('../../models/News')
 
@@ -41,8 +41,14 @@ router.get('/', (req, res) => {
 router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  async (req, res) => {
     const body = req.body
+    const { errors, isValid } = await validateNewsInput(body)
+
+    if (!isValid) {
+      return res.status(400).json(errors)
+    }
+
     // Get fields
     const newsFields = { de: {}, en: {} }
     if (body.titleDE) {
