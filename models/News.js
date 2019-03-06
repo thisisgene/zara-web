@@ -77,6 +77,10 @@ const NewsSchema = new Schema({
     type: Boolean,
     default: false
   },
+  isOnline: {
+    type: Boolean,
+    default: false
+  },
   position: {
     type: Number
   },

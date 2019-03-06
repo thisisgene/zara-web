@@ -103,6 +103,29 @@ export const saveContent = saveData => dispatch => {
   }
 }
 
+export const toggleOnline = (id, category, state) => dispatch => {
+  switch (category) {
+    case 'news':
+      axios
+        .get(`/api/news/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: GET_NEWS_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    default:
+      return
+  }
+}
+
 export const deleteById = (id, category) => dispatch => {
   switch (category) {
     case 'news':

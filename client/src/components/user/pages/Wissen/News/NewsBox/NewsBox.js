@@ -89,7 +89,7 @@ class NewsBox extends Component {
           {news && lang && (
             <div>
               {news
-                // .filter(news => news.isOnline)
+                .filter(news => news.isOnline && !news.isDeleted)
                 .map((news, index) => (
                   <NewsItem
                     key={index}

@@ -9,6 +9,7 @@ import {
   saveContent,
   getAll,
   getById,
+  toggleOnline,
   deleteById,
   clearSingle
 } from '../../../../../actions/adminActions'
@@ -73,6 +74,7 @@ class NewsContent extends Component {
           blankItem: false,
 
           newsId: item._id,
+          isOnline: item.isOnline,
           category: item.tag,
           date: moment(item.dateUnformatted).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
           titleDE: item.de.title && item.de.title,
@@ -103,6 +105,7 @@ class NewsContent extends Component {
           this.setState({
             blankItem: true,
             newsId: this.props.match.params.newsId,
+            isOnline: false,
             category: 'news',
             date: new Date(),
             titleDE: '',
@@ -163,6 +166,10 @@ class NewsContent extends Component {
     }
     this.props.saveContent(saveData)
     // console.log(saveData)
+  }
+
+  toggleOnline = () => {
+    this.props.toggleOnline(this.state.newsId, 'news', !this.state.isOnline)
   }
 
   deleteNews = () => {
@@ -308,62 +315,71 @@ class NewsContent extends Component {
             </div>
           </div>
           <div>
-            <div className={styles['news-content--sidebar']}>
-              <div className={styles['news-content--sidebar__state-indicator']}>
+            {this.props.news.newsItem && (
+              <div className={styles['news-content--sidebar']}>
+                <div
+                  className={styles['news-content--sidebar__state-indicator']}
+                >
+                  <div
+                    className={cx(
+                      styles['news-content--sidebar__state-indicator--sphere'],
+                      {
+                        [styles['online']]: this.state.isOnline
+                      }
+                    )}
+                  />
+                  <div
+                    className={
+                      styles['news-content--sidebar__state-indicator--text']
+                    }
+                  >
+                    {this.state.isOnline ? 'Online' : 'Offline'}
+                  </div>
+                </div>
                 <div
                   className={cx(
-                    styles['news-content--sidebar__state-indicator--sphere'],
-                    {
-                      [styles['online']]: this.state.online
-                    }
+                    styles['news-content--sidebar__preview'],
+                    styles['news-content--sidebar__section']
                   )}
-                />
-                <div
-                  className={
-                    styles['news-content--sidebar__state-indicator--text']
-                  }
                 >
-                  {this.state.isOnline ? 'Online' : 'Offline'}
+                  <a
+                    className={cx(
+                      commonStyles['button'],
+                      commonStyles['button--preview'],
+                      commonStyles['button--fullwidth']
+                    )}
+                    // onClick={this.saveContent}
+                    href={`/admin/preview/news/${this.state.newsId}`}
+                    target="blank"
+                  >
+                    <i className="far fa-eye" />
+                    Preview
+                  </a>
+                </div>
+                <div
+                  className={cx(
+                    styles['news-content--sidebar__publish'],
+                    styles['news-content--sidebar__section']
+                  )}
+                >
+                  <button
+                    className={cx(
+                      commonStyles['button'],
+                      {
+                        [commonStyles['button--update']]: !this.state.isOnline
+                      },
+                      {
+                        [commonStyles['button--offline']]: this.state.isOnline
+                      },
+                      commonStyles['button--fullwidth']
+                    )}
+                    onClick={this.toggleOnline}
+                  >
+                    {this.state.isOnline ? 'Offline nehmen' : 'Online stellen'}
+                  </button>
                 </div>
               </div>
-              <div
-                className={cx(
-                  styles['news-content--sidebar__preview'],
-                  styles['news-content--sidebar__section']
-                )}
-              >
-                <a
-                  className={cx(
-                    commonStyles['button'],
-                    commonStyles['button--preview'],
-                    commonStyles['button--fullwidth']
-                  )}
-                  // onClick={this.saveContent}
-                  href={`/admin/preview/news/${this.state.newsId}`}
-                  target="blank"
-                >
-                  <i className="far fa-eye" />
-                  Preview
-                </a>
-              </div>
-              <div
-                className={cx(
-                  styles['news-content--sidebar__publish'],
-                  styles['news-content--sidebar__section']
-                )}
-              >
-                <button
-                  className={cx(
-                    commonStyles['button'],
-                    commonStyles['button--update'],
-                    commonStyles['button--fullwidth']
-                  )}
-                  // onClick={this.saveContent}
-                >
-                  Jetzt Posten
-                </button>
-              </div>
-            </div>
+            )}
           </div>
         </div>
         <div>
@@ -377,15 +393,17 @@ class NewsContent extends Component {
             >
               Speichern
             </button>
-            <button
-              className={cx(
-                commonStyles['button'],
-                commonStyles['button--delete']
-              )}
-              onClick={this.confirmDelete.bind(this, this.deleteNews)}
-            >
-              Löschen
-            </button>
+            {this.props.news.newsItem && (
+              <button
+                className={cx(
+                  commonStyles['button'],
+                  commonStyles['button--delete']
+                )}
+                onClick={this.confirmDelete.bind(this, this.deleteNews)}
+              >
+                Löschen
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -400,5 +418,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { saveContent, getById, deleteById, clearSingle, getAll }
+  { saveContent, getById, toggleOnline, deleteById, clearSingle, getAll }
 )(NewsContent)

@@ -161,6 +161,32 @@ router.post(
   }
 )
 
+// @route   GET api/news/toggle_online/:id/:state
+// @desc    Toggle online news by id
+// @access  Private
+router.get(
+  '/toggle_online/:id/:state',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {}
+    console.log(req.params.id, req.params.state)
+    News.findOneAndUpdate(
+      { _id: req.params.id },
+      { isOnline: req.params.state },
+      { safe: true, new: true }
+    )
+      .then(async newsItem => {
+        console.log(newsItem)
+        res.json(newsItem)
+      })
+      .catch(err => {
+        console.log('nicht fund')
+        errors.news = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
 // @route   GET api/news/delete/:id
 // @desc    Delete news by id
 // @access  Private
