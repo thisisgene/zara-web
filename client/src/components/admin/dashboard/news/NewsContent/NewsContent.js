@@ -69,14 +69,14 @@ class NewsContent extends Component {
           )
         }
         const item = this.props.news.newsItem
-        console.log('date: ', item.dateUnformatted)
+        console.log('date: ', item.date)
         this.setState({
           blankItem: false,
 
           newsId: item._id,
           isOnline: item.isOnline,
           category: item.tag,
-          date: moment(item.dateUnformatted).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
+          date: moment(item.date).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
           titleDE: item.de.title && item.de.title,
           titleEN: item.en && item.en.title && item.en.title,
           shortDescriptionDE: RichTextEditor.createValueFromString(
@@ -107,7 +107,7 @@ class NewsContent extends Component {
             newsId: this.props.match.params.newsId,
             isOnline: false,
             category: 'news',
-            date: new Date(),
+            date: moment(new Date()).format('YYYY-MM-DD'),
             titleDE: '',
             titleEN: '',
             shortDescriptionDE: RichTextEditor.createEmptyValue(),

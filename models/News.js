@@ -5,11 +5,8 @@ const NewsSchema = new Schema({
   tag: {
     type: String
   },
-  dateUnformatted: {
-    type: Date
-  },
   date: {
-    type: String
+    type: Date
   },
   de: {
     title: {

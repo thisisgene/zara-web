@@ -64,7 +64,7 @@ router.post(
 
     const newNewsItem = new News({
       tag: newsFields.tag,
-      dateUnformatted: body.date,
+      date: body.date,
       handle: newsFields.handle,
       de: {
         title: newsFields.de.title,
@@ -135,7 +135,7 @@ router.post(
       {
         $set: {
           tag: body.tag,
-          dateUnformatted: body.date,
+          date: body.date,
           handle: newsFields.handle,
           de: {
             title: newsFields.de.title,

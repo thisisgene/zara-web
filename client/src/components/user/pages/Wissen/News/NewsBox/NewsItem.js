@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import moment from 'moment'
+import localization from 'moment/locale/de'
+
 import styles from '../News.module.sass'
 
 export default class NewsItem extends Component {
@@ -20,7 +23,12 @@ export default class NewsItem extends Component {
             {newsTags
               .filter(tag => tag.name === news.tag)
               .map(tag => tag[lang].singular)}{' '}
-            | {news[lang].date}
+            |{' '}
+            {news.date
+              ? moment(news.date)
+                  .locale(lang === 'de' ? 'de' : 'en', localization)
+                  .format('ll')
+              : news[lang].date}
           </div>
           <div
             className={styles['news-item--text__title']}
