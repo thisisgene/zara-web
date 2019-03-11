@@ -1,0 +1,30 @@
+.image-box
+  
+  width: calc(100vw - 400px)
+  // height: 100vh
+  top: 0
+  right: 150px
+  z-index: 10
+  background: rgba(0,0,0,.6)
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-auto-rows: calc((100vw - 400px) / 6)
+  grid-gap: 10px
+  &--item
+    width: 100%
+    cursor: pointer
+    position: relative
+    
+    &:hover
+      &:after
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        content: ''
+        background: rgba(black, .2)
+    img
+      width: calc((100vw - 400px) / 6)
+      height: calc((100vw - 400px) / 6)
+      object-fit: cover

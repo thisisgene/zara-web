@@ -42,8 +42,8 @@ class NewsBox extends Component {
   render() {
     const { content, news, tags, lang } = this.props
 
+    // Filter hardcoded news content
     let filteredContent = []
-
     if (this.state.activeTag !== '') {
       filteredContent = content.filter(filteredNews => {
         if (this.state.activeTag === filteredNews.tag) return true
@@ -52,6 +52,18 @@ class NewsBox extends Component {
       })
     } else {
       filteredContent = content
+    }
+
+    // Filter news content from DB
+    let filteredNews = []
+    if (this.state.activeTag !== '') {
+      filteredNews = news.filter(fNews => {
+        if (this.state.activeTag === fNews.tag) return true
+
+        return false
+      })
+    } else {
+      filteredNews = news
     }
 
     // TODO: Pagination if more than 10 News items
@@ -86,9 +98,9 @@ class NewsBox extends Component {
         </div>
         {/* ADD PAGEINATION! */}
         <div className={styles['news-item-container']}>
-          {news && lang && (
+          {filteredNews && lang && (
             <div>
-              {news
+              {filteredNews
                 .filter(news => news.isOnline && !news.isDeleted)
                 .map((news, index) => (
                   <NewsItem

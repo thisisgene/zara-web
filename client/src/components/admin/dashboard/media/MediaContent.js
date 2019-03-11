@@ -22,7 +22,7 @@ class MediaContent extends Component {
     if (prevProps !== this.props) {
       if (prevProps.match !== this.props.match) {
         this.setState({ category: this.props.match.params.category })
-        console.log(this.props.match.params.category)
+        this.props.getImagesByCategory(this.props.match.params.category)
       }
     }
   }
