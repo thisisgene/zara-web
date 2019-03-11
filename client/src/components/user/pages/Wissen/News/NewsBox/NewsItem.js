@@ -52,9 +52,20 @@ export default class NewsItem extends Component {
           />
 
           <div className={styles['news-item--text__link']}>
-            <Link to={`/${lang}/wissen/aktuelles/${news.tag}/${news.id}`}>
-              {news[lang].linkText}
-            </Link>
+            {news[lang].linkText ? (
+              <Link to={`/${lang}/wissen/aktuelles/${news.tag}/${news.id}`}>
+                {news[lang].linkText}
+              </Link>
+            ) : (
+              <Link
+                to={`/${lang}/wissen/aktuelles/${news.tag}/${news._id}/${
+                  // FIXME: Link routing
+                  news.hash
+                }`}
+              >
+                {lang === 'de' ? 'Weiterlesen' : 'Continue reading'}
+              </Link>
+            )}
           </div>
         </div>
       </div>
