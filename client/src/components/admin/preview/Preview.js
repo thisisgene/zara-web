@@ -37,11 +37,11 @@ class Preview extends Component {
     // }
 
     if (lang && newsItem) {
-      if (!newsItem.image) {
-        newsItem.imageSide = 'left'
-        newsItem.imageAlign = 'center'
-        newsItem.image = 'news/news_placeholder.png'
-      }
+      // if (!newsItem.image) {
+      //   newsItem.imageSide = 'left'
+      //   newsItem.imageAlign = 'center'
+      //   newsItem.image = 'news/news_placeholder.png'
+      // }
     }
     return (
       <div className={styles['preview']}>

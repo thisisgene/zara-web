@@ -137,6 +137,14 @@ router.post(
           tag: body.tag,
           date: body.date,
           handle: newsFields.handle,
+          titleImage: {
+            originalName: body.titleImage,
+            imageId: body.imageId,
+            category: body.imageCategory
+          },
+          imageSide: body.imageSide,
+          imageAlign: body.imageAlign,
+          size: body.size,
           de: {
             title: newsFields.de.title,
             shortDescription: newsFields.de.shortDescription,

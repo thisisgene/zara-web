@@ -7,23 +7,22 @@ import { uploadImages } from '../../../actions/imageActions'
 import commonStyles from '../common/Common.module.sass'
 
 class ImageUpload extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      files: [],
-      id: ''
+      files: []
     }
   }
 
   componentDidMount() {
     if (this.props) {
-      this.setState({ id: this.props.project._id })
+      // this.setState({ id: this.props.match.params.category })
     }
   }
 
   onDrop = files => {
     this.setState({ files: files })
-    this.props.uploadImages(files, this.state.id, 'project')
+    this.props.uploadImages(files, this.props.category)
   }
 
   onCancel = () => {
@@ -86,14 +85,13 @@ class ImageUpload extends Component {
 //   errors: PropTypes.object.isRequired
 //
 
-// const mapStateToProps = state => ({
-//   auth: state.auth,
-//   project: state.project,
-//   errors: state.errors
-// })
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+})
 
 export default connect(
-  null,
+  mapStateToProps,
   { uploadImages }
 )(ImageUpload)
 // export default ImageUpload

@@ -7,6 +7,7 @@ import styles from './HeroUnit.module.sass'
 class HeroUnit extends Component {
   render() {
     const { data, lang, special } = this.props
+    console.log(data)
     return (
       <div>
         {data && lang && (
@@ -22,14 +23,27 @@ class HeroUnit extends Component {
               }
             )}
           >
-            {data.imageSide === 'left' ? (
+            {data.imageSide && data.imageSide === 'left' ? (
               <div
-                className={cx(styles['hero-unit'], {
-                  [styles[data.imageAlign]]: data.imageAlign
-                })}
+                className={cx(
+                  styles['hero-unit'],
+                  styles['hero-unit--image-left'],
+                  {
+                    [styles[data.imageAlign]]: data.imageAlign
+                  }
+                )}
               >
                 <div className={styles['hero-unit--image']}>
-                  <img src={`/assets/img/${data.image}`} alt={data.image} />
+                  {data.titleImage ? (
+                    <img
+                      src={`/assets/media/${data.titleImage.category}/${
+                        data.titleImage.originalName
+                      }`}
+                      alt={data.titleImage.originalName}
+                    />
+                  ) : (
+                    <img src={`/assets/img/${data.image}`} alt={data.image} />
+                  )}
                 </div>
                 <div className={styles['hero-unit--text']}>
                   <div
@@ -50,7 +64,12 @@ class HeroUnit extends Component {
                 </div>
               </div>
             ) : (
-              <div className={styles['hero-unit']}>
+              <div
+                className={cx(
+                  styles['hero-unit'],
+                  styles['hero-unit--image-right']
+                )}
+              >
                 <div className={styles['hero-unit--text']}>
                   <div className={styles['hero-unit--text__title']}>
                     {data[lang].title}
@@ -60,7 +79,16 @@ class HeroUnit extends Component {
                     dangerouslySetInnerHTML={{ __html: data[lang].text }}
                   />
                 </div>
-                {data.image && (
+                {data.titleImage ? (
+                  <div className={styles['hero-unit--image']}>
+                    <img
+                      src={`/assets/media/${data.titleImage.category}/${
+                        data.titleImage.originalName
+                      }`}
+                      alt={data.titleImage.originalName}
+                    />
+                  </div>
+                ) : (
                   <div className={styles['hero-unit--image']}>
                     <img src={`/assets/img/${data.image}`} alt={data.image} />
                   </div>

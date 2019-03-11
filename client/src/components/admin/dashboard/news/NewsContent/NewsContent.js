@@ -43,6 +43,12 @@ class NewsContent extends Component {
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
       descriptionDE: RichTextEditor.createEmptyValue(),
       descriptionEN: RichTextEditor.createEmptyValue(),
+      titleImage: '',
+      imageId: '',
+      imageCategory: '',
+      imageSide: '',
+      imageAlign: '',
+      bigImage: false,
       errors: {},
       imageListOpen: false
     }
@@ -51,10 +57,6 @@ class NewsContent extends Component {
   componentDidMount() {
     this.props.match.params.newsId !== 'neu' &&
       this.props.getById(this.props.match.params.newsId, 'news')
-    // RichTextEditor.createValueFromString(
-    //   news.description,
-    //   'html'
-    // )
   }
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
@@ -98,7 +100,13 @@ class NewsContent extends Component {
           ),
           descriptionEN:
             item.en &&
-            RichTextEditor.createValueFromString(item.en.description, 'html')
+            RichTextEditor.createValueFromString(item.en.description, 'html'),
+          titleImage: item.titleImage && item.titleImage.originalName,
+          imageId: item.titleImage && item.titleImage.id,
+          imageCategory: item.titleImage && item.titleImage.category,
+          imageSide: item.imageSide,
+          imageAlign: item.imageAlign,
+          size: item.size
         })
       }
       if (prevProps.match.params.newsId !== this.props.match.params.newsId) {
@@ -116,7 +124,13 @@ class NewsContent extends Component {
             shortDescriptionDE: RichTextEditor.createEmptyValue(),
             shortDescriptionEN: RichTextEditor.createEmptyValue(),
             descriptionDE: RichTextEditor.createEmptyValue(),
-            descriptionEN: RichTextEditor.createEmptyValue()
+            descriptionEN: RichTextEditor.createEmptyValue(),
+            titleImage: '',
+            imageId: '',
+            imageCategory: '',
+            imageSide: '',
+            imageAlign: '',
+            size: ''
           })
         } else {
           this.props.getById(this.props.match.params.newsId, 'news')
@@ -169,7 +183,13 @@ class NewsContent extends Component {
       shortDescriptionDE: shortDescDE.toString('html'),
       shortDescriptionEN: shortDescEN.toString('html'),
       descriptionDE: descDE.toString('html'),
-      descriptionEN: descEN.toString('html')
+      descriptionEN: descEN.toString('html'),
+      titleImage: this.state.titleImage,
+      imageId: this.state.imageId,
+      imageCategory: this.state.imageCategory,
+      imageSide: this.state.imageSide,
+      imageAlign: this.state.imageAlign,
+      size: this.state.size
     }
     this.props.saveContent(saveData)
     // console.log(saveData)
@@ -197,6 +217,32 @@ class NewsContent extends Component {
           label: 'Abbrechen'
         }
       ]
+    })
+  }
+
+  updateTitleImage = (originalName, id, category) => {
+    this.setState({
+      titleImage: originalName,
+      imageId: id,
+      imageCategory: category,
+      imageListOpen: false
+    })
+  }
+
+  onImageSideChange = e => {
+    this.setState({
+      imageSide: e.target.checked ? 'left' : 'right'
+    })
+  }
+
+  onImageAlignChange = e => {
+    this.setState({
+      imageAlign: e.target.checked ? 'center' : ''
+    })
+  }
+  onImageBigChange = e => {
+    this.setState({
+      size: e.target.checked ? 'big-image' : ''
     })
   }
 
@@ -386,28 +432,62 @@ class NewsContent extends Component {
                   </button>
                 </div>
                 <hr />
-                <div className={styles['image-box']}>
-                  <button
-                    className={cx(
-                      commonStyles['button'],
-                      // {
-                      //   [commonStyles['button--update']]: !this.state.isOnline
-                      // },
-                      // {
-                      //   [commonStyles['button--offline']]: this.state.isOnline
-                      // },
-                      commonStyles['button--fullwidth']
-                    )}
+                <div className={styles['title-image']}>
+                  <div
+                    className={cx(styles['title-image--avatar'])}
                     onClick={this.onImageOpen}
                   >
-                    Bilder
-                  </button>
+                    {this.state.titleImage ? (
+                      <img
+                        src={`/assets/media/${this.state.imageCategory}/${
+                          this.state.titleImage
+                        }`}
+                        alt=""
+                      />
+                    ) : (
+                      <div>
+                        Titelbild
+                        <br />
+                        zum auswählen klicken
+                      </div>
+                    )}
+                  </div>
                   {this.state.imageListOpen && (
                     <ContentImageList
-                      id={this.state.newsId}
+                      updateTitleImage={this.updateTitleImage}
                       category={'news'}
                     />
                   )}
+                </div>
+                <div>
+                  <input
+                    id="image-side"
+                    type="checkbox"
+                    onClick={this.onImageSideChange}
+                    checked={this.state.imageSide === 'left'}
+                    name="imageSide"
+                  />
+                  <label htmlFor="image-side">Bild Links</label>
+                </div>
+                <div>
+                  <input
+                    id="image-big"
+                    type="checkbox"
+                    onClick={this.onImageBigChange}
+                    checked={this.state.size === 'big-image'}
+                    name="imageBig"
+                  />
+                  <label htmlFor="image-big">Großes Bild</label>
+                </div>
+                <div>
+                  <input
+                    id="image-align"
+                    type="checkbox"
+                    onClick={this.onImageAlignChange}
+                    checked={this.state.imageAlign === 'center'}
+                    name="imageAlign"
+                  />
+                  <label htmlFor="image-align">Text vertikal mittig</label>
                 </div>
               </div>
             )}

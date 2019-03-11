@@ -4,6 +4,7 @@
   margin: 8rem auto
   width: 70vw
   max-width: 1080px
+  
   &.narrow
     margin: 8rem auto 3rem
     img
@@ -20,6 +21,12 @@
       justify-content: center
       align-items: center
       // padding-right: 2rem
+      &--image-left
+        .hero-unit--text
+          text-align: left
+      &--image-right
+        .hero-unit--text
+          text-align: right
       &--image
         flex: 3
         width: auto !important
@@ -28,11 +35,16 @@
 
       &--text
         flex: 2
-        text-align: right
+        
   .hero-unit
     display: flex
     justify-content: center
-    
+    &--image-left
+      .hero-unit--text
+        text-align: left
+    &--image-right
+      .hero-unit--text
+        text-align: right
     &.center
       align-items: center
     &--image

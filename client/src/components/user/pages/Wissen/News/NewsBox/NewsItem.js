@@ -11,13 +11,25 @@ export default class NewsItem extends Component {
     const { news, lang, newsTags } = this.props
     return (
       <div className={styles['news-item']}>
-        <div className={styles['news-item--image']}>
-          {news.image ? (
-            <img src={`/assets/img/${news.image}`} alt="" />
-          ) : (
-            <img src="/assets/img/news/news_placeholder.png" alt="" />
-          )}
-        </div>
+        {news.titleImage ? (
+          <div className={styles['news-item--image']}>
+            <img
+              src={`/assets/media/${news.titleImage.category}/${
+                news.titleImage.originalName
+              }`}
+              alt={news.titleImage.originalName}
+            />
+          </div>
+        ) : (
+          <div className={styles['news-item--image']}>
+            {news.image ? (
+              <img src={`/assets/img/${news.image}`} alt="" />
+            ) : (
+              <img src="/assets/img/news/news_placeholder.png" alt="" />
+            )}
+          </div>
+        )}
+
         <div className={styles['news-item--text']}>
           <div className={styles['news-item--text__tagline']}>
             {newsTags

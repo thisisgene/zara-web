@@ -44,7 +44,14 @@ const NewsSchema = new Schema({
       type: Date
     }
   },
-
+  titleImage: {
+    originalName: { type: String },
+    imageId: { type: String },
+    category: { type: String }
+  },
+  imageSide: { type: String },
+  imageAlign: { type: String },
+  size: { type: String },
   images: [
     {
       originalName: {
