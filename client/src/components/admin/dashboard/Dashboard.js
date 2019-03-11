@@ -5,6 +5,7 @@ import PrivateRoute from '../common/PrivateRoute'
 
 import CategoryNav from './CategoryNav'
 import News from './news/News'
+import Media from './media/Media'
 
 import styles from './Dashboard.module.sass'
 
@@ -17,6 +18,7 @@ class Dashboard extends Component {
         <div className={styles['dashboard-content']}>
           {/* <PrivateRoute path="/admin/dashboard/projects" component={Projects} /> */}
           <PrivateRoute path="/admin/dashboard/news" component={News} />
+          <PrivateRoute path="/admin/dashboard/media" component={Media} />
         </div>
       </div>
     )

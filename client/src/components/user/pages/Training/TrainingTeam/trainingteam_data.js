@@ -131,7 +131,7 @@ export const teamData = {
       },
       {
         field: 'training',
-        // image: 'training/resized/johannaurban.jpeg',
+        image: 'training/resized/Michael Sigmund.jpg',
         name: 'Michael Sigmund',
         text:
           'ist Umwelt-Stadtrat der Gemeinde Pressbaum und hat als dieser – sowie auch im Rahmen seiner früheren Tätigkeit – Workshops zu Umwelt- und Klimaschutz-Themen in Schulen und Jugendzentren abgehalten. Durch sein Fachwissen in den Bereichen IT und Social Media ist er bei ZARATraining spezialisiert auf CyberHate, also Rassismus und Diskriminierung im Internet.'
