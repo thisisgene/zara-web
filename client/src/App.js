@@ -42,12 +42,13 @@ class App extends Component {
         <LocalizeProvider store={store}>
           <Router>
             <div className="App">
-              <div>
-                <Route path="/admin" component={Admin} />
-              </div>
-              <div className="User">
-                <Route path="/" component={User} />
-              </div>
+              <Switch>
+                <Route exact path="/admin/*" component={Admin} />
+
+                <div className="User">
+                  <Route path="/*" component={User} />
+                </div>
+              </Switch>
             </div>
           </Router>
         </LocalizeProvider>

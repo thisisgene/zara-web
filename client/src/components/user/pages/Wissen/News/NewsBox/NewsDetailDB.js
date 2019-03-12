@@ -44,8 +44,8 @@ class Preview extends Component {
           originalName: 'news_placeholder.png',
           category: 'news'
         }
-        newsItem.imageAlign = 'center'
-        newsItem.imageSide = 'left'
+        // newsItem.imageAlign = 'center'
+        // newsItem.imageSide = 'left'
       }
     }
     return (

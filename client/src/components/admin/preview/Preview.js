@@ -37,11 +37,14 @@ class Preview extends Component {
     // }
 
     if (lang && newsItem) {
-      // if (!newsItem.image) {
-      //   newsItem.imageSide = 'left'
-      //   newsItem.imageAlign = 'center'
-      //   newsItem.image = 'news/news_placeholder.png'
-      // }
+      if (!newsItem.titleImage || !newsItem.titleImage.originalName) {
+        newsItem.titleImage = {
+          originalName: 'news_placeholder.png',
+          category: 'news'
+        }
+        // newsItem.imageAlign = 'center'
+        // newsItem.imageSide = 'left'
+      }
     }
     return (
       <div className={styles['preview']}>

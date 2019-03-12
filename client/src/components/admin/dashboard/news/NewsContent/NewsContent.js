@@ -522,6 +522,7 @@ class NewsContent extends Component {
                       type="checkbox"
                       onClick={this.onImageAlignChange}
                       checked={this.state.imageAlign === 'center'}
+                      disabled={this.state.size === 'big-image'}
                       name="imageAlign"
                     />
                     <label htmlFor="image-align">Text vertikal mittig</label>

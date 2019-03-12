@@ -23,7 +23,7 @@ class HeroUnit extends Component {
               }
             )}
           >
-            {data.imageSide && data.imageSide === 'left' ? (
+            {data.imageSide === 'left' ? (
               <div
                 className={cx(
                   styles['hero-unit'],
@@ -42,7 +42,9 @@ class HeroUnit extends Component {
                       alt={data.titleImage.originalName}
                     />
                   ) : (
-                    <img src={`/assets/img/${data.image}`} alt={data.image} />
+                    data.image && (
+                      <img src={`/assets/img/${data.image}`} alt={data.image} />
+                    )
                   )}
                 </div>
                 <div className={styles['hero-unit--text']}>
@@ -67,7 +69,14 @@ class HeroUnit extends Component {
               <div
                 className={cx(
                   styles['hero-unit'],
-                  styles['hero-unit--image-right']
+                  {
+                    [styles[data.imageAlign]]: data.imageAlign
+                  },
+                  {
+                    [styles['hero-unit--image-right']]:
+                      data.image ||
+                      (data.titleImage && data.titleImage.originalName)
+                  }
                 )}
               >
                 <div className={styles['hero-unit--text']}>
@@ -89,9 +98,11 @@ class HeroUnit extends Component {
                     />
                   </div>
                 ) : (
-                  <div className={styles['hero-unit--image']}>
-                    <img src={`/assets/img/${data.image}`} alt={data.image} />
-                  </div>
+                  data.image && (
+                    <div className={styles['hero-unit--image']}>
+                      <img src={`/assets/img/${data.image}`} alt={data.image} />
+                    </div>
+                  )
                 )}
               </div>
             )}
