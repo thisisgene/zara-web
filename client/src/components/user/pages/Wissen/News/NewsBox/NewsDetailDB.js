@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
 
+import MetaTags from 'react-meta-tags'
+
 import { getById } from '../../../../../../actions/adminActions'
 
 import HeroUnit from '../../../../dashboard/HeroUnit/HeroUnit'
@@ -50,20 +52,36 @@ class Preview extends Component {
     }
     return (
       <div>
-        {lang && (
-          <div className={styles['news-detail']}>
-            <div>
-              {lang && newsItem && (
-                <div className={styles['news-detail']}>
-                  <HeroUnit data={newsItem} lang={lang} />
-                  <OneLineAlert content={oneLineAlert} lang={lang} />
-                  <div
-                    className={styles['news-detail--text']}
-                    dangerouslySetInnerHTML={{
-                      __html: newsItem[lang].description
-                    }}
-                  />
-                  {/* {newsItem[lang].videos &&
+        {lang && newsItem && (
+          <div>
+            <MetaTags>
+              <title>ZARA | {newsItem[lang].title}</title>
+              <meta
+                name="description"
+                content={newsItem[lang].shortDescription}
+              />
+              <meta
+                property="og:title"
+                content={`ZARA | ${newsItem[lang].title}`}
+              />
+              <meta
+                property="og:image"
+                content={`/assets/media/${newsItem.titleImage.category}/${
+                  newsItem.titleImage.originalName
+                }`}
+              />
+            </MetaTags>
+            <div className={styles['news-detail']}>
+              <div className={styles['news-detail']}>
+                <HeroUnit data={newsItem} lang={lang} />
+                <OneLineAlert content={oneLineAlert} lang={lang} />
+                <div
+                  className={styles['news-detail--text']}
+                  dangerouslySetInnerHTML={{
+                    __html: newsItem[lang].description
+                  }}
+                />
+                {/* {newsItem[lang].videos &&
               newsItem[lang].videos.map(video => (
                 <div className={styles['news-detail--video']}>
                   <h2>{video.vTitle}</h2>
@@ -73,27 +91,26 @@ class Preview extends Component {
                   <div dangerouslySetInnerHTML={{ __html: video.text }} />
                 </div>
               ))} */}
-                  {newsItem[lang].bottomText && (
-                    <div
-                      className={styles['news-detail--bottom-text']}
-                      dangerouslySetInnerHTML={{
-                        __html: newsItem[lang].bottomText
-                      }}
-                    />
-                  )}
-                  {newsItem.bottomImages && (
-                    <div className={styles['news-detail--bottom-images']}>
-                      {newsItem.bottomImages.map(image => (
-                        <img
-                          src={`/assets/img/${image.image}`}
-                          alt="{image.image}"
-                        />
-                      ))}
-                    </div>
-                  )}
-                  <CardCollectionGridObject cardObject={cardGrid} lang={lang} />
-                </div>
-              )}
+                {newsItem[lang].bottomText && (
+                  <div
+                    className={styles['news-detail--bottom-text']}
+                    dangerouslySetInnerHTML={{
+                      __html: newsItem[lang].bottomText
+                    }}
+                  />
+                )}
+                {newsItem.bottomImages && (
+                  <div className={styles['news-detail--bottom-images']}>
+                    {newsItem.bottomImages.map(image => (
+                      <img
+                        src={`/assets/img/${image.image}`}
+                        alt="{image.image}"
+                      />
+                    ))}
+                  </div>
+                )}
+                <CardCollectionGridObject cardObject={cardGrid} lang={lang} />
+              </div>
             </div>
           </div>
         )}
