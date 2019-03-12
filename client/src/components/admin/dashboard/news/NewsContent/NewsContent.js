@@ -396,47 +396,61 @@ class NewsContent extends Component {
                     {this.state.isOnline ? 'Online' : 'Offline'}
                   </div>
                 </div>
-                <div
-                  className={cx(
-                    styles['news-content--sidebar__preview'],
-                    styles['news-content--sidebar__section']
-                  )}
-                >
-                  <a
-                    className={cx(
-                      commonStyles['button'],
-                      commonStyles['button--preview'],
-                      commonStyles['button--fullwidth']
-                    )}
-                    // onClick={this.saveContent}
-                    href={`/admin/preview/news/${this.state.newsId}`}
-                    target="blank"
-                  >
-                    <i className="far fa-eye" />
-                    Preview
-                  </a>
-                </div>
-                <div
-                  className={cx(
-                    styles['news-content--sidebar__publish'],
-                    styles['news-content--sidebar__section']
-                  )}
-                >
+                <div className={styles['news-content--sidebar--buttons']}>
                   <button
                     className={cx(
                       commonStyles['button'],
-                      {
-                        [commonStyles['button--update']]: !this.state.isOnline
-                      },
-                      {
-                        [commonStyles['button--offline']]: this.state.isOnline
-                      },
-                      commonStyles['button--fullwidth']
+                      commonStyles['button--save'],
+                      styles['button--save']
                     )}
-                    onClick={this.toggleOnline}
+                    onClick={this.saveContent}
                   >
-                    {this.state.isOnline ? 'Offline nehmen' : 'Online stellen'}
+                    Speichern
                   </button>
+                </div>
+                <div className={styles['news-content--sidebar__section']}>
+                  <div
+                    className={
+                      styles['news-content--sidebar__section--preview']
+                    }
+                  >
+                    <a
+                      className={cx(
+                        commonStyles['button'],
+                        commonStyles['button--preview'],
+                        commonStyles['button--fullwidth']
+                      )}
+                      // onClick={this.saveContent}
+                      href={`/admin/preview/news/${this.state.newsId}`}
+                      target="blank"
+                    >
+                      <i className="far fa-eye" />
+                      <span>Preview</span>
+                    </a>
+                  </div>
+                  <div
+                    className={
+                      styles['news-content--sidebar__section--publish']
+                    }
+                  >
+                    <button
+                      className={cx(
+                        commonStyles['button'],
+                        {
+                          [commonStyles['button--update']]: !this.state.isOnline
+                        },
+                        {
+                          [commonStyles['button--offline']]: this.state.isOnline
+                        },
+                        commonStyles['button--fullwidth']
+                      )}
+                      onClick={this.toggleOnline}
+                    >
+                      {this.state.isOnline
+                        ? 'Offline nehmen'
+                        : 'Online stellen'}
+                    </button>
+                  </div>
                 </div>
                 <div className={styles['news-content--sidebar__links']}>
                   <p>Link</p>
@@ -530,16 +544,6 @@ class NewsContent extends Component {
                 </div>
                 <hr />
                 <div className={styles['news-content--sidebar--buttons']}>
-                  <button
-                    className={cx(
-                      commonStyles['button'],
-                      commonStyles['button--save'],
-                      styles['button--save']
-                    )}
-                    onClick={this.saveContent}
-                  >
-                    Speichern
-                  </button>
                   {this.props.news.newsItem && (
                     <button
                       className={cx(
@@ -548,7 +552,7 @@ class NewsContent extends Component {
                       )}
                       onClick={this.confirmDelete.bind(this, this.deleteNews)}
                     >
-                      Löschen
+                      Beitrag Löschen
                     </button>
                   )}
                 </div>

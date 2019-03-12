@@ -1,5 +1,6 @@
 .news-wrapper
   width: 100%
+  
 .news-content-container
   width: 100%
   flex: 2
@@ -82,7 +83,19 @@
       width: 80%
 
     &__section
-      margin-top: 1rem
+      margin: .8rem auto
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &--preview
+        a
+          display: inline-block
+          width: 100%
+          text-decoration: none
+        span
+          margin-left: .3rem
+
     &__state-indicator
       display: flex
       justify-content: center
@@ -112,7 +125,7 @@
           line-height: 1
           
     .title-image
-      width: 124px
+      width: 144px
       height: 124px
       border: 2px solid #222
       box-sizing: border-box
@@ -125,14 +138,15 @@
         width: 100%
         
         img
-          width: 120px
+          width: 140px
           height: 120px
           object-fit: cover
     &__image-checkbox
+      margin-top: .3rem
       &--group
         display: flex
         align-items: baseline
-        justify-content: center
+        justify-content: flex-start
         input:disabled ~ label
           color: #aaa
         label
@@ -144,7 +158,8 @@
       align-items: center
       justify-content: space-between
       width: 100%
+      margin: 1rem auto 0
       
       .button--save
-          margin: 0rem auto 1rem
           width: 100% !important
+      .button--delete
