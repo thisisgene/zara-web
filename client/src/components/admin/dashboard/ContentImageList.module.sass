@@ -1,14 +1,23 @@
+$sidebarwidth: 250px
+  
 .content-image-list
   position: absolute
-  width: calc(100vw - 150px)
+  width: calc(100vw - $sidebarwidth)
   height: 100vh
   top: 0
-  right: 150px
+  right: $sidebarwidth
   z-index: 10
-  background: rgba(0,0,0,.6)
+  background: rgba(0,0,0,.8)
   display: grid
+  grid-gap: 1px
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
-  grid-auto-rows: calc((100vw - 150px) / 6)
+  grid-auto-rows: calc((100vw - #{$sidebarwidth}) / 6)
+  overflow-y: auto
+  &--null
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
   &--item
     width: 100%
     cursor: pointer
@@ -24,6 +33,6 @@
         content: ''
         background: rgba(black, .2)
     img
-      width: calc((100vw - 150px) / 6)
-      height: calc((100vw - 150px) / 6)
+      width: calc((100vw - #{$sidebarwidth}) / 6)
+      height: calc((100vw - #{$sidebarwidth}) / 6)
       object-fit: cover

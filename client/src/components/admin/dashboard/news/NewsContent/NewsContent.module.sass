@@ -63,12 +63,22 @@
         border: none
         
   &--sidebar
-    width: 120px
-    text-align: center
+    width: 220px
+    display: flex
+    flex-direction: column
+    align-items: center
     padding-left: .3rem
     margin-left: .3rem
-    
+    text-align: center
     border-left: 1px solid #444
+
+    hr
+      margin: 2rem auto
+      border: none
+      height: 1px
+      background: #666
+      width: 80%
+
     &__section
       margin-top: 1rem
     &__state-indicator
@@ -94,17 +104,29 @@
       justify-content: center
       align-items: center
       color: #111
+      cursor: pointer
       &--avatar
         width: 100%
+        
         img
           width: 120px
           height: 120px
           object-fit: cover
-  &--buttons
-    padding: .2rem 114px 0 .3rem
-    display: flex
-    justify-content: space-between
-    width: 100%
-    button
-      margin-right: 1rem
-  
+    &__image-checkbox
+      &--group
+        display: flex
+        align-items: baseline
+        justify-content: center
+        label
+          margin-left: .3rem
+    &--buttons
+      // padding: .2rem 114px 0 .3rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      
+      .button--save
+          margin: 0rem auto 3rem
+          width: 100% !important

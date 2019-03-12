@@ -15,10 +15,18 @@ class ContentImageList extends Component {
   onImageClick = image => {
     this.props.updateTitleImage(image.originalName, image._id, image.category)
   }
-
+  onNullClick = () => {
+    this.props.updateTitleImage(null, null, null)
+  }
   render() {
     return (
       <div className={styles['content-image-list']}>
+        <div
+          className={styles['content-image-list--null']}
+          onClick={this.onNullClick}
+        >
+          Kein Bild wählen
+        </div>
         {this.props.media.images &&
           this.props.media.images.map(image => (
             <div

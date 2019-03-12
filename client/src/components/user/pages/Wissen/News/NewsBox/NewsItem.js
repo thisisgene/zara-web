@@ -11,7 +11,7 @@ export default class NewsItem extends Component {
     const { news, lang, newsTags } = this.props
     return (
       <div className={styles['news-item']}>
-        {news.titleImage ? (
+        {news.titleImage && news.titleImage.originalName ? (
           <div className={styles['news-item--image']}>
             <img
               src={`/assets/media/${news.titleImage.category}/${
@@ -60,11 +60,11 @@ export default class NewsItem extends Component {
               <div>
                 {news[lang].description !== '<p><br></p>' && (
                   <Link
-                    to={`/${lang}/wissen/aktuelles/${news.tag}/${news._id}/${
+                    to={`/${lang}/wissen/aktuelles/n/${news.tag}/${news._id}/${
                       news.handle
                     }`}
                   >
-                    {lang === 'de' ? 'Weiterlesen' : 'Continue reading'}
+                    {lang === 'de' ? 'weiterlesen' : 'Continue reading'}
                   </Link>
                 )}
               </div>

@@ -75,6 +75,7 @@ import ZaraPublikationen from './pages/Wissen/Publikationen/ZaraPublikationen'
 
 import PageNotFound from './pages/Other/PageNotFound'
 import JobDetail from './pages/Zara/WerWirSind/Jobs/JobDetail'
+import NewsDetailDB from './pages/Wissen/News/NewsBox/NewsDetailDB'
 class User extends Component {
   constructor(props) {
     super(props)
@@ -263,6 +264,17 @@ class User extends Component {
                 path="/:lang/wissen/aktuelles/:category/:newsId"
                 component={NewsDetail}
               />
+              <Route // News Detail from DB
+                exact
+                path="/:lang/wissen/aktuelles/n/:category/:newsId/:newsTitle"
+                component={NewsDetailDB}
+              />
+              <Route // Short Link for News Detail from DB
+                exact
+                path="/:lang/n/:newsId"
+                component={NewsDetailDB}
+              />
+
               <Route
                 exact
                 path="/:lang/wissen/eigene_rechte_kennen"

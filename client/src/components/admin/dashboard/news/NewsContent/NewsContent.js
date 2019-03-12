@@ -228,7 +228,11 @@ class NewsContent extends Component {
       imageListOpen: false
     })
   }
-
+  closeImageList = () => {
+    this.setState({
+      imageListOpen: false
+    })
+  }
   onImageSideChange = e => {
     this.setState({
       imageSide: e.target.checked ? 'left' : 'right'
@@ -432,11 +436,11 @@ class NewsContent extends Component {
                   </button>
                 </div>
                 <hr />
-                <div className={styles['title-image']}>
-                  <div
-                    className={cx(styles['title-image--avatar'])}
-                    onClick={this.onImageOpen}
-                  >
+                <div
+                  className={styles['title-image']}
+                  onClick={this.onImageOpen}
+                >
+                  <div className={cx(styles['title-image--avatar'])}>
                     {this.state.titleImage ? (
                       <img
                         src={`/assets/media/${this.state.imageCategory}/${
@@ -455,65 +459,84 @@ class NewsContent extends Component {
                   {this.state.imageListOpen && (
                     <ContentImageList
                       updateTitleImage={this.updateTitleImage}
+                      closeImageList={this.closeImageList}
                       category={'news'}
                     />
                   )}
                 </div>
-                <div>
-                  <input
-                    id="image-side"
-                    type="checkbox"
-                    onClick={this.onImageSideChange}
-                    checked={this.state.imageSide === 'left'}
-                    name="imageSide"
-                  />
-                  <label htmlFor="image-side">Bild Links</label>
+                <div
+                  className={styles['news-content--sidebar__image-checkbox']}
+                >
+                  <div
+                    className={
+                      styles['news-content--sidebar__image-checkbox--group']
+                    }
+                  >
+                    <div>
+                      <input
+                        id="image-side"
+                        type="checkbox"
+                        onClick={this.onImageSideChange}
+                        checked={this.state.imageSide === 'left'}
+                        name="imageSide"
+                      />
+                      <label htmlFor="image-side">Bild Links</label>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      styles['news-content--sidebar__image-checkbox--group']
+                    }
+                  >
+                    <input
+                      id="image-big"
+                      type="checkbox"
+                      onClick={this.onImageBigChange}
+                      checked={this.state.size === 'big-image'}
+                      name="imageBig"
+                    />
+                    <label htmlFor="image-big">Großes Bild</label>
+                  </div>
+                  <div
+                    className={
+                      styles['news-content--sidebar__image-checkbox--group']
+                    }
+                  >
+                    <input
+                      id="image-align"
+                      type="checkbox"
+                      onClick={this.onImageAlignChange}
+                      checked={this.state.imageAlign === 'center'}
+                      name="imageAlign"
+                    />
+                    <label htmlFor="image-align">Text vertikal mittig</label>
+                  </div>
                 </div>
-                <div>
-                  <input
-                    id="image-big"
-                    type="checkbox"
-                    onClick={this.onImageBigChange}
-                    checked={this.state.size === 'big-image'}
-                    name="imageBig"
-                  />
-                  <label htmlFor="image-big">Großes Bild</label>
-                </div>
-                <div>
-                  <input
-                    id="image-align"
-                    type="checkbox"
-                    onClick={this.onImageAlignChange}
-                    checked={this.state.imageAlign === 'center'}
-                    name="imageAlign"
-                  />
-                  <label htmlFor="image-align">Text vertikal mittig</label>
+                <hr />
+                <div className={styles['news-content--sidebar--buttons']}>
+                  <button
+                    className={cx(
+                      commonStyles['button'],
+                      commonStyles['button--save'],
+                      styles['button--save']
+                    )}
+                    onClick={this.saveContent}
+                  >
+                    Speichern
+                  </button>
+                  {this.props.news.newsItem && (
+                    <button
+                      className={cx(
+                        commonStyles['button'],
+                        commonStyles['button--delete']
+                      )}
+                      onClick={this.confirmDelete.bind(this, this.deleteNews)}
+                    >
+                      Löschen
+                    </button>
+                  )}
                 </div>
               </div>
-            )}
-          </div>
-        </div>
-        <div>
-          <div className={styles['news-content--buttons']}>
-            <button
-              className={cx(
-                commonStyles['button'],
-                commonStyles['button--save']
-              )}
-              onClick={this.saveContent}
-            >
-              Speichern
-            </button>
-            {this.props.news.newsItem && (
-              <button
-                className={cx(
-                  commonStyles['button'],
-                  commonStyles['button--delete']
-                )}
-                onClick={this.confirmDelete.bind(this, this.deleteNews)}
-              >
-                Löschen
-              </button>
             )}
           </div>
         </div>
