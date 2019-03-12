@@ -57,14 +57,17 @@ export default class NewsItem extends Component {
                 {news[lang].linkText}
               </Link>
             ) : (
-              <Link
-                to={`/${lang}/wissen/aktuelles/${news.tag}/${news._id}/${
-                  // FIXME: Link routing
-                  news.hash
-                }`}
-              >
-                {lang === 'de' ? 'Weiterlesen' : 'Continue reading'}
-              </Link>
+              <div>
+                {news[lang].description !== '<p><br></p>' && (
+                  <Link
+                    to={`/${lang}/wissen/aktuelles/${news.tag}/${news._id}/${
+                      news.handle
+                    }`}
+                  >
+                    {lang === 'de' ? 'Weiterlesen' : 'Continue reading'}
+                  </Link>
+                )}
+              </div>
             )}
           </div>
         </div>
