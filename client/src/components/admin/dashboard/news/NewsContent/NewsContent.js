@@ -35,6 +35,7 @@ class NewsContent extends Component {
       isOnline: false,
       blankItem: true,
       newsId: props.match.params.newsId,
+      handle: '',
       category: 'news',
       date: moment(new Date()).format('YYYY-MM-DD'),
       titleDE: '',
@@ -79,6 +80,7 @@ class NewsContent extends Component {
           blankItem: false,
 
           newsId: item._id,
+          handle: item.handle,
           isOnline: item.isOnline,
           category: item.tag,
           date: moment(item.date).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
@@ -116,6 +118,7 @@ class NewsContent extends Component {
           this.setState({
             blankItem: true,
             newsId: this.props.match.params.newsId,
+            handle: '',
             isOnline: false,
             category: 'news',
             date: moment(new Date()).format('YYYY-MM-DD'),
@@ -434,6 +437,18 @@ class NewsContent extends Component {
                   >
                     {this.state.isOnline ? 'Offline nehmen' : 'Online stellen'}
                   </button>
+                </div>
+                <div className={styles['news-content--sidebar__links']}>
+                  <p>Link</p>
+                  <div className={styles['news-content--sidebar__links--box']}>
+                    <p>{`https://zara.or.at/de/wissen/aktuelles/n/${
+                      this.state.category
+                    }/${this.state.newsId}/${this.state.handle}`}</p>
+                  </div>
+                  <p>Shortlink</p>
+                  <div className={styles['news-content--sidebar__links--box']}>
+                    <p>{`https://zara.or.at/de/n/${this.state.newsId}`}</p>
+                  </div>
                 </div>
                 <hr />
                 <div
