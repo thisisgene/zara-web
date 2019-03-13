@@ -86,6 +86,22 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
+  app.get('/', (req, res) => {
+    const filePath = path.resolve(__dirname, './build', 'index.html')
+
+    // read in the index.html file
+    fs.readFile(filePath, 'utf8', function(err, data) {
+      if (err) {
+        return console.log(err)
+      }
+
+      // replace the special strings with server generated strings
+      data = data.replace(/\$OG_TITLE/g, 'Home Page')
+      data = data.replace(/\$OG_DESCRIPTION/g, 'Home page description')
+      result = data.replace(/\$OG_IMAGE/g, 'https://i.imgur.com/V7irMl8.png')
+      response.send(result)
+    })
+  })
 }
 const port = process.env.PORT || 5000
 
