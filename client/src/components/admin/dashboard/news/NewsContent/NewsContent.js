@@ -560,6 +560,20 @@ class NewsContent extends Component {
             )}
           </div>
         </div>
+        <div>
+          {this.props.match.params.newsId === 'neu' && (
+            <button
+              className={cx(
+                commonStyles['button'],
+                commonStyles['button--save'],
+                styles['button--save']
+              )}
+              onClick={this.saveContent}
+            >
+              Speichern
+            </button>
+          )}
+        </div>
       </div>
     )
   }

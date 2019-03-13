@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
+import MetaTags from 'react-meta-tags'
+
 import { oneLineAlert, cardGrid } from './newsdetail_data'
 import { newsData } from '../news_data'
 
@@ -57,37 +59,51 @@ class NewsDetail extends Component {
     return (
       <div>
         {lang && (
-          <div className={styles['news-detail']}>
-            <HeroUnit data={news} lang={lang} />
-            <OneLineAlert content={oneLineAlert} lang={lang} />
-            <div
-              className={styles['news-detail--text']}
-              dangerouslySetInnerHTML={{ __html: news[lang].content }}
-            />
-            {news[lang].videos &&
-              news[lang].videos.map(video => (
-                <div className={styles['news-detail--video']}>
-                  <h2>{video.vTitle}</h2>
-                  <div className={styles['news-detail--video__item']}>
-                    <VideoItem video={video} />
-                  </div>
-                  <div dangerouslySetInnerHTML={{ __html: video.text }} />
-                </div>
-              ))}
-            {news[lang].bottomText && (
-              <div
-                className={styles['news-detail--bottom-text']}
-                dangerouslySetInnerHTML={{ __html: news[lang].bottomText }}
+          <div>
+            <MetaTags>
+              <title>ZARA | {news[lang].title}</title>
+              <meta name="description" content={news[lang].shortDescription} />
+              <meta
+                property="og:title"
+                content={`ZARA | ${news[lang].title}`}
               />
-            )}
-            {news.bottomImages && (
-              <div className={styles['news-detail--bottom-images']}>
-                {news.bottomImages.map(image => (
-                  <img src={`/assets/img/${image.image}`} alt="{image.image}" />
+              <meta property="og:image" content={`/assets/img/${news.image}`} />
+            </MetaTags>
+            <div className={styles['news-detail']}>
+              <HeroUnit data={news} lang={lang} />
+              <OneLineAlert content={oneLineAlert} lang={lang} />
+              <div
+                className={styles['news-detail--text']}
+                dangerouslySetInnerHTML={{ __html: news[lang].content }}
+              />
+              {news[lang].videos &&
+                news[lang].videos.map(video => (
+                  <div className={styles['news-detail--video']}>
+                    <h2>{video.vTitle}</h2>
+                    <div className={styles['news-detail--video__item']}>
+                      <VideoItem video={video} />
+                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: video.text }} />
+                  </div>
                 ))}
-              </div>
-            )}
-            <CardCollectionGridObject cardObject={cardGrid} lang={lang} />
+              {news[lang].bottomText && (
+                <div
+                  className={styles['news-detail--bottom-text']}
+                  dangerouslySetInnerHTML={{ __html: news[lang].bottomText }}
+                />
+              )}
+              {news.bottomImages && (
+                <div className={styles['news-detail--bottom-images']}>
+                  {news.bottomImages.map(image => (
+                    <img
+                      src={`/assets/img/${image.image}`}
+                      alt="{image.image}"
+                    />
+                  ))}
+                </div>
+              )}
+              <CardCollectionGridObject cardObject={cardGrid} lang={lang} />
+            </div>
           </div>
         )}
       </div>
