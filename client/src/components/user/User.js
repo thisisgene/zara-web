@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter, Route, Switch, Redirect, NavLink } from 'react-router-dom'
 
+import MetaTags from 'react-meta-tags'
+
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { setActiveLanguage } from '../../actions/userActions'
@@ -100,6 +102,7 @@ class User extends Component {
     }
   }
   componentDidUpdate(prevProps) {
+    document.title = 'ZARA - Zivilcourage & Anti-Rassismus-Arbeit'
     if (this.props.activeLanguage) {
       this.props.setActiveLanguage(this.props.activeLanguage.code)
     }
