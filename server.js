@@ -71,6 +71,10 @@ if (process.env.NODE_ENV === 'production') {
         'ZARA - Zivilcourage & Anti-Rassismus-Arbeit'
       )
       data = data.replace(
+        /\$DESCRIPTION/g,
+        'ZARA - Zivilcourage & Anti-Rassismus-Arbeit'
+      )
+      data = data.replace(
         /\$OG_DESCRIPTION/g,
         'ZARA – Zivilcourage und Anti-Rassismus-Arbeit. Beratung, Prävention und Sensibilisierung der Öffentlichkeit.'
       )

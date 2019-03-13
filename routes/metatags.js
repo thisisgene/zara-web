@@ -17,6 +17,7 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
 
       // replace the special strings with server generated strings
       data = data.replace(/\$OG_TITLE/g, 'ZARA | ' + newsItem[lang].title)
+      data = data.replace(/\$DESCRIPTION/g, newsItem[lang].shortDescription)
       data = data.replace(/\$OG_DESCRIPTION/g, newsItem[lang].shortDescription)
       result = data.replace(
         /\$OG_IMAGE/g,
