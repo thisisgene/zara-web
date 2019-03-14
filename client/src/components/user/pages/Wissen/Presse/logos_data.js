@@ -2,12 +2,12 @@ export const heroData = {
   image: 'zara_wide.png',
   imageSide: 'left',
   de: {
-    title: 'Logos & Kampagnenmaterial',
+    title: 'Pressematerial & Logos',
     text:
       'Die ZARA und ZARA Training Logos - in unterschiedlichen Formaten - und Kampagnenmaterial stehen Ihnen hier zum Download zur Verfügung.'
   },
   en: {
-    title: 'Logos & Kampagnenmaterial',
+    title: 'Pressematerial & Logos',
     text:
       'Die ZARA und ZARA Training Logos - in unterschiedlichen Formaten - und Kampagnenmaterial stehen Ihnen hier zum Download zur Verfügung.'
   }

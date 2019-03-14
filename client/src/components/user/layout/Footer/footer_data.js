@@ -81,7 +81,7 @@ export const footerContent = {
               linkText: 'Pressespiegel'
             },
             {
-              link: 'wissen/presse/logos_und_kampagnenmaterial',
+              link: 'wissen/presse/pressematerial_und_logos',
               linkText: 'Logos & Kampagnen'
             },
             {
@@ -165,7 +165,7 @@ export const footerContent = {
               linkText: 'Pressespiegel'
             },
             {
-              link: 'wissen/presse/logos_und_kampagnenmaterial',
+              link: 'wissen/presse/pressematerial_und_Logos',
               linkText: 'Logos & Kampagnen'
             },
             {

@@ -297,8 +297,8 @@ const menuItems = [
             id: '4.5.1'
           },
           {
-            name: 'Logos & Kampagnenmaterial',
-            link: 'logos_und_kampagnenmaterial',
+            name: 'Pressematerial & Logos',
+            link: 'pressematerial_und_Logos',
             id: '4.5.2'
           },
           {
