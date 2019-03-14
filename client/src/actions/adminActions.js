@@ -12,6 +12,23 @@ import {
   CLEAR_ERRORS
 } from './types'
 
+export const sortList = (list, category) => dispatch => {
+  axios
+    .post(`/api/projects/sort/${category}`, { list })
+    .then(res => {
+      dispatch({
+        // type: GET_ALL_NEWS,
+        // payload: res.data
+      })
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err
+      })
+    )
+}
+
 // Get all
 export const getAll = category => dispatch => {
   switch (category) {

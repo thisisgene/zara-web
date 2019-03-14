@@ -22,20 +22,38 @@
       align-items: center
       border-radius: 50%
 
-  .item-list
-    margin-top: 1rem
-    &--item
-      a
-        font:
-          size: .8rem
-          weight: 100
-        display: block
-        margin: 1px 0
-        padding: .3rem .6rem
-        background: rgba(white, .1)
-        color: white
-        text-decoration: none
-        &.active
-          padding-left: 1rem
-          font-style: italic
-          background: rgba(white, .3)
+.item-list
+  margin-top: 1rem
+  // &--item
+    
+      
+  a
+    font:
+      size: .8rem
+      weight: 100
+    display: block
+    margin: 1px 0
+    padding: .3rem .6rem
+    background: rgba(white, .1)
+    color: white
+    text-decoration: none
+    &.active
+      padding-left: 1rem
+      font-style: italic
+      background: rgba(white, .3)
+.dragged
+  a
+    font:
+      size: .8rem
+      weight: 100
+    display: block
+    margin: 1px 0
+    padding: .3rem .6rem
+    color: white
+    text-decoration: none
+    background: #aaa
+    box-shadow: 0 0 30px rgba(white, .4)
+    &.active
+      padding-left: 1rem
+      font-style: italic
+      background: #bbb

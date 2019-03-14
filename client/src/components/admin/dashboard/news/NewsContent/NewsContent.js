@@ -459,10 +459,10 @@ class NewsContent extends Component {
                       this.state.category
                     }/${this.state.newsId}/${this.state.handle}`}</p>
                   </div>
-                  <p>Shortlink</p>
+                  {/* <p>Shortlink</p>
                   <div className={styles['news-content--sidebar__links--box']}>
                     <p>{`https://zara.or.at/de/n/${this.state.newsId}`}</p>
-                  </div>
+                  </div> */}
                 </div>
                 <hr />
                 <div
