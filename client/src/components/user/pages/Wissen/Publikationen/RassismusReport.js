@@ -12,6 +12,7 @@ import {
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import NewsletterOneLineObject from '../../../dashboard/NewsletterOneLineObject/NewsletterOneLineObject'
+import SurveyPopUp from '../../../dashboard/SurveyPopUp/SurveyPopUp'
 import LongText from '../../../dashboard/LongText/LongText'
 import ImageGridObject from '../../../dashboard/ImageGridObject/ImageGridObject'
 import CardCollectionGridObject from '../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
@@ -29,6 +30,11 @@ class RassismusReport extends Component {
           <div>
             <HeroUnit data={heroData} lang={lang} />
             <NewsletterOneLineObject lang={lang} />
+            <SurveyPopUp
+              url={
+                'https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd4kPG6Z9g_2BPXgvECnXAkEwp_2FjHiK5RFD5M2ltZl4x7vQ.js'
+              }
+            />
             <LongText content={longText} lang={lang} />
             <ImageGridObject
               shoppingCartText={shoppingCartText}
