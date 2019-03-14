@@ -296,7 +296,7 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/:lang/wissen/presse/pressematerial_und_Logos"
+                path="/:lang/wissen/presse/pressematerial_und_logos"
                 component={Logos}
               />
               <Route

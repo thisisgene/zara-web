@@ -298,7 +298,7 @@ const menuItems = [
           },
           {
             name: 'Pressematerial & Logos',
-            link: 'pressematerial_und_Logos',
+            link: 'pressematerial_und_logos',
             id: '4.5.2'
           },
           {
