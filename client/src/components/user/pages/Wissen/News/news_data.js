@@ -39,7 +39,7 @@ export const newsData = [
     de: {
       category: 'Veranstaltgung',
       date: '21. März 2019',
-      title: 'Pressekonferenz Rassismus Report 2018',
+      title: 'Pressekonferenz: Präsentation des Rassismus Report 2018',
       shortDescription:
         'Der Rassismus Report 2018 beinhaltet eine Auswahl der von ZARA im Jahr 2018 aufgenommenen und dokumentierten rassistischen Vorfälle in Österreich. Am Donnerstag, den 21. März 2019, um 9:30 Uhr präsentieren wir den druckfrischen ZARA Rassismus Report 2018 im Presseclub Concordia.',
       content:
