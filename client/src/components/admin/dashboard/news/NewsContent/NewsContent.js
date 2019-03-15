@@ -253,6 +253,27 @@ class NewsContent extends Component {
     })
   }
 
+  swapSoftNewLineBehavior(event) {
+    let isSoftKeyPressed = e => {
+      return (
+        e.which === 13 &&
+        (e.getModifierState('Shift') ||
+          e.getModifierState('Alt') ||
+          e.getModifierState('Control'))
+      )
+    }
+
+    if (!isSoftKeyPressed(event)) {
+      event.getModifierState = _ => {
+        return true
+      }
+    } else {
+      event.getModifierState = _ => {
+        return false
+      }
+    }
+  }
+
   render() {
     return (
       <div className={styles['news-wrapper']}>
@@ -326,6 +347,7 @@ class NewsContent extends Component {
                     className={styles['news-content--text--box__description']}
                   >
                     <RichTextEditor
+                      handleReturn={this.swapSoftNewLineBehavior}
                       placeholder="Hauptinhalt deutsch"
                       className={styles['html-editor']}
                       toolbarConfig={toolbarExtConfig}
