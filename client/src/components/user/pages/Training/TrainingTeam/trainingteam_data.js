@@ -33,7 +33,7 @@ export const teamData = {
         image: 'training/resized/Jerry Jarvis Essandoh.jpg',
         name: 'Mag. Jerry Jarvis Essandoh',
         text:
-          'wurde in Wien geboren und hat seine kulturellen Wurzeln in Ghana, Westafrika. Er lebte fünf Jahre in Tema (Ghana) und wuchs die übrige Zeit in Wien auf. Er hat Kultur- und Sozialanthropologie an der Universität Wien studiert und Wahlfächer in Afrikanistik und Geschichte absolviert. Seit 2008 arbeitet er mit Jugendlichen in vielen verschiedeten Settings: Zunächst mehrere Jahre in der Parkbetreuung und einem Jugendtreff tätig, hält er seit 2010 Workshops im den Bereichen Vielfalt, Anti-Diskriminierung, globales Lernen und interkulturelle Kompetenzen im Sport. Seit 2014 arbeitet er beim Jugendparlament, einem Partizipationsprojekt für Jugendliche.<br />Jerry hat Ausbildungen als Jugendarbeiter, sportlicher Jugendübungsleiter und Multiplikator absolviert und arbeitet auch in der Erwachsenenbildung. Momentan ist er Mitarbeiter des Fairplay Teams Währing.'
+          'wurde in Wien geboren und hat seine kulturellen Wurzeln in Ghana, Westafrika. Er lebte fünf Jahre in Tema (Ghana) und wuchs die übrige Zeit in Wien auf. Er hat Kultur- und Sozialanthropologie an der Universität Wien studiert. Seit 2008 arbeitet er mit Jugendlichen in vielen verschiedeten Settings: Zunächst mehrere Jahre in der Parkbetreuung und einem Jugendtreff tätig, hält er seit 2010 Workshops im den Bereichen Vielfalt, Anti-Diskriminierung, globales Lernen und interkulturelle Kompetenzen im Sport. Seit 2014 arbeitet er beim Jugendparlament, einem Partizipationsprojekt für Jugendliche und ist Mitarbeiter des Fairplay Teams Währing.'
       },
       {
         field: 'training',
