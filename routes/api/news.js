@@ -110,7 +110,11 @@ router.get('/:id', (req, res) => {
 // @access  Public
 router.get('/get_by/:property/:value', (req, res) => {
   const errors = {}
-  News.find({ [req.params.property]: req.params.value, isDeleted: false })
+  News.find({
+    [req.params.property]: req.params.value,
+    isDeleted: false,
+    isOnline: true
+  })
     .populate('lastEdited.user', ['name'])
     .then(newsItem => {
       if (!newsItem) {
