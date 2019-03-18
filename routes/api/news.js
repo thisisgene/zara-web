@@ -105,6 +105,26 @@ router.get('/:id', (req, res) => {
     })
 })
 
+// @route   GET api/news/get_by/:property/:value
+// @desc    Get news by Property
+// @access  Public
+router.get('/get_by/:property/:value', (req, res) => {
+  const errors = {}
+  News.find({ [req.params.property]: req.params.value, isDeleted: false })
+    .populate('lastEdited.user', ['name'])
+    .then(newsItem => {
+      if (!newsItem) {
+        errors.nonews = 'Kein Beitrag mit dieser ID.'
+        return res.status(404).json(errors.nonews)
+      }
+      res.json(newsItem)
+    })
+    .catch(err => {
+      errors.news = 'Beitrag nicht gefunden.'
+      return res.status(404).json(errors)
+    })
+})
+
 // @route   POST api/news/update/:id
 // @desc    Update news by id
 // @access  Private

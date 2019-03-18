@@ -53,6 +53,30 @@ export const getAll = category => dispatch => {
       return
   }
 }
+
+// Get by Property
+export const getByProperty = (category, property, value) => dispatch => {
+  switch (category) {
+    case 'news':
+      axios
+        .get(`/api/news/get_by/${property}/${value}`)
+        .then(res => {
+          dispatch({
+            type: GET_ALL_NEWS,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    default:
+      return
+  }
+}
 // Get by ID
 export const getById = (id, category) => dispatch => {
   switch (category) {
