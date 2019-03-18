@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { getImagesByCategory } from '../../../../actions/imageActions'
+import {
+  getImagesByCategory,
+  deleteMediaImage
+} from '../../../../actions/imageActions'
 
 import ImageUpload from '../ImageUpload'
 import ImageBox from '../ImageBox'
@@ -27,6 +30,11 @@ class MediaContent extends Component {
     }
   }
 
+  deleteImage = id => {
+    this.props.deleteMediaImage(this.state.category, id)
+    // this.props.history.push('/admin/dashboard/news/neu')
+  }
+
   render() {
     return (
       <div>
@@ -34,7 +42,10 @@ class MediaContent extends Component {
           <div>
             <ImageUpload category={this.state.category} />
             {this.props.media && this.props.media.images && (
-              <ImageBox images={this.props.media.images} />
+              <ImageBox
+                images={this.props.media.images}
+                deleteImage={this.deleteImage}
+              />
             )}
           </div>
         )}
@@ -50,5 +61,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getImagesByCategory }
+  { getImagesByCategory, deleteMediaImage }
 )(MediaContent)

@@ -2,8 +2,7 @@ import axios from 'axios'
 import {
   // SET_WAITING,
   GET_ERRORS,
-  GET_IMAGES_BY_CATEGORY,
-  UPLOAD_IMAGES,
+  UPDATE_MEDIA,
   DELETE_IMAGE
   // SET_GRID_POSITION,
   // SET_BACKGROUND_IMAGE,
@@ -13,7 +12,7 @@ import {
 export const getImagesByCategory = category => dispatch => {
   return axios.get(`/api/media/get_by_category/${category}`).then(res => {
     dispatch({
-      type: GET_IMAGES_BY_CATEGORY,
+      type: UPDATE_MEDIA,
       payload: res.data
     })
   })
@@ -30,7 +29,7 @@ export const uploadImages = (files, category) => dispatch => {
       .post('/api/media/image_upload', formData)
       .then(res => {
         dispatch({
-          type: UPLOAD_IMAGES,
+          type: UPDATE_MEDIA,
           payload: res.data
         })
       })
@@ -41,6 +40,24 @@ export const uploadImages = (files, category) => dispatch => {
         })
       )
   })
+}
+
+export const deleteMediaImage = (category, id) => dispatch => {
+  // dispatch(setWaiting())
+  axios
+    .get(`/api/media/delete/${category}/${id}`)
+    .then(res => {
+      dispatch({
+        type: UPDATE_MEDIA,
+        payload: res.data
+      })
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: {}
+      })
+    )
 }
 
 export const deleteImage = (projectid, imgid) => dispatch => {

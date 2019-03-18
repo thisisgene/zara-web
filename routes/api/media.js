@@ -19,13 +19,15 @@ router.get('/', (req, res) => {
   })
 })
 
-// @route   GET api/media/get_by_category/:category
-// @desc    Get all media
+// @route   POST api/media/get_by_category/:category
+// @desc    Get media by category
 // @access  Public
 router.get('/get_by_category/:category', (req, res) => {
-  Media.find({ category: req.params.category }).then(media => {
-    res.json(media)
-  })
+  Media.find({ category: req.params.category, isDeleted: false }).then(
+    media => {
+      res.json(media)
+    }
+  )
 })
 
 // @route   GET api/media/image_upload
@@ -74,13 +76,39 @@ router.post(
       newImage
         .save()
         .then(image => {
-          res.send('success')
+          Media.find().then(images => res.json(images))
         })
         .catch(err => {
           console.log('noo fail')
           res.send(err)
         })
     })
+  }
+)
+
+// @route   GET api/media/delete/:id
+// @desc    Delete media by id
+// @access  Private
+router.get(
+  '/delete/:category/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    Media.findOneAndUpdate(
+      { _id: req.params.id },
+      { isDeleted: true },
+      { new: true }
+    )
+      .then(image => {
+        console.log(image)
+        Media.find({ isDeleted: false, category: req.params.category })
+          .then(media => res.json(media))
+          .catch(err => {
+            res.send(err)
+          })
+      })
+      .catch(err => {
+        res.send(err)
+      })
   }
 )
 

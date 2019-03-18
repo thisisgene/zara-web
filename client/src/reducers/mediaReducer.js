@@ -1,4 +1,4 @@
-import { GET_IMAGES_BY_CATEGORY } from '../actions/types'
+import { UPDATE_MEDIA } from '../actions/types'
 
 const initialState = {
   media: null
@@ -6,7 +6,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case GET_IMAGES_BY_CATEGORY:
+    case UPDATE_MEDIA:
       return {
         ...state,
         images: action.payload
