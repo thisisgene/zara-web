@@ -1,5 +1,5 @@
 export const heroData = {
-  image: 'publikationen.png',
+  image: 'NOTA_logo_1l.jpg',
   imageSide: 'left',
   imageAlign: 'center',
   de: {
