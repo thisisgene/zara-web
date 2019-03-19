@@ -1,5 +1,5 @@
 $news-color: red
-$event-color: green
+$event-color: pink
 $workshops-color: blue
 $pressemeldungen-color: yellow
 $kolumne-color: purple
@@ -96,6 +96,12 @@ $kolumne-color: purple
       border-left: 3px solid $pressemeldungen-color
     &.kolumne
       border-left: 3px solid $kolumne-color
+
+    &.online
+      &:after
+        content: '\25CF '
+        color: #4AB029
+        margin-left: .3rem
 .dragged
   a
     font:

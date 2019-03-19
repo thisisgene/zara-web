@@ -15,7 +15,9 @@ import styles from './ItemAddList.module.sass'
 const SortableItem = SortableElement(({ item, category }) => (
   <div className={styles['item-list--item']}>
     <NavLink
-      className={cx([styles[item.tag]])}
+      className={cx([styles[item.tag]], {
+        [styles['online']]: item.isOnline
+      })}
       to={`/admin/dashboard/${category}/${item._id}`}
       activeClassName={styles['active']}
     >
