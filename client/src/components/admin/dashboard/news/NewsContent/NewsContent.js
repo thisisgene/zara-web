@@ -103,7 +103,7 @@ class NewsContent extends Component {
             item.en &&
             RichTextEditor.createValueFromString(item.en.description, 'html'),
           titleImage: item.titleImage && item.titleImage.originalName,
-          imageId: item.titleImage && item.titleImage.id,
+          imageId: item.titleImage && item.titleImage.imageId,
           imageCategory: item.titleImage && item.titleImage.category,
           imageSide: item.imageSide,
           imageAlign: item.imageAlign,
@@ -506,7 +506,7 @@ class NewsContent extends Component {
                       </div>
                     )}
                   </div>
-                  {this.state.imageListOpen && this.state.imageId && (
+                  {this.state.imageListOpen && (
                     <ContentImageList
                       updateTitleImage={this.updateTitleImage}
                       closeImageList={this.closeImageList}

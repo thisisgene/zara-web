@@ -30,8 +30,7 @@ class ContentImageList extends Component {
         >
           Kein Bild wählen
         </div>
-        {newsImageId &&
-          this.props.media.images &&
+        {this.props.media.images &&
           this.props.media.images.map(image => (
             <div
               className={cx(styles['content-image-list--item'], {
