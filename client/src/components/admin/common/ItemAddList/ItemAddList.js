@@ -7,14 +7,19 @@ import arrayMove from 'array-move'
 
 import { sortList } from '../../../../actions/adminActions'
 
+import { newsTags } from './../../../user/pages/Wissen/News/news_data'
+
+import cx from 'classnames'
 import styles from './ItemAddList.module.sass'
 
 const SortableItem = SortableElement(({ item, category }) => (
   <div className={styles['item-list--item']}>
     <NavLink
+      className={cx([styles[item.tag]])}
       to={`/admin/dashboard/${category}/${item._id}`}
       activeClassName={styles['active']}
     >
+      <div className={styles['item-tag']} />
       {item.de.title}
     </NavLink>
   </div>
@@ -39,7 +44,8 @@ class ItemAddList extends Component {
   constructor() {
     super()
     this.state = {
-      list: []
+      list: [],
+      selectedTag: ''
     }
   }
 
@@ -73,6 +79,9 @@ class ItemAddList extends Component {
       }
     )
   }
+  onTagChange = e => {
+    this.setState({ selectedTag: e.target.value })
+  }
 
   render() {
     const { category } = this.props
@@ -90,13 +99,48 @@ class ItemAddList extends Component {
             </div>
           </Link>
         </div>
+        <div className={styles['tag-container']}>
+          <div>
+            <input
+              type="radio"
+              name="tags"
+              id="all"
+              value=""
+              onClick={this.onTagChange}
+              checked={this.state.selectedTag === ''}
+            />
+            <label className={styles['all']} htmlFor="all">
+              Alle
+            </label>
+          </div>
+          {newsTags &&
+            newsTags.map(tag => (
+              <div>
+                <input
+                  type="radio"
+                  name="tags"
+                  id={tag.name}
+                  value={tag.name}
+                  onClick={this.onTagChange}
+                  checked={tag.name === this.state.selectedTag}
+                />
+                <label className={styles[tag.name]} htmlFor={tag.name}>
+                  {tag.de.title}
+                </label>
+              </div>
+            ))}
+        </div>
         <div className={styles['item-list']}>
           {content && content.length > 0 ? (
             <SortableList
               lockAxis={'y'}
               pressDelay={200}
               helperClass={styles['dragged']}
-              items={content}
+              items={
+                this.state.selectedTag === ''
+                  ? content
+                  : content.filter(item => item.tag === this.state.selectedTag)
+              }
               category={category}
               onSortEnd={this.onSortEnd}
             />
