@@ -69,7 +69,7 @@ export const teamData = {
           'hat maßgeblich zum Aufbau der Onlineplattform <a href="http://www.counteract.or.at/">CounterACT! – Aktiv gegen Hass und Hetze im Netz</a> beigetragen und füllt diese heute kontinuierlich mit neuen Inhalten. Weiters hilft sie bei verschiedenen Publikationen wie den Rassismus Report mit und vertritt ZARA im No Hate Speech Komitee Austria.<br />Zusätzlich zu ihren Tätigkeiten bei ZARA studiert sie im Master Politikwissenschaften und Kultur- und Sozialanthropologie an der Universität Wien.<br /><i>Informationen, Materialien und/oder Veranstaltungstipps Ihrer Organisation zum Thema Online Hate Speech können Sie ihr gerne zukommen lassen. Diese werden auf CounterACT! mit einem kurzen Teaser online gestellt und verlinkt.</i>'
       },
       {
-        image: 'Vanessa Spanbauer_ZARA.jpg',
+        image: 'Vanessa_Spanbauer_ZARA.jpg',
         field: 'gok',
         name: 'Vanessa Spanbauer, BA',
         text:
@@ -97,7 +97,7 @@ export const teamData = {
           'leitet die ZARA Beratungsstellen, ist langjährige ZARA Trainerin und die Datenschutzbeauftragte des Vereins. <br><br>Sie hat Rechtswissenschaften studiert und ist Absolventin des European Master for Human Rights and Democratisation. Seit vielen Jahren arbeitet sie im Menschenrechtsbereich, u.a. in einer Rechtsanwaltskanzlei, in Wissenschaft und Lehre, als Trainerin und in der präventiven Menschenrechtskontrolle der Volksanwaltschaft. <br><br><i>Gerne steht sie Ihnen mit Informationen über die Beratungsstellen zur Verfügung. Sie ist Ansprechpartnerin für Fragen zu Gleichbehandlung und Diskriminierung.</i>'
       },
       {
-        image: 'Lilian Levai_ZARA.jpg',
+        image: 'Lilian_Levai_ZARA.jpg',
         field: 'beratung',
         name: 'Mag.a Lilian Levai',
         text:
@@ -132,7 +132,7 @@ export const teamData = {
           'arbeitet in den ZARA-Beratungsstellen. Darüber hinaus ist sie seit vielen Jahren als Supervisorin und Beraterin tätig.<br /><br />Sie hat Kultur- und Sozialanthropologie studiert und ein Masterstudium in Supervision und Coaching absolviert. Sie informiert Betroffene und Zeug*innen von Rassismus und Hass im Netz über die rechtlichen Rahmenbedingungen und ihre Handlungsmöglichkeiten. Darüber hinaus steht sie für eine vertiefende Beratung zur Verfügung,  wenn es darum geht, Ihr konkretes Anliegen zu klären oder eine Entscheidung bezüglich weiterer Schritte zu treffen.<br /><br /><i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, oder klären wollen, wie Sie weiter vorgehen möchten, sind Sie bei ihr gut beraten.'
       },
       {
-        image: 'Dilber Dikme_ZARA.jpg',
+        image: 'Dilber_Dikme_ZARA.jpg',
         field: 'beratung',
         name: 'Mag. a Dilber Dikme',
         text:
