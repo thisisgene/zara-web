@@ -21,7 +21,6 @@ class ContentImageList extends Component {
   }
   render() {
     const { newsImageId } = this.props
-    console.log('image Id: ', newsImageId)
     return (
       <div className={styles['content-image-list']}>
         <div
