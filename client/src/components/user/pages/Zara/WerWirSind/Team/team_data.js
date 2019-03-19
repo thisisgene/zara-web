@@ -73,7 +73,7 @@ export const teamData = {
         field: 'gok',
         name: 'Vanessa Spanbauer, BA',
         text:
-          'hat Geschichte an der Universität Wien studiert und befindet sich derzeit im Masterstudium Zeitgeschichte und Medien. Seit 2010 ist sie im Bereich Journalismus und als Freie Redakteurin, seit 2016 zudem als Chefredakteurin von fresh - Black Austrian Lifestyle, tätig. Sie hat überdies an historischen Projekten zum Thema Schwarze Menschen in Österreich mitgewirkt. Bei ZARA ist sie für Öffentlichkeitsarbeit, mit Schwerpunkt auf Social Media Präsenz und Kampagnenarbeit, zuständig. Die Planung des 20 Jahre ZARA Fests steht ebenfalls ganz oben auf ihrer Agenda. <br /><br /> <i>Sollten Sie Fragen bzgl. ZARAs Social Media Auftritt oder wegen dem 20. Jubiläum des Vereins haben, wenden Sie sich gerne jederzeit an sie.</i>'
+          'hat Geschichte an der Universität Wien studiert und befindet sich derzeit im Masterstudium Zeitgeschichte und Medien. Seit 2010 ist sie im Bereich Journalismus und als Freie Redakteurin, seit 2016 zudem als Chefredakteurin von fresh - Black Austrian Lifestyle, tätig. Sie hat überdies an historischen Projekten zum Thema Schwarze Menschen in Österreich mitgewirkt. Bei ZARA arbeitet sie im Bereich der Öffentlichkeitsarbeit, mit Schwerpunkten auf Social Media Präsenz und Kampagnenarbeit. Die Planung des 20 Jahre ZARA Fests steht ebenfalls ganz oben auf ihrer Agenda. <br /><br /> <i>Sollten Sie Fragen bzgl. ZARAs Social Media Auftritt oder wegen dem 20. Jubiläum des Vereins haben, wenden Sie sich gerne jederzeit an sie.</i>'
       },
       {
         // image: 'CaeciliaKappel_ZARA.jpg',

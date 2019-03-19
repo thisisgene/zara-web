@@ -65,7 +65,7 @@ class Login extends Component {
     const { errors } = this.state
 
     return (
-      <div>
+      <div className={styles['login-container']}>
         <div className={styles['login']}>
           <div className="container">
             <div className="row">
@@ -74,7 +74,7 @@ class Login extends Component {
                   <p className="lead">{this.dateSwitch()}</p>
 
                   <p className="small text-muted">
-                    Zum Beginnen bite einloggen
+                    Zum Beginnen bitte einloggen
                   </p>
                 </div>
                 <form onSubmit={this.onSubmit}>

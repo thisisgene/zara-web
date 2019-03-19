@@ -75,7 +75,6 @@ class NewsContent extends Component {
           )
         }
         const item = this.props.news.newsItem
-        console.log('date: ', item.date)
         this.setState({
           blankItem: false,
 
@@ -507,10 +506,11 @@ class NewsContent extends Component {
                       </div>
                     )}
                   </div>
-                  {this.state.imageListOpen && (
+                  {this.state.imageListOpen && this.state.imageId && (
                     <ContentImageList
                       updateTitleImage={this.updateTitleImage}
                       closeImageList={this.closeImageList}
+                      newsImageId={this.state.imageId}
                       category={'news'}
                     />
                   )}

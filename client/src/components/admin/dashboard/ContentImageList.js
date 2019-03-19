@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { getImagesByCategory } from '../../../actions/imageActions'
 
+import cx from 'classnames'
 import styles from './ContentImageList.module.sass'
 
 class ContentImageList extends Component {
@@ -19,6 +20,8 @@ class ContentImageList extends Component {
     this.props.updateTitleImage(null, null, null)
   }
   render() {
+    const { newsImageId } = this.props
+    console.log('image Id: ', newsImageId)
     return (
       <div className={styles['content-image-list']}>
         <div
@@ -27,10 +30,13 @@ class ContentImageList extends Component {
         >
           Kein Bild wählen
         </div>
-        {this.props.media.images &&
+        {newsImageId &&
+          this.props.media.images &&
           this.props.media.images.map(image => (
             <div
-              className={styles['content-image-list--item']}
+              className={cx(styles['content-image-list--item'], {
+                [styles['used-by-news']]: image._id === newsImageId
+              })}
               onClick={this.onImageClick.bind(this, image)}
             >
               <img
