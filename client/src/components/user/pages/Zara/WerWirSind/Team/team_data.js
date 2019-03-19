@@ -52,7 +52,7 @@ export const teamData = {
         field: 'gok',
         name: 'Anna Schreilechner, BA',
         text:
-          'hat Afrikawissenschaften an der Universität Wien studiert und befindet sich momentan im Masterstudium Politikwissenschaft. Als Mitarbeiterin bei diversen europäischen (Forschungs-)Projekten sowie als Koordinatorin internationaler Konferenzen konnte sie Erfahrung in transnationaler Netzwerkarbeit sammeln. Zusätzlich engagiert sie sich ehrenamtlich als Koordinatorin von Projekten unterschiedlicher Initiativen, die sich schwerpunktmäßig mit Flucht, Asyl und Integration befassen. Neben ihrer Tätigkeit in der Öffentlichkeitsarbeit ist sie bei ZARA für die Koordination transnationaler Kooperationen zuständig und befasst sich aktuell im Rahmen der EU-Projekte V-START – Victim Support Through Awareness Raising and neTworking und sCAN – Specialised Cyber Activists Network tiefgehend mit den Phänomenen hate crime und hate speech. <br><br> <i>Sollten Sie mehr über die transnationale Arbeit von ZARA – insbesondere die EU-Projekte V-START und sCAN- erfahren wollen bzw. an einer Kooperation oder Vernetzung zur Sichtbarmachung und Bekämpfung von hate crime und hate speech interessiert sein, dann sind sie bei ihr richtig.</i>'
+          'hat Afrikawissenschaften an der Universität Wien studiert und befindet sich momentan im Masterstudium Politikwissenschaft. Als Mitarbeiterin bei diversen europäischen (Forschungs-)Projekten sowie als Koordinatorin internationaler Konferenzen konnte sie Erfahrung in transnationaler und lokaler Netzwerkarbeit sammeln. Neben ihrer Tätigkeit in der Öffentlichkeitsarbeit befasst sie sich aktuell im Rahmen der EU-Projekte V-START und sCAN tiefgehend mit den Phänomenen <i<hate crime</i> und <i>hate speech</i>. <br><br> <i>Sollten Sie mehr über die transnationale Arbeit von ZARA – insbesondere die EU-Projekte V-START und sCAN - erfahren wollen bzw. an einer Kooperation oder Vernetzung zur Sichtbarmachung und Bekämpfung von hate crime und hate speech interessiert sein, dann sind sie bei ihr richtig.</i>'
       },
       {
         image: 'Philippe Schennach_ZARA.jpg',
@@ -69,19 +69,19 @@ export const teamData = {
           'hat maßgeblich zum Aufbau der Onlineplattform <a href="http://www.counteract.or.at/">CounterACT! – Aktiv gegen Hass und Hetze im Netz</a> beigetragen und füllt diese heute kontinuierlich mit neuen Inhalten. Weiters hilft sie bei verschiedenen Publikationen wie den Rassismus Report mit und vertritt ZARA im No Hate Speech Komitee Austria.<br />Zusätzlich zu ihren Tätigkeiten bei ZARA studiert sie im Master Politikwissenschaften und Kultur- und Sozialanthropologie an der Universität Wien.<br /><i>Informationen, Materialien und/oder Veranstaltungstipps Ihrer Organisation zum Thema Online Hate Speech können Sie ihr gerne zukommen lassen. Diese werden auf CounterACT! mit einem kurzen Teaser online gestellt und verlinkt.</i>'
       },
       {
+        image: 'Vanessa Spanbauer_ZARA.jpg',
+        field: 'gok',
+        name: 'Vanessa Spanbauer, BA',
+        text:
+          'hat Geschichte an der Universität Wien studiert und befindet sich derzeit im Masterstudium Zeitgeschichte und Medien. Seit 2010 ist sie im Bereich Journalismus und als Freie Redakteurin, seit 2016 zudem als Chefredakteurin von fresh - Black Austrian Lifestyle, tätig. Sie hat überdies an historischen Projekten zum Thema Schwarze Menschen in Österreich mitgewirkt. Bei ZARA ist sie für Öffentlichkeitsarbeit, mit Schwerpunkt auf Social Media Präsenz und Kampagnenarbeit, zuständig. Die Planung des 20 Jahre ZARA Fests steht ebenfalls ganz oben auf ihrer Agenda. <br /><br /> <i>Sollten Sie Fragen bzgl. ZARAs Social Media Auftritt oder wegen dem 20. Jubiläum des Vereins haben, wenden Sie sich gerne jederzeit an sie.</i>'
+      },
+      {
         // image: 'CaeciliaKappel_ZARA.jpg',
         field: 'gok',
         name: 'Georg List',
         text:
           'studiert Kultur- und Sozialanthropologie an der Universität Wien. Als ehrenamtlicher Mitarbeiter der Öffentlichkeitsarbeit trägt Georg List seit Sommer 2012 mit Texten zu Publikationen wie dem Rassismus Report bei und repräsentiert ZARA bei Veranstaltungen, Netzwerktreffen und Aktionen. Unter anderem betreut er das ZARA-Fußballteam.'
       },
-      // {
-      //   // image: 'CaeciliaKappel_ZARA.jpg',
-      //   field: 'gok',
-      //   name: 'Emily Zens',
-      //   text:
-      //     'unterstützt aktuell die Öffentlichkeits- sowie Projektarbeit als engagierte Praktikantin. Sie studiert Publizistik und Kommunikationswissenschaften an der Universität Wien. In ihren Nebenfächern Geschichte und Gender Studies spezialisiert sie sich auf neuzeitliche Geschichte, Rassismus-Ursprünge sowie genderspezifische Kontexte.'
-      // },
       {
         image: 'Ferhat Oezbay_ZARA.jpg',
         field: 'gok',
@@ -97,7 +97,7 @@ export const teamData = {
           'leitet die ZARA Beratungsstellen, ist langjährige ZARA Trainerin und die Datenschutzbeauftragte des Vereins. <br><br>Sie hat Rechtswissenschaften studiert und ist Absolventin des European Master for Human Rights and Democratisation. Seit vielen Jahren arbeitet sie im Menschenrechtsbereich, u.a. in einer Rechtsanwaltskanzlei, in Wissenschaft und Lehre, als Trainerin und in der präventiven Menschenrechtskontrolle der Volksanwaltschaft. <br><br><i>Gerne steht sie Ihnen mit Informationen über die Beratungsstellen zur Verfügung. Sie ist Ansprechpartnerin für Fragen zu Gleichbehandlung und Diskriminierung.</i>'
       },
       {
-        // image: 'Bianca Schoenberger_ZARA.jpg',
+        image: 'Lilian Levai_ZARA.jpg',
         field: 'beratung',
         name: 'Mag.a Lilian Levai',
         text:
@@ -130,6 +130,13 @@ export const teamData = {
         name: 'Isabell Bickel, BA MSc',
         text:
           'arbeitet in den ZARA-Beratungsstellen. Darüber hinaus ist sie seit vielen Jahren als Supervisorin und Beraterin tätig.<br /><br />Sie hat Kultur- und Sozialanthropologie studiert und ein Masterstudium in Supervision und Coaching absolviert. Sie informiert Betroffene und Zeug*innen von Rassismus und Hass im Netz über die rechtlichen Rahmenbedingungen und ihre Handlungsmöglichkeiten. Darüber hinaus steht sie für eine vertiefende Beratung zur Verfügung,  wenn es darum geht, Ihr konkretes Anliegen zu klären oder eine Entscheidung bezüglich weiterer Schritte zu treffen.<br /><br /><i>Wenn Sie Informationen brauchen, welche rechtlichen Optionen Sie nach einem rassistischen Vorfall oder nach einem Hassvorfall im Internet haben, oder klären wollen, wie Sie weiter vorgehen möchten, sind Sie bei ihr gut beraten.'
+      },
+      {
+        image: 'Dilber Dikme_ZARA.jpg',
+        field: 'beratung',
+        name: 'Mag. a Dilber Dikme',
+        text:
+          'ist ZARA Beraterin für Betroffene und Zeug*innen von Rassismus und Hass im Netz.<br /><br />Die ausgebildete Juristin legte bereits während ihres Studiums in Wien und Paris ihr Hauptaugenmerk auf grund- und menschenrechtliche Themen. Seit vielen Jahren arbeitet sie in diesem Kontext und unter anderem war sie langjährig in einer Opferschutzeinrichtung sowie zuletzt in einer Rechtsanwaltskanzlei tätig.<br /><br /><i>Wenn Sie einen rassistischen Vorfall oder Hass im Netz beobachtet oder selbst erlebt haben, zögern Sie nicht, sich an sie zu wenden, um bestmögliche Unterstützung zu erfahren.</i>'
       },
       {
         image: 'Lukas Gottschamel_ZARA.jpg',
