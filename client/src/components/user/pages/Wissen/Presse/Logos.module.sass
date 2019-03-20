@@ -14,4 +14,43 @@
       img
         margin: 1rem 0
         max-width: 300px
+    h2
+      text-align: center
+      font:
+        size: 1.2rem
       a
+        color: #111
+      
+      
+    .download-container
+      display: flex
+      flex-direction: column
+      align-items: center
+      // margin-bottom: 3rem
+      
+      .download-link
+        display: flex
+        flex-direction: row
+        align-items: center
+        text-align: left
+        margin-top: 1rem
+        padding: 1rem
+        border: 1px solid #ED5455
+        text-decoration: none
+        color: #333
+        border-radius: 4px
+        &:hover 
+          opacity: .8
+        .zip-icon
+          font-size: 2.3rem
+          color: #ED5455
+          margin-right: .3rem
+          // height: 40px
+        .download-info
+          display: flex
+          flex-direction: column
+          .file-name
+            font-size: .9rem
+          .file-size
+            font-size: .7rem
+            color: #999

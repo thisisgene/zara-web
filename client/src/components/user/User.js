@@ -78,6 +78,7 @@ import ZaraPublikationen from './pages/Wissen/Publikationen/ZaraPublikationen'
 import PageNotFound from './pages/Other/PageNotFound'
 import JobDetail from './pages/Zara/WerWirSind/Jobs/JobDetail'
 import NewsDetailDB from './pages/Wissen/News/NewsBox/NewsDetailDB'
+import Pressematerial_Logos from './pages/Wissen/Presse/Pressematerial_Logos'
 class User extends Component {
   constructor(props) {
     super(props)
@@ -298,6 +299,11 @@ class User extends Component {
                 exact
                 path="/:lang/wissen/presse/pressematerial_und_logos"
                 component={Logos}
+              />
+              <Route
+                exact
+                path="/:lang/wissen/presse/pressematerial_und_logos/Avr4fsJ9aFg"
+                component={Pressematerial_Logos}
               />
               <Route
                 exact
