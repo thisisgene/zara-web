@@ -66,7 +66,7 @@ export const teamData = {
         field: 'gok',
         name: 'Cäcilia Kappel, BA',
         text:
-          'hat maßgeblich zum Aufbau der Onlineplattform <a href="http://www.counteract.or.at/">CounterACT! – Aktiv gegen Hass und Hetze im Netz</a> beigetragen und füllt diese heute kontinuierlich mit neuen Inhalten. Weiters hilft sie bei verschiedenen Publikationen wie den Rassismus Report mit und vertritt ZARA im No Hate Speech Komitee Austria.<br />Zusätzlich zu ihren Tätigkeiten bei ZARA studiert sie im Master Politikwissenschaften und Kultur- und Sozialanthropologie an der Universität Wien.<br /><i>Informationen, Materialien und/oder Veranstaltungstipps Ihrer Organisation zum Thema Online Hate Speech können Sie ihr gerne zukommen lassen. Diese werden auf CounterACT! mit einem kurzen Teaser online gestellt und verlinkt.</i>'
+          'hat maßgeblich zum Aufbau der Onlineplattform <a href="http://www.counteract.or.at/">CounterACT! – Aktiv gegen Hass und Hetze im Netz</a> beigetragen und füllt diese heute kontinuierlich mit neuen Inhalten. Weiters hilft sie bei verschiedenen Publikationen wie den Rassismus Report mit und vertritt ZARA im No Hate Speech Komitee Austria.<br />Zusätzlich zu ihren Tätigkeiten bei ZARA studiert sie im Master Politikwissenschaften und Kultur- und Sozialanthropologie an der Universität Wien.<br /><br /><i>Informationen, Materialien und/oder Veranstaltungstipps Ihrer Organisation zum Thema Online Hate Speech können Sie ihr gerne zukommen lassen. Diese werden auf CounterACT! mit einem kurzen Teaser online gestellt und verlinkt.</i>'
       },
       {
         image: 'Vanessa_Spanbauer_ZARA.jpg',
@@ -74,6 +74,13 @@ export const teamData = {
         name: 'Vanessa Spanbauer, BA',
         text:
           'hat Geschichte an der Universität Wien studiert und befindet sich derzeit im Masterstudium Zeitgeschichte und Medien. Seit 2010 ist sie im Bereich Journalismus und als Freie Redakteurin, seit 2016 zudem als Chefredakteurin von fresh - Black Austrian Lifestyle, tätig. Sie hat überdies an historischen Projekten zum Thema Schwarze Menschen in Österreich mitgewirkt. Bei ZARA arbeitet sie im Bereich der Öffentlichkeitsarbeit, mit Schwerpunkten auf Social Media Präsenz und Kampagnenarbeit. Die Planung des 20 Jahre ZARA Fests steht ebenfalls ganz oben auf ihrer Agenda. <br /><br /> <i>Sollten Sie Fragen bzgl. ZARAs Social Media Auftritt oder wegen dem 20. Jubiläum des Vereins haben, wenden Sie sich gerne jederzeit an sie.</i>'
+      },
+      {
+        image: 'Karin Bischof_ZARA.jpg',
+        field: 'gok',
+        name: 'Mag.a Karin Bischof, MA',
+        text:
+          '<p>ist bei ZARA als <em>Monitoring und Evaluation (M&E) Specialist </em>tätig.</p><p>Sie entwickelt partizipativ eine professionelle Monitoring- und Evaluierungskultur mit ZARA, um das Wirken von ZARA messbar und einschätzbar zu machen und so das datenbasierte Lernen, Steuern und Berichten bei ZARA zu optimieren. </p><p>Die M&E Prozesse profitieren von ihrem Enthusiasmus, ihrem breiten und innovativen Methodenrepertoire sowie von ihrer langjährigen Erfahrung als Trainerin (u.a. für ZARA), Lektorin und Prozessmoderatorin für Verwaltungen, Bildungsinstitutionen und zivilgesellschaftliche Organisationen in der Anti-Diskriminierungsarbeit (in Österreich und der Balkanregion).</p><p>Sie hat Programm Evaluierung (Universität Melbourne, online) und Kultur- und Sozialanthropologie (Universität Wien) studiert und ist ZARA seit 2003 in verschiedenen Funktionen verbunden. </p><br /><p><em>Sollten Sie am Austausch zu M&E, effektiver Datenvisualisierung oder Berichterstattung Interesse haben, sind Sie bei ihr richtig.</em></p>'
       },
       {
         // image: 'CaeciliaKappel_ZARA.jpg',
