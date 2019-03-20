@@ -10,6 +10,7 @@ import Spinner from '../Spinner/Spinner'
 import TextFieldGroup from '../InputGroups/TextFieldGroup'
 import TextareaFieldGroup from '../InputGroups/TextareaFieldGroup'
 
+import cx from 'classnames'
 import styles from './ImageGridObject.module.sass'
 
 class ImageGridObject extends Component {
@@ -158,7 +159,12 @@ class ImageGridObject extends Component {
         />
         <div className={styles['grid-container']}>
           {content.map((item, index) => (
-            <div key={index} className={styles['grid-item']}>
+            <div
+              key={index}
+              className={cx(styles['grid-item'], {
+                [styles['is-fresh']]: item.isFresh
+              })}
+            >
               <img src={`/assets/img/${item.image}`} alt={item.image} />
               {/* https://serpig-space.ams3.digitaloceanspaces.com/img/zara_rr/pdf/racism-report-2015.pdf */}
               <div className={styles['grid-item--links']}>

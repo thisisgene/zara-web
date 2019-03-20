@@ -1,3 +1,13 @@
+@keyframes glow
+  0% 
+    opacity: 0
+  
+  50% 
+    opacity: 1
+  
+  100% 
+    opacity: 0
+  
 .grid-container
   display: grid
   grid-template-columns: 1fr 1fr 1fr
@@ -7,6 +17,8 @@
   .grid-item
     // width: 20%
     position: relative
+    
+
     button
       border: none
       background: #FFC803
@@ -15,6 +27,30 @@
     img
       width: 100%
       border: 1px solid #ccc
+    &.is-fresh
+      box-shadow: 0 0 20px transparent
+      
+      // transform: scale(1.03)
+      
+      &::after
+        content: ''
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        box-shadow: 0 0 20px #FFC803
+        animation: glow 4000ms ease-in-out infinite
+        // transition: opacity 0.3s ease-in-out
+        opacity: 0
+      // img
+      //   border: none
+
+
+    
+
+
     &--title
       font-weight: bold
     &--links
@@ -43,6 +79,10 @@
   @media(max-width: 980px)
     grid-template-columns: 1fr 1fr
     .grid-item
+      margin: 0 auto
+      width: 80%
+      img
+        width: 100%
       &--links
         opacity: 1
         font-size: 1.1rem
@@ -56,6 +96,10 @@
   
   @media(max-width: 500px)
     grid-template-columns: 1fr
+  @media(max-width: 300px)
+    .grid-item
+      margin: 0 auto
+      width: 100%
 .shopping-cart-container
   position: fixed
   top: 5rem
