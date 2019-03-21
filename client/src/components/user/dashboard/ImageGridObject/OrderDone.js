@@ -52,7 +52,7 @@ class OrderDone extends Component {
             <p>{order.addInfo}</p>
           </div>
         ) : (
-          <div>Noch nicht</div>
+          <div>Keine Bestellung gefunden</div>
         )}
       </div>
     )

@@ -332,13 +332,13 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/:lang/wissen/publikationen/:category/:pubId"
-                component={PubDetail}
+                path="/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
+                component={OrderDone}
               />
               <Route
                 exact
-                path="/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
-                component={OrderDone}
+                path="/:lang/wissen/publikationen/:category/:pubId"
+                component={PubDetail}
               />
               <Route exact path="/:lang/wissen/faq" component={Faq} />
               {/* <Route exact path="/:lang/wissen/faq/:faqId" component={Faq} /> */}

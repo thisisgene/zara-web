@@ -376,7 +376,7 @@ sendOrderEmail = (order, body, res) => {
     secure: true, // true for 465, false for other ports
     auth: {
       user: 'serpig.testuser@gmail.com', // generated ethereal user
-      pass: 'serPig1dev' // generated ethereal password
+      pass: 'serPig1dev2019' // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false
@@ -386,7 +386,7 @@ sendOrderEmail = (order, body, res) => {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: 'office@zara.or.at', // list of receivers //
+    to: 'emdo2000@gmail.com', // list of receivers // office@zara.or.at
     subject: 'Neue Bestellung', // Subject line
     html: order // html body
   }
