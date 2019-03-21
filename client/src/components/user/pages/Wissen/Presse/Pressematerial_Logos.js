@@ -73,7 +73,7 @@ class PressematerialLogos extends Component {
                     />
                   </a>
                 </div>
-                <div className={styles['logo-box--item']}>
+                {/* <div className={styles['logo-box--item']}>
                   <div>
                     RR18-Datenvisualisierungen PDFs als zip herunterladen
                   </div>
@@ -95,6 +95,33 @@ class PressematerialLogos extends Component {
                             rr18-datenvisualisierungen.zip
                           </span>
                           <span className={styles['file-size']}>198 KB</span>
+                        </div>
+                      </a>
+                    </span>
+                  </div>
+                </div> */}
+                <div className={styles['logo-box--item']}>
+                  <div>
+                    RR18-Kontextualisierungen PDFs als zip herunterladen
+                  </div>
+                  <div className={styles['download-container']}>
+                    <span>
+                      <a
+                        className={styles['download-link']}
+                        href="https://assets.zara.or.at/download/zip/rr18-kontextualisierungen.zip"
+                        download="rr18-kontextualisierungen.zip"
+                      >
+                        <i
+                          className={cx(
+                            'far fa-file-archive',
+                            styles['zip-icon']
+                          )}
+                        />
+                        <div className={styles['download-info']}>
+                          <span className={styles['file-name']}>
+                            rr18-kontextualisierungen.zip
+                          </span>
+                          <span className={styles['file-size']}>216 KB</span>
                         </div>
                       </a>
                     </span>
