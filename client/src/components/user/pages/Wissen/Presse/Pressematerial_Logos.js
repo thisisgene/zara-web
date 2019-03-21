@@ -59,7 +59,7 @@ class PressematerialLogos extends Component {
                 </div>
                 <div className={styles['logo-box--item']}>
                   <div>
-                    RR18-Datenvisualisierungen PDFS als zip herunterladen
+                    RR18-Datenvisualisierungen PDFs als zip herunterladen
                   </div>
                   <div className={styles['download-container']}>
                     <span>

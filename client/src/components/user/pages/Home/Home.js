@@ -15,6 +15,11 @@ import styles from './Home.module.sass'
 const fakeServerData = [
   {
     imageAsBackground: true,
+    image: 'RR2018_karussell_w.jpg',
+    mainLink: 'wissen/publikationen/rassismusreport'
+  },
+  {
+    imageAsBackground: true,
     image: 'welcome_banner.jpg',
     mainLink: 'kontakt'
   },
@@ -23,11 +28,11 @@ const fakeServerData = [
     image: 'Zivilcourage_Karussell.jpg',
     mainLink: 'mitmischen/community'
   },
-  {
-    imageAsBackground: true,
-    image: 'RR17_Karussell.jpg',
-    mainLink: 'wissen/publikationen/rassismusreport'
-  },
+  // {
+  //   imageAsBackground: true,
+  //   image: 'RR17_Karussell.jpg',
+  //   mainLink: 'wissen/publikationen/rassismusreport'
+  // },
   {
     imageAsBackground: true,
     image: 'Rechtshilfefond_Karussell.jpg',
