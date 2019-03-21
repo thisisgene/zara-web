@@ -42,6 +42,22 @@ class PressematerialLogos extends Component {
                   ) realisiert werden konnten.
                 </h2>
                 <div className={styles['logo-box--item']}>
+                  <div>Datenanalyse RR 2018 Doppelseite</div>
+                  <a
+                    target="blank"
+                    href={
+                      'https://assets.zara.or.at/download/grafiken/Datenanalyse 2018_ZARA RR2018-page-001.jpg'
+                    }
+                  >
+                    <img
+                      src={
+                        'https://assets.zara.or.at/download/grafiken/Datenanalyse 2018_ZARA RR2018-page-001.jpg'
+                      }
+                      alt="Datenanalyse RR 2018 Doppelseite"
+                    />
+                  </a>
+                </div>
+                <div className={styles['logo-box--item']}>
                   <div>Grafiken RR 2018 All-in-one</div>
                   <a
                     target="blank"
