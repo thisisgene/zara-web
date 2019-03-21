@@ -330,18 +330,18 @@ class User extends Component {
                 path="/:lang/wissen/publikationen/zara"
                 component={ZaraPublikationen}
               />
-              <Switch>
-                <Route
-                  exact
-                  path="/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
-                  component={OrderDone}
-                />
-                <Route
-                  exact
-                  path="/:lang/wissen/publikationen/:category/:pubId"
-                  component={PubDetail}
-                />
-              </Switch>
+
+              <Route
+                exact
+                path="/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
+                component={OrderDone}
+              />
+              <Route
+                exact
+                path="/:lang/wissen/publikationen/:category/:pubId"
+                component={PubDetail}
+              />
+
               <Route exact path="/:lang/wissen/faq" component={Faq} />
               {/* <Route exact path="/:lang/wissen/faq/:faqId" component={Faq} /> */}
 
