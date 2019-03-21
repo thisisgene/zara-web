@@ -386,7 +386,7 @@ sendOrderEmail = (order, body, res) => {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: 'emdo2000@gmail.com', // list of receivers // office@zara.or.at
+    to: 'office@zara.or.at', // list of receivers // office@zara.or.at
     subject: 'Neue Bestellung', // Subject line
     html: order // html body
   }
