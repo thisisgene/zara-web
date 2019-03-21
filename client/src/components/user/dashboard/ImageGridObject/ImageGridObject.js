@@ -300,7 +300,7 @@ class ImageGridObject extends Component {
               </div>
             ) : (
               <Redirect
-                to={`/${lang}/wissen/publikationen/rassismusreport/bestellung_abgeschlossen`}
+                to={`/${lang}/wissen/publikationen/rassismusreport/bestellung/abgeschlossen`}
               />
             )}
           </div>

@@ -333,7 +333,7 @@ class User extends Component {
 
               <Route
                 exact
-                path="/:lang/wissen/publikationen/rassismusreport/bestellung_abgeschlossen"
+                path="/:lang/wissen/publikationen/rassismusreport/bestellung/abgeschlossen"
                 component={OrderDone}
               />
               <Route
