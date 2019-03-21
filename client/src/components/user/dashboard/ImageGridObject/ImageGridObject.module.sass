@@ -28,24 +28,44 @@
       width: 100%
       border: 1px solid #ccc
     &.is-fresh
-      box-shadow: 0 0 20px transparent
+      overflow: hidden
+      box-shadow: 0 0 20px rgba(#FFC803, .4)
+      transform: scale(1.02)
+      &:before
+        content: 'Neu!'
+        position: absolute
+        top: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+        right: -30px
+        height: 26px
+        width: 100px
+        text-align: center
+        background: #247F65
+        padding: .2rem 1rem
+        transform: rotateZ(45deg)
+        font-weight: bold
+        color: white
+        box-shadow: -2px 2px 2px rgba(0,0,0,.3)
+      
       
       // transform: scale(1.03)
       
-      &::after
-        content: ''
-        position: absolute
-        z-index: -1
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        box-shadow: 0 0 20px #FFC803
-        animation: glow 4000ms ease-in-out infinite
-        // transition: opacity 0.3s ease-in-out
-        opacity: 0
-      // img
-      //   border: none
+      // &::after
+      //   content: ''
+      //   position: absolute
+      //   z-index: -1
+      //   top: 0
+      //   left: 0
+      //   width: 100%
+      //   height: 100%
+      //   box-shadow: 0 0 20px #FFC803
+      //   animation: glow 4000ms ease-in-out infinite
+      //   // transition: opacity 0.3s ease-in-out
+      //   opacity: 0
+      // // img
+      // //   border: none
 
 
     
@@ -74,6 +94,7 @@
         margin-bottom: 1.5rem
         a
           margin: 0 .5rem
+          color: #111
           text-decoration: underline
   
   @media(max-width: 980px)

@@ -295,14 +295,14 @@ class User extends Component {
                 path="/:lang/wissen/presse/pressespiegel"
                 component={Pressespiegel}
               />
-              <Route
+              {/* <Route
                 exact
                 path="/:lang/wissen/presse/pressematerial_und_logos"
                 component={Logos}
-              />
+              /> */}
               <Route
                 exact
-                path="/:lang/wissen/presse/pressematerial_und_logos/Avr4fsJ9aFg"
+                path="/:lang/wissen/presse/pressematerial_und_logos"
                 component={Pressematerial_Logos}
               />
               <Route
