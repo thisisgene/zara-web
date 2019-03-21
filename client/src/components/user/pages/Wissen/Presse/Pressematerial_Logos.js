@@ -22,11 +22,11 @@ class PressematerialLogos extends Component {
     }
     return (
       <div>
-        {lang && ( // TODO: Hide noindex tag before going online
+        {lang && (
           <div>
             <MetaTags>
               <title>ZARA | Pressematerial & Logos</title>
-              <meta name="robots" content="noindex" />
+              {/* <meta name="robots" content="noindex" /> */}
             </MetaTags>
             <HeroUnit data={heroData} lang={lang} />
             {/* <LongText content={longText} lang={lang} /> */}
