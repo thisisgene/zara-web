@@ -1,7 +1,7 @@
 export const carouselData = [
   {
     imageAsBackground: true,
-    image: 'RR17_Karussell.jpg',
+    image: 'RR2018_karussell_w.jpg',
     mainLink: 'wissen/publikationen/rassismusreport'
   },
   {
