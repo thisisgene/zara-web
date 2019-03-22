@@ -40,14 +40,14 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
+            text: 'Meldung und Beratung zu Rassismus',
+            type: 'cta',
+            link: 'beratung/beratung_rassismus_hassimnetz'
+          },
+          {
             text: 'Rassismus anonym melden',
             type: 'cta',
             link: 'beratung/melden/rassismus'
-          },
-          {
-            text: 'Beratung: anonym möglich',
-            type: 'cta',
-            link: 'beratung/beratung_rassismus_hassimnetz'
           }
         ]
       },
@@ -61,14 +61,14 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
+            text: 'Meldung und Beratung zu Hass im Netz',
+            type: 'cta',
+            link: 'beratung/beratung_rassismus_hassimnetz'
+          },
+          {
             text: 'Hass im Netz anonym melden',
             type: 'cta',
             link: 'beratung/melden/hassimnetz'
-          },
-          {
-            text: 'Beratung: anonym möglich',
-            type: 'cta',
-            link: 'beratung/beratung_rassismus_hassimnetz'
           }
         ]
       }
