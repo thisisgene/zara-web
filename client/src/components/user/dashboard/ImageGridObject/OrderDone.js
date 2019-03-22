@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { resetOrder } from '../../../../actions/userActions'
 
+import SurveyPopUp from '../SurveyPopUp/SurveyPopUp'
+
 import styles from './ImageGridObject.module.sass'
 
 class OrderDone extends Component {
@@ -15,6 +17,11 @@ class OrderDone extends Component {
       <div className={styles['order-confirm']}>
         {order ? (
           <div>
+            <SurveyPopUp
+              url={
+                'https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd4kPG6Z9g_2BPXgvECnXAkEwp_2FjHiK5RFD5M2ltZl4x7vQ.js'
+              }
+            />
             <h1>
               Vielen Dank für Ihre Bestellung und Ihr Interesse am ZARA
               Rassismus Report!

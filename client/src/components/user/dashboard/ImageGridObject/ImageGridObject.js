@@ -177,6 +177,7 @@ class ImageGridObject extends Component {
                     <a
                       target="blank"
                       href={`https://assets.zara.or.at/download/${link.link}`}
+                      onClick={this.props.onShowSurvey}
                     >
                       {link.linkText}
                     </a>
