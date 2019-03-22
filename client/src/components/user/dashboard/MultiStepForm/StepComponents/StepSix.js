@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from '../MultiStepForm.module.sass'
 
@@ -24,8 +25,13 @@ export default class StepSix extends Component {
       <div className={styles['step']}>
         <h1>Vielen Dank für Ihren Einsatz!</h1>
         <p>
-          Vielen Dank für Ihre Meldung. Wir werden uns umgehend mit dem Vorfall
-          beschäftigen und Sie gegebenenfalls kontaktieren.
+          Wir werden uns umgehend mit dem Vorfall beschäftigen. Wenn Sie eine
+          Beratung wünschen, klicken Sie bitte auf „
+          <Link to={'/de/beratung/beratung_rassismus_hassimnetz'}>
+            Meldung und Beratung zu Rassismus
+          </Link>
+          “. In diesem Fall beraten wir Sie gerne bei weiteren rechtlichen und
+          anderen Schritten.
         </p>
         <p>
           Sollten Sie eine kostenlose persönliche Beratung in Anspruch nehmen
