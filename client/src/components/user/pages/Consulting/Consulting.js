@@ -29,7 +29,7 @@ const infoObj_default = {
   de: {
     title: 'Melden',
     text:
-      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Ihre Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit anbieten, können wir Ihnen sagen welche Aktionen wir eingeleitet haben. Wir beraten Sie auch gerne bei weiteren rechtlichen oder anderen Schritten.',
+      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Bei einer anonymen Meldung wird der Vorfall in unsere Falldatenbank aufgenommen, Sie erhalten aber keine Beratung. Wenn Sie eine Beratung wünschen, wählen Sie den Button „Meldung und Beratung zu Rassismus“ bzw. „Meldung und Beratung zu Hass im Netz“.',
     cards: [
       {
         color: 'white',
