@@ -175,6 +175,14 @@ export const teamData = {
         name: 'Alice Golob',
         text:
           'Alice Golob unterstützt sein Juni 2018 die Geschäftsführung als Büroassistentin. Sie studiert Rechtswissenschaften an der Universität Wien und hat parallel bereits in diversen Praktika in den Bereichen Antirassismusarbeit, Flüchtlingshilfe und Minderheitenschutz erste Erfahrung gesammelt.'
+      },
+      {
+        // image: 'Alice Golob_ZARA.jpg',
+        // title: 'Büroassistentin',
+        field: 'training',
+        name: 'Anna-Lena Friedl',
+        text:
+          'unterstützt ZARA Training als Volontärin und studiert Kultur- und Sozialanthropologie an der Universität Wien. Sie hat bereits in verschiedenen Bereichen ehrenamtlich gearbeitet, unter anderem mit Geflüchteten in Deutschland und in der Entwicklungszusammenarbeit in Bolivien. Die Arbeit gegen Rassismus und Ungleichheit sind ihr auch für ihre berufliche Zukunft ein großes Anliegen.'
       }
     ],
 
