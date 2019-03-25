@@ -16,22 +16,24 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
       }
 
       // replace the special strings with server generated strings
-      data = data.replace(/\$OG_TITLE/g, 'ZARA | ' + newsItem[lang].title)
-      data = data.replace(
-        /\$DESCRIPTION/g,
-        newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
-      )
-      data = data.replace(
-        /\$OG_DESCRIPTION/g,
-        newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
-      )
-      result = data.replace(
-        /\$OG_IMAGE/g,
-        `https://assets.zara.or.at/media/${newsItem.titleImage.category}/${
-          newsItem.titleImage.originalName
-        }`
-      )
-      res.send(result)
+      if (lang) {
+        data = data.replace(/\$OG_TITLE/g, 'ZARA | ' + newsItem[lang].title)
+        data = data.replace(
+          /\$DESCRIPTION/g,
+          newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
+        )
+        data = data.replace(
+          /\$OG_DESCRIPTION/g,
+          newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
+        )
+        result = data.replace(
+          /\$OG_IMAGE/g,
+          `https://assets.zara.or.at/media/${newsItem.titleImage.category}/${
+            newsItem.titleImage.originalName
+          }`
+        )
+        res.send(result)
+      }
     })
   })
 })
