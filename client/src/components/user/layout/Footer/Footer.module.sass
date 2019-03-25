@@ -99,7 +99,7 @@
           .sponsor-box
             display: flex
             margin: 1rem auto 2rem
-            @media(max-width: 680px)
+            @media(max-width: 850px)
               width: 70vw
               margin: 2rem auto 4rem
               display: grid
@@ -112,6 +112,11 @@
                 // margin: 0 !important
                 &.wide
                   grid-column: 1 / span 2
+                &.centered
+                  grid-column: 1 / span 2
+                  justify-items: center
+                  img
+                    width: 50%
                 img
                   height: auto !important
                   max-width: 100%

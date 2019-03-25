@@ -218,7 +218,8 @@ export const sponsorLogos = [
     image: 'MA17_Logo.gif'
   },
   {
-    image: 'sozial_ministerium_logo.png'
+    image: 'logo_site_Sozialministerium.png',
+    size: 'wide'
   },
   {
     image: 'rd-foundation-logo.jpg',
