@@ -13,43 +13,45 @@ class ActionBar extends Component {
     const { lang, align, onClick } = this.props
     return (
       <div className={styles['action-bar']}>
-        <div className={cx(styles['action-bar--menu'], styles[align])}>
-          <NavLink
-            activeClassName={styles.active}
-            to={`/${lang}/beratung/#melden`}
-            onClick={onClick ? onClick : null}
-          >
-            <IconObject image="act" />
-          </NavLink>
-          <NavLink
-            activeClassName={styles.active}
-            to={`/${lang}/beratung/#melden`}
-            onClick={onClick ? onClick : null}
-          >
-            <Translate id={`menu.item0.1`} />
-          </NavLink>
-          <NavLink
-            activeClassName={styles.active}
-            to={`/${lang}/mitmischen/unterstuetzen`}
-            onClick={onClick ? onClick : null}
-          >
-            <Translate id={`menu.item0.2`} />
-          </NavLink>
-          <NavLink
-            activeClassName={styles.active}
-            to={`/${lang}/wissen/aktuelles`}
-            onClick={onClick ? onClick : null}
-          >
-            <Translate id={`menu.item0.4`} />
-          </NavLink>
-          <NavLink
-            activeClassName={styles.active}
-            to={`/${lang}/kontakt`}
-            onClick={onClick ? onClick : null}
-          >
-            <Translate id={`menu.item0.3`} />
-          </NavLink>
-        </div>
+        {lang && (
+          <div className={cx(styles['action-bar--menu'], styles[align])}>
+            <NavLink
+              activeClassName={styles.active}
+              to={`/${lang}/beratung/#melden`}
+              onClick={onClick ? onClick : null}
+            >
+              <IconObject image="act" />
+            </NavLink>
+            <NavLink
+              activeClassName={styles.active}
+              to={`/${lang}/beratung/#melden`}
+              onClick={onClick ? onClick : null}
+            >
+              <Translate id={`menu.item0.1`} />
+            </NavLink>
+            <NavLink
+              activeClassName={styles.active}
+              to={`/${lang}/mitmischen/unterstuetzen`}
+              onClick={onClick ? onClick : null}
+            >
+              <Translate id={`menu.item0.2`} />
+            </NavLink>
+            <NavLink
+              activeClassName={styles.active}
+              to={`/${lang}/wissen/aktuelles`}
+              onClick={onClick ? onClick : null}
+            >
+              <Translate id={`menu.item0.4`} />
+            </NavLink>
+            <NavLink
+              activeClassName={styles.active}
+              to={`/${lang}/kontakt`}
+              onClick={onClick ? onClick : null}
+            >
+              <Translate id={`menu.item0.3`} />
+            </NavLink>
+          </div>
+        )}
       </div>
     )
   }

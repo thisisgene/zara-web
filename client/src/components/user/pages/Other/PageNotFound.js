@@ -14,9 +14,13 @@ class PageNotFound extends Component {
     }
     return (
       <div>
-        {lang && (
+        {lang ? (
           <div>
             <HeroUnit data={heroData} lang={lang} />
+          </div>
+        ) : (
+          <div>
+            <HeroUnit data={heroData} lang={'de'} />
           </div>
         )}
       </div>

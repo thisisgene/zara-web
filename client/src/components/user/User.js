@@ -106,6 +106,8 @@ class User extends Component {
     document.title = 'ZARA - Zivilcourage & Anti-Rassismus-Arbeit'
     if (this.props.activeLanguage) {
       this.props.setActiveLanguage(this.props.activeLanguage.code)
+    } else {
+      this.props.setActiveLanguage('de')
     }
     const prevLang = prevProps.activeLanguage && prevProps.activeLanguage.code
     const curLang = this.props.activeLanguage && this.props.activeLanguage.code
@@ -170,10 +172,15 @@ class User extends Component {
               ))}
             </div> */}
             <Switch>
+              <Route exact path="/404_Not_Found" component={PageNotFound} />
+              <Route path="/index.php" component={PageNotFound} />
+
               <Route exact path="/:lang" component={Home} />
 
-              {activeLanguage && (
+              {activeLanguage ? (
                 <Redirect exact from="/" to={`/${activeLanguage.code}`} />
+              ) : (
+                <Redirect exact from="/" to={'/de'} />
               )}
               <Route exact path="/:lang/beratung" component={Consulting} />
               <Route
@@ -429,7 +436,6 @@ class User extends Component {
                 path="/:lang/datenschutzerklaerung"
                 component={Datenschutz}
               />
-
               <Route component={PageNotFound} />
             </Switch>
           </div>

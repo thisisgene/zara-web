@@ -36,7 +36,7 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
       })
     } else {
       console.log('no such item')
-      res.send('No such item')
+      res.redirect('/404_Not_Found')
     }
   })
 })

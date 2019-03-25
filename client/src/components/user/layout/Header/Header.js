@@ -140,7 +140,12 @@ class Header extends Component {
                           onFocus={this.onLinkHover.bind(this, item.id)}
                           onClick={this.onLinkBlur}
                         >
-                          <Translate id={`menu.item${item.id}`} />
+                          <Translate
+                            id={`menu.item${item.id}`}
+                            options={{ ignoreTranslateChildren: true }}
+                          >
+                            Hallo
+                          </Translate>
                         </NavLink>
                         <nav
                           role="menu"
