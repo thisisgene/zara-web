@@ -75,7 +75,7 @@ export const teamData = {
       {
         field: 'training',
         image: 'training/resized/margot kapfer_sw.jpg',
-        name: 'Mag.a Margot Kapfer',
+        name: 'Margot Kapfer MA',
         text:
           'ist Absolventin des Master-Lehrgangs Global Citizenship Education an der Universität Klagenfurt  und diplomierte Trainerin für Erwachsenenbildung. Sie war zuvor in einem internationalen Unternehmen für die Bereiche Kommunikation und Öffentlichkeitsarbeit verantwortlich. Umfassende Aus- und Weiterbildung im Bereich Kommunikation, einschließlich Kommunikation in interkulturellen Zusammenhängen und Krisenkommunikation.'
       },
@@ -122,13 +122,13 @@ export const teamData = {
         text:
           'ist Kultur- und Sozialanthropologe, Diversity Expert und Zivilcourage Trainer. Tätig in Graz bei ZEBRA Interkulturelles Beratungs-und Therapiezentrum und dort zuständig für Diversitätsorientierte Qualitätsentwicklung, Bildungsprojekte zu Asyl und Flucht und die Redaktion des Migrationsmagazins ZEBRATL. Außerdem tätig bei Caritas SIQ! Sport Integration Qualifikation, Lehrbeauftragter an der FH Joanneum im Master Lehrgang für Soziale Arbeit:und der Universität Wien am Institut für Kultur- und Sozialanthropologie.'
       },
-      {
-        field: 'training',
-        image: 'training/resized/Peymane_Saghari.jpg',
-        name: 'Mag.a Peymane Saghari',
-        text:
-          'Peymane Saghari hat Ethnologie, Kultur- und Sozialanthropologie an der Uni Wien studiert und im Anschluss die Ausbildung zur Psychoanalytikerin am Wiener Arbeitskreis für Psychoanalyse begonnen. Mittlerweile ist sie als Psychotherapeutin in Ausbildung unter Supervision in freier Praxis und beim Verein TAMAR tätig.<br>Sie hat zudem berufliche Erfahrungen im Opferschutz, Frauen- und Menschenrechtsbereich gesammelt durch ihre langjährige Mitarbeit bei LEFÖ IBF Interventionsstelle für Betroffene des Frauenhandels und bei ZARA.'
-      },
+      // {
+      //   field: 'training',
+      //   image: 'training/resized/Peymane_Saghari.jpg',
+      //   name: 'Mag.a Peymane Saghari',
+      //   text:
+      //     'Peymane Saghari hat Ethnologie, Kultur- und Sozialanthropologie an der Uni Wien studiert und im Anschluss die Ausbildung zur Psychoanalytikerin am Wiener Arbeitskreis für Psychoanalyse begonnen. Mittlerweile ist sie als Psychotherapeutin in Ausbildung unter Supervision in freier Praxis und beim Verein TAMAR tätig.<br>Sie hat zudem berufliche Erfahrungen im Opferschutz, Frauen- und Menschenrechtsbereich gesammelt durch ihre langjährige Mitarbeit bei LEFÖ IBF Interventionsstelle für Betroffene des Frauenhandels und bei ZARA.'
+      // },
       {
         field: 'training',
         image: 'training/resized/Michael Sigmund.jpg',
@@ -153,7 +153,7 @@ export const teamData = {
       {
         field: 'training',
         image: 'training/resized/johannaurban.jpg',
-        name: 'Mag.a Johanna Urban, BA',
+        name: 'Johanna Urban, MA',
         text:
           'studierte Politikwissenschaft in Wien und Kopenhagen mit den Schwerpunkten Erinnerungspolitik, Politische Bildung u. Europäische Union. Sie ist zudem Absolventin der Schule für künstlerische Fotografie (Schule Friedl Kubelka). Seit 2017 Organisationsassistenz und wissenschaftliche Projektmitarbeit an der Universität Wien, zudem Guide im Rahmen des Vermittlungsprogramms "denk mal wien" des Mauthausen Komitee Österreich. Zuvor war sie als Mitarbeiterin am Demokratiezentrum Wien sowie Trainerin im Rahmen des Projektes "RESPECT! Gemeinsam verschieden sein" tätig.'
       }
