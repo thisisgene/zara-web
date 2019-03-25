@@ -8,33 +8,36 @@ const News = require('../models/News')
 router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
   const filePath = path.resolve(__dirname, '../client', 'build', 'index.html')
   const lang = req.params.lang
+  console.log('asddd')
   News.findById(req.params.id).then(newsItem => {
     // read in the index.html file
-    fs.readFile(filePath, 'utf8', function(err, data) {
-      if (err) {
-        return console.log(err)
-      }
-
-      // replace the special strings with server generated strings
-      if (lang) {
-        data = data.replace(/\$OG_TITLE/g, 'ZARA | ' + newsItem[lang].title)
-        data = data.replace(
-          /\$DESCRIPTION/g,
-          newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
-        )
-        data = data.replace(
-          /\$OG_DESCRIPTION/g,
-          newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
-        )
-        result = data.replace(
-          /\$OG_IMAGE/g,
-          `https://assets.zara.or.at/media/${newsItem.titleImage.category}/${
-            newsItem.titleImage.originalName
-          }`
-        )
-        res.send(result)
-      }
-    })
+    if (newsItem) {
+      fs.readFile(filePath, 'utf8', function(err, data) {
+        if (err) {
+          res.send(err)
+        } else {
+          data = data.replace(/\$OG_TITLE/g, 'ZARA | ' + newsItem[lang].title)
+          data = data.replace(
+            /\$DESCRIPTION/g,
+            newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
+          )
+          data = data.replace(
+            /\$OG_DESCRIPTION/g,
+            newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
+          )
+          result = data.replace(
+            /\$OG_IMAGE/g,
+            `https://assets.zara.or.at/media/${newsItem.titleImage.category}/${
+              newsItem.titleImage.originalName
+            }`
+          )
+          res.send(result)
+        }
+      })
+    } else {
+      console.log('no such item')
+      res.send('No such item')
+    }
   })
 })
 // router.get('/:lang/*', (req, res) => {
