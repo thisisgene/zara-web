@@ -83,7 +83,10 @@ class PubDetail extends Component {
                   <div>
                     <a
                       className={styles['pub-detail--download__item']}
-                      href={`/assets/download/${download.fileLocation}`}
+                      href={`https://assets.zara.or.at/download/${
+                        download.fileLocation
+                      }`}
+                      target="blank"
                     >
                       <i
                         className={cx(
