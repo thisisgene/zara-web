@@ -34,6 +34,40 @@
       
       // margin: 2rem 0 2rem
       // text-align: center
+  &--download
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 4rem
+    margin-top: -2rem
+    // margin-bottom: 3rem
+    
+    &__item
+      display: flex
+      flex-direction: row
+      align-items: center
+      text-align: left
+      margin-top: 1rem
+      padding: 1rem
+      border: 1px solid #ED5455
+      text-decoration: none
+      color: #333
+      border-radius: 4px
+      &:hover 
+        opacity: .8
+      &-icon
+        font-size: 2.3rem
+        color: #ED5455
+        margin-right: .3rem
+        // height: 40px
+      .download-info
+        display: flex
+        flex-direction: column
+        .file-name
+          font-size: .9rem
+        .file-size
+          font-size: .7rem
+          color: #999
   &--bottom-text
     max-width: 800px
     margin: 0 auto 4rem

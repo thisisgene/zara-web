@@ -8,10 +8,11 @@ import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../../dashboard/OneLineAlert/OneLineAlert'
 import NewsletterOneLineObject from '../../../dashboard/NewsletterOneLineObject/NewsletterOneLineObject'
 import CardCollectionGridObject from '../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
-
-import styles from './PubDetail.module.sass'
 import VideoItem from '../../../dashboard/VideoBox/VideoItem'
 import LongText from '../../../dashboard/LongText/LongText'
+
+import cx from 'classnames'
+import styles from './PubDetail.module.sass'
 
 class PubDetail extends Component {
   constructor(props) {
@@ -76,6 +77,33 @@ class PubDetail extends Component {
                   <div dangerouslySetInnerHTML={{ __html: video.text }} />
                 </div>
               ))}
+            {pub[lang].download && (
+              <div className={styles['pub-detail--download']}>
+                {pub[lang].download.map(download => (
+                  <div>
+                    <a
+                      className={styles['pub-detail--download__item']}
+                      href={`/assets/download/${download.fileLocation}`}
+                    >
+                      <i
+                        className={cx(
+                          'fas fa-file-download',
+                          styles['pub-detail--download__item-icon']
+                        )}
+                      />
+                      <div className={styles['download-info']}>
+                        <span className={styles['file-name']}>
+                          {download.fileName}
+                        </span>
+                        <span className={styles['file-size']}>
+                          {download.fileSize}
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
             {pub[lang].bottomText && (
               <div
                 className={styles['pub-detail--bottom-text']}
