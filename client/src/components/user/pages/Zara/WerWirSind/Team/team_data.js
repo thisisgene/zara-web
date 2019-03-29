@@ -115,21 +115,21 @@ export const teamData = {
         field: 'beratung',
         name: 'Dunia Khalil',
         text:
-          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br /><br />Sie studiert Rechtswissenschaften an der Universität Wien. Erste Erfahrungen und Kenntnisse in den Themenfeldern Menschen- und Gleichbehandlungsrecht hat sie bei zahlreichen Praktika erworben, unter anderem beim Ludwig Boltzmann Institut für Menschenrechte und der Arbeiterkammer. Zusätzlich engagiert sie sich im Charity-Bereich, wo sie bereits einige Projekte in unterschiedlichsten Vereinen umgesetzt und geleitet hat. In den letzten Jahren war sie insbesondere in der Flüchtlingshilfe aktiv. Sie hat sich bereits vor ihrer Zeit bei ZARA für Opfer von Rassismus stark gemacht.<br /><br /><i>Sie setzt sich schon sehr lange mit dem Thema Rassismus und seinen Folgen auseinander und übt ihre Tätigkeit als ZARA-Beraterin daher sehr fundiert und leidenschaftlich aus. Sie bietet Beratung in deutscher, englischer und arabischer Sprache an.</i>'
+          'ist Beraterin für Betroffene und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br /><br />Sie studiert Rechtswissenschaften an der Universität Wien. Erste Erfahrungen und Kenntnisse in den Themenfeldern Menschen- und Gleichbehandlungsrecht hat sie bei zahlreichen Praktika erworben, unter anderem beim Ludwig Boltzmann Institut für Menschenrechte und der Arbeiterkammer. Zusätzlich engagiert sie sich im Charity-Bereich, wo sie bereits einige Projekte in unterschiedlichsten Vereinen umgesetzt und geleitet hat. In den letzten Jahren war sie insbesondere in der Flüchtlingshilfe aktiv. Sie hat sich bereits vor ihrer Zeit bei ZARA für Betroffene von Rassismus stark gemacht.<br /><br /><i>Sie setzt sich schon sehr lange mit dem Thema Rassismus und seinen Folgen auseinander und übt ihre Tätigkeit als ZARA-Beraterin daher sehr fundiert und leidenschaftlich aus. Sie bietet Beratung in deutscher, englischer und arabischer Sprache an.</i>'
       },
       {
         image: 'Felicitas Rachinger_ZARA.jpg',
         field: 'beratung',
         name: 'Felicitas Rachinger',
         text:
-          ' ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br><br>Sie studiert erfolgreich Rechtswissenschaften an der Universität Wien und spezialisiert sich dort unter anderem auf Grund- und Menschenrechte. Auf Grund ihres Interesses für Antidiskriminierungsrecht setzt sie sich gegen Rassismus ein.<br><br><i>Wenn Sie Opfer oder Zeug*in von rassistischen Vorfällen oder Online-Hass sind, bietet sie Ihnen kompetente Beratung.</i>'
+          ' ist Beraterin für Betroffene und Zeug*innen von Rassismus und Hass im Netz bei ZARA.<br><br>Sie studiert erfolgreich Rechtswissenschaften an der Universität Wien und spezialisiert sich dort unter anderem auf Grund- und Menschenrechte. Auf Grund ihres Interesses für Antidiskriminierungsrecht setzt sie sich gegen Rassismus ein.<br><br><i>Wenn Sie Betroffene oder Zeug*in von rassistischen Vorfällen oder Online-Hass sind, bietet sie Ihnen kompetente Beratung.</i>'
       },
       {
         image: 'Sophie Haidinger_ZARA.jpg',
         field: 'beratung',
         name: 'Mag.a Sophie Haidinger',
         text:
-          'ist Beraterin für Opfer und Zeug*innen von Rassismus und Hass im Netz bei ZARA. <br><br>Sie hat Rechtswissenschaften an der Universität Wien studiert. Im Zuge ihres Studiums hat sie sich auf Grund- und Menschenrechte, Religionsrecht sowie auf Mediation spezialisiert. Durch ihre Tätigkeit als Anwaltsanwärterin konnte sie bereits Erfahrung in vielen verschiedenen rechtlichen Bereichen sammeln.<br><br><i>Wenn Sie einen rassistischen Vorfall oder Hass im Netz beobachtet oder selbst miterlebt haben, zögern Sie nicht, sich an sie zu wenden.</i>'
+          'ist Beraterin für Betroffene und Zeug*innen von Rassismus und Hass im Netz bei ZARA. <br><br>Sie hat Rechtswissenschaften an der Universität Wien studiert. Im Zuge ihres Studiums hat sie sich auf Grund- und Menschenrechte, Religionsrecht sowie auf Mediation spezialisiert. Durch ihre Tätigkeit als Anwaltsanwärterin konnte sie bereits Erfahrung in vielen verschiedenen rechtlichen Bereichen sammeln.<br><br><i>Wenn Sie einen rassistischen Vorfall oder Hass im Netz beobachtet oder selbst miterlebt haben, zögern Sie nicht, sich an sie zu wenden.</i>'
       },
       {
         image: 'Isabell Bickel_ZARA.jpg',
