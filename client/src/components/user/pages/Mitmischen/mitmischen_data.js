@@ -70,7 +70,7 @@ export const infoObj = {
       },
       {
         color: 'default',
-        title: 'Warum Hasspostings melden',
+        title: 'Hasspostings auf Social Media melden',
         text:
           'Wenn Sie auf Hasskommentare stoßen oder selbst von Hass, Hetze oder Cyber-Mobbing betroffen sind, müssen Sie das nicht einfach so hinnehmen, denn das Netz ist kein rechtsfreier Raum. Melden Sie entsprechende Beiträge am besten gleich selbser und leiten Sie die Meldung an uns weiter! Wir dokumentieren Hass und Hetze systematisch und stehen Ihnen auch gerne beratend zur Seite.',
 
@@ -129,23 +129,21 @@ export const quote = {
 
 export const cardGridObject = {
   de: {
+    title: 'Werden Sie ein*e ZARAista!',
     count: 'two',
     cards: [
       {
-        size: 'large',
+        // size: 'large',
         type: 'imageCard',
         image: 'icons/community.png',
-        title: 'Werden Sie ein*e ZARAista!',
-        text:
-          'Anti-Rassismus-Arbeit braucht engagierte Menschen – und davon möglichst viele. Nutzen Sie die Möglichkeit, sich mit anderen aktiven Menschen auszutauschen, die daran interessiert sind, einen positiven Einfluss auf die Gesellschaft zu haben. Werden Sie Teil einer tatkräftigen Community!',
+        title: 'Community',
         link: 'mitmischen/community'
       },
       {
-        size: 'large',
+        // size: 'large',
         type: 'imageCard',
-        image: 'icons/beratung.png',
-        text:
-          'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit setzen wir von ZARA uns für eine rassismusfreie Gesellschaft und einen respektvollen Umgang miteinander ein. Mit u.a. unseren Beratungsleistungen wollen wir Betroffenen den Rücken stärken und auf strukturelle Mängel hinweisen. Mit Ihrer Spende ermöglichen Sie, dass wir unsere jahrelange Expertise und unser Engagement in unseren Arbeitsbereichen und Schwerpunkten einsetzen und weiter ausbauen können!',
+        image: 'icons/unterstuetzen.png',
+        title: 'Unterstützen',
         link: 'mitmischen/unterstuetzen'
       }
     ]

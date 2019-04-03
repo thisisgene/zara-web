@@ -3,12 +3,12 @@ export const heroData = {
   imageSide: 'left',
   size: 'mediumTitle',
   de: {
-    title: 'Warum Hasspostings melden?',
+    title: 'Hasspostings auf Social Media melden',
     text:
       'Mittlerweile sind wir soweit, dass uns Meinungsfreiheit in unterschiedlichen Kontexten endlich geboten wird und das ist mehr als wichtig - genau genommen ausschlaggebend. Gerade im Internet ist viel Platz und Raum für User*innen, um ihre Meinung auszudrücken und sie zudem vielen Menschen mitzuteilen. Auch das ist eine herausragende Möglichkeit.'
   },
   en: {
-    title: 'Warum Hasspostings melden?',
+    title: 'Hasspostings auf Social Media melden',
     text:
       'Mittlerweile sind wir soweit, dass uns Meinungsfreiheit in unterschiedlichen Kontexten endlich geboten wird und das ist mehr als wichtig - genau genommen ausschlaggebend. Gerade im Internet ist viel Platz und Raum für User*innen, um ihre Meinung auszudrücken und sie zudem vielen Menschen mitzuteilen. Auch das ist eine herausragende Möglichkeit.'
   }

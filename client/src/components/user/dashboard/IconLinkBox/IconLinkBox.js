@@ -15,9 +15,13 @@ class IconLinkBox extends Component {
           <IconObject image={content[lang].icon} />
         </div>
         <div className={cx(styles['link'], styles[content[lang].color])}>
-          <Link to={`/${lang}/${content[lang].link}`}>
-            {content[lang].text}
-          </Link>
+          {content[lang].linkPath !== 'external' ? (
+            <Link to={`/${lang}/${content[lang].link}`}>
+              {content[lang].text}
+            </Link>
+          ) : (
+            <a href={content[lang].link}>{content[lang].text}</a>
+          )}
         </div>
       </div>
     )

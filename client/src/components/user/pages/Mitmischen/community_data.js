@@ -5,7 +5,7 @@ export const heroData = {
   de: {
     title: 'ZARA Community',
     text:
-      "<i>“Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has.”</i><br /><br />Margaret Mead"
+      'Anti-Rassismus-Arbeit braucht engagierte Menschen – und davon möglichst viele. Nutzen Sie die Möglichkeit, sich mit anderen aktiven Menschen auszutauschen, die daran interessiert sind, einen positiven Einfluss auf die Gesellschaft zu haben. Werden Sie Teil einer tatkräftigen Community!'
   },
   en: {
     title: 'ZARA Community',
@@ -30,7 +30,8 @@ export const iconLink = {
   de: {
     icon: 'arrowRight',
     text: 'Mit ZARA Kontakt aufnehmen',
-    link: 'kontakt'
+    link: 'mailto:mitmischen@zara.or.at',
+    linkPath: 'external'
   },
   en: {
     icon: 'arrowRight',

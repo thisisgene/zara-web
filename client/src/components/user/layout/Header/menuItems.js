@@ -181,7 +181,7 @@ const menuItems = [
     },
     subMenuList: [
       {
-        name: 'Zivilcourage',
+        name: 'Zeigen Sie Zivilcourage',
         id: '3.1',
         link: null,
         subMenuList: [
@@ -203,14 +203,21 @@ const menuItems = [
         ]
       },
       {
-        name: 'Community',
+        name: 'Werden Sie ein*e ZARAista',
         id: '3.2',
-        link: 'community'
-      },
-      {
-        name: 'Unterstützen',
-        id: '3.3',
-        link: 'unterstuetzen'
+        link: null,
+        subMenuList: [
+          {
+            name: 'Community',
+            id: '3.2.1',
+            link: 'community'
+          },
+          {
+            name: 'Unterstützen',
+            id: '3.2.2',
+            link: 'unterstuetzen'
+          }
+        ]
       }
     ]
   },
