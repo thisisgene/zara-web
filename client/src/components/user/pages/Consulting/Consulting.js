@@ -27,9 +27,9 @@ const infoObj_default = {
   color: 'white',
   count: 'two',
   de: {
-    title: 'Melden',
+    title: 'Melden und Beratung',
     text:
-      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Bei einer anonymen Meldung wird der Vorfall in unsere Falldatenbank aufgenommen, Sie erhalten aber keine Beratung. Wenn Sie eine Beratung wünschen, wählen Sie den Button „Meldung und Beratung zu Rassismus“ bzw. „Meldung und Beratung zu Hass im Netz“.',
+      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Bei einer anonymen Meldung wird der Vorfall in unsere Falldatenbank aufgenommen, Sie erhalten aber keine Beratung. Wenn Sie eine Beratung wünschen, wählen Sie den Button „Kostenlose Beratung zu Rassismus“ bzw. „Kostenlose Beratung zu Hass im Netz“.',
     cards: [
       {
         color: 'white',
@@ -40,7 +40,7 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
-            text: 'Meldung und Beratung zu Rassismus',
+            text: 'Kostenlose Beratung zu Rassismus',
             type: 'cta',
             link: 'beratung/beratung_rassismus_hassimnetz'
           },
@@ -61,7 +61,7 @@ const infoObj_default = {
         multiButton: true,
         buttons: [
           {
-            text: 'Meldung und Beratung zu Hass im Netz',
+            text: 'Kostenlose Beratung zu Hass im Netz',
             type: 'cta',
             link: 'beratung/beratung_rassismus_hassimnetz'
           },

@@ -30,7 +30,7 @@ const oneLineAlert = {
     text:
       'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
-      text: 'Jetzt anonym melden',
+      text: 'Melden und Beratung',
       type: 'alert',
       link: 'beratung/#melden'
     }
@@ -39,7 +39,7 @@ const oneLineAlert = {
     text:
       'Ich bin Betroffene*r oder Zeug*in eines rassistischen Vorfalls oder von Hass im Netz.',
     button: {
-      text: 'Jetzt anonym melden',
+      text: 'Melden und Beratung',
       type: 'alert',
       link: 'beratung/#melden'
     }

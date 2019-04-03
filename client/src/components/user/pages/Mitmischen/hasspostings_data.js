@@ -20,7 +20,7 @@ export const oneLineAlert = {
     title: 'Hass im Netz melden',
     text: 'Hier können Sie Hass im Netz melden!',
     button: {
-      text: 'Jetzt anonym melden',
+      text: 'Melden und Beratung',
       type: 'default',
       link: 'beratung/melden/hassimnetz'
     }
@@ -29,7 +29,7 @@ export const oneLineAlert = {
     title: 'Hass im Netz melden!',
     text: 'Hier können Sie Hass im Netz melden!',
     button: {
-      text: 'Jetzt anonym melden',
+      text: 'Melden und Beratung',
       type: 'default',
       link: 'beratung/melden/hassimnetz'
     }

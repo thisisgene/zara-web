@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from '../MultiStepForm.module.sass'
 
@@ -95,6 +96,7 @@ export default class Step3 extends Component {
               Bitte beschreiben Sie uns den Vorfall möglichst genau,
               idealerweise auch unter Angabe von Ort und Zeit:
             </p>
+
             <div>
               <textarea
                 ref="description"
@@ -106,6 +108,16 @@ export default class Step3 extends Component {
                 onChange={this.validationCheck}
               />
               <div>{this.state.descriptionValMsg}</div>
+              <p>
+                WENN SIE EINE BERATUNG MÖCHTEN, KLICKEN SIE{' '}
+                <Link
+                  style={{ color: '#111' }}
+                  to="/de/beratung/beratung_rassismus_hassimnetz"
+                >
+                  HIER
+                </Link>
+                . BEI EINER ANONYMEN MELDUNG KÖNNEN WIR NICHT ANTWORTEN!
+              </p>
             </div>
           </form>
         </div>

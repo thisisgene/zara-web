@@ -8,14 +8,14 @@ const menuItems = [
         de: {
           icon: 'act',
           color: 'red',
-          text: 'Rassismus anonym melden',
-          link: 'beratung/melden/rassismus'
+          text: 'Kostenlose Beratung',
+          link: 'beratung/beratung_rassismus_hassimnetz'
         },
         en: {
           icon: 'act',
           color: 'red',
-          text: 'Rassismus anonym melden',
-          link: 'beratung/melden/rassismus'
+          text: 'Kostenlose Beratung',
+          link: 'beratung/beratung_rassismus_hassimnetz'
         }
       },
       {
@@ -57,6 +57,11 @@ const menuItems = [
 
         subMenuList: [
           {
+            name: 'Rassismus / Hass im Netz Beratung',
+            link: 'beratung_rassismus_hassimnetz',
+            id: '1.1.3'
+          },
+          {
             name: 'Rassismus',
             link: 'melden/rassismus',
             id: '1.1.1'
@@ -65,11 +70,6 @@ const menuItems = [
             name: 'Hass im Netz',
             link: 'melden/hassimnetz',
             id: '1.1.2'
-          },
-          {
-            name: 'Rassismus / Hass im Netz Beratung',
-            link: 'beratung_rassismus_hassimnetz',
-            id: '1.1.3'
           }
         ]
       },
@@ -139,25 +139,27 @@ const menuItems = [
       {
         de: {
           icon: 'act',
-          text: 'Rassismus anonym melden',
-          link: 'beratung/melden/rassismus'
+          text: 'Kostenlose Beratung',
+          link: 'beratung/beratung_rassismus_hassimnetz'
         },
         en: {
           icon: 'act',
-          text: 'Rassismus anonym melden',
-          link: 'beratung/melden/rassismus'
+          text: 'Kostenlose Beratung',
+          link: 'beratung/beratung_rassismus_hassimnetz'
         }
       },
       {
         de: {
-          icon: 'act',
-          text: 'Hass im Netz melden',
-          link: 'beratung/melden/hassimnetz'
+          icon: 'LockIcon',
+          color: 'petrol',
+          text: 'Verschlüsselte Email an ZARA',
+          link: 'verschluesselte_email'
         },
         en: {
-          icon: 'act',
-          text: 'Rassismus anonym melden',
-          link: 'beratung/melden/hassimnetz'
+          icon: 'LockIcon',
+          color: 'petrol',
+          text: 'Verschlüsselte Email an ZARA',
+          link: 'verschluesselte_email'
         }
       }
     ],
