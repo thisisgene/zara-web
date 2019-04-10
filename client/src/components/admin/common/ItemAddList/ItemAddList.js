@@ -71,7 +71,9 @@ class ItemAddList extends Component {
         console.log(this.state.list)
         // this.props.sortList(this.state.list, '')
         axios
-          .post('/api/projects/sort/news', { list: this.state.list })
+          .post(`/api/projects/sort/${this.props.category}`, {
+            list: this.state.list
+          })
           .then(res => {
             console.log(res)
           })
@@ -101,37 +103,39 @@ class ItemAddList extends Component {
             </div>
           </Link>
         </div>
-        <div className={styles['tag-container']}>
-          <div>
-            <input
-              type="radio"
-              name="tags"
-              id="all"
-              value=""
-              onClick={this.onTagChange}
-              checked={this.state.selectedTag === ''}
-            />
-            <label className={styles['all']} htmlFor="all">
-              Alle
-            </label>
+        {this.props.category === 'news' && (
+          <div className={styles['tag-container']}>
+            <div>
+              <input
+                type="radio"
+                name="tags"
+                id="all"
+                value=""
+                onClick={this.onTagChange}
+                checked={this.state.selectedTag === ''}
+              />
+              <label className={styles['all']} htmlFor="all">
+                Alle
+              </label>
+            </div>
+            {newsTags &&
+              newsTags.map(tag => (
+                <div>
+                  <input
+                    type="radio"
+                    name="tags"
+                    id={tag.name}
+                    value={tag.name}
+                    onClick={this.onTagChange}
+                    checked={tag.name === this.state.selectedTag}
+                  />
+                  <label className={styles[tag.name]} htmlFor={tag.name}>
+                    {tag.de.title}
+                  </label>
+                </div>
+              ))}
           </div>
-          {newsTags &&
-            newsTags.map(tag => (
-              <div>
-                <input
-                  type="radio"
-                  name="tags"
-                  id={tag.name}
-                  value={tag.name}
-                  onClick={this.onTagChange}
-                  checked={tag.name === this.state.selectedTag}
-                />
-                <label className={styles[tag.name]} htmlFor={tag.name}>
-                  {tag.de.title}
-                </label>
-              </div>
-            ))}
-        </div>
+        )}
         <div className={styles['item-list']}>
           {content && content.length > 0 ? (
             <SortableList

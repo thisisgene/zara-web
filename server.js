@@ -10,6 +10,7 @@ const metatags = require('./routes/metatags')
 const users = require('./routes/api/users')
 const media = require('./routes/api/media')
 const news = require('./routes/api/news')
+const jahresberichte = require('./routes/api/jahresberichte')
 const projects = require('./routes/api/projects')
 const app = express()
 
@@ -44,6 +45,7 @@ app.use('/', metatags)
 app.use('/api/users', users)
 app.use('/api/media', media)
 app.use('/api/news', news)
+app.use('/api/jahresberichte', jahresberichte)
 app.use('/api/projects', projects)
 
 // app.get('*', (req, res) => {

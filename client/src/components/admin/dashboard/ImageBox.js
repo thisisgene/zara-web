@@ -36,10 +36,22 @@ export default class ImageBox extends Component {
                   this.deleteImage
                 )}
               >
-                <img
-                  src={`/assets/media/${image.category}/${image.originalName}`}
-                  alt=""
-                />
+                <div className={styles['image-box--item__backdrop']}>
+                  <div className={styles['image-box--item__backdrop--text']}>
+                    {image.originalName.substring(
+                      image.originalName.lastIndexOf('.') + 1
+                    )}
+                  </div>
+                  <span>{image.originalName}</span>
+                </div>
+                <div className={styles['image-box--item__image']}>
+                  <img
+                    src={`/assets/media/${image.category}/${
+                      image.originalName
+                    }`}
+                    alt=""
+                  />
+                </div>
               </div>
             ))}
           </div>

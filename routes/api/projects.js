@@ -16,6 +16,7 @@ const validateOrderInput = require('../../validation/order')
 const Project = require('../../models/Project')
 
 const News = require('../../models/News')
+const Jahresbericht = require('../../models/Jahresbericht')
 
 const Report = require('../../models/Report')
 
@@ -23,120 +24,6 @@ const Report = require('../../models/Report')
 const validateProjectInput = require('../../validation/project')
 
 module.exports = router
-
-// // @route   GET api/projects
-// // @desc    Get all projects
-// // @access  Public
-// router.get('/', (req, res) => {
-//   // res.json({ msg: 'Jubidu' })
-//   const errors = {}
-//   Project.find({ isDeleted: false })
-//     .sort('position')
-//     .exec()
-//     .then(projects => {
-//       if (projects === undefined || projects.length === 0) {
-//         return res.json({ noprojects: 'Noch keine Projekte.' })
-//       }
-//       res.json(projects)
-//     })
-//     .catch(err => res.status(404).json(err))
-// })
-
-// // @route   POST api/projects
-// // @desc    Create a project
-// // @access  Private
-// router.post(
-//   '/',
-//   passport.authenticate('jwt', { session: false }),
-//   async (req, res) => {
-//     const body = req.body
-//     const { errors, isValid } = await validateProjectInput(body)
-
-//     // Check validation
-//     if (!isValid) {
-//       return res.status(400).json(errors)
-//     }
-
-//     // Check if project.name already exists
-//     const project = await Project.findOne({ name: body.name })
-//     if (project) {
-//       errors.name = 'Ein Projekt mit diesem Namen existiert bereits.'
-//       return res.status(400).json(errors)
-//     } else {
-//       // Get fields
-//       const projectFields = {}
-//       if (body.name) {
-//         projectFields.name = body.name
-//         // projectFields.title = body.name
-//         // projectFields.handle = body.name.replace(/\s/g, '_')
-//       }
-//       const newProject = new Project(projectFields)
-//       newProject.save(async project => {
-//         const projects = await Project.find()
-//         res.json(projects)
-//       })
-//     }
-//   }
-// )
-
-// // @route   GET api/projects/id/:id
-// // @desc    Get project by id
-// // @access  Public
-// router.get('/id/:id', (req, res) => {
-//   const errors = {}
-//   Project.findOne({ _id: req.params.id, isDeleted: false })
-//     .populate('lastEdited.user', ['name'])
-//     .then(project => {
-//       if (!project) {
-//         errors.noprojects = 'Kein Projekt mit dieser ID.'
-//         return res.status(404).json(errors.noprojects)
-//       }
-//       res.json(project)
-//     })
-//     .catch(err => {
-//       errors.project = 'Projekt nicht gefunden.'
-//       return res.status(404).json(errors)
-//     })
-// })
-
-// // @route   POST api/projects/update/:id
-// // @desc    Update project by id.
-// // @access  Private
-// router.post(
-//   '/update',
-//   passport.authenticate('jwt', { session: false }),
-//   (req, res) => {
-//     const body = req.body
-//     const projectFields = {}
-//     if (body.name) projectFields.name = body.name
-//     if (body.title) projectFields.title = body.title
-//     if (body.handle) projectFields.handle = body.handle
-//     if (body.descriptionMarkdown) {
-//       projectFields.descriptionMarkdown = body.descriptionMarkdown
-//       projectFields.descriptionHtml = marked(body.descriptionMarkdown, {
-//         sanitize: true
-//       })
-//     }
-//     if (body.topTenOnGrid) projectFields.topTenOnGrid = body.topTenOnGrid
-//     if (body.positionOnGrid) projectFields.positionOnGrid = body.positionOnGrid
-//     if (body.typeOfFormatOnGrid)
-//       projectFields.typeOfFormatOnGrid = body.typeOfFormatOnGrid
-//     if (body.importanceOnGrid)
-//       projectFields.importanceOnGrid = body.importanceOnGrid
-//     if (body.sizeOnGrid) projectFields.sizeOnGrid = body.sizeOnGrid
-//     if (body.isVisible !== undefined) projectFields.isVisible = body.isVisible
-//     projectFields.lastEdited = {
-//       user: req.user,
-//       date: new Date()
-//     }
-//     Project.findByIdAndUpdate(body.id, { $set: projectFields }, { new: true })
-//       .then(project => res.json(project))
-//       .catch(err => {
-//         errors.project = 'Projekt nicht gefunden.'
-//         return res.status(404).json(errors)
-//       })
-//   }
-// )
 
 // @route   POST api/projects/sort/:category
 // @desc    Sort projects.
@@ -151,6 +38,19 @@ router.post(
       switch (category) {
         case 'news':
           News.findOneAndUpdate(
+            { _id: item._id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {
+              console.log(item.de.title, ': ', item.position)
+            })
+            .catch(err => {
+              if (err) console.log(err)
+            })
+          break
+        case 'jahresberichte':
+          Jahresbericht.findOneAndUpdate(
             { _id: item._id },
             { position: index },
             { safe: true, new: true }

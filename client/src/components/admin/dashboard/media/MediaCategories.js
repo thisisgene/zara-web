@@ -18,10 +18,10 @@ export default class MediaCategories extends Component {
           </li>
           <li>
             <NavLink
-              to="/admin/dashboard/media/aad"
+              to="/admin/dashboard/media/jahresberichte"
               activeClassName={styles['active']}
             >
-              Team
+              Jahresberichte
             </NavLink>
           </li>
         </ul>

@@ -34,6 +34,13 @@ class Dashboard extends Component {
         >
           News
         </NavLink>
+        <NavLink
+          className={styles['category-nav--link']}
+          activeClassName={styles['cat-active']}
+          to="/admin/dashboard/jahresberichte"
+        >
+          Jahresberichte
+        </NavLink>
         {/* <NavLink
           className={styles['category-nav--link']}
           activeClassName={styles['active']}

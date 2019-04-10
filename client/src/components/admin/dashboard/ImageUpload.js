@@ -6,6 +6,11 @@ import { uploadImages } from '../../../actions/imageActions'
 
 import commonStyles from '../common/Common.module.sass'
 
+const acceptedFiles = {
+  news: 'image/*',
+  jahresberichte: ''
+}
+
 class ImageUpload extends Component {
   constructor(props) {
     super(props)
@@ -37,7 +42,8 @@ class ImageUpload extends Component {
         <div className={commonStyles['dropzone']}>
           <Dropzone
             className={commonStyles['dropzone-inner']}
-            accept="image/*"
+            accept={acceptedFiles[this.props.category]}
+            maxSize={15728640}
             onDrop={this.onDrop}
             onFileDialogCancel={this.onCancel}
             name="file"
@@ -49,14 +55,14 @@ class ImageUpload extends Component {
                 }`
               }
               if (isDragAccept) {
-                return 'Gültiges Format.'
+                return 'Gültige Format.'
               }
               if (isDragReject) {
-                return 'Ungültiges Format. Nur Bilddateien erlaubt.'
+                return 'Ungültiges Format. Oder zu groß.'
               }
               return (
                 <p>
-                  <i className="dropzone-image fa fa-image" /> Bilder hier
+                  <i className="dropzone-image fa fa-image" /> Dateien hier
                   hochladen.
                 </p>
               )

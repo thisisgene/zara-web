@@ -18,7 +18,7 @@ import { toolbarConfig, toolbarExtConfig } from './newsContentData'
 import { newsTags } from '../../../../user/pages/Wissen/News/news_data'
 
 import RichTextEditor from 'react-rte'
-import { confirmAlert } from 'react-confirm-alert' // Import
+import { confirmAlert } from 'react-confirm-alert'
 
 import ContentImageList from '../../ContentImageList'
 

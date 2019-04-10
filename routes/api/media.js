@@ -76,7 +76,9 @@ router.post(
       newImage
         .save()
         .then(image => {
-          Media.find().then(images => res.json(images))
+          Media.find({ category: body.category }).then(images =>
+            res.json(images)
+          )
         })
         .catch(err => {
           console.log('noo fail')
