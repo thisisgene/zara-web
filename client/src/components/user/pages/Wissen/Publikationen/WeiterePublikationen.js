@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
-import { weitereHeroData } from './publikationen_data'
-// import { oneLineAlert, trainingItems } from './training_data'
+import { weitereHeroData, weitereLongText } from './publikationen_data'
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import NewsletterOneLineObject from '../../../dashboard/NewsletterOneLineObject/NewsletterOneLineObject'
+import LongText from '../../../dashboard/LongText/LongText'
 
 class WeiterePublikationen extends Component {
   render() {
@@ -19,7 +19,8 @@ class WeiterePublikationen extends Component {
         {lang && (
           <div>
             <HeroUnit data={weitereHeroData} lang={lang} />
-            {/* <NewsletterOneLineObject lang={lang} /> */}
+            <NewsletterOneLineObject lang={lang} />
+            <LongText content={weitereLongText} lang={lang} />
           </div>
         )}
       </div>
