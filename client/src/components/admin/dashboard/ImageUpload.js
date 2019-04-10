@@ -43,7 +43,7 @@ class ImageUpload extends Component {
           <Dropzone
             className={commonStyles['dropzone-inner']}
             accept={acceptedFiles[this.props.category]}
-            maxSize={15728640}
+            // maxSize={15728640}
             onDrop={this.onDrop}
             onFileDialogCancel={this.onCancel}
             name="file"

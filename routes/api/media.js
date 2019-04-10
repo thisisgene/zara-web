@@ -69,15 +69,17 @@ router.post(
       console.log('File uploaded successfully.')
       const body = req.body
       const imgName = body.name.replace(/ /g, '_')
+      const name = body.name.substring(0, body.name.lastIndexOf('.'))
       const newImage = new Media({
         category: body.category,
-        originalName: imgName
+        originalName: imgName,
+        name: name
       })
       newImage
         .save()
         .then(image => {
-          Media.find({ category: body.category }).then(images =>
-            res.json(images)
+          Media.find({ category: body.category, isDeleted: false }).then(
+            images => res.json(images)
           )
         })
         .catch(err => {

@@ -50,6 +50,9 @@ const JahresberichtSchema = new Schema({
         },
         label: {
           type: String
+        },
+        name: {
+          type: String
         }
       }
     ],
@@ -63,6 +66,9 @@ const JahresberichtSchema = new Schema({
           type: String
         },
         label: {
+          type: String
+        },
+        name: {
           type: String
         }
       }

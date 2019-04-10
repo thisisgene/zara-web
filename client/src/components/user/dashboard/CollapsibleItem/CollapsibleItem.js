@@ -43,7 +43,7 @@ export default class CollapsibleItem extends Component {
                       file.value
                     }`}
                   >
-                    {file.value}
+                    {file.name ? file.name : file.value}
                   </a>
                 </div>
               ))}

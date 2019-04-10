@@ -8,7 +8,9 @@ const MediaSchema = new Schema({
   originalName: {
     type: String
   },
-
+  name: {
+    type: String
+  },
   isVisible: {
     type: Boolean,
     default: true

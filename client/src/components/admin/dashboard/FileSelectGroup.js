@@ -15,6 +15,7 @@ export default class FileSelectGroup extends Component {
       optionArray.push({
         value: option.originalName,
         label: option.originalName,
+        name: option.name,
         originalId: option._id
       })
     })
