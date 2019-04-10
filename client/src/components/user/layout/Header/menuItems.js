@@ -283,8 +283,8 @@ const menuItems = [
             id: '4.3.2'
           },
           {
-            name: 'Weitere Publikationen',
-            link: 'weitere',
+            name: 'Jahres- und Finanzberichte',
+            link: 'jahres_und_finanzberichte',
             id: '4.3.3'
           }
         ]

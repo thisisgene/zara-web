@@ -389,8 +389,8 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'Weitere Publikationen',
-        link: 'wissen/publikationen/weitere'
+        title: 'Jahres- und Finanzberichte',
+        link: 'wissen/publikationen/jahres_und_finanzberichte'
       }
     ]
   },
@@ -408,8 +408,8 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'Weitere Publikationen',
-        link: 'wissen/publikationen/weitere'
+        title: 'Jahres- und Finanzberichte',
+        link: 'wissen/publikationen/jahres_und_finanzberichte'
       }
     ]
   }

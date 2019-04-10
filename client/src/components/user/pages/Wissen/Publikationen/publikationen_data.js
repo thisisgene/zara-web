@@ -5,12 +5,12 @@ export const heroData = {
   de: {
     title: 'Publikationen',
     text:
-      'Hier finden Sie unseren Rassismus Report, weitere Publikationen sowie Stellungnahmen und Forderungen.'
+      'Hier finden Sie unseren Rassismus Report, ZARA Publikationen, sowie unsere Jahresberichte und Finanzberichte.'
   },
   en: {
     title: 'Publikationen',
     text:
-      'Hier finden Sie unseren Rassismus Report, weitere Publikationen sowie Stellungnahmen und Forderungen.'
+      'Hier finden Sie unseren Rassismus Report, ZARA Publikationen, sowie unsere Jahresberichte und Finanzberichte.'
   }
 }
 
@@ -19,14 +19,14 @@ export const weitereHeroData = {
   imageSide: 'left',
   imageAlign: 'center',
   de: {
-    title: 'Weitere Publikationen',
+    title: 'Jahres-, Finanz- und Bilanzberichte',
     text:
-      'Hier finden Sie demnächst weitere Publikationen sowie Stellungnahmen und Forderungen.'
+      'Hier finden Sie unsere Jahresberichte, sowie unsere Finanz- und Bilanzberichte.'
   },
   en: {
-    title: 'Weitere Publikationen',
+    title: 'Jahres-, Finanz- und Bilanzberichte',
     text:
-      'Hier finden Sie demnächst weitere Publikationen sowie Stellungnahmen und Forderungen.'
+      'Hier finden Sie unsere Jahresberichte, sowie unsere Finanz- und Bilanzberichte.'
   }
 }
 export const zaraHeroData = {
@@ -74,8 +74,8 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'Weitere Publikationen',
-        link: 'wissen/publikationen/weitere'
+        title: 'Jahres- und Finanzberichte',
+        link: 'wissen/publikationen/jahres_und_finanzberichte'
       }
     ]
   },
@@ -93,8 +93,8 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'Weitere Publikationen',
-        link: 'wissen/publikationen/weitere'
+        title: 'Jahres- und Finanzberichte',
+        link: 'wissen/publikationen/jahres_und_finanzberichte'
       }
     ]
   }

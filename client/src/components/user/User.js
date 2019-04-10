@@ -329,7 +329,7 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/:lang/wissen/publikationen/weitere"
+                path="/:lang/wissen/publikationen/jahres_und_finanzberichte"
                 component={WeiterePublikationen}
               />
               <Route
