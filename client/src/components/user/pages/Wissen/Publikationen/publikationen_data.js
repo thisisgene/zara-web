@@ -19,12 +19,12 @@ export const weitereHeroData = {
   imageSide: 'left',
   imageAlign: 'center',
   de: {
-    title: 'Jahres-, Finanz- und Bilanzberichte',
+    title: 'Jahres- und Finanzberichte',
     text:
       'Hier finden Sie unsere Jahresberichte, sowie unsere Finanz- und Bilanzberichte.'
   },
   en: {
-    title: 'Jahres-, Finanz- und Bilanzberichte',
+    title: 'Jahres- und Finanzberichte',
     text:
       'Hier finden Sie unsere Jahresberichte, sowie unsere Finanz- und Bilanzberichte.'
   }
