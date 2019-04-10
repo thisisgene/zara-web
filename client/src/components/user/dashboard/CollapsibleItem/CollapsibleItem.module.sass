@@ -1,0 +1,51 @@
+.collapsible-item
+  &--title
+    cursor: pointer
+    display: flex
+    // justify-content: center
+    align-items: center
+    position: relative
+    margin-bottom: 1rem
+    &__icon
+      width: 10px
+      height: 10px
+      font-size: 12px
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 1px solid #777
+      margin-right: .2rem
+      &:before
+        content: ''
+        height: 2px
+        width: .5em
+        background: #777
+        transform: rotateZ(0deg)
+        position: absolute
+        transition: 200ms transform ease-in-out 
+      &:after
+        content: ''
+        height: 2px
+        width: .5em
+        background: #777
+        position: absolute
+        transition: 200ms transform ease-in-out 
+      &.collapsed
+        &:before
+          transform: rotateZ(90deg)
+        &:after
+          transform: rotateZ(360deg)
+    h1
+      font:
+        size: 1.4rem
+        weight: bold
+      margin: 0
+      line-height: 1
+  a
+    color: #050505
+    display: block
+
+    @media(max-width: 920px)
+      margin: 1rem 0
+      word-break: break-all
+      line-height: 1

@@ -1,15 +1,29 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
+
+import { getAll } from '../../../../../actions/adminActions'
 
 import { weitereHeroData, weitereLongText } from './publikationen_data'
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import NewsletterOneLineObject from '../../../dashboard/NewsletterOneLineObject/NewsletterOneLineObject'
 import LongText from '../../../dashboard/LongText/LongText'
+import CollapsibleItem from '../../../dashboard/CollapsibleItem/CollapsibleItem'
+
+import styles from './WeiterePublikationen.module.sass'
 
 class WeiterePublikationen extends Component {
+  constructor() {
+    super()
+  }
+
+  componentDidMount() {
+    this.props.getAll('jahresberichte')
+  }
+
   render() {
-    const { activeLanguage } = this.props
+    const { activeLanguage, jahresberichte } = this.props
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
@@ -21,6 +35,15 @@ class WeiterePublikationen extends Component {
             <HeroUnit data={weitereHeroData} lang={lang} />
             <NewsletterOneLineObject lang={lang} />
             <LongText content={weitereLongText} lang={lang} />
+            {jahresberichte.jahresberichte && (
+              <div className={styles['jahresberichte-container']}>
+                {jahresberichte.jahresberichte
+                  .filter(bericht => bericht.isOnline && !bericht.isDeleted)
+                  .map(bericht => (
+                    <CollapsibleItem content={bericht} lang={lang} />
+                  ))}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -28,4 +51,13 @@ class WeiterePublikationen extends Component {
   }
 }
 
-export default withLocalize(WeiterePublikationen)
+const mapStateToProps = state => ({
+  jahresberichte: state.jahresberichte
+})
+
+export default withLocalize(
+  connect(
+    mapStateToProps,
+    { getAll }
+  )(WeiterePublikationen)
+)
