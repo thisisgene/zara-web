@@ -27,7 +27,7 @@ const jahresberichtTags = [
     title: 'Jahresbericht'
   },
   {
-    name: 'presse',
+    name: 'pressespiegel',
     title: 'Pressespiegel'
   }
 ]
@@ -54,8 +54,6 @@ class JahresberichtContent extends Component {
   }
 
   componentDidMount() {
-    this.props.getImagesByCategory('jahresberichte')
-
     this.props.match.params.jahresberichtId !== 'neu' &&
       this.props.getById(
         this.props.match.params.jahresberichtId,
@@ -80,24 +78,21 @@ class JahresberichtContent extends Component {
             }`
           )
         }
-        const item = this.props.jahresberichte.jahresbericht
-        this.setState(
-          {
+        if (prevProps.jahresberichte != this.props.jahresberichte) {
+          const item = this.props.jahresberichte.jahresbericht
+          this.props.getImagesByCategory(item.tag || 'jahresberichte')
+          this.setState({
             blankItem: false,
             isOnline: item.isOnline,
             jahresberichtId: item._id,
             handle: item.handle,
-            category: item.category,
             tag: item.tag && item.tag,
             titleDE: item.de.title && item.de.title,
             titleEN: item.en ? item.en.title : '',
             selectedFilesDE: item.files && item.files.de,
             selectedFilesEN: item.files && item.files.en
-          },
-          () => {
-            this.props.getImagesByCategory(this.state.tag)
-          }
-        )
+          })
+        }
       }
       if (
         prevProps.match.params.jahresberichtId !==
@@ -142,11 +137,18 @@ class JahresberichtContent extends Component {
     })
   }
   onTagSelectChange = e => {
-    this.setState({ tag: e.target.value })
+    this.setState({ tag: e.target.value }, () => {
+      this.props.getImagesByCategory(this.state.tag)
+    })
   }
   onSelectChange = (lang, selected) => {
-    if (lang === 'DE') this.setState({ selectedFilesDE: selected })
-    if (lang === 'EN') this.setState({ selectedFilesEN: selected })
+    console.log(lang, selected)
+    if (lang === 'DE') {
+      this.setState({ selectedFilesDE: selected })
+    }
+    if (lang === 'EN') {
+      this.setState({ selectedFilesEN: selected })
+    }
   }
   deleteJahresbericht = () => {
     this.props.deleteById(this.state.jahresberichtId, 'jahresberichte')
