@@ -1,7 +1,8 @@
-import { UPDATE_MEDIA } from '../actions/types'
+import { UPDATE_MEDIA, UPLOAD_PROGRESS, SET_WAITING } from '../actions/types'
 
 const initialState = {
-  media: null
+  media: null,
+  uploadProgress: null
 }
 
 export default function(state = initialState, action) {
@@ -9,7 +10,18 @@ export default function(state = initialState, action) {
     case UPDATE_MEDIA:
       return {
         ...state,
-        images: action.payload
+        images: action.payload,
+        waiting: false
+      }
+    case UPLOAD_PROGRESS:
+      return {
+        ...state,
+        uploadProgress: action.payload
+      }
+    case SET_WAITING:
+      return {
+        ...state,
+        waiting: true
       }
 
     default:

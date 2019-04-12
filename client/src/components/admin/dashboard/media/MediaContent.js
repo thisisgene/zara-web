@@ -8,6 +8,7 @@ import {
 
 import ImageUpload from '../ImageUpload'
 import ImageBox from '../ImageBox'
+import Spinner from '../../common/Spinner'
 
 class MediaContent extends Component {
   constructor(props) {
@@ -41,6 +42,18 @@ class MediaContent extends Component {
         {this.state.category && (
           <div>
             <ImageUpload category={this.state.category} />
+            <div style={{ height: '1.4rem' }}>
+              {this.props.media.uploadProgress &&
+                this.props.media.uploadProgress < 100 && (
+                  <div>
+                    <progress
+                      style={{ width: '100%' }}
+                      value={this.props.media.uploadProgress}
+                      max="100"
+                    />
+                  </div>
+                )}
+            </div>
             {this.props.media && this.props.media.images && (
               <ImageBox
                 images={this.props.media.images}

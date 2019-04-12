@@ -5,9 +5,11 @@ export const CREATE_NEW_USER = 'CREATE_NEW_USER'
 export const SET_CURRENT_USER = 'SET_CURRENT_USER'
 export const GET_ALL_USERS = 'GET_ALL_USERS'
 
+export const SET_WAITING = 'SET_WAITING'
 export const UPDATE_MEDIA = 'UPDATE_MEDIA'
 export const UPLOAD_IMAGES = 'UPLOAD_IMAGES'
 export const DELETE_IMAGE = 'DELETE_IMAGE'
+export const UPLOAD_PROGRESS = 'UPLOAD_PROGRESS'
 
 export const GET_ALL_NEWS = 'GET_ALL_NEWS'
 export const GET_NEWS_BY_ID = 'GET_NEWS_BY_ID'

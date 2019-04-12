@@ -1,9 +1,10 @@
 import axios from 'axios'
 import {
-  // SET_WAITING,
+  SET_WAITING,
   GET_ERRORS,
   UPDATE_MEDIA,
-  DELETE_IMAGE
+  DELETE_IMAGE,
+  UPLOAD_PROGRESS
   // SET_GRID_POSITION,
   // SET_BACKGROUND_IMAGE,
   // SET_IMAGE_VISIBILITY
@@ -19,6 +20,8 @@ export const getImagesByCategory = category => dispatch => {
 }
 
 export const uploadImages = (files, category) => dispatch => {
+  // dispatch(setWaiting())
+  // console.log('waiting on')
   files.map(file => {
     let formData = new FormData()
     formData.append('category', category)
@@ -26,8 +29,27 @@ export const uploadImages = (files, category) => dispatch => {
     formData.append('size', file.size)
     formData.append('file', file)
     return axios
-      .post('/api/media/image_upload', formData)
+      .post('/api/media/image_upload', formData, {
+        onUploadProgress: function(progressEvent) {
+          let percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          )
+          dispatch({
+            type: UPLOAD_PROGRESS,
+            payload: percentCompleted
+          })
+          console.log(
+            'loaded: ' +
+              progressEvent.loaded +
+              ', totalSize: ' +
+              progressEvent.total
+          )
+          console.log(percentCompleted + '%')
+        }
+      })
       .then(res => {
+        // console.log('waiting off')
+
         dispatch({
           type: UPDATE_MEDIA,
           payload: res.data
@@ -78,84 +100,8 @@ export const deleteImage = (projectid, imgid) => dispatch => {
     )
 }
 
-// export const setGridPosition = (
-//   projectId,
-//   projectName,
-//   imageId,
-//   imageName,
-//   position
-// ) => dispatch => {
-//   dispatch(setWaiting())
-//   const data = {
-//     projectId: projectId,
-//     projectName: projectName,
-//     imageId: imageId,
-//     imageName: imageName,
-//     position: position
-//   }
-//   axios
-//     .post('/api/projects/set_grid_position', data)
-//     .then(res => {
-//       dispatch({
-//         type: SET_GRID_POSITION,
-//         payload: res.data
-//       })
-//     })
-//     .catch(err =>
-//       dispatch({
-//         type: GET_ERRORS,
-//         payload: {}
-//       })
-//     )
-// }
-
-// export const setBackgroundImage = (projectId, imageId) => dispatch => {
-//   dispatch(setWaiting())
-//   const data = {
-//     projectId: projectId,
-//     imageId: imageId
-//   }
-//   axios
-//     .post('/api/projects/set_background_image', data)
-//     .then(res => {
-//       dispatch({
-//         type: SET_BACKGROUND_IMAGE,
-//         payload: res.data
-//       })
-//     })
-//     .catch(err =>
-//       dispatch({
-//         type: GET_ERRORS,
-//         payload: {}
-//       })
-//     )
-// }
-
-// export const setImageVisibility = (projectId, imageId, state) => dispatch => {
-//   dispatch(setWaiting())
-//   const data = {
-//     projectId: projectId,
-//     imageId: imageId,
-//     state: state
-//   }
-//   axios
-//     .post('/api/projects/set_image_visibility', data)
-//     .then(res => {
-//       dispatch({
-//         type: SET_IMAGE_VISIBILITY,
-//         payload: res.data
-//       })
-//     })
-//     .catch(err =>
-//       dispatch({
-//         type: GET_ERRORS,
-//         payload: {}
-//       })
-//     )
-// }
-
-// export const setWaiting = () => {
-//   return {
-//     type: SET_WAITING
-//   }
-// }
+export const setWaiting = () => {
+  return {
+    type: SET_WAITING
+  }
+}
