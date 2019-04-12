@@ -38,7 +38,12 @@ class WeiterePublikationen extends Component {
             {jahresberichte.jahresberichte && (
               <div className={styles['jahresberichte-container']}>
                 {jahresberichte.jahresberichte
-                  .filter(bericht => bericht.isOnline && !bericht.isDeleted)
+                  .filter(
+                    bericht =>
+                      bericht.isOnline &&
+                      !bericht.isDeleted &&
+                      (bericht.tag === 'jahresberichte' || !bericht.tag)
+                  )
                   .map(bericht => (
                     <CollapsibleItem content={bericht} lang={lang} />
                   ))}

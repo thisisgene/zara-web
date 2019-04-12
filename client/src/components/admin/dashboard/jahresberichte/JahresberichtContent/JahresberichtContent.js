@@ -21,6 +21,17 @@ import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import commonStyles from '../../../common/Common.module.sass'
 import styles from './JahresberichtContent.module.sass'
 
+const jahresberichtTags = [
+  {
+    name: 'jahresberichte',
+    title: 'Jahresbericht'
+  },
+  {
+    name: 'presse',
+    title: 'Pressespiegel'
+  }
+]
+
 class JahresberichtContent extends Component {
   constructor(props) {
     super(props)
@@ -30,18 +41,13 @@ class JahresberichtContent extends Component {
       jahresberichtId: props.match.params.jahresberichtId,
       handle: '',
       category: 'jahresberichte',
+      tag: 'jahresberichte',
       titleDE: '',
       titleEN: '',
 
       selectedFilesDE: [],
       selectedFilesEN: [],
 
-      titleImage: '',
-      imageId: '',
-      imageCategory: '',
-      imageSide: '',
-      imageAlign: '',
-      bigImage: false,
       errors: {},
       imageListOpen: false
     }
@@ -75,17 +81,23 @@ class JahresberichtContent extends Component {
           )
         }
         const item = this.props.jahresberichte.jahresbericht
-        this.setState({
-          blankItem: false,
-          isOnline: item.isOnline,
-          jahresberichtId: item._id,
-          handle: item.handle,
-          category: item.tag,
-          titleDE: item.de.title && item.de.title,
-          titleEN: item.en ? item.en.title : '',
-          selectedFilesDE: item.files && item.files.de,
-          selectedFilesEN: item.files && item.files.en
-        })
+        this.setState(
+          {
+            blankItem: false,
+            isOnline: item.isOnline,
+            jahresberichtId: item._id,
+            handle: item.handle,
+            category: item.category,
+            tag: item.tag && item.tag,
+            titleDE: item.de.title && item.de.title,
+            titleEN: item.en ? item.en.title : '',
+            selectedFilesDE: item.files && item.files.de,
+            selectedFilesEN: item.files && item.files.en
+          },
+          () => {
+            this.props.getImagesByCategory(this.state.tag)
+          }
+        )
       }
       if (
         prevProps.match.params.jahresberichtId !==
@@ -100,6 +112,7 @@ class JahresberichtContent extends Component {
             jahresberichtId: this.props.match.params.jahresberichtId,
             handle: '',
             category: 'jahresberichte',
+            tag: 'jahresberichte',
             titleDE: '',
             titleEN: '',
             selectedFilesDE: [],
@@ -127,6 +140,9 @@ class JahresberichtContent extends Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+  onTagSelectChange = e => {
+    this.setState({ tag: e.target.value })
   }
   onSelectChange = (lang, selected) => {
     if (lang === 'DE') this.setState({ selectedFilesDE: selected })
@@ -156,7 +172,7 @@ class JahresberichtContent extends Component {
   saveContent = () => {
     const saveData = {
       category: 'jahresberichte',
-
+      tag: this.state.tag,
       id: this.state.jahresberichtId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
@@ -183,6 +199,18 @@ class JahresberichtContent extends Component {
         >
           <div className={styles['jahresbericht-content']}>
             <div className={styles['jahresbericht-content--main']}>
+              <div className={styles['jahresbericht-content--main__category']}>
+                <select
+                  name="catSelect"
+                  value={this.state.tag}
+                  onChange={this.onTagSelectChange}
+                >
+                  {jahresberichtTags &&
+                    jahresberichtTags.map(tag => (
+                      <option value={tag.name}>{tag.title}</option>
+                    ))}
+                </select>
+              </div>
               <div className={styles['jahresbericht-content--text']}>
                 <div className={styles['jahresbericht-content--text__title']}>
                   <TextFieldGroup
