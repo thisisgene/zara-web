@@ -6,6 +6,8 @@
     display: flex
     box-shadow: 0 0 0 rgba(#59D8D8, 1)
     transition: all 1000ms ease-in-out
+    @media(max-width: 890px)
+      justify-content: center
     @media(max-width: 500px)
       flex-direction: column
       width: 100%
@@ -23,6 +25,8 @@
   input, button
     height: 2.1rem
     // flex: 2 0 1
+    @media(max-width: 270px)
+      height: auto
     
   input
     border: none
