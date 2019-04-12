@@ -40,8 +40,12 @@ class Pressespiegel extends Component {
                       !bericht.isDeleted &&
                       (bericht.tag === 'pressespiegel' || !bericht.tag)
                   )
-                  .map(bericht => (
-                    <CollapsibleItem content={bericht} lang={lang} />
+                  .map((bericht, index) => (
+                    <CollapsibleItem
+                      key={index}
+                      content={bericht}
+                      lang={lang}
+                    />
                   ))}
               </div>
             )}

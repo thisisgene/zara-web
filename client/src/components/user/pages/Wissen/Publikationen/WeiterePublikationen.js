@@ -44,8 +44,12 @@ class WeiterePublikationen extends Component {
                       !bericht.isDeleted &&
                       (bericht.tag === 'jahresberichte' || !bericht.tag)
                   )
-                  .map(bericht => (
-                    <CollapsibleItem content={bericht} lang={lang} />
+                  .map((bericht, index) => (
+                    <CollapsibleItem
+                      key={index}
+                      content={bericht}
+                      lang={lang}
+                    />
                   ))}
               </div>
             )}
