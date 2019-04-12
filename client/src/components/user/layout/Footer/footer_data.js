@@ -212,8 +212,10 @@ export const sponsorLogos = [
     image: 'BMEIA_Logo.png'
   },
   {
-    image: 'EU_flag.png'
+    image: 'BKA_FFJ_Logo_srgb.png',
+    size: 'wide'
   },
+
   {
     image: 'MA17_Logo.gif'
   },
@@ -224,5 +226,8 @@ export const sponsorLogos = [
   {
     image: 'rd-foundation-logo.jpg',
     size: 'wide'
+  },
+  {
+    image: 'EU_flag.png'
   }
 ]

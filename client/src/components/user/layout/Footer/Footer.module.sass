@@ -97,7 +97,10 @@
             .bank-date
         &__bottom
           .sponsor-box
-            display: flex
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            grid-gap: 1rem
+
             margin: 1rem auto 2rem
             @media(max-width: 850px)
               width: 70vw
