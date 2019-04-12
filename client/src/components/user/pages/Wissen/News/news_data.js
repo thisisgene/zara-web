@@ -329,8 +329,8 @@ export const newsData = [
       shortDescription:
         'Der Workshop vermittelt mit interaktiven Methoden Medienkompetenzen und widmet sich  folgenden Fragestellungen: Wie begegne ich Angriffen und Aggressionen im Netz? Wie treten radikale Gruppen im Internet auf? Wie erkenne ich Fake News? Wie kann ich selbst aktiv gegen Hass und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?',
       content:
-        'Der Workshop vermittelt mit interaktiven Methoden Medienkompetenzen und widmet sich  folgenden Fragestellungen: Wie begegne ich Angriffen und Aggressionen im Netz? Wie treten radikale Gruppen im Internet auf? Wie erkenne ich Fake News? Wie kann ich selbst aktiv gegen Hass und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?'
-      // linkText: 'weiterlesen'
+        'Der Workshop vermittelt mit interaktiven Methoden Medienkompetenzen und widmet sich  folgenden Fragestellungen: Wie begegne ich Angriffen und Aggressionen im Netz? Wie treten radikale Gruppen im Internet auf? Wie erkenne ich Fake News? Wie kann ich selbst aktiv gegen Hass und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?',
+      linkText: 'weiterlesen'
     },
     en: {
       date: '05. Dezember 2018',
