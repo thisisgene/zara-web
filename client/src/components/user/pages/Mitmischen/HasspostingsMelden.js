@@ -28,7 +28,7 @@ class HasspostingsMelden extends Component {
           <div>
             <HeroUnit data={heroData} lang={lang} />
             <OneLineAlert content={oneLineAlert} lang={lang} />
-            {/* <LongText content={longText} lang={lang} /> */}
+            <LongText content={longText} lang={lang} />
             <VideoBox content={videoBox} lang={lang} />
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
