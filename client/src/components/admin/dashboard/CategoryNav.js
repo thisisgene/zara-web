@@ -39,7 +39,7 @@ class Dashboard extends Component {
           activeClassName={styles['cat-active']}
           to="/admin/dashboard/jahresberichte"
         >
-          Jahresberichte
+          Berichte, Pressespiegel ...
         </NavLink>
         {/* <NavLink
           className={styles['category-nav--link']}

@@ -88,7 +88,7 @@ class ItemAddList extends Component {
   }
 
   render() {
-    const { category } = this.props
+    const { category, tags } = this.props
     const content = this.state.list
     return (
       <div className={styles['item-add-list']}>
@@ -103,39 +103,39 @@ class ItemAddList extends Component {
             </div>
           </Link>
         </div>
-        {this.props.category === 'news' && (
-          <div className={styles['tag-container']}>
-            <div>
-              <input
-                type="radio"
-                name="tags"
-                id="all"
-                value=""
-                onClick={this.onTagChange}
-                checked={this.state.selectedTag === ''}
-              />
-              <label className={styles['all']} htmlFor="all">
-                Alle
-              </label>
-            </div>
-            {newsTags &&
-              newsTags.map(tag => (
-                <div>
-                  <input
-                    type="radio"
-                    name="tags"
-                    id={tag.name}
-                    value={tag.name}
-                    onClick={this.onTagChange}
-                    checked={tag.name === this.state.selectedTag}
-                  />
-                  <label className={styles[tag.name]} htmlFor={tag.name}>
-                    {tag.de.title}
-                  </label>
-                </div>
-              ))}
+
+        <div className={styles['tag-container']}>
+          <div>
+            <input
+              type="radio"
+              name="tags"
+              id="all"
+              value=""
+              onClick={this.onTagChange}
+              checked={this.state.selectedTag === ''}
+            />
+            <label className={styles['all']} htmlFor="all">
+              Alle
+            </label>
           </div>
-        )}
+          {tags &&
+            tags.map(tag => (
+              <div>
+                <input
+                  type="radio"
+                  name="tags"
+                  id={tag.name}
+                  value={tag.name}
+                  onClick={this.onTagChange}
+                  checked={tag.name === this.state.selectedTag}
+                />
+                <label className={styles[tag.name]} htmlFor={tag.name}>
+                  {tag.de.title}
+                </label>
+              </div>
+            ))}
+        </div>
+
         <div className={styles['item-list']}>
           {content && content.length > 0 ? (
             <SortableList

@@ -9,6 +9,7 @@ import ItemAddList from '../../common/ItemAddList/ItemAddList'
 import NewsContent from './NewsContent/NewsContent'
 
 import styles from './News.module.sass'
+import { newsTags } from '../../../user/pages/Wissen/News/news_data'
 
 class News extends Component {
   componentDidMount() {
@@ -19,7 +20,11 @@ class News extends Component {
     return (
       <div className={styles['news']}>
         {this.props.news && (
-          <ItemAddList content={this.props.news.news} category={'news'} />
+          <ItemAddList
+            tags={newsTags}
+            content={this.props.news.news}
+            category={'news'}
+          />
         )}
         <PrivateRoute
           path="/admin/dashboard/news/:newsId"

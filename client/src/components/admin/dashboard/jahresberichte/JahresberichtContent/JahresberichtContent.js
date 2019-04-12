@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import { jahresberichtTags } from '../jahresberichte_data'
+
 import TextFieldGroup from '../../../common/TextFieldGroup'
 import FileSelectGroup from '../../FileSelectGroup'
 
@@ -20,17 +22,6 @@ import cx from 'classnames'
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import commonStyles from '../../../common/Common.module.sass'
 import styles from './JahresberichtContent.module.sass'
-
-const jahresberichtTags = [
-  {
-    name: 'jahresberichte',
-    title: 'Jahresbericht'
-  },
-  {
-    name: 'pressespiegel',
-    title: 'Pressespiegel'
-  }
-]
 
 class JahresberichtContent extends Component {
   constructor(props) {
@@ -138,7 +129,9 @@ class JahresberichtContent extends Component {
   }
   onTagSelectChange = e => {
     this.setState({ tag: e.target.value }, () => {
-      this.props.getImagesByCategory(this.state.tag)
+      if (this.state.jahresberichtId !== 'neu') {
+        this.props.getImagesByCategory(this.state.tag)
+      }
     })
   }
   onSelectChange = (lang, selected) => {
@@ -209,7 +202,7 @@ class JahresberichtContent extends Component {
                 >
                   {jahresberichtTags &&
                     jahresberichtTags.map(tag => (
-                      <option value={tag.name}>{tag.title}</option>
+                      <option value={tag.name}>{tag.de.title}</option>
                     ))}
                 </select>
               </div>

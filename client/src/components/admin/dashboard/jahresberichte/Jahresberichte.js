@@ -4,6 +4,8 @@ import PrivateRoute from '../../common/PrivateRoute'
 
 import { getAll } from '../../../../actions/adminActions'
 
+import { jahresberichtTags } from './jahresberichte_data'
+
 import ItemAddList from '../../common/ItemAddList/ItemAddList'
 // import NewsList from './NewsList/NewsList'
 import JahresberichtContent from './JahresberichtContent/JahresberichtContent'
@@ -20,6 +22,7 @@ class Jahresberichte extends Component {
       <div className={styles['jahresberichte']}>
         {this.props.jahresberichte && (
           <ItemAddList
+            tags={jahresberichtTags}
             content={this.props.jahresberichte.jahresberichte}
             category={'jahresberichte'}
           />
