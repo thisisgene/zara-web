@@ -24,8 +24,8 @@
       grid-template-columns: 1fr 1fr
       // .grid-item, .wide
       //   height: 600px !important
-      margin: 0 auto
-      width: auto
+      // margin: 0 auto
+      // width: auto
       // justify-items: center !important
 
     .grid-item
@@ -56,5 +56,13 @@
   @media(max-width: 630px)
     .card-grid
       grid-template-columns: 1fr 1fr
+      // grid-rows: 1fr
+  @media(max-width: 410px)
+    .card-grid
+      grid-template-columns: 1fr !important
+      align-items: center
+      justify-content: center
+      .grid-item
+        margin: 0 auto
       // grid-rows: 1fr
 
