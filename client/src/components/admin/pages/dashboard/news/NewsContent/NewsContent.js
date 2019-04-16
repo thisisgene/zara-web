@@ -1,7 +1,7 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
-import { withRouter } from './react-router-dom'
-import moment from './moment'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import moment from 'moment'
 
 import TextFieldGroup from '../../../../common/TextFieldGroup'
 
@@ -17,15 +17,15 @@ import {
 import { toolbarConfig, toolbarExtConfig } from './newsContentData'
 import { newsTags } from '../../../../../user/pages/Wissen/News/news_data'
 
-import RichTextEditor from './react-rte'
-import { confirmAlert } from './react-confirm-alert'
+import RichTextEditor from 'react-rte'
+import { confirmAlert } from 'react-confirm-alert'
 
 import ContentImageList from '../../ContentImageList'
 
-import cx from './classnames'
-import './react-confirm-alert/src/react-confirm-alert.css' // Import css
+import cx from 'classnames'
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import './rte.sass'
-import commonStyles from '../../../common/Common.module.sass'
+import commonStyles from '../../../../common/Common.module.sass'
 import styles from './NewsContent.module.sass'
 
 class NewsContent extends Component {

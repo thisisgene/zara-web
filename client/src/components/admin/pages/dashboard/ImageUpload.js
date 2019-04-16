@@ -1,10 +1,10 @@
-import React, { Component } from './react'
-import Dropzone from './react-dropzone'
-import { connect } from './react-redux'
+import React, { Component } from 'react'
+import Dropzone from 'react-dropzone'
+import { connect } from 'react-redux'
 
 import { uploadImages } from '../../../../actions/imageActions'
 
-import commonStyles from '../common/Common.module.sass'
+import commonStyles from '../../common/Common.module.sass'
 
 const acceptedFiles = {
   news: 'image/*',

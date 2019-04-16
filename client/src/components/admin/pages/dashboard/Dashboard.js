@@ -1,6 +1,6 @@
-import React, { Component } from './react'
-import PropTypes from './prop-types'
-import { connect } from './react-redux'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import PrivateRoute from '../../common/PrivateRoute'
 
 import CategoryNav from './CategoryNav'

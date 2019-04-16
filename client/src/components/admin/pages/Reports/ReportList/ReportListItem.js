@@ -1,8 +1,8 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
-import { NavLink, withRouter } from './react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { NavLink, withRouter } from 'react-router-dom'
 import { getReportById } from '../../../../../actions/reportActions'
-import Moment from './react-moment'
+import Moment from 'react-moment'
 
 import styles from './ReportList.module.sass'
 

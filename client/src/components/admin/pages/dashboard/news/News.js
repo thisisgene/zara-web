@@ -1,5 +1,5 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PrivateRoute from '../../../common/PrivateRoute'
 
 import { getAll } from '../../../../../actions/adminActions'

@@ -1,12 +1,12 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { jahresberichtTags } from '../jahresberichte_data'
 
 import TextFieldGroup from '../../../../common/TextFieldGroup'
 import FileSelectGroup from '../../FileSelectGroup'
 
-import { confirmAlert } from './react-confirm-alert'
+import { confirmAlert } from 'react-confirm-alert'
 
 import {
   saveContent,
@@ -18,9 +18,9 @@ import {
 } from '../../../../../../actions/adminActions'
 import { getImagesByCategory } from '../../../../../../actions/imageActions'
 
-import cx from './classnames'
-import './react-confirm-alert/src/react-confirm-alert.css' // Import css
-import commonStyles from '../../../common/Common.module.sass'
+import cx from 'classnames'
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
+import commonStyles from '../../../../common/Common.module.sass'
 import styles from './JahresberichtContent.module.sass'
 
 class JahresberichtContent extends Component {

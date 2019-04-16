@@ -1,5 +1,5 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { deleteImage } from '../../../../actions/imageActions'
 import {
@@ -10,7 +10,7 @@ import {
 
 import SelectFieldGroup from '../../common/SelectFieldGroup'
 
-import cx from './classnames'
+import cx from 'classnames'
 import globalStyles from '../common/Bootstrap.module.css'
 import commonStyles from '../common/Common.module.sass'
 import styles from './projects/Projects.module.sass'

@@ -1,7 +1,7 @@
-import React, { Component } from './react'
-import { NavLink } from './react-router-dom'
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
-import cx from './classnames'
+import cx from 'classnames'
 import styles from './Dashboard.module.sass'
 
 class Dashboard extends Component {

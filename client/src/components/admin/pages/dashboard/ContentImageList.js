@@ -1,9 +1,9 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import { getImagesByCategory } from '../../../../actions/imageActions'
 
-import cx from './classnames'
+import cx from 'classnames'
 import styles from './ContentImageList.module.sass'
 
 class ContentImageList extends Component {

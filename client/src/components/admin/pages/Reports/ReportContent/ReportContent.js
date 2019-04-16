@@ -1,6 +1,6 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
-import Moment from './react-moment'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Moment from 'react-moment'
 import { getReportById } from '../../../../../actions/reportActions'
 
 import styles from './ReportContent.module.sass'

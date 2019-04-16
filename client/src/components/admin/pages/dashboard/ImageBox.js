@@ -1,6 +1,6 @@
-import React, { Component } from './react'
-import { connect } from './react-redux'
-import { confirmAlert } from './react-confirm-alert'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { confirmAlert } from 'react-confirm-alert'
 
 import styles from './ImageBox.module.sass'
 
