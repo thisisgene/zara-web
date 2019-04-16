@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, NavLink } from 'react-router-dom'
 
 import PrivateRoute from './common/PrivateRoute'
+
+import { authLinks } from './layout/nav-links'
 
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 import Login from './auth/Login'
 import Settings from './auth/Settings'
 import Reports from './dashboard/Reports/Reports'
+import Training from './dashboard/Training/Training'
 import Dashboard from './dashboard/Dashboard'
 import Preview from './preview/Preview'
 import RestrictedPage from './RestrictedPage/RestrictedPage'
@@ -40,6 +43,7 @@ class Admin extends Component {
       <div className="Admin">
         <Header />
         <Route exact path="/admin/login" component={Login} />
+
         <Switch>
           {user.securityLevel <= 4 ? (
             <PrivateRoute exact path="/admin/settings" component={Settings} />
@@ -54,6 +58,11 @@ class Admin extends Component {
             <PrivateRoute path="/admin/reports" component={Reports} />
           ) : (
             <PrivateRoute path="/admin/reports" component={RestrictedPage} />
+          )}
+          {user.securityLevel === 4 || user.securityLevel <= 2 ? (
+            <PrivateRoute path="/admin/training" component={Training} />
+          ) : (
+            <PrivateRoute path="/admin/training" component={RestrictedPage} />
           )}
           {user.securityLevel <= 3 ? (
             <Switch>
