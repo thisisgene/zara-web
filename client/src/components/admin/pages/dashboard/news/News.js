@@ -23,6 +23,7 @@ class News extends Component {
           <ItemAddList
             tags={newsTags}
             content={this.props.news.news}
+            baseCat={'dashboard'}
             category={'news'}
           />
         )}

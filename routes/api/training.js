@@ -43,7 +43,7 @@ router.post(
     if (!isValid) {
       return res.status(400).json(errors)
     }
-
+    console.log('ohla')
     // Get fields
     const trainingTeamFields = { de: {}, en: {} }
     if (body.titleDE) {
@@ -80,7 +80,7 @@ router.post(
 )
 
 router.post(
-  '/update/:id',
+  '/team/update/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const body = req.body
@@ -93,7 +93,7 @@ router.post(
     if (body.titleEN) trainingTeamFields.en.title = body.titleEN
     // if (body.filesDE) trainingTeamFields.selectedFilesDE = body.filesDE
     // if (body.filesEN) trainingTeamFields.selectedFilesEN = body.filesEN
-    Jahresbericht.findOneAndUpdate(
+    TrainingTeam.findOneAndUpdate(
       { _id: body.id },
       {
         $set: {
@@ -113,41 +113,41 @@ router.post(
         }
       },
       { new: true },
-      (err, jahresbericht) => {
+      (err, team) => {
         if (err) console.log('error: ', err)
         if (!err) {
-          res.json(jahresbericht)
+          res.json(team)
         }
       }
     )
   }
 )
 
-// @route   GET api/jahresberichte/:id
-// @desc    Get jahresberichte by id
+// @route   GET api/training/team/:id
+// @desc    Get Training team member by id
 // @access  Public
-router.get('/:id', (req, res) => {
+router.get('/team/:id', (req, res) => {
   const errors = {}
-  Jahresbericht.findOne({ _id: req.params.id, isDeleted: false })
+  TrainingTeam.findOne({ _id: req.params.id, isDeleted: false })
     .populate('lastEdited.user', ['name'])
-    .then(jahresbericht => {
-      if (!jahresbericht) {
-        errors.nojahresbericht = 'Kein Beitrag mit dieser ID.'
-        return res.status(404).json(errors.nojahresbericht)
+    .then(teamMember => {
+      if (!teamMember) {
+        errors.noteammember = 'Kein Beitrag mit dieser ID.'
+        return res.status(404).json(errors.noteammember)
       }
-      res.json(jahresbericht)
+      res.json(teamMember)
     })
     .catch(err => {
-      errors.jahresbericht = 'Beitrag nicht gefunden.'
+      errors.teammember = 'Beitrag nicht gefunden.'
       return res.status(404).json(errors)
     })
 })
 
-// @route   GET api/jahresbericht/toggle_online/:id/:state
-// @desc    Toggle online jahresbericht by id
+// @route   GET api/training/team/toggle_online/:id/:state
+// @desc    Toggle online training team member by id
 // @access  Private
 router.get(
-  '/toggle_online/:id/:state',
+  '/team/toggle_online/:id/:state',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const errors = {}
@@ -173,21 +173,21 @@ router.get(
 // @desc    Delete jahresbericht by id
 // @access  Private
 router.get(
-  '/delete/:id',
+  '/team/delete/:id',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const errors = {}
-    Jahresbericht.findOneAndUpdate(
+    TrainingTeam.findOneAndUpdate(
       { _id: req.params.id },
       { isDeleted: true },
       { safe: true, new: true }
     )
       .then(async () => {
-        const jahresberichte = await Jahresbericht.find({ isDeleted: false })
-        res.json(jahresberichte)
+        const team = await TrainingTeam.find({ isDeleted: false })
+        res.json(team)
       })
       .catch(err => {
-        errors.jahresbericht = 'Beitrag nicht gefunden.'
+        errors.teammember = 'Beitrag nicht gefunden.'
         return res.status(404).json(errors)
       })
   }

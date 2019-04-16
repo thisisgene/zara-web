@@ -19,7 +19,9 @@ import {
   CREATE_NEW_TRAININGTEAM,
   UPDATE_TRAININGTEAM,
   GET_TRAININGTEAM_BY_ID,
-  DELETE_TRAININGTEAM_BY_ID
+  DELETE_TRAININGTEAM_BY_ID,
+  CLEAR_JAHRESBERICHT,
+  CLEAR_TRAININGTEAM
 } from './types'
 
 // Get all
@@ -126,6 +128,22 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_JAHRESBERICHT_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'trainingTeam':
+      axios
+        .get(`/api/training/team/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_TRAININGTEAM_BY_ID,
             payload: res.data
           })
         })
@@ -302,6 +320,22 @@ export const toggleOnline = (id, category, state) => dispatch => {
           })
         )
       break
+    case 'trainingTeam':
+      axios
+        .get(`/api/training/team/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: GET_TRAININGTEAM_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     default:
       return
   }
@@ -342,6 +376,22 @@ export const deleteById = (id, category) => dispatch => {
           })
         )
       break
+    case 'trainingTeam':
+      axios
+        .get(`/api/training/team/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_TRAININGTEAM_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     default:
       return
   }
@@ -352,6 +402,18 @@ export const clearSingle = category => dispatch => {
     case 'news':
       dispatch({
         type: CLEAR_NEWS_ITEM
+      })
+
+      break
+    case 'jahresberichte':
+      dispatch({
+        type: CLEAR_JAHRESBERICHT
+      })
+
+      break
+    case 'trainingTeam':
+      dispatch({
+        type: CLEAR_TRAININGTEAM
       })
 
       break

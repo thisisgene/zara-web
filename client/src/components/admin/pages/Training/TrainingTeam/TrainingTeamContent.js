@@ -29,7 +29,7 @@ class TrainingTeamContent extends Component {
     this.state = {
       isOnline: false,
       blankItem: true,
-      trainingTeamId: props.match.params.trainingTeamId,
+      teamId: props.match.params.teamId,
       handle: '',
       category: 'trainingTeam',
       tag: 'trainingTeam',
@@ -45,76 +45,68 @@ class TrainingTeamContent extends Component {
   }
 
   componentDidMount() {
-    this.props.match.params.trainingTeamId !== 'neu' &&
-      this.props.getById(this.props.match.params.trainingTeamId, 'trainingTeam')
+    this.props.match.params.teamId !== 'neu' &&
+      this.props.getById(this.props.match.params.teamId, 'trainingTeam')
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps !== this.props) {
-  //     if (this.props.errors !== prevProps.errors) {
-  //       this.setState({ errors: this.props.errors })
-  //     }
-  //     if (this.props.jahresberichte.jahresbericht) {
-  //       if (prevProps.match.params.jahresberichtId === 'neu') {
-  //         this.setState({
-  //           jahresberichtId: this.props.jahresberichte.jahresbericht._id
-  //         })
-  //         this.props.getAll('jahresberichte')
-  //         this.props.history.push(
-  //           `/admin/dashboard/jahresberichte/${
-  //             this.props.jahresberichte.jahresbericht._id
-  //           }`
-  //         )
-  //       }
-  //       if (prevProps.jahresberichte != this.props.jahresberichte) {
-  //         const item = this.props.jahresberichte.jahresbericht
-  //         this.props.getImagesByCategory(item.tag || 'jahresberichte')
-  //         this.setState({
-  //           blankItem: false,
-  //           isOnline: item.isOnline,
-  //           jahresberichtId: item._id,
-  //           handle: item.handle,
-  //           tag: item.tag && item.tag,
-  //           titleDE: item.de.title && item.de.title,
-  //           titleEN: item.en ? item.en.title : '',
-  //           selectedFilesDE: item.files && item.files.de,
-  //           selectedFilesEN: item.files && item.files.en
-  //         })
-  //       }
-  //     }
-  //     if (
-  //       prevProps.match.params.jahresberichtId !==
-  //       this.props.match.params.jahresberichtId
-  //     ) {
-  //       if (this.props.match.params.jahresberichtId === 'neu') {
-  //         console.log('reset')
-  //         this.props.clearSingle('jahresberichte')
-  //         this.setState({
-  //           blankItem: true,
-  //           isOnline: false,
-  //           jahresberichtId: this.props.match.params.jahresberichtId,
-  //           handle: '',
-  //           category: 'jahresberichte',
-  //           tag: 'jahresberichte',
-  //           titleDE: '',
-  //           titleEN: '',
-  //           selectedFilesDE: [],
-  //           selectedFilesEN: []
-  //         })
-  //       } else {
-  //         this.props.getById(
-  //           this.props.match.params.jahresberichtId,
-  //           'jahresberichte'
-  //         )
-  //       }
-  //     }
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      if (this.props.errors !== prevProps.errors) {
+        this.setState({ errors: this.props.errors })
+      }
+      if (this.props.training.trainingTeamMember) {
+        if (prevProps.match.params.teamId === 'neu') {
+          this.setState({
+            teamId: this.props.training.trainingTeamMember._id
+          })
+          this.props.getAll('trainingTeam')
+          this.props.history.push(
+            `/admin/training/team/${this.props.trainin.trainingTeamMember._id}`
+          )
+        }
+        if (prevProps.training != this.props.training) {
+          const item = this.props.training.trainingTeamMember
+          this.props.getImagesByCategory(item.tag)
+          this.setState({
+            blankItem: false,
+            isOnline: item.isOnline,
+            teamId: item._id,
+            handle: item.handle,
+            tag: item.tag && item.tag,
+            titleDE: item.de.title && item.de.title,
+            titleEN: item.en ? item.en.title : '',
+            selectedFilesDE: item.files && item.files.de,
+            selectedFilesEN: item.files && item.files.en
+          })
+        }
+      }
+      if (prevProps.match.params.teamId !== this.props.match.params.teamId) {
+        if (this.props.match.params.teamId === 'neu') {
+          console.log('reset')
+          this.props.clearSingle('trainingTeam')
+          this.setState({
+            blankItem: true,
+            isOnline: false,
+            teamId: this.props.match.params.teamId,
+            handle: '',
+            category: 'trainingTeam',
+            tag: 'trainingTeam',
+            titleDE: '',
+            titleEN: '',
+            selectedFilesDE: [],
+            selectedFilesEN: []
+          })
+        } else {
+          this.props.getById(this.props.match.params.teamId, 'trainingTeam')
+        }
+      }
+    }
+  }
 
   toggleOnline = () => {
     this.props.toggleOnline(
-      this.state.jahresberichtId,
-      'jahresberichte',
+      this.state.teamId,
+      'trainingTeam',
       !this.state.isOnline
     )
   }
@@ -126,7 +118,7 @@ class TrainingTeamContent extends Component {
   }
   onTagSelectChange = e => {
     this.setState({ tag: e.target.value }, () => {
-      if (this.state.jahresberichtId !== 'neu') {
+      if (this.state.teamId !== 'neu') {
         this.props.getImagesByCategory(this.state.tag)
       }
     })
@@ -140,19 +132,19 @@ class TrainingTeamContent extends Component {
       this.setState({ selectedFilesEN: selected })
     }
   }
-  deleteJahresbericht = () => {
-    this.props.deleteById(this.state.jahresberichtId, 'jahresberichte')
-    this.props.history.push('/admin/dashboard/jahresberichte/neu')
+  deleteTeamMember = () => {
+    this.props.deleteById(this.state.teamId, 'trainingTeam')
+    this.props.history.push('/admin/training/team/neu')
   }
 
   confirmDelete = callback => {
     confirmAlert({
-      title: 'Beitrag löschen',
-      message: 'Wollen Sie diesen Beitrag wirklich löschen?',
+      title: 'Eintrag löschen',
+      message: 'Wollen Sie diesen Eintrag wirklich löschen?',
       buttons: [
         {
           label: 'Löschen',
-          onClick: () => this.deleteJahresbericht()
+          onClick: () => this.deleteTeamMember()
         },
         {
           label: 'Abbrechen'
@@ -165,7 +157,7 @@ class TrainingTeamContent extends Component {
     const saveData = {
       category: 'trainingTeam',
       tag: this.state.tag,
-      id: this.state.trainingTeamId,
+      id: this.state.teamId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN
     }
@@ -344,7 +336,7 @@ class TrainingTeamContent extends Component {
           </div>
         </div>
         <div>
-          {this.props.match.params.trainingTeamId === 'neu' && (
+          {this.props.match.params.teamId === 'neu' && (
             <button
               className={cx(
                 commonStyles['button'],

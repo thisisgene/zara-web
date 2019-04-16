@@ -12,13 +12,13 @@ import { newsTags } from './../../../user/pages/Wissen/News/news_data'
 import cx from 'classnames'
 import styles from './ItemAddList.module.sass'
 
-const SortableItem = SortableElement(({ item, category }) => (
+const SortableItem = SortableElement(({ item, baseCat, category }) => (
   <div className={styles['item-list--item']}>
     <NavLink
       className={cx([styles[item.tag]], {
         [styles['online']]: item.isOnline
       })}
-      to={`/admin/dashboard/${category}/${item._id}`}
+      to={`/admin/${baseCat}/${category}/${item._id}`}
       activeClassName={styles['active']}
     >
       <div className={styles['item-tag']} />
@@ -27,7 +27,7 @@ const SortableItem = SortableElement(({ item, category }) => (
   </div>
 ))
 
-const SortableList = SortableContainer(({ items, category }) => {
+const SortableList = SortableContainer(({ items, baseCat, category }) => {
   return (
     <ul>
       {items.map((item, index) => (
@@ -35,6 +35,7 @@ const SortableList = SortableContainer(({ items, category }) => {
           key={`item-${index}`}
           index={index}
           item={item}
+          baseCat={baseCat}
           category={category}
         />
       ))}
@@ -58,11 +59,14 @@ class ItemAddList extends Component {
       this.setState({
         list: this.props.content
       })
-      console.log(this.props.content, this.state.list)
     }
   }
 
   onSortEnd = ({ oldIndex, newIndex }) => {
+    const url =
+      this.props.baseCat === 'training'
+        ? `/api/projects/sort/training_team`
+        : `/api/projects/sort/${this.props.category}`
     this.setState(
       ({ list }) => ({
         list: arrayMove(list, oldIndex, newIndex)
@@ -71,7 +75,7 @@ class ItemAddList extends Component {
         console.log(this.state.list)
         // this.props.sortList(this.state.list, '')
         axios
-          .post(`/api/projects/sort/${this.props.category}`, {
+          .post(url, {
             list: this.state.list
           })
           .then(res => {
@@ -88,12 +92,15 @@ class ItemAddList extends Component {
   }
 
   render() {
-    const { category, tags } = this.props
+    const { baseCat, category, tags } = this.props
     const content = this.state.list
     return (
       <div className={styles['item-add-list']}>
         <div>
-          <Link className={styles['add-button']} to={`./${category}/neu`}>
+          <Link
+            className={styles['add-button']}
+            to={`/admin/${baseCat}/${category}/neu`}
+          >
             {category === 'team' ? 'Neuer Eintrag' : 'Neuer Beitrag'}
             <div className={styles['plus-icon']}>
               <i className="fa fa-plus" />
@@ -146,6 +153,7 @@ class ItemAddList extends Component {
                   ? content
                   : content.filter(item => item.tag === this.state.selectedTag)
               }
+              baseCat={baseCat}
               category={category}
               onSortEnd={this.onSortEnd}
             />

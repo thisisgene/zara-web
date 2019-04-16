@@ -24,6 +24,7 @@ class Jahresberichte extends Component {
           <ItemAddList
             tags={jahresberichtTags}
             content={this.props.jahresberichte.jahresberichte}
+            baseCat={'dashboard'}
             category={'jahresberichte'}
           />
         )}

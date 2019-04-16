@@ -17,10 +17,11 @@ class TrainingTeam extends Component {
   render() {
     return (
       <div className={styles['training-team']}>
-        {this.props.training && this.props.training.trainingTeam && (
+        {this.props.training && (
           <ItemAddList
             content={this.props.training.trainingTeam}
-            category={'team'}
+            baseCat="training"
+            category="team"
           />
         )}
         <PrivateRoute
