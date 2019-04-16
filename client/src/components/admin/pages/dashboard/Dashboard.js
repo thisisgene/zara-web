@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 import PrivateRoute from '../../common/PrivateRoute'
 
 import CategoryNav from './CategoryNav'
@@ -31,17 +29,4 @@ class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth,
-  errors: state.errors
-})
-
-Dashboard.propTypes = {
-  auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
-}
-
-export default connect(
-  mapStateToProps,
-  {}
-)(Dashboard)
+export default Dashboard
