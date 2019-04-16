@@ -11,9 +11,9 @@ import Header from './layout/Header'
 import Footer from './layout/Footer'
 import Login from './auth/Login'
 import Settings from './auth/Settings'
-import Reports from './dashboard/Reports/Reports'
-import Training from './dashboard/Training/Training'
-import Dashboard from './dashboard/Dashboard'
+import Reports from './pages/dashboard/Reports/Reports'
+import Training from './pages/Training/Training'
+import Dashboard from './pages/dashboard/Dashboard'
 import Preview from './preview/Preview'
 import RestrictedPage from './RestrictedPage/RestrictedPage'
 
@@ -22,7 +22,7 @@ import RestrictedPage from './RestrictedPage/RestrictedPage'
 import './Admin.css'
 
 import styles from './dashboard/Dashboard.module.sass'
-import News from './dashboard/news/News'
+import News from './pages/dashboard/news/News'
 
 class Admin extends Component {
   constructor() {
