@@ -14,7 +14,12 @@ import {
   CREATE_NEW_JAHRESBERICHT,
   UPDATE_JAHRESBERICHT,
   GET_JAHRESBERICHT_BY_ID,
-  DELETE_JAHRESBERICHT_BY_ID
+  DELETE_JAHRESBERICHT_BY_ID,
+  GET_ALL_TRAININGTEAM,
+  CREATE_NEW_TRAININGTEAM,
+  UPDATE_TRAININGTEAM,
+  GET_TRAININGTEAM_BY_ID,
+  DELETE_TRAININGTEAM_BY_ID
 } from './types'
 
 // Get all
@@ -42,6 +47,22 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_JAHRESBERICHTE,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'trainingTeam':
+      axios
+        .get('/api/training/team')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_TRAININGTEAM,
             payload: res.data
           })
         })
@@ -179,6 +200,39 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_JAHRESBERICHT,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+              })
+            )
+
+      break
+    case 'trainingTeam':
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/training/team', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_TRAININGTEAM,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+              })
+            )
+        : axios
+            .post(`/api/training/team/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_TRAININGTEAM,
                 payload: res.data
               })
             })

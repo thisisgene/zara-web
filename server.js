@@ -11,6 +11,7 @@ const users = require('./routes/api/users')
 const media = require('./routes/api/media')
 const news = require('./routes/api/news')
 const jahresberichte = require('./routes/api/jahresberichte')
+const training = require('./routes/api/training')
 const projects = require('./routes/api/projects')
 const app = express()
 
@@ -46,6 +47,7 @@ app.use('/api/users', users)
 app.use('/api/media', media)
 app.use('/api/news', news)
 app.use('/api/jahresberichte', jahresberichte)
+app.use('/api/training', training)
 app.use('/api/projects', projects)
 
 // app.get('*', (req, res) => {
