@@ -12,7 +12,7 @@ const nodemailer = require('nodemailer')
 
 const validateNewsInput = require('../../validation/news')
 
-const TrainingTeam = require('../../models/Training')
+const { TrainingTeam, Training } = require('../../models/Training')
 
 // @route   GET api/training/team
 // @desc    Get all training team members
@@ -170,14 +170,14 @@ router.get(
       })
       .catch(err => {
         console.log('nicht fund')
-        errors.jahresbericht = 'Beitrag nicht gefunden.'
+        errors.trainingteam = 'Beitrag nicht gefunden.'
         return res.status(404).json(errors)
       })
   }
 )
 
-// @route   GET api/jahresbericht/delete/:id
-// @desc    Delete jahresbericht by id
+// @route   GET api/training/team/delete/:id
+// @desc    Delete training team member by id
 // @access  Private
 router.get(
   '/team/delete/:id',
@@ -195,6 +195,190 @@ router.get(
       })
       .catch(err => {
         errors.teammember = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
+//////////////////////// TRAININGS
+
+// @route   GET api/training/trainings
+// @desc    Get all trainings
+// @access  Public
+router.get('/trainings', (req, res) => {
+  const errors = {}
+  Training.find({ isDeleted: false })
+    .sort('position')
+    .exec()
+    .then(trainings => {
+      res.json(trainings)
+    })
+    .catch(err => res.status(404).json(err))
+})
+
+// @route   POST api/training/trainings
+// @desc    Create a training
+// @access  Private
+router.post(
+  '/trainings',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body
+    const { errors, isValid } = await validateNewsInput(body)
+
+    if (!isValid) {
+      return res.status(400).json(errors)
+    }
+    // Get fields
+    const trainingFields = { de: {}, en: {} }
+    if (body.titleDE) {
+      trainingFields.de.title = body.titleDE
+      trainingFields.handle = body.titleDE.replace(/\s/g, '_')
+    }
+    if (body.titleEN) trainingFields.en.title = body.titleEN
+    trainingFields.tag = body.tag
+    trainingFields.de.shortDescription = body.shortDescriptionDE
+    trainingFields.en.shortDescription = body.shortDescriptionEN
+    trainingFields.de.description = body.descriptionDE
+    trainingFields.en.description = body.descriptionEN
+
+    const newTrainingTeam = new Training({
+      tag: trainingFields.tag,
+      date: body.date,
+      handle: trainingFields.handle,
+      de: {
+        title: trainingFields.de.title,
+        shortDescription: trainingFields.de.shortDescription,
+        description: trainingFields.de.description
+      },
+      en: {
+        title: trainingFields.en.title,
+        shortDescription: trainingFields.en.shortDescription,
+        description: trainingFields.en.description
+      }
+    })
+    newTraining.save().then(training => {
+      res.json(training)
+    })
+  }
+)
+
+router.post(
+  '/trainings/update/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const body = req.body
+    // Get fields
+    const trainingFields = { de: {}, en: {} }
+    if (body.titleDE) {
+      trainingFields.de.title = body.titleDE
+      trainingFields.handle = body.titleDE.replace(/\s/g, '_')
+    }
+    if (body.titleEN) trainingFields.en.title = body.titleEN
+    // if (body.filesDE) trainingFields.selectedFilesDE = body.filesDE
+    // if (body.filesEN) trainingFields.selectedFilesEN = body.filesEN
+    TrainingTeam.findOneAndUpdate(
+      { _id: body.id },
+      {
+        $set: {
+          tag: body.tag,
+          date: body.date,
+          handle: trainingFields.handle,
+          de: {
+            title: trainingFields.de.title
+          },
+          en: {
+            title: trainingFields.en.title
+          },
+          files: {
+            de: body.filesDE,
+            en: body.filesEN
+          }
+        }
+      },
+      { new: true },
+      (err, training) => {
+        if (err) console.log('error: ', err)
+        if (!err) {
+          Training.find({ isDeleted: false })
+            .sort('position')
+            .then(trainings => {
+              res.json({ trainings: trainings, training: training })
+            })
+        }
+      }
+    )
+  }
+)
+
+// @route   GET api/training/training/:id
+// @desc    Get Training by id
+// @access  Public
+router.get('/trainings/:id', (req, res) => {
+  const errors = {}
+  Training.findOne({ _id: req.params.id, isDeleted: false })
+    .populate('lastEdited.user', ['name'])
+    .then(training => {
+      if (!training) {
+        errors.notraining = 'Kein Beitrag mit dieser ID.'
+        return res.status(404).json(errors.notraining)
+      }
+      res.json(training)
+    })
+    .catch(err => {
+      errors.training = 'Beitrag nicht gefunden.'
+      return res.status(404).json(errors)
+    })
+})
+
+// @route   GET api/training/training/toggle_online/:id/:state
+// @desc    Toggle online training by id
+// @access  Private
+router.get(
+  '/trainings/toggle_online/:id/:state',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {}
+    console.log(req.params.id, req.params.state)
+    Training.findOneAndUpdate(
+      { _id: req.params.id },
+      { isOnline: req.params.state },
+      { safe: true, new: true }
+    )
+      .then(async training => {
+        Training.find({ isDeleted: false })
+          .sort('position')
+          .then(trainings => {
+            res.json({ trainings: trainings, training: training })
+          })
+      })
+      .catch(err => {
+        console.log('nicht fund')
+        errors.training = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
+// @route   GET api/training/trainings/delete/:id
+// @desc    Delete training by id
+// @access  Private
+router.get(
+  '/trainings/delete/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {}
+    Training.findOneAndUpdate(
+      { _id: req.params.id },
+      { isDeleted: true },
+      { safe: true, new: true }
+    )
+      .then(async () => {
+        const trainings = await Training.find({ isDeleted: false })
+        res.json(trainings)
+      })
+      .catch(err => {
+        errors.trainings = 'Beitrag nicht gefunden.'
         return res.status(404).json(errors)
       })
   }

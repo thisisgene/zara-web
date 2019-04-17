@@ -15,13 +15,19 @@ import {
   UPDATE_JAHRESBERICHT,
   GET_JAHRESBERICHT_BY_ID,
   DELETE_JAHRESBERICHT_BY_ID,
+  CLEAR_JAHRESBERICHT,
   GET_ALL_TRAININGTEAM,
   CREATE_NEW_TRAININGTEAM,
   UPDATE_TRAININGTEAM,
   GET_TRAININGTEAM_BY_ID,
   DELETE_TRAININGTEAM_BY_ID,
-  CLEAR_JAHRESBERICHT,
-  CLEAR_TRAININGTEAM
+  CLEAR_TRAININGTEAM,
+  GET_ALL_TRAININGS,
+  CREATE_NEW_TRAINING,
+  UPDATE_TRAINING,
+  GET_TRAINING_BY_ID,
+  DELETE_TRAINING_BY_ID,
+  CLEAR_TRAINING
 } from './types'
 
 // Get all
@@ -65,6 +71,22 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_TRAININGTEAM,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'trainings':
+      axios
+        .get('/api/training/trainings')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_TRAININGS,
             payload: res.data
           })
         })
@@ -144,6 +166,22 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_TRAININGTEAM_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'training':
+      axios
+        .get(`/api/training/training/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_TRAINING_BY_ID,
             payload: res.data
           })
         })
@@ -262,6 +300,39 @@ export const saveContent = saveData => dispatch => {
             )
 
       break
+    case 'training':
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/training/training', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_TRAINING,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+              })
+            )
+        : axios
+            .post(`/api/training/training/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_TRAINING,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response
+              })
+            )
+
+      break
 
     default:
       return
@@ -336,6 +407,22 @@ export const toggleOnline = (id, category, state) => dispatch => {
           })
         )
       break
+    case 'training':
+      axios
+        .get(`/api/training/training/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: UPDATE_TRAINING,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     default:
       return
   }
@@ -392,6 +479,22 @@ export const deleteById = (id, category) => dispatch => {
           })
         )
       break
+    case 'training':
+      axios
+        .get(`/api/training/training/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_TRAINING_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     default:
       return
   }
@@ -414,6 +517,10 @@ export const clearSingle = category => dispatch => {
     case 'trainingTeam':
       dispatch({
         type: CLEAR_TRAININGTEAM
+      })
+    case 'training':
+      dispatch({
+        type: CLEAR_TRAINING
       })
 
       break

@@ -61,7 +61,7 @@ class TrainingTeamContent extends Component {
           })
           this.props.getAll('trainingTeam')
           this.props.history.push(
-            `/admin/training/team/${this.props.trainin.trainingTeamMember._id}`
+            `/admin/training/team/${this.props.training.trainingTeamMember._id}`
           )
         }
         if (prevProps.training != this.props.training) {
