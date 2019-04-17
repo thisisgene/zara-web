@@ -5,7 +5,7 @@ import PrivateRoute from '../../../common/PrivateRoute'
 import { getAll } from '../../../../../actions/adminActions'
 
 import ItemAddList from '../../../common/ItemAddList/ItemAddList'
-// import TrainingTeamContent from './TrainingTeamContent'
+import TrainingContent from './TrainingContent'
 
 import styles from '../TrainingTeam/TrainingTeam.module.sass'
 
@@ -24,10 +24,10 @@ class TrainingTeam extends Component {
             category="trainings"
           />
         )}
-        {/* <PrivateRoute
-          path="/admin/training/team/:teamId"
-          component={TrainingTeamContent}
-        /> */}
+        <PrivateRoute
+          path="/admin/training/trainings/:trainingId"
+          component={TrainingContent}
+        />
       </div>
     )
   }

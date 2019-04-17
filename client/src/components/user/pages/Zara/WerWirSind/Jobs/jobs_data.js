@@ -114,7 +114,7 @@ export const longTextZivildienst = {
   de: {
     title: 'Zivildienst',
     text:
-      '<b>Der Posten für Zivildiener ab 02. Juli 2018 ist vergeben.</b><br /><br />Die nächste Zivildienststelle wird bei uns am 01. April 2019 besetzt. Bei Interesse an einer Mitarbeit im Rahmen des darauffolgenden Zivildienstzyklus, geben Sie bitte bei der <a href="http://www.bmi.gv.at/cms/zivildienst">Zivildienstagentur</a> Ihren Zuweisungswunsch für ZARA – Zivilcourage und Anti-Rassismus-Arbeit bekannt und senden zusätzlich Ihre Unterlagen (Motivationsschreiben und Lebenslauf) an uns: <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!'
+      '<b>Der Posten als Zivildiener bei ZARA ist seit 1. April 2019 vergeben.</b><br /><br />Die nächste Zivildienststelle wird bei uns am 6. Jänner 2020 wieder besetzt. Bei Interesse an einer Mitarbeit im Rahmen des darauffolgenden Zivildienstzyklus, geben Sie bitte bei der <a href="http://www.bmi.gv.at/cms/zivildienst">Zivildienstagentur</a> Ihren Zuweisungswunsch für ZARA – Zivilcourage und Anti-Rassismus-Arbeit bekannt und senden zusätzlich Ihre Unterlagen (Motivationsschreiben und Lebenslauf) an uns: <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!'
   }
 }
 
