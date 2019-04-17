@@ -171,9 +171,9 @@ class PressematerialLogos extends Component {
                           <div>{logo.title}</div>
                           <a
                             target="blank"
-                            href={
-                              'https://assets.zara.or.at/download/logos/Grafiken RR 2018 All-in-one.jpg'
-                            }
+                            href={`https://assets.zara.or.at/download/logos/${
+                              logo.image
+                            }`}
                           >
                             <img
                               src={`https://assets.zara.or.at/download/logos/${
