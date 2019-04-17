@@ -78,7 +78,7 @@ class JahresberichtContent extends Component {
             jahresberichtId: item._id,
             handle: item.handle,
             tag: item.tag && item.tag,
-            titleDE: item.de.title && item.de.title,
+            titleDE: item.de && item.de.title && item.de.title,
             titleEN: item.en ? item.en.title : '',
             selectedFilesDE: item.files && item.files.de,
             selectedFilesEN: item.files && item.files.en
@@ -181,7 +181,7 @@ class JahresberichtContent extends Component {
     let defaultSelectedDE = []
     let defaultSelectedEN = []
 
-    if (this.state.selectedFilesDE.length > 0) {
+    if (this.state.selectedFilesDE && this.state.selectedFilesDE.length > 0) {
       defaultSelectedDE = this.state.selectedFilesDE
     }
 

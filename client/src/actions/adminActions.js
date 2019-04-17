@@ -257,7 +257,7 @@ export const saveContent = saveData => dispatch => {
             .catch(err =>
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response
               })
             )
 
@@ -293,7 +293,7 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .get(`/api/news/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
-            type: GET_NEWS_BY_ID,
+            type: UPDATE_NEWS,
             payload: res.data
           })
         })
@@ -309,7 +309,7 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .get(`/api/jahresberichte/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
-            type: GET_JAHRESBERICHT_BY_ID,
+            type: UPDATE_JAHRESBERICHT,
             payload: res.data
           })
         })
@@ -325,7 +325,7 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .get(`/api/training/team/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
-            type: GET_TRAININGTEAM_BY_ID,
+            type: UPDATE_TRAININGTEAM,
             payload: res.data
           })
         })

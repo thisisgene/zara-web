@@ -21,7 +21,7 @@ import { getImagesByCategory } from '../../../../../actions/imageActions'
 import cx from 'classnames'
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import commonStyles from '../../../common/Common.module.sass'
-import styles from './TrainingTeam.module.sass'
+import styles from './TrainingTeamContent.module.sass'
 
 class TrainingTeamContent extends Component {
   constructor(props) {
@@ -166,13 +166,6 @@ class TrainingTeamContent extends Component {
   }
 
   render() {
-    let defaultSelectedDE = []
-    let defaultSelectedEN = []
-
-    if (this.state.selectedFilesDE.length > 0) {
-      defaultSelectedDE = this.state.selectedFilesDE
-    }
-
     return (
       <div className={styles['training-team-wrapper']}>
         <div

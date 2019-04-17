@@ -35,7 +35,8 @@ export default function(state = initialState, action) {
     case UPDATE_NEWS:
       return {
         ...state,
-        newsItem: action.payload
+        news: action.payload.news,
+        newsItem: action.payload.newsItem
       }
     case DELETE_NEWS_BY_ID:
       return {

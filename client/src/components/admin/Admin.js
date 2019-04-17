@@ -21,7 +21,7 @@ import RestrictedPage from './RestrictedPage/RestrictedPage'
 
 import './Admin.css'
 
-import styles from './dashboard/Dashboard.module.sass'
+import styles from './pages/dashboard/Dashboard.module.sass'
 import News from './pages/dashboard/news/News'
 
 class Admin extends Component {

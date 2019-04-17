@@ -35,7 +35,8 @@ export default function(state = initialState, action) {
     case UPDATE_TRAININGTEAM:
       return {
         ...state,
-        trainingTeamMember: action.payload
+        trainingTeam: action.payload.team,
+        trainingTeamMember: action.payload.teamMember
       }
     case DELETE_TRAININGTEAM_BY_ID:
       return {

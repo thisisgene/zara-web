@@ -115,7 +115,14 @@ router.post(
       (err, jahresbericht) => {
         if (err) console.log('error: ', err)
         if (!err) {
-          res.json(jahresbericht)
+          Jahresbericht.find({ isDeleted: false })
+            .sort('position')
+            .then(jahresberichte => {
+              res.json({
+                jahresberichte: jahresberichte,
+                jahresbericht: jahresbericht
+              })
+            })
         }
       }
     )
@@ -157,8 +164,14 @@ router.get(
       { safe: true, new: true }
     )
       .then(async jahresberichtItem => {
-        console.log(jahresberichtItem)
-        res.json(jahresberichtItem)
+        Jahresbericht.find({ isDeleted: false })
+          .sort('position')
+          .then(jahresberichte => {
+            res.json({
+              jahresberichte: jahresberichte,
+              jahresbericht: jahresberichtItem
+            })
+          })
       })
       .catch(err => {
         console.log('nicht fund')

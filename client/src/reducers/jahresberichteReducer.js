@@ -35,7 +35,8 @@ export default function(state = initialState, action) {
     case UPDATE_JAHRESBERICHT:
       return {
         ...state,
-        jahresbericht: action.payload
+        jahresberichte: action.payload.jahresberichte,
+        jahresbericht: action.payload.jahresbericht
       }
     case DELETE_JAHRESBERICHT_BY_ID:
       return {

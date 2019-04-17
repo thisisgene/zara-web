@@ -185,8 +185,11 @@ router.post(
       (err, newsItem) => {
         if (err) console.log('error: ', err)
         if (!err) {
-          console.log('news', newsItem)
-          res.json(newsItem)
+          News.find({ isDeleted: false })
+            .sort('position')
+            .then(news => {
+              res.json({ news: news, newsItem: newsItem })
+            })
         }
       }
     )
@@ -208,8 +211,11 @@ router.get(
       { safe: true, new: true }
     )
       .then(async newsItem => {
-        console.log(newsItem)
-        res.json(newsItem)
+        News.find({ isDeleted: false })
+          .sort('position')
+          .then(news => {
+            res.json({ news: news, newsItem: newsItem })
+          })
       })
       .catch(err => {
         console.log('nicht fund')

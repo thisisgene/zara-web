@@ -113,10 +113,14 @@ router.post(
         }
       },
       { new: true },
-      (err, team) => {
+      (err, teamMember) => {
         if (err) console.log('error: ', err)
         if (!err) {
-          res.json(team)
+          TrainingTeam.find({ isDeleted: false })
+            .sort('position')
+            .then(team => {
+              res.json({ team: team, teamMember: teamMember })
+            })
         }
       }
     )
@@ -152,14 +156,17 @@ router.get(
   async (req, res) => {
     const errors = {}
     console.log(req.params.id, req.params.state)
-    Jahresbericht.findOneAndUpdate(
+    TrainingTeam.findOneAndUpdate(
       { _id: req.params.id },
       { isOnline: req.params.state },
       { safe: true, new: true }
     )
-      .then(async jahresberichtItem => {
-        console.log(jahresberichtItem)
-        res.json(jahresberichtItem)
+      .then(async teamMember => {
+        TrainingTeam.find({ isDeleted: false })
+          .sort('position')
+          .then(team => {
+            res.json({ team: team, teamMember: teamMember })
+          })
       })
       .catch(err => {
         console.log('nicht fund')
