@@ -242,7 +242,7 @@ router.post(
     trainingFields.de.description = body.descriptionDE
     trainingFields.en.description = body.descriptionEN
 
-    const newTrainingTeam = new Training({
+    const newTraining = new Training({
       tag: trainingFields.tag,
       date: body.date,
       handle: trainingFields.handle,
@@ -277,7 +277,7 @@ router.post(
     if (body.titleEN) trainingFields.en.title = body.titleEN
     // if (body.filesDE) trainingFields.selectedFilesDE = body.filesDE
     // if (body.filesEN) trainingFields.selectedFilesEN = body.filesEN
-    TrainingTeam.findOneAndUpdate(
+    Training.findOneAndUpdate(
       { _id: body.id },
       {
         $set: {
@@ -311,7 +311,7 @@ router.post(
   }
 )
 
-// @route   GET api/training/training/:id
+// @route   GET api/training/trainings/:id
 // @desc    Get Training by id
 // @access  Public
 router.get('/trainings/:id', (req, res) => {

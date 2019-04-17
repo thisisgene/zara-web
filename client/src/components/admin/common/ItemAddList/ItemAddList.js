@@ -64,7 +64,7 @@ class ItemAddList extends Component {
 
   onSortEnd = ({ oldIndex, newIndex }) => {
     const url =
-      this.props.baseCat === 'training'
+      this.props.baseCat === 'training' && this.props.category === 'team'
         ? `/api/projects/sort/training_team`
         : `/api/projects/sort/${this.props.category}`
     this.setState(

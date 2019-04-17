@@ -17,7 +17,7 @@ const Project = require('../../models/Project')
 
 const News = require('../../models/News')
 const Jahresbericht = require('../../models/Jahresbericht')
-const TrainingTeam = require('../../models/Training')
+const { TrainingTeam, Training } = require('../../models/Training')
 
 const Report = require('../../models/Report')
 
@@ -66,6 +66,19 @@ router.post(
         case 'training_team':
           console.log('training sort')
           TrainingTeam.findOneAndUpdate(
+            { _id: item._id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {
+              console.log(item.de.title, ': ', item.position)
+            })
+            .catch(err => {
+              if (err) console.log(err)
+            })
+          break
+        case 'training':
+          Training.findOneAndUpdate(
             { _id: item._id },
             { position: index },
             { safe: true, new: true }

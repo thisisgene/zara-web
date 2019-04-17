@@ -7,7 +7,7 @@ import { getAll } from '../../../../../actions/adminActions'
 import ItemAddList from '../../../common/ItemAddList/ItemAddList'
 import TrainingContent from './TrainingContent'
 
-import styles from '../TrainingTeam/TrainingTeam.module.sass'
+import styles from './Trainings.module.sass'
 
 class TrainingTeam extends Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ class TrainingTeam extends Component {
 
   render() {
     return (
-      <div className={styles['training-team']}>
+      <div className={styles['trainings']}>
         {this.props.training && (
           <ItemAddList
             content={this.props.training.trainings}

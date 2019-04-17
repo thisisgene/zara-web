@@ -29,10 +29,10 @@ class TrainingContent extends Component {
     this.state = {
       isOnline: false,
       blankItem: true,
-      teamId: props.match.params.teamId,
+      trainingId: props.match.params.trainingId,
       handle: '',
-      category: 'training',
-      tag: 'training',
+      category: 'trainings',
+      tag: 'trainings',
       titleDE: '',
       titleEN: '',
 
@@ -45,8 +45,8 @@ class TrainingContent extends Component {
   }
 
   componentDidMount() {
-    this.props.match.params.teamId !== 'neu' &&
-      this.props.getById(this.props.match.params.teamId, 'training')
+    this.props.match.params.trainingId !== 'neu' &&
+      this.props.getById(this.props.match.params.trainingId, 'trainings')
   }
 
   componentDidUpdate(prevProps) {
@@ -55,11 +55,11 @@ class TrainingContent extends Component {
         this.setState({ errors: this.props.errors })
       }
       if (this.props.training.training) {
-        if (prevProps.match.params.teamId === 'neu') {
+        if (prevProps.match.params.trainingId === 'neu') {
           this.setState({
-            teamId: this.props.training.training._id
+            trainingId: this.props.training.training._id
           })
-          this.props.getAll('training')
+          this.props.getAll('trainings')
           this.props.history.push(
             `/admin/training/trainings/${this.props.training.training._id}`
           )
@@ -83,19 +83,19 @@ class TrainingContent extends Component {
       ) {
         if (this.props.match.params.trainingId === 'neu') {
           console.log('reset')
-          this.props.clearSingle('training')
+          this.props.clearSingle('trainings')
           this.setState({
             blankItem: true,
             isOnline: false,
             trainingId: this.props.match.params.trainingId,
             handle: '',
-            category: 'training',
-            tag: 'training',
+            category: 'trainings',
+            tag: 'trainings',
             titleDE: '',
             titleEN: ''
           })
         } else {
-          this.props.getById(this.props.match.params.trainingId, 'training')
+          this.props.getById(this.props.match.params.trainingId, 'trainings')
         }
       }
     }
@@ -104,7 +104,7 @@ class TrainingContent extends Component {
   toggleOnline = () => {
     this.props.toggleOnline(
       this.state.trainingId,
-      'training',
+      'trainings',
       !this.state.isOnline
     )
   }
@@ -131,7 +131,7 @@ class TrainingContent extends Component {
     }
   }
   deleteTraining = () => {
-    this.props.deleteById(this.state.trainingId, 'training')
+    this.props.deleteById(this.state.trainingId, 'trainings')
     this.props.history.push('/admin/training/trainings/neu')
   }
 
@@ -153,7 +153,7 @@ class TrainingContent extends Component {
 
   saveContent = () => {
     const saveData = {
-      category: 'training',
+      category: 'trainings',
       tag: this.state.tag,
       id: this.state.trainingId,
       titleDE: this.state.titleDE,

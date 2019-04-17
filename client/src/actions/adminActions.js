@@ -176,9 +176,9 @@ export const getById = (id, category) => dispatch => {
           })
         )
       break
-    case 'training':
+    case 'trainings':
       axios
-        .get(`/api/training/training/${id}`)
+        .get(`/api/training/trainings/${id}`)
         .then(res => {
           dispatch({
             type: GET_TRAINING_BY_ID,
@@ -300,10 +300,10 @@ export const saveContent = saveData => dispatch => {
             )
 
       break
-    case 'training':
+    case 'trainings':
       saveData.id === 'neu'
         ? axios
-            .post('/api/training/training', saveData)
+            .post('/api/training/trainings', saveData)
             .then(res => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
@@ -318,7 +318,7 @@ export const saveContent = saveData => dispatch => {
               })
             )
         : axios
-            .post(`/api/training/training/update/${saveData.id}`, saveData)
+            .post(`/api/training/trainings/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_TRAINING,
@@ -407,9 +407,9 @@ export const toggleOnline = (id, category, state) => dispatch => {
           })
         )
       break
-    case 'training':
+    case 'trainings':
       axios
-        .get(`/api/training/training/toggle_online/${id}/${state}`)
+        .get(`/api/training/trainings/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_TRAINING,
@@ -479,9 +479,9 @@ export const deleteById = (id, category) => dispatch => {
           })
         )
       break
-    case 'training':
+    case 'trainings':
       axios
-        .get(`/api/training/training/delete/${id}`)
+        .get(`/api/training/trainings/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_TRAINING_BY_ID,
@@ -518,7 +518,7 @@ export const clearSingle = category => dispatch => {
       dispatch({
         type: CLEAR_TRAININGTEAM
       })
-    case 'training':
+    case 'trainings':
       dispatch({
         type: CLEAR_TRAINING
       })
