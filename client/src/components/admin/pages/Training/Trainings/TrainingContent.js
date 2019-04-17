@@ -164,15 +164,15 @@ class TrainingContent extends Component {
 
   render() {
     return (
-      <div className={styles['training-wrapper']}>
+      <div className={styles['trainings-wrapper']}>
         <div
-          className={cx(styles['training-content-container'], {
+          className={cx(styles['trainings-content-container'], {
             [styles['blank-item']]: this.state.blankItem
           })}
         >
-          <div className={styles['training-content']}>
-            <div className={styles['training-content--main']}>
-              {/* <div className={styles['training-content--main__category']}>
+          <div className={styles['trainings-content']}>
+            <div className={styles['trainings-content--main']}>
+              {/* <div className={styles['trainings-content--main__category']}>
                 <select
                   name="catSelect"
                   value={this.state.tag}
@@ -184,8 +184,8 @@ class TrainingContent extends Component {
                     ))}
                 </select>
               </div> */}
-              <div className={styles['training-content--text']}>
-                <div className={styles['training-content--text__title']}>
+              <div className={styles['trainings-content--text']}>
+                <div className={styles['trainings-content--text__title']}>
                   <TextFieldGroup
                     className={commonStyles['input']}
                     colorScheme="light"
@@ -198,7 +198,7 @@ class TrainingContent extends Component {
                   />
                 </div>
 
-                <div className={styles['training-content--text__title']}>
+                <div className={styles['trainings-content--text__title']}>
                   <TextFieldGroup
                     className={commonStyles['input']}
                     colorScheme="light"
@@ -212,10 +212,10 @@ class TrainingContent extends Component {
                 </div>
               </div>
               {this.props.media && this.props.media.images && (
-                <div className={styles['training-content--select-box']}>
+                <div className={styles['trainings-content--select-box']}>
                   <div
                     className={
-                      styles['training-content--select-box__container']
+                      styles['trainings-content--select-box__container']
                     }
                   >
                     {/* <FileSelectGroup
@@ -228,7 +228,7 @@ class TrainingContent extends Component {
                   </div>
                   <div
                     className={
-                      styles['training-content--select-box__container']
+                      styles['trainings-content--select-box__container']
                     }
                   >
                     {/* <FileSelectGroup
@@ -243,16 +243,16 @@ class TrainingContent extends Component {
               )}
             </div>
             {this.props.training.training && (
-              <div className={styles['training-content--sidebar']}>
+              <div className={styles['trainings-content--sidebar']}>
                 <div
                   className={
-                    styles['training-content--sidebar__state-indicator']
+                    styles['trainings-content--sidebar__state-indicator']
                   }
                 >
                   <div
                     className={cx(
                       styles[
-                        'training-content--sidebar__state-indicator--sphere'
+                        'trainings-content--sidebar__state-indicator--sphere'
                       ],
                       {
                         [styles['online']]: this.state.isOnline
@@ -261,7 +261,9 @@ class TrainingContent extends Component {
                   />
                   <div
                     className={
-                      styles['training-content--sidebar__state-indicator--text']
+                      styles[
+                        'trainings-content--sidebar__state-indicator--text'
+                      ]
                     }
                   >
                     {this.state.isOnline ? 'Online' : 'Offline'}
@@ -269,7 +271,7 @@ class TrainingContent extends Component {
                 </div>
                 <div
                   className={
-                    styles['training-content--sidebar__section--publish']
+                    styles['trainings-content--sidebar__section--publish']
                   }
                 >
                   <button
@@ -288,7 +290,7 @@ class TrainingContent extends Component {
                     {this.state.isOnline ? 'Offline nehmen' : 'Online stellen'}
                   </button>
                 </div>
-                <div className={styles['training-content--sidebar--buttons']}>
+                <div className={styles['trainings-content--sidebar--buttons']}>
                   <button
                     className={cx(
                       commonStyles['button'],
@@ -302,7 +304,7 @@ class TrainingContent extends Component {
                 </div>
 
                 <hr />
-                <div className={styles['training-content--sidebar--buttons']}>
+                <div className={styles['trainings-content--sidebar--buttons']}>
                   {this.props.training.training && (
                     <button
                       className={cx(
