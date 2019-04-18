@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 // import { jahresberichtTags } from '../jahresberichte_data'
 
 import TextFieldGroup from '../../../common/TextFieldGroup'
-// import FileSelectGroup from '../FileSelectGroup'
+import TextareaFieldGroup from '../../../common/TextareaFieldGroup'
+import FileSelectGroup from '../../../common/FileSelectGroup'
 
 import { confirmAlert } from 'react-confirm-alert'
 
@@ -189,26 +190,63 @@ class TrainingContent extends Component {
                   <TextFieldGroup
                     className={commonStyles['input']}
                     colorScheme="light"
-                    placeholder="Titel deutsch"
+                    placeholder="Titel"
                     type="text"
-                    name="titleDE"
-                    value={this.state.titleDE}
+                    name="title"
+                    value={this.state.title}
                     onChange={this.onChange}
-                    error={this.state.errors.titleDE}
+                    error={this.state.errors.title}
                   />
                 </div>
+                <div className={styles['trainings-content--text__content']}>
+                  <div
+                    className={cx(
+                      styles['trainings-content--text__content--left'],
+                      styles['content-box']
+                    )}
+                  >
+                    <div
+                      className={
+                        styles['trainings-content--text__content--left__labels']
+                      }
+                    >
+                      <FileSelectGroup
+                        optionContent={['schule', 'haus']}
+                        defaultValue={this.state.selectedLabels}
+                        name="labelSelect"
+                        onSelectChange={this.onSelectChange}
+                        lang="DE"
+                      />
+                    </div>
+                  </div>
 
-                <div className={styles['trainings-content--text__title']}>
-                  <TextFieldGroup
-                    className={commonStyles['input']}
-                    colorScheme="light"
-                    placeholder="Titel englisch"
-                    type="text"
-                    name="titleEN"
-                    value={this.state.titleEN}
-                    onChange={this.onChange}
-                    error={this.state.errors.titleEN}
-                  />
+                  <div
+                    className={cx(
+                      styles['trainings-content--text__description'],
+                      styles['content-box']
+                    )}
+                  >
+                    <TextFieldGroup
+                      className={commonStyles['input']}
+                      colorScheme="light"
+                      placeholder="Betreff"
+                      type="text"
+                      name="subject"
+                      value={this.state.subject}
+                      onChange={this.onChange}
+                      error={this.state.errors.subject}
+                    />
+                    <TextareaFieldGroup
+                      className={commonStyles['input']}
+                      colorScheme="light"
+                      placeholder="Beschreibungstext öffentlich (wird per Email verschickt)"
+                      type="text"
+                      name="pubDesc"
+                      value={this.state.pubDesc}
+                      onChange={this.onChange}
+                      error={this.state.errors.pubDesc}
+                    />
+                  </div>
                 </div>
               </div>
               {this.props.media && this.props.media.images && (

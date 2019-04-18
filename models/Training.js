@@ -7,73 +7,24 @@ const TrainingSchema = new Schema({
     type: String,
     default: shortid.generate
   },
-  tag: {
+
+  title: {
+    type: String
+  },
+  location: {
     type: String
   },
   date: {
     type: Date
   },
-  de: {
-    title: {
-      type: String
-    }
+  time: {
+    type: String
   },
-  en: {
-    title: {
-      type: String
-    }
-  },
-
   handle: {
     type: String
   },
 
-  lastEdited: {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'users'
-    },
-    date: {
-      type: Date
-    }
-  },
-
-  files: {
-    de: [
-      {
-        _id: false,
-        originalId: {
-          type: String
-        },
-        value: {
-          type: String
-        },
-        label: {
-          type: String
-        },
-        name: {
-          type: String
-        }
-      }
-    ],
-    en: [
-      {
-        _id: false,
-        originalId: {
-          type: String
-        },
-        value: {
-          type: String
-        },
-        label: {
-          type: String
-        },
-        name: {
-          type: String
-        }
-      }
-    ]
-  },
+  labels: [{ name: String, color: String }],
 
   isVisible: {
     type: Boolean,
@@ -82,6 +33,9 @@ const TrainingSchema = new Schema({
   isOnline: {
     type: Boolean,
     default: false
+  },
+  hasBeenSent: {
+    type: Boolean
   },
   position: {
     type: Number

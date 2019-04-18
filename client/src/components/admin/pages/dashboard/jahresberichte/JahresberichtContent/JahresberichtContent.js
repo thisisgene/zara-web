@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { jahresberichtTags } from '../jahresberichte_data'
 
 import TextFieldGroup from '../../../../common/TextFieldGroup'
-import FileSelectGroup from '../../FileSelectGroup'
+import FileSelectGroup from '../../../../common/FileSelectGroup'
 
 import { confirmAlert } from 'react-confirm-alert'
 
