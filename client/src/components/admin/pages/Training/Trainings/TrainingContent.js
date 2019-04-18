@@ -355,13 +355,14 @@ class TrainingContent extends Component {
                     E-mail senden
                   </button>
                 </div>
-                <div>
+                <div className={styles['trainings-content--team-select']}>
                   {this.props.training.trainingTeam && (
                     <TeamSelectGroup
                       optionContent={this.props.training.trainingTeam}
                       defaultValue={this.state.selectedTeam}
                       name="teamSelect"
                       onSelectChange={this.onSelectChange}
+                      placeholder="Trainer*innen zuteilen"
                       lang="de"
                     />
                   )}
