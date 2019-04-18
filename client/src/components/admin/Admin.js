@@ -30,14 +30,36 @@ class Admin extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: {},
+      timeUntilLogout: '',
+      timeCheckInterval: 60000
     }
   }
   componentDidMount() {
     document.title = 'ZARA | Admin'
+    setTimeout(this.setTimeUntilLogout, 1)
   }
+
+  setTimeUntilLogout = () => {
+    const timeLeft = Math.round(this.props.auth.user.exp - Date.now() / 1000)
+
+    if (timeLeft <= 7200) {
+      this.setState({
+        timeUntilLogout: timeLeft
+      })
+    }
+    if (timeLeft <= 300) {
+      this.setState({
+        timeCheckInterval: 1000,
+        timeUntilLogout: timeLeft
+      })
+    }
+    setTimeout(this.setTimeUntilLogout, this.state.timeCheckInterval)
+  }
+
   render() {
     const { isAuthenticated, user } = this.props.auth
+    // this.setTimeUntilLogout()
 
     const authRoutes = (
       <div className="Admin">
@@ -82,7 +104,7 @@ class Admin extends Component {
             </Switch>
           )}
         </Switch>
-        <Footer />
+        <Footer timeUntilLogout={this.state.timeUntilLogout} />
       </div>
     )
     const guestRoutes = (

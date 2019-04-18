@@ -23,66 +23,6 @@ class Header extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth
 
-    // const authLinks = (
-    //   <ul className={cx(globalStyles.nav, globalStyles['justify-content-end'])}>
-    //     {user.securityLevel <= 3 && (
-    //       <li className={globalStyles['nav-item']}>
-    //         <NavLink
-    //           activeClassName={styles['active']}
-    //           className={globalStyles['nav-link']}
-    //           to="/admin/dashboard"
-    //         >
-    //           <i className="fas fa-cubes" />
-    //         </NavLink>
-    //       </li>
-    //     )}
-    //     {(user.securityLevel === 4 || user.securityLevel <= 2) && (
-    //       <li className={globalStyles['nav-item']}>
-    //         <NavLink
-    //           activeClassName={styles['active']}
-    //           className={globalStyles['nav-link']}
-    //           to="/admin/reports"
-    //         >
-    //           <i className="fas fa-clipboard-list" />
-    //         </NavLink>
-    //       </li>
-    //     )}
-    //     {(user.securityLevel === 4 || user.securityLevel <= 2) && (
-    //       <li className={globalStyles['nav-item']}>
-    //         <NavLink
-    //           activeClassName={styles['active']}
-    //           className={globalStyles['nav-link']}
-    //           to="/admin/training"
-    //         >
-    //           <i className="fas fa-graduation-cap" />
-    //         </NavLink>
-    //       </li>
-    //     )}
-    //     {user.securityLevel <= 1 && (
-    //       <li className={globalStyles['nav-item']}>
-    //         <NavLink
-    //           activeClassName={styles['active']}
-    //           className={globalStyles['nav-link']}
-    //           to="/admin/settings"
-    //         >
-    //           <i className="fas fa-cog" />
-    //         </NavLink>
-    //       </li>
-    //     )}
-    //     <li className={globalStyles['nav-item']}>
-    //       <button
-    //         className={cx(globalStyles.btn, globalStyles['btn-link'])}
-    //         id="dLabel"
-    //         data-toggle="dropdown"
-    //         aria-haspopup="true"
-    //         aria-expanded="false"
-    //       >
-    //         {user.name}
-    //       </button>
-    //     </li>
-    //   </ul>
-    // )
-
     return (
       <div className={styles['header']}>
         <nav
