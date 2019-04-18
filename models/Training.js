@@ -12,7 +12,9 @@ const TrainingSchema = new Schema({
     type: String
   },
   location: {
-    type: String
+    title: String,
+    address1: String,
+    address2: String
   },
   date: {
     type: Date

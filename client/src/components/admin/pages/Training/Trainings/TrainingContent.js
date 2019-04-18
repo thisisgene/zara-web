@@ -6,6 +6,7 @@ import Calendar from 'react-calendar'
 import TextFieldGroup from '../../../common/TextFieldGroup'
 import TextareaFieldGroup from '../../../common/TextareaFieldGroup'
 import FileSelectGroup from '../../../common/FileSelectGroup'
+import TeamSelectGroup from '../../../common/TeamSelectGroup'
 
 import { confirmAlert } from 'react-confirm-alert'
 
@@ -36,6 +37,9 @@ class TrainingContent extends Component {
       tag: 'trainings',
       title: '',
       date: new Date(),
+      location: '',
+      address1: '',
+      address2: '',
 
       selectedFilesDE: [],
       selectedFilesEN: [],
@@ -48,6 +52,7 @@ class TrainingContent extends Component {
   componentDidMount() {
     this.props.match.params.trainingId !== 'neu' &&
       this.props.getById(this.props.match.params.trainingId, 'trainings')
+    this.props.getAll('trainingTeam')
   }
 
   componentDidUpdate(prevProps) {
@@ -196,7 +201,7 @@ class TrainingContent extends Component {
                   <TextFieldGroup
                     className={commonStyles['input']}
                     colorScheme="light"
-                    placeholder="Titel"
+                    placeholder="Titel der Ausschreibung"
                     type="text"
                     name="title"
                     value={this.state.title}
@@ -256,6 +261,28 @@ class TrainingContent extends Component {
                         <input type="time" id="appt" name="appt" required />
                       </div>
                     </div>
+                    <div>
+                      <TextFieldGroup
+                        className={commonStyles['input']}
+                        colorScheme="light"
+                        placeholder="Adresse Zeile 1"
+                        type="text"
+                        name="address1"
+                        value={this.state.address1}
+                        onChange={this.onChange}
+                        error={this.state.errors.address1}
+                      />
+                      <TextFieldGroup
+                        className={commonStyles['input']}
+                        colorScheme="light"
+                        placeholder="Adresse Zeile 2"
+                        type="text"
+                        name="address2"
+                        value={this.state.address2}
+                        onChange={this.onChange}
+                        error={this.state.errors.address2}
+                      />
+                    </div>
                     <div
                       className={
                         styles['trainings-content--text__content--left__date']
@@ -305,6 +332,39 @@ class TrainingContent extends Component {
                       error={this.state.errors.privDesc}
                     />
                   </div>
+                </div>
+                <div className={styles['trainings-content--bottom-bar']}>
+                  {/* <button
+                    className={cx(
+                      commonStyles['button'],
+                      commonStyles['button--save'],
+                      styles['button--save']
+                    )}
+                    onClick={this.saveContent}
+                  >
+                    Speichern
+                  </button> */}
+                  <button
+                    className={cx(
+                      commonStyles['button'],
+                      commonStyles['button--yellow'],
+                      styles['button--email']
+                    )}
+                    onClick={this.sendContentEmail}
+                  >
+                    E-mail senden
+                  </button>
+                </div>
+                <div>
+                  {this.props.training.trainingTeam && (
+                    <TeamSelectGroup
+                      optionContent={this.props.training.trainingTeam}
+                      defaultValue={this.state.selectedTeam}
+                      name="teamSelect"
+                      onSelectChange={this.onSelectChange}
+                      lang="de"
+                    />
+                  )}
                 </div>
               </div>
               {this.props.media && this.props.media.images && (

@@ -20,6 +20,6 @@
   text-decoration: none;
 } */
 
-.react-date-picker__wrapper {
-  display: none;
+.react-calendar {
+  width: 100%;
 }

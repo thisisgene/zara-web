@@ -21,7 +21,8 @@
     padding: 0 -.1rem
 
     &__title
-      margin: 0 .1rem
+      margin: 0 auto
+      width: 50%
     &:first-child
       margin-left: 0
     
@@ -57,17 +58,22 @@
               padding: 0 .4rem
         &__date
           flex: 1
+          
           *
             position: inherit
 
 
     &__description
       textarea
-        height: 152px !important
+        height: 193px !important
         line-height: 1.1
         &.private
-          border: 1px solid #F44335 !important
+          // border: 1px solid #F44335 !important
           // background: lighten(#F44335, 40%)
+  &--bottom-bar
+    margin-top: .4rem
+    display: flex
+    justify-content: space-around
 
 
   &--sidebar
