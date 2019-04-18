@@ -19,6 +19,7 @@
   &--text
     // display: flex
     padding: 0 -.1rem
+
     &__title
       margin: 0 .1rem
     &:first-child
@@ -30,7 +31,12 @@
       .content-box
         flex: 1
         margin: 0 .1rem
-      &--left
+    &__description
+      textarea
+        height: 150px !important
+        line-height: 1.1
+        &.private
+          border: 2px solid #F44335 !important
 
 
   &--sidebar

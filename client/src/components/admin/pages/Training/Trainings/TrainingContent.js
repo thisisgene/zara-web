@@ -246,6 +246,16 @@ class TrainingContent extends Component {
                       onChange={this.onChange}
                       error={this.state.errors.pubDesc}
                     />
+                    <TextareaFieldGroup
+                      className={cx(commonStyles['input'], styles['private'])}
+                      colorScheme="light"
+                      placeholder="Beschreibungstext geschützt (wird nur im Adminbereich angezeigt)"
+                      type="text"
+                      name="privDesc"
+                      value={this.state.privDesc}
+                      onChange={this.onChange}
+                      error={this.state.errors.privDesc}
+                    />
                   </div>
                 </div>
               </div>

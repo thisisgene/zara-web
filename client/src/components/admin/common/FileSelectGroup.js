@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Select from 'react-select'
 
+import styles from './FileSelectGroup.module.sass'
+
 export default class FileSelectGroup extends Component {
   render() {
     const {
@@ -26,7 +28,7 @@ export default class FileSelectGroup extends Component {
           value={defaultValue}
           name={name}
           options={optionArray}
-          // className="basic-multi-select"
+          className={styles['select']}
           // classNamePrefix="select"
           onChange={onSelectChange.bind(this, lang)}
         />
