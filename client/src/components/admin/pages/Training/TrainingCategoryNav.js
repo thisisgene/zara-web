@@ -41,13 +41,13 @@ class Dashboard extends Component {
         >
           Trainings
         </NavLink>
-        {/* <NavLink
+        <NavLink
           className={styles['category-nav--link']}
-          activeClassName={styles['active']}
-          to="/admin/reports"
+          activeClassName={styles['cat-active']}
+          to="/admin/training/calendar"
         >
-          Meldungen
-        </NavLink> */}
+          Kalender
+        </NavLink>
       </div>
     )
   }
