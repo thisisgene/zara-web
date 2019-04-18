@@ -10,7 +10,8 @@ export default class FileSelectGroup extends Component {
       defaultValue,
       name,
       onSelectChange,
-      lang
+      lang,
+      placeholder
     } = this.props
     let optionArray = []
     optionContent.map(option => {
@@ -29,7 +30,7 @@ export default class FileSelectGroup extends Component {
           name={name}
           options={optionArray}
           className={styles['select']}
-          // classNamePrefix="select"
+          placeholder={placeholder || 'Files wählen'}
           onChange={onSelectChange.bind(this, lang)}
         />
       </div>

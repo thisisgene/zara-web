@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-// import { jahresberichtTags } from '../jahresberichte_data'
+import Calendar from 'react-calendar'
 
 import TextFieldGroup from '../../../common/TextFieldGroup'
 import TextareaFieldGroup from '../../../common/TextareaFieldGroup'
@@ -34,8 +34,8 @@ class TrainingContent extends Component {
       handle: '',
       category: 'trainings',
       tag: 'trainings',
-      titleDE: '',
-      titleEN: '',
+      title: '',
+      date: new Date(),
 
       selectedFilesDE: [],
       selectedFilesEN: [],
@@ -131,6 +131,12 @@ class TrainingContent extends Component {
       this.setState({ selectedFilesEN: selected })
     }
   }
+
+  onDateChange = date => {
+    console.log(date)
+    this.setState({ date })
+  }
+
   deleteTraining = () => {
     this.props.deleteById(this.state.trainingId, 'trainings')
     this.props.history.push('/admin/training/trainings/neu')
@@ -216,6 +222,48 @@ class TrainingContent extends Component {
                         name="labelSelect"
                         onSelectChange={this.onSelectChange}
                         lang="DE"
+                        placeholder="Labels wählen ..."
+                      />
+                    </div>
+                    <div
+                      className={
+                        styles[
+                          'trainings-content--text__content--left__location'
+                        ]
+                      }
+                    >
+                      <TextFieldGroup
+                        className={commonStyles['input']}
+                        colorScheme="light"
+                        placeholder="Ort"
+                        type="text"
+                        name="location"
+                        value={this.state.location}
+                        onChange={this.onChange}
+                        error={this.state.errors.location}
+                      />
+                      <div
+                        className={
+                          styles[
+                            'trainings-content--text__content--left__location--time'
+                          ]
+                        }
+                      >
+                        <span>
+                          {/* <i className="fas fa-clock" /> */}
+                          Uhrzeit:
+                        </span>
+                        <input type="time" id="appt" name="appt" required />
+                      </div>
+                    </div>
+                    <div
+                      className={
+                        styles['trainings-content--text__content--left__date']
+                      }
+                    >
+                      <Calendar
+                        onChange={this.onDateChange}
+                        value={this.state.date}
                       />
                     </div>
                   </div>
