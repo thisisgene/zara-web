@@ -63,6 +63,17 @@ router.post(
               if (err) console.log(err)
             })
           break
+        case 'faqs':
+          Faq.findOneAndUpdate(
+            { _id: item._id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {})
+            .catch(err => {
+              if (err) console.log(err)
+            })
+          break
         case 'training_team':
           console.log('training sort')
           TrainingTeam.findOneAndUpdate(

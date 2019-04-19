@@ -555,7 +555,7 @@ export const deleteById = (id, category) => dispatch => {
       break
     case 'faqs':
       axios
-        .get(`/api/training/faqs/delete/${id}`)
+        .get(`/api/faqs/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_FAQ_BY_ID,
