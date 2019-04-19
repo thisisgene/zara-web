@@ -6,6 +6,7 @@ import CategoryNav from './CategoryNav'
 import Media from './media/Media'
 import News from './news/News'
 import Jahresberichte from './jahresberichte/Jahresberichte'
+import Faqs from './faq/Faqs'
 
 import styles from './Dashboard.module.sass'
 
@@ -23,6 +24,7 @@ class Dashboard extends Component {
             path="/admin/dashboard/jahresberichte"
             component={Jahresberichte}
           />
+          <PrivateRoute path="/admin/dashboard/faqs" component={Faqs} />
         </div>
       </div>
     )

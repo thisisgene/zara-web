@@ -27,7 +27,13 @@ import {
   UPDATE_TRAINING,
   GET_TRAINING_BY_ID,
   DELETE_TRAINING_BY_ID,
-  CLEAR_TRAINING
+  CLEAR_TRAINING,
+  GET_ALL_FAQS,
+  CREATE_NEW_FAQ,
+  UPDATE_FAQ,
+  GET_FAQ_BY_ID,
+  DELETE_FAQ_BY_ID,
+  CLEAR_FAQ
 } from './types'
 
 // Get all
@@ -55,6 +61,22 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_JAHRESBERICHTE,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'faqs':
+      axios
+        .get('/api/faqs')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_FAQS,
             payload: res.data
           })
         })
@@ -97,6 +119,7 @@ export const getAll = category => dispatch => {
           })
         )
       break
+
     default:
       return
   }
@@ -160,6 +183,22 @@ export const getById = (id, category) => dispatch => {
           })
         )
       break
+    case 'faqs':
+      axios
+        .get(`/api/faqs/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_FAQ_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     case 'trainingTeam':
       axios
         .get(`/api/training/team/${id}`)
@@ -192,6 +231,7 @@ export const getById = (id, category) => dispatch => {
           })
         )
       break
+
     default:
       return
   }
@@ -263,6 +303,39 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
+              })
+            )
+
+      break
+    case 'faqs':
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/faqs', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_FAQ,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response
+              })
+            )
+        : axios
+            .post(`/api/faqs/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_FAQ,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response
               })
             )
 
@@ -391,6 +464,22 @@ export const toggleOnline = (id, category, state) => dispatch => {
           })
         )
       break
+    case 'faqs':
+      axios
+        .get(`/api/faqs/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: UPDATE_FAQ,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     case 'trainingTeam':
       axios
         .get(`/api/training/team/toggle_online/${id}/${state}`)
@@ -423,6 +512,7 @@ export const toggleOnline = (id, category, state) => dispatch => {
           })
         )
       break
+
     default:
       return
   }
@@ -453,6 +543,22 @@ export const deleteById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_JAHRESBERICHT_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'faqs':
+      axios
+        .get(`/api/training/faqs/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_FAQ_BY_ID,
             payload: res.data
           })
         })
@@ -495,6 +601,7 @@ export const deleteById = (id, category) => dispatch => {
           })
         )
       break
+
     default:
       return
   }
@@ -511,6 +618,12 @@ export const clearSingle = category => dispatch => {
     case 'jahresberichte':
       dispatch({
         type: CLEAR_JAHRESBERICHT
+      })
+
+      break
+    case 'faqs':
+      dispatch({
+        type: CLEAR_FAQ
       })
 
       break

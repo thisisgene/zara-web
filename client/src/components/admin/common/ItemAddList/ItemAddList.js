@@ -22,7 +22,9 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
       activeClassName={styles['active']}
     >
       <div className={styles['item-tag']} />
-      {category === 'trainings' ? item.title : item.de.title}
+      {category === 'trainings' || category === 'faqs'
+        ? item.title
+        : item.de.title}
     </NavLink>
   </div>
 ))
@@ -109,7 +111,11 @@ class ItemAddList extends Component {
         </div>
 
         {tags && (
-          <div className={styles['tag-container']}>
+          <div
+            className={cx(styles['tag-container'], {
+              [styles['two']]: category === 'faqs'
+            })}
+          >
             <div>
               <input
                 type="radio"

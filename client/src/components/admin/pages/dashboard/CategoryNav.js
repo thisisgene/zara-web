@@ -41,13 +41,13 @@ class Dashboard extends Component {
         >
           Berichte, Pressespiegel ...
         </NavLink>
-        {/* <NavLink
+        <NavLink
           className={styles['category-nav--link']}
-          activeClassName={styles['active']}
-          to="/admin/reports"
+          activeClassName={styles['cat-active']}
+          to="/admin/dashboard/faqs"
         >
-          Meldungen
-        </NavLink> */}
+          FAQs
+        </NavLink>
       </div>
     )
   }

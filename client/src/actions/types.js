@@ -39,6 +39,13 @@ export const CREATE_NEW_TRAINING = 'CREATE_NEW_TRAINING'
 export const UPDATE_TRAINING = 'UPDATE_TRAINING'
 export const CLEAR_TRAINING = 'CLEAR_TRAINING'
 
+export const GET_ALL_FAQS = 'GET_ALL_FAQS'
+export const GET_FAQ_BY_ID = 'GET_FAQ_BY_ID'
+export const DELETE_FAQ_BY_ID = 'DELETE_FAQ_BY_ID'
+export const CREATE_NEW_FAQ = 'CREATE_NEW_FAQ'
+export const UPDATE_FAQ = 'UPDATE_FAQ'
+export const CLEAR_FAQ = 'CLEAR_FAQ'
+
 export const CLEAR_ALL = 'CLEAR_ALL'
 
 // export const CREATE_PROJECT = 'CREATE_PROJECT'
