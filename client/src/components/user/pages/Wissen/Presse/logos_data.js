@@ -61,5 +61,15 @@ export const logoData = [
         title: 'ZARA Training Logo EN quer'
       }
     ]
+  },
+  {
+    title: 'Gegen Hass im Netz Logos',
+    text: '',
+    logos: [
+      {
+        image: 'GHiN_logo.png',
+        title: ''
+      }
+    ]
   }
 ]

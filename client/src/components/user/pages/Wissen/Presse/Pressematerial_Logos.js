@@ -31,6 +31,32 @@ class PressematerialLogos extends Component {
             <HeroUnit data={heroData} lang={lang} />
             {/* <LongText content={longText} lang={lang} /> */}
             <div className={styles['logo-box-container']}>
+              {logoData &&
+                logoData.map(logoItem => (
+                  <div className={styles['logo-box']}>
+                    <h1>{logoItem.title}</h1>
+                    <p>{logoItem.text}</p>
+                    {logoItem.logos &&
+                      logoItem.logos.map(logo => (
+                        <div className={styles['logo-box--item']}>
+                          <div>{logo.title}</div>
+                          <a
+                            target="blank"
+                            href={`https://assets.zara.or.at/download/logos/${
+                              logo.image
+                            }`}
+                          >
+                            <img
+                              src={`https://assets.zara.or.at/download/logos/${
+                                logo.image
+                              }`}
+                              alt={logo.image}
+                            />
+                          </a>
+                        </div>
+                      ))}
+                  </div>
+                ))}
               <div className={styles['logo-box']}>
                 <h1>Datenvisualisierungen Rassismus Report 2018</h1>
                 <h2>
@@ -73,33 +99,7 @@ class PressematerialLogos extends Component {
                     />
                   </a>
                 </div>
-                {/* <div className={styles['logo-box--item']}>
-                  <div>
-                    RR18-Datenvisualisierungen PDFs als zip herunterladen
-                  </div>
-                  <div className={styles['download-container']}>
-                    <span>
-                      <a
-                        className={styles['download-link']}
-                        href="https://assets.zara.or.at/download/zip/rr18-datenvisualisierungen.zip"
-                        download="rr18-datenvisualisierungen.zip"
-                      >
-                        <i
-                          className={cx(
-                            'far fa-file-archive',
-                            styles['zip-icon']
-                          )}
-                        />
-                        <div className={styles['download-info']}>
-                          <span className={styles['file-name']}>
-                            rr18-datenvisualisierungen.zip
-                          </span>
-                          <span className={styles['file-size']}>198 KB</span>
-                        </div>
-                      </a>
-                    </span>
-                  </div>
-                </div> */}
+
                 <div className={styles['logo-box--item']}>
                   <div>
                     RR18-Kontextualisierungen PDFs als zip herunterladen
@@ -142,6 +142,9 @@ class PressematerialLogos extends Component {
                       alt="Kerschbaumer_ZARA HiRes"
                     />
                   </a>
+                  <p style={{ fontSize: '.8rem' }}>
+                    Photo Credit: Johannes Zinner
+                  </p>
                 </div>
                 <div className={styles['logo-box--item']}>
                   <div>Dieter Schindlauer_ZARA HiRes.jpg</div>
@@ -158,34 +161,11 @@ class PressematerialLogos extends Component {
                       alt="Dieter Schindlauer_ZARA HiRes"
                     />
                   </a>
+                  <p style={{ fontSize: '.8rem' }}>
+                    Photo Credit: Johannes Zinner
+                  </p>
                 </div>
               </div>
-              {logoData &&
-                logoData.map(logoItem => (
-                  <div className={styles['logo-box']}>
-                    <h1>{logoItem.title}</h1>
-                    <p>{logoItem.text}</p>
-                    {logoItem.logos &&
-                      logoItem.logos.map(logo => (
-                        <div className={styles['logo-box--item']}>
-                          <div>{logo.title}</div>
-                          <a
-                            target="blank"
-                            href={`https://assets.zara.or.at/download/logos/${
-                              logo.image
-                            }`}
-                          >
-                            <img
-                              src={`https://assets.zara.or.at/download/logos/${
-                                logo.image
-                              }`}
-                              alt={logo.image}
-                            />
-                          </a>
-                        </div>
-                      ))}
-                  </div>
-                ))}
             </div>
           </div>
         )}
