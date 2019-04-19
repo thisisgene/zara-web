@@ -87,7 +87,7 @@ export const heroDataRassismus = {
 }
 
 export const heroDataHassImNetz = {
-  image: 'Beratungsstelle_GHiN_Logo.jpg',
+  image: 'GHiN_logo_s.png',
   imageSide: 'left',
   de: {
     title: 'Hass im Netz melden',

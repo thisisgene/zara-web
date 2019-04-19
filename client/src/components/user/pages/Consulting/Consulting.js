@@ -54,7 +54,7 @@ const infoObj_default = {
       {
         color: 'white',
         title: 'Hass im Netz',
-        titleImage: 'Beratungsstelle_GHiN_Logo.jpg',
+        titleImage: 'GHiN_logo_s.png',
         text:
           'Hass im Netz umfasst verhetzende oder hassmotivierte Inhalte und Postings auf Online Plattformen und sozialen Medien die gegen bestimmte Gruppen, z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
         linkType: 'button',
