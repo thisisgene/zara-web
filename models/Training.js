@@ -17,7 +17,7 @@ const TrainingSchema = new Schema({
     address2: String
   },
   date: {
-    type: Date
+    type: String
   },
   time: {
     type: String
@@ -25,7 +25,21 @@ const TrainingSchema = new Schema({
   handle: {
     type: String
   },
-
+  emailSubject: {
+    type: String
+  },
+  pubContent: {
+    type: String
+  },
+  privContent: {
+    type: String
+  },
+  pubContentMarked: {
+    type: String
+  },
+  privContentMarked: {
+    type: String
+  },
   labels: [{ name: String, color: String }],
 
   isVisible: {

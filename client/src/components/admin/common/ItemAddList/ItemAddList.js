@@ -22,7 +22,7 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
       activeClassName={styles['active']}
     >
       <div className={styles['item-tag']} />
-      {item.de.title}
+      {category === 'trainings' ? item.title : item.de.title}
     </NavLink>
   </div>
 ))

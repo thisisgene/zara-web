@@ -10,7 +10,7 @@ const Jimp = require('jimp')
 
 const nodemailer = require('nodemailer')
 
-const validateNewsInput = require('../../validation/news')
+const validateTrainingInput = require('../../validation/training')
 
 const { TrainingTeam, Training } = require('../../models/Training')
 
@@ -224,76 +224,68 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const body = req.body
-    const { errors, isValid } = await validateNewsInput(body)
-
+    const { errors, isValid } = await validateTrainingInput(body)
     if (!isValid) {
       return res.status(400).json(errors)
     }
-    // Get fields
-    const trainingFields = { de: {}, en: {} }
-    if (body.titleDE) {
-      trainingFields.de.title = body.titleDE
-      trainingFields.handle = body.titleDE.replace(/\s/g, '_')
-    }
-    if (body.titleEN) trainingFields.en.title = body.titleEN
-    trainingFields.tag = body.tag
-    trainingFields.de.shortDescription = body.shortDescriptionDE
-    trainingFields.en.shortDescription = body.shortDescriptionEN
-    trainingFields.de.description = body.descriptionDE
-    trainingFields.en.description = body.descriptionEN
-
     const newTraining = new Training({
-      tag: trainingFields.tag,
-      date: body.date,
-      handle: trainingFields.handle,
-      de: {
-        title: trainingFields.de.title,
-        shortDescription: trainingFields.de.shortDescription,
-        description: trainingFields.de.description
+      title: body.title && body.title,
+      handle: body.title && body.title.replace(/\s/g, '_'),
+
+      tag: body.tag && body.tag,
+      date: body.date && body.date,
+      time: body.time && body.time,
+      location: {
+        title: body.location && body.location,
+        address1: body.address1 && body.address1,
+        address2: body.address2 && body.address2
       },
-      en: {
-        title: trainingFields.en.title,
-        shortDescription: trainingFields.en.shortDescription,
-        description: trainingFields.en.description
-      }
+      labels: body.labels && body.labels,
+      emailSubject: body.emailSubject && body.emailSubject,
+      pubContent: body.pubContent && body.pubContent,
+      privContent: body.privContent && body.privContent
     })
-    newTraining.save().then(training => {
-      res.json(training)
-    })
+    newTraining
+      .save()
+      .then(training => {
+        res.json(training)
+      })
+      .catch(err => console.log(err))
   }
 )
 
 router.post(
   '/trainings/update/:id',
   passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+  async (req, res) => {
     const body = req.body
-    // Get fields
-    const trainingFields = { de: {}, en: {} }
-    if (body.titleDE) {
-      trainingFields.de.title = body.titleDE
-      trainingFields.handle = body.titleDE.replace(/\s/g, '_')
+    const { errors, isValid } = await validateTrainingInput(body)
+    if (!isValid) {
+      return res.status(400).json(errors)
     }
-    if (body.titleEN) trainingFields.en.title = body.titleEN
-    // if (body.filesDE) trainingFields.selectedFilesDE = body.filesDE
-    // if (body.filesEN) trainingFields.selectedFilesEN = body.filesEN
+    console.log(body)
+
     Training.findOneAndUpdate(
       { _id: body.id },
       {
         $set: {
-          tag: body.tag,
-          date: body.date,
-          handle: trainingFields.handle,
-          de: {
-            title: trainingFields.de.title
+          title: body.title && body.title,
+          handle: body.title && body.title.replace(/\s/g, '_'),
+
+          tag: body.tag && body.tag,
+          date: body.date && body.date,
+          time: body.time && body.time,
+          location: {
+            title: body.location,
+            address1: body.address1,
+            address2: body.address2
           },
-          en: {
-            title: trainingFields.en.title
-          },
-          files: {
-            de: body.filesDE,
-            en: body.filesEN
-          }
+          labels: body.labels && body.labels,
+          emailSubject: body.emailSubject && body.emailSubject,
+          pubContent: body.pubContent && body.pubContent,
+          pubContentMarked: body.pubContent && marked(body.pubContent),
+          privContent: body.privContent && body.privContent,
+          privContentMarked: body.privContent && marked(body.privContent)
         }
       },
       { new: true },

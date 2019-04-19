@@ -37,13 +37,15 @@ class TrainingContent extends Component {
       tag: 'trainings',
       title: '',
       date: new Date(),
+      time: '',
       location: '',
       address1: '',
       address2: '',
-
-      selectedFilesDE: [],
-      selectedFilesEN: [],
-
+      labels: [],
+      emailSubject: '',
+      pubContent: '',
+      privContent: '',
+      hasBeenSent: false,
       errors: {},
       imageListOpen: false
     }
@@ -79,8 +81,17 @@ class TrainingContent extends Component {
             trainingId: item._id,
             handle: item.handle,
             tag: item.tag && item.tag,
-            titleDE: item.de.title && item.de.title,
-            titleEN: item.en ? item.en.title : ''
+            title: item.title,
+            date: item.date,
+            time: item.time,
+            location: item.location && item.location.title,
+            address1: item.location && item.location.address1,
+            address2: item.location && item.location.address2,
+            labels: item.labels,
+            emailSubject: item.emailSubject,
+            pubContent: item.pubContent,
+            privContent: item.privContent,
+            hasBeenSent: item.hasBeenSent
           })
         }
       }
@@ -91,14 +102,25 @@ class TrainingContent extends Component {
           console.log('reset')
           this.props.clearSingle('trainings')
           this.setState({
-            blankItem: true,
             isOnline: false,
+            blankItem: true,
             trainingId: this.props.match.params.trainingId,
             handle: '',
             category: 'trainings',
             tag: 'trainings',
-            titleDE: '',
-            titleEN: ''
+            title: '',
+            date: new Date(),
+            time: '',
+            location: '',
+            address1: '',
+            address2: '',
+            labels: [],
+            emailSubject: '',
+            pubContent: '',
+            privContent: '',
+            hasBeenSent: false,
+            errors: {},
+            imageListOpen: false
           })
         } else {
           this.props.getById(this.props.match.params.trainingId, 'trainings')
@@ -168,8 +190,16 @@ class TrainingContent extends Component {
       category: 'trainings',
       tag: this.state.tag,
       id: this.state.trainingId,
-      titleDE: this.state.titleDE,
-      titleEN: this.state.titleEN
+      title: this.state.title,
+      date: this.state.date,
+      time: this.state.time,
+      location: this.state.location,
+      address1: this.state.address1,
+      address2: this.state.address2,
+      labels: this.state.labels,
+      emailSubject: this.state.emailSubject,
+      pubContent: this.state.pubContent,
+      privContent: this.state.privContent
     }
     this.props.saveContent(saveData)
   }
@@ -223,7 +253,7 @@ class TrainingContent extends Component {
                     >
                       <FileSelectGroup
                         optionContent={['schule', 'haus']}
-                        defaultValue={this.state.selectedLabels}
+                        defaultValue={this.state.labels}
                         name="labelSelect"
                         onSelectChange={this.onSelectChange}
                         lang="DE"
@@ -258,7 +288,13 @@ class TrainingContent extends Component {
                           {/* <i className="fas fa-clock" /> */}
                           Uhrzeit:
                         </span>
-                        <input type="time" id="appt" name="appt" required />
+                        <input
+                          type="time"
+                          id="time"
+                          onChange={this.onChange}
+                          value={this.state.time}
+                          name="time"
+                        />
                       </div>
                     </div>
                     <div>
@@ -290,7 +326,8 @@ class TrainingContent extends Component {
                     >
                       <Calendar
                         onChange={this.onDateChange}
-                        value={this.state.date}
+                        value={new Date(this.state.date)}
+                        locale="de-DE"
                       />
                     </div>
                   </div>
@@ -306,30 +343,30 @@ class TrainingContent extends Component {
                       colorScheme="light"
                       placeholder="Betreff"
                       type="text"
-                      name="subject"
-                      value={this.state.subject}
+                      name="emailSubject"
+                      value={this.state.emailSubject}
                       onChange={this.onChange}
-                      error={this.state.errors.subject}
+                      error={this.state.errors.emailSubject}
                     />
                     <TextareaFieldGroup
                       className={commonStyles['input']}
                       colorScheme="light"
                       placeholder="Beschreibungstext öffentlich (wird per Email verschickt)"
                       type="text"
-                      name="pubDesc"
-                      value={this.state.pubDesc}
+                      name="pubContent"
+                      value={this.state.pubContent}
                       onChange={this.onChange}
-                      error={this.state.errors.pubDesc}
+                      error={this.state.errors.pubContent}
                     />
                     <TextareaFieldGroup
                       className={cx(commonStyles['input'], styles['private'])}
                       colorScheme="light"
                       placeholder="Beschreibungstext geschützt (wird nur im Adminbereich angezeigt)"
                       type="text"
-                      name="privDesc"
-                      value={this.state.privDesc}
+                      name="privContent"
+                      value={this.state.privContent}
                       onChange={this.onChange}
-                      error={this.state.errors.privDesc}
+                      error={this.state.errors.privContent}
                     />
                   </div>
                 </div>

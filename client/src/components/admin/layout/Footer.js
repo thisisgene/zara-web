@@ -18,7 +18,6 @@ export default props => {
       d < 3600 ? hDisplay + mDisplay + sDisplay : hDisplay + mDisplay
     return 'Zeit bis Logout: ' + display
   }
-  console.log(props)
   return (
     <footer
       className={cx(
