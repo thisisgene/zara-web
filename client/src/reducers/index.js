@@ -17,6 +17,7 @@ export default combineReducers({
   errors: errorReducer,
   media: mediaReducer,
   news: newsReducer,
+  jahresberichte: jahresberichteReducer,
   faq: faqReducer,
   training: trainingReducer,
   user: userReducer,

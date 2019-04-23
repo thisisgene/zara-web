@@ -5,6 +5,7 @@ import TrainingCategoryNav from './TrainingCategoryNav'
 
 import TrainingTeam from './TrainingTeam/TrainingTeam'
 import Trainings from './Trainings/Trainings'
+import Calendar from './Calendar/Calendar'
 
 import styles from './Training.module.sass'
 
@@ -20,6 +21,7 @@ export default class Training extends Component {
             path="/admin/training/trainings"
             component={Trainings}
           />
+          <PrivateRoute path="/admin/training/calendar" component={Calendar} />
         </div>
       </div>
     )

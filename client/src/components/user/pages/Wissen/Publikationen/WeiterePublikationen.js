@@ -35,7 +35,7 @@ class WeiterePublikationen extends Component {
             <HeroUnit data={weitereHeroData} lang={lang} />
             <NewsletterOneLineObject lang={lang} />
             <LongText content={weitereLongText} lang={lang} />
-            {jahresberichte.jahresberichte && (
+            {jahresberichte && jahresberichte.jahresberichte && (
               <div className={styles['jahresberichte-container']}>
                 {jahresberichte.jahresberichte
                   .filter(
