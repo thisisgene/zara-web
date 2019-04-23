@@ -4,7 +4,7 @@ import jwt_decode from 'jwt-decode'
 import setAuthToken from './utils/setAuthToken'
 import { setCurrentUser } from './actions/authActions'
 import { logoutUser } from './actions/authActions'
-import { clearProjects } from './actions/projectActions'
+import { clearAll } from './actions/adminActions'
 import { LocalizeProvider, withLocalize } from 'react-localize-redux'
 
 import { Provider } from 'react-redux'
@@ -29,7 +29,7 @@ if (localStorage.jwtToken) {
     // Logout user
     store.dispatch(logoutUser())
     // Clear current Project
-    store.dispatch(clearProjects())
+    store.dispatch(clearAll())
     // Redirect to login
     window.location.href = 'admin/login'
   }

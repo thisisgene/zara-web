@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import moment from 'moment'
 
+import Select from 'react-select'
+
 import TextFieldGroup from '../../../../common/TextFieldGroup'
 
 import {

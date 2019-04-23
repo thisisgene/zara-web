@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
 
 import { faqTags, faqData } from './faq_data'
+
+import { getAll } from '../../../../../actions/adminActions'
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../../dashboard/OneLineAlert/OneLineAlert'
@@ -110,8 +113,14 @@ class Faq extends Component {
       filterTag: []
     }
   }
+
+  componentDidMount() {
+    this.props.getAll('faqs')
+  }
+
   render() {
     const { activeLanguage } = this.props
+    const { faqs } = this.props.faq
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
@@ -122,7 +131,7 @@ class Faq extends Component {
           <div>
             <HeroUnit data={heroData} lang={lang} />
             {/* <OneLineAlert content={oneLineAlert} lang={lang} /> */}
-            {faqData && <FaqBox content={faqData} tags={faqTags} lang={lang} />}
+            {faqs && <FaqBox content={faqs} tags={faqTags} lang={lang} />}
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}
@@ -131,4 +140,13 @@ class Faq extends Component {
   }
 }
 
-export default withLocalize(Faq)
+const mapStateToProps = state => ({
+  faq: state.faq
+})
+
+export default withLocalize(
+  connect(
+    mapStateToProps,
+    { getAll }
+  )(Faq)
+)
