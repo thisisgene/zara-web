@@ -104,6 +104,7 @@ class Register extends Component {
                     value={this.state.securityLevel}
                     onChange={this.onChange}
                   >
+                    <option value="5">Training</option>
                     <option value="4">Beratung</option>
                     <option value="3">Website config</option>
                     <option value="2">Website & Beratung</option>

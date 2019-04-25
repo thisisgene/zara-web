@@ -81,7 +81,7 @@ class Admin extends Component {
           ) : (
             <PrivateRoute path="/admin/reports" component={RestrictedPage} />
           )}
-          {user.securityLevel === 4 || user.securityLevel <= 2 ? (
+          {user.securityLevel === 5 || user.securityLevel <= 2 ? (
             <PrivateRoute path="/admin/training" component={Training} />
           ) : (
             <PrivateRoute path="/admin/training" component={RestrictedPage} />
