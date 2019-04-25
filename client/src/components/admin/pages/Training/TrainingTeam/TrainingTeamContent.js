@@ -35,7 +35,7 @@ class TrainingTeamContent extends Component {
       tag: 'trainingTeam',
       titleDE: '',
       titleEN: '',
-
+      email: '',
       selectedFilesDE: [],
       selectedFilesEN: [],
 
@@ -75,6 +75,7 @@ class TrainingTeamContent extends Component {
             tag: item.tag && item.tag,
             titleDE: item.de.title && item.de.title,
             titleEN: item.en ? item.en.title : '',
+            email: item.email ? item.email : '',
             selectedFilesDE: item.files && item.files.de,
             selectedFilesEN: item.files && item.files.en
           })
@@ -93,6 +94,7 @@ class TrainingTeamContent extends Component {
             tag: 'trainingTeam',
             titleDE: '',
             titleEN: '',
+            email: '',
             selectedFilesDE: [],
             selectedFilesEN: []
           })
@@ -159,7 +161,8 @@ class TrainingTeamContent extends Component {
       tag: this.state.tag,
       id: this.state.teamId,
       titleDE: this.state.titleDE,
-      titleEN: this.state.titleEN
+      titleEN: this.state.titleEN,
+      email: this.state.email
     }
     console.log(saveData)
     this.props.saveContent(saveData)
@@ -192,7 +195,7 @@ class TrainingTeamContent extends Component {
                   <TextFieldGroup
                     className={commonStyles['input']}
                     colorScheme="light"
-                    placeholder="Titel deutsch"
+                    placeholder="Name deutsch"
                     type="text"
                     name="titleDE"
                     value={this.state.titleDE}
@@ -205,7 +208,7 @@ class TrainingTeamContent extends Component {
                   <TextFieldGroup
                     className={commonStyles['input']}
                     colorScheme="light"
-                    placeholder="Titel englisch"
+                    placeholder="Name englisch"
                     type="text"
                     name="titleEN"
                     value={this.state.titleEN}
@@ -244,6 +247,18 @@ class TrainingTeamContent extends Component {
                   </div>
                 </div>
               )}
+              <div className={styles['training-team-content--text__email']}>
+                <TextFieldGroup
+                  className={commonStyles['input']}
+                  colorScheme="light"
+                  placeholder="E-mail Adresse"
+                  type="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={this.state.errors.email}
+                />
+              </div>
             </div>
             {this.props.training.trainingTeam && (
               <div className={styles['training-team-content--sidebar']}>

@@ -10,6 +10,7 @@ const Jimp = require('jimp')
 
 const nodemailer = require('nodemailer')
 
+const validateNewsInput = require('../../validation/news')
 const validateTrainingInput = require('../../validation/training')
 
 const { TrainingTeam, Training } = require('../../models/Training')
@@ -61,6 +62,7 @@ router.post(
       tag: trainingTeamFields.tag,
       date: body.date,
       handle: trainingTeamFields.handle,
+      email: body.email,
       de: {
         title: trainingTeamFields.de.title,
         shortDescription: trainingTeamFields.de.shortDescription,
@@ -100,6 +102,7 @@ router.post(
           tag: body.tag,
           date: body.date,
           handle: trainingTeamFields.handle,
+          email: body.email,
           de: {
             title: trainingTeamFields.de.title
           },
@@ -241,6 +244,7 @@ router.post(
         address2: body.address2 && body.address2
       },
       labels: body.labels && body.labels,
+      selectedTeam: body.selectedTeam && body.selectedTeam,
       emailSubject: body.emailSubject && body.emailSubject,
       pubContent: body.pubContent && body.pubContent,
       privContent: body.privContent && body.privContent
@@ -281,6 +285,7 @@ router.post(
             address2: body.address2
           },
           labels: body.labels && body.labels,
+          selectedTeam: body.selectedTeam && body.selectedTeam,
           emailSubject: body.emailSubject && body.emailSubject,
           pubContent: body.pubContent && body.pubContent,
           pubContentMarked: body.pubContent && marked(body.pubContent),

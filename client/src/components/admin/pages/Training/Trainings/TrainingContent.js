@@ -42,6 +42,7 @@ class TrainingContent extends Component {
       address1: '',
       address2: '',
       labels: [],
+      selectedTeam: [],
       emailSubject: '',
       pubContent: '',
       privContent: '',
@@ -88,6 +89,7 @@ class TrainingContent extends Component {
             address1: item.location && item.location.address1,
             address2: item.location && item.location.address2,
             labels: item.labels,
+            selectedTeam: item.selectedTeam,
             emailSubject: item.emailSubject,
             pubContent: item.pubContent,
             privContent: item.privContent,
@@ -115,6 +117,7 @@ class TrainingContent extends Component {
             address1: '',
             address2: '',
             labels: [],
+            selectedTeam: [],
             emailSubject: '',
             pubContent: '',
             privContent: '',
@@ -151,12 +154,8 @@ class TrainingContent extends Component {
   }
   onSelectChange = (lang, selected) => {
     console.log(lang, selected)
-    if (lang === 'DE') {
-      this.setState({ selectedFilesDE: selected })
-    }
-    if (lang === 'EN') {
-      this.setState({ selectedFilesEN: selected })
-    }
+
+    this.setState({ selectedTeam: selected })
   }
 
   onDateChange = date => {
@@ -197,6 +196,7 @@ class TrainingContent extends Component {
       address1: this.state.address1,
       address2: this.state.address2,
       labels: this.state.labels,
+      selectedTeam: this.state.selectedTeam,
       emailSubject: this.state.emailSubject,
       pubContent: this.state.pubContent,
       privContent: this.state.privContent

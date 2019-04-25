@@ -41,7 +41,7 @@ const TrainingSchema = new Schema({
     type: String
   },
   labels: [{ name: String, color: String }],
-
+  selectedTeam: { type: Array },
   isVisible: {
     type: Boolean,
     default: false
@@ -72,6 +72,9 @@ const TrainingTeamSchema = new Schema({
   },
   date: {
     type: Date
+  },
+  email: {
+    type: String
   },
   de: {
     title: {
