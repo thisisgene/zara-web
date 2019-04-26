@@ -31,6 +31,15 @@ import '../../news/NewsContent/rte.sass'
 import commonStyles from '../../../../common/Common.module.sass'
 import styles from './FaqContent.module.sass'
 
+const optionArray = []
+faqTags.map(option => {
+  optionArray.push({
+    value: option.name,
+    label: option.de.title
+    // name: option[lang].title,
+  })
+})
+
 class FaqContent extends Component {
   constructor(props) {
     super(props)
@@ -39,7 +48,7 @@ class FaqContent extends Component {
       blankItem: true,
       faqId: props.match.params.faqId,
       handle: '',
-      category: 'rassismus',
+      categories: 'rassismus',
       title: '',
       questionDE: '',
       questionEN: '',
@@ -76,8 +85,10 @@ class FaqContent extends Component {
           faqId: item._id,
           handle: item.handle,
           isOnline: item.isOnline,
-          category: item.tag,
-          date: moment(item.date).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
+          categories:
+            item.tags.length > 0
+              ? item.tags
+              : optionArray.filter(filterItem => filterItem.value == item.tag),
           title: item.title && item.title,
           questionDE: item.de && item.de.question,
           questionEN: item.en && item.en.question,
@@ -99,7 +110,7 @@ class FaqContent extends Component {
             blankItem: true,
             faqId: this.props.match.params.faqId,
             handle: '',
-            category: 'rassismus',
+            categories: 'rassismus',
             title: '',
             questionDE: '',
             questionEN: '',
@@ -118,8 +129,8 @@ class FaqContent extends Component {
       [e.target.name]: e.target.value
     })
   }
-  onSelectChange = e => {
-    this.setState({ category: e.target.value })
+  onSelectChange = selected => {
+    this.setState({ categories: selected })
   }
 
   onDateChange = e => {
@@ -147,7 +158,7 @@ class FaqContent extends Component {
     const answerEN = this.state.answerEN
     const saveData = {
       category: 'faqs',
-      tag: this.state.category,
+      tags: this.state.categories,
       date: this.state.date,
       id: this.state.faqId,
       title: this.state.title,
@@ -247,7 +258,16 @@ class FaqContent extends Component {
           <div className={styles['faqs-content-main']}>
             <div className={styles['faqs-utilities']}>
               <div className={styles['faqs-utilities__category']}>
-                <select
+                <Select
+                  isMulti
+                  value={this.state.categories}
+                  name="catSelect"
+                  options={optionArray}
+                  className={styles['select']}
+                  placeholder="Kategorie(n)"
+                  onChange={this.onSelectChange}
+                />
+                {/* <select
                   name="catSelect"
                   value={this.state.category}
                   onChange={this.onSelectChange}
@@ -256,7 +276,7 @@ class FaqContent extends Component {
                     faqTags.map(tag => (
                       <option value={tag.name}>{tag.de.title}</option>
                     ))}
-                </select>
+                </select> */}
               </div>
             </div>
             <div className={styles['faqs--title']}>

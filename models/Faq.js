@@ -7,8 +7,8 @@ const FaqSchema = new Schema({
     type: String,
     default: shortid.generate
   },
-  tag: {
-    type: String
+  tags: {
+    type: Array
   },
   date: {
     type: Date

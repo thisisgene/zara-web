@@ -53,7 +53,7 @@ router.post(
       title: body.title && body.title,
       handle: body.title && body.title.replace(/\s/g, '_'),
 
-      tag: body.tag && body.tag,
+      tags: body.tags && body.tags,
       de: {
         question: body.questionDE && body.questionDE,
         answer: body.answerDE && body.answerDE
@@ -134,7 +134,7 @@ router.post(
           title: body.title && body.title,
           handle: body.title && body.title.replace(/\s/g, '_'),
 
-          tag: body.tag && body.tag,
+          tags: body.tags && body.tags,
           de: {
             question: body.questionDE && body.questionDE,
             answer: body.answerDE && body.answerDE
