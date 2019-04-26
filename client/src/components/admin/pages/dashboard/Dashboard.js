@@ -9,6 +9,7 @@ import Jahresberichte from './jahresberichte/Jahresberichte'
 import Faqs from './faq/Faqs'
 
 import styles from './Dashboard.module.sass'
+import Team from './Team/Team'
 
 class Dashboard extends Component {
   render() {
@@ -25,6 +26,7 @@ class Dashboard extends Component {
             component={Jahresberichte}
           />
           <PrivateRoute path="/admin/dashboard/faqs" component={Faqs} />
+          <PrivateRoute path="/admin/dashboard/team" component={Team} />
         </div>
       </div>
     )

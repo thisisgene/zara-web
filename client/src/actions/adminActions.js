@@ -16,6 +16,12 @@ import {
   GET_JAHRESBERICHT_BY_ID,
   DELETE_JAHRESBERICHT_BY_ID,
   CLEAR_JAHRESBERICHT,
+  GET_ALL_TEAM,
+  CREATE_NEW_TEAM,
+  UPDATE_TEAM,
+  GET_TEAM_BY_ID,
+  DELETE_TEAM_BY_ID,
+  CLEAR_TEAM,
   GET_ALL_TRAININGTEAM,
   CREATE_NEW_TRAININGTEAM,
   UPDATE_TRAININGTEAM,
@@ -77,6 +83,22 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_FAQS,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'team':
+      axios
+        .get('/api/team')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_TEAM,
             payload: res.data
           })
         })
@@ -189,6 +211,22 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_FAQ_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'team':
+      axios
+        .get(`/api/team/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_TEAM_BY_ID,
             payload: res.data
           })
         })
@@ -340,6 +378,39 @@ export const saveContent = saveData => dispatch => {
             )
 
       break
+    case 'team':
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/team', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_TEAM,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response
+              })
+            )
+        : axios
+            .post(`/api/team/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_TEAM,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response
+              })
+            )
+
+      break
     case 'trainingTeam':
       saveData.id === 'neu'
         ? axios
@@ -480,6 +551,22 @@ export const toggleOnline = (id, category, state) => dispatch => {
           })
         )
       break
+    case 'team':
+      axios
+        .get(`/api/team/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: UPDATE_TEAM,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     case 'trainingTeam':
       axios
         .get(`/api/training/team/toggle_online/${id}/${state}`)
@@ -569,6 +656,22 @@ export const deleteById = (id, category) => dispatch => {
           })
         )
       break
+    case 'team':
+      axios
+        .get(`/api/team/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_TEAM_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     case 'trainingTeam':
       axios
         .get(`/api/training/team/delete/${id}`)
@@ -624,6 +727,12 @@ export const clearSingle = category => dispatch => {
     case 'faqs':
       dispatch({
         type: CLEAR_FAQ
+      })
+
+      break
+    case 'team':
+      dispatch({
+        type: CLEAR_TEAM
       })
 
       break

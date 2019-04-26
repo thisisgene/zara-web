@@ -131,7 +131,7 @@ class Faq extends Component {
           <div>
             <HeroUnit data={heroData} lang={lang} />
             {/* <OneLineAlert content={oneLineAlert} lang={lang} /> */}
-            {faqs && <FaqBox content={faqs} tags={faqTags} lang={lang} />}
+            {<FaqBox content={faqData} tags={faqTags} lang={lang} />}
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}

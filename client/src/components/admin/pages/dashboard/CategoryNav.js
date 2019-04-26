@@ -48,6 +48,13 @@ class Dashboard extends Component {
         >
           FAQs
         </NavLink>
+        <NavLink
+          className={styles['category-nav--link']}
+          activeClassName={styles['cat-active']}
+          to="/admin/dashboard/team"
+        >
+          Team
+        </NavLink>
       </div>
     )
   }

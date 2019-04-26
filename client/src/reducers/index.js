@@ -5,6 +5,7 @@ import mediaReducer from './mediaReducer'
 import newsReducer from './newsReducer'
 import jahresberichteReducer from './jahresberichteReducer'
 import faqReducer from './faqReducer'
+import teamReducer from './teamReducer'
 import trainingReducer from './trainingReducer'
 import { localizeReducer } from 'react-localize-redux'
 import { reducer as formReducer } from 'redux-form'
@@ -19,6 +20,7 @@ export default combineReducers({
   news: newsReducer,
   jahresberichte: jahresberichteReducer,
   faq: faqReducer,
+  team: teamReducer,
   training: trainingReducer,
   user: userReducer,
   report: reportReducer,
