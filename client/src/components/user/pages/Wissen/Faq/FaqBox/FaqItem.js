@@ -25,7 +25,7 @@ export default class FaqItem extends Component {
 
   render() {
     const { faq, lang, open, glow, setGlow, toggleOpen } = this.props
-    let replacedText = faq[lang].text
+    let replacedText = faq[lang].answer
     // faq[lang].links &&
     //   faq[lang].links.map(link => {
     //     const queryString = `[[${link.ref}]]`
@@ -37,24 +37,24 @@ export default class FaqItem extends Component {
     //   })
 
     const query = /\[\[([^)]+)\]\]/
-    let textArray = faq[lang].text.split(query)
+    let textArray = faq[lang].answer.split(query)
 
     const isOpen = open[0]
     const hasGlow = glow[0]
     return (
       <div>
-        <span id={faq.id} className={styles['faq-item--margin']} />
+        <span id={faq._id} className={styles['faq-item--margin']} />
         <div className={styles['faq-item']}>
           <div
             className={styles['faq-item-top']}
-            onClick={() => toggleOpen(faq.id)}
+            onClick={() => toggleOpen(faq._id)}
           >
             <div className={styles['faq-item-top--head']} tabIndex="2">
               <div className={styles['faq-item-top--head__icon']}>
                 <i className="far fa-question-circle" />
               </div>
               <div className={styles['faq-item-top--head__title']}>
-                {faq[lang].title}
+                {faq[lang].question}
               </div>
             </div>
             <div

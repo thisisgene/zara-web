@@ -25,7 +25,7 @@ class FaqBox extends Component {
     let faqToggleArray = []
     const lang = this.props.lang
     this.props.content.map(item => {
-      faqToggleArray.push({ id: item.id, open: false, glow: false })
+      faqToggleArray.push({ id: item._id, open: false, glow: false })
     })
     this.setState(
       {
@@ -36,6 +36,7 @@ class FaqBox extends Component {
         this.setGlow(thisId)
       }
     )
+    console.log('toggle array: ', faqToggleArray)
   }
   componentDidUpdate(prevProps) {
     if (prevProps.location !== this.props.location) {
@@ -47,7 +48,7 @@ class FaqBox extends Component {
 
   setOpen = id => {
     let faqToggleArray = this.state.faqToggle
-    console.log('id:', this.state.faqToggle)
+    console.log('set id:', this.state.faqToggle)
 
     faqToggleArray
       .filter(item => item.id === id)
@@ -60,7 +61,7 @@ class FaqBox extends Component {
 
   toggleOpen = id => {
     let faqToggleArray = this.state.faqToggle
-    console.log('id:', this.state.faqToggle)
+    console.log('toggle id:', id)
 
     faqToggleArray
       .filter(item => item.id === id)
@@ -90,17 +91,6 @@ class FaqBox extends Component {
   }
 
   onChange = e => {
-    // let activeTags = this.state.activeTags
-    // if (e.target.checked) {
-    //   activeTags.push(e.target.name)
-    //   this.setState({
-    //     activeTags: activeTags
-    //   })
-    // } else {
-    //   this.setState({
-    //     activeTags: activeTags.filter(tag => tag !== e.target.name)
-    //   })
-    // }
     this.setState({
       activeTag: e.target.value
     })
@@ -124,11 +114,11 @@ class FaqBox extends Component {
     const { content, tags, lang } = this.props
 
     let filteredContent = []
-
+    console.log('fag content: ', content)
     if (this.state.activeTag !== '') {
       filteredContent = content.filter(filteredFaq => {
         for (let tag of filteredFaq.tags) {
-          if (this.state.activeTag === tag) return true
+          if (this.state.activeTag === tag.value) return true
         }
         return false
       })
@@ -181,10 +171,10 @@ class FaqBox extends Component {
             filteredContent
               .filter(
                 faq =>
-                  faq[lang].title
+                  faq[lang].question
                     .toLowerCase()
                     .includes(this.state.searchValue.toLowerCase()) ||
-                  faq[lang].text
+                  faq[lang].answer
                     .toLowerCase()
                     .includes(this.state.searchValue.toLowerCase())
               )
@@ -192,10 +182,10 @@ class FaqBox extends Component {
                 <div>
                   <FaqItem
                     open={this.state.faqToggle
-                      .filter(item => item.id === faq.id)
+                      .filter(item => item.id === faq._id)
                       .map(item => item.open)}
                     glow={this.state.faqToggle
-                      .filter(item => item.id === faq.id)
+                      .filter(item => item.id === faq._id)
                       .map(item => item.glow)}
                     faq={faq}
                     lang={lang}
