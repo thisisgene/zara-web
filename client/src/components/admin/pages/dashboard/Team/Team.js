@@ -6,10 +6,10 @@ import { getAll } from '../../../../../actions/adminActions'
 
 import ItemAddList from '../../../common/ItemAddList/ItemAddList'
 // import NewsList from './NewsList/NewsList'
-// import TeamContent from './TeamContent/TeamContent'
+import TeamContent from './TeamContent/TeamContent'
 
 import styles from './Team.module.sass'
-// import { newsTags } from '../../../../user/pages/Wissen/News/news_data'
+import { teamTags } from './team_data'
 
 class Team extends Component {
   componentDidMount() {
@@ -21,16 +21,16 @@ class Team extends Component {
       <div className={styles['team']}>
         {this.props.team && (
           <ItemAddList
-            // tags={teamTags}
-            content={this.props.team.teamMembers}
+            tags={teamTags}
+            content={this.props.team.team}
             baseCat={'dashboard'}
             category={'team'}
           />
         )}
-        {/* <PrivateRoute
+        <PrivateRoute
           path="/admin/dashboard/team/:teamId"
           component={TeamContent}
-        /> */}
+        />
       </div>
     )
   }

@@ -10,6 +10,9 @@ const TeamSchema = new Schema({
   tag: {
     type: String
   },
+  subCategory: {
+    type: String
+  },
   date: {
     type: Date
   },

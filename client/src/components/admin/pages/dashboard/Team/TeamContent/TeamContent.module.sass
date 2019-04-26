@@ -1,0 +1,171 @@
+.team-wrapper
+  width: 100%
+  
+.team-content-container
+  width: 100%
+  flex: 2
+  display: flex
+  
+  &.blank-item
+    background: rgba(#4BBC29, .4)
+  .team-content-main
+    width: 100%
+.team-utilities
+  display: flex
+  justify-content: center
+  align-items: baseline
+  margin-bottom: .5rem
+  &__category
+    width: 200px
+    text-align: right
+    margin-right: .25rem
+    select
+      height: 1.5rem
+      padding: 0 1rem
+  &__date
+    width: 200px
+    margin-left: .25rem
+    top: 0
+    .date-picker
+      height: 1.5rem      
+      z-index: 12
+      background: #F8F8F8
+      border: none
+      border-radius: 3px
+      padding: 0 .3rem
+.team-content
+  display: flex
+  flex: 2
+  width: 100%
+  // padding: .2rem
+  
+        
+  &--text
+    width: 100%
+    flex: 2
+    display: flex
+    &--box
+      margin: 0 .3rem
+      flex: 2
+      
+      &__title
+        width: 100%
+      &__short-description
+        color: #111
+        // height: 130px
+        line-height: 1
+      &__description
+        color: #111
+        // height: 400px
+        line-height: 1
+        margin-bottom: 1rem
+      .html-editor
+        // width: 50%
+        // height: 100%
+        margin-top: .6rem
+        font-family: 'HK Grotesk', sans-serif
+        border-radius: 0
+        border: none
+        p
+          margin: 0
+        
+  &--sidebar
+    width: 230px
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-left: .6rem
+    margin-left: .3rem
+    text-align: center
+    border-left: 1px solid #444
+    overflow-y: auto
+    flex: 1
+    height: 100%
+    hr
+      margin: 1rem auto
+      border: none
+      height: 1px
+      background: #666
+      width: 80%
+
+    &__section
+      margin: .8rem auto
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      &--preview
+        a
+          display: inline-block
+          width: 100%
+          text-decoration: none
+        span
+          margin-left: .3rem
+
+    &__state-indicator
+      display: flex
+      justify-content: center
+      align-items: center
+      // margin-bottom: 1rem
+      &--sphere
+        margin: .3rem
+        width: 14px
+        height: 14px
+        border-radius: 50%
+        background: #777
+        &.online
+          background: #03F395
+          box-shadow: 0 0 4px #03F395
+    &__links
+      &--box
+        background: rgba(0,0,0,.3)
+        padding: .3rem .6rem
+        p
+          color: #aaa
+          width: 100%
+          word-break: break-all
+          font:
+            family: 'Courier', monospace
+            size: .8rem
+            weight: 100
+          line-height: 1
+          
+    .title-image
+      width: 144px
+      height: 144px
+      border: 2px solid #222
+      box-sizing: border-box
+      display: flex
+      justify-content: center
+      align-items: center
+      color: #111
+      cursor: pointer
+      &--avatar
+        width: 100%
+        
+        img
+          width: 140px
+          height: 140px
+          object-fit: cover
+    &__image-checkbox
+      margin-top: .3rem
+      &--group
+        display: flex
+        align-items: baseline
+        justify-content: flex-start
+        input:disabled ~ label
+          color: #aaa
+        label
+          margin-left: .3rem
+    &--buttons
+      // padding: .2rem 114px 0 .3rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      margin: 1rem auto 0
+      
+      .button--save
+          width: 100% !important
+      .button--delete
