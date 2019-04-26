@@ -21,7 +21,7 @@ class Faqs extends Component {
       <div className={styles['faqs']}>
         {this.props.faq && (
           <ItemAddList
-            tags={faqTags}
+            // tags={faqTags}
             content={this.props.faq.faqs}
             baseCat={'dashboard'}
             category={'faqs'}
