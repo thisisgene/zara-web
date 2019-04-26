@@ -33,7 +33,7 @@ export const teamData = {
         image: 'training/resized/Jerry Jarvis Essandoh.jpg',
         name: 'Mag. Jerry Jarvis Essandoh',
         text:
-          'wurde in Wien geboren und hat seine kulturellen Wurzeln in Ghana, Westafrika. Er lebte fünf Jahre in Tema (Ghana) und wuchs die übrige Zeit in Wien auf. Er hat Kultur- und Sozialanthropologie an der Universität Wien studiert. Seit 2008 arbeitet er mit Jugendlichen in vielen verschiedeten Settings: Zunächst mehrere Jahre in der Parkbetreuung und einem Jugendtreff tätig, hält er seit 2010 Workshops im den Bereichen Vielfalt, Anti-Diskriminierung, globales Lernen und interkulturelle Kompetenzen im Sport. Seit 2014 arbeitet er beim Jugendparlament, einem Partizipationsprojekt für Jugendliche und ist Mitarbeiter des Fairplay Teams Währing.'
+          'wurde in Wien geboren und hat seine kulturellen Wurzeln in Ghana, Westafrika. Er lebte fünf Jahre in Tema (Ghana) und wuchs die übrige Zeit in Wien auf. Er hat Kultur- und Sozialanthropologie an der Universität Wien studiert. Seit 2008 arbeitet er mit Jugendlichen in vielen verschiedenen Settings: Zunächst mehrere Jahre in der Parkbetreuung und einem Jugendtreff tätig, hält er seit 2010 Workshops in den Bereichen Vielfalt, Anti-Diskriminierung, globales Lernen und interkulturelle Kompetenzen im Sport. Seit 2014 arbeitet er beim Jugendparlament, einem Partizipationsprojekt für Jugendliche und ist Mitarbeiter des Fairplay Teams Währing.'
       },
       {
         field: 'training',
@@ -92,7 +92,7 @@ export const teamData = {
         // image: 'training/resized/Theresia Ulbrich.jpg',
         name: 'Monika Lohfeyer',
         text:
-          'studierte Pädagogik in Salzburg und Bremen. Längere Auslandsaufenthalte, u.a. mehrjährige Lehrtätigkeit, Europäischer Freiwilligendienst, LernEinsatz der DKA. Langjährige Erfahrung in prozessorientierten Trainings mit Jugendlichen,seit einigen Jahren in der außerschulischen Jugendarbeit hauptberuflich tätig – Qualitätssicherung, Projektkoordination und Konzipierung von Trainings mit unterschiedlichen thematischen Schwerpunkten für junge Erwachsene.'
+          'studierte Pädagogik in Salzburg und Bremen. Längere Auslandsaufenthalte, u.a. mehrjährige Lehrtätigkeit, Europäischer Freiwilligendienst, LernEinsatz der DKA. Langjährige Erfahrung in prozessorientierten Trainings mit Jugendlichen, seit einigen Jahren in der außerschulischen Jugendarbeit hauptberuflich tätig – Qualitätssicherung, Projektkoordination und Konzipierung von Trainings mit unterschiedlichen thematischen Schwerpunkten für junge Erwachsene.'
       },
       {
         field: 'training',
@@ -120,7 +120,7 @@ export const teamData = {
         // image: 'training/resized/johannaurban.jpeg',
         name: 'Mag. Niko Reinberg',
         text:
-          'ist Kultur- und Sozialanthropologe, Diversity Expert und Zivilcourage Trainer. Tätig in Graz bei ZEBRA Interkulturelles Beratungs-und Therapiezentrum und dort zuständig für Diversitätsorientierte Qualitätsentwicklung, Bildungsprojekte zu Asyl und Flucht und die Redaktion des Migrationsmagazins ZEBRATL. Außerdem tätig bei Caritas SIQ! Sport Integration Qualifikation, Lehrbeauftragter an der FH Joanneum im Master Lehrgang für Soziale Arbeit:und der Universität Wien am Institut für Kultur- und Sozialanthropologie.'
+          'ist Kultur- und Sozialanthropologe, Diversity Expert und Zivilcourage Trainer. Tätig in Graz bei ZEBRA Interkulturelles Beratungs-und Therapiezentrum und dort zuständig für Diversitätsorientierte Qualitätsentwicklung, Bildungsprojekte zu Asyl und Flucht und die Redaktion des Migrationsmagazins ZEBRATL. Außerdem tätig bei Caritas SIQ! Sport Integration Qualifikation, Lehrbeauftragter an der FH Joanneum im Master Lehrgang für Soziale Arbeit sowie an der Universität Wien am Institut für Kultur- und Sozialanthropologie.'
       },
       // {
       //   field: 'training',
@@ -134,14 +134,14 @@ export const teamData = {
         image: 'training/resized/Michael Sigmund.jpg',
         name: 'Michael Sigmund',
         text:
-          'ist Umwelt-Stadtrat der Gemeinde Pressbaum und hat als dieser – sowie auch im Rahmen seiner früheren Tätigkeit – Workshops zu Umwelt- und Klimaschutz-Themen in Schulen und Jugendzentren abgehalten. Durch sein Fachwissen in den Bereichen IT und Social Media ist er bei ZARATraining spezialisiert auf CyberHate, also Rassismus und Diskriminierung im Internet.'
+          'ist Umwelt-Stadtrat der Gemeinde Pressbaum und hat als dieser – sowie auch im Rahmen seiner früheren Tätigkeit – Workshops zu Umwelt- und Klimaschutz-Themen in Schulen und Jugendzentren abgehalten. Durch sein Fachwissen in den Bereichen IT und Social Media ist er bei ZARA Training spezialisiert auf Cyber Hate, also Rassismus und Diskriminierung im Internet.'
       },
       {
         field: 'training',
         image: 'training/resized/Theresia Ulbrich.jpg',
         name: 'Mag.a Theresia Ulbrich',
         text:
-          'ist Kultur- und Sozialanthropologin und Sozialarbeiterin. Sie arbeitet seit einigen Jahren als Streetworkerin beim Fair-Play-Team.03 und als Trainerin für politische und globale Bildung bei verschiedenen Organisationen und Projekten (z.B. YCC Austria). Zuvor war sie in Österreich und Kanada als persönliche Assistentin für Menschen mit Behinderung tätig. Arbeits- und Forschungsschwerpunkte: feministische und rassismuskritische Bildungsarbeit, Global Citizenship Education, Street Harassment, kritische Soziale Arbeit..'
+          'ist Kultur- und Sozialanthropologin und Sozialarbeiterin. Sie arbeitet seit einigen Jahren als Streetworkerin beim Fair-Play-Team.03 und als Trainerin für politische und globale Bildung bei verschiedenen Organisationen und Projekten (z.B. YCC Austria). Zuvor war sie in Österreich und Kanada als persönliche Assistentin für Menschen mit Behinderung tätig. Arbeits- und Forschungsschwerpunkte: feministische und rassismuskritische Bildungsarbeit, Global Citizenship Education, Street Harassment, kritische Soziale Arbeit.'
       },
       {
         field: 'training',
