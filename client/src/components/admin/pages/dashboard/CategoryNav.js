@@ -48,14 +48,14 @@ class Dashboard extends Component {
         >
           FAQs
         </NavLink>
-        <div
-          className={cx(styles['category-nav--link'], styles['disabled'])}
+        <NavLink
+          className={styles['category-nav--link']}
           activeClassName={styles['cat-active']}
-          // to="/admin/dashboard/team"
+          to="/admin/dashboard/team"
         >
           Team
-          <span className={styles['coming-soon']}>coming soon!</span>
-        </div>
+          {/* <span className={styles['coming-soon']}>coming soon!</span> */}
+        </NavLink>
       </div>
     )
   }
