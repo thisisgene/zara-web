@@ -29,5 +29,9 @@ export const teamSubTags = [
   {
     name: 'training',
     de: { shortTitle: 'Training', title: 'ZARA Training' }
+  },
+  {
+    name: 'supporters',
+    de: { shortTitle: 'Unterstützer*innen', title: 'ZARA Unterstützer*innen' }
   }
 ]

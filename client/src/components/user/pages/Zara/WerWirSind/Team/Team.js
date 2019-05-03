@@ -94,21 +94,19 @@ class Team extends Component {
               {lang && lang === 'de' ? (
                 <div>
                   <h1>Unterstützer*innen seit 2018</h1>
-                  <div
-                    style={{ marginBottom: '6rem' }}
-                    dangerouslySetInnerHTML={{ __html: supporters.text }}
-                  />
                 </div>
               ) : (
                 <div>
                   <h1>Supporters since 2018</h1>
-                  <p>
-                    ZARA wird stets von vielen ehrenamtlichen Mitarbeiter*innen
-                    und Unterstützer*innen begleitet, die nicht alle auf dieser
-                    Seite genannt werden können.
-                  </p>
                 </div>
               )}
+              <div className={styles['team--gok']}>
+                {team
+                  .filter(member => member.subCategory === 'supporters')
+                  .map(member => (
+                    <TeamMember lang={lang} content={member} />
+                  ))}
+              </div>
             </div>
           </div>
         )}
