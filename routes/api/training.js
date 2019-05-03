@@ -237,7 +237,8 @@ router.post(
 
       tag: body.tag && body.tag,
       date: body.date && body.date,
-      time: body.time && body.time,
+      timeFrom: body.timeFrom && body.timeFrom,
+      timeUntil: body.timeUntil && body.timeUntil,
       location: {
         title: body.location && body.location,
         address1: body.address1 && body.address1,
@@ -278,7 +279,8 @@ router.post(
 
           tag: body.tag && body.tag,
           date: body.date && body.date,
-          time: body.time && body.time,
+          timeFrom: body.timeFrom && body.timeFrom,
+          timeUntil: body.timeUntil && body.timeUntil,
           location: {
             title: body.location,
             address1: body.address1,

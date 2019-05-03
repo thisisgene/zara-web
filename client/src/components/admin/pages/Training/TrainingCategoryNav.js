@@ -10,13 +10,6 @@ class Dashboard extends Component {
 
     return (
       <div className={styles['category-nav']}>
-        {/* <NavLink
-          className={styles['category-nav--link']}
-          activeClassName={styles['cat-active']}
-          to="/admin/dashboard/projects"
-        >
-          Projects
-        </NavLink> */}
         <NavLink
           className={cx(
             styles['category-nav--link'],

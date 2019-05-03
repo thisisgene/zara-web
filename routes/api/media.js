@@ -64,7 +64,7 @@ router.post(
 
     upload(req, res, function(error) {
       if (error) {
-        res.send(err)
+        res.send(error)
       }
       console.log('File uploaded successfully.')
       const body = req.body

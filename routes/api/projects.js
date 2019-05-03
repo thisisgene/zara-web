@@ -259,7 +259,7 @@ router.post('/report/images', async (req, res) => {
 
   upload(req, res, function(error) {
     if (error) {
-      res.send(err)
+      res.send(error)
       // return response.redirect('/error')
     }
     console.log('File uploaded successfully.')

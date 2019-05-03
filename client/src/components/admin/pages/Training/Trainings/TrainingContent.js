@@ -37,7 +37,8 @@ class TrainingContent extends Component {
       tag: 'trainings',
       title: '',
       date: new Date(),
-      time: '',
+      timeFrom: '',
+      timeUntil: '',
       location: '',
       address1: '',
       address2: '',
@@ -84,7 +85,8 @@ class TrainingContent extends Component {
             tag: item.tag && item.tag,
             title: item.title,
             date: item.date,
-            time: item.time,
+            timeFrom: item.timeFrom,
+            timeUntil: item.timeUntil,
             location: item.location && item.location.title,
             address1: item.location && item.location.address1,
             address2: item.location && item.location.address2,
@@ -112,7 +114,8 @@ class TrainingContent extends Component {
             tag: 'trainings',
             title: '',
             date: new Date(),
-            time: '',
+            timeFrom: '',
+            timeUntil: '',
             location: '',
             address1: '',
             address2: '',
@@ -191,7 +194,8 @@ class TrainingContent extends Component {
       id: this.state.trainingId,
       title: this.state.title,
       date: this.state.date,
-      time: this.state.time,
+      timeFrom: this.state.timeFrom,
+      timeUntil: this.state.timeUntil,
       location: this.state.location,
       address1: this.state.address1,
       address2: this.state.address2,
@@ -214,18 +218,6 @@ class TrainingContent extends Component {
         >
           <div className={styles['trainings-content']}>
             <div className={styles['trainings-content--main']}>
-              {/* <div className={styles['trainings-content--main__category']}>
-                <select
-                  name="catSelect"
-                  value={this.state.tag}
-                  onChange={this.onTagSelectChange}
-                >
-                  {jahresberichtTags &&
-                    jahresberichtTags.map(tag => (
-                      <option value={tag.name}>{tag.de.title}</option>
-                    ))}
-                </select>
-              </div> */}
               <div className={styles['trainings-content--text']}>
                 <div className={styles['trainings-content--text__title']}>
                   <TextFieldGroup
@@ -286,14 +278,22 @@ class TrainingContent extends Component {
                       >
                         <span>
                           {/* <i className="fas fa-clock" /> */}
-                          Uhrzeit:
+                          Von:
                         </span>
                         <input
                           type="time"
-                          id="time"
+                          id="timeFrom"
                           onChange={this.onChange}
-                          value={this.state.time}
-                          name="time"
+                          value={this.state.timeFrom}
+                          name="timeFrom"
+                        />
+                        <span>Bis:</span>
+                        <input
+                          type="time"
+                          id="timeUntil"
+                          onChange={this.onChange}
+                          value={this.state.timeUntil}
+                          name="timeUntil"
                         />
                       </div>
                     </div>

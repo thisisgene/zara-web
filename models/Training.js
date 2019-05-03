@@ -19,7 +19,10 @@ const TrainingSchema = new Schema({
   date: {
     type: String
   },
-  time: {
+  timeFrom: {
+    type: String
+  },
+  timeUntil: {
     type: String
   },
   handle: {
