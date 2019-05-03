@@ -23,6 +23,14 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
       to={`/admin/${baseCat}/${category}/${item._id}`}
       activeClassName={styles['active']}
     >
+      <div className={styles['list-image']}>
+        {item.titleImage && item.titleImage.originalName && (
+          <img
+            src={`/assets/media/${category}/${item.titleImage.originalName}`}
+            alt=""
+          />
+        )}
+      </div>
       <div className={styles['item-tag']} />
       {category === 'trainings' || category === 'faqs'
         ? item.title
