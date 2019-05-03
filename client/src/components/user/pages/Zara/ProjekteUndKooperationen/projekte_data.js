@@ -28,7 +28,7 @@ export const projectData = [
     bigImage: true,
     bottomImages: [
       {
-        image: 'sponsor/sozial_ministerium_logo.png'
+        image: 'sponsor/logo_site_Sozialministerium.png'
       },
       {
         image: 'sponsor/EU_flag.png'
@@ -54,7 +54,7 @@ export const projectData = [
     bigImage: true,
     bottomImages: [
       {
-        image: 'sponsor/sozial_ministerium_logo.png'
+        image: 'sponsor/logo_site_Sozialministerium.png'
       },
       {
         image: 'sponsor/EU_flag.png'
