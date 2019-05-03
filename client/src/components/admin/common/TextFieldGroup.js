@@ -15,7 +15,8 @@ const TextFieldGroup = ({
   type,
   colorScheme,
   onChange,
-  disabled
+  disabled,
+  className
 }) => {
   return (
     <div className={globalStyles['form-group']}>
@@ -25,7 +26,8 @@ const TextFieldGroup = ({
           { [commonStyles['dark-input']]: colorScheme !== 'light' },
           {
             [globalStyles['is-invalid']]: error
-          }
+          },
+          className
         )}
         placeholder={placeholder}
         name={name}

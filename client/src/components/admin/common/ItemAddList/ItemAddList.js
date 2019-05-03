@@ -8,8 +8,10 @@ import arrayMove from 'array-move'
 import { sortList } from '../../../../actions/adminActions'
 
 import { newsTags } from './../../../user/pages/Wissen/News/news_data'
+import TextFieldGroup from '../TextFieldGroup'
 
 import cx from 'classnames'
+import commonStyles from '../Common.module.sass'
 import styles from './ItemAddList.module.sass'
 
 const SortableItem = SortableElement(({ item, baseCat, category }) => (
@@ -50,7 +52,9 @@ class ItemAddList extends Component {
     super()
     this.state = {
       list: [],
-      selectedTag: ''
+      selectedTag: '',
+      searchValue: '',
+      errors: {}
     }
   }
 
@@ -89,6 +93,11 @@ class ItemAddList extends Component {
       }
     )
   }
+
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
   onTagChange = e => {
     this.setState({ selectedTag: e.target.value })
   }
@@ -147,7 +156,18 @@ class ItemAddList extends Component {
               ))}
           </div>
         )}
-
+        <div className={styles['name-filter']}>
+          <TextFieldGroup
+            className={commonStyles['input--small']}
+            colorScheme="light"
+            placeholder="Namen filtern ..."
+            type="text"
+            name="searchValue"
+            value={this.state.searchValue}
+            onChange={this.onChange}
+            error={this.state.errors.searchValue}
+          />
+        </div>
         <div className={styles['item-list']}>
           {content && content.length > 0 ? (
             <SortableList
@@ -156,8 +176,26 @@ class ItemAddList extends Component {
               helperClass={styles['dragged']}
               items={
                 this.state.selectedTag === ''
-                  ? content
-                  : content.filter(item => item.tag === this.state.selectedTag)
+                  ? content.filter(item =>
+                      category === 'trainings' || category === 'faqs'
+                        ? item.title
+                            .toLowerCase()
+                            .includes(this.state.searchValue.toLowerCase())
+                        : item.de.title
+                            .toLowerCase()
+                            .includes(this.state.searchValue.toLowerCase())
+                    )
+                  : content
+                      .filter(item => item.tag === this.state.selectedTag)
+                      .filter(item =>
+                        category === 'trainings' || category === 'faqs'
+                          ? item.title
+                              .toLowerCase()
+                              .includes(this.state.searchValue.toLowerCase())
+                          : item.de.title
+                              .toLowerCase()
+                              .includes(this.state.searchValue.toLowerCase())
+                      )
               }
               baseCat={baseCat}
               category={category}

@@ -44,7 +44,6 @@ class TeamContent extends Component {
       date: moment(new Date()).format('YYYY-MM-DD'),
       titleDE: '',
       titleEN: '',
-
       descriptionDE: RichTextEditor.createEmptyValue(),
       descriptionEN: RichTextEditor.createEmptyValue(),
       titleImage: '',
