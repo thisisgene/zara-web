@@ -158,9 +158,7 @@ router.post(
             imageId: body.imageId,
             category: body.imageCategory
           },
-          imageSide: body.imageSide,
-          imageAlign: body.imageAlign,
-          size: body.size,
+          isCategoryIntro: body.isCategoryIntro,
           de: {
             title: teamFields.de.title,
             description: teamFields.de.description

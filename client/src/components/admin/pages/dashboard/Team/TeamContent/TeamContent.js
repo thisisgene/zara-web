@@ -50,9 +50,7 @@ class TeamContent extends Component {
       titleImage: '',
       imageId: '',
       imageCategory: '',
-      imageSide: '',
-      imageAlign: '',
-      bigImage: false,
+      isCategoryIntro: '',
       errors: {},
       imageListOpen: false
     }
@@ -100,9 +98,7 @@ class TeamContent extends Component {
           titleImage: item.titleImage && item.titleImage.originalName,
           imageId: item.titleImage && item.titleImage.imageId,
           imageCategory: item.titleImage && item.titleImage.category,
-          imageSide: item.imageSide,
-          imageAlign: item.imageAlign,
-          size: item.size
+          isCategoryIntro: item.isCategoryIntro && item.isCategoryIntro
         })
       }
       if (prevProps.match.params.teamId !== this.props.match.params.teamId) {
@@ -124,9 +120,7 @@ class TeamContent extends Component {
             titleImage: '',
             imageId: '',
             imageCategory: '',
-            imageSide: '',
-            imageAlign: '',
-            size: ''
+            isCategoryIntro: ''
           })
         } else {
           this.props.getById(this.props.match.params.teamId, 'team')
@@ -157,6 +151,10 @@ class TeamContent extends Component {
       : this.setState({ descriptionEN: value })
   }
 
+  onCheckChange = e => {
+    this.setState({ [e.target.name]: e.target.checked })
+  }
+
   onImageOpen = () => {
     this.setState({ imageListOpen: !this.state.imageListOpen })
   }
@@ -178,9 +176,7 @@ class TeamContent extends Component {
       titleImage: this.state.titleImage,
       imageId: this.state.imageId,
       imageCategory: this.state.imageCategory,
-      imageSide: this.state.imageSide,
-      imageAlign: this.state.imageAlign,
-      size: this.state.size
+      isCategoryIntro: this.state.isCategoryIntro
     }
     this.props.saveContent(saveData)
     // console.log(saveData)
@@ -418,6 +414,19 @@ class TeamContent extends Component {
                         : 'Online stellen'}
                     </button>
                   </div>
+                </div>
+                <hr />
+                <div
+                  className={styles['team-content--sidebar__section--options']}
+                >
+                  <input
+                    type="checkbox"
+                    name="isCategoryIntro"
+                    id="categoryIntro"
+                    checked={this.state.isCategoryIntro}
+                    onClick={this.onCheckChange}
+                  />{' '}
+                  <label htmlFor="categoryIntro">Zwischenüberschrift</label>
                 </div>
 
                 <hr />

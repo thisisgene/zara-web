@@ -57,9 +57,7 @@ const TeamSchema = new Schema({
     imageId: { type: String },
     category: { type: String }
   },
-  imageSide: { type: String },
-  imageAlign: { type: String },
-  size: { type: String },
+
   images: [
     {
       originalName: {
@@ -84,7 +82,7 @@ const TeamSchema = new Schema({
       }
     }
   ],
-
+  isCategoryIntro: { type: Boolean },
   isVisible: {
     type: Boolean,
     default: false
