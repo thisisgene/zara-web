@@ -146,6 +146,30 @@ export const getAll = category => dispatch => {
       return
   }
 }
+export const getAllByProps = (category, prop) => dispatch => {
+  switch (category) {
+    case 'team':
+      console.log(prop)
+      axios
+        .post(`/api/team/props`, prop)
+        .then(res => {
+          dispatch({
+            type: GET_ALL_TEAM,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+
+    default:
+      return
+  }
+}
 
 // Get by Property
 export const getByProperty = (category, property, value) => dispatch => {

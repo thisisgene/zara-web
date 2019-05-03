@@ -7,7 +7,9 @@ $kolumne-color: #237F65
 .item-add-list
   padding: 0 1rem 0 0
   width: 300px
-  
+  display: flex
+  flex-direction: column
+  height: 100%
   .add-button
     width: 180px
     background: rgba(#4BBC29, .9)
@@ -71,7 +73,8 @@ $kolumne-color: #237F65
 .item-list
   margin-top: 1rem
   // &--item
-  
+  flex-grow: 4
+  overflow-y: auto
       
   a
     font:

@@ -3,6 +3,7 @@
   color: white;
   overflow-x: hidden;
   height: 100vh;
+
   display: flex;
   flex-direction: column;
   padding-bottom: 40px;

@@ -15,6 +15,8 @@
     &-member
       display: flex
       margin-bottom: 2rem
+      
+
       &--image
         flex: 1
         margin-right: 1rem
@@ -35,14 +37,20 @@
       display: grid
       grid-gap: 2rem
       grid-template-columns: 1fr 1fr 1fr
-      .team-member .team-member--image
-        width: 0 !important
-        background: red
+      width: 100%
+      
     &--gok
 
       display: grid
       grid-gap: 1rem
       grid-template-columns: 1fr 1fr
+      
+      .team-member.cat-intro
+        grid-column: 1/-1
+        // margin-right: 4vw
+        .team-member--body__name
+          display: none
+
   .bottom-box
     display: flex
     margin: 2rem auto
@@ -84,7 +92,9 @@
     .team
 
       &--vorstand
-        grid-template-columns: 1fr
+        p
+          // margin-right: 1rem
+        
   @media(max-width: 400px)
     h1
       font-size: 1.4rem

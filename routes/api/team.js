@@ -16,16 +16,26 @@ const Team = require('../../models/Team')
 // @desc    Get all team
 // @access  Public
 router.get('/', (req, res) => {
-  // res.json({ msg: 'Jubidu' })
   console.log('getall')
   const errors = {}
   Team.find({ isDeleted: false })
     .sort('position')
     .exec()
     .then(team => {
-      // if (team === undefined || team.length === 0) {
-      //   return res.json({ noteam: 'Noch keine Beiträge.' })
-      // }
+      res.json(team)
+    })
+    .catch(err => res.status(404).json(err))
+})
+// @route   POST api/team/props/
+// @desc    Get all team by prop
+// @access  Public
+router.post('/props', (req, res) => {
+  console.log(req.body)
+
+  Team.find(req.body)
+    .sort('position')
+    .exec()
+    .then(team => {
       res.json(team)
     })
     .catch(err => res.status(404).json(err))

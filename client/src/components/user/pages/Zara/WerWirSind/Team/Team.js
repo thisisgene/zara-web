@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
 
 import { teamData, supporters } from './team_data'
+
+import { getAllByProps } from '../../../../../../actions/adminActions'
 
 import HeroUnit from '../../../../dashboard/HeroUnit/HeroUnit'
 import TeamMember from './TeamMember'
@@ -9,15 +12,25 @@ import TeamMember from './TeamMember'
 import styles from './Team.module.sass'
 
 class Team extends Component {
+  componentDidMount() {
+    const queryArray = {
+      tag: 'zara',
+      isDeleted: false,
+      isOnline: true
+    }
+    this.props.getAllByProps('team', queryArray)
+  }
+
   render() {
     const { activeLanguage } = this.props
+    const { team } = this.props.team
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
     }
     return (
       <div>
-        {lang && teamData && (
+        {lang && teamData && team && (
           <div>
             <HeroUnit data={teamData.heroUnit} lang={lang} />
             <div className={styles['team-member-container']}>
@@ -27,10 +40,10 @@ class Team extends Component {
                 <h1>ZARA Vorstand</h1>
               )}
               <div id="vorstand" className={styles['team--vorstand']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'vorstand')
+                {team
+                  .filter(member => member.subCategory === 'vorstand')
                   .map(member => (
-                    <TeamMember content={member} />
+                    <TeamMember lang={lang} content={member} />
                   ))}
               </div>
               {lang && lang === 'de' ? (
@@ -45,10 +58,10 @@ class Team extends Component {
                 </h1>
               )}
               <div id="gok" className={styles['team--gok']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'gok')
+                {team
+                  .filter(member => member.subCategory === 'gok')
                   .map(member => (
-                    <TeamMember content={member} />
+                    <TeamMember lang={lang} content={member} />
                   ))}
               </div>
               {lang && lang === 'de' ? (
@@ -57,10 +70,10 @@ class Team extends Component {
                 <h1>ZARA Consulting</h1>
               )}
               <div id="beratung" className={styles['team--gok']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'beratung')
+                {team
+                  .filter(member => member.subCategory === 'beratung')
                   .map(member => (
-                    <TeamMember content={member} />
+                    <TeamMember lang={lang} content={member} />
                   ))}
               </div>
               {lang && lang === 'de' ? (
@@ -69,10 +82,10 @@ class Team extends Component {
                 <h1>ZARA Training</h1>
               )}
               <div id="training" className={styles['team--gok']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'training')
+                {team
+                  .filter(member => member.subCategory === 'training')
                   .map(member => (
-                    <TeamMember content={member} />
+                    <TeamMember lang={lang} content={member} />
                   ))}
               </div>
               <div style={{ margin: '2rem 0 4rem' }}>
@@ -104,4 +117,13 @@ class Team extends Component {
   }
 }
 
-export default withLocalize(Team)
+const mapStateToProps = state => ({
+  team: state.team
+})
+
+export default withLocalize(
+  connect(
+    mapStateToProps,
+    { getAllByProps }
+  )(Team)
+)
