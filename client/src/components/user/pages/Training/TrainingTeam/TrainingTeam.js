@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
 
 import { teamData, bottomData } from './trainingteam_data'
+import { getAllByProps } from '../../../../../actions/adminActions'
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import LongText from '../../../dashboard/LongText/LongText'
@@ -11,15 +13,24 @@ import TeamMember from '../../Zara/WerWirSind/Team/TeamMember'
 import styles from '../../Zara/WerWirSind/Team/Team.module.sass'
 
 class Team extends Component {
+  componentDidMount() {
+    const queryArray = {
+      tag: 'training',
+      isDeleted: false,
+      isOnline: true
+    }
+    this.props.getAllByProps('team', queryArray)
+  }
   render() {
     const { activeLanguage } = this.props
+    const { team } = this.props.team
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
     }
     return (
       <div>
-        {lang && teamData && (
+        {lang && teamData && team && (
           <div>
             <HeroUnit data={teamData.heroUnit} lang={lang} />
             <div className={styles['team-member-container']}>
@@ -29,10 +40,10 @@ class Team extends Component {
                 <h1>ZARA Trainers</h1>
               )}
               <div className={styles['team--gok']}>
-                {teamData.teamMembers[lang]
-                  .filter(member => member.field === 'training')
+                {team
+                  .filter(member => member.tag === 'training')
                   .map(member => (
-                    <TeamMember content={member} />
+                    <TeamMember lang={lang} content={member} />
                   ))}
               </div>
               <div className={styles['bottom-box']}>
@@ -64,4 +75,13 @@ class Team extends Component {
   }
 }
 
-export default withLocalize(Team)
+const mapStateToProps = state => ({
+  team: state.team
+})
+
+export default withLocalize(
+  connect(
+    mapStateToProps,
+    { getAllByProps }
+  )(Team)
+)
