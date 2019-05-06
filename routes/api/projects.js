@@ -118,9 +118,13 @@ router.post(
           return
       }
     })
-    Promise.all(result).then(() => {
-      res.send('success')
-    })
+    Promise.all(result)
+      .then(() => {
+        res.send('success')
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 )
 

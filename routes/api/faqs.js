@@ -63,9 +63,14 @@ router.post(
         answer: body.answerEN && body.answerEN
       }
     })
-    newFaqItem.save().then(faq => {
-      res.json(faq)
-    })
+    newFaqItem
+      .save()
+      .then(faq => {
+        res.json(faq)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 )
 
@@ -154,6 +159,9 @@ router.post(
             .then(faqs => {
               res.json({ faqs: faqs, faq: faq })
             })
+            .catch(err => {
+              console.log(err)
+            })
         }
       }
     )
@@ -179,6 +187,9 @@ router.get(
           .sort('position')
           .then(faqs => {
             res.json({ faqs: faqs, faq: faq })
+          })
+          .catch(err => {
+            console.log(err)
           })
       })
       .catch(err => {

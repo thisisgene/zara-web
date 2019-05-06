@@ -21,30 +21,40 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors)
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
-    if (user) {
-      errors.email = 'User mit dieser E-mail Adresse existiert bereits.'
-      return res.status(400).json(errors)
-    } else {
-      const newUser = new User({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        securityLevel: req.body.securityLevel
-      })
-
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, (err, hash) => {
-          if (err) throw err
-          newUser.password = hash
-          newUser
-            .save()
-            .then(user => User.find().then(users => res.json(users)))
-            .catch(err => console.error(err))
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      if (user) {
+        errors.email = 'User mit dieser E-mail Adresse existiert bereits.'
+        return res.status(400).json(errors)
+      } else {
+        const newUser = new User({
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+          securityLevel: req.body.securityLevel
         })
-      })
-    }
-  })
+
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err
+            newUser.password = hash
+            newUser
+              .save()
+              .then(user =>
+                User.find()
+                  .then(users => res.json(users))
+                  .catch(err => {
+                    console.log(err)
+                  })
+              )
+              .catch(err => console.error(err))
+          })
+        })
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    })
 })
 
 // @route   POST api/users/login
@@ -60,40 +70,49 @@ router.post('/login', (req, res) => {
 
   const email = req.body.email
   const password = req.body.password
-  User.findOne({ email }).then(user => {
-    // Check for user
-    if (!user) {
-      errors.email = 'User existiert nicht.'
-      return res.status(404).json(errors)
-    }
-    // Check Password
-    bcrypt.compare(password, user.password).then(isMatch => {
-      if (isMatch) {
-        // User Matched
-        const payload = {
-          // Create JWT payload
-          id: user.id,
-          name: user.name,
-          securityLevel: user.securityLevel
-        }
-        // Sign Token
-        jwt.sign(
-          payload,
-          keys.secretOrKey,
-          { expiresIn: 60 * 60 * 24 },
-          (err, token) => {
-            res.json({
-              success: true,
-              token: 'Bearer ' + token
-            })
-          }
-        )
-      } else {
-        errors.password = 'Falsches Passwort.'
-        return res.status(400).json(errors)
+  User.findOne({ email })
+    .then(user => {
+      // Check for user
+      if (!user) {
+        errors.email = 'User existiert nicht.'
+        return res.status(404).json(errors)
       }
+      // Check Password
+      bcrypt
+        .compare(password, user.password)
+        .then(isMatch => {
+          if (isMatch) {
+            // User Matched
+            const payload = {
+              // Create JWT payload
+              id: user.id,
+              name: user.name,
+              securityLevel: user.securityLevel
+            }
+            // Sign Token
+            jwt.sign(
+              payload,
+              keys.secretOrKey,
+              { expiresIn: 60 * 60 * 24 },
+              (err, token) => {
+                res.json({
+                  success: true,
+                  token: 'Bearer ' + token
+                })
+              }
+            )
+          } else {
+            errors.password = 'Falsches Passwort.'
+            return res.status(400).json(errors)
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
     })
-  })
+    .catch(err => {
+      console.log(err)
+    })
 })
 
 // @route   GET api/users/current

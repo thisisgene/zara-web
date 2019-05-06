@@ -14,20 +14,26 @@ const Media = require('../../models/Media')
 // @desc    Get all media
 // @access  Public
 router.get('/', (req, res) => {
-  Media.find().then(media => {
-    res.json(media)
-  })
+  Media.find()
+    .then(media => {
+      res.json(media)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 })
 
 // @route   POST api/media/get_by_category/:category
 // @desc    Get media by category
 // @access  Public
 router.get('/get_by_category/:category', (req, res) => {
-  Media.find({ category: req.params.category, isDeleted: false }).then(
-    media => {
+  Media.find({ category: req.params.category, isDeleted: false })
+    .then(media => {
       res.json(media)
-    }
-  )
+    })
+    .catch(err => {
+      console.log(err)
+    })
 })
 
 // @route   GET api/media/image_upload
@@ -78,9 +84,11 @@ router.post(
       newImage
         .save()
         .then(image => {
-          Media.find({ category: body.category, isDeleted: false }).then(
-            images => res.json(images)
-          )
+          Media.find({ category: body.category, isDeleted: false })
+            .then(images => res.json(images))
+            .catch(err => {
+              console.log(err)
+            })
         })
         .catch(err => {
           console.log('noo fail')

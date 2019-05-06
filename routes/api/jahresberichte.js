@@ -72,9 +72,14 @@ router.post(
       }
     })
     console.log(newJahresbericht)
-    newJahresbericht.save().then(jahresbericht => {
-      res.json(jahresbericht)
-    })
+    newJahresbericht
+      .save()
+      .then(jahresbericht => {
+        res.json(jahresbericht)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 )
 
@@ -122,6 +127,9 @@ router.post(
                 jahresberichte: jahresberichte,
                 jahresbericht: jahresbericht
               })
+            })
+            .catch(err => {
+              console.log(err)
             })
         }
       }
@@ -171,6 +179,9 @@ router.get(
               jahresberichte: jahresberichte,
               jahresbericht: jahresberichtItem
             })
+          })
+          .catch(err => {
+            console.log(err)
           })
       })
       .catch(err => {

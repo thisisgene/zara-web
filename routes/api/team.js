@@ -81,10 +81,15 @@ router.post(
       }
     })
     console.log(newTeamItem)
-    newTeamItem.save().then(teamMember => {
-      console.log(teamMember)
-      res.json(teamMember)
-    })
+    newTeamItem
+      .save()
+      .then(teamMember => {
+        console.log(teamMember)
+        res.json(teamMember)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 )
 
@@ -188,6 +193,9 @@ router.post(
             .then(team => {
               res.json({ team: team, teamMember: teamMember })
             })
+            .catch(err => {
+              console.log(err)
+            })
         }
       }
     )
@@ -213,6 +221,9 @@ router.get(
           .sort('position')
           .then(team => {
             res.json({ team: team, teamMember: teamMember })
+          })
+          .catch(err => {
+            console.log(err)
           })
       })
       .catch(err => {

@@ -75,9 +75,14 @@ router.post(
       }
     })
     console.log(newTrainingTeam)
-    newTrainingTeam.save().then(trainingTeamMember => {
-      res.json(trainingTeamMember)
-    })
+    newTrainingTeam
+      .save()
+      .then(trainingTeamMember => {
+        res.json(trainingTeamMember)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 )
 
@@ -124,6 +129,9 @@ router.post(
             .then(team => {
               res.json({ team: team, teamMember: teamMember })
             })
+            .catch(err => {
+              console.log(err)
+            })
         }
       }
     )
@@ -169,6 +177,9 @@ router.get(
           .sort('position')
           .then(team => {
             res.json({ team: team, teamMember: teamMember })
+          })
+          .catch(err => {
+            console.log(err)
           })
       })
       .catch(err => {
@@ -304,6 +315,9 @@ router.post(
             .then(trainings => {
               res.json({ trainings: trainings, training: training })
             })
+            .catch(err => {
+              console.log(err)
+            })
         }
       }
     )
@@ -349,6 +363,9 @@ router.get(
           .sort('position')
           .then(trainings => {
             res.json({ trainings: trainings, training: training })
+          })
+          .catch(err => {
+            console.log(err)
           })
       })
       .catch(err => {

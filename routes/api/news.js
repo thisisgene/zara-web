@@ -78,10 +78,15 @@ router.post(
       }
     })
     console.log(newNewsItem)
-    newNewsItem.save().then(newsItem => {
-      console.log(newsItem)
-      res.json(newsItem)
-    })
+    newNewsItem
+      .save()
+      .then(newsItem => {
+        console.log(newsItem)
+        res.json(newsItem)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 )
 
@@ -190,6 +195,9 @@ router.post(
             .then(news => {
               res.json({ news: news, newsItem: newsItem })
             })
+            .catch(err => {
+              console.log(err)
+            })
         }
       }
     )
@@ -215,6 +223,9 @@ router.get(
           .sort('position')
           .then(news => {
             res.json({ news: news, newsItem: newsItem })
+          })
+          .catch(err => {
+            console.log(err)
           })
       })
       .catch(err => {
