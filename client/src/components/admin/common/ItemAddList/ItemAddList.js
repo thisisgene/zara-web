@@ -34,6 +34,8 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
       <div className={styles['item-tag']} />
       {category === 'trainings' || category === 'faqs'
         ? item.title
+        : baseCat === 'training' && category === 'team'
+        ? item.name
         : item.de.title}
     </NavLink>
   </div>
@@ -189,6 +191,10 @@ class ItemAddList extends Component {
                         ? item.title
                             .toLowerCase()
                             .includes(this.state.searchValue.toLowerCase())
+                        : baseCat === 'training' && category === 'team'
+                        ? item.name
+                            .toLowerCase()
+                            .includes(this.state.searchValue.toLowerCase())
                         : item.de.title
                             .toLowerCase()
                             .includes(this.state.searchValue.toLowerCase())
@@ -198,6 +204,10 @@ class ItemAddList extends Component {
                       .filter(item =>
                         category === 'trainings' || category === 'faqs'
                           ? item.title
+                              .toLowerCase()
+                              .includes(this.state.searchValue.toLowerCase())
+                          : baseCat === 'training' && category === 'team'
+                          ? item.name
                               .toLowerCase()
                               .includes(this.state.searchValue.toLowerCase())
                           : item.de.title

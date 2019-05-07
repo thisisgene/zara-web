@@ -24,7 +24,11 @@ class Settings extends Component {
         <div className={styles['user-list']}>
           <h3>User Liste</h3>
           {this.props.auth && this.props.auth.users && (
-            <UserList users={this.props.auth.users} />
+            <UserList
+              users={this.props.auth.users.filter(
+                user => user.securityLevel <= 15
+              )}
+            />
           )}
         </div>
       </div>

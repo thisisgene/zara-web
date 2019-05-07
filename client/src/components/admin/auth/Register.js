@@ -11,14 +11,14 @@ import commonStyles from '../common/Common.module.sass'
 import styles from './Auth.module.css'
 
 class Register extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       name: '',
       email: '',
       password: '',
       password2: '',
-      securityLevel: '2',
+      securityLevel: props.category === 'trainer' ? '16' : '2',
       errors: {}
     }
   }
@@ -47,7 +47,7 @@ class Register extends Component {
   }
   render() {
     const { errors } = this.state
-
+    const { category } = this.props
     return (
       <div>
         <div className={styles['register']}>
@@ -93,23 +93,25 @@ class Register extends Component {
                     onChange={this.onChange}
                     error={errors.password2}
                   />
-                  <select
-                    className={cx(
-                      globalStyles['custom-select'],
-                      commonStyles['custom-select'],
-                      commonStyles['dark-input']
-                    )}
-                    name="securityLevel"
-                    id=""
-                    value={this.state.securityLevel}
-                    onChange={this.onChange}
-                  >
-                    <option value="5">Training</option>
-                    <option value="4">Beratung</option>
-                    <option value="3">Website config</option>
-                    <option value="2">Website & Beratung</option>
-                    <option value="1">Admin</option>
-                  </select>
+                  {category !== 'trainer' && (
+                    <select
+                      className={cx(
+                        globalStyles['custom-select'],
+                        commonStyles['custom-select'],
+                        commonStyles['dark-input']
+                      )}
+                      name="securityLevel"
+                      id=""
+                      value={this.state.securityLevel}
+                      onChange={this.onChange}
+                    >
+                      <option value="5">Training</option>
+                      <option value="4">Beratung</option>
+                      <option value="3">Website config</option>
+                      <option value="2">Website & Beratung</option>
+                      <option value="1">Admin</option>
+                    </select>
+                  )}
                   <input
                     type="submit"
                     value="Senden"

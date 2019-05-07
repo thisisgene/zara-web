@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PrivateRoute from '../../../common/PrivateRoute'
 
-import { getAll } from '../../../../../actions/adminActions'
+// import { getAll } from '../../../../../actions/adminActions'
+import { getAllUsers } from '../../../../../actions/authActions'
 
 import ItemAddList from '../../../common/ItemAddList/ItemAddList'
 import TrainingTeamContent from './TrainingTeamContent'
@@ -11,15 +12,18 @@ import styles from './TrainingTeam.module.sass'
 
 class TrainingTeam extends Component {
   componentDidMount() {
-    this.props.getAll('trainingTeam')
+    this.props.getAllUsers()
   }
 
   render() {
     return (
       <div className={styles['training-team']}>
-        {this.props.training && (
+        {this.props.auth && (
           <ItemAddList
-            content={this.props.training.trainingTeam}
+            content={
+              this.props.auth.users &&
+              this.props.auth.users.filter(user => user.securityLevel == 16)
+            }
             baseCat="training"
             category="team"
           />
@@ -34,10 +38,10 @@ class TrainingTeam extends Component {
 }
 
 const mapStateToProps = state => ({
-  training: state.training
+  auth: state.auth
 })
 
 export default connect(
   mapStateToProps,
-  { getAll }
+  { getAllUsers }
 )(TrainingTeam)
