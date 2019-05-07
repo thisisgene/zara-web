@@ -8,7 +8,6 @@ const News = require('../models/News')
 router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
   const filePath = path.resolve(__dirname, '../client', 'build', 'index.html')
   const lang = req.params.lang
-  console.log('asddd')
   News.findById(req.params.id).then(newsItem => {
     // read in the index.html file
     if (newsItem) {
