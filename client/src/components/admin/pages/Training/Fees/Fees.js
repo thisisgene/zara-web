@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { getAllUsers } from '../../../../../actions/authActions'
-import { getAll, saveContent } from '../../../../../actions/adminActions'
+import {
+  getAllAndSort,
+  saveContent,
+  deleteAdditionalFee
+} from '../../../../../actions/adminActions'
 
 import moment from 'moment'
 
@@ -22,7 +26,7 @@ class Fees extends Component {
   }
   componentDidMount() {
     this.props.getAllUsers()
-    this.props.getAll('trainings')
+    this.props.getAllAndSort('trainings', 'date')
   }
 
   onMonthChange = e => {
@@ -67,7 +71,7 @@ class Fees extends Component {
             users
               .filter(user => user.securityLevel === 16)
               .map((user, index) => (
-                <div key={index}>
+                <div key={index} className={styles['fees-content--item']}>
                   <h1>{user.name}</h1>
 
                   {trainings
@@ -87,6 +91,7 @@ class Fees extends Component {
                           training={training}
                           user={user}
                           saveContent={this.saveContent}
+                          deleteAdditionalFee={this.props.deleteAdditionalFee}
                         />
                       </div>
                     ))}
@@ -105,5 +110,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getAllUsers, getAll, saveContent }
+  { getAllUsers, getAllAndSort, saveContent, deleteAdditionalFee }
 )(Fees)

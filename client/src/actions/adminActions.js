@@ -146,6 +146,30 @@ export const getAll = category => dispatch => {
       return
   }
 }
+
+export const getAllAndSort = (category, sortBy) => dispatch => {
+  switch (category) {
+    case 'trainings':
+      axios
+        .get(`/api/training/trainingsSorted/${sortBy}`)
+        .then(res => {
+          dispatch({
+            type: GET_ALL_TRAININGS,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    default:
+      return
+  }
+}
+
 export const getAllByProps = (category, prop) => dispatch => {
   switch (category) {
     case 'team':
@@ -749,6 +773,23 @@ export const deleteById = (id, category) => dispatch => {
     default:
       return
   }
+}
+
+export const deleteAdditionalFee = content => dispatch => {
+  axios
+    .post(`/api/training/additional_fees/delete/`, content)
+    .then(res => {
+      dispatch({
+        type: UPDATE_TRAINING,
+        payload: res.data
+      })
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err
+      })
+    )
 }
 
 export const clearSingle = category => dispatch => {

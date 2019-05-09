@@ -229,6 +229,19 @@ router.get('/trainings', (req, res) => {
     })
     .catch(err => res.status(404).json(err))
 })
+// @route   GET api/training/trainingsSorted/:sortBy
+// @desc    Get all trainings
+// @access  Public
+router.get('/trainingsSorted/:sortBy', (req, res) => {
+  const errors = {}
+  Training.find({ isDeleted: false })
+    .sort(req.params.sortBy)
+    .exec()
+    .then(trainings => {
+      res.json(trainings)
+    })
+    .catch(err => res.status(404).json(err))
+})
 
 // @route   POST api/training/trainings
 // @desc    Create a training
@@ -449,7 +462,7 @@ router.post(
         }
         training.save(() => {
           Training.find({ isDeleted: false })
-            .sort('position')
+            .sort('date')
             .then(trainings => {
               res.json({ trainings: trainings, training: training })
             })
@@ -459,6 +472,37 @@ router.post(
         })
       })
       .catch(err => console.log(err))
+  }
+)
+
+router.post(
+  '/additional_fees/delete/',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body
+    Training.findOne({ _id: req.body.trainingId }).then(training => {
+      if (
+        training.assignedTrainer1 &&
+        training.assignedTrainer1.id === body.userId
+      ) {
+        training.assignedTrainer1.additionalFees.pull(body.feeId)
+      } else if (
+        training.assignedTrainer2 &&
+        training.assignedTrainer2.id === body.userId
+      ) {
+        training.assignedTrainer2.additionalFees.pull(body.feeId)
+      }
+      training.save().then(training => {
+        Training.find({ isDeleted: false })
+          .sort('date')
+          .then(trainings => {
+            res.json({ trainings: trainings, training: training })
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      })
+    })
   }
 )
 
