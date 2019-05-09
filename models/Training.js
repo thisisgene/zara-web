@@ -13,9 +13,9 @@ const TrainingSchema = new Schema({
   },
   location: {
     title: String,
-    address1: String,
-    address2: String
+    address1: String
   },
+  fee: { type: Number },
   date: {
     type: String
   },
@@ -44,7 +44,26 @@ const TrainingSchema = new Schema({
     type: String
   },
   labels: [{ name: String, color: String }],
-  selectedTeam: { type: Array },
+  assignedTrainer1: {
+    id: String,
+    name: String,
+    additionalFees: [
+      {
+        description: String,
+        amount: Number
+      }
+    ]
+  },
+  assignedTrainer2: {
+    id: String,
+    name: String,
+    additionalFees: [
+      {
+        description: String,
+        amount: Number
+      }
+    ]
+  },
   isVisible: {
     type: Boolean,
     default: false

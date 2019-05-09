@@ -19,9 +19,11 @@ import {
   clearSingle
 } from '../../../../../actions/adminActions'
 import { getImagesByCategory } from '../../../../../actions/imageActions'
+import { getAllUsers } from '../../../../../actions/authActions'
 
 import cx from 'classnames'
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
+import globalStyles from '../../../common/Bootstrap.module.css'
 import commonStyles from '../../../common/Common.module.sass'
 import styles from './TrainingContent.module.sass'
 
@@ -41,9 +43,10 @@ class TrainingContent extends Component {
       timeUntil: '',
       location: '',
       address1: '',
-      address2: '',
+      fee: '',
       labels: [],
-      selectedTeam: [],
+      assignedTrainer1: {},
+      assignedTrainer2: {},
       emailSubject: '',
       pubContent: '',
       privContent: '',
@@ -56,7 +59,8 @@ class TrainingContent extends Component {
   componentDidMount() {
     this.props.match.params.trainingId !== 'neu' &&
       this.props.getById(this.props.match.params.trainingId, 'trainings')
-    this.props.getAll('trainingTeam')
+    // this.props.getAll('trainingTeam')
+    this.props.getAllUsers()
   }
 
   componentDidUpdate(prevProps) {
@@ -89,9 +93,10 @@ class TrainingContent extends Component {
             timeUntil: item.timeUntil,
             location: item.location && item.location.title,
             address1: item.location && item.location.address1,
-            address2: item.location && item.location.address2,
+            fee: item.fee ? item.fee : '',
             labels: item.labels,
-            selectedTeam: item.selectedTeam,
+            assignedTrainer1: item.assignedTrainer1,
+            assignedTrainer2: item.assignedTrainer2,
             emailSubject: item.emailSubject,
             pubContent: item.pubContent,
             privContent: item.privContent,
@@ -118,9 +123,10 @@ class TrainingContent extends Component {
             timeUntil: '',
             location: '',
             address1: '',
-            address2: '',
+            fee: '',
             labels: [],
-            selectedTeam: [],
+            assignedTrainer1: {},
+            assignedTrainer2: {},
             emailSubject: '',
             pubContent: '',
             privContent: '',
@@ -155,12 +161,14 @@ class TrainingContent extends Component {
       }
     })
   }
+  onAssignChange = e => {
+    this.setState({ [e.target.name]: { id: e.target.value } })
+  }
   onSelectChange = (lang, selected) => {
     console.log(lang, selected)
 
-    this.setState({ selectedTeam: selected })
+    this.setState({ selectedFiles: selected })
   }
-
   onDateChange = date => {
     console.log(date)
     this.setState({ date })
@@ -198,9 +206,10 @@ class TrainingContent extends Component {
       timeUntil: this.state.timeUntil,
       location: this.state.location,
       address1: this.state.address1,
-      address2: this.state.address2,
+      fee: this.state.fee,
       labels: this.state.labels,
-      selectedTeam: this.state.selectedTeam,
+      assignedTrainer1: this.state.assignedTrainer1,
+      assignedTrainer2: this.state.assignedTrainer2,
       emailSubject: this.state.emailSubject,
       pubContent: this.state.pubContent,
       privContent: this.state.privContent
@@ -209,6 +218,7 @@ class TrainingContent extends Component {
   }
 
   render() {
+    const { users } = this.props.auth
     return (
       <div className={styles['trainings-wrapper']}>
         <div
@@ -308,16 +318,26 @@ class TrainingContent extends Component {
                         onChange={this.onChange}
                         error={this.state.errors.address1}
                       />
-                      <TextFieldGroup
-                        className={commonStyles['input']}
-                        colorScheme="light"
-                        placeholder="Adresse Zeile 2"
-                        type="text"
-                        name="address2"
-                        value={this.state.address2}
-                        onChange={this.onChange}
-                        error={this.state.errors.address2}
-                      />
+                      <div
+                        className={
+                          styles['trainings-content--text__content--left__fee']
+                        }
+                      >
+                        <span>Honorar pro Trainer*in:</span>
+                        <TextFieldGroup
+                          className={cx(
+                            commonStyles['input'],
+                            styles['short-input']
+                          )}
+                          colorScheme="light"
+                          placeholder=""
+                          type="number"
+                          name="fee"
+                          value={this.state.fee}
+                          onChange={this.onChange}
+                          error={this.state.errors.fee}
+                        />
+                      </div>
                     </div>
                     <div
                       className={
@@ -393,15 +413,65 @@ class TrainingContent extends Component {
                   </button>
                 </div>
                 <div className={styles['trainings-content--team-select']}>
-                  {this.props.training.trainingTeam && (
+                  {/* {this.props.training.trainingTeam && (
                     <TeamSelectGroup
                       optionContent={this.props.training.trainingTeam}
-                      defaultValue={this.state.selectedTeam}
+                      defaultValue={this.state.assignedTrainers}
                       name="teamSelect"
                       onSelectChange={this.onSelectChange}
                       placeholder="Trainer*innen zuteilen"
                       lang="de"
                     />
+                  )} */}
+                  {users && (
+                    <div>
+                      <table
+                        className={cx(
+                          globalStyles['table'],
+                          globalStyles['table-sm']
+                        )}
+                      >
+                        {users
+                          .filter(user => user.securityLevel === 16)
+                          .map((user, index) => (
+                            <tr key={index}>
+                              <td>{user.name}</td>
+                              <td>
+                                <input
+                                  type="radio"
+                                  name="assignedTrainer1"
+                                  value={user._id}
+                                  onClick={this.onAssignChange}
+                                  checked={
+                                    this.state.assignedTrainer1 &&
+                                    this.state.assignedTrainer1.id === user._id
+                                  }
+                                  disabled={
+                                    this.state.assignedTrainer2 &&
+                                    this.state.assignedTrainer2.id === user._id
+                                  }
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="radio"
+                                  name="assignedTrainer2"
+                                  value={user._id}
+                                  onClick={this.onAssignChange}
+                                  checked={
+                                    this.state.assignedTrainer2 &&
+                                    this.state.assignedTrainer2.id === user._id
+                                  }
+                                  disabled={
+                                    this.state.assignedTrainer1 &&
+                                    this.state.assignedTrainer1.id === user._id
+                                  }
+                                />
+                              </td>
+                            </tr>
+                          ))}
+                      </table>
+                    </div>
                   )}
                 </div>
               </div>
@@ -536,6 +606,7 @@ class TrainingContent extends Component {
 
 const mapStateToProps = state => ({
   training: state.training,
+  auth: state.auth,
   media: state.media,
   errors: state.errors
 })
@@ -549,6 +620,7 @@ export default connect(
     deleteById,
     clearSingle,
     getAll,
+    getAllUsers,
     getImagesByCategory
   }
 )(TrainingContent)

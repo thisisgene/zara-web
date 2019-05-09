@@ -41,6 +41,13 @@ class Dashboard extends Component {
         >
           Kalender
         </NavLink>
+        <NavLink
+          className={styles['category-nav--link']}
+          activeClassName={styles['cat-active']}
+          to="/admin/training/fees"
+        >
+          Honorare
+        </NavLink>
       </div>
     )
   }

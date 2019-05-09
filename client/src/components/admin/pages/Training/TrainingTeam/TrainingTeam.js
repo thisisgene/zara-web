@@ -22,7 +22,7 @@ class TrainingTeam extends Component {
           <ItemAddList
             content={
               this.props.auth.users &&
-              this.props.auth.users.filter(user => user.securityLevel == 16)
+              this.props.auth.users.filter(user => user.securityLevel === 16)
             }
             baseCat="training"
             category="team"

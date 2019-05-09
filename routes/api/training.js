@@ -252,11 +252,16 @@ router.post(
       timeUntil: body.timeUntil && body.timeUntil,
       location: {
         title: body.location && body.location,
-        address1: body.address1 && body.address1,
-        address2: body.address2 && body.address2
+        address1: body.address1 && body.address1
       },
+      fee: body.fee && body.fee,
       labels: body.labels && body.labels,
-      selectedTeam: body.selectedTeam && body.selectedTeam,
+      assignedTrainer1: {
+        id: body.assignedTrainer1 && body.assignedTrainer1.id
+      },
+      assignedTrainer2: {
+        id: body.assignedTrainer2 && body.assignedTrainer2.id
+      },
       emailSubject: body.emailSubject && body.emailSubject,
       pubContent: body.pubContent && body.pubContent,
       privContent: body.privContent && body.privContent
@@ -294,11 +299,17 @@ router.post(
           timeUntil: body.timeUntil && body.timeUntil,
           location: {
             title: body.location,
-            address1: body.address1,
-            address2: body.address2
+            address1: body.address1
           },
+          fee: body.fee && body.fee,
           labels: body.labels && body.labels,
-          selectedTeam: body.selectedTeam && body.selectedTeam,
+          assignedTrainer1: {
+            id: body.assignedTrainer1 && body.assignedTrainer1.id
+          },
+          assignedTrainer2: {
+            id: body.assignedTrainer2 && body.assignedTrainer2.id
+          },
+
           emailSubject: body.emailSubject && body.emailSubject,
           pubContent: body.pubContent && body.pubContent,
           pubContentMarked: body.pubContent && marked(body.pubContent),
@@ -397,6 +408,57 @@ router.get(
         errors.trainings = 'Beitrag nicht gefunden.'
         return res.status(404).json(errors)
       })
+  }
+)
+
+///////////////////////// HONORARE
+
+// ADDITIONAL FEES
+router.post(
+  '/trainings/additional_fees',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body
+    console.log(body)
+    const { errors, isValid } = await validateTrainingInput(body)
+    // if (!isValid) {
+    //   return res.status(400).json(errors)
+    // }
+
+    Training.findOne({ _id: body.trainingId })
+      .then(training => {
+        console.log(training.assignedTrainer1, training)
+        if (
+          training.assignedTrainer1 &&
+          training.assignedTrainer1.id === body.userId
+        ) {
+          console.log('tr1')
+          training.assignedTrainer1.additionalFees.push({
+            description: body.addFeeDescription,
+            amount: body.addFeeAmount
+          })
+        } else if (
+          training.assignedTrainer2 &&
+          training.assignedTrainer2.id === body.userId
+        ) {
+          console.log('tr2')
+          training.assignedTrainer2.additionalFees.push({
+            description: body.addFeeDescription,
+            amount: body.addFeeAmount
+          })
+        }
+        training.save(() => {
+          Training.find({ isDeleted: false })
+            .sort('position')
+            .then(trainings => {
+              res.json({ trainings: trainings, training: training })
+            })
+            .catch(err => {
+              console.log(err)
+            })
+        })
+      })
+      .catch(err => console.log(err))
   }
 )
 

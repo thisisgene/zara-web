@@ -482,7 +482,7 @@ export const saveContent = saveData => dispatch => {
             .catch(err =>
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err
               })
             )
         : axios
@@ -499,6 +499,23 @@ export const saveContent = saveData => dispatch => {
                 payload: err.response
               })
             )
+
+      break
+    case 'fees':
+      axios
+        .post(`/api/training/trainings/additional_fees`, saveData)
+        .then(res => {
+          dispatch({
+            type: UPDATE_TRAINING,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err.response
+          })
+        )
 
       break
 
