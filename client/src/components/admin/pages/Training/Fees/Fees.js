@@ -10,8 +10,7 @@ import {
 
 import moment from 'moment'
 
-import TrainingFee from './TrainingFee'
-import TextFieldGroup from '../../../common/TextFieldGroup'
+import FeeUserItem from './FeeUserItem'
 import MonthPicker from '../../../common/MonthPicker/MonthPicker'
 
 import globalStyles from '../../../common/Bootstrap.module.css'
@@ -72,29 +71,13 @@ class Fees extends Component {
               .filter(user => user.securityLevel === 16)
               .map((user, index) => (
                 <div key={index} className={styles['fees-content--item']}>
-                  <h1>{user.name}</h1>
-
-                  {trainings
-                    .filter(
-                      training =>
-                        moment(training.date).format('YYYY-MM') ===
-                        this.state.selectedMonth
-                    )
-                    .filter(
-                      training =>
-                        training.assignedTrainer1.id === user._id ||
-                        training.assignedTrainer2.id === user._id
-                    )
-                    .map((training, index) => (
-                      <div key={index}>
-                        <TrainingFee
-                          training={training}
-                          user={user}
-                          saveContent={this.saveContent}
-                          deleteAdditionalFee={this.props.deleteAdditionalFee}
-                        />
-                      </div>
-                    ))}
+                  <FeeUserItem
+                    trainings={trainings}
+                    user={user}
+                    saveContent={this.saveContent}
+                    deleteAdditionalFee={this.props.deleteAdditionalFee}
+                    selectedMonth={this.state.selectedMonth}
+                  />
                 </div>
               ))}
         </div>
