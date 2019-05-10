@@ -11,23 +11,29 @@ export default class FeeUserItem extends Component {
   state = {
     totalFee: 0,
     subTotals: [],
-    collapsed: false
-  }
-  componentDidMount() {
-    // this.setState({
-    //   totalFee: 0,
-    //   subTotals: []
-    // })
+    collapsed: false,
+    selectedMonth: this.props.selectedMonth
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.training != this.props.training) {
       this.setState({ subTotals: [], totalFee: 0 })
     }
+    if (prevProps.selectedMonth != this.props.selectedMonth) {
+      this.setState({
+        selectedMonth: this.props.selectedMonth,
+        totalFee: 0,
+        subTotals: []
+      })
+    }
+    if (prevProps.collapseAll !== this.props.collapseAll) {
+      this.setState({
+        collapsed: this.props.collapseAll
+      })
+    }
   }
 
   toggleCollapse = () => {
-    console.log(this.state.collapsed)
     this.setState({
       collapsed: !this.state.collapsed
     })
@@ -61,16 +67,24 @@ export default class FeeUserItem extends Component {
     } = this.props
 
     return (
-      <div>
+      <div
+        className={cx(
+          styles['fee-container--item'],
+          {
+            [styles['collapsed']]: this.state.collapsed
+          },
+          {
+            [styles['removed']]: this.state.totalFee == 0
+          }
+        )}
+      >
         <div
           className={cx(styles['user-title'], {
             [styles['collapsed']]: this.state.collapsed
           })}
+          onClick={this.toggleCollapse}
         >
-          <div
-            className={styles['user-title--name']}
-            onClick={this.toggleCollapse}
-          >
+          <div className={styles['user-title--name']}>
             <div
               className={cx(styles['user-title--name__collapse'], {
                 [styles['look-down']]: this.state.collapsed
@@ -81,7 +95,10 @@ export default class FeeUserItem extends Component {
             {user.name}
           </div>
           <div className={styles['user-title--amount']}>
-            Gesamt <div className={styles['sum']}>{this.state.totalFee}</div>
+            Gesamt{' '}
+            <div step="0.01" className={styles['sum']}>
+              {parseFloat(this.state.totalFee).toFixed(2)}
+            </div>
             <i className={cx('fas fa-euro-sign', styles['euro-sign'])} />
           </div>
         </div>
@@ -102,17 +119,33 @@ export default class FeeUserItem extends Component {
                   training.assignedTrainer2.id === user._id
               )
               .map((training, index) => (
-                <div className={styles['fee-item']} key={index}>
-                  <TrainingFee
-                    training={training}
-                    user={user}
-                    saveContent={saveContent}
-                    deleteAdditionalFee={deleteAdditionalFee}
-                    totalFeeCalc={this.totalFeeCalc}
-                    totalFee={this.state.totalFee}
-                  />
+                <div>
+                  {training ? (
+                    <div className={styles['fee-item']} key={index}>
+                      <TrainingFee
+                        training={training}
+                        user={user}
+                        saveContent={saveContent}
+                        deleteAdditionalFee={deleteAdditionalFee}
+                        totalFeeCalc={this.totalFeeCalc}
+                        totalFee={this.state.totalFee}
+                        selectedMonth={this.state.selectedMonth}
+                      />
+                    </div>
+                  ) : (
+                    <div>Keine Einträge</div>
+                  )}
                 </div>
               ))}
+          <div className={styles['user-footer']}>
+            <div className={styles['user-footer--name']} />
+            <div className={styles['user-footer--amount']}>
+              <div step="0.01" className={styles['sum']}>
+                {parseFloat(this.state.totalFee).toFixed(2)}
+              </div>
+              <i className={cx('fas fa-euro-sign', styles['euro-sign'])} />
+            </div>
+          </div>
         </div>
       </div>
     )

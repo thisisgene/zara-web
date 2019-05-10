@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import Moment from 'react-moment'
 import moment from 'moment'
 
@@ -8,9 +9,27 @@ export default class MonthPicker extends Component {
   render() {
     return (
       <div className={styles['month-picker']}>
-        <button onClick={this.props.decreaseMonth}>-</button>
-        <Moment format={'MM YYYY'}>{this.props.date}</Moment>
-        <button onClick={this.props.increaseMonth}>+</button>
+        <NavLink
+          to={`#${moment(this.props.date)
+            .subtract(1, 'M')
+            .format('YYYY-MM')}`}
+        >
+          <button onClick={this.props.decreaseMonth}>
+            <i className={'fa fa-chevron-left'} />
+          </button>
+        </NavLink>
+        <Moment format={'MMMM YYYY'} lang={'de'}>
+          {this.props.date}
+        </Moment>
+        <NavLink
+          to={`#${moment(this.props.date)
+            .add(1, 'M')
+            .format('YYYY-MM')}`}
+        >
+          <button onClick={this.props.increaseMonth}>
+            <i className={'fa fa-chevron-right'} />
+          </button>
+        </NavLink>
       </div>
     )
   }

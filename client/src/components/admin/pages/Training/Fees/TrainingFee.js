@@ -32,6 +32,13 @@ export default class TrainingFee extends Component {
       })
       this.calculateTotalFee()
     }
+    if (prevProps.selectedMonth != this.props.selectedMonth) {
+      this.setState({
+        additionalFeeDescription: '',
+        additionalFeeAmount: 0
+      })
+      this.calculateTotalFee()
+    }
   }
   onChange = e => {
     this.setState({
@@ -63,12 +70,12 @@ export default class TrainingFee extends Component {
     this.props.totalFeeCalc(training, subTotalFee)
   }
 
-  onSaveFee = () => {
+  onSaveFee = trainingId => {
     if (this.state.additionalFeeAmount !== 0) {
       const saveObj = {
         category: 'fees',
         userId: this.state.userId,
-        trainingId: this.state.trainingId,
+        trainingId: trainingId,
         addFeeDescription: this.state.additionalFeeDescription,
         addFeeAmount: this.state.additionalFeeAmount
       }
@@ -76,12 +83,11 @@ export default class TrainingFee extends Component {
     }
   }
 
-  onDeleteFee = feeId => {
-    console.log(feeId)
+  onDeleteFee = (feeId, trainingId) => {
     const deleteObj = {
       feeId: feeId,
       userId: this.state.userId,
-      trainingId: this.state.trainingId
+      trainingId: trainingId
     }
     this.props.deleteAdditionalFee(deleteObj)
   }
@@ -125,7 +131,11 @@ export default class TrainingFee extends Component {
                         <button
                           type="button"
                           className={styles['delete-button']}
-                          onClick={this.onDeleteFee.bind(this, fee._id)}
+                          onClick={this.onDeleteFee.bind(
+                            this,
+                            fee._id,
+                            training._id
+                          )}
                         >
                           <i className="fas fa-minus-circle" />
                         </button>
@@ -144,7 +154,11 @@ export default class TrainingFee extends Component {
                         <button
                           type="button"
                           className={styles['delete-button']}
-                          onClick={this.onDeleteFee.bind(this, fee._id)}
+                          onClick={this.onDeleteFee.bind(
+                            this,
+                            fee._id,
+                            training._id
+                          )}
                         >
                           <i className="fas fa-minus-circle" />
                         </button>
@@ -154,7 +168,7 @@ export default class TrainingFee extends Component {
               <tr className={styles['input-line']}>
                 <td>
                   <TextFieldGroup
-                    placeholder="Beschreibung"
+                    placeholder="Neuer Eintrag"
                     type="text"
                     name="additionalFeeDescription"
                     value={this.state.additionalFeeDescription}
@@ -174,7 +188,7 @@ export default class TrainingFee extends Component {
                   <button
                     type="button"
                     className={styles['save-button']}
-                    onClick={this.onSaveFee}
+                    onClick={this.onSaveFee.bind(this, training._id)}
                     disabled={
                       parseInt(this.state.additionalFeeAmount, 10) === 0
                     }
