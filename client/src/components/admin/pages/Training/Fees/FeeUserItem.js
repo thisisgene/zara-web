@@ -10,7 +10,20 @@ import styles from './Fees.module.sass'
 export default class FeeUserItem extends Component {
   state = {
     totalFee: 0,
+    subTotals: [],
     collapsed: false
+  }
+  componentDidMount() {
+    // this.setState({
+    //   totalFee: 0,
+    //   subTotals: []
+    // })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.training != this.props.training) {
+      this.setState({ subTotals: [], totalFee: 0 })
+    }
   }
 
   toggleCollapse = () => {
@@ -18,6 +31,24 @@ export default class FeeUserItem extends Component {
     this.setState({
       collapsed: !this.state.collapsed
     })
+  }
+
+  totalFee = () => {
+    let sum = 0
+    const subTotalArray = this.state.subTotals
+    for (let prop in subTotalArray) {
+      sum += subTotalArray[prop].subTotal
+    }
+    this.setState({
+      totalFee: sum
+    })
+  }
+
+  totalFeeCalc = (training, subTotal) => {
+    let tArray = this.state.subTotals
+    tArray[training._id] = { subTotal: subTotal }
+
+    this.setState({ subTotals: tArray }, () => this.totalFee())
   }
 
   render() {
@@ -31,7 +62,11 @@ export default class FeeUserItem extends Component {
 
     return (
       <div>
-        <div className={styles['user-title']}>
+        <div
+          className={cx(styles['user-title'], {
+            [styles['collapsed']]: this.state.collapsed
+          })}
+        >
           <div
             className={styles['user-title--name']}
             onClick={this.toggleCollapse}
@@ -45,7 +80,10 @@ export default class FeeUserItem extends Component {
             </div>
             {user.name}
           </div>
-          <div className={styles['user-title--amount']}>Total: 124 Euro</div>
+          <div className={styles['user-title--amount']}>
+            Gesamt <div className={styles['sum']}>{this.state.totalFee}</div>
+            <i className={cx('fas fa-euro-sign', styles['euro-sign'])} />
+          </div>
         </div>
         <div
           className={cx(styles['user-fee'], {
@@ -70,6 +108,8 @@ export default class FeeUserItem extends Component {
                     user={user}
                     saveContent={saveContent}
                     deleteAdditionalFee={deleteAdditionalFee}
+                    totalFeeCalc={this.totalFeeCalc}
+                    totalFee={this.state.totalFee}
                   />
                 </div>
               ))}

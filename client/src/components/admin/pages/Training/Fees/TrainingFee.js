@@ -41,14 +41,14 @@ export default class TrainingFee extends Component {
 
   calculateTotalFee = () => {
     const { training, user } = this.props
-    let totalFee = training.fee
+    let subTotalFee = training.fee
     if (
       training.assignedTrainer1 &&
       training.assignedTrainer1.id === user._id
     ) {
       training.assignedTrainer1.additionalFees &&
         training.assignedTrainer1.additionalFees.map(fee => {
-          totalFee += fee.amount
+          subTotalFee += fee.amount
         })
     } else if (
       training.assignedTrainer2 &&
@@ -56,11 +56,11 @@ export default class TrainingFee extends Component {
     ) {
       training.assignedTrainer2.additionalFees &&
         training.assignedTrainer2.additionalFees.map(fee => {
-          totalFee += fee.amount
+          subTotalFee += fee.amount
         })
     }
-    this.setState({ subTotal: totalFee })
-    console.log('total: ', totalFee)
+    this.setState({ subTotal: subTotalFee })
+    this.props.totalFeeCalc(training, subTotalFee)
   }
 
   onSaveFee = () => {
@@ -107,83 +107,87 @@ export default class TrainingFee extends Component {
           <table
             className={cx(globalStyles['table'], globalStyles['table-dark'])}
           >
-            <tr>
-              <td className={styles['fee-description']}>Honorar</td>
-              <td className={styles['fee-amount']}>{training.fee}</td>
-              <td className={styles['fee-button']} />
-            </tr>
-            {training.assignedTrainer1 &&
-            training.assignedTrainer1.id === user._id
-              ? training.assignedTrainer1.additionalFees.map((fee, index) => (
-                  <tr key={index}>
-                    <td className={styles['fee-description']}>
-                      {fee.description}
-                    </td>
-                    <td className={styles['fee-amount']}>{fee.amount}</td>
-                    <td className={styles['fee-button']}>
-                      <button
-                        type="button"
-                        className={styles['delete-button']}
-                        onClick={this.onDeleteFee.bind(this, fee._id)}
-                      >
-                        <i className="fas fa-minus-circle" />
-                      </button>
-                    </td>
-                  </tr>
-                ))
-              : training.assignedTrainer2 &&
-                training.assignedTrainer2.id === user._id &&
-                training.assignedTrainer2.additionalFees.map((fee, index) => (
-                  <tr key={index}>
-                    <td className={styles['fee-description']}>
-                      {fee.description}
-                    </td>
-                    <td className={styles['fee-amount']}>{fee.amount}</td>
-                    <td className={styles['fee-button']}>
-                      <button
-                        type="button"
-                        className={styles['delete-button']}
-                        onClick={this.onDeleteFee.bind(this, fee._id)}
-                      >
-                        <i className="fas fa-minus-circle" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-            <tr>
-              <td>
-                <TextFieldGroup
-                  placeholder="Beschreibung"
-                  type="text"
-                  name="additionalFeeDescription"
-                  value={this.state.additionalFeeDescription}
-                  onChange={this.onChange}
-                />
-              </td>
-              <td>
-                <TextFieldGroup
-                  placeholder=""
-                  type="number"
-                  name="additionalFeeAmount"
-                  value={this.state.additionalFeeAmount}
-                  onChange={this.onChange}
-                />
-              </td>
-              <td className={styles['fee-button']}>
-                <button
-                  type="button"
-                  className={styles['save-button']}
-                  onClick={this.onSaveFee}
-                  disabled={parseInt(this.state.additionalFeeAmount, 10) === 0}
-                >
-                  <i className="fa fa-check" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td className={styles['fee-description']}>Zwischensumme: </td>
-              <td className={styles['fee-amount']}>{this.state.subTotal}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className={styles['fee-description']}>Honorar</td>
+                <td className={styles['fee-amount']}>{training.fee}</td>
+                <td className={styles['fee-button']} />
+              </tr>
+              {training.assignedTrainer1 &&
+              training.assignedTrainer1.id === user._id
+                ? training.assignedTrainer1.additionalFees.map((fee, index) => (
+                    <tr key={index}>
+                      <td className={styles['fee-description']}>
+                        {fee.description}
+                      </td>
+                      <td className={styles['fee-amount']}>{fee.amount}</td>
+                      <td className={styles['fee-button']}>
+                        <button
+                          type="button"
+                          className={styles['delete-button']}
+                          onClick={this.onDeleteFee.bind(this, fee._id)}
+                        >
+                          <i className="fas fa-minus-circle" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                : training.assignedTrainer2 &&
+                  training.assignedTrainer2.id === user._id &&
+                  training.assignedTrainer2.additionalFees.map((fee, index) => (
+                    <tr key={index}>
+                      <td className={styles['fee-description']}>
+                        {fee.description}
+                      </td>
+                      <td className={styles['fee-amount']}>{fee.amount}</td>
+                      <td className={styles['fee-button']}>
+                        <button
+                          type="button"
+                          className={styles['delete-button']}
+                          onClick={this.onDeleteFee.bind(this, fee._id)}
+                        >
+                          <i className="fas fa-minus-circle" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+              <tr className={styles['input-line']}>
+                <td>
+                  <TextFieldGroup
+                    placeholder="Beschreibung"
+                    type="text"
+                    name="additionalFeeDescription"
+                    value={this.state.additionalFeeDescription}
+                    onChange={this.onChange}
+                  />
+                </td>
+                <td>
+                  <TextFieldGroup
+                    placeholder=""
+                    type="number"
+                    name="additionalFeeAmount"
+                    value={this.state.additionalFeeAmount}
+                    onChange={this.onChange}
+                  />
+                </td>
+                <td className={styles['fee-button']}>
+                  <button
+                    type="button"
+                    className={styles['save-button']}
+                    onClick={this.onSaveFee}
+                    disabled={
+                      parseInt(this.state.additionalFeeAmount, 10) === 0
+                    }
+                  >
+                    <i className="fa fa-check" />
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td className={styles['fee-description']}>Zwischensumme: </td>
+                <td className={styles['fee-amount']}>{this.state.subTotal}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
