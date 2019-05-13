@@ -161,8 +161,8 @@ class TrainingContent extends Component {
       }
     })
   }
-  onAssignChange = e => {
-    this.setState({ [e.target.name]: { id: e.target.value } })
+  onAssignChange = (state, id, name) => {
+    this.setState({ [state]: { id: id, name: name } })
   }
   onSelectChange = (lang, selected) => {
     console.log(lang, selected)
@@ -441,7 +441,12 @@ class TrainingContent extends Component {
                                   type="radio"
                                   name="assignedTrainer1"
                                   value={user._id}
-                                  onClick={this.onAssignChange}
+                                  onClick={this.onAssignChange.bind(
+                                    this,
+                                    'assignedTrainer1',
+                                    user._id,
+                                    user.name
+                                  )}
                                   checked={
                                     this.state.assignedTrainer1 &&
                                     this.state.assignedTrainer1.id === user._id
@@ -457,7 +462,12 @@ class TrainingContent extends Component {
                                   type="radio"
                                   name="assignedTrainer2"
                                   value={user._id}
-                                  onClick={this.onAssignChange}
+                                  onClick={this.onAssignChange.bind(
+                                    this,
+                                    'assignedTrainer2',
+                                    user._id,
+                                    user.name
+                                  )}
                                   checked={
                                     this.state.assignedTrainer2 &&
                                     this.state.assignedTrainer2.id === user._id
@@ -470,6 +480,41 @@ class TrainingContent extends Component {
                               </td>
                             </tr>
                           ))}
+                        <tr>
+                          <td />
+                          <td>
+                            <input
+                              type="radio"
+                              name="assignedTrainer1"
+                              onClick={this.onAssignChange.bind(
+                                this,
+                                'assignedTrainer1',
+                                'none',
+                                ''
+                              )}
+                              checked={
+                                this.state.assignedTrainer1 &&
+                                this.state.assignedTrainer1.id === 'none'
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              type="radio"
+                              name="assignedTrainer2"
+                              onClick={this.onAssignChange.bind(
+                                this,
+                                'assignedTrainer2',
+                                'none',
+                                ''
+                              )}
+                              checked={
+                                this.state.assignedTrainer2 &&
+                                this.state.assignedTrainer2.id === 'none'
+                              }
+                            />
+                          </td>
+                        </tr>
                       </table>
                     </div>
                   )}

@@ -270,10 +270,12 @@ router.post(
       fee: body.fee && body.fee,
       labels: body.labels && body.labels,
       assignedTrainer1: {
-        id: body.assignedTrainer1 && body.assignedTrainer1.id
+        id: body.assignedTrainer1 && body.assignedTrainer1.id,
+        name: body.assignedTrainer1 && body.assignedTrainer1.name
       },
       assignedTrainer2: {
-        id: body.assignedTrainer2 && body.assignedTrainer2.id
+        id: body.assignedTrainer2 && body.assignedTrainer2.id,
+        name: body.assignedTrainer2 && body.assignedTrainer2.name
       },
       emailSubject: body.emailSubject && body.emailSubject,
       pubContent: body.pubContent && body.pubContent,
@@ -317,10 +319,12 @@ router.post(
           fee: body.fee && body.fee,
           labels: body.labels && body.labels,
           assignedTrainer1: {
-            id: body.assignedTrainer1 && body.assignedTrainer1.id
+            id: body.assignedTrainer1 && body.assignedTrainer1.id,
+            name: body.assignedTrainer1 && body.assignedTrainer1.name
           },
           assignedTrainer2: {
-            id: body.assignedTrainer2 && body.assignedTrainer2.id
+            id: body.assignedTrainer2 && body.assignedTrainer2.id,
+            name: body.assignedTrainer2 && body.assignedTrainer2.name
           },
 
           emailSubject: body.emailSubject && body.emailSubject,
@@ -443,7 +447,7 @@ router.post(
         console.log(training.assignedTrainer1, training)
         if (
           training.assignedTrainer1 &&
-          training.assignedTrainer1.id === body.userId
+          training.assignedTrainer1 === body.userId
         ) {
           console.log('tr1')
           training.assignedTrainer1.additionalFees.push({
