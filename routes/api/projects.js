@@ -101,14 +101,14 @@ router.post(
               if (err) console.log(err)
             })
           break
-        case 'training':
+        case 'trainings':
           Training.findOneAndUpdate(
             { _id: item._id },
             { position: index },
             { safe: true, new: true }
           )
             .then(item => {
-              console.log(item.de.title, ': ', item.position)
+              console.log(item.title, ': ', item.position)
             })
             .catch(err => {
               if (err) console.log(err)

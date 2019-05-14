@@ -35,31 +35,37 @@ export default class TrainingDetail extends Component {
               <div className={styles['training-detail--title']}>
                 <h1>{training[0].title}</h1>
               </div>
-              <div className={styles['training-detail--date']}>
-                <div className={styles['training-detail--date__day']}>
-                  <i className={cx('far fa-calendar-alt', styles['icon'])} />
-                  <Moment format={'DD. MMMM YYYY'} locale={'de-DE'}>
-                    {training[0].date}
-                  </Moment>
-                </div>
-                <div className={styles['training-detail--date__time']}>
-                  <i className={cx('far fa-clock', styles['icon'])} />
+              <div className={styles['training-detail--meta']}>
+                <div className={styles['training-detail--meta--date']}>
+                  <div className={styles['training-detail--meta--date__day']}>
+                    <i className={cx('far fa-calendar-alt', styles['icon'])} />
+                    <Moment format={'DD. MMMM YYYY'} locale={'de-DE'}>
+                      {training[0].date}
+                    </Moment>
+                  </div>
+                  <div className={styles['training-detail--meta--date__time']}>
+                    <i className={cx('far fa-clock', styles['icon'])} />
 
-                  <div>{training[0].timeFrom}</div>
-                  <div>-</div>
-                  <div>{training[0].timeUntil}</div>
+                    <div>{training[0].timeFrom}</div>
+                    <div>-</div>
+                    <div>{training[0].timeUntil}</div>
+                  </div>
+                </div>
+                <div className={styles['training-detail--meta--location']}>
+                  <i className={cx('fas fa-map-marker-alt', styles['icon'])} />
+                  <div>
+                    <p
+                      className={
+                        styles['training-detail--meta--location__title']
+                      }
+                    >
+                      {training[0].location.title}
+                    </p>
+                    <p>{training[0].location.address1}</p>
+                  </div>
                 </div>
               </div>
-              <div className={styles['training-detail--location']}>
-                <i className={cx('fas fa-map-marker-alt', styles['icon'])} />
-                <div>
-                  <p className={styles['training-detail--location__title']}>
-                    {training[0].location.title}
-                  </p>
-                  <p>{training[0].location.address1}</p>
-                </div>
-              </div>
-              <hr />
+              {/* <hr /> */}
               <div className={styles['training-detail--content']}>
                 <div
                   dangerouslySetInnerHTML={{

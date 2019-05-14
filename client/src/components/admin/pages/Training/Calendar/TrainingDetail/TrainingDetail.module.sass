@@ -4,7 +4,7 @@
   left: 0
   width: 100vw
   height: 100vh
-  background: rgba(black, .5)
+  background: rgba(#333, .9)
   display: flex
   justify-content: center
   align-items: center
@@ -17,7 +17,7 @@
     
     border: 1px solid #aaa
     border-radius: 5px
-    box-shadow: 0px 5px 12px rgba(black, .4)
+    box-shadow: 0px 5px 38px rgba(black, 1)
     overflow-y: auto
     position: relative
 
@@ -35,45 +35,52 @@
         &:hover
           color: #111
   .training-detail
-    padding: 0 2rem 2rem
+    padding: 0 3rem 2rem
     
     &--title h1
+      color: #111
       font-size: 2rem
-      margin-bottom: 1rem
+      // margin-bottom: 1rem
     .icon
-      width: 20px
+      width: 16px
       margin-right: .4rem
       font-size: .8rem
       color: #444
-    &--date
-      font:
-        family: 'Vision', sans-serif
-        size: .9rem
-      &__day
-        line-height: 1
-        display: flex
-        align-items: center
-        margin-bottom: .5rem
-      &__time
-        line-height: 1
+    &--meta
+      background: rgba(lighten(#237F65, 10%), .15)
+      padding: 1rem
+      margin: 0 0 1rem
+      box-shadow: inset 0 0px 4px rgba(#237F65, .9)
+      &--date
+        
+        font:
+          family: 'Vision', sans-serif
+          size: .9rem
+        &__day
+          line-height: 1
+          display: flex
+          align-items: center
+          margin-bottom: .5rem
+        &__time
+          line-height: 1
+
+          display: flex
+          align-items: center
+          margin-bottom: .5rem
+          div
+            margin-right: .1rem
+      &--location
+        font:
+          family: 'Vision', sans-serif
+          size: .9rem
 
         display: flex
-        align-items: center
-        margin-bottom: .5rem
-        div
-          margin-right: .1rem
-    &--location
-      font:
-        family: 'Vision', sans-serif
-        size: .9rem
-
-      display: flex
-      align-items: flex-start
-      line-height: 1
-      &__title
+        align-items: flex-start
+        line-height: 1
+        &__title
     &--content
       line-height: 1.1
-      padding: 0 1.5rem
+      padding: 0
       p
         margin: .4rem 0
     &--trainers
@@ -96,10 +103,10 @@
             color: #222
             font-weight: bold !important
         &.occupied .training-detail--trainers__view--avatar
-          color: #777
+          color: #444
     &--buttons
       text-align: center
-      margin: 2rem
+      margin: 2rem 0 0
       button
         border: none !important
         padding: .3rem .6rem
@@ -116,10 +123,12 @@
       .button-cancel
         background: #888
   @media(max-width: 800px)
-    .training-detail
+    .training-detail-wrapper
       width: auto
       min-width: auto
-      @media(max-width: 500px)
-        padding: 1rem
-        &--content
-          padding: 0
+      .training-detail
+        padding: 0 2rem 2rem
+        @media(max-width: 580px)
+          padding: 1rem
+          &--content
+            padding: 0
