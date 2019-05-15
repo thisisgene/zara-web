@@ -1,56 +1,80 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { NavLink, withRouter } from 'react-router-dom'
 
 import cx from 'classnames'
 import styles from '../dashboard/Dashboard.module.sass'
 
 class Dashboard extends Component {
   render() {
-    // const { user } = this.props.auth
+    const { user } = this.props.auth
 
     return (
       <div className={styles['category-nav']}>
-        <NavLink
-          className={cx(
-            styles['category-nav--link'],
-            styles['category-nav--link__media']
-          )}
-          activeClassName={styles['cat-active']}
-          to="/admin/training/media"
-        >
-          Bilder
-        </NavLink>
-        <NavLink
-          className={styles['category-nav--link']}
-          activeClassName={styles['cat-active']}
-          to="/admin/training/team"
-        >
-          Trainer*innen
-        </NavLink>
-        <NavLink
-          className={styles['category-nav--link']}
-          activeClassName={styles['cat-active']}
-          to="/admin/training/trainings"
-        >
-          Trainings
-        </NavLink>
-        <NavLink
-          className={styles['category-nav--link']}
-          activeClassName={styles['cat-active']}
-          to="/admin/training/calendar"
-        >
-          Kalender
-        </NavLink>
-        <NavLink
-          className={styles['category-nav--link']}
-          activeClassName={styles['cat-active']}
-          to="/admin/training/fees"
-        >
-          Honorare
-        </NavLink>
+        {user.securityLevel !== 16 ? (
+          <div>
+            <NavLink
+              className={cx(
+                styles['category-nav--link'],
+                styles['category-nav--link__media']
+              )}
+              activeClassName={styles['cat-active']}
+              to="/admin/training/media"
+            >
+              Bilder
+            </NavLink>
+            <NavLink
+              className={styles['category-nav--link']}
+              activeClassName={styles['cat-active']}
+              to="/admin/training/team"
+            >
+              Trainer*innen
+            </NavLink>
+            <NavLink
+              className={styles['category-nav--link']}
+              activeClassName={styles['cat-active']}
+              to="/admin/training/trainings"
+            >
+              Trainings
+            </NavLink>
+            <NavLink
+              className={styles['category-nav--link']}
+              activeClassName={styles['cat-active']}
+              to="/admin/training/calendar"
+            >
+              Kalender
+            </NavLink>
+            <NavLink
+              className={styles['category-nav--link']}
+              activeClassName={styles['cat-active']}
+              to="/admin/training/fees"
+            >
+              Honorare
+            </NavLink>
+          </div>
+        ) : (
+          <div>
+            <NavLink
+              className={cx(styles['category-nav--link'], styles['only-child'])}
+              activeClassName={styles['cat-active']}
+              to="/admin/training/calendar"
+            >
+              Kalender
+            </NavLink>
+          </div>
+        )}
       </div>
     )
   }
 }
 
-export default Dashboard
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {}
+  )(Dashboard)
+)

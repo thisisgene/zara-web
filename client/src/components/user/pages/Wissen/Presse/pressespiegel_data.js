@@ -3,10 +3,10 @@ export const heroData = {
   imageSide: 'left',
   de: {
     title: 'Pressespiegel',
-    text: 'Hier finden Sie in Zukunft aktuelle Medienberichte über ZARA.'
+    text: 'Hier finden Sie aktuelle Medienberichte über ZARA.'
   },
   en: {
     title: 'Pressespiegel',
-    text: 'Hier finden Sie in Zukunft aktuelle Medienberichte über ZARA.'
+    text: 'Hier finden Sie aktuelle Medienberichte über ZARA.'
   }
 }

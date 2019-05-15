@@ -44,6 +44,7 @@ const TrainingSchema = new Schema({
     type: String
   },
   labels: [{ name: String, color: String }],
+  interestedTrainers: Array,
   assignedTrainer1: {
     id: String,
     name: String,

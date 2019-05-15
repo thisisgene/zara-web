@@ -323,6 +323,26 @@ export const getById = (id, category) => dispatch => {
   }
 }
 
+export const setInterestedTrainer = saveData => dispatch => {
+  axios
+    .post(
+      `/api/training//trainings/set_interested_trainer/${saveData.id}`,
+      saveData
+    )
+    .then(res => {
+      dispatch({
+        type: UPDATE_TRAINING,
+        payload: res.data
+      })
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response
+      })
+    )
+}
+
 // Create or update content
 export const saveContent = saveData => dispatch => {
   console.log(saveData)
@@ -493,6 +513,7 @@ export const saveContent = saveData => dispatch => {
 
       break
     case 'trainings':
+      console.log(saveData.interestedTrainers)
       saveData.id === 'neu'
         ? axios
             .post('/api/training/trainings', saveData)
@@ -512,6 +533,7 @@ export const saveContent = saveData => dispatch => {
         : axios
             .post(`/api/training/trainings/update/${saveData.id}`, saveData)
             .then(res => {
+              console.log('here we go')
               dispatch({
                 type: UPDATE_TRAINING,
                 payload: res.data

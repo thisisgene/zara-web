@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 
 import Moment from 'react-moment'
 
+import { saveContent } from '../../../../../../actions/adminActions'
+
 import cx from 'classnames'
+import commonStyles from '../../../../common/Common.module.sass'
 import styles from './TrainingDetail.module.sass'
 
 export default class TrainingDetail extends Component {
@@ -12,13 +15,14 @@ export default class TrainingDetail extends Component {
       trainingId: props.match.params.trainingId
     }
   }
+
   render() {
     let training =
       this.props.trainings &&
       this.props.trainings.filter(
         filterTraining => filterTraining._id === this.state.trainingId
       )
-
+    console.log(this.props)
     return (
       <div className={styles['training-detail-container']}>
         {training && (
@@ -145,19 +149,56 @@ export default class TrainingDetail extends Component {
                 </div>
               </div>
               <div className={styles['training-detail--buttons']}>
-                {training[0].assignedTrainer1.id == undefined ||
-                training[0].assignedTrainer1.id == 'none' ||
-                training[0].assignedTrainer2.id == undefined ||
-                training[0].assignedTrainer2.id == 'none' ? (
-                  <button className={styles['button-submit']}>
-                    Ich bin interessiert
-                  </button>
+                {this.props.user && this.props.user.securityLevel === 16 ? (
+                  <div>
+                    {training[0].assignedTrainer1.id == undefined ||
+                    training[0].assignedTrainer1.id == 'none' ||
+                    training[0].assignedTrainer2.id == undefined ||
+                    training[0].assignedTrainer2.id == 'none' ? (
+                      <div>
+                        {!training[0].interestedTrainers.includes(
+                          this.props.user.id
+                        ) ? (
+                          <button
+                            className={styles['button-submit']}
+                            onClick={this.props.onInterestClick.bind(
+                              this,
+                              this.props.user.id,
+                              training[0]._id,
+                              training[0].title,
+                              training[0].interestedTrainers || new Array()
+                            )}
+                          >
+                            Ich bin interessiert
+                          </button>
+                        ) : (
+                          <button
+                            className={styles['button-submit']}
+                            disabled={true}
+                          >
+                            Interesse gemeldet
+                          </button>
+                        )}
+                      </div>
+                    ) : (
+                      <button
+                        className={styles['button-submit']}
+                        disabled={true}
+                      >
+                        Training bereits augebucht
+                      </button>
+                    )}
+                  </div>
                 ) : (
-                  <button className={styles['button-submit']} disabled={true}>
-                    Training bereits augebucht
-                  </button>
+                  <div>
+                    <button className={styles['button-submit']} disabled={true}>
+                      Nicht berechtigt
+                    </button>
+                    <p className={commonStyles['small-message']}>
+                      (Loggen Sie sich mit einem ZARA Trainer*innen Account ein)
+                    </p>
+                  </div>
                 )}
-
                 <div>
                   <button
                     className={styles['button-cancel']}

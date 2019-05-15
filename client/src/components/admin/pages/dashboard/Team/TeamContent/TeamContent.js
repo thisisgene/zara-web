@@ -83,7 +83,7 @@ class TeamContent extends Component {
           isOnline: item.isOnline,
           category: item.tag,
           subCategory: item.subCategory ? item.subCategory : '',
-          date: moment(item.date).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
+          date: moment(item.date).format('YYYY-MM-DD'),
           titleDE: item.de.title && item.de.title,
           titleEN: item.en && item.en.title && item.en.title,
 

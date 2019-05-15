@@ -88,7 +88,43 @@
 
   &--team-select
     width: 50%
-    margin: 0 auto
+    margin: 2rem auto 1rem
+    .user-table
+      thead
+        tr th
+          border-top: none !important
+          text-align: center
+      tr td
+        vertical-align: middle
+        text-align: center
+        &:first-child
+          text-align: left
+        &.td-interest
+          // padding-right: 3rem !important
+          // display: block
+          line-height: 1
+          color: #555
+          &.interested
+            color: #FFC803
+          
+      input[type=radio]
+        opacity: 0
+        width: 0
+        &:checked ~ label
+          color: #4BBC28
+        &:disabled ~ label
+          opacity: .1
+      label
+        line-height: 1
+        width: 20px
+        text-align: center
+        font-size: 1rem
+        margin: 0
+        cursor: pointer
+        color: #aaa
+        &:hover
+          color: #fff
+        
   &--sidebar
     width: 100px
     display: flex

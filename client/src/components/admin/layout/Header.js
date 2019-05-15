@@ -56,7 +56,7 @@ class Header extends Component {
               {authLinks
                 .filter(
                   link =>
-                    link.securityLevel === user.securityLevel ||
+                    link.securityLevel.includes(user.securityLevel) ||
                     user.securityLevel <= link.securityMaxLevel
                 )
                 .map(link => (

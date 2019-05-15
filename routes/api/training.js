@@ -13,6 +13,7 @@ const nodemailer = require('nodemailer')
 const validateNewsInput = require('../../validation/news')
 const validateTrainingInput = require('../../validation/training')
 
+const User = require('../../models/User')
 const { TrainingTeam, Training } = require('../../models/Training')
 
 // @route   GET api/training/team
@@ -143,18 +144,19 @@ router.post(
 // @access  Public
 router.get('/team/:id', (req, res) => {
   const errors = {}
-  TrainingTeam.findOne({ _id: req.params.id, isDeleted: false })
-    .populate('lastEdited.user', ['name'])
+  User.findOne({ _id: req.params.id })
     .then(teamMember => {
       if (!teamMember) {
         errors.noteammember = 'Kein Beitrag mit dieser ID.'
         return res.status(404).json(errors.noteammember)
       }
+      console.log(teamMember)
       res.json(teamMember)
     })
     .catch(err => {
+      console.log(err)
       errors.teammember = 'Beitrag nicht gefunden.'
-      return res.status(404).json(errors)
+      return res.status(404).json(err)
     })
 })
 
@@ -295,11 +297,11 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const body = req.body
+    console.log(body)
     const { errors, isValid } = await validateTrainingInput(body)
     if (!isValid) {
       return res.status(400).json(errors)
     }
-    console.log(body)
 
     Training.findOneAndUpdate(
       { _id: body.id },
@@ -318,6 +320,7 @@ router.post(
           },
           fee: body.fee && body.fee,
           labels: body.labels && body.labels,
+
           assignedTrainer1: {
             id: body.assignedTrainer1 && body.assignedTrainer1.id,
             name: body.assignedTrainer1 && body.assignedTrainer1.name
@@ -332,6 +335,38 @@ router.post(
           pubContentMarked: body.pubContent && marked(body.pubContent),
           privContent: body.privContent && body.privContent,
           privContentMarked: body.privContent && marked(body.privContent)
+        }
+      },
+      { new: true },
+      (err, training) => {
+        if (err) console.log('error: ', err)
+        if (!err) {
+          Training.find({ isDeleted: false })
+            .sort('position')
+            .then(trainings => {
+              res.json({ trainings: trainings, training: training })
+            })
+            .catch(err => {
+              console.log(err)
+            })
+        }
+      }
+    )
+  }
+)
+
+router.post(
+  '/trainings/set_interested_trainer/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body
+    console.log(body)
+
+    Training.findOneAndUpdate(
+      { _id: body.id },
+      {
+        $set: {
+          interestedTrainers: body.interestedTrainers && body.interestedTrainers
         }
       },
       { new: true },

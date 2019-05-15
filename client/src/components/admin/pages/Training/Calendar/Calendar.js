@@ -9,7 +9,10 @@ import moment from 'moment'
 
 import TrainingDetail from './TrainingDetail/TrainingDetail'
 
-import { getAll } from '../../../../../actions/adminActions'
+import {
+  getAll,
+  setInterestedTrainer
+} from '../../../../../actions/adminActions'
 
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 // import './Calendar.sass'
@@ -111,6 +114,21 @@ class Calendar extends Component {
     this.props.history.push(`/admin/training/calendar/event/${event.id}`)
   }
 
+  onInterestClick = (userId, trainingId, trainingTitle, interestedArray) => {
+    let interestedTrainers = new Array()
+    interestedTrainers = interestedArray ///////////// FIXME: interested Array no working!
+    // console.log(userId, trainingId, interestedTrainers)
+    interestedTrainers.push(userId)
+    console.log(interestedTrainers)
+    const saveData = {
+      category: 'trainings',
+      title: trainingTitle,
+      id: trainingId,
+      interestedTrainers: interestedTrainers
+    }
+    this.props.setInterestedTrainer(saveData)
+  }
+
   closeTrainingDetail = () => {
     this.props.history.push(`/admin/training/calendar`)
   }
@@ -140,8 +158,10 @@ class Calendar extends Component {
               render={props => (
                 <TrainingDetail
                   {...props}
+                  user={this.props.auth.user}
                   trainings={this.props.training.trainings}
                   closeTrainingDetail={this.closeTrainingDetail}
+                  onInterestClick={this.onInterestClick}
                 />
               )}
             />
@@ -153,12 +173,13 @@ class Calendar extends Component {
 }
 
 const mapStateToProps = state => ({
-  training: state.training
+  training: state.training,
+  auth: state.auth
 })
 
 export default withRouter(
   connect(
     mapStateToProps,
-    { getAll }
+    { getAll, setInterestedTrainer }
   )(Calendar)
 )

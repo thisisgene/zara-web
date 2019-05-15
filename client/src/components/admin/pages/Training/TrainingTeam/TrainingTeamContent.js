@@ -73,7 +73,7 @@ class TrainingTeamContent extends Component {
             teamId: item._id,
             handle: item.handle,
             tag: item.tag && item.tag,
-            titleDE: item.de.title && item.de.title,
+            titleDE: item.name && item.name,
             titleEN: item.en ? item.en.title : '',
             email: item.email ? item.email : '',
             selectedFilesDE: item.files && item.files.de,
@@ -191,7 +191,7 @@ class TrainingTeamContent extends Component {
                 >
                   {jahresberichtTags &&
                     jahresberichtTags.map(tag => (
-                      <option value={tag.name}>{tag.de.title}</option>
+                      <option value={tag.name}>{tag.name}</option>
                     ))}
                 </select>
               </div> */}

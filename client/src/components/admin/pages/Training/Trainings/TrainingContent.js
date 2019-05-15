@@ -39,12 +39,13 @@ class TrainingContent extends Component {
       tag: 'trainings',
       title: '',
       date: new Date(),
-      timeFrom: '',
-      timeUntil: '',
+      timeFrom: '11:00',
+      timeUntil: '17:00',
       location: '',
       address1: '',
       fee: '',
       labels: [],
+      interestedTrainers: [],
       assignedTrainer1: {},
       assignedTrainer2: {},
       emailSubject: '',
@@ -95,6 +96,7 @@ class TrainingContent extends Component {
             address1: item.location && item.location.address1,
             fee: item.fee ? item.fee : '',
             labels: item.labels,
+            interestedTrainers: item.interestedTrainers,
             assignedTrainer1: item.assignedTrainer1,
             assignedTrainer2: item.assignedTrainer2,
             emailSubject: item.emailSubject,
@@ -119,12 +121,13 @@ class TrainingContent extends Component {
             tag: 'trainings',
             title: '',
             date: new Date(),
-            timeFrom: '',
-            timeUntil: '',
+            timeFrom: '11:00',
+            timeUntil: '17:00',
             location: '',
             address1: '',
             fee: '',
             labels: [],
+            interestedTrainers: [],
             assignedTrainer1: {},
             assignedTrainer2: {},
             emailSubject: '',
@@ -428,93 +431,136 @@ class TrainingContent extends Component {
                       <table
                         className={cx(
                           globalStyles['table'],
-                          globalStyles['table-sm']
+                          globalStyles['table-sm'],
+                          styles['user-table']
                         )}
                       >
-                        {users
-                          .filter(user => user.securityLevel === 16)
-                          .map((user, index) => (
-                            <tr key={index}>
-                              <td>{user.name}</td>
-                              <td>
-                                <input
-                                  type="radio"
-                                  name="assignedTrainer1"
-                                  value={user._id}
-                                  onClick={this.onAssignChange.bind(
-                                    this,
-                                    'assignedTrainer1',
-                                    user._id,
-                                    user.name
-                                  )}
-                                  checked={
-                                    this.state.assignedTrainer1 &&
-                                    this.state.assignedTrainer1.id === user._id
-                                  }
-                                  disabled={
-                                    this.state.assignedTrainer2 &&
-                                    this.state.assignedTrainer2.id === user._id
-                                  }
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="radio"
-                                  name="assignedTrainer2"
-                                  value={user._id}
-                                  onClick={this.onAssignChange.bind(
-                                    this,
-                                    'assignedTrainer2',
-                                    user._id,
-                                    user.name
-                                  )}
-                                  checked={
-                                    this.state.assignedTrainer2 &&
-                                    this.state.assignedTrainer2.id === user._id
-                                  }
-                                  disabled={
-                                    this.state.assignedTrainer1 &&
-                                    this.state.assignedTrainer1.id === user._id
-                                  }
-                                />
-                              </td>
-                            </tr>
-                          ))}
-                        <tr>
-                          <td />
-                          <td>
-                            <input
-                              type="radio"
-                              name="assignedTrainer1"
-                              onClick={this.onAssignChange.bind(
-                                this,
-                                'assignedTrainer1',
-                                'none',
-                                ''
-                              )}
-                              checked={
-                                this.state.assignedTrainer1 &&
-                                this.state.assignedTrainer1.id === 'none'
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              type="radio"
-                              name="assignedTrainer2"
-                              onClick={this.onAssignChange.bind(
-                                this,
-                                'assignedTrainer2',
-                                'none',
-                                ''
-                              )}
-                              checked={
-                                this.state.assignedTrainer2 &&
-                                this.state.assignedTrainer2.id === 'none'
-                              }
-                            />
-                          </td>
-                        </tr>
+                        <thead>
+                          <tr>
+                            <th />
+                            <th>interessiert</th>
+                            <th>zugeteilt 1</th>
+                            <th>zugeteilt 2</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {users
+                            .filter(user => user.securityLevel === 16)
+                            .map((user, index) => (
+                              <tr key={index}>
+                                <td>{user.name}</td>
+                                <td
+                                  className={cx(styles['td-interest'], {
+                                    [styles[
+                                      'interested'
+                                    ]]: this.state.interestedTrainers.includes(
+                                      user._id
+                                    )
+                                  })}
+                                >
+                                  <img className={'fas fa-fire'} />
+                                </td>
+                                <td>
+                                  <input
+                                    type="radio"
+                                    id={`at1${user._id}`}
+                                    name="assignedTrainer1"
+                                    value={user._id}
+                                    onClick={this.onAssignChange.bind(
+                                      this,
+                                      'assignedTrainer1',
+                                      user._id,
+                                      user.name
+                                    )}
+                                    checked={
+                                      this.state.assignedTrainer1 &&
+                                      this.state.assignedTrainer1.id ===
+                                        user._id
+                                    }
+                                    disabled={
+                                      this.state.assignedTrainer2 &&
+                                      this.state.assignedTrainer2.id ===
+                                        user._id
+                                    }
+                                  />
+                                  <label htmlFor={`at1${user._id}`}>
+                                    <i className={'fa fa-user'} />
+                                  </label>
+                                </td>
+                                <td>
+                                  <input
+                                    type="radio"
+                                    id={`at2${user._id}`}
+                                    name="assignedTrainer2"
+                                    value={user._id}
+                                    onClick={this.onAssignChange.bind(
+                                      this,
+                                      'assignedTrainer2',
+                                      user._id,
+                                      user.name
+                                    )}
+                                    checked={
+                                      this.state.assignedTrainer2 &&
+                                      this.state.assignedTrainer2.id ===
+                                        user._id
+                                    }
+                                    disabled={
+                                      this.state.assignedTrainer1 &&
+                                      this.state.assignedTrainer1.id ===
+                                        user._id
+                                    }
+                                  />
+                                  <label htmlFor={`at2${user._id}`}>
+                                    <i className={'fa fa-user'} />
+                                  </label>
+                                </td>
+                              </tr>
+                            ))}
+                          <tr>
+                            <td />
+                            <td />
+                            <td>
+                              <input
+                                type="radio"
+                                id="at1none"
+                                name="assignedTrainer1"
+                                onClick={this.onAssignChange.bind(
+                                  this,
+                                  'assignedTrainer1',
+                                  'none',
+                                  ''
+                                )}
+                                checked={
+                                  this.state.assignedTrainer1 &&
+                                  this.state.assignedTrainer1.id === 'none'
+                                }
+                              />
+                              <label htmlFor={`at1none`}>
+                                <i className={'fa fa-user-slash'} />
+                              </label>
+                            </td>
+                            <td>
+                              <input
+                                type="radio"
+                                id="at2none"
+                                name="assignedTrainer2"
+                                onClick={this.onAssignChange.bind(
+                                  this,
+                                  'assignedTrainer2',
+                                  'none',
+                                  ''
+                                )}
+                                checked={
+                                  this.state.assignedTrainer2 &&
+                                  this.state.assignedTrainer2.id === 'none'
+                                }
+                              />
+                              <label htmlFor={`at2none`}>
+                                <i className={'fa fa-user-slash'} />
+                              </label>
+                            </td>
+                          </tr>
+                        </tbody>
                       </table>
                     </div>
                   )}
