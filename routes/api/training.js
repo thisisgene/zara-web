@@ -479,10 +479,10 @@ router.post(
 
     Training.findOne({ _id: body.trainingId })
       .then(training => {
-        console.log(training.assignedTrainer1, training)
+        console.log('HERE WE ARE, ', training.assignedTrainer1, body.userId)
         if (
           training.assignedTrainer1 &&
-          training.assignedTrainer1 === body.userId
+          training.assignedTrainer1.id === body.userId
         ) {
           console.log('tr1')
           training.assignedTrainer1.additionalFees.push({
