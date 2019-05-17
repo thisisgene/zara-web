@@ -2,7 +2,20 @@
   box-shadow: 0 3px 3px rgba(0,0,0,.3)
   .navbar
     background: lighten(#343A40, 10%) !important
-
+  .logo
+    display: flex
+    flex-direction: column
+    align-items: center
+    color: #bbb
+    text-decoration: none
+    transition: all 100ms ease-in-out
+    span
+      // margin-left: .3rem
+      // margin-top: .2rem
+      font-size: .9rem
+      line-height: 1
+    &:hover
+      filter: drop-shadow(0 0 5px rgba(#FFC803, .5))
   .nav-link
     color: darken(lighten(#FFC803, 40%), 50%)
     text-align: center

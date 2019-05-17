@@ -33,7 +33,10 @@ class Header extends Component {
             styles['navbar']
           )}
         >
-          <Link className={globalStyles['navbar-brand']} to="/admin/">
+          <Link
+            className={cx(globalStyles['navbar-brand'], styles['logo'])}
+            to="/admin/"
+          >
             <img
               src={Logo}
               height="30"
@@ -44,7 +47,7 @@ class Header extends Component {
               alt=""
             />
             {/* <h1>ZARA</h1> */}
-            <span>Admin</span>
+            <span>admin</span>
           </Link>
           {isAuthenticated ? (
             <ul
@@ -74,6 +77,17 @@ class Header extends Component {
                     </NavLink>
                   </li>
                 ))}
+
+              <li className={globalStyles['nav-item']}>
+                <NavLink
+                  activeClassName={styles['active']}
+                  className={cx(globalStyles['nav-link'], styles['nav-link'])}
+                  to={`/admin/user/${user.id}`}
+                >
+                  <i className={'fa fa-user'} />
+                  <p>{user.name}</p>
+                </NavLink>
+              </li>
               <li className={globalStyles['nav-item']}>
                 <button
                   onClick={this.onLogoutClick.bind(this)}
