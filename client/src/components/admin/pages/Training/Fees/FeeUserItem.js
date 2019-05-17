@@ -65,7 +65,17 @@ export default class FeeUserItem extends Component {
       deleteAdditionalFee,
       selectedMonth
     } = this.props
-
+    const userHasTrainingsThisMonth =
+      this.props.trainings
+        .filter(
+          training => moment(training.date).format('YYYY-MM') === selectedMonth
+        )
+        .filter(
+          training =>
+            training.assignedTrainer1.id === user._id ||
+            training.assignedTrainer2.id === user._id
+        ).length !== 0
+    console.log(user.name, userHasTrainingsThisMonth)
     return (
       <div
         className={cx(
@@ -74,7 +84,7 @@ export default class FeeUserItem extends Component {
             [styles['collapsed']]: this.state.collapsed
           },
           {
-            [styles['removed']]: this.state.totalFee == 0
+            [styles['removed']]: !userHasTrainingsThisMonth
           }
         )}
       >

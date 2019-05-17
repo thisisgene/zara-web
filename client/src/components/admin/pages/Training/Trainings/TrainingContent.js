@@ -43,7 +43,7 @@ class TrainingContent extends Component {
       timeUntil: '17:00',
       location: '',
       address1: '',
-      fee: '',
+      fee: 0,
       labels: [],
       interestedTrainers: [],
       assignedTrainer1: {},
@@ -94,7 +94,7 @@ class TrainingContent extends Component {
             timeUntil: item.timeUntil,
             location: item.location && item.location.title,
             address1: item.location && item.location.address1,
-            fee: item.fee ? item.fee : '',
+            fee: item.fee ? item.fee : 0,
             labels: item.labels,
             interestedTrainers: item.interestedTrainers,
             assignedTrainer1: item.assignedTrainer1,
@@ -110,7 +110,7 @@ class TrainingContent extends Component {
         prevProps.match.params.trainingId !== this.props.match.params.trainingId
       ) {
         if (this.props.match.params.trainingId === 'neu') {
-          console.log('reset')
+          // RESET!
           this.props.clearSingle('trainings')
           this.setState({
             isOnline: false,
@@ -125,7 +125,7 @@ class TrainingContent extends Component {
             timeUntil: '17:00',
             location: '',
             address1: '',
-            fee: '',
+            fee: 0,
             labels: [],
             interestedTrainers: [],
             assignedTrainer1: {},
