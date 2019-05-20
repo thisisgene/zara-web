@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const passport = require('passport')
 
-const validateNewsInput = require('../../validation/news')
+const validateLabelInput = require('../../validation/label')
 
 const Label = require('../../models/Label')
 
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json(err))
 })
 
-// @route   POST api/labels
+// @route   POST api/label
 // @desc    Create a label
 // @access  Private
 router.post(
@@ -29,45 +29,27 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const body = req.body
-    const { errors, isValid } = await validateNewsInput(body)
+    const { errors, isValid } = await validateLabelInput(body)
 
     if (!isValid) {
       return res.status(400).json(errors)
     }
 
     // Get fields
-    const labelFields = { de: {}, en: {} }
-    if (body.titleDE) {
-      labelFields.de.title = body.titleDE
-      labelFields.handle = body.titleDE.replace(/\s/g, '_')
-    }
-    if (body.titleEN) labelFields.en.title = body.titleEN
-    labelFields.tag = body.tag
-    labelFields.de.shortDescription = body.shortDescriptionDE
-    labelFields.en.shortDescription = body.shortDescriptionEN
-    labelFields.de.description = body.descriptionDE
-    labelFields.en.description = body.descriptionEN
 
     const newLabel = new Label({
-      tag: labelFields.tag,
-      date: body.date,
-      handle: labelFields.handle,
-      de: {
-        title: labelFields.de.title,
-        shortDescription: labelFields.de.shortDescription,
-        description: labelFields.de.description
-      },
-      en: {
-        title: labelFields.en.title,
-        shortDescription: labelFields.en.shortDescription,
-        description: labelFields.en.description
-      }
+      title: body.title,
+      color: body.color
     })
     console.log(newLabel)
     newLabel
       .save()
       .then(label => {
-        res.json(label)
+        Label.find({ isDeleted: false })
+          .exec()
+          .then(labels => {
+            res.json(labels)
+          })
       })
       .catch(err => {
         console.log(err)
@@ -80,32 +62,13 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const body = req.body
-    // Get fields
-    const labelFields = { de: {}, en: {} }
-    if (body.titleDE) {
-      labelFields.de.title = body.titleDE
-      labelFields.handle = body.titleDE.replace(/\s/g, '_')
-    }
-    if (body.titleEN) labelFields.en.title = body.titleEN
-    // if (body.filesDE) labelFields.selectedFilesDE = body.filesDE
-    // if (body.filesEN) labelFields.selectedFilesEN = body.filesEN
+
     Label.findOneAndUpdate(
       { _id: body.id },
       {
         $set: {
-          tag: body.tag,
-          date: body.date,
-          handle: labelFields.handle,
-          de: {
-            title: labelFields.de.title
-          },
-          en: {
-            title: labelFields.en.title
-          },
-          files: {
-            de: body.filesDE,
-            en: body.filesEN
-          }
+          title: body.title,
+          color: body.color
         }
       },
       { new: true },

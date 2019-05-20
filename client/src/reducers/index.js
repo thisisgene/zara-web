@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import authReducer from './authReducer'
 import errorReducer from './errorReducer'
 import mediaReducer from './mediaReducer'
+import labelReducer from './labelReducer'
 import newsReducer from './newsReducer'
 import jahresberichteReducer from './jahresberichteReducer'
 import faqReducer from './faqReducer'
@@ -17,6 +18,7 @@ export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
   media: mediaReducer,
+  label: labelReducer,
   news: newsReducer,
   jahresberichte: jahresberichteReducer,
   faq: faqReducer,

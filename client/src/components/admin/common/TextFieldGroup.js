@@ -10,6 +10,7 @@ const TextFieldGroup = ({
   placeholder,
   value,
   label,
+  style,
   error,
   info,
   type,
@@ -29,6 +30,7 @@ const TextFieldGroup = ({
           },
           className
         )}
+        style={style}
         placeholder={placeholder}
         name={name}
         type={type}

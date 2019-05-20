@@ -2,6 +2,10 @@ import axios from 'axios'
 
 import {
   GET_ERRORS,
+  GET_ALL_LABELS,
+  DELETE_LABEL_BY_ID,
+  CREATE_NEW_LABEL,
+  UPDATE_LABEL,
   GET_ALL_NEWS,
   GET_NEWS_BY_ID,
   DELETE_NEWS_BY_ID,
@@ -45,6 +49,22 @@ import {
 // Get all
 export const getAll = category => dispatch => {
   switch (category) {
+    case 'label':
+      axios
+        .get('/api/label')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_LABELS,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     case 'news':
       axios
         .get('/api/news')
@@ -364,6 +384,39 @@ export const setInterestedTrainer = saveData => dispatch => {
 export const saveContent = saveData => dispatch => {
   console.log(saveData)
   switch (saveData.category) {
+    case 'label':
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/label', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_LABEL,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+              })
+            )
+        : axios
+            .post(`/api/label/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_LABEL,
+                payload: res.data
+              })
+            })
+            .catch(err =>
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+              })
+            )
+
+      break
     case 'news':
       saveData.id === 'neu'
         ? axios
@@ -711,6 +764,22 @@ export const toggleOnline = (id, category, state) => dispatch => {
 
 export const deleteById = (id, category) => dispatch => {
   switch (category) {
+    case 'label':
+      axios
+        .get(`/api/label/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_LABEL_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     case 'news':
       axios
         .get(`/api/news/delete/${id}`)

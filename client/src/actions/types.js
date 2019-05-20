@@ -11,6 +11,12 @@ export const UPLOAD_IMAGES = 'UPLOAD_IMAGES'
 export const DELETE_IMAGE = 'DELETE_IMAGE'
 export const UPLOAD_PROGRESS = 'UPLOAD_PROGRESS'
 
+export const GET_ALL_LABELS = 'GET_ALL_LABELS'
+export const DELETE_LABEL_BY_ID = 'DELETE_LABEL_BY_ID'
+export const CREATE_NEW_LABEL = 'CREATE_NEW_LABEL'
+export const UPDATE_LABEL = 'UPDATE_LABEL'
+export const CLEAR_LABEL = 'CLEAR_LABEL'
+
 export const GET_ALL_NEWS = 'GET_ALL_NEWS'
 export const GET_NEWS_BY_ID = 'GET_NEWS_BY_ID'
 export const DELETE_NEWS_BY_ID = 'DELETE_NEWS_BY_ID'
