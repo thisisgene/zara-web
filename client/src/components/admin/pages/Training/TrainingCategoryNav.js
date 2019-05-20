@@ -26,6 +26,13 @@ class Dashboard extends Component {
             <NavLink
               className={styles['category-nav--link']}
               activeClassName={styles['cat-active']}
+              to="/admin/training/labels"
+            >
+              Labels
+            </NavLink>
+            <NavLink
+              className={styles['category-nav--link']}
+              activeClassName={styles['cat-active']}
               to="/admin/training/team"
             >
               Trainer*innen

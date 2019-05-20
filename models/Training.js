@@ -28,6 +28,10 @@ const TrainingSchema = new Schema({
   handle: {
     type: String
   },
+  emailSent: {
+    type: Boolean,
+    default: false
+  },
   emailSubject: {
     type: String
   },

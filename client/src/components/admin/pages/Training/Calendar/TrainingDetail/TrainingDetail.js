@@ -68,6 +68,10 @@ export default class TrainingDetail extends Component {
                     <p>{training[0].location.address1}</p>
                   </div>
                 </div>
+                <div className={styles['training-detail--meta--fee']}>
+                  <i className={cx('fas fa-money-bill-wave', styles['icon'])} />
+                  <div>{training[0].fee},-</div>
+                </div>
               </div>
               {/* <hr /> */}
               <div className={styles['training-detail--content']}>

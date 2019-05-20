@@ -16,7 +16,8 @@ import {
   getById,
   toggleOnline,
   deleteById,
-  clearSingle
+  clearSingle,
+  sendInitialTrainingEmail
 } from '../../../../../actions/adminActions'
 import { getImagesByCategory } from '../../../../../actions/imageActions'
 import { getAllUsers } from '../../../../../actions/authActions'
@@ -51,6 +52,7 @@ class TrainingContent extends Component {
       emailSubject: '',
       pubContent: '',
       privContent: '',
+      addMessage: '',
       hasBeenSent: false,
       errors: {},
       imageListOpen: false
@@ -133,6 +135,7 @@ class TrainingContent extends Component {
             emailSubject: '',
             pubContent: '',
             privContent: '',
+            addMessage: '',
             hasBeenSent: false,
             errors: {},
             imageListOpen: false
@@ -196,6 +199,27 @@ class TrainingContent extends Component {
         }
       ]
     })
+  }
+
+  sendContentEmail = () => {
+    const emailData = {
+      category: 'trainings',
+      tag: this.state.tag,
+      id: this.state.trainingId,
+      title: this.state.title,
+      date: this.state.date,
+      timeFrom: this.state.timeFrom,
+      timeUntil: this.state.timeUntil,
+      location: this.state.location,
+      address1: this.state.address1,
+      fee: this.state.fee,
+      labels: this.state.labels,
+      assignedTrainer1: this.state.assignedTrainer1,
+      assignedTrainer2: this.state.assignedTrainer2,
+      emailSubject: this.state.emailSubject,
+      pubContent: this.state.pubContent
+    }
+    this.props.sendInitialTrainingEmail(emailData)
   }
 
   saveContent = () => {
@@ -416,16 +440,6 @@ class TrainingContent extends Component {
                   </button>
                 </div>
                 <div className={styles['trainings-content--team-select']}>
-                  {/* {this.props.training.trainingTeam && (
-                    <TeamSelectGroup
-                      optionContent={this.props.training.trainingTeam}
-                      defaultValue={this.state.assignedTrainers}
-                      name="teamSelect"
-                      onSelectChange={this.onSelectChange}
-                      placeholder="Trainer*innen zuteilen"
-                      lang="de"
-                    />
-                  )} */}
                   {users && (
                     <div>
                       <table
@@ -565,37 +579,21 @@ class TrainingContent extends Component {
                     </div>
                   )}
                 </div>
-              </div>
-              {this.props.media && this.props.media.images && (
-                <div className={styles['trainings-content--select-box']}>
-                  <div
-                    className={
-                      styles['trainings-content--select-box__container']
-                    }
-                  >
-                    {/* <FileSelectGroup
-                      optionContent={this.props.media.images}
-                      defaultValue={this.state.selectedFilesDE}
-                      name="fileSelectDE"
-                      onSelectChange={this.onSelectChange}
-                      lang="DE"
-                    /> */}
-                  </div>
-                  <div
-                    className={
-                      styles['trainings-content--select-box__container']
-                    }
-                  >
-                    {/* <FileSelectGroup
-                      optionContent={this.props.media.images}
-                      defaultValue={this.state.selectedFilesEN}
-                      name="fileSelectEN"
-                      onSelectChange={this.onSelectChange}
-                      lang="EN"
-                    /> */}
-                  </div>
+                <div
+                  className={styles['trainings-content--additional-message']}
+                >
+                  <TextareaFieldGroup
+                    className={cx(commonStyles['input'], styles['private'])}
+                    colorScheme="light"
+                    placeholder="Zusätzliche Nachricht"
+                    type="text"
+                    name="addMessage"
+                    value={this.state.addMessage}
+                    onChange={this.onChange}
+                    error={this.state.errors.addMessage}
+                  />
                 </div>
-              )}
+              </div>
             </div>
             {this.props.training.training && (
               <div className={styles['trainings-content--sidebar']}>
@@ -712,6 +710,7 @@ export default connect(
     clearSingle,
     getAll,
     getAllUsers,
-    getImagesByCategory
+    getImagesByCategory,
+    sendInitialTrainingEmail
   }
 )(TrainingContent)

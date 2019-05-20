@@ -323,10 +323,27 @@ export const getById = (id, category) => dispatch => {
   }
 }
 
+export const sendInitialTrainingEmail = saveData => dispatch => {
+  axios
+    .post(`/api/training/trainings/send_initial_email/`, saveData)
+    .then(res => {
+      dispatch({
+        type: UPDATE_TRAINING,
+        payload: res.data
+      })
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response
+      })
+    )
+}
+
 export const setInterestedTrainer = saveData => dispatch => {
   axios
     .post(
-      `/api/training//trainings/set_interested_trainer/${saveData.id}`,
+      `/api/training/trainings/set_interested_trainer/${saveData.id}`,
       saveData
     )
     .then(res => {

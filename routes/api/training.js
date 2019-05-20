@@ -8,6 +8,8 @@ const multerS3 = require('multer-s3')
 const aws = require('aws-sdk')
 const Jimp = require('jimp')
 
+const moment = require('moment')
+
 const nodemailer = require('nodemailer')
 
 const validateNewsInput = require('../../validation/news')
@@ -462,6 +464,84 @@ router.get(
       })
   }
 )
+
+///////////////////////// E-MAILS
+
+router.post(
+  '/trainings/send_initial_email',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    let emailList = []
+    User.find({ securityLevel: 16 })
+      .exec()
+      .then(users => {
+        users.map(user => {
+          let userEmail = {
+            name: user.name,
+            email: user.email
+          }
+          emailList.push(`${user.name} <${user.email}>`)
+        })
+        // console.log(req.body)
+        sendTrainingEmail(emailList, req.body)
+      })
+    // console.log(req.body)
+  }
+)
+
+sendTrainingEmail = (emailList, content) => {
+  const link = `https://zara.or.at/admin/training/calendar/event/${content.id}`
+  const outputPlain = `${content.pubContent} Link: ${link}`
+  const outputHtml = `
+    <h2>${content.title}</h2>
+    <p>${moment(content.date).format('DD. MMMM YYYY')}</p>
+    <p>${content.timeFrom} - ${content.timeUntil}</p>
+    <p>${content.location}</p>
+    <p>${content.address1}</p>
+    <p>${marked(content.pubContent)}</p>
+    <br />
+    <h1>TEST!</h1>
+    <a href="${link}">${link}</a>
+    
+  `
+  console.log(outputHtml)
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: 'serpig.testuser@gmail.com', // generated ethereal user
+      pass: 'serPig1dev2019' // generated ethereal password
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+
+  // setup email data with unicode symbols
+  let trainingMailOptions = {
+    from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
+    to: emailList, // list of receivers //beratung@zara.or.at
+    subject: content.emailSubject, // Subject line
+    text: outputPlain, // plain text body
+    html: outputHtml // html body
+  }
+
+  console.log('hola')
+
+  // send mail with defined transport object
+  transporter.sendMail(trainingMailOptions, (error, info) => {
+    if (error) {
+      return console.log(error)
+    }
+    console.log('Message sent: %s', info.messageId)
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  })
+}
 
 ///////////////////////// HONORARE
 
