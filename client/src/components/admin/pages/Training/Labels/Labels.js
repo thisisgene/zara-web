@@ -59,16 +59,21 @@ class Labels extends Component {
     const { labels } = this.props.label
     return (
       <div className={styles['labels']}>
-        <div>
+        <div className={styles['label-container']}>
           {labels &&
             labels.map((label, index) => (
-              <div key={index}>
+              <div className={styles['label-wrapper']} key={index}>
                 <LabelItem label={label} onSave={this.onSave} />
-                <button onClick={this.onDeleteClick.bind(this, label._id)}>
-                  x
+                <button
+                  className={styles['button-delete']}
+                  onClick={this.onDeleteClick.bind(this, label._id)}
+                >
+                  <i className={'fas fa-minus-circle'} />
                 </button>
               </div>
             ))}
+        </div>
+        <div className={styles['label-blank']}>
           <LabelItem
             label={{ title: '', color: '' }}
             onSave={this.onSave}

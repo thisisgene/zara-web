@@ -1,5 +1,75 @@
+@function set-label-text-color($color) 
+  @if (lightness($color) > 50) 
+    @return #000000 // Lighter backgorund, return dark color
+  @else
+    @return #ffffff // Darker background, return light color
+  
+$background-color: var(--color)
+
+// $color: set-label-text-color(#{$background-color})
+
 .label-item
   display: flex
+  &--edit
+    display: flex
+    flex-direction: column
+    position: relative
+    .label-item--basic
+      padding: 1px .5rem
+    input
+      color: #fff
+        font-size: .75rem !important
+      background: transparent
+      text-transform: uppercase
+      padding: 0 !important
+      height: auto !important
+      line-height: 1
+      border: none
+      &:focus
+        background: none !important
+    &__text
+      color: #fff
+      font:
+        size: .75rem
+        // weight: bold
+      text-transform: uppercase
+      padding-left: .5rem
+      line-height: 1
+
+    &__fill
+      display: inline-block
+      width: 8px
+      height: 8px
+      border: 1px solid white
+      border-radius: 50%
+    .edit-group
+      position: absolute
+      margin-top: 3rem
+      background: white
+      .save-button
+        border: none
+        background: #016AA1
+        color: #fff
+        margin: .5rem auto
   &--basic
-    padding: .3rem .6rem
-    border-radius: 1rem
+    // background: white
+    border-radius: .2rem
+    display: flex
+    align-items: center
+    padding: .5rem .5rem
+    &__text
+      color: #fff
+      font:
+        size: .75rem
+        // weight: bold
+      text-transform: uppercase
+      padding-left: .5rem
+      line-height: 1
+
+    &__fill
+      display: inline-block
+      width: 8px
+      height: 8px
+      border: 1px solid white
+      border-radius: 50%
+  

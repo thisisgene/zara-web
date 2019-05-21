@@ -60,20 +60,41 @@ export default class LabelItem extends Component {
     return (
       <div className={styles['label-item']}>
         {this.state.editLabel ? (
-          <div>
-            <TextFieldGroup
-              // className={commonStyles['input']}
-              style={{ background: this.state.color }}
-              colorScheme="light"
-              placeholder="Titel des Labels"
-              type="text"
-              name="title"
-              value={this.state.title}
-              onChange={this.onChange}
-              // error={label.errors.title}
-            />
-            <GithubPicker onChange={this.onColorChange} />
-            <button onClick={this.onSaveClick}>Speichern</button>
+          <div className={styles['label-item--edit']}>
+            <div
+              className={styles['label-item--basic']}
+              style={{ backgroundColor: this.state.color }}
+            >
+              <span
+                className={styles['label-item--edit__fill']}
+                style={{ backgroundColor: this.state.color }}
+              />
+              <div
+                className={styles['label-item--edit__text']}
+                style={{ '--color': this.state.color }}
+              >
+                <TextFieldGroup
+                  // className={commonStyles['input']}
+                  style={{ borderColor: this.state.color }}
+                  colorScheme="light"
+                  placeholder="Neues Label"
+                  type="text"
+                  name="title"
+                  value={this.state.title}
+                  onChange={this.onChange}
+                  // error={label.errors.title}
+                />
+              </div>
+            </div>
+            <div className={styles['edit-group']}>
+              <GithubPicker onChange={this.onColorChange} />
+              <button
+                className={styles['save-button']}
+                onClick={this.onSaveClick}
+              >
+                Speichern
+              </button>
+            </div>
           </div>
         ) : (
           <div
@@ -81,7 +102,16 @@ export default class LabelItem extends Component {
             onClick={this.onEditClick}
             style={{ backgroundColor: this.state.color }}
           >
-            {this.state.title}
+            <span
+              className={styles['label-item--basic__fill']}
+              style={{ backgroundColor: this.state.color }}
+            />
+            <div
+              className={styles['label-item--basic__text']}
+              style={{ '--color': this.state.color }}
+            >
+              {this.state.title}
+            </div>
           </div>
         )}
       </div>
