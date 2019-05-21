@@ -7,19 +7,26 @@ import TextFieldGroup from '../TextFieldGroup'
 import styles from './LabelItem.module.sass'
 
 export default class LabelItem extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      title: '',
-      color: '',
+      title: props.label.title || '',
+      color: props.label.color || '',
+      editLabel: props.editLabel || false,
       errors: {}
     }
   }
-  componentDidMount() {
-    this.setState({
-      title: this.props.label.title,
-      color: this.props.label.color
-    })
+  componentDidMount() {}
+  componentDidUpdate(prevProps) {
+    if (prevProps.label !== this.props.label) {
+      if (!this.props.label._id) {
+        this.setState({
+          title: '',
+          color: '',
+          editLabel: true
+        })
+      }
+    }
   }
   onChange = e => {
     this.setState({
@@ -70,6 +77,7 @@ export default class LabelItem extends Component {
           </div>
         ) : (
           <div
+            className={styles['label-item--basic']}
             onClick={this.onEditClick}
             style={{ backgroundColor: this.state.color }}
           >

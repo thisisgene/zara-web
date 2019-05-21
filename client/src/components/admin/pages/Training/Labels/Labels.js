@@ -69,7 +69,11 @@ class Labels extends Component {
                 </button>
               </div>
             ))}
-          <LabelItem label={{ title: '', color: '' }} onSave={this.onSave} />
+          <LabelItem
+            label={{ title: '', color: '' }}
+            onSave={this.onSave}
+            editLabel={true}
+          />
         </div>
       </div>
     )
