@@ -11,6 +11,7 @@ import trainingReducer from './trainingReducer'
 import { localizeReducer } from 'react-localize-redux'
 import { reducer as formReducer } from 'redux-form'
 import userReducer from './userReducer'
+import adminReducer from './adminReducer'
 import reportReducer from './reportReducer'
 
 export default combineReducers({
@@ -25,6 +26,7 @@ export default combineReducers({
   team: teamReducer,
   training: trainingReducer,
   user: userReducer,
+  admin: adminReducer,
   report: reportReducer,
   localize: localizeReducer
 })

@@ -13,32 +13,80 @@ const validateLoginInput = require('../../validation/login')
 // @route   POST api/users/register
 // @desc    Register user
 // @access  Public
-router.post('/register', (req, res) => {
-  const { errors, isValid } = validateRegisterInput(req.body)
+router.post(
+  '/register',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateRegisterInput(req.body)
 
-  // Check validation
-  if (!isValid) {
-    return res.status(400).json(errors)
+    // Check validation
+    if (!isValid) {
+      return res.status(400).json(errors)
+    }
+
+    User.findOne({ email: req.body.email })
+      .then(user => {
+        if (user) {
+          errors.email = 'User mit dieser E-mail Adresse existiert bereits.'
+          return res.status(400).json(errors)
+        } else {
+          const newUser = new User({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password,
+            securityLevel: req.body.securityLevel
+          })
+
+          bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(newUser.password, salt, (err, hash) => {
+              if (err) throw err
+              newUser.password = hash
+              newUser
+                .save()
+                .then(user =>
+                  User.find()
+                    .then(users => res.json(users))
+                    .catch(err => {
+                      console.log(err)
+                    })
+                )
+                .catch(err => console.error(err))
+            })
+          })
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
+)
 
-  User.findOne({ email: req.body.email })
-    .then(user => {
-      if (user) {
-        errors.email = 'User mit dieser E-mail Adresse existiert bereits.'
-        return res.status(400).json(errors)
-      } else {
-        const newUser = new User({
-          name: req.body.name,
-          email: req.body.email,
-          password: req.body.password,
-          securityLevel: req.body.securityLevel
-        })
+// @route   POST api/users/update
+// @desc    Update user
+// @access  Public
+router.post(
+  '/update',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateRegisterInput(req.body)
+
+    // Check validation
+    if (!isValid) {
+      return res.status(400).json(errors)
+    }
+
+    User.findById(req.body.id)
+      .then(user => {
+        user.name = req.body.name
+        user.email = req.body.email
+        user.password = req.body.password
+        // user.securityLevel = req.body.securityLevel
 
         bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(newUser.password, salt, (err, hash) => {
+          bcrypt.hash(user.password, salt, (err, hash) => {
             if (err) throw err
-            newUser.password = hash
-            newUser
+            user.password = hash
+            user
               .save()
               .then(user =>
                 User.find()
@@ -50,12 +98,28 @@ router.post('/register', (req, res) => {
               .catch(err => console.error(err))
           })
         })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+)
+
+router.get(
+  '/delete/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    User.findByIdAndRemove(req.params.id, (err, user) => {
+      if (err) console.log(err)
+      else {
+        User.find()
+          .exec()
+          .then(users => res.json(users))
+          .catch(err => res.send(err))
       }
     })
-    .catch(err => {
-      console.log(err)
-    })
-})
+  }
+)
 
 // @route   POST api/users/login
 // @desc    Login user

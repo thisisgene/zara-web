@@ -16,6 +16,9 @@ import {
   deleteById,
   clearSingle
 } from '../../../../../actions/adminActions'
+
+import { updateUserPassword } from '../../../../../actions/authActions'
+
 import { getImagesByCategory } from '../../../../../actions/imageActions'
 
 import cx from 'classnames'
@@ -30,17 +33,13 @@ class TrainingTeamContent extends Component {
       isOnline: false,
       blankItem: true,
       teamId: props.match.params.teamId,
-      handle: '',
       category: 'trainingTeam',
       tag: 'trainingTeam',
-      titleDE: '',
-      titleEN: '',
+      name: '',
       email: '',
-      selectedFilesDE: [],
-      selectedFilesEN: [],
-
-      errors: {},
-      imageListOpen: false
+      password: '',
+      password2: '',
+      errors: {}
     }
   }
 
@@ -73,11 +72,10 @@ class TrainingTeamContent extends Component {
             teamId: item._id,
             handle: item.handle,
             tag: item.tag && item.tag,
-            titleDE: item.name && item.name,
-            titleEN: item.en ? item.en.title : '',
+            name: item.name && item.name,
             email: item.email ? item.email : '',
-            selectedFilesDE: item.files && item.files.de,
-            selectedFilesEN: item.files && item.files.en
+            password: '',
+            password2: ''
           })
         }
       }
@@ -92,11 +90,10 @@ class TrainingTeamContent extends Component {
             handle: '',
             category: 'trainingTeam',
             tag: 'trainingTeam',
-            titleDE: '',
-            titleEN: '',
+
             email: '',
-            selectedFilesDE: [],
-            selectedFilesEN: []
+            password: '',
+            password2: ''
           })
         } else {
           this.props.getById(this.props.match.params.teamId, 'trainingTeam')
@@ -155,22 +152,22 @@ class TrainingTeamContent extends Component {
     })
   }
 
-  saveContent = () => {
+  updateContent = () => {
     const saveData = {
-      category: 'trainingTeam',
-      tag: this.state.tag,
       id: this.state.teamId,
-      titleDE: this.state.titleDE,
-      titleEN: this.state.titleEN,
-      email: this.state.email
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
     }
     console.log(saveData)
-    this.props.saveContent(saveData)
+    this.props.updateUserPassword(saveData)
   }
 
   render() {
     return (
       <div className={styles['training-team-wrapper']}>
+        {/* <input type="hidden" value="password" /> */}
         <div
           className={cx(styles['training-team-content-container'], {
             [styles['blank-item']]: this.state.blankItem
@@ -203,10 +200,10 @@ class TrainingTeamContent extends Component {
                       colorScheme="light"
                       placeholder="Name deutsch"
                       type="text"
-                      name="titleDE"
-                      value={this.state.titleDE}
+                      name="name"
+                      value={this.state.name}
                       onChange={this.onChange}
-                      error={this.state.errors.titleDE}
+                      error={this.state.errors.name}
                     />
                   </div>
                 </div>
@@ -247,7 +244,7 @@ class TrainingTeamContent extends Component {
                   />
                 </div>
               </div>
-              {this.props.training.trainingTeam && (
+              {this.props.auth.user && (
                 <div className={styles['training-team-content--sidebar']}>
                   <div
                     className={
@@ -308,7 +305,7 @@ class TrainingTeamContent extends Component {
                         commonStyles['button--save'],
                         styles['button--save']
                       )}
-                      onClick={this.saveContent}
+                      onClick={this.updateContent}
                     >
                       Speichern
                     </button>
@@ -320,35 +317,19 @@ class TrainingTeamContent extends Component {
                       styles['training-team-content--sidebar--buttons']
                     }
                   >
-                    {this.props.training.trainingTeam && (
-                      <button
-                        className={cx(
-                          commonStyles['button'],
-                          commonStyles['button--delete']
-                        )}
-                        onClick={this.confirmDelete.bind(this, this.deleteNews)}
-                      >
-                        Beitrag Löschen
-                      </button>
-                    )}
+                    <button
+                      className={cx(
+                        commonStyles['button'],
+                        commonStyles['button--delete']
+                      )}
+                      onClick={this.confirmDelete.bind(this, this.deleteNews)}
+                    >
+                      Beitrag Löschen
+                    </button>
                   </div>
                 </div>
               )}
             </div>
-          )}
-        </div>
-        <div>
-          {this.props.match.params.teamId === 'neu' && (
-            <button
-              className={cx(
-                commonStyles['button'],
-                commonStyles['button--save'],
-                styles['button--save']
-              )}
-              onClick={this.saveContent}
-            >
-              Speichern
-            </button>
           )}
         </div>
       </div>
@@ -357,6 +338,7 @@ class TrainingTeamContent extends Component {
 }
 
 const mapStateToProps = state => ({
+  auth: state.auth,
   training: state.training,
   media: state.media,
   errors: state.errors
@@ -365,7 +347,7 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    saveContent,
+    updateUserPassword,
     getById,
     toggleOnline,
     deleteById,

@@ -7,6 +7,7 @@ import PrivateRoute from './common/PrivateRoute'
 
 import { authLinks } from './layout/nav-links'
 
+import Loading from './Loading/Loading'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 import Login from './auth/Login'
@@ -63,6 +64,7 @@ class Admin extends Component {
 
     const authRoutes = (
       <div className="Admin">
+        <Loading />
         <Header />
         <Route exact path="/admin/login" component={Login} />
 

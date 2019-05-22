@@ -26,6 +26,22 @@ export const registerUser = userData => dispatch => {
       })
     )
 }
+export const updateUserPassword = userData => dispatch => {
+  axios
+    .post('/api/users/update', userData)
+    .then(res => {
+      dispatch({
+        type: CREATE_NEW_USER,
+        payload: res.data
+      })
+    })
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    )
+}
 
 // Login - Get user token
 export const loginUser = userData => dispatch => {
