@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PrivateRoute from '../../../common/PrivateRoute'
 
-import { getAll } from '../../../../../actions/adminActions'
+import { getAll, clearSingle } from '../../../../../actions/adminActions'
 
 import ItemAddList from '../../../common/ItemAddList/ItemAddList'
 // import NewsList from './NewsList/NewsList'
+import TeamGeneral from './TeamGeneral/TeamGeneral'
 import TeamContent from './TeamContent/TeamContent'
 
 import styles from './Team.module.sass'
@@ -27,6 +28,7 @@ class Team extends Component {
             category={'team'}
           />
         )}
+        {/* {!this.props.team.teamMember && <TeamGeneral />} */}
         <PrivateRoute
           path="/admin/dashboard/team/:teamId"
           component={TeamContent}
@@ -42,5 +44,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getAll }
+  { getAll, clearSingle }
 )(Team)

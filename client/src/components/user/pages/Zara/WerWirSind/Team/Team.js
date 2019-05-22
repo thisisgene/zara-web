@@ -20,7 +20,6 @@ class Team extends Component {
     }
     this.props.getAllByProps('team', queryArray)
   }
-
   render() {
     const { activeLanguage } = this.props
     const { team } = this.props.team
@@ -28,11 +27,32 @@ class Team extends Component {
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
     }
+    let teamHero
+    let heroUnit
+    if (team) {
+      teamHero = team.filter(tm => tm.subCategory === 'heroUnit')
+      console.log(teamHero)
+      heroUnit = {
+        class: 'big-image',
+        titleImage: teamHero[0] && teamHero[0].titleImage,
+        de: {
+          title: teamHero[0] && teamHero[0].de.title,
+          text: teamHero[0] && teamHero[0].de.description
+        },
+        en: {
+          title: teamHero[0] && teamHero[0].en.title,
+          text: teamHero[0] && teamHero[0].en.description
+        }
+      }
+    }
     return (
       <div>
         {lang && teamData && team && (
           <div>
-            <HeroUnit data={teamData.heroUnit} lang={lang} />
+            <HeroUnit
+              data={teamHero[0] ? heroUnit : teamData.heroUnit}
+              lang={lang}
+            />
             <div className={styles['team-member-container']}>
               {lang && lang === 'de' ? (
                 <h1>ZARA Vorstand</h1>

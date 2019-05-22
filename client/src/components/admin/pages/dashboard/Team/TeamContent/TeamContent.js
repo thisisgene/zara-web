@@ -59,6 +59,11 @@ class TeamContent extends Component {
     this.props.match.params.teamId !== 'neu' &&
       this.props.getById(this.props.match.params.teamId, 'team')
   }
+
+  componentWillUnmount() {
+    this.props.clearSingle('team')
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       if (this.props.errors !== prevProps.errors) {
