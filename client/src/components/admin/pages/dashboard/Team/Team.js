@@ -6,7 +6,6 @@ import { getAll, clearSingle } from '../../../../../actions/adminActions'
 
 import ItemAddList from '../../../common/ItemAddList/ItemAddList'
 // import NewsList from './NewsList/NewsList'
-import TeamGeneral from './TeamGeneral/TeamGeneral'
 import TeamContent from './TeamContent/TeamContent'
 
 import styles from './Team.module.sass'
