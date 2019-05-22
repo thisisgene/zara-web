@@ -256,6 +256,15 @@ class TrainingContent extends Component {
 
   render() {
     const { users } = this.props.auth
+    const emptyLabel = {
+      label: '',
+      value: ''
+    }
+    let labelList
+    if (this.props.label && this.props.label.labels) {
+      labelList = this.props.label.labels.filter(label => !label.isDeleted)
+      labelList.unshift(emptyLabel)
+    }
     return (
       <div className={styles['trainings-wrapper']}>
         <div
@@ -295,7 +304,7 @@ class TrainingContent extends Component {
                           // isMulti
                           value={this.state.label}
                           name={'label'}
-                          options={this.props.label.labels}
+                          options={labelList}
                           className={styles['label-select']}
                           placeholder={'Label auswählen'}
                           onChange={this.onLabelSelectChange}
@@ -478,11 +487,11 @@ class TrainingContent extends Component {
                                 <td>{user.name}</td>
                                 <td
                                   className={cx(styles['td-interest'], {
-                                    [styles[
-                                      'interested'
-                                    ]]: this.state.interestedTrainers.includes(
-                                      user._id
-                                    )
+                                    [styles['interested']]:
+                                      this.state.interestedTrainers &&
+                                      this.state.interestedTrainers.includes(
+                                        user._id
+                                      )
                                   })}
                                 >
                                   <img className={'fas fa-fire'} />
