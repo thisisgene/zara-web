@@ -47,7 +47,7 @@ const TrainingSchema = new Schema({
   privContentMarked: {
     type: String
   },
-  labels: [{ name: String, color: String }],
+  label: { name: String, label: String, value: String, color: String },
   interestedTrainers: Array,
   assignedTrainer1: {
     id: String,

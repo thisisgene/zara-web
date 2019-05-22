@@ -5,6 +5,15 @@ const LabelSchema = new Schema({
   title: {
     type: String
   },
+
+  value: {
+    type: String
+  },
+
+  label: {
+    type: String
+  },
+
   color: {
     type: String
   },

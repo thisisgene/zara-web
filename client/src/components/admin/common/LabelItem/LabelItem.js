@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { GithubPicker } from 'react-color'
 
 import TextFieldGroup from '../TextFieldGroup'
+import SimpleLabel from './SimpleLabel'
 
 import styles from './LabelItem.module.sass'
 
@@ -97,22 +98,11 @@ export default class LabelItem extends Component {
             </div>
           </div>
         ) : (
-          <div
-            className={styles['label-item--basic']}
-            onClick={this.onEditClick}
-            style={{ backgroundColor: this.state.color }}
-          >
-            <span
-              className={styles['label-item--basic__fill']}
-              style={{ backgroundColor: this.state.color }}
-            />
-            <div
-              className={styles['label-item--basic__text']}
-              style={{ '--color': this.state.color }}
-            >
-              {this.state.title}
-            </div>
-          </div>
+          <SimpleLabel
+            onEditClick={this.onEditClick}
+            color={this.state.color}
+            title={this.state.title}
+          />
         )}
       </div>
     )

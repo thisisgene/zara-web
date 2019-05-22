@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 
 import Calendar from 'react-calendar'
 
+import Select from 'react-select'
+
 import TextFieldGroup from '../../../common/TextFieldGroup'
 import TextareaFieldGroup from '../../../common/TextareaFieldGroup'
 import FileSelectGroup from '../../../common/FileSelectGroup'
 import TeamSelectGroup from '../../../common/TeamSelectGroup'
-
 import { confirmAlert } from 'react-confirm-alert'
 
 import {
@@ -45,7 +46,7 @@ class TrainingContent extends Component {
       location: '',
       address1: '',
       fee: 0,
-      labels: [],
+      label: {},
       interestedTrainers: [],
       assignedTrainer1: {},
       assignedTrainer2: {},
@@ -64,6 +65,7 @@ class TrainingContent extends Component {
       this.props.getById(this.props.match.params.trainingId, 'trainings')
     // this.props.getAll('trainingTeam')
     this.props.getAllUsers()
+    this.props.getAll('label')
   }
 
   componentDidUpdate(prevProps) {
@@ -97,7 +99,7 @@ class TrainingContent extends Component {
             location: item.location && item.location.title,
             address1: item.location && item.location.address1,
             fee: item.fee ? item.fee : 0,
-            labels: item.labels,
+            label: item.label,
             interestedTrainers: item.interestedTrainers,
             assignedTrainer1: item.assignedTrainer1,
             assignedTrainer2: item.assignedTrainer2,
@@ -128,7 +130,7 @@ class TrainingContent extends Component {
             location: '',
             address1: '',
             fee: 0,
-            labels: [],
+            label: {},
             interestedTrainers: [],
             assignedTrainer1: {},
             assignedTrainer2: {},
@@ -167,6 +169,14 @@ class TrainingContent extends Component {
       }
     })
   }
+
+  onLabelSelectChange = selected => {
+    console.log(selected)
+    this.setState({ label: selected }, () => {
+      console.log('LABEL: ', this.state.label)
+    })
+  }
+
   onAssignChange = (state, id, name) => {
     this.setState({ [state]: { id: id, name: name } })
   }
@@ -213,7 +223,7 @@ class TrainingContent extends Component {
       location: this.state.location,
       address1: this.state.address1,
       fee: this.state.fee,
-      labels: this.state.labels,
+      label: this.state.label,
       assignedTrainer1: this.state.assignedTrainer1,
       assignedTrainer2: this.state.assignedTrainer2,
       emailSubject: this.state.emailSubject,
@@ -234,7 +244,7 @@ class TrainingContent extends Component {
       location: this.state.location,
       address1: this.state.address1,
       fee: this.state.fee,
-      labels: this.state.labels,
+      label: this.state.label,
       assignedTrainer1: this.state.assignedTrainer1,
       assignedTrainer2: this.state.assignedTrainer2,
       emailSubject: this.state.emailSubject,
@@ -280,14 +290,17 @@ class TrainingContent extends Component {
                         styles['trainings-content--text__content--left__labels']
                       }
                     >
-                      <FileSelectGroup
-                        optionContent={['schule', 'haus']}
-                        defaultValue={this.state.labels}
-                        name="labelSelect"
-                        onSelectChange={this.onSelectChange}
-                        lang="DE"
-                        placeholder="Labels wählen ..."
-                      />
+                      {this.props.label && this.props.label.labels && (
+                        <Select
+                          // isMulti
+                          value={this.state.label}
+                          name={'label'}
+                          options={this.props.label.labels}
+                          className={styles['label-select']}
+                          placeholder={'Label auswählen'}
+                          onChange={this.onLabelSelectChange}
+                        />
+                      )}
                     </div>
                     <div
                       className={
@@ -697,6 +710,7 @@ const mapStateToProps = state => ({
   training: state.training,
   auth: state.auth,
   media: state.media,
+  label: state.label,
   errors: state.errors
 })
 

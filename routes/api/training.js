@@ -272,7 +272,12 @@ router.post(
         address1: body.address1 && body.address1
       },
       fee: body.fee && body.fee,
-      labels: body.labels && body.labels,
+      label: body.label && {
+        title: body.label.title,
+        value: body.label.value,
+        label: body.label.label,
+        color: body.label.color
+      },
       assignedTrainer1: {
         id: body.assignedTrainer1 && body.assignedTrainer1.id,
         name: body.assignedTrainer1 && body.assignedTrainer1.name
@@ -321,7 +326,12 @@ router.post(
             address1: body.address1
           },
           fee: body.fee && body.fee,
-          labels: body.labels && body.labels,
+          label: body.label && {
+            title: body.label.title,
+            value: body.label.value,
+            label: body.label.label,
+            color: body.label.color
+          },
 
           assignedTrainer1: {
             id: body.assignedTrainer1 && body.assignedTrainer1.id,

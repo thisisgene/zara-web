@@ -100,6 +100,7 @@ class Calendar extends Component {
 
           events.push({
             id: training._id,
+            color: training.label ? training.label.color : '#3174AD',
             title: training.title,
             start: startDate,
             end: endDate,
@@ -133,6 +134,20 @@ class Calendar extends Component {
     this.props.history.push(`/admin/training/calendar`)
   }
 
+  eventStyleGetter = event => {
+    var style = {
+      backgroundColor: event.color,
+      // borderRadius: '0px',
+      // opacity: 0.8,
+      color: '#fff'
+      // border: '0px',
+      // display: 'block'
+    }
+    return {
+      style: style
+    }
+  }
+
   render() {
     const { events } = this.state
 
@@ -150,7 +165,7 @@ class Calendar extends Component {
               showMultiDayTimes
               startAccessor="start"
               endAccessor="end"
-              // components={components}
+              eventPropGetter={event => this.eventStyleGetter(event)}
               onSelectEvent={event => this.onClick(event)}
             />
             <Route

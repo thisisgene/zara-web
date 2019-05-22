@@ -39,6 +39,8 @@ router.post(
 
     const newLabel = new Label({
       title: body.title,
+      value: body.title,
+      label: body.title,
       color: body.color
     })
     console.log(newLabel)
@@ -68,6 +70,8 @@ router.post(
       {
         $set: {
           title: body.title,
+          value: body.title,
+          label: body.title,
           color: body.color
         }
       },

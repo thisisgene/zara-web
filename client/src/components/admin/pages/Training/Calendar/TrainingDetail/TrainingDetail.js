@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Moment from 'react-moment'
 
-import { saveContent } from '../../../../../../actions/adminActions'
+import SimpleLabel from '../../../../common/LabelItem/SimpleLabel'
 
 import cx from 'classnames'
 import commonStyles from '../../../../common/Common.module.sass'
@@ -38,6 +38,12 @@ export default class TrainingDetail extends Component {
             <div className={styles['training-detail']}>
               <div className={styles['training-detail--title']}>
                 <h1>{training[0].title}</h1>
+                {training[0].label && (
+                  <SimpleLabel
+                    color={training[0].label.color}
+                    title={training[0].label.value}
+                  />
+                )}
               </div>
               <div className={styles['training-detail--meta']}>
                 <div className={styles['training-detail--meta--date']}>
