@@ -206,42 +206,43 @@ class TrainingTeamContent extends Component {
                       error={this.state.errors.name}
                     />
                   </div>
-                </div>
-                <div className={styles['training-team-content--text__email']}>
-                  <TextFieldGroup
-                    className={commonStyles['input']}
-                    colorScheme="light"
-                    placeholder="E-mail Adresse"
-                    type="email"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                    error={this.state.errors.email}
-                  />
-                </div>
-                <div
-                  className={styles['training-team-content--text__password']}
-                >
-                  <TextFieldGroup
-                    className={commonStyles['input']}
-                    colorScheme="light"
-                    placeholder="password"
-                    type="password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
-                    error={this.state.errors.password}
-                  />
-                  <TextFieldGroup
-                    className={commonStyles['input']}
-                    colorScheme="light"
-                    placeholder="password"
-                    type="password"
-                    name="password2"
-                    value={this.state.password2}
-                    onChange={this.onChange}
-                    error={this.state.errors.password2}
-                  />
+
+                  <div className={styles['training-team-content--text__email']}>
+                    <TextFieldGroup
+                      className={commonStyles['input']}
+                      colorScheme="light"
+                      placeholder="E-mail Adresse"
+                      type="email"
+                      name="email"
+                      value={this.state.email}
+                      onChange={this.onChange}
+                      error={this.state.errors.email}
+                    />
+                  </div>
+                  <div
+                    className={styles['training-team-content--text__password']}
+                  >
+                    <TextFieldGroup
+                      className={commonStyles['input']}
+                      colorScheme="light"
+                      placeholder="password"
+                      type="password"
+                      name="password"
+                      value={this.state.password}
+                      onChange={this.onChange}
+                      error={this.state.errors.password}
+                    />
+                    <TextFieldGroup
+                      className={commonStyles['input']}
+                      colorScheme="light"
+                      placeholder="password"
+                      type="password"
+                      name="password2"
+                      value={this.state.password2}
+                      onChange={this.onChange}
+                      error={this.state.errors.password2}
+                    />
+                  </div>
                 </div>
               </div>
               {this.props.auth.user && (
