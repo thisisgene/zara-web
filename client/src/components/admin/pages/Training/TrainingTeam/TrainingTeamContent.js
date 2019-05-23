@@ -247,7 +247,7 @@ class TrainingTeamContent extends Component {
               </div>
               {this.props.auth.user && (
                 <div className={styles['training-team-content--sidebar']}>
-                  <div
+                  {/* <div
                     className={
                       styles['training-team-content--sidebar__state-indicator']
                     }
@@ -294,7 +294,7 @@ class TrainingTeamContent extends Component {
                         ? 'Offline nehmen'
                         : 'Online stellen'}
                     </button>
-                  </div>
+                  </div> */}
                   <div
                     className={
                       styles['training-team-content--sidebar--buttons']

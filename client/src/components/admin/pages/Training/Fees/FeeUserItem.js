@@ -11,7 +11,7 @@ export default class FeeUserItem extends Component {
   state = {
     totalFee: 0,
     subTotals: [],
-    collapsed: false,
+    collapsed: true,
     selectedMonth: this.props.selectedMonth
   }
 

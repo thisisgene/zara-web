@@ -71,42 +71,44 @@ class Calendar extends Component {
     if (prevProps !== this.props) {
       let events = []
       this.props.training.trainings &&
-        this.props.training.trainings.map(training => {
-          console.log(moment(training.date).year())
-          let startDate = new Date(
-            moment(training.date).format('YYYY'),
-            moment(training.date).format('MM') - 1,
-            moment(training.date).format('DD'),
-            training.timeFrom
-              ? parseInt(training.timeFrom.substring(0, 2))
-              : parseInt('12'),
-            training.timeFrom
-              ? parseInt(training.timeFrom.slice(-2))
-              : parseInt('00'),
-            parseInt('0')
-          )
-          let endDate = new Date(
-            moment(training.date).format('YYYY'),
-            moment(training.date).format('MM') - 1,
-            moment(training.date).format('DD'),
-            training.timeUntil
-              ? parseInt(training.timeUntil.substring(0, 2))
-              : parseInt('18'),
-            training.timeUntil
-              ? parseInt(training.timeUntil.slice(-2))
-              : parseInt('00'),
-            parseInt('0')
-          )
+        this.props.training.trainings
+          .filter(training => training.isOnline)
+          .map(training => {
+            console.log(moment(training.date).year())
+            let startDate = new Date(
+              moment(training.date).format('YYYY'),
+              moment(training.date).format('MM') - 1,
+              moment(training.date).format('DD'),
+              training.timeFrom
+                ? parseInt(training.timeFrom.substring(0, 2))
+                : parseInt('12'),
+              training.timeFrom
+                ? parseInt(training.timeFrom.slice(-2))
+                : parseInt('00'),
+              parseInt('0')
+            )
+            let endDate = new Date(
+              moment(training.date).format('YYYY'),
+              moment(training.date).format('MM') - 1,
+              moment(training.date).format('DD'),
+              training.timeUntil
+                ? parseInt(training.timeUntil.substring(0, 2))
+                : parseInt('18'),
+              training.timeUntil
+                ? parseInt(training.timeUntil.slice(-2))
+                : parseInt('00'),
+              parseInt('0')
+            )
 
-          events.push({
-            id: training._id,
-            color: training.label ? training.label.color : '#3174AD',
-            title: training.title,
-            start: startDate,
-            end: endDate,
-            desc: training.privContentMarked
+            events.push({
+              id: training._id,
+              color: training.label ? training.label.color : '#3174AD',
+              title: training.title,
+              start: startDate,
+              end: endDate,
+              desc: training.privContentMarked
+            })
           })
-        })
       this.setState({ events })
     }
   }
