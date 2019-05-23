@@ -26,5 +26,5 @@ export const longText = {
 }
 
 export const teamImage = {
-  src: 'team/ZARA_Team.jpg'
+  src: 'team/ZARA_Team_2019n.jpg'
 }
