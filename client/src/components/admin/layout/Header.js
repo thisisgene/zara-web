@@ -6,6 +6,7 @@ import { logoutUser } from '../../../actions/authActions'
 import { clearAll } from '../../../actions/adminActions'
 
 import Logo from '../common/zara_logo.png'
+import TrainingLogo from '../common/zara_training-logo-quer-kurz.png'
 
 import { authLinks } from './nav-links'
 
@@ -37,15 +38,27 @@ class Header extends Component {
             className={cx(globalStyles['navbar-brand'], styles['logo'])}
             to="/admin/"
           >
-            <img
-              src={Logo}
-              height="30"
-              className={cx(
-                globalStyles['d-inline-block'],
-                globalStyles['align-top']
-              )}
-              alt=""
-            />
+            {(user && user.securityLevel === 16) || user.securityLevel === 5 ? (
+              <img
+                src={TrainingLogo}
+                height="30"
+                className={cx(
+                  globalStyles['d-inline-block'],
+                  globalStyles['align-top']
+                )}
+                alt=""
+              />
+            ) : (
+              <img
+                src={Logo}
+                height="30"
+                className={cx(
+                  globalStyles['d-inline-block'],
+                  globalStyles['align-top']
+                )}
+                alt=""
+              />
+            )}
             {/* <h1>ZARA</h1> */}
             <span>admin</span>
           </Link>
