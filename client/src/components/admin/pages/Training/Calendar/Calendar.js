@@ -100,13 +100,32 @@ class Calendar extends Component {
               parseInt('0')
             )
 
+            let labelBackColor = '#DAD9DA'
+            let labelColor = '#999999'
+            let trainer1 = training.assignedTrainer1.id
+              ? training.assignedTrainer1.name
+              : null
+            let trainer2 = training.assignedTrainer2.id
+              ? training.assignedTrainer2.name
+              : null
+            if (
+              training.assignedTrainer1.id == undefined ||
+              training.assignedTrainer1.id == 'none' ||
+              training.assignedTrainer2.id == undefined ||
+              training.assignedTrainer2.id == 'none'
+            ) {
+              labelBackColor = training.label ? training.label.color : '#3174AD'
+              labelColor = '#fff'
+            }
             events.push({
               id: training._id,
-              color: training.label ? training.label.color : '#3174AD',
+              trainer1: trainer1,
+              trainer2: trainer2,
+              backColor: labelBackColor,
+              color: labelColor,
               title: training.title,
               start: startDate,
-              end: endDate,
-              desc: training.privContentMarked
+              end: endDate
             })
           })
       this.setState({ events })
@@ -138,10 +157,10 @@ class Calendar extends Component {
 
   eventStyleGetter = event => {
     var style = {
-      backgroundColor: event.color,
+      backgroundColor: event.backColor,
       // borderRadius: '0px',
       // opacity: 0.8,
-      color: '#fff'
+      color: event.color
       // border: '0px',
       // display: 'block'
     }

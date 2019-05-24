@@ -16,13 +16,11 @@ class Dashboard extends Component {
             <NavLink
               className={cx(
                 styles['category-nav--link'],
-                styles['category-nav--link__media']
+                styles['category-nav--link__hidden']
               )}
               activeClassName={styles['cat-active']}
               to="/admin/training/media"
-            >
-              Bilder
-            </NavLink>
+            />
             <NavLink
               className={styles['category-nav--link']}
               activeClassName={styles['cat-active']}
