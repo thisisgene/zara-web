@@ -86,11 +86,6 @@ export default class TrainingDetail extends Component {
                     __html: training[0].pubContentMarked
                   }}
                 />
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: training[0].privContentMarked
-                  }}
-                />
               </div>
               <div className={styles['training-detail--trainers']}>
                 <div
@@ -195,7 +190,7 @@ export default class TrainingDetail extends Component {
                         className={styles['button-submit']}
                         disabled={true}
                       >
-                        Training bereits augebucht
+                        Training bereits zugeteilt
                       </button>
                     )}
                   </div>
