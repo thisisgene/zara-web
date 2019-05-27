@@ -20,24 +20,28 @@ import styles from './Calendar.module.sass'
 
 const localizer = BigCalendar.momentLocalizer(moment)
 
-const Events = [
-  {
-    id: 14,
-    title: 'Today',
-    start: new Date(new Date().setHours(new Date().getHours() - 3)),
-    end: new Date(new Date().setHours(new Date().getHours() + 3)),
-    content: 'Hallo das war jetzt aber nicht ausgemacht.'
-  },
-  {
-    id: 15,
-    title: 'Today',
-    start: new Date(new Date().setHours(new Date().getHours() - 8)),
-    end: new Date(new Date().setHours(new Date().getHours() - 3))
+class EventComponent extends React.Component {
+  render() {
+    console.log(this.props)
+    return (
+      <div>
+        <div className={styles['event-title']}>{this.props.event.title}</div>
+        <div className={styles['event-trainers']}>
+          <div>
+            <i className={'fa fa-user'} /> {this.props.event.trainer1}
+          </div>
+          <div>
+            <i className={'fa fa-user'} /> {this.props.event.trainer2}
+          </div>
+        </div>
+      </div>
+    )
   }
-]
-// let components = {
-//   event: TrainingDetail
-// }
+}
+
+let components = {
+  event: EventComponent
+}
 const messages = {
   allDay: 'Ganztägig',
   previous: 'Vorige',
@@ -181,7 +185,22 @@ class Calendar extends Component {
               localizer={localizer}
               messages={messages}
               events={events}
-              views={allViews}
+              // views={{
+              //   month: true,
+              //   week: EventComponent
+              //   // myweek: false
+              // }}
+              components={{
+                week: {
+                  event: EventComponent
+                },
+                day: {
+                  event: EventComponent
+                },
+                agenda: {
+                  event: EventComponent
+                }
+              }}
               step={60}
               showMultiDayTimes
               startAccessor="start"
