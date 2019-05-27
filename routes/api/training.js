@@ -485,15 +485,49 @@ router.post(
     User.find({ securityLevel: 16 })
       .exec()
       .then(users => {
-        users.map(user => {
-          let userEmail = {
-            name: user.name,
-            email: user.email
-          }
-          emailList.push(`${user.name} <${user.email}>`)
-        })
-        // console.log(req.body)
-        sendTrainingEmail(emailList, req.body, res)
+        if (req.body.recipients === 'all') {
+          users.map(user => {
+            emailList.push(`${user.name} <${user.email}>`)
+          })
+          sendTrainingEmail(emailList, req.body, res)
+          // console.log(req.body)
+        } else if (req.body.recipients === 'interested') {
+          console.log('interessiert!')
+          Training.findOne({ _id: req.body.id })
+            .exec()
+            .then(training => {
+              // console.log(training.interestedTrainers)
+              training.interestedTrainers &&
+                users
+                  .filter(user => training.interestedTrainers.includes(user.id))
+                  .map(user => {
+                    emailList.push(`${user.name} <${user.email}>`)
+                  })
+              // console.log(emailList)
+              sendTrainingEmail(emailList, req.body, res)
+            })
+        } else if (req.body.recipients === 'chosen') {
+          Training.findOne({ _id: req.body.id })
+            .exec()
+            .then(training => {
+              training.assignedTrainer1 &&
+                users
+                  .filter(user => training.assignedTrainer1.id === user.id)
+                  .map(user => {
+                    emailList.push(`${user.name} <${user.email}>`)
+                  })
+              training.assignedTrainer2 &&
+                users
+                  .filter(user => training.assignedTrainer2.id === user.id)
+                  .map(user => {
+                    emailList.push(`${user.name} <${user.email}>`)
+                  })
+              // console.log(emailList)
+              sendTrainingEmail(emailList, req.body, res)
+            })
+        }
+
+        // sendTrainingEmail(emailList, req.body, res)
       })
     // console.log(req.body)
   }
@@ -502,7 +536,9 @@ router.post(
 sendTrainingEmail = (emailList, content, res) => {
   const link = `https://zara.or.at/admin/training/calendar/event/${content.id}`
   const outputPlain = `${content.pubContent} Link: ${link}`
-  const outputHtml = `
+  let outputHtml = ''
+  if (content.includeOriginalMessage) {
+    outputHtml = `
     <h2>${content.title}</h2>
     <p>${moment(content.date).format('DD. MMMM YYYY')}</p>
     <p>${content.timeFrom} - ${content.timeUntil}</p>
@@ -510,10 +546,14 @@ sendTrainingEmail = (emailList, content, res) => {
     <p>${content.address1}</p>
     <p>${marked(content.pubContent)}</p>
     <br />
-    <h1>TEST!</h1>
-    <a href="${link}">${link}</a>
     
+    <a href="${link}">${link}</a>
   `
+  }
+  if (content.addMessage) {
+    outputHtml += `<br />-----<br /><p>${marked(content.addMessage)}</p>`
+  }
+
   console.log(outputHtml)
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -548,7 +588,13 @@ sendTrainingEmail = (emailList, content, res) => {
 
     // Preview only available when sending through an Ethereal account
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
-    res.send('success')
+    Training.findOneAndUpdate(
+      { _id: content.id },
+      { emailSent: true },
+      { safe: true, new: true }
+    ).then(training => {
+      res.send('success')
+    })
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
   })

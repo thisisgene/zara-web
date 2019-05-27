@@ -53,8 +53,10 @@ class TrainingContent extends Component {
       emailSubject: '',
       pubContent: '',
       privContent: '',
+      emailSent: false,
       addMessage: '',
-      hasBeenSent: false,
+      addMessageTo: 'chosen',
+      includeOriginalMessage: false,
       errors: {},
       imageListOpen: false
     }
@@ -106,7 +108,7 @@ class TrainingContent extends Component {
             emailSubject: item.emailSubject,
             pubContent: item.pubContent,
             privContent: item.privContent,
-            hasBeenSent: item.hasBeenSent
+            emailSent: item.emailSent
           })
         }
       }
@@ -137,8 +139,10 @@ class TrainingContent extends Component {
             emailSubject: '',
             pubContent: '',
             privContent: '',
+            emailSent: false,
             addMessage: '',
-            hasBeenSent: false,
+            addMessageTo: 'chosen',
+            includeOriginalMessage: false,
             errors: {},
             imageListOpen: false
           })
@@ -180,6 +184,16 @@ class TrainingContent extends Component {
   onAssignChange = (state, id, name) => {
     this.setState({ [state]: { id: id, name: name } })
   }
+
+  onAddMessageToChange = e => {
+    this.setState(
+      {
+        addMessageTo: e.target.value
+      },
+      () => console.log(this.state.addMessageTo)
+    )
+  }
+
   onSelectChange = (lang, selected) => {
     console.log(lang, selected)
 
@@ -188,6 +202,12 @@ class TrainingContent extends Component {
   onDateChange = date => {
     console.log(date)
     this.setState({ date })
+  }
+
+  onCheckChange = e => {
+    this.setState({
+      [e.target.name]: e.target.checked
+    })
   }
 
   deleteTraining = () => {
@@ -227,7 +247,33 @@ class TrainingContent extends Component {
       assignedTrainer1: this.state.assignedTrainer1,
       assignedTrainer2: this.state.assignedTrainer2,
       emailSubject: this.state.emailSubject,
-      pubContent: this.state.pubContent
+      pubContent: this.state.pubContent,
+      includeOriginalMessage: true,
+      recipients: 'all'
+    }
+    this.props.sendInitialTrainingEmail(emailData)
+  }
+  sendAddMessageEmail = () => {
+    const emailData = {
+      category: 'trainings',
+      tag: this.state.tag,
+      id: this.state.trainingId,
+      title: this.state.title,
+      date: this.state.date,
+      timeFrom: this.state.timeFrom,
+      timeUntil: this.state.timeUntil,
+      location: this.state.location,
+      address1: this.state.address1,
+      fee: this.state.fee,
+      label: this.state.label,
+      assignedTrainer1: this.state.assignedTrainer1,
+      assignedTrainer2: this.state.assignedTrainer2,
+      emailSubject: this.state.emailSubject,
+      pubContent: this.state.pubContent,
+      addMessage: this.state.addMessage,
+      recipients: this.state.addMessageTo,
+
+      includeOriginalMessage: this.state.includeOriginalMessage
     }
     this.props.sendInitialTrainingEmail(emailData)
   }
@@ -439,182 +485,244 @@ class TrainingContent extends Component {
                     />
                   </div>
                 </div>
-                <div className={styles['trainings-content--bottom-bar']}>
-                  {/* <button
-                    className={cx(
-                      commonStyles['button'],
-                      commonStyles['button--save'],
-                      styles['button--save']
-                    )}
-                    onClick={this.saveContent}
-                  >
-                    Speichern
-                  </button> */}
-                  <button
-                    className={cx(
-                      commonStyles['button'],
-                      commonStyles['button--yellow'],
-                      styles['button--email']
-                    )}
-                    onClick={this.sendContentEmail}
-                  >
-                    E-mail senden
-                  </button>
-                </div>
-                <div className={styles['trainings-content--team-select']}>
-                  {users && (
+                {this.state.trainingId !== 'neu' && (
+                  <div className={styles['trainings-content--bottom-bar']}>
                     <div>
-                      <table
+                      {/* <button
+                      className={cx(
+                        commonStyles['button'],
+                        commonStyles['button--save'],
+                        styles['button--save']
+                      )}
+                      onClick={this.saveContent}
+                    >
+                      Speichern
+                    </button> */}
+                      <button
                         className={cx(
-                          globalStyles['table'],
-                          globalStyles['table-sm'],
-                          styles['user-table']
+                          commonStyles['button'],
+                          commonStyles['button--yellow'],
+                          styles['button--email']
                         )}
+                        onClick={this.sendContentEmail}
                       >
-                        <thead>
-                          <tr>
-                            <th />
-                            <th>interessiert</th>
-                            <th>zugeteilt 1</th>
-                            <th>zugeteilt 2</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {users
-                            .filter(user => user.securityLevel === 16)
-                            .map((user, index) => (
-                              <tr key={index}>
-                                <td>{user.name}</td>
-                                <td
-                                  className={cx(styles['td-interest'], {
-                                    [styles['interested']]:
-                                      this.state.interestedTrainers &&
-                                      this.state.interestedTrainers.includes(
-                                        user._id
-                                      )
-                                  })}
-                                >
-                                  <img className={'fas fa-fire'} />
-                                </td>
+                        {this.state.emailSent
+                          ? 'E-mail erneut an ALLE senden'
+                          : 'E-mail senden'}
+                      </button>
+                    </div>
+
+                    <div className={styles['trainings-content--team-select']}>
+                      {users && (
+                        <div>
+                          <table
+                            className={cx(
+                              globalStyles['table'],
+                              globalStyles['table-sm'],
+                              styles['user-table']
+                            )}
+                          >
+                            <thead>
+                              <tr>
+                                <th />
+                                <th>interessiert</th>
+                                <th>zugeteilt 1</th>
+                                <th>zugeteilt 2</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {users
+                                .filter(user => user.securityLevel === 16)
+                                .map((user, index) => (
+                                  <tr key={index}>
+                                    <td>{user.name}</td>
+                                    <td
+                                      className={cx(styles['td-interest'], {
+                                        [styles['interested']]:
+                                          this.state.interestedTrainers &&
+                                          this.state.interestedTrainers.includes(
+                                            user._id
+                                          )
+                                      })}
+                                    >
+                                      <img className={'fas fa-fire'} />
+                                    </td>
+                                    <td>
+                                      <input
+                                        type="radio"
+                                        id={`at1${user._id}`}
+                                        name="assignedTrainer1"
+                                        value={user._id}
+                                        onClick={this.onAssignChange.bind(
+                                          this,
+                                          'assignedTrainer1',
+                                          user._id,
+                                          user.name
+                                        )}
+                                        checked={
+                                          this.state.assignedTrainer1 &&
+                                          this.state.assignedTrainer1.id ===
+                                            user._id
+                                        }
+                                        disabled={
+                                          this.state.assignedTrainer2 &&
+                                          this.state.assignedTrainer2.id ===
+                                            user._id
+                                        }
+                                      />
+                                      <label htmlFor={`at1${user._id}`}>
+                                        <i className={'fa fa-user'} />
+                                      </label>
+                                    </td>
+                                    <td>
+                                      <input
+                                        type="radio"
+                                        id={`at2${user._id}`}
+                                        name="assignedTrainer2"
+                                        value={user._id}
+                                        onClick={this.onAssignChange.bind(
+                                          this,
+                                          'assignedTrainer2',
+                                          user._id,
+                                          user.name
+                                        )}
+                                        checked={
+                                          this.state.assignedTrainer2 &&
+                                          this.state.assignedTrainer2.id ===
+                                            user._id
+                                        }
+                                        disabled={
+                                          this.state.assignedTrainer1 &&
+                                          this.state.assignedTrainer1.id ===
+                                            user._id
+                                        }
+                                      />
+                                      <label htmlFor={`at2${user._id}`}>
+                                        <i className={'fa fa-user'} />
+                                      </label>
+                                    </td>
+                                  </tr>
+                                ))}
+                              <tr>
+                                <td />
+                                <td />
                                 <td>
                                   <input
                                     type="radio"
-                                    id={`at1${user._id}`}
+                                    id="at1none"
                                     name="assignedTrainer1"
-                                    value={user._id}
                                     onClick={this.onAssignChange.bind(
                                       this,
                                       'assignedTrainer1',
-                                      user._id,
-                                      user.name
+                                      'none',
+                                      ''
                                     )}
                                     checked={
                                       this.state.assignedTrainer1 &&
-                                      this.state.assignedTrainer1.id ===
-                                        user._id
-                                    }
-                                    disabled={
-                                      this.state.assignedTrainer2 &&
-                                      this.state.assignedTrainer2.id ===
-                                        user._id
+                                      this.state.assignedTrainer1.id === 'none'
                                     }
                                   />
-                                  <label htmlFor={`at1${user._id}`}>
-                                    <i className={'fa fa-user'} />
+                                  <label htmlFor={`at1none`}>
+                                    <i className={'fa fa-user-slash'} />
                                   </label>
                                 </td>
                                 <td>
                                   <input
                                     type="radio"
-                                    id={`at2${user._id}`}
+                                    id="at2none"
                                     name="assignedTrainer2"
-                                    value={user._id}
                                     onClick={this.onAssignChange.bind(
                                       this,
                                       'assignedTrainer2',
-                                      user._id,
-                                      user.name
+                                      'none',
+                                      ''
                                     )}
                                     checked={
                                       this.state.assignedTrainer2 &&
-                                      this.state.assignedTrainer2.id ===
-                                        user._id
-                                    }
-                                    disabled={
-                                      this.state.assignedTrainer1 &&
-                                      this.state.assignedTrainer1.id ===
-                                        user._id
+                                      this.state.assignedTrainer2.id === 'none'
                                     }
                                   />
-                                  <label htmlFor={`at2${user._id}`}>
-                                    <i className={'fa fa-user'} />
+                                  <label htmlFor={`at2none`}>
+                                    <i className={'fa fa-user-slash'} />
                                   </label>
                                 </td>
                               </tr>
-                            ))}
-                          <tr>
-                            <td />
-                            <td />
-                            <td>
-                              <input
-                                type="radio"
-                                id="at1none"
-                                name="assignedTrainer1"
-                                onClick={this.onAssignChange.bind(
-                                  this,
-                                  'assignedTrainer1',
-                                  'none',
-                                  ''
-                                )}
-                                checked={
-                                  this.state.assignedTrainer1 &&
-                                  this.state.assignedTrainer1.id === 'none'
-                                }
-                              />
-                              <label htmlFor={`at1none`}>
-                                <i className={'fa fa-user-slash'} />
-                              </label>
-                            </td>
-                            <td>
-                              <input
-                                type="radio"
-                                id="at2none"
-                                name="assignedTrainer2"
-                                onClick={this.onAssignChange.bind(
-                                  this,
-                                  'assignedTrainer2',
-                                  'none',
-                                  ''
-                                )}
-                                checked={
-                                  this.state.assignedTrainer2 &&
-                                  this.state.assignedTrainer2.id === 'none'
-                                }
-                              />
-                              <label htmlFor={`at2none`}>
-                                <i className={'fa fa-user-slash'} />
-                              </label>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-                <div
-                  className={styles['trainings-content--additional-message']}
-                >
-                  <TextareaFieldGroup
-                    className={cx(commonStyles['input'], styles['private'])}
-                    colorScheme="light"
-                    placeholder="Zusätzliche Nachricht"
-                    type="text"
-                    name="addMessage"
-                    value={this.state.addMessage}
-                    onChange={this.onChange}
-                    error={this.state.errors.addMessage}
-                  />
-                </div>
+                    <div
+                      className={
+                        styles['trainings-content--additional-message']
+                      }
+                    >
+                      <TextareaFieldGroup
+                        className={cx(commonStyles['input'], styles['private'])}
+                        colorScheme="light"
+                        placeholder="Zusätzliche Nachricht"
+                        type="text"
+                        name="addMessage"
+                        value={this.state.addMessage}
+                        onChange={this.onChange}
+                        error={this.state.errors.addMessage}
+                      />
+                      <div>
+                        <div>An: </div>
+                        <input
+                          type="radio"
+                          id={`opt_chosen`}
+                          name="addMessageTo"
+                          value={'chosen'}
+                          onClick={this.onAddMessageToChange}
+                          checked={this.state.addMessageTo === 'chosen'}
+                        />{' '}
+                        <label htmlFor="opt_chosen">Zugeteilte</label>
+                        <input
+                          type="radio"
+                          id={`opt_interested`}
+                          name="addMessageTo"
+                          value={'interested'}
+                          onClick={this.onAddMessageToChange}
+                          checked={this.state.addMessageTo === 'interested'}
+                        />{' '}
+                        <label htmlFor="opt_interested">Interessierte</label>
+                        <input
+                          type="radio"
+                          id={`opt_all`}
+                          name="addMessageTo"
+                          value={'all'}
+                          onClick={this.onAddMessageToChange}
+                          checked={this.state.addMessageTo === 'all'}
+                        />{' '}
+                        <label htmlFor="opt_all">Alle</label>
+                      </div>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="includeOriginalMessage"
+                          name="includeOriginalMessage"
+                          value={'includeOriginalMessage'}
+                          onClick={this.onCheckChange}
+                          checked={this.state.includeOriginalMessage}
+                        />{' '}
+                        <label htmlFor="includeOriginalMessage">
+                          Original Nachricht mitsenden
+                        </label>
+                      </div>
+                      <button
+                        className={cx(
+                          commonStyles['button'],
+                          commonStyles['button--yellow'],
+                          styles['button--email']
+                        )}
+                        onClick={this.sendAddMessageEmail}
+                      >
+                        E-mail senden
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             {this.props.training.training && (
