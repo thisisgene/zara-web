@@ -277,6 +277,41 @@ class TrainingContent extends Component {
     }
     this.props.sendInitialTrainingEmail(emailData)
   }
+  sendTrainerConfirmation = () => {
+    const confirmMessage = `<p>
+    Liebe Trainer*innen,
+    <br /><br />
+    vielen Dank für Eure Rückmeldungen. Eingeteilt für den Workshop wurden 
+    <br /><br />
+    <b>${this.state.assignedTrainer1.name}</b> und <b>${
+      this.state.assignedTrainer2.name
+    }</b>
+    <br /> <br />
+    Mit besten Grüßen,
+    Bianca & Alice
+    </p>`
+    const emailData = {
+      category: 'trainings',
+      tag: this.state.tag,
+      id: this.state.trainingId,
+      title: this.state.title,
+      date: this.state.date,
+      timeFrom: this.state.timeFrom,
+      timeUntil: this.state.timeUntil,
+      location: this.state.location,
+      address1: this.state.address1,
+      fee: this.state.fee,
+      label: this.state.label,
+      assignedTrainer1: this.state.assignedTrainer1,
+      assignedTrainer2: this.state.assignedTrainer2,
+      emailSubject: `Trainer*innen für ${this.state.title}`,
+      pubContent: this.state.pubContent,
+      addMessage: confirmMessage,
+      recipients: 'interestedAndChosen',
+      includeOriginalMessage: true
+    }
+    this.props.sendInitialTrainingEmail(emailData)
+  }
 
   saveContent = () => {
     const saveData = {
@@ -649,6 +684,14 @@ class TrainingContent extends Component {
                               </tr>
                             </tbody>
                           </table>
+                          {this.props.training.training.assignedTrainer1 ===
+                            this.state.assignedTrainer1 &&
+                            this.props.training.training.assignedTrainer2 ===
+                              this.state.assignedTrainer2 && (
+                              <button onClick={this.sendTrainerConfirmation}>
+                                Bestätigung senden
+                              </button>
+                            )}
                         </div>
                       )}
                     </div>

@@ -363,11 +363,11 @@ export const sendInitialTrainingEmail = saveData => dispatch => {
     })
     .catch(err => {
       dispatch({
-        type: GET_ERRORS,
-        payload: err.response
+        type: UNSET_GENERAL_LOADING
       })
       dispatch({
-        type: UNSET_GENERAL_LOADING
+        type: GET_ERRORS,
+        payload: err.response
       })
     })
 }

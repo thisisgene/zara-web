@@ -496,7 +496,7 @@ router.post(
           Training.findOne({ _id: req.body.id })
             .exec()
             .then(training => {
-              // console.log(training.interestedTrainers)
+              console.log(training.interestedTrainers)
               training.interestedTrainers &&
                 users
                   .filter(user => training.interestedTrainers.includes(user.id))
@@ -525,6 +525,39 @@ router.post(
               // console.log(emailList)
               sendTrainingEmail(emailList, req.body, res)
             })
+        } else if (req.body.recipients === 'interestedAndChosen') {
+          Training.findOne({ _id: req.body.id })
+            .exec()
+            .then(training => {
+              training.interestedTrainers &&
+                users
+                  .filter(user => training.interestedTrainers.includes(user.id))
+                  .map(user => {
+                    emailList.push(`${user.name} <${user.email}>`)
+                  })
+              training.assignedTrainer1 &&
+                users
+                  .filter(
+                    user =>
+                      training.assignedTrainer1.id === user.id &&
+                      !training.interestedTrainers.includes(user.id)
+                  )
+                  .map(user => {
+                    emailList.push(`${user.name} <${user.email}>`)
+                  })
+              training.assignedTrainer2 &&
+                users
+                  .filter(
+                    user =>
+                      training.assignedTrainer2.id === user.id &&
+                      !training.interestedTrainers.includes(user.id)
+                  )
+                  .map(user => {
+                    emailList.push(`${user.name} <${user.email}>`)
+                  })
+              // console.log(emailList)
+              sendTrainingEmail(emailList, req.body, res)
+            })
         }
 
         // sendTrainingEmail(emailList, req.body, res)
@@ -537,8 +570,11 @@ sendTrainingEmail = (emailList, content, res) => {
   const link = `https://zara.or.at/admin/training/calendar/event/${content.id}`
   const outputPlain = `${content.pubContent} Link: ${link}`
   let outputHtml = ''
+  if (content.addMessage) {
+    outputHtml += `<p>${marked(content.addMessage)}</p><br />-----<br />`
+  }
   if (content.includeOriginalMessage) {
-    outputHtml = `
+    outputHtml += `
     <h2>${content.title}</h2>
     <p>${moment(content.date).format('DD. MMMM YYYY')}</p>
     <p>${content.timeFrom} - ${content.timeUntil}</p>
@@ -549,9 +585,6 @@ sendTrainingEmail = (emailList, content, res) => {
     
     <a href="${link}">${link}</a>
   `
-  }
-  if (content.addMessage) {
-    outputHtml += `<br />-----<br /><p>${marked(content.addMessage)}</p>`
   }
 
   console.log(outputHtml)
@@ -580,24 +613,30 @@ sendTrainingEmail = (emailList, content, res) => {
   console.log('hola')
 
   // send mail with defined transport object
-  transporter.sendMail(trainingMailOptions, (error, info) => {
-    if (error) {
-      return console.log(error)
-    }
-    console.log('Message sent: %s', info.messageId)
+  if (emailList.length > 0) {
+    transporter.sendMail(trainingMailOptions, (error, info) => {
+      if (error) {
+        return console.log(error)
+      }
+      console.log('Message sent: %s', info.messageId)
 
-    // Preview only available when sending through an Ethereal account
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
-    Training.findOneAndUpdate(
-      { _id: content.id },
-      { emailSent: true },
-      { safe: true, new: true }
-    ).then(training => {
-      res.send('success')
+      // Preview only available when sending through an Ethereal account
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+      Training.findOneAndUpdate(
+        { _id: content.id },
+        { emailSent: true },
+        { safe: true, new: true }
+      )
+        .then(training => {
+          res.send('success')
+        })
+        .catch(err => res.send(err))
+      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     })
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  })
+  } else {
+    res.status(404).json({ error: 'No recipients' })
+  }
 }
 
 ///////////////////////// HONORARE
