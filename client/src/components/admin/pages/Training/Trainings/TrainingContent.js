@@ -547,9 +547,11 @@ class TrainingContent extends Component {
                       </button>
                     </div>
 
-                    <div className={styles['trainings-content--team-select']}>
+                    <div>
                       {users && (
-                        <div>
+                        <div
+                          className={styles['trainings-content--team-select']}
+                        >
                           <table
                             className={cx(
                               globalStyles['table'],
@@ -684,14 +686,41 @@ class TrainingContent extends Component {
                               </tr>
                             </tbody>
                           </table>
-                          {this.props.training.training.assignedTrainer1 ===
-                            this.state.assignedTrainer1 &&
-                            this.props.training.training.assignedTrainer2 ===
-                              this.state.assignedTrainer2 && (
-                              <button onClick={this.sendTrainerConfirmation}>
-                                Bestätigung senden
-                              </button>
-                            )}
+
+                          <div className={styles['confirm-button']}>
+                            <button
+                              disabled={
+                                this.props.training.training
+                                  .assignedTrainer1 !==
+                                  this.state.assignedTrainer1 ||
+                                this.props.training.training
+                                  .assignedTrainer2 !==
+                                  this.state.assignedTrainer2 ||
+                                this.state.assignedTrainer1 === null ||
+                                this.state.assignedTrainer2 === null ||
+                                this.state.assignedTrainer1.id === 'none' ||
+                                this.state.assignedTrainer2.id === 'none' ||
+                                !this.state.assignedTrainer1.id ||
+                                !this.state.assignedTrainer2.id
+                              }
+                              onClick={this.sendTrainerConfirmation}
+                            >
+                              Bestätigung senden
+                            </button>
+                            <div>
+                              <p>
+                                {!(
+                                  this.props.training.training
+                                    .assignedTrainer1 ===
+                                    this.state.assignedTrainer1 &&
+                                  this.props.training.training
+                                    .assignedTrainer2 ===
+                                    this.state.assignedTrainer2
+                                ) &&
+                                  'Änderungen müssen zuerst gespeichert werden!'}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
