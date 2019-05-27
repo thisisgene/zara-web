@@ -739,7 +739,13 @@ class TrainingContent extends Component {
                         onChange={this.onChange}
                         error={this.state.errors.addMessage}
                       />
-                      <div>
+                      <div
+                        className={
+                          styles[
+                            'trainings-content--additional-message__recipients'
+                          ]
+                        }
+                      >
                         <div>An: </div>
                         <input
                           type="radio"
