@@ -171,7 +171,7 @@ class ImageGridObject extends Component {
                 <div className={styles['grid-item--title']}>
                   {item[lang].title}
                 </div>
-                <span>Download:</span>
+                <span>Online Download:</span>
                 <div className={styles['grid-item--links__language']}>
                   {item.links.map(link => (
                     <a
@@ -184,11 +184,20 @@ class ImageGridObject extends Component {
                   ))}
                 </div>
                 {item.toOrder && (
-                  <button
-                    onClick={this.increaseCount.bind(this, item.id, this.title)}
-                  >
-                    {lang === 'de' ? 'In den Bestellkorb' : 'Add to cart'}
-                  </button>
+                  <div>
+                    <hr />
+                    <button
+                      onClick={this.increaseCount.bind(
+                        this,
+                        item.id,
+                        this.title
+                      )}
+                    >
+                      {lang === 'de'
+                        ? 'Druckversion Bestellen'
+                        : 'Order print version'}
+                    </button>
+                  </div>
                 )}
                 {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
               </div>
