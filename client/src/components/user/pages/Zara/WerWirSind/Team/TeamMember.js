@@ -12,7 +12,7 @@ export default class TeamMember extends Component {
           [styles['cat-intro']]: content.isCategoryIntro
         })}
       >
-        {content.subCategory !== 'vorstand' && !content.isCategoryIntro && (
+        {!content.isCategoryIntro && (
           <div className={styles['team-member--image']}>
             {content.titleImage && content.titleImage.originalName && (
               <img

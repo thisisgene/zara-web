@@ -59,7 +59,7 @@ class Team extends Component {
               ) : (
                 <h1>ZARA Vorstand</h1>
               )}
-              <div id="vorstand" className={styles['team--vorstand']}>
+              <div id="vorstand" className={styles['team--gok']}>
                 {team
                   .filter(member => member.subCategory === 'vorstand')
                   .map(member => (
