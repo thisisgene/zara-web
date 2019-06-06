@@ -90,6 +90,10 @@ const NewsSchema = new Schema({
     type: Boolean,
     default: false
   },
+  onNewsBox: {
+    type: Boolean,
+    default: false
+  },
   position: {
     type: Number
   },

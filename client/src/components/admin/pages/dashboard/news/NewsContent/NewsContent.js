@@ -33,7 +33,7 @@ class NewsContent extends Component {
     super(props)
     this.state = {
       isOnline: false,
-      onHomePage: false,
+      onNewsBox: false,
       blankItem: true,
       newsId: props.match.params.newsId,
       handle: '',
@@ -81,7 +81,7 @@ class NewsContent extends Component {
 
           newsId: item._id,
           handle: item.handle,
-          onHomePage: item.onHomePage,
+          onNewsBox: item.onNewsBox,
           isOnline: item.isOnline,
           category: item.tag,
           date: moment(item.date).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
@@ -121,7 +121,7 @@ class NewsContent extends Component {
             newsId: this.props.match.params.newsId,
             handle: '',
             isOnline: false,
-            onHomePage: false,
+            onNewsBox: false,
             category: 'news',
             date: moment(new Date()).format('YYYY-MM-DD'),
             titleDE: '',
@@ -172,6 +172,10 @@ class NewsContent extends Component {
     this.setState({ imageListOpen: !this.state.imageListOpen })
   }
 
+  onCheckClick = e => {
+    this.setState({ [e.target.name]: e.target.checked })
+  }
+
   saveContent = () => {
     console.log(this.state.descriptionDE.toString('html'))
     const shortDescDE = this.state.shortDescriptionDE
@@ -183,7 +187,7 @@ class NewsContent extends Component {
       tag: this.state.category,
       date: this.state.date,
       id: this.state.newsId,
-      onHomePage: this.state.onHomePage,
+      onNewsBox: this.state.onNewsBox,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
       shortDescriptionDE: shortDescDE.toString('html'),
@@ -488,6 +492,17 @@ class NewsContent extends Component {
                   <div className={styles['news-content--sidebar__links--box']}>
                     <p>{`https://zara.or.at/de/n/${this.state.newsId}`}</p>
                   </div> */}
+                </div>
+                <hr />
+                <div>
+                  <input
+                    id="onNewsBox"
+                    type="checkbox"
+                    onClick={this.onCheckClick}
+                    checked={this.state.onNewsBox}
+                    name="onNewsBox"
+                  />{' '}
+                  <label htmlFor="onNewsBox">Newsbox auf Startseite</label>
                 </div>
                 <hr />
                 <div

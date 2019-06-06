@@ -85,6 +85,7 @@ $kolumne-color: #237F65
     display: flex
     margin: 1px 0
     padding: .2rem .3rem
+    position: relative
     background: rgba(white, .1)
     color: white
     // border-left: 3px solid #fff
@@ -115,6 +116,29 @@ $kolumne-color: #237F65
     .list-image img
       width: 20px
       margin-right: .3rem
+
+    .home-page-icon
+      position: absolute
+      right: .7rem
+      top: -1px
+      width: 16px
+      filter: drop-shadow(1px 1px 2px rgba(black, .5))
+      font-size: .55rem
+      padding: 3px 1px
+      color: #444
+      width: 0
+      height: 0
+      display: flex
+      border-style: solid
+      border-width: 23px 8px 0 8px
+      border-color: #F17D08 transparent transparent transparent
+      &__flag
+        position: absolute
+        top: -22px
+        left: -4px
+        
+      &__flag--tip
+
 .dragged
   a
     font:

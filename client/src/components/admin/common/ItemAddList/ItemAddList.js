@@ -37,6 +37,13 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
         : baseCat === 'training' && category === 'team'
         ? item.name
         : item.de.title}
+      {category === 'news' && item.onNewsBox && (
+        <div className={styles['home-page-icon']}>
+          <div className={styles['home-page-icon__flag']}>
+            <i className={'fa fa-home'} />
+          </div>
+        </div>
+      )}
     </NavLink>
   </div>
 ))
