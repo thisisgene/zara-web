@@ -23,7 +23,7 @@ export default function NewsCard({ content, lang }) {
               {content[lang].category}
             </div>
             <span>|</span> */}
-          <div className={styles['news-card--news-head__date']}>
+          <div className={styles['news-card--body__date']}>
             {content[lang].date}
           </div>
         </div>
@@ -33,12 +33,12 @@ export default function NewsCard({ content, lang }) {
             {content[lang].title}
           </div>
         )}
-        {content[lang].shortDescription && (
+        {/* {content[lang].shortDescription && (
           <div
             className={styles['news-card--body__text']}
             dangerouslySetInnerHTML={{ __html: shortText }}
           />
-        )}
+        )} */}
       </div>
     </div>
   )
