@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import moment from 'moment'
+
 import cx from 'classnames'
 import styles from './NewsCollection.module.sass'
 
@@ -12,8 +14,18 @@ export default function NewsCard({ content, lang }) {
   return (
     <div>
       <div className={styles['news-card--image']}>
-        {content.image && (
-          <img src={`/assets/img/${content.image}`} alt={content.image} />
+        {content.titleImage && content.titleImage.originalName ? (
+          <img
+            src={`/assets/media/${content.titleImage.category}/${
+              content.titleImage.originalName
+            }`}
+            alt={content.image}
+          />
+        ) : (
+          <img
+            src={`/assets/img/news/news_placeholder.png`}
+            alt={content.image}
+          />
         )}
       </div>
 
@@ -24,7 +36,9 @@ export default function NewsCard({ content, lang }) {
             </div>
             <span>|</span> */}
           <div className={styles['news-card--body__date']}>
-            {content[lang].date}
+            {moment(content.date)
+              .locale('de')
+              .format('DD. MMMM YYYY')}
           </div>
         </div>
 

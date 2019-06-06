@@ -34,6 +34,7 @@ class NewsContent extends Component {
     this.state = {
       isOnline: false,
       onNewsBox: false,
+      firstOnNewsBox: false,
       blankItem: true,
       newsId: props.match.params.newsId,
       handle: '',
@@ -82,6 +83,7 @@ class NewsContent extends Component {
           newsId: item._id,
           handle: item.handle,
           onNewsBox: item.onNewsBox,
+          firstOnNewsBox: item.firstOnNewsBox,
           isOnline: item.isOnline,
           category: item.tag,
           date: moment(item.date).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
@@ -122,6 +124,7 @@ class NewsContent extends Component {
             handle: '',
             isOnline: false,
             onNewsBox: false,
+            firstOnNewsBox: false,
             category: 'news',
             date: moment(new Date()).format('YYYY-MM-DD'),
             titleDE: '',
@@ -188,6 +191,7 @@ class NewsContent extends Component {
       date: this.state.date,
       id: this.state.newsId,
       onNewsBox: this.state.onNewsBox,
+      firstOnNewsBox: this.state.firstOnNewsBox,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
       shortDescriptionDE: shortDescDE.toString('html'),
@@ -503,6 +507,15 @@ class NewsContent extends Component {
                     name="onNewsBox"
                   />{' '}
                   <label htmlFor="onNewsBox">Newsbox auf Startseite</label>
+                  <br />
+                  <input
+                    id="firstOnNewsBox"
+                    type="checkbox"
+                    onClick={this.onCheckClick}
+                    checked={this.state.firstOnNewsBox}
+                    name="firstOnNewsBox"
+                  />{' '}
+                  <label htmlFor="firstOnNewsBox">1. Platz</label>
                 </div>
                 <hr />
                 <div

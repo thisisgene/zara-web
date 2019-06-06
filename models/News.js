@@ -94,6 +94,10 @@ const NewsSchema = new Schema({
     type: Boolean,
     default: false
   },
+  firstOnNewsBox: {
+    type: Boolean,
+    default: false
+  },
   position: {
     type: Number
   },

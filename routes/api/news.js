@@ -167,6 +167,7 @@ router.post(
           date: body.date,
           handle: newsFields.handle,
           onNewsBox: body.onNewsBox,
+          firstOnNewsBox: body.firstOnNewsBox,
           titleImage: {
             originalName: body.titleImage,
             imageId: body.imageId,

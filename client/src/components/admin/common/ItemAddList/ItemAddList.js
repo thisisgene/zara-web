@@ -38,7 +38,11 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
         ? item.name
         : item.de.title}
       {category === 'news' && item.onNewsBox && (
-        <div className={styles['home-page-icon']}>
+        <div
+          className={cx(styles['home-page-icon'], {
+            [styles['first-item']]: item.firstOnNewsBox
+          })}
+        >
           <div className={styles['home-page-icon__flag']}>
             <i className={'fa fa-home'} />
           </div>
