@@ -33,6 +33,7 @@ class NewsContent extends Component {
     super(props)
     this.state = {
       isOnline: false,
+      onHomePage: false,
       blankItem: true,
       newsId: props.match.params.newsId,
       handle: '',
@@ -80,6 +81,7 @@ class NewsContent extends Component {
 
           newsId: item._id,
           handle: item.handle,
+          onHomePage: item.onHomePage,
           isOnline: item.isOnline,
           category: item.tag,
           date: moment(item.date).format('YYYY-MM-DD'), // GET DATE TO WORK!!!!
@@ -119,6 +121,7 @@ class NewsContent extends Component {
             newsId: this.props.match.params.newsId,
             handle: '',
             isOnline: false,
+            onHomePage: false,
             category: 'news',
             date: moment(new Date()).format('YYYY-MM-DD'),
             titleDE: '',
@@ -180,6 +183,7 @@ class NewsContent extends Component {
       tag: this.state.category,
       date: this.state.date,
       id: this.state.newsId,
+      onHomePage: this.state.onHomePage,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
       shortDescriptionDE: shortDescDE.toString('html'),

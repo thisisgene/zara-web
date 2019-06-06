@@ -114,12 +114,12 @@ export const faqData = [
     de: {
       title: 'Ist die ZARA Beratung kostenlos?',
       text:
-        'JA!<br><br>Die ZARA Beratung ist absolut und fortwährend kostenlos.<br><br>Sie erhalten zeitnah Informationen zu möglichen (rechtlichen) Schritten und erfahren, wie Sie selbst aktiv werden können. Die Mitarbeiter*innen können Sie bei der Durchführung der rechtlichen aber auch anderen möglichen Schritte unterstützen. Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (1) 929 13 99 – einen Termin. Sie können auch eine schriftliche Beratung über dieses <a href="../beratung/melden/rassismus">Meldeformular</a> bekommen.'
+        'JA!<br><br>Die ZARA Beratung ist absolut und fortwährend kostenlos.<br><br>Sie erhalten zeitnah Informationen zu möglichen (rechtlichen) Schritten und erfahren, wie Sie selbst aktiv werden können. Die Mitarbeiter*innen können Sie bei der Durchführung der rechtlichen aber auch anderen möglichen Schritte unterstützen. Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin. Sie können auch eine schriftliche Beratung über dieses <a href="../beratung/melden/rassismus">Meldeformular</a> bekommen.'
     },
     en: {
       title: 'Ist die ZARA Beratung kostenlos?',
       text:
-        'JA!<br><br>Die ZARA Beratung ist absolut und fortwährend kostenlos.<br><br>Sie erhalten zeitnah Informationen zu möglichen (rechtlichen) Schritten und erfahren, wie Sie selbst aktiv werden können. Die Mitarbeiter*innen können Sie bei der Durchführung der rechtlichen aber auch anderen möglichen Schritte unterstützen. Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (1) 929 13 99 – einen Termin. Sie können auch eine schriftliche Beratung über dieses [Meldeformular] bekommen.'
+        'JA!<br><br>Die ZARA Beratung ist absolut und fortwährend kostenlos.<br><br>Sie erhalten zeitnah Informationen zu möglichen (rechtlichen) Schritten und erfahren, wie Sie selbst aktiv werden können. Die Mitarbeiter*innen können Sie bei der Durchführung der rechtlichen aber auch anderen möglichen Schritte unterstützen. Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin. Sie können auch eine schriftliche Beratung über dieses [Meldeformular] bekommen.'
     }
   },
   {

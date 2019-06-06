@@ -52,7 +52,7 @@ export const footerContent = {
         },
         {
           icon: 'phone',
-          text: '+43 (1) 929 13 99'
+          text: '+43 (0) 1 929 13 99'
         },
         {
           icon: 'email',
@@ -136,7 +136,7 @@ export const footerContent = {
         },
         {
           icon: 'phone',
-          text: '+43 (1) 929 13 99'
+          text: '+43 (0) 1 929 13 99'
         },
         {
           icon: 'email',

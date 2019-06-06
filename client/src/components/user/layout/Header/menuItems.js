@@ -38,14 +38,14 @@ const menuItems = [
         title: 'Kontakt Beratung',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'beratung@zara.or.at'
       },
       en: {
         title: 'Kontakt Beratung',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'beratung@zara.or.at'
       }
     },
@@ -107,14 +107,14 @@ const menuItems = [
         title: 'Kontakt Training',
         address:
           'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99 19',
+        phone: '+43 (0) 1 929 13 99 19',
         email: 'info@zara-training.at'
       },
       en: {
         title: 'Kontakt Training',
         address:
           'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99 19',
+        phone: '+43 (0) 1 929 13 99 19',
         email: 'info@zara-training.at'
       }
     },
@@ -168,14 +168,14 @@ const menuItems = [
         title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'mitmischen@zara.or.at'
       },
       en: {
         title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'mitmischen@zara.or.at'
       }
     },
@@ -231,14 +231,14 @@ const menuItems = [
         title: 'Kontakt Presse & Wissen',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'presse@zara.or.at'
       },
       en: {
         title: 'Kontakt Presse & Wissen',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'presse@zara.or.at'
       }
     },
@@ -328,14 +328,14 @@ const menuItems = [
         title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'office@zara.or.at'
       },
       en: {
         title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
-        phone: '+43 (1) 929 13 99',
+        phone: '+43 (0) 1 929 13 99',
         email: 'office@zara.or.at'
       }
     },

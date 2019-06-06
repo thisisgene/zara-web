@@ -35,7 +35,7 @@ export default class StepSix extends Component {
         </p>
         <p>
           Sollten Sie eine kostenlose persönliche Beratung in Anspruch nehmen
-          wollen, vereinbaren Sie bitte telefonisch unter: +43 (1) 929 13 99
+          wollen, vereinbaren Sie bitte telefonisch unter: +43 (0) 1 929 13 99
           einen Termin mit unseren Beratungsteam.
         </p>
         <button className={styles['reset-button']} onClick={this.onClick}>

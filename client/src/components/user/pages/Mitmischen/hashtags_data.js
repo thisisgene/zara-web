@@ -18,12 +18,12 @@ export const oneLineAlert = {
   de: {
     title: 'Persönliches Beratungsgespräch',
     text:
-      'Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie telefonisch – unter +43 (1) 929 13 99 – mit uns einen Termin.'
+      'Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie telefonisch – unter +43 (0) 1 929 13 99 – mit uns einen Termin.'
   },
   en: {
     title: 'Persönliches Beratungsgespräch',
     text:
-      'Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie telefonisch – unter +43 (1) 929 13 99 – mit uns einen Termin.'
+      'Wenn Sie ein persönliches Treffen wahrnehmen möchten, vereinbaren Sie telefonisch – unter +43 (0) 1 929 13 99 – mit uns einen Termin.'
   }
 }
 
