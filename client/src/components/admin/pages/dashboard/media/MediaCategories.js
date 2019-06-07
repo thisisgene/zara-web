@@ -40,6 +40,14 @@ export default class MediaCategories extends Component {
               Team
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/admin/dashboard/media/files"
+              activeClassName={styles['active']}
+            >
+              Files
+            </NavLink>
+          </li>
         </ul>
       </div>
     )
