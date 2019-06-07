@@ -26,9 +26,7 @@ export default class ImageBox extends Component {
       ]
     })
   }
-  onCopy = () => {
-    console.log('hallo')
-  }
+
   render() {
     const { images } = this.props
     return (
@@ -37,14 +35,11 @@ export default class ImageBox extends Component {
           <div className={styles['image-box']}>
             {images.map(image => (
               <div className={styles['image-box--item']}>
-                {/* <div className={styles['image-box--item__copy']}> */}
                 <CopyToClipboard
                   className={styles['image-box--item__copy']}
                   text={`https://assets.zara.or.at/media/${image.category}/${
                     image.originalName
                   }`}
-                  onCopy={this.onCopy}
-                  onClick={this.onCopy}
                 >
                   <span>
                     <i className={'fa fa-copy'} />
