@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode'
 
 import {
   GET_ERRORS,
+  CLEAR_ERRORS,
   CREATE_NEW_USER,
   SET_CURRENT_USER,
   GET_ALL_USERS
@@ -11,6 +12,9 @@ import {
 
 // Register User
 export const registerUser = userData => dispatch => {
+  dispatch({
+    type: CLEAR_ERRORS
+  })
   axios
     .post('/api/users/register', userData)
     .then(res => {
@@ -27,6 +31,9 @@ export const registerUser = userData => dispatch => {
     )
 }
 export const updateUserPassword = userData => dispatch => {
+  dispatch({
+    type: CLEAR_ERRORS
+  })
   axios
     .post('/api/users/update', userData)
     .then(res => {
@@ -45,6 +52,9 @@ export const updateUserPassword = userData => dispatch => {
 
 // Login - Get user token
 export const loginUser = userData => dispatch => {
+  dispatch({
+    type: CLEAR_ERRORS
+  })
   axios
     .post('/api/users/login', userData)
     .then(res => {

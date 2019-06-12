@@ -53,6 +53,9 @@ import {
 
 // Get all
 export const getAll = category => dispatch => {
+  dispatch({
+    type: CLEAR_ERRORS
+  })
   switch (category) {
     case 'label':
       axios
@@ -245,6 +248,9 @@ export const getByProperty = (category, property, value) => dispatch => {
 }
 // Get by ID
 export const getById = (id, category) => dispatch => {
+  dispatch({
+    type: CLEAR_ERRORS
+  })
   switch (category) {
     case 'news':
       axios
@@ -395,6 +401,9 @@ export const setInterestedTrainer = saveData => dispatch => {
 // Create or update content
 export const saveContent = saveData => dispatch => {
   console.log(saveData)
+  dispatch({
+    type: CLEAR_ERRORS
+  })
   dispatch(setGeneralLoading())
 
   switch (saveData.category) {
