@@ -34,8 +34,8 @@ export const reportGridData = [
     toOrder: true,
     image: 'zara_rr/covers/Deckblatt_RR2018.jpg',
     links: [
-      { link: 'pdf/ZARA-Rassimus_Report_2018-144.pdf', linkText: 'deutsch' },
-      { link: 'pdf/ZARA-Rassimus_Report_2018-EN-144.pdf', linkText: 'englisch' }
+      { link: 'pdf/ZARA-Rassismus_Report_2018-144.pdf', linkText: 'deutsch' },
+      { link: 'pdf/ZARA-Rassismus_Report_2018_EN.pdf', linkText: 'englisch' }
     ],
     de: {
       title: 'RR2018',
