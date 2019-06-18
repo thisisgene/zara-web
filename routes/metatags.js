@@ -13,6 +13,7 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
     if (newsItem) {
       fs.readFile(filePath, 'utf8', function(err, data) {
         if (err) {
+          console.log(err)
           res.send(err)
         } else {
           data = data.replace(/\$OG_TITLE/g, 'ZARA | ' + newsItem[lang].title)
@@ -24,7 +25,7 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
             /\$OG_DESCRIPTION/g,
             newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
           )
-          data.replace(
+          data = data.replace(
             /\$OG_IMAGE/g,
             `https://assets.zara.or.at/media/${newsItem.titleImage.category}/${
               newsItem.titleImage.originalName
@@ -36,6 +37,7 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
               newsItem.titleImage.originalName
             }`
           )
+
           res.send(result)
         }
       })
