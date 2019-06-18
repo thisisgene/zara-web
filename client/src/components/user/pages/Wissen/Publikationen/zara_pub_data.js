@@ -13,7 +13,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über rassistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über rassistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf allen UN-Sprachen (Arabisch, Russisch, Chinesisch, Englisch, Deutsch, Spanisch und Französisch) zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über rassistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf allen UN-Sprachen (Arabisch, Russisch, Chinesisch, Englisch, Deutsch, Spanisch und Französisch) zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -73,7 +73,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über rassistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über rassistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf allen UN-Sprachen (Arabisch, Russisch, Chinesisch, Englisch, Deutsch, Spanisch und Französisch) zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über rassistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf allen UN-Sprachen (Arabisch, Russisch, Chinesisch, Englisch, Deutsch, Spanisch und Französisch) zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -142,7 +142,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über antisemitische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über antisemitische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Ivrit, Russisch und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über antisemitische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Ivrit, Russisch und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -174,7 +174,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über antisemitische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über antisemitische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Ivrit, Russisch und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über antisemitische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Ivrit, Russisch und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -215,7 +215,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über antiziganistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über antiziganistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Romanes, BKS und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über antiziganistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Romanes, BKS und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -265,7 +265,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über Straftaten mit antimuslimischem Vourteilsmotiv und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über Straftaten mit antimuslimischem Vourteilsmotiv und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Arabisch, Farsi, Somali und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über Straftaten mit antimuslimischem Vourteilsmotiv und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Arabisch, Farsi, Somali und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -326,7 +326,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über homo- und transphobe Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über homo- und transphobe Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Arabisch, Englisch, Somali und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über homo- und transphobe Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Arabisch, Englisch, Somali und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -383,7 +383,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über misogyne Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über misogyne Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch und Englisch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über misogyne Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch und Englisch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
@@ -426,7 +426,7 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch, Englisch und als Leichter Lesen Version zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer-innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer-innen!',
+        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch, Englisch und als Leichter Lesen Version zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
