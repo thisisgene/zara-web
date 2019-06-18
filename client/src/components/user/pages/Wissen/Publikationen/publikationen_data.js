@@ -47,11 +47,11 @@ export const zaraHeroData = {
   imageAlign: 'center',
   de: {
     title: 'ZARA Publikationen',
-    text: 'Hier finden Sie demnächst ZARAs und weitere Publikationen.'
+    text: 'Hier finden Sie ZARAs und weitere Publikationen.'
   },
   en: {
     title: 'ZARA Publikationen',
-    text: 'Hier finden Sie demnächst ZARAs und weitere Publikationen.'
+    text: 'Hier finden Sie ZARAs und weitere Publikationen.'
   }
 }
 
