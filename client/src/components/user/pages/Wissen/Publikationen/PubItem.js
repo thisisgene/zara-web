@@ -17,9 +17,10 @@ export default class PubItem extends Component {
             )}
           </div>
           <div className={styles['pub-item--text']}>
-            <div className={styles['pub-item--text__title']}>
-              {content[lang].title}
-            </div>
+            <div
+              className={styles['pub-item--text__title']}
+              dangerouslySetInnerHTML={{ __html: content[lang].title }}
+            />
             <div
               className={styles['pub-item--text__body']}
               dangerouslySetInnerHTML={{
