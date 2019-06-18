@@ -242,13 +242,36 @@ export const pubData = [
       ]
     },
     en: {
-      date: '26. November 2018',
-      title: '“Know Your Rights”-Broschüren',
+      title:
+        'Was tun? Wenn Sie Betroffene*r einer antiziganistischen Straftat – <i>hate crime</i> – wurden.',
       shortDescription:
-        'Für die neuen “Know Your Rights”-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken.',
+        'Diese Broschüre informiert über antiziganistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        '<p>Für die neuen "Know Your Rights"-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Einerseits geht es darum, was Betroffene in solchen Momenten tun können, und andererseits darum, wie man als Zeug*in agieren kann, um Betroffenen den Rücken zu stärken.</p><p>Meist werden polizeiliche Amtshandlungen verantwortungsbewusst und korrekt durchgeführt und Beamt*innen leisten durch ihren Einsatz einen wesentlichen Beitrag zu einem friedlichen Miteinander. Die Broschüren sollen in jenen Momenten nützlich sein, wenn das mal nicht so sein sollte.</p><p>Es gibt immer wieder Situationen, in denen den Grund- und Menschenrechten der von einer Amtshandlung betroffenen Personen wenig bis gar keine Bedeutung beigemessen wird. Die ZARA gemeldeten Fälle zeigen auf, dass sich Alltagsrassismus und Vorurteile gegenüber bestimmten Einzelpersonen oder Gruppen, wegen ihrer angenommenen oder tatsächlichen Zugehörigkeit, sowohl in den polizeilichen Strukturen als auch in den Handlungen einzelner Polizist*innen widerspiegeln. Als Betroffene*r oder Zeug*in einer solchen Amtshandlung ist es deshalb umso wichtiger, die eigenen Rechte zu kennen, um diese auch einfordern zu können.</p><br><p>Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken. Sie finden <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/faltanleitung_minibooks.pdf">hier</a> auch eine Faltanleitung die anzeigt, wie Sie die Broschüren falten können.</p><p>Der Link zur Broschüre für Betroffene finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_b_final.pdf">Broschüre Betroffene*r</a></p><p>Der Link zur Broschüre für Zeug*in finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_z_final.pdf">Broschüre Zeug*in</a></p>',
-      linkText: 'weiterlesen'
+        'Diese Broschüre informiert über antiziganistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Romanes, BKS und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
+      linkText: 'weiterlesen',
+      download: [
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-04-Antiziganismus-de.pdf',
+          fileName: 'zara-broschuere-was_tun-04-Antiziganismus-de.pdf',
+
+          fileSize: '274 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-04-Antiziganismus-hbs.pdf',
+          fileName: 'zara-broschuere-was_tun-04-Antiziganismus-hbs.pdf',
+
+          fileSize: '270 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-04-Antiziganismus-rm.pdf',
+          fileName: 'zara-broschuere-was_tun-04-Antiziganismus-rm.pdf',
+
+          fileSize: '275 KB'
+        }
+      ]
     }
   },
   {
@@ -303,13 +326,47 @@ export const pubData = [
       ]
     },
     en: {
-      date: '26. November 2018',
-      title: '“Know Your Rights”-Broschüren',
+      title:
+        'Was tun? Wenn Sie Betroffene*r einer Straftat mit antimuslimischem Vorurteilsmotiv – <i>hate crime</i> – wurden.',
       shortDescription:
-        'Für die neuen “Know Your Rights”-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken.',
+        'Diese Broschüre informiert über Straftaten mit antimuslimischem Vourteilsmotiv und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        '<p>Für die neuen "Know Your Rights"-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Einerseits geht es darum, was Betroffene in solchen Momenten tun können, und andererseits darum, wie man als Zeug*in agieren kann, um Betroffenen den Rücken zu stärken.</p><p>Meist werden polizeiliche Amtshandlungen verantwortungsbewusst und korrekt durchgeführt und Beamt*innen leisten durch ihren Einsatz einen wesentlichen Beitrag zu einem friedlichen Miteinander. Die Broschüren sollen in jenen Momenten nützlich sein, wenn das mal nicht so sein sollte.</p><p>Es gibt immer wieder Situationen, in denen den Grund- und Menschenrechten der von einer Amtshandlung betroffenen Personen wenig bis gar keine Bedeutung beigemessen wird. Die ZARA gemeldeten Fälle zeigen auf, dass sich Alltagsrassismus und Vorurteile gegenüber bestimmten Einzelpersonen oder Gruppen, wegen ihrer angenommenen oder tatsächlichen Zugehörigkeit, sowohl in den polizeilichen Strukturen als auch in den Handlungen einzelner Polizist*innen widerspiegeln. Als Betroffene*r oder Zeug*in einer solchen Amtshandlung ist es deshalb umso wichtiger, die eigenen Rechte zu kennen, um diese auch einfordern zu können.</p><br><p>Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken. Sie finden <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/faltanleitung_minibooks.pdf">hier</a> auch eine Faltanleitung die anzeigt, wie Sie die Broschüren falten können.</p><p>Der Link zur Broschüre für Betroffene finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_b_final.pdf">Broschüre Betroffene*r</a></p><p>Der Link zur Broschüre für Zeug*in finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_z_final.pdf">Broschüre Zeug*in</a></p>',
-      linkText: 'weiterlesen'
+        'Diese Broschüre informiert über Straftaten mit antimuslimischem Vourteilsmotiv und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf Arabisch, Farsi, Somali und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
+      linkText: 'weiterlesen',
+      download: [
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-ar.pdf',
+          fileName:
+            'zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-ar.pdf',
+
+          fileSize: '328 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-de.pdf',
+          fileName:
+            'zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-de.pdf',
+
+          fileSize: '300 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-fa.pdf',
+          fileName:
+            'zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-fa.pdf',
+
+          fileSize: '353 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-so.pdf',
+          fileName:
+            'zara-broschuere-was_tun-03-Anti-Muslimischer_Rassismus-so.pdf',
+
+          fileSize: '289 KB'
+        }
+      ]
     }
   },
   {
@@ -360,13 +417,43 @@ export const pubData = [
       ]
     },
     en: {
-      date: '26. November 2018',
-      title: '“Know Your Rights”-Broschüren',
+      title:
+        'Was tun? Wenn Sie Betroffene*r einer homo- und/oder transphoben Straftat – <i>hate crime</i> – wurden.',
       shortDescription:
-        'Für die neuen “Know Your Rights”-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken.',
+        'Diese Broschüre informiert über homo- und transphobe Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        '<p>Für die neuen "Know Your Rights"-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Einerseits geht es darum, was Betroffene in solchen Momenten tun können, und andererseits darum, wie man als Zeug*in agieren kann, um Betroffenen den Rücken zu stärken.</p><p>Meist werden polizeiliche Amtshandlungen verantwortungsbewusst und korrekt durchgeführt und Beamt*innen leisten durch ihren Einsatz einen wesentlichen Beitrag zu einem friedlichen Miteinander. Die Broschüren sollen in jenen Momenten nützlich sein, wenn das mal nicht so sein sollte.</p><p>Es gibt immer wieder Situationen, in denen den Grund- und Menschenrechten der von einer Amtshandlung betroffenen Personen wenig bis gar keine Bedeutung beigemessen wird. Die ZARA gemeldeten Fälle zeigen auf, dass sich Alltagsrassismus und Vorurteile gegenüber bestimmten Einzelpersonen oder Gruppen, wegen ihrer angenommenen oder tatsächlichen Zugehörigkeit, sowohl in den polizeilichen Strukturen als auch in den Handlungen einzelner Polizist*innen widerspiegeln. Als Betroffene*r oder Zeug*in einer solchen Amtshandlung ist es deshalb umso wichtiger, die eigenen Rechte zu kennen, um diese auch einfordern zu können.</p><br><p>Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken. Sie finden <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/faltanleitung_minibooks.pdf">hier</a> auch eine Faltanleitung die anzeigt, wie Sie die Broschüren falten können.</p><p>Der Link zur Broschüre für Betroffene finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_b_final.pdf">Broschüre Betroffene*r</a></p><p>Der Link zur Broschüre für Zeug*in finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_z_final.pdf">Broschüre Zeug*in</a></p>',
-      linkText: 'weiterlesen'
+        'Diese Broschüre informiert über homo- und transphobe Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Arabisch, Englisch, Somali und Deutsch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
+      linkText: 'weiterlesen',
+      download: [
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-05-Homo-_Transphobie-ar.pdf',
+          fileName: 'zara-broschuere-was_tun-05-Homo-_Transphobie-ar.pdf',
+
+          fileSize: '366 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-05-Homo-_Transphobie-de.pdf',
+          fileName: 'zara-broschuere-was_tun-05-Homo-_Transphobie-de.pdf',
+
+          fileSize: '304 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-05-Homo-_Transphobie-en.pdf',
+          fileName: 'zara-broschuere-was_tun-05-Homo-_Transphobie-en.pdf',
+
+          fileSize: '290 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-05-Homo-_Transphobie-so.pdf',
+          fileName: 'zara-broschuere-was_tun-05-Homo-_Transphobie-so.pdf',
+
+          fileSize: '300 KB'
+        }
+      ]
     }
   },
   {
@@ -403,13 +490,29 @@ export const pubData = [
       ]
     },
     en: {
-      date: '26. November 2018',
-      title: '“Know Your Rights”-Broschüren',
+      title:
+        'Was tun? Wenn Sie Betroffene*r einer misogynen Straftat – <i>hate crime</i> – wurden.',
       shortDescription:
-        'Für die neuen “Know Your Rights”-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken.',
+        'Diese Broschüre informiert über misogyne Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        '<p>Für die neuen "Know Your Rights"-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Einerseits geht es darum, was Betroffene in solchen Momenten tun können, und andererseits darum, wie man als Zeug*in agieren kann, um Betroffenen den Rücken zu stärken.</p><p>Meist werden polizeiliche Amtshandlungen verantwortungsbewusst und korrekt durchgeführt und Beamt*innen leisten durch ihren Einsatz einen wesentlichen Beitrag zu einem friedlichen Miteinander. Die Broschüren sollen in jenen Momenten nützlich sein, wenn das mal nicht so sein sollte.</p><p>Es gibt immer wieder Situationen, in denen den Grund- und Menschenrechten der von einer Amtshandlung betroffenen Personen wenig bis gar keine Bedeutung beigemessen wird. Die ZARA gemeldeten Fälle zeigen auf, dass sich Alltagsrassismus und Vorurteile gegenüber bestimmten Einzelpersonen oder Gruppen, wegen ihrer angenommenen oder tatsächlichen Zugehörigkeit, sowohl in den polizeilichen Strukturen als auch in den Handlungen einzelner Polizist*innen widerspiegeln. Als Betroffene*r oder Zeug*in einer solchen Amtshandlung ist es deshalb umso wichtiger, die eigenen Rechte zu kennen, um diese auch einfordern zu können.</p><br><p>Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken. Sie finden <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/faltanleitung_minibooks.pdf">hier</a> auch eine Faltanleitung die anzeigt, wie Sie die Broschüren falten können.</p><p>Der Link zur Broschüre für Betroffene finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_b_final.pdf">Broschüre Betroffene*r</a></p><p>Der Link zur Broschüre für Zeug*in finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_z_final.pdf">Broschüre Zeug*in</a></p>',
-      linkText: 'weiterlesen'
+        'Diese Broschüre informiert über misogyne Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch und Englisch zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
+      linkText: 'weiterlesen',
+      download: [
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-06-Misogynie_Frauenhass-de.pdf',
+          fileName: 'zara-broschuere-was_tun-06-Misogynie_Frauenhass-de.pdf',
+
+          fileSize: '318 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-06-Misogynie_Frauenhass-en.pdf',
+          fileName: 'zara-broschuere-was_tun-06-Misogynie_Frauenhass-en.pdf',
+
+          fileSize: '317 KB'
+        }
+      ]
     }
   },
   {
@@ -456,13 +559,39 @@ export const pubData = [
       ]
     },
     en: {
-      date: '26. November 2018',
-      title: '“Know Your Rights”-Broschüren',
+      title:
+        'Was tun? Wenn Sie Betroffene*r einer ableistischen/behindertenfeindlichen Straftat – <i>hate crime</i> – wurden.',
       shortDescription:
-        'Für die neuen “Know Your Rights”-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken.',
+        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        '<p>Für die neuen "Know Your Rights"-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Einerseits geht es darum, was Betroffene in solchen Momenten tun können, und andererseits darum, wie man als Zeug*in agieren kann, um Betroffenen den Rücken zu stärken.</p><p>Meist werden polizeiliche Amtshandlungen verantwortungsbewusst und korrekt durchgeführt und Beamt*innen leisten durch ihren Einsatz einen wesentlichen Beitrag zu einem friedlichen Miteinander. Die Broschüren sollen in jenen Momenten nützlich sein, wenn das mal nicht so sein sollte.</p><p>Es gibt immer wieder Situationen, in denen den Grund- und Menschenrechten der von einer Amtshandlung betroffenen Personen wenig bis gar keine Bedeutung beigemessen wird. Die ZARA gemeldeten Fälle zeigen auf, dass sich Alltagsrassismus und Vorurteile gegenüber bestimmten Einzelpersonen oder Gruppen, wegen ihrer angenommenen oder tatsächlichen Zugehörigkeit, sowohl in den polizeilichen Strukturen als auch in den Handlungen einzelner Polizist*innen widerspiegeln. Als Betroffene*r oder Zeug*in einer solchen Amtshandlung ist es deshalb umso wichtiger, die eigenen Rechte zu kennen, um diese auch einfordern zu können.</p><br><p>Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken. Sie finden <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/faltanleitung_minibooks.pdf">hier</a> auch eine Faltanleitung die anzeigt, wie Sie die Broschüren falten können.</p><p>Der Link zur Broschüre für Betroffene finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_b_final.pdf">Broschüre Betroffene*r</a></p><p>Der Link zur Broschüre für Zeug*in finden Sie hier: <a href="https://zara.or.at/_wp/wp-content/uploads/2018/11/kyr_z_final.pdf">Broschüre Zeug*in</a></p>',
-      linkText: 'weiterlesen'
+        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch, Englisch und als Leichter Lesen Version zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
+      linkText: 'weiterlesen',
+      download: [
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de.pdf',
+          fileName:
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de.pdf',
+
+          fileSize: '298 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en.pdf',
+          fileName:
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en.pdf',
+
+          fileSize: '287 KB'
+        },
+        {
+          fileLocation:
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen.pdf',
+          fileName:
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen.pdf',
+
+          fileSize: '248 KB'
+        }
+      ]
     }
   },
   {
