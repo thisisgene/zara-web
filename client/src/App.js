@@ -7,6 +7,8 @@ import { logoutUser } from './actions/authActions'
 import { clearAll } from './actions/adminActions'
 import { LocalizeProvider, withLocalize } from 'react-localize-redux'
 
+import ReactGA from 'react-ga' // Google Analytics
+
 import { Provider } from 'react-redux'
 import store from './store'
 
@@ -34,6 +36,9 @@ if (localStorage.jwtToken) {
     window.location.href = 'admin/login'
   }
 }
+
+ReactGA.initialize('UA-142667479-1')
+ReactGA.pageview(window.location.pathname + window.location.search)
 
 class App extends Component {
   render() {

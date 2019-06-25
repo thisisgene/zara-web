@@ -24,6 +24,7 @@
     "react-datetime-picker": "^2.1.1",
     "react-dom": "^16.5.2",
     "react-dropzone": "^7.0.1",
+    "react-ga": "^2.6.0",
     "react-google-maps": "^9.4.5",
     "react-keyed-file-browser": "^1.4.2",
     "react-localize-redux": "^3.5.1",
