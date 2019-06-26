@@ -25,7 +25,8 @@ class Fees extends Component {
       : moment()
           .subtract(1, 'M')
           .format('YYYY-MM'),
-    collapseAll: false
+    collapseAll: false,
+    trainerToPrint: null
   }
   componentDidMount() {
     this.props.getAllUsers()
@@ -66,6 +67,20 @@ class Fees extends Component {
 
   onPrintClick = () => {
     window.print()
+  }
+
+  onPrintPerUserClick = id => {
+    this.setState(
+      {
+        trainerToPrint: id
+      },
+      () => {
+        window.print()
+        this.setState({
+          trainerToPrint: null
+        })
+      }
+    )
   }
 
   saveContent = content => {
@@ -132,6 +147,8 @@ class Fees extends Component {
                     deleteAdditionalFee={this.props.deleteAdditionalFee}
                     selectedMonth={this.state.selectedMonth}
                     collapseAll={this.state.collapseAll}
+                    onPrintPerUserClick={this.onPrintPerUserClick}
+                    trainerToPrint={this.state.trainerToPrint}
                   />
                 </div>
               ))}

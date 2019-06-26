@@ -11,8 +11,9 @@ export default class FeeUserItem extends Component {
   state = {
     totalFee: 0,
     subTotals: [],
-    collapsed: true,
-    selectedMonth: this.props.selectedMonth
+    collapsed: false,
+    selectedMonth: this.props.selectedMonth,
+    trainerToPrint: null
   }
 
   componentDidUpdate(prevProps) {
@@ -57,13 +58,33 @@ export default class FeeUserItem extends Component {
     this.setState({ subTotals: tArray }, () => this.totalFee())
   }
 
+  // onPrintClick = id => {
+  //   this.setState(
+  //     {
+  //       trainerToPrint: id
+  //     },
+  //     () => {
+  //       console.log(
+  //         'ids ident: ',
+  //         this.state.trainerToPrint === this.props.user._id
+  //       )
+  //       window.print()
+  //       this.setState({
+  //         trainerToPrint: null
+  //       })
+  //     }
+  //   )
+  // }
+
   render() {
     const {
       trainings,
       user,
       saveContent,
       deleteAdditionalFee,
-      selectedMonth
+      selectedMonth,
+      onPrintPerUserClick,
+      trainerToPrint
     } = this.props
     const userHasTrainingsThisMonth =
       this.props.trainings
@@ -85,6 +106,10 @@ export default class FeeUserItem extends Component {
           },
           {
             [styles['removed']]: !userHasTrainingsThisMonth
+          },
+          {
+            [styles['hidden']]:
+              trainerToPrint !== null && trainerToPrint !== user._id
           }
         )}
       >
@@ -104,6 +129,7 @@ export default class FeeUserItem extends Component {
             </div>
             {user.name}
           </div>
+
           <div className={styles['user-title--amount']}>
             Gesamt{' '}
             <div step="0.01" className={styles['sum']}>
@@ -148,6 +174,14 @@ export default class FeeUserItem extends Component {
                 </div>
               ))}
           <div className={styles['user-footer']}>
+            <div>
+              <button
+                onClick={onPrintPerUserClick.bind(this, user._id)}
+                className={cx(styles['fees-buttons--button'])}
+              >
+                PDF exportieren
+              </button>
+            </div>
             <div className={styles['user-footer--name']} />
             <div className={styles['user-footer--amount']}>
               <div step="0.01" className={styles['sum']}>

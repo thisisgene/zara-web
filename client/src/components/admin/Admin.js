@@ -20,7 +20,7 @@ import RestrictedPage from './RestrictedPage/RestrictedPage'
 
 // import News from './dashboard/news/News'
 
-import './Admin.css'
+import './Admin.sass'
 
 import styles from './pages/dashboard/Dashboard.module.sass'
 import News from './pages/dashboard/news/News'

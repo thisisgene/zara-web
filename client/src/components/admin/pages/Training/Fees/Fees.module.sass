@@ -4,6 +4,9 @@ button
 .fees
   height: 100%
   width: 80%
+  @media print
+    overflow: visible
+    
   .print-title
     font-size: 1.5rem
     text-align: center
@@ -45,10 +48,16 @@ button
     padding: 0 20%
     // min-width: 800px
     margin: 0 auto
-    overflow-y: auto
-    height: calc(100% - 40px)
+    // overflow-y: auto
+    // height: calc(100% - 40px)
     @media print
       padding: 0
+      overflow-y: visible
+      page-break-inside: always
+      height: auto
+    &--item
+      // @media print
+      //   page-break-before: always
     .user-title
       display: flex
       justify-content: space-between
@@ -124,10 +133,11 @@ button
     .user-footer
       display: flex
       justify-content: space-between
+      align-items: center
       background: rgba(darken(#03321F, 2%), .5)
       border-bottom-right-radius: 5px
       border-bottom-left-radius: 5px
-      padding: .2rem
+      padding: .2rem .2rem .2rem .4rem
       cursor: pointer
       
       &--amount
@@ -163,13 +173,15 @@ button
       &--item
         border-radius: 5px
         box-shadow: 3px 10px 35px rgba(black, .4)
-        @media print
+        // @media print
           
           // page-break-after: always
           // border-bottom: 1px solid #111
         &.collapsed
           box-shadow: 0 0 4px transparent
         &.removed
+          display: none
+        &.hidden
           display: none
     .user-fee
       margin: 0 0 .4rem 0
@@ -240,6 +252,7 @@ button
               margin: 0
             @media print
               color: #111
+              font-size: 1.2rem
             input
               margin: 0
               text-align: right

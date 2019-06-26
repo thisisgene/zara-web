@@ -690,9 +690,10 @@ class TrainingContent extends Component {
                           <div className={styles['confirm-button']}>
                             <button
                               disabled={
-                                this.props.training.training
-                                  .assignedTrainer1 !==
-                                  this.state.assignedTrainer1 ||
+                                (this.props.training.training &&
+                                  this.props.training.training
+                                    .assignedTrainer1 !==
+                                    this.state.assignedTrainer1) ||
                                 this.props.training.training
                                   .assignedTrainer2 !==
                                   this.state.assignedTrainer2 ||
