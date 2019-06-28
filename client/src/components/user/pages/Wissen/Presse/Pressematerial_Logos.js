@@ -32,7 +32,7 @@ class PressematerialLogos extends Component {
             {/* <LongText content={longText} lang={lang} /> */}
             <div className={styles['logo-box-container']}>
               <div className={styles['logo-box--item']}>
-                <div>Lena_Jäger</div>
+                <div>Lena Jäger</div>
                 <div style={{ fontSize: '.8rem' }}>Lena_Jaeger_HiRes.jpeg</div>
                 <a
                   target="blank"
