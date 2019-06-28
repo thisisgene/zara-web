@@ -31,6 +31,61 @@ class PressematerialLogos extends Component {
             <HeroUnit data={heroData} lang={lang} />
             {/* <LongText content={longText} lang={lang} /> */}
             <div className={styles['logo-box-container']}>
+              <div className={styles['logo-box--item']}>
+                <div>Caroline Kerschbaumer_ZARA HiRes.jpg</div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Caroline Kerschbaumer_ZARA HiRes.jpg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Caroline Kerschbaumer_ZARA HiRes.jpg'
+                    }
+                    alt="Kerschbaumer_ZARA HiRes"
+                  />
+                </a>
+                <p style={{ fontSize: '.8rem' }}>
+                  Photo Credit: Johannes Zinner
+                </p>
+              </div>
+              <div className={styles['logo-box--item']}>
+                <div>Dieter Schindlauer_ZARA HiRes.jpg</div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Dieter Schindlauer_ZARA HiRes.jpg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Dieter Schindlauer_ZARA HiRes.jpg'
+                    }
+                    alt="Dieter Schindlauer_ZARA HiRes"
+                  />
+                </a>
+                <p style={{ fontSize: '.8rem' }}>
+                  Photo Credit: Johannes Zinner
+                </p>
+              </div>
+              <div className={styles['logo-box--item']}>
+                <div>Lena_Jaeger_HiRes.jpeg</div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                    }
+                    alt="Lena_Jaeger_HiRes.jpeg"
+                  />
+                </a>
+                <p style={{ fontSize: '.8rem' }}>Photo Credit: Carl Dewald</p>
+              </div>
               {logoData &&
                 logoData.map(logoItem => (
                   <div className={styles['logo-box']}>
@@ -126,44 +181,6 @@ class PressematerialLogos extends Component {
                       </a>
                     </span>
                   </div>
-                </div>
-                <div className={styles['logo-box--item']}>
-                  <div>Caroline Kerschbaumer_ZARA HiRes.jpg</div>
-                  <a
-                    target="blank"
-                    href={
-                      'https://assets.zara.or.at/download/img/Caroline Kerschbaumer_ZARA HiRes.jpg'
-                    }
-                  >
-                    <img
-                      src={
-                        'https://assets.zara.or.at/download/img/Caroline Kerschbaumer_ZARA HiRes.jpg'
-                      }
-                      alt="Kerschbaumer_ZARA HiRes"
-                    />
-                  </a>
-                  <p style={{ fontSize: '.8rem' }}>
-                    Photo Credit: Johannes Zinner
-                  </p>
-                </div>
-                <div className={styles['logo-box--item']}>
-                  <div>Dieter Schindlauer_ZARA HiRes.jpg</div>
-                  <a
-                    target="blank"
-                    href={
-                      'https://assets.zara.or.at/download/img/Dieter Schindlauer_ZARA HiRes.jpg'
-                    }
-                  >
-                    <img
-                      src={
-                        'https://assets.zara.or.at/download/img/Dieter Schindlauer_ZARA HiRes.jpg'
-                      }
-                      alt="Dieter Schindlauer_ZARA HiRes"
-                    />
-                  </a>
-                  <p style={{ fontSize: '.8rem' }}>
-                    Photo Credit: Johannes Zinner
-                  </p>
                 </div>
               </div>
             </div>
