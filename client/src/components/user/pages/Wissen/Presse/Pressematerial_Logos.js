@@ -32,7 +32,28 @@ class PressematerialLogos extends Component {
             {/* <LongText content={longText} lang={lang} /> */}
             <div className={styles['logo-box-container']}>
               <div className={styles['logo-box--item']}>
-                <div>Caroline Kerschbaumer_ZARA HiRes.jpg</div>
+                <div>Lena_Jäger</div>
+                <div style={{ fontSize: '.8rem' }}>Lena_Jaeger_HiRes.jpeg</div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                    }
+                    alt="Lena_Jaeger_HiRes.jpeg"
+                  />
+                </a>
+                <p style={{ fontSize: '.8rem' }}>Photo Credit: Carl Dewald</p>
+              </div>
+              <div className={styles['logo-box--item']}>
+                <div>Caroline Kerschbaumer</div>
+                <div style={{ fontSize: '.8rem' }}>
+                  Caroline Kerschbaumer_ZARA HiRes.jpg
+                </div>
                 <a
                   target="blank"
                   href={
@@ -51,7 +72,10 @@ class PressematerialLogos extends Component {
                 </p>
               </div>
               <div className={styles['logo-box--item']}>
-                <div>Dieter Schindlauer_ZARA HiRes.jpg</div>
+                <div>Dieter Schindlauer</div>
+                <div style={{ fontSize: '.8rem' }}>
+                  Dieter Schindlauer_ZARA HiRes.jpg
+                </div>
                 <a
                   target="blank"
                   href={
@@ -69,23 +93,7 @@ class PressematerialLogos extends Component {
                   Photo Credit: Johannes Zinner
                 </p>
               </div>
-              <div className={styles['logo-box--item']}>
-                <div>Lena_Jaeger_HiRes.jpeg</div>
-                <a
-                  target="blank"
-                  href={
-                    'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
-                  }
-                >
-                  <img
-                    src={
-                      'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
-                    }
-                    alt="Lena_Jaeger_HiRes.jpeg"
-                  />
-                </a>
-                <p style={{ fontSize: '.8rem' }}>Photo Credit: Carl Dewald</p>
-              </div>
+
               {logoData &&
                 logoData.map(logoItem => (
                   <div className={styles['logo-box']}>
