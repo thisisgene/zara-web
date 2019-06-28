@@ -32,23 +32,74 @@ class PressematerialLogos extends Component {
             {/* <LongText content={longText} lang={lang} /> */}
             <div className={styles['logo-box-container']}>
               <div className={styles['logo-box--item']}>
-                <div>Lena Jäger</div>
-                <div style={{ fontSize: '.8rem' }}>Lena_Jaeger_HiRes.jpeg</div>
+                <div>Photos Pressekonferenz 28.06.2019</div>
+                <div style={{ fontSize: '.8rem' }}>
+                  Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_1.jpg
+                </div>
                 <a
                   target="blank"
                   href={
-                    'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                    'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_1.jpg'
                   }
                 >
                   <img
                     src={
-                      'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                      'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_1.jpg'
                     }
-                    alt="Lena_Jaeger_HiRes.jpeg"
+                    alt="Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_1.jpg"
+                  />
+                </a>
+                <div style={{ fontSize: '.8rem' }}>
+                  Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_2.jpg
+                </div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_2.jpg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_2.jpg'
+                    }
+                    alt="Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_2.jpg"
+                  />
+                </a>
+                <div style={{ fontSize: '.8rem' }}>
+                  Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_3.jpg
+                </div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_3.jpg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_3.jpg'
+                    }
+                    alt="Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_3.jpg"
+                  />
+                </a>
+                <div style={{ fontSize: '.8rem' }}>
+                  Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_4.jpg
+                </div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_4.jpg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_4.jpg'
+                    }
+                    alt="Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_4.jpg"
                   />
                 </a>
                 <p style={{ fontSize: '.8rem' }}>Photo Credit: Carl Dewald</p>
               </div>
+
               <div className={styles['logo-box--item']}>
                 <div>Caroline Kerschbaumer</div>
                 <div style={{ fontSize: '.8rem' }}>
@@ -92,6 +143,41 @@ class PressematerialLogos extends Component {
                 <p style={{ fontSize: '.8rem' }}>
                   Photo Credit: Johannes Zinner
                 </p>
+              </div>
+              <div className={styles['logo-box--item']}>
+                <div>Lena Jäger</div>
+                <div style={{ fontSize: '.8rem' }}>Lena_Jaeger_HiRes.jpeg</div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Lena_Jaeger_HiRes.jpeg'
+                    }
+                    alt="Lena_Jaeger_HiRes.jpeg"
+                  />
+                </a>
+                <p style={{ fontSize: '.8rem' }}>Photo Credit: Carl Dewald</p>
+              </div>
+              <div className={styles['logo-box--item']}>
+                <div>Maria Windhager</div>
+                <div style={{ fontSize: '.8rem' }}>Maria Windhager.jpg</div>
+                <a
+                  target="blank"
+                  href={
+                    'https://assets.zara.or.at/download/img/Maria Windhager.jpg'
+                  }
+                >
+                  <img
+                    src={
+                      'https://assets.zara.or.at/download/img/Maria Windhager.jpg'
+                    }
+                    alt="Maria Windhager.jpg"
+                  />
+                </a>
               </div>
 
               {logoData &&
