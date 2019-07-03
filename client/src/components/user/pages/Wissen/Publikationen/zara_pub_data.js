@@ -529,30 +529,30 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch, Englisch und als Leichter Lesen Version zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
+        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch, Englisch und als Leichter Lesen Version zum Download zur Verfügung.<br/><br/>Hier handelt es sich nicht um barrierefreie PDFs. Sie sind leider nicht mit einem Screenreader gut navigierbar, dadurch nicht für blinde oder sehbehinderte Menschen geeignet. Wir würden Ihnen empfehlen, Sie für bessere Nutzungsmöglichkeiten auszudrucken.<br /><br />Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
           fileLocation:
-            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de.pdf',
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de_final.pdf',
           fileName:
-            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de.pdf',
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de_final.pdf',
 
           fileSize: '298 KB'
         },
         {
           fileLocation:
-            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en.pdf',
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en_final.pdf',
           fileName:
-            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en.pdf',
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en_final.pdf',
 
           fileSize: '287 KB'
         },
         {
           fileLocation:
-            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen.pdf',
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen_final.pdf',
           fileName:
-            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen.pdf',
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen_final.pdf',
 
           fileSize: '248 KB'
         }
@@ -564,30 +564,30 @@ export const pubData = [
       shortDescription:
         'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können.',
       content:
-        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch, Englisch und als Leichter Lesen Version zum Download zur Verfügung.<br/><br/>Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
+        'Diese Broschüre informiert über ableistische Straftaten und stellt Handlungsoptionen bereit. Sie beinhaltet einen kleinen rechtlichen Überblick und bietet eine Liste an Organisationen, an die sich Betroffene von vorurteilsmotivierten Straftaten wenden können. Hier steht die Broschüre auf auf Deutsch, Englisch und als Leichter Lesen Version zum Download zur Verfügung.<br/><br/>Hier handelt es sich nicht um barrierefreie PDFs. Sie sind leider nicht mit einem Screenreader gut navigierbar, dadurch nicht für blinde oder sehbehinderte Menschen geeignet. Wir würden Ihnen empfehlen, Sie für bessere Nutzungsmöglichkeiten auszudrucken.<br /><br />Wir bedanken uns herzlich bei allen Unterstützer*innen - allen voran bei den in der Broschüre genannten Organisationen und den großartigen Übersetzer*innen!',
       linkText: 'weiterlesen',
       download: [
         {
           fileLocation:
-            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de.pdf',
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de_final.pdf',
           fileName:
-            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de.pdf',
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de_final.pdf',
 
           fileSize: '298 KB'
         },
         {
           fileLocation:
-            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en.pdf',
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en_final.pdf',
           fileName:
-            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en.pdf',
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-en_final.pdf',
 
           fileSize: '287 KB'
         },
         {
           fileLocation:
-            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen.pdf',
+            'pdf/was_tun_broschueren/zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen_final.pdf',
           fileName:
-            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen.pdf',
+            'zara-broschuere-was_tun-07-Ableism_Behindertenfeindlichkeit-de-leichter_lesen_final.pdf',
 
           fileSize: '248 KB'
         }
