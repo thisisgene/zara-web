@@ -694,9 +694,10 @@ class TrainingContent extends Component {
                                   this.props.training.training
                                     .assignedTrainer1 !==
                                     this.state.assignedTrainer1) ||
-                                this.props.training.training
-                                  .assignedTrainer2 !==
-                                  this.state.assignedTrainer2 ||
+                                (this.props.training.training &&
+                                  this.props.training.training
+                                    .assignedTrainer2 !==
+                                    this.state.assignedTrainer2) ||
                                 this.state.assignedTrainer1 === null ||
                                 this.state.assignedTrainer2 === null ||
                                 this.state.assignedTrainer1.id === 'none' ||
@@ -711,9 +712,11 @@ class TrainingContent extends Component {
                             <div>
                               <p>
                                 {!(
+                                  this.props.training.training &&
                                   this.props.training.training
                                     .assignedTrainer1 ===
                                     this.state.assignedTrainer1 &&
+                                  this.props.training.training &&
                                   this.props.training.training
                                     .assignedTrainer2 ===
                                     this.state.assignedTrainer2

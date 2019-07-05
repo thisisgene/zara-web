@@ -100,7 +100,7 @@ export default class TrainingDetail extends Component {
                       styles['training-detail--trainers__view--avatar']
                     }
                   >
-                    <i class="fas fa-user" />
+                    <i className="fas fa-user" />
                   </div>
                   <div
                     className={styles['training-detail--trainers__view--name']}
