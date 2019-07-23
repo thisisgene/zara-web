@@ -34,11 +34,11 @@ export const infoObj = {
       },
       {
         color: 'default',
-        title: 'FACING FACTS ONLINE! KURS - Hate Speech - Was tun!',
+        title: 'Hate Speech - Was tun?',
         text:
-          'Der Facing Facts Online! Kurs wurde auf Deutsch übersetzt und von jugendschutz.net und ZARA für den regionalen Kontext ergänzt. Die neue Version - Hate Speech - Was tun! - beschäftigt sich mit Überlegungen zur eigenen Sicherheit, zum eigenen Wohlbefinden, mit Monitoring und Dokumentation sowie mit Counter-Narratives und nationaler sowie internationaler Gesetzgebung.<br><br>Sie können den Basiskurs belegen und den Kurs 45 Tage kostenlos belegen. Wenn Sie den Premiumkurs belegen, können Sie ihn langfristig und immer wieder belegen sowie ein Zertifikat ergattern. Probieren Sie es mal aus!',
+          'Der kostenlose Facing Facts Online! Kurs wurde auf Deutsch übersetzt und von <a href="http://jugendschutz.net" target="_blank">jugendschutz.net</a> und ZARA für den regionalen Kontext ergänzt. Die neue Version - Hate Speech - Was tun? - beschäftigt sich mit Überlegungen zur eigenen Sicherheit, zum eigenen Wohlbefinden, mit Monitoring und Dokumentation sowie mit Counter-Narratives und nationaler sowie internationaler Gesetzgebung.<br><br>Am 29. August 2019 startet die von Tutor*innen begleitete Online Lerngruppe, die Teilnehmer*innen ermöglicht, 6 Wochen lang - zeitlich völlig flexibel - den Kurs zu belegen und Expert*innen themenspezifische Fragen zu stellen sowie mit weiteren Teilnehmer*innen zu diskutieren und sich auszutauschen.<br /><br />Melden Sie sich jetzt an, um ab 29. August durchstarten zu können!',
         linkPath: 'external',
-        link: 'https://www.facingfactsonline.eu/enrol/index.php?id=24',
+        link: 'https://www.facingfacts.eu/courses/hate-speech-was-tun/',
         linkText: 'Zu "Hate Speech - Was tun!"'
       },
       {

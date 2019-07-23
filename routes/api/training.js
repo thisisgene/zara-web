@@ -9,6 +9,7 @@ const aws = require('aws-sdk')
 const Jimp = require('jimp')
 
 const moment = require('moment')
+const localization = require('moment/locale/de')
 
 const nodemailer = require('nodemailer')
 
@@ -576,7 +577,9 @@ sendTrainingEmail = (emailList, content, res) => {
   if (content.includeOriginalMessage) {
     outputHtml += `
     <h2>${content.title}</h2>
-    <p>${moment(content.date).format('DD. MMMM YYYY')}</p>
+    <p>${moment(content.date)
+      .locale('de', localization)
+      .format('DD. MMMM YYYY')}</p>
     <p>${content.timeFrom} - ${content.timeUntil}</p>
     <p>${content.location}</p>
     <p>${content.address1}</p>
