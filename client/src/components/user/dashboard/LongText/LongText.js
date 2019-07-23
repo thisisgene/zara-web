@@ -55,9 +55,15 @@ export default class LongText extends Component {
         {content[lang].link && (
           <div className={styles['long-text--link']}>
             <IconObject image="arrowRight" />
-            <Link to={`/${lang}/${content[lang].link}`}>
-              {content[lang].linkText}
-            </Link>
+            {content[lang].linkType && content[lang].linkType === 'external' ? (
+              <a target="_blank" href={content[lang].link}>
+                {content[lang].linkText}
+              </a>
+            ) : (
+              <Link to={`/${lang}/${content[lang].link}`}>
+                {content[lang].linkText}
+              </Link>
+            )}
           </div>
         )}
         {content.bottomImages && (
