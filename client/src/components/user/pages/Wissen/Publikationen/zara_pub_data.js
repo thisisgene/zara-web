@@ -600,7 +600,7 @@ export const pubData = [
     id: 'Know_Your_Rights-Broschüren',
     de: {
       date: '26. November 2018',
-      title: '“Know Your Rights”-Broschüren',
+      title: 'Broschüren: “Know Your Rights” - im Umgang mit der Polizei',
       shortDescription:
         'Für die neuen “Know Your Rights”-Broschüren haben ZARA-Jurist*innen die Rechte von Betroffenen und Zeug*innen von unrechtmäßig erscheinenden Amtshandlungen zusammengefasst. Die Broschüren können Sie sich auch herunterladen und bei Bedarf daheim ausdrucken.',
       content:
