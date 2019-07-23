@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
-import { heroData, oneLineAlert, longText } from './unterstuetzen_data'
+import {
+  heroData,
+  oneLineAlert,
+  longTextPre,
+  longText
+} from './unterstuetzen_data'
 // import { oneLineAlert, trainingItems } from './training_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
@@ -21,6 +26,9 @@ class Unterstuetzen extends Component {
           <div>
             <HeroUnit data={heroData} lang={lang} />
             <OneLineAlert content={oneLineAlert} lang={lang} />
+            <div style={{ marginBottom: '-2rem' }}>
+              <LongText content={longTextPre} lang={lang} />
+            </div>
             <LongText content={longText} lang={lang} />
           </div>
         )}
