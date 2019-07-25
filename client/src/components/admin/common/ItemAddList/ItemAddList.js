@@ -84,7 +84,16 @@ class ItemAddList extends Component {
 
   parseIds = content => {
     let result = []
-    content.map(item => result.push({ id: item._id, title: item.de.title }))
+    content.map(item => {
+      const title =
+        this.props.category === 'trainings' || this.props.category === 'faqs'
+          ? item.title
+          : this.props.baseCat === 'training' && this.props.category === 'team'
+          ? item.name
+          : item.de.title
+      console.log('title: ', item)
+      result.push({ id: item._id, title: title })
+    })
     return result
   }
 

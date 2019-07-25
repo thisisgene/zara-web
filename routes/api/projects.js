@@ -56,43 +56,7 @@ router.post(
           break
         case 'jahresberichte':
           Jahresbericht.findOneAndUpdate(
-            { _id: item._id },
-            { position: index },
-            { safe: true, new: true }
-          )
-            .then(item => {
-              console.log(item.title, ': ', item.position)
-            })
-            .catch(err => {
-              if (err) console.log(err)
-            })
-          break
-        case 'faqs':
-          Faq.findOneAndUpdate(
-            { _id: item._id },
-            { position: index },
-            { safe: true, new: true }
-          )
-            .then(item => {})
-            .catch(err => {
-              if (err) console.log(err)
-            })
-          break
-        case 'team':
-          Team.findOneAndUpdate(
-            { _id: item._id },
-            { position: index },
-            { safe: true, new: true }
-          )
-            .then(item => {})
-            .catch(err => {
-              if (err) console.log(err)
-            })
-          break
-        case 'training_team':
-          console.log('training sort')
-          TrainingTeam.findOneAndUpdate(
-            { _id: item._id },
+            { _id: item.id },
             { position: index },
             { safe: true, new: true }
           )
@@ -103,9 +67,45 @@ router.post(
               if (err) console.log(err)
             })
           break
+        case 'faqs':
+          Faq.findOneAndUpdate(
+            { _id: item.id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {})
+            .catch(err => {
+              if (err) console.log(err)
+            })
+          break
+        case 'team':
+          Team.findOneAndUpdate(
+            { _id: item.id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {})
+            .catch(err => {
+              if (err) console.log(err)
+            })
+          break
+        case 'training_team':
+          console.log(item.id)
+          TrainingTeam.findOneAndUpdate(
+            { _id: item.id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {
+              console.log(item.name, ': ', item.position)
+            })
+            .catch(err => {
+              if (err) console.log(err)
+            })
+          break
         case 'trainings':
           Training.findOneAndUpdate(
-            { _id: item._id },
+            { _id: item.id },
             { position: index },
             { safe: true, new: true }
           )
