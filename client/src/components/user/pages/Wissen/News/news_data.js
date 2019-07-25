@@ -369,31 +369,31 @@ export const newsData = [
       linkText: 'weiterlesen'
     }
   },
-  // {
-  //   tag: 'news',
-  //   onNewsBox: true,
-  //   image: 'news/Facing_Facts.jpg',
-  //   imageSide: 'left',
-  //   id: 'Facing_Facts_Online',
-  //   de: {
-  //     date: '27. November 2018',
-  //     title: 'Facing Facts Online! Kurs – “Hate Speech – Was tun!”',
-  //     shortDescription:
-  //       'Sie möchten mehr über hate speech und effektive Gegenmaßnahmen erfahren? Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.',
-  //     content:
-  //       '<p>Sie möchten mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie können Sie am Kurs teilnehmen?<ul><li>Registrieren Sie sich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Sie ein Profil erstellt hast, können Sie den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
-  //     linkText: 'weiterlesen'
-  //   },
-  //   en: {
-  //     date: '27. November 2018',
-  //     title: 'Facing Facts Online! Kurs – “Hate Speech – Was tun!”',
-  //     shortDescription:
-  //       'Sie möchten mehr über hate speech und effektive Gegenmaßnahmen erfahren? Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.',
-  //     content:
-  //       '<p>Sie möchten mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie können Sie am Kurs teilnehmen?<ul><li>Registrieren Sie sich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Sie ein Profil erstellt hast, können Sie den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
-  //     linkText: 'weiterlesen'
-  //   }
-  // },
+  {
+    tag: 'news',
+    onNewsBox: true,
+    image: 'news/Facing_Facts.jpg',
+    imageSide: 'left',
+    id: 'Facing_Facts_Online',
+    de: {
+      date: '27. November 2018',
+      title: 'Facing Facts Online! Kurs – “Hate Speech – Was tun!”',
+      shortDescription:
+        'Sie möchten mehr über hate speech und effektive Gegenmaßnahmen erfahren? Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.',
+      content:
+        '<p>Sie möchten mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie können Sie am Kurs teilnehmen?<ul><li>Registrieren Sie sich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Sie ein Profil erstellt hast, können Sie den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
+      linkText: 'weiterlesen'
+    },
+    en: {
+      date: '27. November 2018',
+      title: 'Facing Facts Online! Kurs – “Hate Speech – Was tun!”',
+      shortDescription:
+        'Sie möchten mehr über hate speech und effektive Gegenmaßnahmen erfahren? Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.',
+      content:
+        '<p>Sie möchten mehr über Hate Speech &amp; Gegenmaßnahmen erfahren?</p><p>Perfektes Timing, denn seit dieser Woche gibt es den Facing Facts Online! Kurs “Hate Speech – Was Tun!” auch auf Deutsch.</p><p>Wie können Sie am Kurs teilnehmen?<ul><li>Registrieren Sie sich auf <a target="blank" href="http://www.facingfactsonline.eu">www.facingfactsonline.eu</a></li><li>Sobald Sie ein Profil erstellt hast, können Sie den Kurs auf Deutsch, Englisch oder Französisch belegen.</li><li>Die ersten 45 Tage ist der Kurs außerdem komplett kostenlos.</li></p></ul>',
+      linkText: 'weiterlesen'
+    }
+  },
   {
     tag: 'news',
     image: 'news/KYR.jpg',

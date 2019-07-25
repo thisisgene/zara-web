@@ -36,12 +36,14 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const list = req.body.list
+    // console.log(list)
     const category = req.params.category
     const result = list.map(async (item, index) => {
       switch (category) {
         case 'news':
+          console.log(item)
           News.findOneAndUpdate(
-            { _id: item._id },
+            { _id: item.id },
             { position: index },
             { safe: true, new: true }
           )
@@ -59,7 +61,7 @@ router.post(
             { safe: true, new: true }
           )
             .then(item => {
-              console.log(item.de.title, ': ', item.position)
+              console.log(item.title, ': ', item.position)
             })
             .catch(err => {
               if (err) console.log(err)

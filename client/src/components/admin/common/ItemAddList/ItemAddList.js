@@ -73,6 +73,7 @@ class ItemAddList extends Component {
     super()
     this.state = {
       list: [],
+      idList: [],
       selectedTag: '',
       searchValue: '',
       errors: {}
@@ -80,6 +81,12 @@ class ItemAddList extends Component {
   }
 
   componentDidMount = () => {}
+
+  parseIds = content => {
+    let result = []
+    content.map(item => result.push({ id: item._id, title: item.de.title }))
+    return result
+  }
 
   componentDidUpdate = prevProps => {
     if (prevProps !== this.props) {
@@ -94,16 +101,18 @@ class ItemAddList extends Component {
       this.props.baseCat === 'training' && this.props.category === 'team'
         ? `/api/projects/sort/training_team`
         : `/api/projects/sort/${this.props.category}`
+
     this.setState(
       ({ list }) => ({
         list: arrayMove(list, oldIndex, newIndex)
       }),
       () => {
-        console.log(this.state.list)
+        // let idList = this.parseIds(this.state.list)
+        // console.log(idList)
         // this.props.sortList(this.state.list, '')
         axios
           .post(url, {
-            list: this.state.list
+            list: this.parseIds(this.state.list)
           })
           .then(res => {
             console.log(res)
