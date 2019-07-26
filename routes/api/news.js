@@ -120,6 +120,7 @@ router.get('/get_by/:property/:value', (req, res) => {
     isDeleted: false,
     isOnline: true
   })
+    .sort('position')
     .populate('lastEdited.user', ['name'])
     .then(newsItem => {
       if (!newsItem) {

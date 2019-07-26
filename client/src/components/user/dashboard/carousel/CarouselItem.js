@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import DateObject from '../dateObject/DateObject'
 import ButtonObject from '../ButtonObject/ButtonObject'
+import CustomLink from '../CustomLink/CustomLink'
 
 import cx from 'classnames'
 import './carousel.min.css'
@@ -36,64 +37,74 @@ class CarouselItem extends Component {
     )
     return (
       <div>
-        <Link to={item.mainLink ? `/${lang}/${item.mainLink}` : `/${lang}`}>
-          <div
-            className={cx(
-              styles['carousel-item'],
-              {
-                [styles['background-image']]: item.imageAsBackground
-              },
-              {
-                [styles['has-loaded']]: this.state.imageLoaded
-              }
-            )}
-            style={{
-              backgroundImage: item.imageAsBackground
-                ? `url(/assets/img/carousel/${item.image})`
-                : 'none'
-            }}
-          >
-            {mainImage}
-            {item[lang] && (
-              <div className={styles['carousel-item--info']}>
-                <div className={styles['carousel-item--info__header']}>
-                  <DateObject dateObj={item[lang].date} lang={lang} />
-                  <div className={styles['info-title']}>
-                    <div className={styles['info-title--category']}>
-                      {item[lang].category}
-                    </div>
-                    <div className={styles['info-title--main']}>
-                      {item[lang].title}
+        <CustomLink
+          isExternal={item.linkPath === 'external'}
+          to={
+            item.mainLink
+              ? item.linkPath === 'external'
+                ? item.mainLink
+                : `/${lang}/${item.mainLink}`
+              : `/${lang}`
+          }
+          inside={
+            <div
+              className={cx(
+                styles['carousel-item'],
+                {
+                  [styles['background-image']]: item.imageAsBackground
+                },
+                {
+                  [styles['has-loaded']]: this.state.imageLoaded
+                }
+              )}
+              style={{
+                backgroundImage: item.imageAsBackground
+                  ? `url(/assets/img/carousel/${item.image})`
+                  : 'none'
+              }}
+            >
+              {mainImage}
+              {item[lang] && (
+                <div className={styles['carousel-item--info']}>
+                  <div className={styles['carousel-item--info__header']}>
+                    <DateObject dateObj={item[lang].date} lang={lang} />
+                    <div className={styles['info-title']}>
+                      <div className={styles['info-title--category']}>
+                        {item[lang].category}
+                      </div>
+                      <div className={styles['info-title--main']}>
+                        {item[lang].title}
+                      </div>
                     </div>
                   </div>
+                  <div className={styles['carousel-item--info__body']}>
+                    <p>{item[lang].text}</p>
+                  </div>
+                  <div className={styles['button-group']}>
+                    {item[lang].buttons &&
+                      item[lang].buttons.map((button, i) => (
+                        <ButtonObject
+                          key={`btn-${i}`}
+                          button={button}
+                          lang={lang}
+                        />
+                      ))}
+                  </div>
                 </div>
-                <div className={styles['carousel-item--info__body']}>
-                  <p>{item[lang].text}</p>
-                </div>
-                <div className={styles['button-group']}>
-                  {item[lang].buttons &&
-                    item[lang].buttons.map((button, i) => (
-                      <ButtonObject
-                        key={`btn-${i}`}
-                        button={button}
-                        lang={lang}
-                      />
-                    ))}
-                </div>
+              )}
+              <div
+                className={cx(styles['carousel-item--image'], {
+                  [styles['hidden']]: item.imageAsBackground
+                })}
+              >
+                <img
+                  src={`/assets/img/carousel/${item.image}`}
+                  alt={'carousel'}
+                />
               </div>
-            )}
-            <div
-              className={cx(styles['carousel-item--image'], {
-                [styles['hidden']]: item.imageAsBackground
-              })}
-            >
-              <img
-                src={`/assets/img/carousel/${item.image}`}
-                alt={'carousel'}
-              />
             </div>
-          </div>
-        </Link>
+          }
+        />
       </div>
     )
   }

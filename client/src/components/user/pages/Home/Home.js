@@ -15,6 +15,12 @@ import styles from './Home.module.sass'
 const fakeServerData = [
   {
     imageAsBackground: true,
+    image: 'ZARA_Fest.jpg',
+    mainLink: 'https://zarafeiert.at/',
+    linkPath: 'external'
+  },
+  {
+    imageAsBackground: true,
     image: 'RR2018_karussell_w.jpg',
     mainLink: 'wissen/publikationen/rassismusreport'
   },
