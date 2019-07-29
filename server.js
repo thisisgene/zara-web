@@ -45,7 +45,7 @@ app.use(passport.initialize())
 require('./config/passport')(passport)
 
 // Use Routes
-app.use('/', metatags)
+
 app.use('/api/users', users)
 app.use('/api/media', media)
 app.use('/api/label', label)
@@ -64,6 +64,8 @@ app.use('/api/projects', projects)
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'))
+
+  app.use('/', metatags)
 
   app.get('*', (req, res) => {
     // console.log(req.path)
@@ -92,6 +94,7 @@ if (process.env.NODE_ENV === 'production') {
         /\$OG_IMAGE/g,
         `https://zara.or.at/static/media/collapsed.8796f218.svg`
       )
+      console.log('should be last!')
       res.send(result)
     })
   })

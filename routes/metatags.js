@@ -16,7 +16,7 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
           console.log(err)
           res.send(err)
         } else {
-          console.log('news visited')
+          console.log('news visited: ', newsItem[lang].title)
           data = data.replace(/\$OG_TITLE/g, 'ZARA | ' + newsItem[lang].title)
           data = data.replace(
             /\$DESCRIPTION/g,
