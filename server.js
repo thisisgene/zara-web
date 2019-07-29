@@ -91,7 +91,7 @@ if (process.env.NODE_ENV === 'production') {
         'ZARA – Zivilcourage und Anti-Rassismus-Arbeit. Beratung, Prävention und Sensibilisierung der Öffentlichkeit.'
       )
       data = data.replace(
-        /\$OG_IMAGE/g,
+        /\$OG_IMAGE_SECURE_URL/g,
         'https://zara.or.at/static/media/collapsed.8796f218.svg'
       )
       result = data.replace(
