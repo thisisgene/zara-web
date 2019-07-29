@@ -54,7 +54,7 @@ class Preview extends Component {
       <div>
         {lang && newsItem && (
           <div>
-            <MetaTags>
+            {/* <MetaTags>
               <title>ZARA | {newsItem[lang].title}</title>
               <meta
                 name="description"
@@ -70,7 +70,7 @@ class Preview extends Component {
                   newsItem.titleImage.originalName
                 }`}
               />
-            </MetaTags>
+            </MetaTags> */}
             <div className={styles['news-detail']}>
               <div className={styles['news-detail']}>
                 <HeroUnit data={newsItem} lang={lang} />
