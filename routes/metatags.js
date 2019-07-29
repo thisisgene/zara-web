@@ -26,6 +26,10 @@ router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
             /\$OG_DESCRIPTION/g,
             newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
           )
+          // data = data.replace(
+          //   /\$OG_URL/g,
+          //   newsItem[lang].shortDescription.replace(/<(?:.|\n)*?>/gm, '')
+          // )
           data = data.replace(
             /\$OG_IMAGE_SECURE_URL/g,
             `https://assets.zara.or.at/media/${newsItem.titleImage.category}/${
