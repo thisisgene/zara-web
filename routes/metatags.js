@@ -5,10 +5,6 @@ const fs = require('fs')
 
 const News = require('../models/News')
 
-router.get('/*', (req, res) => {
-  console.log('helloooo: ', req.params)
-})
-
 router.get('/:lang/wissen/aktuelles/n/:category/:id/:title', (req, res) => {
   const filePath = path.resolve(__dirname, '../client', 'build', 'index.html')
   const lang = req.params.lang
