@@ -239,7 +239,7 @@ export const projectData = [
     de: {
       title: 'Presseclub Concordia',
       text:
-        'Der Presseclub Concordia ist als eine unabhängige und zukunftsorientierte Interessensvertretung des österreichischen Journalismus. Die Ideen und die Ziele der Gründer von 1859, nämlich die Pressefreiheit, die Menschenrechte, die Vertretung der Journalisteninteressen, aber auch das Selbstverständnis als „Gewissen“ des Berufsstandes, ihre Idee von Standesethos im Journalismus waren so revolutionär, dass sie heute noch Gültigkeit haben. Der Presseclub Concordia ist als Verfechter der journalistischen Ethik eine Trägerorganisation des Österreichischen Presserats und verleiht jährlich den Concordia Preis für exzellente publizistische Leistungen in den Kategorien „Menschenrechte und Demokratie“ sowie „Pressefreiheit“.',
+        'Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Zu medien- und demokratiepolitisch relevanten Themen organisiert der Presseclub regelmäßig öffentliche Veranstaltungen im "Concordia Haus“ in Wien. Jährlich verleiht er den Concordia Preis für exzellente publizistische Leistungen in den Kategorien „Menschenrechte und Demokratie“ und „Pressefreiheit“.',
       link: 'http://www.concordia.at',
       linkText: 'www.concordia.at',
       linkType: 'external'
@@ -247,7 +247,7 @@ export const projectData = [
     en: {
       title: 'Presseclub Concordia',
       text:
-        'Der Presseclub Concordia ist als eine unabhängige und zukunftsorientierte Interessensvertretung des österreichischen Journalismus. Die Ideen und die Ziele der Gründer von 1859, nämlich die Pressefreiheit, die Menschenrechte, die Vertretung der Journalisteninteressen, aber auch das Selbstverständnis als „Gewissen“ des Berufsstandes, ihre Idee von Standesethos im Journalismus waren so revolutionär, dass sie heute noch Gültigkeit haben. Der Presseclub Concordia ist als Verfechter der journalistischen Ethik eine Trägerorganisation des Österreichischen Presserats und verleiht jährlich den Concordia Preis für exzellente publizistische Leistungen in den Kategorien „Menschenrechte und Demokratie“ sowie „Pressefreiheit“.',
+        'Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Zu medien- und demokratiepolitisch relevanten Themen organisiert der Presseclub regelmäßig öffentliche Veranstaltungen im "Concordia Haus“ in Wien. Jährlich verleiht er den Concordia Preis für exzellente publizistische Leistungen in den Kategorien „Menschenrechte und Demokratie“ und „Pressefreiheit“.',
       link: 'http://www.concordia.at',
       linkText: 'www.concordia.at',
       linkType: 'external'

@@ -130,7 +130,7 @@ export const networkData = [
     de: {
       title: 'No Hate Speech Komittee',
       text:
-        'Das österreichische No Hate Speech-Komitee will die Öffentlichkeit für das Thema Hassreden im Netz sensibilisieren.',
+        'Das nationale „No Hate Speech“-Komitee will für das Thema Hassreden im Netz sensibilisieren sowie Ursachen und Kontexte thematisieren, um der Akzeptanz von Hassreden entgegen zu wirken und somit Rassismus, Sexismus und Diskriminierung im Netz zu bekämpfen. Jugendliche sollen in ihrem Einsatz für Demokratie und Menschenrechte gestärkt werden, Aktionen gegen Hate Speech im Netz gebündelt werden.',
       link: 'https://www.nohatespeech.at/',
       linkText: 'www.nohatespeech.at/',
       linkType: 'external'
@@ -138,7 +138,7 @@ export const networkData = [
     en: {
       title: 'No Hate Speech Komittee',
       text:
-        'Das österreichische No Hate Speech-Komitee will die Öffentlichkeit für das Thema Hassreden im Netz sensibilisieren.',
+        'Das nationale „No Hate Speech“-Komitee will für das Thema Hassreden im Netz sensibilisieren sowie Ursachen und Kontexte thematisieren, um der Akzeptanz von Hassreden entgegen zu wirken und somit Rassismus, Sexismus und Diskriminierung im Netz zu bekämpfen. Jugendliche sollen in ihrem Einsatz für Demokratie und Menschenrechte gestärkt werden, Aktionen gegen Hate Speech im Netz gebündelt werden.',
       link: 'https://www.nohatespeech.at/',
       linkText: 'www.nohatespeech.at/',
       linkType: 'external'
