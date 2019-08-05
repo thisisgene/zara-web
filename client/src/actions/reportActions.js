@@ -4,7 +4,8 @@ import {
   GET_REPORT_BY_ID,
   SEND_REPORT,
   RESET_REPORT,
-  REPORT_FAIL
+  REPORT_FAIL,
+  UPDATE_REPORT
 } from './types'
 
 export const getAllReports = () => dispatch => {
@@ -30,7 +31,7 @@ export const sendToArchive = id => dispatch => {
     .get(`/api/projects/report/sendToArchive/${id}`)
     .then(res => {
       dispatch({
-        type: GET_REPORT_BY_ID,
+        type: UPDATE_REPORT,
         payload: res.data
       })
     })

@@ -170,7 +170,9 @@ router.get(
       .then(report => {
         report.archived = !report.archived
         report.save((err, updatedReport) => {
-          res.json(updatedReport)
+          Report.find().then(reports => {
+            res.json({ report: updatedReport, reports: reports })
+          })
         })
       })
       .catch(err => {

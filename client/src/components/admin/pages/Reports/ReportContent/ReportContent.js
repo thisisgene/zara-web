@@ -151,13 +151,13 @@ class ReportContent extends Component {
                 <h3>Keine Bilder vorhanden</h3>
               )}
             </div>
-            {/* <div className={styles['archive-button']}>
+            <div className={styles['archive-button']}>
               <button
                 onClick={this.onSendToArchiveClick.bind(this, report._id)}
               >
                 {this.state.archived ? 'Aus Archiv holen' : 'Archivieren'}
               </button>
-            </div> */}
+            </div>
           </div>
         )}
       </div>

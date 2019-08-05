@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink, withRouter } from 'react-router-dom'
-import { getReportById } from '../../../../../actions/reportActions'
+import {
+  getReportById,
+  sendToArchive
+} from '../../../../../actions/reportActions'
 import Moment from 'react-moment'
 
 import styles from './ReportList.module.sass'
 
 class ReportListItem extends Component {
+  onSendToArchiveClick = id => {
+    this.props.sendToArchive(id)
+  }
+
   render() {
     const { report } = this.props
     return (
@@ -18,6 +25,14 @@ class ReportListItem extends Component {
         >
           <Moment format="YYYY/MM/DD - HH:mm">{report.date}</Moment>
         </NavLink>
+        {!report.archived && (
+          <div
+            className={styles['report-list-item--archive']}
+            onClick={this.onSendToArchiveClick.bind(this, report._id)}
+          >
+            <img className="fa fa-archive" title="Archivieren" />
+          </div>
+        )}
       </div>
     )
   }
@@ -26,6 +41,6 @@ class ReportListItem extends Component {
 export default withRouter(
   connect(
     null,
-    { getReportById }
+    { getReportById, sendToArchive }
   )(ReportListItem)
 )

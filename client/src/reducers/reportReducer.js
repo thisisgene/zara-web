@@ -4,7 +4,8 @@ import {
   SEND_REPORT,
   RESET_REPORT,
   REPORT_FAIL,
-  CLEAR_REPORT
+  CLEAR_REPORT,
+  UPDATE_REPORT
 } from '../actions/types'
 
 const initialState = {
@@ -47,7 +48,12 @@ export default function(state = initialState, action) {
         ...state,
         report: null
       }
-
+    case UPDATE_REPORT:
+      return {
+        ...state,
+        reports: action.payload.reports,
+        report: action.payload.report
+      }
     default:
       return state
   }

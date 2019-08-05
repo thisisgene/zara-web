@@ -96,6 +96,7 @@ export const SEND_REPORT = 'SEND_REPORT'
 export const RESET_REPORT = 'RESET_REPORT'
 export const REPORT_FAIL = 'REPORT_FAIL'
 export const CLEAR_REPORT = 'CLEAR_REPORT'
+export const UPDATE_REPORT = 'UPDATE_REPORT'
 
 export const SEND_ORDER = 'SEND_ORDER'
 export const RESET_ORDER = 'RESET_ORDER'

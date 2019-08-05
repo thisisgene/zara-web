@@ -4,11 +4,21 @@
   border-right: 1px solid #aaa
   overflow-y: auto
   height: 100%
+  .archive-button button
+    border: none
+    background: lighten(#49B02B, 20%)
   .report-list-item
     // overflow-y: auto
+    display: flex
     a
       color: #bbb
       &.active
         color: #fff
         font-style: italic
         padding-left: 1rem
+    &--archive
+      margin-left: 1rem
+      color: #49B02B
+      cursor: 
+      &:hover
+        opacity: .8
