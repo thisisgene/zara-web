@@ -138,6 +138,7 @@ router.get(
   (req, res) => {
     Report.find()
       .sort('-date')
+      .select('_id date archived')
       .exec()
       .then(reports => {
         res.json(reports)
@@ -170,9 +171,13 @@ router.get(
       .then(report => {
         report.archived = !report.archived
         report.save((err, updatedReport) => {
-          Report.find().then(reports => {
-            res.json({ report: updatedReport, reports: reports })
-          })
+          Report.find()
+            .sort('-date')
+            .select('_id date archived')
+            .exec()
+            .then(reports => {
+              res.json({ report: updatedReport, reports: reports })
+            })
         })
       })
       .catch(err => {
