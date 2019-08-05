@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Moment from 'react-moment'
-import { getReportById } from '../../../../../actions/reportActions'
+import {
+  getReportById,
+  sendToArchive
+} from '../../../../../actions/reportActions'
 import { clearSingle } from '../../../../../actions/adminActions'
 
 import styles from './ReportContent.module.sass'
@@ -15,7 +18,8 @@ class ReportContent extends Component {
     date: '',
     description: '',
     links: '',
-    images: []
+    images: [],
+    archived: false
   }
   componentDidMount() {
     const id = this.props.match.params.id
@@ -27,14 +31,15 @@ class ReportContent extends Component {
       if (this.props.report.report) {
         const report = this.props.report.report
         this.setState({
-          firstName: report.firstName,
-          lastName: report.lastName,
-          email: report.email,
-          phone: report.phone,
-          date: report.date,
-          description: report.description,
-          links: report.links,
-          images: report.images
+          archived: report.archived
+          // firstName: report.firstName,
+          // lastName: report.lastName,
+          // email: report.email,
+          // phone: report.phone,
+          // date: report.date,
+          // description: report.description,
+          // links: report.links,
+          // images: report.images
         })
       }
     }
@@ -42,6 +47,10 @@ class ReportContent extends Component {
 
   componentWillUnmount() {
     this.props.clearSingle('report')
+  }
+
+  onSendToArchiveClick = id => {
+    this.props.sendToArchive(id)
   }
 
   render() {
@@ -110,6 +119,13 @@ class ReportContent extends Component {
                 <h3>Keine Bilder vorhanden</h3>
               )}
             </div>
+            {/* <div className={styles['archive-button']}>
+              <button
+                onClick={this.onSendToArchiveClick.bind(this, report._id)}
+              >
+                {this.state.archived ? 'Aus Archiv holen' : 'Archivieren'}
+              </button>
+            </div> */}
           </div>
         )}
       </div>
@@ -123,5 +139,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getReportById }
+  { getReportById, sendToArchive, clearSingle }
 )(ReportContent)

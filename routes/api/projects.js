@@ -162,6 +162,23 @@ router.get(
   }
 )
 
+router.get(
+  '/report/sendToArchive/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Report.findById(req.params.id)
+      .then(report => {
+        report.archived = !report.archived
+        report.save((err, updatedReport) => {
+          res.json(updatedReport)
+        })
+      })
+      .catch(err => {
+        res.json(err)
+      })
+  }
+)
+
 router.post('/report/send', (req, res) => {
   const body = req.body
   const date = new Date()

@@ -25,6 +25,20 @@ export const getReportById = id => dispatch => {
   })
 }
 
+export const sendToArchive = id => dispatch => {
+  axios
+    .get(`/api/projects/report/sendToArchive/${id}`)
+    .then(res => {
+      dispatch({
+        type: GET_REPORT_BY_ID,
+        payload: res.data
+      })
+    })
+    .catch(res => {
+      console.log(res.data)
+    })
+}
+
 export const resetReport = () => dispatch => {
   dispatch({
     type: RESET_REPORT

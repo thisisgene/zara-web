@@ -27,6 +27,10 @@ const ReportSchema = new Schema({
   date: {
     type: Date
   },
+  archived: {
+    type: Boolean,
+    default: false
+  },
   images: [
     {
       originalName: {
