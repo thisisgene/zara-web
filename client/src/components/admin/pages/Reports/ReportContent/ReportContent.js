@@ -9,6 +9,31 @@ import { clearSingle } from '../../../../../actions/adminActions'
 
 import styles from './ReportContent.module.sass'
 
+class Image extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      src: props.src,
+      alt: props.alt
+    }
+  }
+  onError = () => {
+    if (!this.state.errored) {
+      this.setState({
+        src: this.props.src.replace(/_/g, ' '),
+        errored: true
+      })
+    }
+  }
+
+  render() {
+    const { src, alt } = this.state
+    const { src: _1, fallbackSrc: _2, ...props } = this.props
+
+    return <img src={src} alt={alt} onError={this.onError} {...props} />
+  }
+}
+
 class ReportContent extends Component {
   state = {
     firstName: '',
@@ -109,7 +134,7 @@ class ReportContent extends Component {
                     <div>
                       <div className={styles['thumb']}>
                         <div className={styles['thumbInner']}>
-                          <img
+                          <Image
                             src={`/assets/reports/${report._id}/${
                               image.originalName
                             }`}
