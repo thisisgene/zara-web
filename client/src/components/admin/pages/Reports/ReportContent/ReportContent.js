@@ -2,13 +2,46 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Moment from 'react-moment'
 import { getReportById } from '../../../../../actions/reportActions'
+import { clearSingle } from '../../../../../actions/adminActions'
 
 import styles from './ReportContent.module.sass'
 
 class ReportContent extends Component {
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    date: '',
+    description: '',
+    links: '',
+    images: []
+  }
   componentDidMount() {
     const id = this.props.match.params.id
     this.props.getReportById(id)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.report != this.props.report) {
+      if (this.props.report.report) {
+        const report = this.props.report.report
+        this.setState({
+          firstName: report.firstName,
+          lastName: report.lastName,
+          email: report.email,
+          phone: report.phone,
+          date: report.date,
+          description: report.description,
+          links: report.links,
+          images: report.images
+        })
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    this.props.clearSingle('report')
   }
 
   render() {
@@ -56,10 +89,7 @@ class ReportContent extends Component {
             <div className={styles['image-container']}>
               {report.images ? (
                 report.images.map((image, index) => (
-                  <div
-                    className={styles['thumb-container']}
-                    key={image.originalName}
-                  >
+                  <div className={styles['thumb-container']} key={index}>
                     <div>
                       <div className={styles['thumb']}>
                         <div className={styles['thumbInner']}>

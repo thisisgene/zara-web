@@ -3,7 +3,8 @@ import {
   GET_REPORT_BY_ID,
   SEND_REPORT,
   RESET_REPORT,
-  REPORT_FAIL
+  REPORT_FAIL,
+  CLEAR_REPORT
 } from '../actions/types'
 
 const initialState = {
@@ -41,6 +42,12 @@ export default function(state = initialState, action) {
           'Abschicken hat nicht geklappt. Bitte versuchen Sie es erneut.',
         reportMsgEN: 'Something went wrong. Please try again.'
       }
+    case CLEAR_REPORT:
+      return {
+        ...state,
+        report: null
+      }
+
     default:
       return state
   }

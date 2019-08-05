@@ -18,7 +18,7 @@ class Reports extends Component {
     const { reports } = this.props.report
     return (
       <div className={styles['reports']}>
-        <p>Reports</p>
+        {/* <p>Meldungen</p> */}
         <div className={styles['reports-container']}>
           <ReportList reports={reports} />
           <Route path="/admin/reports/:id" component={ReportContent} />

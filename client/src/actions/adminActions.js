@@ -46,7 +46,8 @@ import {
   CLEAR_FAQ,
   SET_GENERAL_LOADING,
   UNSET_GENERAL_LOADING,
-  GET_ALL_USERS
+  GET_ALL_USERS,
+  CLEAR_REPORT
 } from './types'
 
 // import { setProjectLoading } from './projectActions'
@@ -1131,6 +1132,12 @@ export const clearSingle = category => dispatch => {
     case 'trainings':
       dispatch({
         type: CLEAR_TRAINING
+      })
+
+      break
+    case 'report':
+      dispatch({
+        type: CLEAR_REPORT
       })
 
       break
