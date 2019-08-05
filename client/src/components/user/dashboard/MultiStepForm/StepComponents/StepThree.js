@@ -44,21 +44,25 @@ class Step3 extends Component {
   }
 
   onDrop = files => {
+    let fileCount = 10 - this.state.files.length
     files.map(file => {
       Object.assign(file, {
         preview: URL.createObjectURL(file)
       })
-      this.setState(
-        state => ({
-          files: [...state.files, file]
-        }),
-        () => {
-          this.props.updateStore({
-            files: this.state.files,
-            savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
-          })
-        }
-      )
+      if (fileCount > 0) {
+        this.setState(
+          state => ({
+            files: [...state.files, file]
+          }),
+          () => {
+            this.props.updateStore({
+              files: this.state.files,
+              savedToCloud: true // use this to notify step4 that some changes took place and prompt the user to save again
+            })
+          }
+        )
+        fileCount--
+      } else return 'Maximal 10 Dateien'
     })
 
     // if (this.props.getStore().files !== files) {
@@ -93,7 +97,7 @@ class Step3 extends Component {
   }
   render() {
     const { files } = this.state
-
+    const maxSize = 10485760
     const thumbs = files.map(file => (
       <div key={file.name}>
         <div className={commonStyles['thumb']}>
@@ -124,6 +128,8 @@ class Step3 extends Component {
             <Dropzone
               className={styles['dropzone-inner']}
               accept="image/*"
+              minSize={0}
+              maxSize={maxSize}
               onDrop={this.onDrop}
               onFileDialogCancel={this.onCancel}
               name="file"
@@ -134,6 +140,14 @@ class Step3 extends Component {
                 acceptedFiles,
                 rejectedFiles
               }) => {
+                const isFileTooLarge =
+                  rejectedFiles.length > 0 && rejectedFiles[0].size > maxSize
+                if (this.state.files.length >= 10) {
+                  return 'Limit erreicht! Es dürfen maximal nur 10 Dateien auf einmal gesendet werden.'
+                }
+                if (isFileTooLarge) {
+                  return 'Datei ist zu groß. Maximal 10 MB.'
+                }
                 if (acceptedFiles.length || rejectedFiles.length) {
                   return `Akzeptiert: ${acceptedFiles.length}, abgelehnt: ${
                     rejectedFiles.length
