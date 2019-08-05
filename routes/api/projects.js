@@ -288,7 +288,7 @@ router.post('/report/images', async (req, res) => {
     console.log('File uploaded successfully.')
     // res.send('success')
     const body = req.body
-    const imgName = body.name.replace(/ /g, '_')
+    const imgName = body.name
     const newImage = {
       originalName: imgName
     }
