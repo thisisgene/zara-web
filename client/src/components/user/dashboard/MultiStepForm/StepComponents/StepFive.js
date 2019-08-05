@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import Promise from 'promise'
 
 import Spinner from '../../Spinner/Spinner'
@@ -48,14 +49,45 @@ class StepFive extends Component {
     const reportData = this.props.getStore()
 
     return new Promise(async (resolve, reject) => {
-      this.props.sendReport(reportData)
-      setTimeout(() => {
-        if (this.props.getStore().reportSent) {
-          resolve()
+      let formData = new FormData()
+
+      axios.post('/api/projects/report/send', reportData).then(res => {
+        const id = res.data.report._id
+        const files = reportData.files
+        if (files.length > 0) {
+          files.map(file => {
+            let fileData = new FormData()
+            fileData.append('id', id)
+            fileData.append('name', file.name)
+            fileData.append('size', file.size)
+            fileData.append('file', file)
+            console.log('file data: ', fileData)
+            return axios
+              .post('/api/projects/report/images', fileData)
+              .then(res => {
+                if (res.data === 'success') {
+                  resolve()
+                } else {
+                  reject()
+                }
+              })
+          })
         } else {
-          reject()
+          if (res.data.msg === 'success') {
+            resolve()
+          } else {
+            reject()
+          }
         }
-      }, 4000)
+      })
+      // this.props.sendReport(reportData)
+      // setTimeout(() => {
+      //   if (this.props.getStore().reportSent) {
+      //     resolve()
+      //   } else {
+      //     reject()
+      //   }
+      // }, 4000)
     })
   }
 

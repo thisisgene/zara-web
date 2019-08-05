@@ -32,49 +32,40 @@ export const resetReport = () => dispatch => {
 }
 
 export const sendReport = reportData => dispatch => {
-  let formData = new FormData()
-  // formData.append('description', reportData.description)
-  // formData.append('links', reportData.links)
-  // if (reportData.selectedOption === 'anonym') {
-  //   formData.append('anonym', true)
-  // } else {
-  //   formData.append('name', reportData.name)
-  //   formData.append('email', reportData.email)
-  //   formData.append('phone', reportData.phone)
-  // }
-  axios.post('/api/projects/report/send', reportData).then(res => {
-    const id = res.data.report._id
-    const files = reportData.files
-    if (files.length > 0) {
-      files.map(file => {
-        let fileData = new FormData()
-        fileData.append('id', id)
-        fileData.append('name', file.name)
-        fileData.append('size', file.size)
-        fileData.append('file', file)
-        console.log('file data: ', fileData)
-        return axios.post('/api/projects/report/images', fileData).then(res => {
-          if (res.data === 'success') {
-            dispatch({
-              type: SEND_REPORT
-            })
-          } else {
-            dispatch({
-              type: REPORT_FAIL
-            })
-          }
-        })
-      })
-    } else {
-      if (res.data.msg === 'success') {
-        dispatch({
-          type: SEND_REPORT
-        })
-      } else {
-        dispatch({
-          type: REPORT_FAIL
-        })
-      }
-    }
-  })
+  // let formData = new FormData()
+  // axios.post('/api/projects/report/send', reportData).then(res => {
+  //   const id = res.data.report._id
+  //   const files = reportData.files
+  //   if (files.length > 0) {
+  //     files.map(file => {
+  //       let fileData = new FormData()
+  //       fileData.append('id', id)
+  //       fileData.append('name', file.name)
+  //       fileData.append('size', file.size)
+  //       fileData.append('file', file)
+  //       console.log('file data: ', fileData)
+  //       return axios.post('/api/projects/report/images', fileData).then(res => {
+  //         if (res.data === 'success') {
+  //           dispatch({
+  //             type: SEND_REPORT
+  //           })
+  //         } else {
+  //           dispatch({
+  //             type: REPORT_FAIL
+  //           })
+  //         }
+  //       })
+  //     })
+  //   } else {
+  //     if (res.data.msg === 'success') {
+  //       dispatch({
+  //         type: SEND_REPORT
+  //       })
+  //     } else {
+  //       dispatch({
+  //         type: REPORT_FAIL
+  //       })
+  //     }
+  //   }
+  // })
 }
