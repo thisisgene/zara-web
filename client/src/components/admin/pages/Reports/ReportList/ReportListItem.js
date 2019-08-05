@@ -7,6 +7,8 @@ import {
 } from '../../../../../actions/reportActions'
 import Moment from 'react-moment'
 
+import Archive from '../../../common/assets/archive.png'
+
 import styles from './ReportList.module.sass'
 
 class ReportListItem extends Component {
@@ -30,7 +32,7 @@ class ReportListItem extends Component {
             className={styles['report-list-item--archive']}
             onClick={this.onSendToArchiveClick.bind(this, report._id)}
           >
-            <img className="fa fa-archive" title="Archivieren" />
+            <img src={Archive} title="Archivieren" />
           </div>
         )}
       </div>
