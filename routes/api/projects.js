@@ -226,7 +226,7 @@ sendEmail = report => {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: 'emdo2000@gmail.com', // list of receivers //beratung@zara.or.at
+    to: 'beratung@zara.or.at', // list of receivers //beratung@zara.or.at
     subject: 'New Report', // Subject line
     text: outputPlain, // plain text body
     html: outputHtml // html body
