@@ -8,6 +8,7 @@ import ReportList from './ReportList/ReportList'
 import ReportContent from './ReportContent/ReportContent'
 
 import styles from './Reports.module.sass'
+import Spinner from '../../common/Spinner'
 
 class Reports extends Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class Reports extends Component {
       <div className={styles['reports']}>
         {/* <p>Meldungen</p> */}
         <div className={styles['reports-container']}>
-          <ReportList reports={reports} />
+          {reports ? <ReportList reports={reports} /> : <Spinner />}
           <Route path="/admin/reports/:id" component={ReportContent} />
         </div>
       </div>
