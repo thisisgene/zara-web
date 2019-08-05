@@ -89,7 +89,14 @@ class ReportContent extends Component {
                 {report.links &&
                   report.links.split(',').map(link => (
                     <div>
-                      <a href={link}>{link}</a>
+                      <a
+                        target="_blank"
+                        href={
+                          link.indexOf('://') !== -1 ? link : `http://${link}`
+                        }
+                      >
+                        {link}
+                      </a>
                     </div>
                   ))}
               </div>
