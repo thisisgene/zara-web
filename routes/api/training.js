@@ -224,29 +224,37 @@ router.get(
 // @route   GET api/training/trainings
 // @desc    Get all trainings
 // @access  Public
-router.get('/trainings', (req, res) => {
-  const errors = {}
-  Training.find({ isDeleted: false })
-    .sort('position')
-    .exec()
-    .then(trainings => {
-      res.json(trainings)
-    })
-    .catch(err => res.status(404).json(err))
-})
+router.get(
+  '/trainings',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {}
+    Training.find({ isDeleted: false })
+      .sort('position')
+      .exec()
+      .then(trainings => {
+        res.json(trainings)
+      })
+      .catch(err => res.status(404).json(err))
+  }
+)
 // @route   GET api/training/trainingsSorted/:sortBy
 // @desc    Get all trainings
 // @access  Public
-router.get('/trainingsSorted/:sortBy', (req, res) => {
-  const errors = {}
-  Training.find({ isDeleted: false })
-    .sort(req.params.sortBy)
-    .exec()
-    .then(trainings => {
-      res.json(trainings)
-    })
-    .catch(err => res.status(404).json(err))
-})
+router.get(
+  '/trainingsSorted/:sortBy',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {}
+    Training.find({ isDeleted: false })
+      .sort(req.params.sortBy)
+      .exec()
+      .then(trainings => {
+        res.json(trainings)
+      })
+      .catch(err => res.status(404).json(err))
+  }
+)
 
 // @route   POST api/training/trainings
 // @desc    Create a training
@@ -403,22 +411,26 @@ router.post(
 // @route   GET api/training/trainings/:id
 // @desc    Get Training by id
 // @access  Public
-router.get('/trainings/:id', (req, res) => {
-  const errors = {}
-  Training.findOne({ _id: req.params.id, isDeleted: false })
-    .populate('lastEdited.user', ['name'])
-    .then(training => {
-      if (!training) {
-        errors.notraining = 'Kein Beitrag mit dieser ID.'
-        return res.status(404).json(errors.notraining)
-      }
-      res.json(training)
-    })
-    .catch(err => {
-      errors.training = 'Beitrag nicht gefunden.'
-      return res.status(404).json(errors)
-    })
-})
+router.get(
+  '/trainings/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {}
+    Training.findOne({ _id: req.params.id, isDeleted: false })
+      .populate('lastEdited.user', ['name'])
+      .then(training => {
+        if (!training) {
+          errors.notraining = 'Kein Beitrag mit dieser ID.'
+          return res.status(404).json(errors.notraining)
+        }
+        res.json(training)
+      })
+      .catch(err => {
+        errors.training = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
 
 // @route   GET api/training/training/toggle_online/:id/:state
 // @desc    Toggle online training by id
