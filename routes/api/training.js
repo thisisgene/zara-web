@@ -635,8 +635,6 @@ sendTrainingEmail = (emailList, content, res) => {
     html: outputHtml // html body
   }
 
-  console.log('hola')
-
   // send mail with defined transport object
   if (emailList.length > 0) {
     transporter.sendMail(trainingMailOptions, (error, info) => {
