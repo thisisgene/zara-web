@@ -599,8 +599,8 @@ sendTrainingEmail = (emailList, content, res) => {
     <h2>${content.title}</h2>
     <p>${moment(new Date(content.date))
       .add(2, 'hours')
-      // .locale('de', localization)
-      .format('DD. MM. YYYY')}
+      .locale('de', localization)
+      .format('DD. MMMM YYYY')}
       </p>
     <p>${content.timeFrom} - ${content.timeUntil}</p>
     <p>${content.location}</p>
