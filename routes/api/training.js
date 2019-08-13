@@ -415,7 +415,7 @@ router.post(
 // @access  Public
 router.get(
   '/trainings/:id',
-  // passport.authenticate('jwt', { session: false }),
+  passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const errors = {}
     Training.findOne({ _id: req.params.id, isDeleted: false })
