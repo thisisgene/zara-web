@@ -95,6 +95,7 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const body = req.body
+    const fDate = moment(body.date).format()
     // Get fields
     const trainingTeamFields = { de: {}, en: {} }
     if (body.titleDE) {
@@ -109,7 +110,7 @@ router.post(
       {
         $set: {
           tag: body.tag,
-          date: body.date,
+          date: fDate,
           handle: trainingTeamFields.handle,
           email: body.email,
           de: {
@@ -313,7 +314,8 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const body = req.body
-    console.log(body)
+    const fDate = moment(body.date).format()
+    console.log(fDate)
     const { errors, isValid } = await validateTrainingInput(body)
     if (!isValid) {
       return res.status(400).json(errors)
@@ -327,7 +329,7 @@ router.post(
           handle: body.title && body.title.replace(/\s/g, '_'),
 
           tag: body.tag && body.tag,
-          date: body.date && body.date,
+          date: fDate,
           timeFrom: body.timeFrom && body.timeFrom,
           timeUntil: body.timeUntil && body.timeUntil,
           location: {
@@ -413,7 +415,7 @@ router.post(
 // @access  Public
 router.get(
   '/trainings/:id',
-  passport.authenticate('jwt', { session: false }),
+  // passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const errors = {}
     Training.findOne({ _id: req.params.id, isDeleted: false })
@@ -590,8 +592,9 @@ sendTrainingEmail = (emailList, content, res) => {
     outputHtml += `
     <h2>${content.title}</h2>
     <p>${moment(content.date)
-      .locale('de', localization)
-      .format('DD. MMMM YYYY')}</p>
+      // .locale('de', localization)
+      .format()}
+      </p>
     <p>${content.timeFrom} - ${content.timeUntil}</p>
     <p>${content.location}</p>
     <p>${content.address1}</p>
