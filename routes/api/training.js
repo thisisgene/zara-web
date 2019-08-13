@@ -588,10 +588,16 @@ sendTrainingEmail = (emailList, content, res) => {
   if (content.addMessage) {
     outputHtml += `<p>${marked(content.addMessage)}</p><br />-----<br />`
   }
+  console.log(
+    'orig. Date: ',
+    new Date(content.date).setUTCHours(2, 0, 0, 0),
+    'vs: ',
+    content.date
+  )
   if (content.includeOriginalMessage) {
     outputHtml += `
     <h2>${content.title}</h2>
-    <p>${moment(content.date)
+    <p>${moment(new Date(content.date))
       // .locale('de', localization)
       .format('DD. MM. YYYY')}
       </p>
