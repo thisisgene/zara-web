@@ -5,6 +5,8 @@ import moment from 'moment'
 
 import TextFieldGroup from '../../../../common/TextFieldGroup'
 
+import EmbedPopUp from '../../../../common/EmbedPopUp/EmbedPopUp'
+
 import {
   saveContent,
   getAll,
@@ -54,6 +56,7 @@ class NewsContent extends Component {
       bigImage: false,
       errors: {},
       imageListOpen: false
+      // showEmbedPopUp: true // should be false
     }
   }
 
@@ -288,6 +291,11 @@ class NewsContent extends Component {
   render() {
     return (
       <div className={styles['news-wrapper']}>
+        {/* {this.state.showEmbedPopUp && (
+          <div className={styles['embed-popup-container']}>
+            <EmbedPopUp />
+          </div>
+        )} */}
         <div
           className={cx(styles['news-content-container'], {
             [styles['blank-item']]: this.state.blankItem
@@ -314,13 +322,6 @@ class NewsContent extends Component {
                   value={this.state.date}
                   onChange={this.onDateChange}
                 />
-                {/* <DatePicker
-                  className={styles['date-picker']}
-                  value={this.state.date}
-                  onChange={this.onDateChange}
-                  // dateFormat={'dd/MM/YYYY'}
-                  locale={'de-DE'}
-                /> */}
               </div>
             </div>
             <div className={styles['news-content']}>
@@ -337,9 +338,6 @@ class NewsContent extends Component {
                       onChange={this.onChange}
                       error={this.state.errors.titleDE}
                     />
-                    {/* {this.state.newsId === 'neu'
-                  ? 'Neuer Beitrag'
-                  : this.state.titleDE} */}
                   </div>
                   <div
                     className={
@@ -461,6 +459,7 @@ class NewsContent extends Component {
                       <span>Preview</span>
                     </a>
                   </div>
+
                   <div
                     className={
                       styles['news-content--sidebar__section--publish']
@@ -488,15 +487,26 @@ class NewsContent extends Component {
                 <div className={styles['news-content--sidebar__links']}>
                   <p>Link</p>
                   <div className={styles['news-content--sidebar__links--box']}>
-                    <p>{`https://zara.or.at/de/wissen/aktuelles/n/${
-                      this.state.category
-                    }/${this.state.newsId}/${this.state.handle}`}</p>
+                    <p>{`https://zara.or.at/de/wissen/aktuelles/n/${this.state.category}/${this.state.newsId}/${this.state.handle}`}</p>
                   </div>
                   {/* <p>Shortlink</p>
                   <div className={styles['news-content--sidebar__links--box']}>
                     <p>{`https://zara.or.at/de/n/${this.state.newsId}`}</p>
                   </div> */}
                 </div>
+                {/* <hr />
+                <div>
+                  <button
+                    className={commonStyles['button']}
+                    onClick={() =>
+                      this.setState({
+                        showEmbedPopUp: !this.state.showEmbedPopUp
+                      })
+                    }
+                  >
+                    Embed ...
+                  </button>
+                </div> */}
                 <hr />
                 <div>
                   <input
@@ -525,9 +535,7 @@ class NewsContent extends Component {
                   <div className={cx(styles['title-image--avatar'])}>
                     {this.state.titleImage ? (
                       <img
-                        src={`/assets/media/${this.state.imageCategory}/${
-                          this.state.titleImage
-                        }`}
+                        src={`/assets/media/${this.state.imageCategory}/${this.state.titleImage}`}
                         alt=""
                       />
                     ) : (
