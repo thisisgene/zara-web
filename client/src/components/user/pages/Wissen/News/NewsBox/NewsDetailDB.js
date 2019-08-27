@@ -66,9 +66,7 @@ class Preview extends Component {
               />
               <meta
                 property="og:image"
-                content={`/assets/media/${newsItem.titleImage.category}/${
-                  newsItem.titleImage.originalName
-                }`}
+                content={`/assets/media/${newsItem.titleImage.category}/${newsItem.titleImage.originalName}`}
               />
             </MetaTags>
             <div className={styles['news-detail']}>

@@ -18,7 +18,8 @@ class NewsDetail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newsId: props.match.params.newsId
+      newsId: props.match.params.newsId,
+      finishedParsing: false
     }
   }
   componentDidMount() {
@@ -40,6 +41,7 @@ class NewsDetail extends Component {
       document.title = docTitle
     }
   }
+
   render() {
     const { activeLanguage } = this.props
     let lang
@@ -50,6 +52,7 @@ class NewsDetail extends Component {
     let news
     if (lang) {
       news = newsArray[0]
+
       if (!news.image) {
         news.imageSide = 'left'
         news.imageAlign = 'center'

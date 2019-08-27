@@ -55,8 +55,8 @@ class NewsContent extends Component {
       imageAlign: '',
       bigImage: false,
       errors: {},
-      imageListOpen: false
-      // showEmbedPopUp: true // should be false
+      imageListOpen: false,
+      showEmbedPopUp: true // should be false
     }
   }
 
@@ -291,11 +291,11 @@ class NewsContent extends Component {
   render() {
     return (
       <div className={styles['news-wrapper']}>
-        {/* {this.state.showEmbedPopUp && (
+        {this.state.showEmbedPopUp && (
           <div className={styles['embed-popup-container']}>
             <EmbedPopUp />
           </div>
-        )} */}
+        )}
         <div
           className={cx(styles['news-content-container'], {
             [styles['blank-item']]: this.state.blankItem
@@ -494,7 +494,7 @@ class NewsContent extends Component {
                     <p>{`https://zara.or.at/de/n/${this.state.newsId}`}</p>
                   </div> */}
                 </div>
-                {/* <hr />
+                <hr />
                 <div>
                   <button
                     className={commonStyles['button']}
@@ -506,7 +506,7 @@ class NewsContent extends Component {
                   >
                     Embed ...
                   </button>
-                </div> */}
+                </div>
                 <hr />
                 <div>
                   <input
