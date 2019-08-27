@@ -14,6 +14,7 @@ export default class EmbedPopUp extends Component {
         {videos && (
           <div className={styles['video-list']}>
             {videos
+              .filter(video => video !== null)
               .filter(video => !video.isDeleted)
               .map(video => (
                 <div>

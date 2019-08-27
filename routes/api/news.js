@@ -296,14 +296,8 @@ router.get(
   '/video/delete/:nId/:vId',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    News.findById(req.params.nId).then(async newsItem => {
-      const videos = newsItem.videos
-
-      await videos.map(video => {
-        if (video.id === req.params.vId) {
-          video.isDeleted = true
-        }
-      })
+    News.findById(req.params.nId).then(newsItem => {
+      newsItem.videos.pull(req.params.vId)
       newsItem
         .save()
         .then(newsItem => {

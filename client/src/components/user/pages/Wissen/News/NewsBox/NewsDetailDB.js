@@ -9,6 +9,7 @@ import { getById } from '../../../../../../actions/adminActions'
 import HeroUnit from '../../../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../../../dashboard/OneLineAlert/OneLineAlert'
 import CardCollectionGridObject from '../../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
+import VideoItem from '../../../../dashboard/VideoBox/VideoItem'
 
 import { oneLineAlert, cardGrid } from './newsdetail_data'
 
@@ -41,6 +42,9 @@ class Preview extends Component {
     }
 
     if (lang && newsItem) {
+      newsItem.videos.map(video => {
+        console.log('VIDEOS: ', video)
+      })
       if (!newsItem.titleImage || !newsItem.titleImage.originalName) {
         newsItem.titleImage = {
           originalName: 'news_placeholder.png',
@@ -79,16 +83,21 @@ class Preview extends Component {
                     __html: newsItem[lang].description
                   }}
                 />
-                {/* {newsItem[lang].videos &&
-              newsItem[lang].videos.map(video => (
-                <div className={styles['news-detail--video']}>
-                  <h2>{video.vTitle}</h2>
-                  <div className={styles['news-detail--video__item']}>
-                    <VideoItem video={video} />
-                  </div>
-                  <div dangerouslySetInnerHTML={{ __html: video.text }} />
-                </div>
-              ))} */}
+                {newsItem.videos &&
+                  newsItem.videos
+                    .filter(video => video !== null)
+                    .filter(video => !video.isDeleted)
+                    .map(video => (
+                      <div className={styles['news-detail--video']}>
+                        <h2>{video[lang] && video[lang].title}</h2>
+                        <div className={styles['news-detail--video__item']}>
+                          <VideoItem video={{ id: video.vId }} />
+                        </div>
+                        <div
+                          dangerouslySetInnerHTML={{ __html: video[lang].text }}
+                        />
+                      </div>
+                    ))}
                 {newsItem[lang].bottomText && (
                   <div
                     className={styles['news-detail--bottom-text']}

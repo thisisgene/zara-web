@@ -5,7 +5,7 @@
   // height: 50vh
   // width: 50vw
   background: rgba(white, .2)
-  padding: 1rem
+  padding: 1rem 2rem
 
 
   .video-list
@@ -13,25 +13,27 @@
     display: grid
     grid-template-columns: 1fr 1fr 1fr
     margin-bottom: 2rem
-
+    grid-gap: .4rem
     .video-item
       // max-width: 200px
       width: 100%
       // padding: .3rem
       background: #444
       position: relative
+      
       &--title
         display: flex
         justify-content: space-between
-        padding: .2rem .4rem
+        padding: .2rem .2rem .2rem .4rem
         .delete-button
           background: #F44335
           border: none
           font-size: .8rem
+          cursor: pointer
       &--text
         display: none
-        padding: .4rem
-        line-height: 1.1
+        padding: .6rem
+        line-height: 1.2
         z-index: 100
         position: absolute
         background: #444

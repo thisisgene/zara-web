@@ -57,7 +57,7 @@ class NewsContent extends Component {
       errors: {},
       imageListOpen: false,
       videos: [],
-      showEmbedPopUp: true // should be false
+      showEmbedPopUp: false // should be false
     }
   }
 
@@ -509,14 +509,16 @@ class NewsContent extends Component {
                 <hr />
                 <div>
                   <button
-                    className={commonStyles['button']}
+                    className={cx(styles['button'], {
+                      [styles['active']]: this.state.showEmbedPopUp
+                    })}
                     onClick={() =>
                       this.setState({
                         showEmbedPopUp: !this.state.showEmbedPopUp
                       })
                     }
                   >
-                    Embed ...
+                    Video Embed ...
                   </button>
                 </div>
                 <hr />

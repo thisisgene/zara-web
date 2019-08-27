@@ -51,6 +51,14 @@ class NewVideo extends Component {
       }
     }
     this.props.saveContent(saveData)
+    this.setState({
+      vId: '',
+      vTitleDE: '',
+      vTextDE: RichTextEditor.createEmptyValue(),
+      vTitleEN: '',
+      vTextEN: RichTextEditor.createEmptyValue(),
+      errors: []
+    })
   }
 
   render() {
