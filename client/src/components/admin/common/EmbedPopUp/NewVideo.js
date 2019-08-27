@@ -27,22 +27,30 @@ class NewVideo extends Component {
   }
 
   onDescriptionChange = (lang, value) => {
+    console.log(value)
     lang === 'de'
-      ? this.setState({ descriptionDE: value })
-      : this.setState({ descriptionEN: value })
+      ? this.setState({ vTextDE: value })
+      : this.setState({ vTextEN: value })
   }
 
   addVideo = () => {
     console.log(this.state.vTitleDE)
-    const videoObj = {
-      category: 'news',
-      id: this.state.vId,
-      titleDE: this.state.vTitleDE,
-      titleEN: this.state.vTitleEN,
-      textDE: this.state.vTextDE,
-      textEN: this.state.vTextEN
+    const saveData = {
+      category: 'news-video',
+      id: this.props.newsId,
+      videoObj: {
+        vId: this.state.vId,
+        de: {
+          title: this.state.vTitleDE,
+          text: this.state.vTextDE.toString('html')
+        },
+        en: {
+          title: this.state.vTitleEN,
+          text: this.state.vTextEN.toString('html')
+        }
+      }
     }
-    this.props.saveContent(videoObj)
+    this.props.saveContent(saveData)
   }
 
   render() {

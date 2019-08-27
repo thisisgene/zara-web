@@ -4,6 +4,7 @@ import {
   CREATE_NEW_NEWS,
   UPDATE_NEWS,
   DELETE_NEWS_BY_ID,
+  ADD_NEWS_VIDEO,
   CLEAR_NEWS_ITEM,
   CLEAR_ALL
 } from '../actions/types'
@@ -37,6 +38,11 @@ export default function(state = initialState, action) {
         ...state,
         news: action.payload.news,
         newsItem: action.payload.newsItem
+      }
+    case ADD_NEWS_VIDEO:
+      return {
+        ...state,
+        newsItem: action.payload
       }
     case DELETE_NEWS_BY_ID:
       return {

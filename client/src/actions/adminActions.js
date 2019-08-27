@@ -12,6 +12,7 @@ import {
   CREATE_NEW_NEWS,
   UPDATE_NEWS,
   CLEAR_NEWS_ITEM,
+  ADD_NEWS_VIDEO,
   GET_ALL_JAHRESBERICHTE,
   CLEAR_ALL,
   CLEAR_ERRORS,
@@ -498,6 +499,29 @@ export const saveContent = saveData => dispatch => {
             })
 
       break
+    case 'news-video':
+      axios
+        .post('/api/news/add_video', saveData)
+        .then(res => {
+          dispatch({ type: CLEAR_ERRORS })
+          dispatch({
+            type: ADD_NEWS_VIDEO,
+            payload: res.data
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+      break
     case 'jahresberichte':
       saveData.id === 'neu'
         ? axios
@@ -917,7 +941,7 @@ export const toggleOnline = (id, category, state) => dispatch => {
   }
 }
 
-export const deleteById = (id, category) => dispatch => {
+export const deleteById = (id, category, secondValue) => dispatch => {
   dispatch(setGeneralLoading())
 
   switch (category) {
@@ -949,6 +973,28 @@ export const deleteById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_NEWS_BY_ID,
+            payload: res.data
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+      break
+    case 'news-video':
+      axios
+        .get(`/api/news/video/delete/${id}/${secondValue}`)
+        .then(res => {
+          dispatch({
+            type: ADD_NEWS_VIDEO,
             payload: res.data
           })
           dispatch({

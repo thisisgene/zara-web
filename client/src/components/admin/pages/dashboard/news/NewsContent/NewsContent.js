@@ -56,7 +56,8 @@ class NewsContent extends Component {
       bigImage: false,
       errors: {},
       imageListOpen: false,
-      showEmbedPopUp: false // should be false
+      videos: [],
+      showEmbedPopUp: true // should be false
     }
   }
 
@@ -114,7 +115,8 @@ class NewsContent extends Component {
           imageCategory: item.titleImage && item.titleImage.category,
           imageSide: item.imageSide,
           imageAlign: item.imageAlign,
-          size: item.size
+          size: item.size,
+          videos: item.videos
         })
       }
       if (prevProps.match.params.newsId !== this.props.match.params.newsId) {
@@ -141,7 +143,8 @@ class NewsContent extends Component {
             imageCategory: '',
             imageSide: '',
             imageAlign: '',
-            size: ''
+            size: '',
+            videos: []
           })
         } else {
           this.props.getById(this.props.match.params.newsId, 'news')
@@ -288,14 +291,14 @@ class NewsContent extends Component {
     }
   }
 
+  onVideoDelete = (nId, vId) => {
+    console.log(vId)
+    this.props.deleteById(nId, 'news-video', vId)
+  }
+
   render() {
     return (
       <div className={styles['news-wrapper']}>
-        {/* {this.state.showEmbedPopUp && (
-          <div className={styles['embed-popup-container']}>
-            <EmbedPopUp />
-          </div>
-        )} */}
         <div
           className={cx(styles['news-content-container'], {
             [styles['blank-item']]: this.state.blankItem
@@ -404,6 +407,15 @@ class NewsContent extends Component {
                 </div>
               </div>
             </div>
+            {this.state.showEmbedPopUp && (
+              <div className={styles['embed-popup-container']}>
+                <EmbedPopUp
+                  newsId={this.state.newsId}
+                  videos={this.state.videos}
+                  onDeleteClick={this.onVideoDelete}
+                />
+              </div>
+            )}
           </div>
           <div>
             {this.props.news.newsItem && (
@@ -494,7 +506,7 @@ class NewsContent extends Component {
                     <p>{`https://zara.or.at/de/n/${this.state.newsId}`}</p>
                   </div> */}
                 </div>
-                {/* <hr />
+                <hr />
                 <div>
                   <button
                     className={commonStyles['button']}
@@ -506,7 +518,7 @@ class NewsContent extends Component {
                   >
                     Embed ...
                   </button>
-                </div> */}
+                </div>
                 <hr />
                 <div>
                   <input

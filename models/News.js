@@ -57,6 +57,23 @@ const NewsSchema = new Schema({
   imageSide: { type: String },
   imageAlign: { type: String },
   size: { type: String },
+  videos: [
+    {
+      vId: String,
+      de: {
+        title: String,
+        text: String
+      },
+      en: {
+        title: String,
+        text: String
+      },
+      isDeleted: {
+        type: Boolean,
+        default: false
+      }
+    }
+  ],
   images: [
     {
       originalName: {

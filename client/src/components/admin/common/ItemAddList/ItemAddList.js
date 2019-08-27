@@ -91,7 +91,6 @@ class ItemAddList extends Component {
           : this.props.baseCat === 'training' && this.props.category === 'team'
           ? item.name
           : item.de.title
-      console.log('title: ', item)
       result.push({ id: item._id, title: title })
     })
     return result
@@ -217,16 +216,24 @@ class ItemAddList extends Component {
                 this.state.selectedTag === ''
                   ? content.filter(item =>
                       category === 'trainings' || category === 'faqs'
-                        ? item.title
-                            .toLowerCase()
-                            .includes(this.state.searchValue.toLowerCase())
+                        ? item.title !== null
+                          ? item.title
+                              .toLowerCase()
+                              .includes(this.state.searchValue.toLowerCase())
+                          : '[ohne titel]'.includes(
+                              this.state.searchValue.toLowerCase()
+                            )
                         : baseCat === 'training' && category === 'team'
                         ? item.name
                             .toLowerCase()
                             .includes(this.state.searchValue.toLowerCase())
-                        : item.de.title
+                        : item.de.title !== null
+                        ? item.de.title
                             .toLowerCase()
                             .includes(this.state.searchValue.toLowerCase())
+                        : '[ohne titel]'.includes(
+                            this.state.searchValue.toLowerCase()
+                          )
                     )
                   : content
                       .filter(item => item.tag === this.state.selectedTag)

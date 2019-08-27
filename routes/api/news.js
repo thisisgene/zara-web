@@ -156,10 +156,6 @@ router.post(
     newsFields.de.description = body.descriptionDE
     newsFields.en.description = body.descriptionEN
 
-    // News.findById(body.id).then(newsItem => {
-    //   console.log(newsItem)
-    // })
-    // const updatedNews = new News({})
     News.findOneAndUpdate(
       { _id: body.id },
       {
@@ -187,23 +183,28 @@ router.post(
             shortDescription: newsFields.en.shortDescription,
             description: newsFields.en.description
           }
+        },
+        $push: {
+          videos: body.videoObj
         }
       },
-      { new: true },
-      (err, newsItem) => {
-        if (err) console.log('error: ', err)
-        if (!err) {
-          News.find({ isDeleted: false })
-            .sort('position')
-            .then(news => {
-              res.json({ news: news, newsItem: newsItem })
-            })
-            .catch(err => {
-              console.log(err)
-            })
-        }
-      }
+
+      { new: true }
     )
+      .then(newsItem => {
+        News.find({ isDeleted: false })
+          .sort('position')
+          .then(news => {
+            console.log('UPDATE: ', news)
+            res.json({ news: news, newsItem: newsItem })
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      })
+      .catch(err => {
+        if (err) console.log('error: ', err)
+      })
   }
 )
 
@@ -263,6 +264,56 @@ router.get(
         errors.news = 'Beitrag nicht gefunden.'
         return res.status(404).json(errors)
       })
+  }
+)
+
+router.post(
+  '/add_video',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const body = req.body
+    News.findOneAndUpdate(
+      { _id: body.id },
+      {
+        $push: {
+          videos: body.videoObj
+        }
+      },
+      { safe: true, new: true }
+    )
+      .then(newsItem => {
+        console.log(newsItem.videos)
+        res.json(newsItem)
+      })
+      .catch(err => {
+        errors.news = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
+router.get(
+  '/video/delete/:nId/:vId',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    News.findById(req.params.nId).then(async newsItem => {
+      const videos = newsItem.videos
+
+      await videos.map(video => {
+        if (video.id === req.params.vId) {
+          video.isDeleted = true
+        }
+      })
+      newsItem
+        .save()
+        .then(newsItem => {
+          res.json(newsItem)
+        })
+        .catch(err => {
+          errors.news = 'Beitrag nicht gefunden.'
+          return res.status(404).json(errors)
+        })
+    })
   }
 )
 

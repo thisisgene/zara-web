@@ -3,15 +3,62 @@
   // top: 25vh
   // left: 25vw
   // height: 50vh
-  width: 50vw
+  // width: 50vw
   background: rgba(white, .2)
   padding: 1rem
 
 
+  .video-list
+    width: 100%
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    margin-bottom: 2rem
+
+    .video-item
+      // max-width: 200px
+      width: 100%
+      // padding: .3rem
+      background: #444
+      position: relative
+      &--title
+        display: flex
+        justify-content: space-between
+        padding: .2rem .4rem
+        .delete-button
+          background: #F44335
+          border: none
+          font-size: .8rem
+      &--text
+        display: none
+        padding: .4rem
+        line-height: 1.1
+        z-index: 100
+        position: absolute
+        background: #444
+
+        width: 100%
+      &:hover
+        > .video-item--text
+          display: block
+      &--video
+        overflow: hidden
+        padding-top: 56.25%
+        position: relative
+        iframe
+          border: 0
+          height: 100%
+          left: 0
+          position: absolute
+          top: 0
+          width: 100%
+
   .create-video
+    background: rgba(#3E7035, 1)
+    padding: 1rem
     &--description
       width: 100%
       display: flex
       &__content
+        color: #050505
         flex: 1
         margin: .5rem
