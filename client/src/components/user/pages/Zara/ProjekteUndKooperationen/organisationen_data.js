@@ -64,7 +64,7 @@ export const projectData = [
     de: {
       title: '#aufstehn',
       text:
-        'ist eine Initiative des Integrationsressort des Landes Steiermark und der Stadt Graz, die vom Verein Helping Hands Graz als Trägerorganisation getragen wird. Sie ist eine Erstanlauf-, Clearing-, Beratungs- und Monitoringstelle. Allen sich betroffen fühlenden Menschen wird die Möglichkeit gegeben, sich mündlich, telefonisch, schriftlich oder auf elektronischem Weg an die Stelle zu wenden.<br>Neben der Funktion als Erstanlauf-, Clearing- und Beratungsstelle, ist die Antidiskriminierungsstelle Steiermark auf für Monitoring und wissenschaftliche Bearbeitung, Netzwerkarbeit, Bewusstseinsbildung und Sensibilisierung sowie Regionalisierung zuständig.',
+        'ist eine Gemeinschaft von über 200.000 Engagierten, die sich zusammen in Österreich für ein positives Miteinander und soziale, wirtschaftliche & ökologische Fairness einsetzen. Mit der Kampagne #solidaritystorm haben zehntausende Menschen den Betroffenen von Hass und sexualisierter Gewalt im Netz den Rücken gestärkt. Immer wieder fordern Engagierte via #aufstehn die politischen EntscheidungsträgerInnen zum Handeln gegen Hass im Netz auf. Auf der Seite <a href="http://www.solidaritystorm.at">www.solidaritystorm.at</a> finden sich online Betroffene und Interessierte zusammen, um gemeinsam für mehr digitale Zivilcourage zu sorgen. Neben Tipps & Tricks bietet die Seite auch die Möglichkeit sich z.B. über eine Facebook-Gruppe zu vernetzen und sich zum Thema auszutauschen.',
       link: 'http://www.aufstehn.at',
       linkText: 'www.aufstehn.at',
       linkType: 'external'
