@@ -47,12 +47,12 @@ class Team extends Component {
                   ))}
               </div>
               <div className={styles['bottom-box']}>
-                <div className={styles['bottom-box--image']}>
+                {/* <div className={styles['bottom-box--image']}>
                   <img
                     src={`/assets/img/team/training/ZARA Training Team.jpg`}
                     alt="ZARA Training Team"
                   />
-                </div>
+                </div> */}
                 <div className={styles['bottom-box--text']}>
                   {bottomData &&
                     bottomData.map((item, index) => (
