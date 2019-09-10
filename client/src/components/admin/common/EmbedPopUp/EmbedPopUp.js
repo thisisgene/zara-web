@@ -10,7 +10,7 @@ export default class EmbedPopUp extends Component {
     const { newsId, videos, onDeleteClick } = this.props
     return (
       <div className={styles['embed-popup']}>
-        <h2>Video Embed</h2>
+        <h2>Youtube Videos</h2>
         {videos && (
           <div className={styles['video-list']}>
             {videos

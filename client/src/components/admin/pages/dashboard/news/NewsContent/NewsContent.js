@@ -16,7 +16,7 @@ import {
   clearSingle
 } from '../../../../../../actions/adminActions'
 
-import { toolbarConfig, toolbarExtConfig } from './newsContentData'
+import { toolbarConfig, toolbarImgConfig } from './newsContentData'
 import { newsTags } from '../../../../../user/pages/Wissen/News/news_data'
 
 import RichTextEditor from 'react-rte'
@@ -362,7 +362,7 @@ class NewsContent extends Component {
                       handleReturn={this.swapSoftNewLineBehavior}
                       placeholder="Hauptinhalt deutsch"
                       className={styles['html-editor']}
-                      toolbarConfig={toolbarExtConfig}
+                      toolbarConfig={toolbarImgConfig}
                       value={this.state.descriptionDE}
                       onChange={this.onDescriptionChange.bind(this, 'de')}
                     />
@@ -399,7 +399,7 @@ class NewsContent extends Component {
                     <RichTextEditor
                       placeholder="Hauptinhalt englisch"
                       className={styles['html-editor']}
-                      toolbarConfig={toolbarExtConfig}
+                      toolbarConfig={toolbarImgConfig}
                       value={this.state.descriptionEN}
                       onChange={this.onDescriptionChange.bind(this, 'en')}
                     />
@@ -518,7 +518,7 @@ class NewsContent extends Component {
                       })
                     }
                   >
-                    Video Embed ...
+                    Embed Videos ...
                   </button>
                 </div>
                 <hr />
