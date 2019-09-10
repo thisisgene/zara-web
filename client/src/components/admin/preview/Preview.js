@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { getById } from '../../../actions/adminActions'
 
 import HeroUnit from '../../user/dashboard/HeroUnit/HeroUnit'
+import VideoItem from '../../user/dashboard/VideoBox/VideoItem'
+
 // import OneLineAlert from '../../../../../user/dashboard/OneLineAlert/OneLineAlert'
 // import CardCollectionGridObject from '../../../../../user/dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
@@ -75,16 +77,21 @@ class Preview extends Component {
                 className={styles['news-detail--text']}
                 dangerouslySetInnerHTML={{ __html: newsItem[lang].description }}
               />
-              {/* {newsItem[lang].videos &&
-              newsItem[lang].videos.map(video => (
-                <div className={styles['news-detail--video']}>
-                  <h2>{video.vTitle}</h2>
-                  <div className={styles['news-detail--video__item']}>
-                    <VideoItem video={video} />
-                  </div>
-                  <div dangerouslySetInnerHTML={{ __html: video.text }} />
-                </div>
-              ))} */}
+              {newsItem.videos &&
+                newsItem.videos
+                  .filter(video => video !== null)
+                  .filter(video => !video.isDeleted)
+                  .map(video => (
+                    <div className={styles['news-detail--video']}>
+                      <h2>{video[lang] && video[lang].title}</h2>
+                      <div className={styles['news-detail--video__item']}>
+                        <VideoItem video={{ id: video.vId }} />
+                      </div>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: video[lang].text }}
+                      />
+                    </div>
+                  ))}
               {newsItem[lang].bottomText && (
                 <div
                   className={styles['news-detail--bottom-text']}

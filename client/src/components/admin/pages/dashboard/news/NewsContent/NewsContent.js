@@ -506,7 +506,7 @@ class NewsContent extends Component {
                     <p>{`https://zara.or.at/de/n/${this.state.newsId}`}</p>
                   </div> */}
                 </div>
-                {/* <hr />        //// Uncomment to show Embed Button
+                <hr />
                 <div>
                   <button
                     className={cx(styles['button'], {
@@ -520,7 +520,7 @@ class NewsContent extends Component {
                   >
                     Video Embed ...
                   </button>
-                </div> */}
+                </div>
                 <hr />
                 <div>
                   <input
