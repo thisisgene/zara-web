@@ -88,6 +88,7 @@ class Preview extends Component {
                         <VideoItem video={{ id: video.vId }} />
                       </div>
                       <div
+                        className={styles['news-detail--video__description']}
                         dangerouslySetInnerHTML={{ __html: video[lang].text }}
                       />
                     </div>

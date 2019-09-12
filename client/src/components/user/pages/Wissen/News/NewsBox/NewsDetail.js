@@ -86,7 +86,10 @@ class NewsDetail extends Component {
                     <div className={styles['news-detail--video__item']}>
                       <VideoItem video={video} />
                     </div>
-                    <div dangerouslySetInnerHTML={{ __html: video.text }} />
+                    <div
+                      className={styles['news-detail--video__description']}
+                      dangerouslySetInnerHTML={{ __html: video.text }}
+                    />
                   </div>
                 ))}
               {news[lang].bottomText && (
