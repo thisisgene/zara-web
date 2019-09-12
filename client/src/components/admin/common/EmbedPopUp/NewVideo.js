@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import TextFieldGroup from '../TextFieldGroup'
 import RichTextEditor from 'react-rte'
 
-import { toolbarExtConfig } from '../../pages/dashboard/news/NewsContent/newsContentData'
+import { toolbarImgConfig } from '../../pages/dashboard/news/NewsContent/newsContentData'
 
 import { saveContent } from '../../../../actions/adminActions'
 
@@ -87,7 +87,7 @@ class NewVideo extends Component {
               error={this.state.errors.vTitleDE}
             />
             <RichTextEditor
-              toolbarConfig={toolbarExtConfig}
+              toolbarConfig={toolbarImgConfig}
               placeholder="Beschreibung deutsch"
               className={styles['html-editor']}
               value={this.state.vTextDE}
@@ -106,7 +106,7 @@ class NewVideo extends Component {
               error={this.state.errors.vTitleEN}
             />
             <RichTextEditor
-              toolbarConfig={toolbarExtConfig}
+              toolbarConfig={toolbarImgConfig}
               placeholder="Beschreibung englisch"
               className={styles['html-editor']}
               value={this.state.vTextEN}
