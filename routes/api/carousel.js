@@ -40,12 +40,12 @@ router.post(
     newCarousel
       .save()
       .then(carousel => {
-        // res.json(carousel)
-        Carousel.find({ isDeleted: false })
-          .exec()
-          .then(carousels => {
-            res.json(carousels)
-          })
+        res.json(carousel)
+        // Carousel.find({ isDeleted: false })
+        //   .exec()
+        //   .then(carousels => {
+        //     res.json(carousels)
+        //   })
       })
       .catch(err => {
         console.log(err)

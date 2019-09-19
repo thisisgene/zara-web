@@ -31,14 +31,21 @@ class CarouselGroup extends Component {
           {this.props.carousel &&
             this.props.carousel.carousels &&
             lang &&
-            this.props.carousel.carousels.map((item, index) => (
-              <CarouselItem
-                contentType="server"
-                key={index}
-                item={item}
-                lang={lang}
-              />
-            ))}
+            this.props.carousel.carousels
+              .filter(
+                item =>
+                  item.isOnline &&
+                  item.titleImage &&
+                  item.titleImage.originalName
+              )
+              .map((item, index) => (
+                <CarouselItem
+                  contentType="server"
+                  key={index}
+                  item={item}
+                  lang={lang}
+                />
+              ))}
           {data &&
             lang &&
             data.map((item, index) => (

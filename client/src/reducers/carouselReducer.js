@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
     case CREATE_NEW_CAROUSEL:
       return {
         ...state,
-        carousels: action.payload
+        carousel: action.payload
       }
     case UPDATE_CAROUSEL:
       return {
