@@ -15,6 +15,7 @@ const validateOrderInput = require('../../validation/order')
 // Load project model
 const Project = require('../../models/Project')
 
+const Carousel = require('../../models/Carousel')
 const News = require('../../models/News')
 const Jahresbericht = require('../../models/Jahresbericht')
 const Faq = require('../../models/Faq')
@@ -40,8 +41,20 @@ router.post(
     const category = req.params.category
     const result = list.map(async (item, index) => {
       switch (category) {
-        case 'news':
+        case 'carousel':
           console.log(item)
+          Carousel.findOneAndUpdate(
+            { _id: item.id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {
+              console.log(item.title, ': ', item.position)
+            })
+            .catch(err => {
+              if (err) console.log(err)
+            })
+          break
           News.findOneAndUpdate(
             { _id: item.id },
             { position: index },

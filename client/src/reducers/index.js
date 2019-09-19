@@ -3,6 +3,7 @@ import authReducer from './authReducer'
 import errorReducer from './errorReducer'
 import mediaReducer from './mediaReducer'
 import labelReducer from './labelReducer'
+import carouselReducer from './carouselReducer'
 import newsReducer from './newsReducer'
 import jahresberichteReducer from './jahresberichteReducer'
 import faqReducer from './faqReducer'
@@ -20,6 +21,7 @@ export default combineReducers({
   errors: errorReducer,
   media: mediaReducer,
   label: labelReducer,
+  carousel: carouselReducer,
   news: newsReducer,
   jahresberichte: jahresberichteReducer,
   faq: faqReducer,

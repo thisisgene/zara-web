@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { getAll } from '../../../../actions/adminActions'
 
 import { Carousel } from 'react-responsive-carousel'
 
@@ -7,6 +10,10 @@ import CarouselItem from './CarouselItem'
 import styles from './CarouselGroup.module.sass'
 
 class CarouselGroup extends Component {
+  componentDidMount() {
+    this.props.getAll('carousel')
+  }
+
   render() {
     const { data, lang } = this.props
 
@@ -21,6 +28,17 @@ class CarouselGroup extends Component {
           transitionTime={1000}
           showStatus={false}
         >
+          {this.props.carousel &&
+            this.props.carousel.carousels &&
+            lang &&
+            this.props.carousel.carousels.map((item, index) => (
+              <CarouselItem
+                contentType="server"
+                key={index}
+                item={item}
+                lang={lang}
+              />
+            ))}
           {data &&
             lang &&
             data.map((item, index) => (
@@ -32,4 +50,11 @@ class CarouselGroup extends Component {
   }
 }
 
-export default CarouselGroup
+const mapStateToProps = state => ({
+  carousel: state.carousel
+})
+
+export default connect(
+  mapStateToProps,
+  { getAll }
+)(CarouselGroup)

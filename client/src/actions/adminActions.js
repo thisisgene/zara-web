@@ -6,6 +6,12 @@ import {
   DELETE_LABEL_BY_ID,
   CREATE_NEW_LABEL,
   UPDATE_LABEL,
+  GET_ALL_CAROUSELS,
+  GET_CAROUSEL_BY_ID,
+  DELETE_CAROUSEL_BY_ID,
+  CREATE_NEW_CAROUSEL,
+  UPDATE_CAROUSEL,
+  CLEAR_CAROUSEL,
   GET_ALL_NEWS,
   GET_NEWS_BY_ID,
   DELETE_NEWS_BY_ID,
@@ -65,6 +71,22 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_LABELS,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
+    case 'carousel':
+      axios
+        .get('/api/carousel')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_CAROUSELS,
             payload: res.data
           })
         })
@@ -254,6 +276,22 @@ export const getById = (id, category) => dispatch => {
     type: CLEAR_ERRORS
   })
   switch (category) {
+    case 'carousel':
+      axios
+        .get(`/api/carousel/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_CAROUSEL_BY_ID,
+            payload: res.data
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        )
+      break
     case 'news':
       axios
         .get(`/api/news/${id}`)
@@ -437,6 +475,52 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_LABEL,
+                payload: res.data
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              })
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              })
+            })
+
+      break
+    case 'carousel':
+      console.log('CAROUSELLLLL')
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/carousel', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_CAROUSEL,
+                payload: res.data
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              })
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              })
+            })
+        : axios
+            .post(`/api/carousel/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_CAROUSEL,
                 payload: res.data
               })
               dispatch({
@@ -803,6 +887,28 @@ export const toggleOnline = (id, category, state) => dispatch => {
   dispatch(setGeneralLoading())
 
   switch (category) {
+    case 'carousel':
+      axios
+        .get(`/api/carousel/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: UPDATE_CAROUSEL,
+            payload: res.data
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+      break
     case 'news':
       axios
         .get(`/api/news/toggle_online/${id}/${state}`)
@@ -951,6 +1057,28 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_LABEL_BY_ID,
+            payload: res.data
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          })
+        })
+      break
+    case 'carousel':
+      axios
+        .get(`/api/carousel/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_CAROUSEL_BY_ID,
             payload: res.data
           })
           dispatch({
@@ -1147,6 +1275,12 @@ export const deleteAdditionalFee = content => dispatch => {
 
 export const clearSingle = category => dispatch => {
   switch (category) {
+    case 'carousel':
+      dispatch({
+        type: CLEAR_CAROUSEL
+      })
+
+      break
     case 'news':
       dispatch({
         type: CLEAR_NEWS_ITEM

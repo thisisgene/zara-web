@@ -10,6 +10,14 @@ export default class MediaCategories extends Component {
         <ul>
           <li>
             <NavLink
+              to="/admin/dashboard/media/carousel"
+              activeClassName={styles['active']}
+            >
+              Karussell
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/admin/dashboard/media/news"
               activeClassName={styles['active']}
             >

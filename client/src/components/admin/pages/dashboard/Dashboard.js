@@ -4,12 +4,13 @@ import PrivateRoute from '../../common/PrivateRoute'
 import CategoryNav from './CategoryNav'
 
 import Media from './media/Media'
+import Carousel from './carousel/Carousel'
 import News from './news/News'
 import Jahresberichte from './jahresberichte/Jahresberichte'
 import Faqs from './faq/Faqs'
+import Team from './Team/Team'
 
 import styles from './Dashboard.module.sass'
-import Team from './Team/Team'
 
 class Dashboard extends Component {
   render() {
@@ -20,6 +21,7 @@ class Dashboard extends Component {
         <div className={styles['dashboard-content']}>
           {/* <PrivateRoute path="/admin/dashboard/projects" component={Projects} /> */}
           <PrivateRoute path="/admin/dashboard/media" component={Media} />
+          <PrivateRoute path="/admin/dashboard/carousel" component={Carousel} />
           <PrivateRoute path="/admin/dashboard/news" component={News} />
           <PrivateRoute
             path="/admin/dashboard/jahresberichte"

@@ -32,7 +32,9 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
         )}
       </div>
       <div className={styles['item-tag']} />
-      {category === 'trainings' || category === 'faqs'
+      {category === 'trainings' ||
+      category === 'faqs' ||
+      category === 'carousel'
         ? item.title
         : baseCat === 'training' && category === 'team'
         ? item.name
@@ -86,7 +88,9 @@ class ItemAddList extends Component {
     let result = []
     content.map(item => {
       const title =
-        this.props.category === 'trainings' || this.props.category === 'faqs'
+        this.props.category === 'trainings' ||
+        this.props.category === 'faqs' ||
+        this.props.category === 'carousel'
           ? item.title
           : this.props.baseCat === 'training' && this.props.category === 'team'
           ? item.name
@@ -215,7 +219,9 @@ class ItemAddList extends Component {
               items={
                 this.state.selectedTag === ''
                   ? content.filter(item =>
-                      category === 'trainings' || category === 'faqs'
+                      category === 'trainings' ||
+                      category === 'faqs' ||
+                      category === 'carousel'
                         ? item.title !== null
                           ? item.title
                               .toLowerCase()
@@ -238,7 +244,9 @@ class ItemAddList extends Component {
                   : content
                       .filter(item => item.tag === this.state.selectedTag)
                       .filter(item =>
-                        category === 'trainings' || category === 'faqs'
+                        category === 'trainings' ||
+                        category === 'faqs' ||
+                        category === 'carousel'
                           ? item.title
                               .toLowerCase()
                               .includes(this.state.searchValue.toLowerCase())

@@ -26,10 +26,14 @@ class CarouselItem extends Component {
     })
   }
   render() {
-    const { item, lang } = this.props
+    const { item, lang, contentType } = this.props
+    const imageUrl =
+      contentType === 'server'
+        ? `/assets/media/carousel/${item.titleImage.originalName}`
+        : `/assets/img/carousel/${item.image}`
     const mainImage = (
       <img
-        src={`/assets/img/carousel/${item.image}`}
+        src={imageUrl}
         onLoad={this.onLoad}
         style={{ opacity: 0, height: 0, width: 0 }}
         alt={'carousel'}
@@ -38,10 +42,10 @@ class CarouselItem extends Component {
     return (
       <div>
         <CustomLink
-          isExternal={item.linkPath === 'external'}
+          isExternal={item.linkPath === 'external' || item.linkIsExternal}
           to={
             item.mainLink
-              ? item.linkPath === 'external'
+              ? item.linkPath === 'external' || item.linkIsExternal
                 ? item.mainLink
                 : `/${lang}/${item.mainLink}`
               : `/${lang}`
@@ -59,7 +63,7 @@ class CarouselItem extends Component {
               )}
               style={{
                 backgroundImage: item.imageAsBackground
-                  ? `url(/assets/img/carousel/${item.image})`
+                  ? `url(${imageUrl})`
                   : 'none'
               }}
             >
@@ -97,10 +101,7 @@ class CarouselItem extends Component {
                   [styles['hidden']]: item.imageAsBackground
                 })}
               >
-                <img
-                  src={`/assets/img/carousel/${item.image}`}
-                  alt={'carousel'}
-                />
+                <img src={imageUrl} alt={'carousel'} />
               </div>
             </div>
           }
