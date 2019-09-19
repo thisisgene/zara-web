@@ -210,6 +210,7 @@ class CarouselContent extends Component {
         >
           <div className={styles['carousel-content-main']}>
             <div className={styles['carousel-content--title']}>
+              <p>Titel</p>
               <TextFieldGroup
                 className={commonStyles['input']}
                 colorScheme="light"
@@ -231,6 +232,7 @@ class CarouselContent extends Component {
                       styles['carousel-content--sidebar__section--options']
                     }
                   >
+                    <p>Link</p>
                     <TextFieldGroup
                       className={commonStyles['input']}
                       colorScheme="light"
@@ -257,7 +259,8 @@ class CarouselContent extends Component {
                       <code>wissen/aktuelles/...</code>
                     </i>
                     <br />
-                    <b>Externer Link:</b> komplett inkusive <code>http://</code>
+                    <b>Externer Link:</b> kompletter Link, inkusive{' '}
+                    <code>http://</code>
                   </div>
                   <hr />
                   <div

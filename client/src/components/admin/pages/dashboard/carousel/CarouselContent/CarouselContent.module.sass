@@ -9,7 +9,7 @@
   &.blank-item
     background: rgba(#4BBC29, .4)
   .carousel-content-main
-    width: 100%
+    width: 60%
 
 .carousel-content
   // display: flex
@@ -19,16 +19,17 @@
   
         
   &--title
-    width: 100%
-    flex: 2
-    display: flex
+    // width: 60%
+    // flex: 2
 
   &--sidebar
     // width: 530px
     display: flex
     flex-direction: row
     
-    
+    border-top: 1px solid #444
+    margin-top: .4rem
+    padding-top: .4rem
     text-align: center
     
     overflow-y: auto
@@ -36,6 +37,7 @@
     height: 100%
     .sidebar-left
       flex: 2
+      text-align: left
     .sidebar-right
       width: 200px
       padding-left: .6rem
@@ -93,6 +95,7 @@
           
     .title-image
       width: 80%
+      text-align: center
       min-height: 240px
       margin: 1rem auto
       border: 2px solid #222
