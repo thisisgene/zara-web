@@ -70,7 +70,7 @@ class CarouselContent extends Component {
 
           carouselId: item._id,
           isOnline: item.isOnline,
-          link: item.link,
+          link: item.mainLink,
           linkIsExternal: item.linkIsExternal,
           title: item.title && item.title,
 
@@ -250,7 +250,15 @@ class CarouselContent extends Component {
                     />{' '}
                     <label htmlFor="linkIsExternal">Externer Link</label>
                   </div>
-
+                  <div className={commonStyles['info-text']}>
+                    <b>Interner Link:</b> Alles nach <code>zara.or.at/de/</code>{' '}
+                    zb:{' '}
+                    <i>
+                      <code>wissen/aktuelles/...</code>
+                    </i>
+                    <br />
+                    <b>Externer Link:</b> komplett inkusive <code>http://</code>
+                  </div>
                   <hr />
                   <div
                     className={styles['title-image']}
