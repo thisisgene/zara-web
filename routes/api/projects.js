@@ -55,6 +55,7 @@ router.post(
               if (err) console.log(err)
             })
           break
+        case 'news':
           News.findOneAndUpdate(
             { _id: item.id },
             { position: index },
