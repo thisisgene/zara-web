@@ -13,38 +13,38 @@ import BigNewsObject from '../../dashboard/BigNewsObject/BigNewsObject'
 import styles from './Home.module.sass'
 
 const fakeServerData = [
-  {
-    imageAsBackground: true,
-    image: 'ZARA_Fest.jpg',
-    mainLink: 'https://zarafeiert.at/',
-    linkPath: 'external'
-  },
-  {
-    imageAsBackground: true,
-    image: 'RR2018_karussell_w.jpg',
-    mainLink: 'wissen/publikationen/rassismusreport'
-  },
-  {
-    imageAsBackground: true,
-    image: 'welcome_banner.jpg',
-    mainLink: 'kontakt'
-  },
-  {
-    imageAsBackground: true,
-    image: 'Zivilcourage_Karussell.jpg',
-    mainLink: 'mitmischen/community'
-  },
+  // {
+  //   imageAsBackground: true,
+  //   image: 'ZARA_Fest.jpg',
+  //   mainLink: 'https://zarafeiert.at/',
+  //   linkPath: 'external'
+  // },
+  // {
+  //   imageAsBackground: true,
+  //   image: 'RR2018_karussell_w.jpg',
+  //   mainLink: 'wissen/publikationen/rassismusreport'
+  // },
+  // {
+  //   imageAsBackground: true,
+  //   image: 'welcome_banner.jpg',
+  //   mainLink: 'kontakt'
+  // },
+  // {
+  //   imageAsBackground: true,
+  //   image: 'Zivilcourage_Karussell.jpg',
+  //   mainLink: 'mitmischen/community'
+  // },
   // {
   //   imageAsBackground: true,
   //   image: 'RR17_Karussell.jpg',
   //   mainLink: 'wissen/publikationen/rassismusreport'
   // },
-  {
-    imageAsBackground: true,
-    image: 'Rechtshilfefond_Karussell.jpg',
-    mainLink:
-      'wissen/aktuelles/news/Sigi_Maurer_–_Rechtshilfefonds_gegen_Hass_im_Netz_–_Phase_2'
-  }
+  // {
+  //   imageAsBackground: true,
+  //   image: 'Rechtshilfefond_Karussell.jpg',
+  //   mainLink:
+  //     'wissen/aktuelles/news/Sigi_Maurer_–_Rechtshilfefonds_gegen_Hass_im_Netz_–_Phase_2'
+  // }
   // de: {
   //   lang: 'de',
   //   date: {
