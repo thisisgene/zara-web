@@ -19,12 +19,43 @@ class Preview extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newsId: props.match.params.newsId
+      newsId: props.match.params.newsId,
+      hasIframe: false,
+      newDescription: ''
     }
   }
   componentDidMount() {
     this.props.getById(this.props.match.params.newsId, 'news')
     console.log(this.props)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.news != this.props.news && this.props.news.newsItem) {
+      let description = this.props.news.newsItem[this.props.activeLanguage.code]
+        .description
+      if (description.includes(`&lt;iframe`)) {
+        let iframeContent = description.substring(
+          description.lastIndexOf('&lt;iframe'),
+          description.lastIndexOf('iframe&gt;') + 10
+        )
+        let iframe = document.createElement('div')
+        iframe.innerHTML = iframeContent
+        let start = description.indexOf('&lt;iframe')
+        let end = description.indexOf('iframe&gt;') + 'iframe&gt;'.length
+        let newDescription = description.replace(
+          description.substring(start, end),
+          iframe.textContent
+        )
+
+        this.setState(
+          {
+            hasIframe: true,
+            newDescription: newDescription
+          },
+          () => console.log(this.state.newDescription)
+        )
+      }
+    }
   }
 
   onClick = e => {
@@ -42,9 +73,6 @@ class Preview extends Component {
     }
 
     if (lang && newsItem) {
-      newsItem.videos.map(video => {
-        console.log('VIDEOS: ', video)
-      })
       if (!newsItem.titleImage || !newsItem.titleImage.originalName) {
         newsItem.titleImage = {
           originalName: 'news_placeholder.png',
@@ -77,12 +105,22 @@ class Preview extends Component {
               <div className={styles['news-detail']}>
                 <HeroUnit data={newsItem} lang={lang} />
                 <OneLineAlert content={oneLineAlert} lang={lang} />
-                <div
-                  className={styles['news-detail--text']}
-                  dangerouslySetInnerHTML={{
-                    __html: newsItem[lang].description
-                  }}
-                />
+
+                {this.state.hasIframe ? (
+                  <div
+                    className={styles['news-detail--text']}
+                    dangerouslySetInnerHTML={{
+                      __html: this.state.newDescription
+                    }}
+                  />
+                ) : (
+                  <div
+                    className={styles['news-detail--text']}
+                    dangerouslySetInnerHTML={{
+                      __html: newsItem[lang].description
+                    }}
+                  />
+                )}
                 {newsItem.videos &&
                   newsItem.videos
                     .filter(video => video !== null)
@@ -131,9 +169,4 @@ const mapStateToProps = state => ({
   news: state.news
 })
 
-export default withLocalize(
-  connect(
-    mapStateToProps,
-    { getById }
-  )(Preview)
-)
+export default withLocalize(connect(mapStateToProps, { getById })(Preview))

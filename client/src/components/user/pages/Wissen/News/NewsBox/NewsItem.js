@@ -14,9 +14,7 @@ export default class NewsItem extends Component {
         {news.titleImage && news.titleImage.originalName ? (
           <div className={styles['news-item--image']}>
             <img
-              src={`/assets/media/${news.titleImage.category}/${
-                news.titleImage.originalName
-              }`}
+              src={`/assets/media/${news.titleImage.category}/${news.titleImage.originalName}`}
               alt={news.titleImage.originalName}
             />
           </div>
@@ -60,9 +58,7 @@ export default class NewsItem extends Component {
               <div>
                 {news[lang].description !== '<p><br></p>' && (
                   <Link
-                    to={`/${lang}/wissen/aktuelles/n/${news.tag}/${news._id}/${
-                      news.handle
-                    }`}
+                    to={`/${lang}/wissen/aktuelles/n/${news.tag}/${news._id}/${news.handle}`}
                   >
                     {lang === 'de' ? 'weiterlesen' : 'Continue reading'}
                   </Link>
