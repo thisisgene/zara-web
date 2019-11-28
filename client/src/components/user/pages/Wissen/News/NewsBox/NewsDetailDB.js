@@ -44,7 +44,9 @@ class Preview extends Component {
         let end = description.indexOf('iframe&gt;') + 'iframe&gt;'.length
         let newDescription = description.replace(
           description.substring(start, end),
-          iframe.textContent
+          '<div style="width:100%;text-align:center">' +
+            iframe.textContent +
+            '</div>'
         )
 
         this.setState(
