@@ -35,7 +35,7 @@ export const oneLineContent = {
       link: 'verschluesselte_email'
     }
   }
-}
+};
 
 export const footerContent = {
   de: {
@@ -63,7 +63,7 @@ export const footerContent = {
         },
         {
           icon: 'hours',
-          text: 'Mo – Mi: 9.00 – 16.30<br>Do: 10.00 – 18.30<br>Fr: 9.00 – 15.00'
+          text: 'Mo – Mi: 9.00 – 16.00<br>Do: 10.00 – 18.00<br>Fr: 9.00 – 15.00'
         }
       ]
     },
@@ -147,7 +147,7 @@ export const footerContent = {
         },
         {
           icon: 'hours',
-          text: 'Mo – Mi: 9.00 – 16.30<br>Do: 10.00 – 18.30<br>Fr: 9.00 – 15.00'
+          text: 'Mo – Mi: 9.00 – 16.00<br>Do: 10.00 – 18.00<br>Fr: 9.00 – 15.00'
         }
       ]
     },
@@ -205,19 +205,20 @@ export const footerContent = {
       }
     }
   }
-}
+};
 
 export const sponsorLogos = [
   {
     image: 'BMEIA_Logo.png'
   },
   {
-    image: 'BKA_FFJ_Logo_srgb.png',
+    image: 'BMAFJ_Logo.jpg',
     size: 'wide'
   },
 
   {
-    image: 'MA17_Logo.gif'
+    image: 'MA17_Logo_neu.jpg',
+    size: 'wide'
   },
   {
     image: 'logo_site_Sozialministerium.png',
@@ -230,4 +231,4 @@ export const sponsorLogos = [
   {
     image: 'EU_flag.png'
   }
-]
+];

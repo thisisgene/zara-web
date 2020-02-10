@@ -9,7 +9,7 @@ export const heroData = {
     title: 'Befreundete Organisationen',
     text: ''
   }
-}
+};
 
 // export const longText = {
 //   de: {
@@ -134,6 +134,25 @@ export const projectData = [
         'Das Forum wurde 2000 gegründet und hat es sich zur Aufgabe gemacht, Antisemitismus in all seinen Formen und Ausprägungen zu bekämpfen. Seit der Einstellung des Rechtsextremismus-Berichts des Bundesministerium für Inneres im Jahr 2002 sammelt das Forum gegen Antisemitismus Daten, die in Form einer jährlichen Dokumentation publiziert werden.<br><br>Das FgA ist außerdem eine Anlaufstelle für Zeug*innen sowie Betroffene von Antisemitismus. Das Team des FgA bemüht sich um Entfernung antisemitischer Sachbeschädigungen, bei antisemitischen Übergriffen hält es Kontakt mit der Polizei und unterstützt, in Kooperation mit dem psychosozialen Zentrum ESRA, bei der Opferbetreuung. Das FgA begleitet Betroffene auf ihrem juristischen Weg.<br><br>Das Forum gegen Antisemitismus ist eine NGO, betrieben von ehrenamtlichen Mitarbeiter*innen, und finanziert sich durch Spenden.',
       link: 'http://www.fga-wien.at',
       linkText: 'www.fga-wien.at',
+      linkType: 'external'
+    }
+  },
+  {
+    image: 'network/hateaid.png',
+    de: {
+      title: 'HateAid gGmbH - Aufklären – Bestärken – Täter*innen abschrecken!',
+      text:
+        'Sie sind nicht allein. Sie haben Rechte. HateAid begleitet Sie.<br />HateAid ist eine Beratungsstelle für Menschen, die von Digitaler Gewalt betroffen sind. Die Organisation überprüft Hasskommentare oder -nachrichten. Wenn diese zivilrechtlich verfolgt werden können, werden anfallende Anwalts- und Prozesskosten übernommen. Der Rechtsweg wird für Betroffene so sicher und unaufwändig wie möglich gestaltet. Wenn Täter*innen Geldentschädigungen zahlen müssen, fließt das Geld wieder HateAid zu, damit weitere Betroffene unterstützt werden können. So helfen sich die Betroffenen gegenseitig und setzen sich für ihr Recht auf Meinungsfreiheit ein. <br />HateAid geht auch politisch gegen Digitale Gewalt vor – vertraulich, anonym und parteilich!<br />Neben rechtlicher Beratung bieten wir eine emotional-stabilisierende Erstberatung, sowie Sicherheits- und Kommunikationsberatung an.',
+      link: 'https://hateaid.org/betroffenenberatung/',
+      linkText: 'hateaid.org',
+      linkType: 'external'
+    },
+    en: {
+      title: 'HateAid gGmbH - Aufklären – Bestärken – Täter*innen abschrecken!',
+      text:
+        'Sie sind nicht allein. Sie haben Rechte. HateAid begleitet Sie.<br />HateAid ist eine Beratungsstelle für Menschen, die von Digitaler Gewalt betroffen sind. Die Organisation überprüft Hasskommentare oder -nachrichten. Wenn diese zivilrechtlich verfolgt werden können, werden anfallende Anwalts- und Prozesskosten übernommen. Der Rechtsweg wird für Betroffene so sicher und unaufwändig wie möglich gestaltet. Wenn Täter*innen Geldentschädigungen zahlen müssen, fließt das Geld wieder HateAid zu, damit weitere Betroffene unterstützt werden können. So helfen sich die Betroffenen gegenseitig und setzen sich für ihr Recht auf Meinungsfreiheit ein. <br />HateAid geht auch politisch gegen Digitale Gewalt vor – vertraulich, anonym und parteilich!<br />Neben rechtlicher Beratung bieten wir eine emotional-stabilisierende Erstberatung, sowie Sicherheits- und Kommunikationsberatung an.',
+      link: 'https://hateaid.org/betroffenenberatung/',
+      linkText: 'hateaid.org',
       linkType: 'external'
     }
   },
@@ -368,4 +387,4 @@ export const projectData = [
       linkType: 'external'
     }
   }
-]
+];
