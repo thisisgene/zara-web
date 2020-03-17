@@ -1,33 +1,33 @@
-const express = require('express')
-const router = express.Router()
-const passport = require('passport')
-const marked = require('marked')
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+const marked = require('marked');
 
-const multer = require('multer')
-const multerS3 = require('multer-s3')
-const aws = require('aws-sdk')
-const Jimp = require('jimp')
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const aws = require('aws-sdk');
+const Jimp = require('jimp');
 
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
 
-const validateOrderInput = require('../../validation/order')
+const validateOrderInput = require('../../validation/order');
 
 // Load project model
-const Project = require('../../models/Project')
+const Project = require('../../models/Project');
 
-const Carousel = require('../../models/Carousel')
-const News = require('../../models/News')
-const Jahresbericht = require('../../models/Jahresbericht')
-const Faq = require('../../models/Faq')
-const Team = require('../../models/Team')
-const { TrainingTeam, Training } = require('../../models/Training')
+const Carousel = require('../../models/Carousel');
+const News = require('../../models/News');
+const Jahresbericht = require('../../models/Jahresbericht');
+const Faq = require('../../models/Faq');
+const Team = require('../../models/Team');
+const { TrainingTeam, Training } = require('../../models/Training');
 
-const Report = require('../../models/Report')
+const Report = require('../../models/Report');
 
 // Load input validation
-const validateProjectInput = require('../../validation/project')
+const validateProjectInput = require('../../validation/project');
 
-module.exports = router
+module.exports = router;
 
 // @route   POST api/projects/sort/:category
 // @desc    Sort projects.
@@ -36,25 +36,25 @@ router.post(
   '/sort/:category',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const list = req.body.list
+    const list = req.body.list;
     // console.log(list)
-    const category = req.params.category
+    const category = req.params.category;
     const result = list.map(async (item, index) => {
       switch (category) {
         case 'carousel':
-          console.log(item)
+          console.log(item);
           Carousel.findOneAndUpdate(
             { _id: item.id },
             { position: index },
             { safe: true, new: true }
           )
             .then(item => {
-              console.log(item.title, ': ', item.position)
+              console.log(item.title, ': ', item.position);
             })
             .catch(err => {
-              if (err) console.log(err)
-            })
-          break
+              if (err) console.log(err);
+            });
+          break;
         case 'news':
           News.findOneAndUpdate(
             { _id: item.id },
@@ -62,12 +62,12 @@ router.post(
             { safe: true, new: true }
           )
             .then(item => {
-              console.log(item.de.title, ': ', item.position)
+              console.log(item.de.title, ': ', item.position);
             })
             .catch(err => {
-              if (err) console.log(err)
-            })
-          break
+              if (err) console.log(err);
+            });
+          break;
         case 'jahresberichte':
           Jahresbericht.findOneAndUpdate(
             { _id: item.id },
@@ -75,12 +75,12 @@ router.post(
             { safe: true, new: true }
           )
             .then(item => {
-              console.log(item.de.title, ': ', item.position)
+              console.log(item.de.title, ': ', item.position);
             })
             .catch(err => {
-              if (err) console.log(err)
-            })
-          break
+              if (err) console.log(err);
+            });
+          break;
         case 'faqs':
           Faq.findOneAndUpdate(
             { _id: item.id },
@@ -89,9 +89,9 @@ router.post(
           )
             .then(item => {})
             .catch(err => {
-              if (err) console.log(err)
-            })
-          break
+              if (err) console.log(err);
+            });
+          break;
         case 'team':
           Team.findOneAndUpdate(
             { _id: item.id },
@@ -100,23 +100,23 @@ router.post(
           )
             .then(item => {})
             .catch(err => {
-              if (err) console.log(err)
-            })
-          break
+              if (err) console.log(err);
+            });
+          break;
         case 'training_team':
-          console.log(item.id)
+          console.log(item.id);
           TrainingTeam.findOneAndUpdate(
             { _id: item.id },
             { position: index },
             { safe: true, new: true }
           )
             .then(item => {
-              console.log(item.name, ': ', item.position)
+              console.log(item.name, ': ', item.position);
             })
             .catch(err => {
-              if (err) console.log(err)
-            })
-          break
+              if (err) console.log(err);
+            });
+          break;
         case 'trainings':
           Training.findOneAndUpdate(
             { _id: item.id },
@@ -124,25 +124,25 @@ router.post(
             { safe: true, new: true }
           )
             .then(item => {
-              console.log(item.title, ': ', item.position)
+              console.log(item.title, ': ', item.position);
             })
             .catch(err => {
-              if (err) console.log(err)
-            })
-          break
+              if (err) console.log(err);
+            });
+          break;
         default:
-          return
+          return;
       }
-    })
+    });
     Promise.all(result)
       .then(() => {
-        res.send('success')
+        res.send('success');
       })
       .catch(err => {
-        console.log(err)
-      })
+        console.log(err);
+      });
   }
-)
+);
 
 // client User
 
@@ -155,13 +155,13 @@ router.get(
       .select('_id date archived')
       .exec()
       .then(reports => {
-        res.json(reports)
+        res.json(reports);
       })
       .catch(err => {
-        res.json(err)
-      })
+        res.json(err);
+      });
   }
-)
+);
 
 router.get(
   '/reports/by_id/:id',
@@ -169,13 +169,13 @@ router.get(
   (req, res) => {
     Report.findById(req.params.id)
       .then(report => {
-        res.json(report)
+        res.json(report);
       })
       .catch(err => {
-        res.json(err)
-      })
+        res.json(err);
+      });
   }
-)
+);
 
 router.get(
   '/report/sendToArchive/:id',
@@ -183,27 +183,27 @@ router.get(
   (req, res) => {
     Report.findById(req.params.id)
       .then(report => {
-        report.archived = !report.archived
+        report.archived = !report.archived;
         report.save((err, updatedReport) => {
           Report.find()
             .sort('-date')
             .select('_id date archived')
             .exec()
             .then(reports => {
-              res.json({ report: updatedReport, reports: reports })
-            })
-        })
+              res.json({ report: updatedReport, reports: reports });
+            });
+        });
       })
       .catch(err => {
-        res.json(err)
-      })
+        res.json(err);
+      });
   }
-)
+);
 
 router.post('/report/send', (req, res) => {
-  const body = req.body
-  const date = new Date()
-  console.log('LINKS:', body.links)
+  const body = req.body;
+  const date = new Date();
+  console.log('LINKS:', body.links);
   const newReport = new Report({
     description: body.description,
     anonym: body.selectedOption === 'anonym',
@@ -215,22 +215,22 @@ router.post('/report/send', (req, res) => {
   })
     .save()
     .then(report => {
-      sendEmail(report)
-      res.json({ report: report, msg: 'success' })
+      sendEmail(report);
+      res.json({ report: report, msg: 'success' });
     })
-    .catch(err => res.send(err))
-})
+    .catch(err => res.send(err));
+});
 
 sendEmail = report => {
-  const link = `https://zara.or.at/admin/reports/${report.id}`
-  const outputPlain = `Neue Meldung empfangen. Link: ${link}`
+  const link = `https://zara.or.at/admin/reports/${report.id}`;
+  const outputPlain = `Neue Meldung empfangen. Link: ${link}`;
   const outputHtml = `
     <p>Neue Meldung empfangen.</p>
     <h3>
       <a href="${link}">${link}</a>
     </h3>
-  `
-  console.log(outputHtml)
+  `;
+  console.log(outputHtml);
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -242,7 +242,7 @@ sendEmail = report => {
     tls: {
       rejectUnauthorized: false
     }
-  })
+  });
 
   // setup email data with unicode symbols
   let mailOptions = {
@@ -251,24 +251,24 @@ sendEmail = report => {
     subject: 'New Report', // Subject line
     text: outputPlain, // plain text body
     html: outputHtml // html body
-  }
+  };
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.log(error)
+      return console.log(error);
     }
-    console.log('Message sent: %s', info.messageId)
+    console.log('Message sent: %s', info.messageId);
     // Preview only available when sending through an Ethereal account
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  })
-}
+  });
+};
 
 router.post('/report/images', async (req, res) => {
-  let body
+  let body;
   // const file = req.files.file
   // const body = req.body
   // const imgName = body.name.replace(/ /g, '_')
@@ -276,74 +276,75 @@ router.post('/report/images', async (req, res) => {
   //   originalName: imgName
   // }
   // console.log('Report ID: ', body.id)
-  const s3secret = require('../../config/keys').s3secret
-  const s3key = require('../../config/keys').s3key
-  const spacesEndpoint = new aws.Endpoint('ams3.digitaloceanspaces.com')
+  const s3secret = require('../../config/keys').s3secret;
+  const s3key = require('../../config/keys').s3key;
+  const spacesEndpoint = new aws.Endpoint('ams3.digitaloceanspaces.com');
   const s3 = new aws.S3({
     endpoint: spacesEndpoint,
     signatureVersion: 'v4',
     accessKeyId: s3key,
     secretAccessKey: s3secret
-  })
+  });
   const upload = multer({
     storage: multerS3({
       s3: s3,
+      contentType: multerS3.AUTO_CONTENT_TYPE,
       bucket: 'serpig-space',
       acl: 'public-read',
       key: function(req, file, cb) {
-        console.log('body: ', req.body)
-        body = req.body
-        cb(null, `reports/${body.id}/${file.originalname}`)
+        console.log('body: ', req.body);
+        body = req.body;
+        cb(null, `reports/${body.id}/${file.originalname}`);
       }
     })
-  }).array('file', 1)
+  }).array('file', 1);
   // const newImage = {
   //   originalName: imgName
   // }
 
   upload(req, res, function(error) {
     if (error) {
-      res.send(error)
+      res.send(error);
       // return response.redirect('/error')
     }
-    console.log('File uploaded successfully.')
+    console.log('File uploaded successfully.');
     // res.send('success')
-    const body = req.body
-    const imgName = body.name
+    const body = req.body;
+    const imgName = body.name;
     const newImage = {
       originalName: imgName
-    }
+    };
     Report.findOneAndUpdate(
       { _id: body.id },
       { $push: { images: newImage } },
       { safe: true, new: true }
     )
       .then(report => {
-        res.send('success')
+        res.send('success');
       })
       .catch(err => {
-        console.log('noo fail')
-        res.send(err)
-      })
-  })
+        console.log('noo fail');
+        res.send(err);
+      });
+  });
 
   // file.mv(`public/reports/${body.id}/${imgName}`)
   // console.log('juhu succ')
 
   // res.send('success')
-})
+});
 
 router.post('/order', (req, res) => {
-  const { errors, isValid } = validateOrderInput(req.body)
+  const { errors, isValid } = validateOrderInput(req.body);
 
   // Check validation
   if (!isValid) {
-    return res.status(400).json(errors)
+    return res.status(400).json(errors);
   }
-  const body = req.body
-  let itemsHtml = ''
+  const body = req.body;
+  let itemsHtml = '';
 
-  body.items.map(item => (itemsHtml += `<p>${item.count}x ${item.title}</p>`))
+  body.items.map(item => (itemsHtml += `<p>${item.count}x ${item.title}</p>`));
   const outputHtml = `
     <h1>Bestellung</h1>
     <h2>Rassismus Reports</h2>
@@ -361,9 +362,9 @@ router.post('/order', (req, res) => {
     <div>${body.email}</div>
     <h3>Anmerkungen</h3>
     <div>${body.addInfo}</div>
-  `
-  sendOrderEmail(outputHtml, body, res)
-})
+  `;
+  sendOrderEmail(outputHtml, body, res);
+});
 
 sendOrderEmail = (order, body, res) => {
   let transporter = nodemailer.createTransport({
@@ -377,7 +378,7 @@ sendOrderEmail = (order, body, res) => {
     tls: {
       rejectUnauthorized: false
     }
-  })
+  });
 
   // setup email data with unicode symbols
   let mailOptions = {
@@ -385,19 +386,19 @@ sendOrderEmail = (order, body, res) => {
     to: 'office@zara.or.at', // list of receivers // office@zara.or.at
     subject: 'Neue Bestellung', // Subject line
     html: order // html body
-  }
+  };
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.log(error)
+      return console.log(error);
     }
-    console.log('Message sent: %s', info.messageId)
+    console.log('Message sent: %s', info.messageId);
     // Preview only available when sending through an Ethereal account
-    res.json(body)
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+    res.json(body);
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-  })
-}
+  });
+};

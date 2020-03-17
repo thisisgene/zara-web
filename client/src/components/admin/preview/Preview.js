@@ -1,49 +1,49 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { getById } from '../../../actions/adminActions'
+import { getById } from '../../../actions/adminActions';
 
-import HeroUnit from '../../user/dashboard/HeroUnit/HeroUnit'
-import VideoItem from '../../user/dashboard/VideoBox/VideoItem'
+import HeroUnit from '../../user/dashboard/HeroUnit/HeroUnit';
+import VideoItem from '../../user/dashboard/VideoBox/VideoItem';
 
 // import OneLineAlert from '../../../../../user/dashboard/OneLineAlert/OneLineAlert'
 // import CardCollectionGridObject from '../../../../../user/dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
-import styles from './Preview.module.sass'
+import styles from './Preview.module.sass';
 
 class Preview extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       lang: 'de',
       newsId: props.match.params.newsId,
       hasIframe: false,
       newDescription: ''
-    }
+    };
   }
   componentDidMount() {
-    this.props.getById(this.props.match.params.newsId, 'news')
-    console.log(this.props)
+    this.props.getById(this.props.match.params.newsId, 'news');
+    console.log(this.props);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.news != this.props.news && this.props.news.newsItem) {
-      let description = this.props.news.newsItem[this.state.lang].description
+      let description = this.props.news.newsItem[this.state.lang].description;
       if (description.includes(`&lt;iframe`)) {
         let iframeContent = description.substring(
           description.lastIndexOf('&lt;iframe'),
           description.lastIndexOf('iframe&gt;') + 10
-        )
-        let iframe = document.createElement('div')
-        iframe.innerHTML = iframeContent
-        let start = description.indexOf('&lt;iframe')
-        let end = description.indexOf('iframe&gt;') + 'iframe&gt;'.length
+        );
+        let iframe = document.createElement('div');
+        iframe.innerHTML = iframeContent;
+        let start = description.indexOf('&lt;iframe');
+        let end = description.indexOf('iframe&gt;') + 'iframe&gt;'.length;
         let newDescription = description.replace(
           description.substring(start, end),
           '<div style="width:100%;text-align:center">' +
             iframe.textContent +
             '</div>'
-        )
+        );
 
         this.setState(
           {
@@ -51,7 +51,7 @@ class Preview extends Component {
             newDescription: newDescription
           },
           () => console.log(this.state.newDescription)
-        )
+        );
       }
     }
   }
@@ -59,13 +59,13 @@ class Preview extends Component {
   onClick = e => {
     this.setState({
       lang: e.target.name
-    })
-  }
+    });
+  };
 
   render() {
-    const { newsItem } = this.props.news
-    const { activeLanguage } = this.props
-    let lang = this.state.lang
+    const { newsItem } = this.props.news;
+    const { activeLanguage } = this.props;
+    let lang = this.state.lang;
     // if (activeLanguage && activeLanguage.code) {
     //   lang = activeLanguage.code
     // }
@@ -75,7 +75,7 @@ class Preview extends Component {
         newsItem.titleImage = {
           originalName: 'news_placeholder.png',
           category: 'news'
-        }
+        };
         // newsItem.imageAlign = 'center'
         // newsItem.imageSide = 'left'
       }
@@ -159,12 +159,12 @@ class Preview extends Component {
           )}
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
   news: state.news
-})
+});
 
-export default connect(mapStateToProps, { getById })(Preview)
+export default connect(mapStateToProps, { getById })(Preview);

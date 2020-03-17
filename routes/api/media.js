@@ -1,14 +1,14 @@
-const express = require('express')
-const router = express.Router()
-const passport = require('passport')
-const marked = require('marked')
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+const marked = require('marked');
 
-const multer = require('multer')
-const multerS3 = require('multer-s3')
-const aws = require('aws-sdk')
-const Jimp = require('jimp')
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const aws = require('aws-sdk');
+const Jimp = require('jimp');
 
-const Media = require('../../models/Media')
+const Media = require('../../models/Media');
 
 // @route   GET api/media
 // @desc    Get all media
@@ -16,12 +16,12 @@ const Media = require('../../models/Media')
 router.get('/', (req, res) => {
   Media.find()
     .then(media => {
-      res.json(media)
+      res.json(media);
     })
     .catch(err => {
-      console.log(err)
-    })
-})
+      console.log(err);
+    });
+});
 
 // @route   POST api/media/get_by_category/:category
 // @desc    Get media by category
@@ -29,12 +29,12 @@ router.get('/', (req, res) => {
 router.get('/get_by_category/:category', (req, res) => {
   Media.find({ category: req.params.category, isDeleted: false })
     .then(media => {
-      res.json(media)
+      res.json(media);
     })
     .catch(err => {
-      console.log(err)
-    })
-})
+      console.log(err);
+    });
+});
 
 // @route   GET api/media/image_upload
 // @desc    Upload image
@@ -43,60 +43,61 @@ router.post(
   '/image_upload',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    let body
+    let body;
 
-    const s3secret = require('../../config/keys').s3secret
-    const s3key = require('../../config/keys').s3key
-    const spacesEndpoint = new aws.Endpoint('ams3.digitaloceanspaces.com')
+    const s3secret = require('../../config/keys').s3secret;
+    const s3key = require('../../config/keys').s3key;
+    const spacesEndpoint = new aws.Endpoint('ams3.digitaloceanspaces.com');
     const s3 = new aws.S3({
       endpoint: spacesEndpoint,
       signatureVersion: 'v4',
       accessKeyId: s3key,
       secretAccessKey: s3secret
-    })
+    });
     const upload = multer({
       storage: multerS3({
         s3: s3,
         bucket: 'serpig-space',
         acl: 'public-read',
+        contentType: multerS3.AUTO_CONTENT_TYPE,
         key: function(req, file, cb) {
-          console.log('body: ', req.body)
-          body = req.body
-          const imgName = body.name.replace(/ /g, '_')
-          cb(null, `media/${body.category}/${imgName}`)
+          console.log('body: ', req.body);
+          body = req.body;
+          const imgName = body.name.replace(/ /g, '_');
+          cb(null, `media/${body.category}/${imgName}`);
         }
       })
-    }).array('file', 1)
+    }).array('file', 1);
 
     upload(req, res, function(error) {
       if (error) {
-        res.send(error)
+        res.send(error);
       }
-      console.log('File uploaded successfully.')
-      const body = req.body
-      const imgName = body.name.replace(/ /g, '_')
-      const name = body.name.substring(0, body.name.lastIndexOf('.'))
+      console.log('File uploaded successfully.');
+      const body = req.body;
+      const imgName = body.name.replace(/ /g, '_');
+      const name = body.name.substring(0, body.name.lastIndexOf('.'));
       const newImage = new Media({
         category: body.category,
         originalName: imgName,
         name: name
-      })
+      });
       newImage
         .save()
         .then(image => {
           Media.find({ category: body.category, isDeleted: false })
             .then(images => res.json(images))
             .catch(err => {
-              console.log(err)
-            })
+              console.log(err);
+            });
         })
         .catch(err => {
-          console.log('noo fail')
-          res.send(err)
-        })
-    })
+          console.log('noo fail');
+          res.send(err);
+        });
+    });
   }
-)
+);
 
 // @route   GET api/media/delete/:id
 // @desc    Delete media by id
@@ -111,17 +112,17 @@ router.get(
       { new: true }
     )
       .then(image => {
-        console.log(image)
+        console.log(image);
         Media.find({ isDeleted: false, category: req.params.category })
           .then(media => res.json(media))
           .catch(err => {
-            res.send(err)
-          })
+            res.send(err);
+          });
       })
       .catch(err => {
-        res.send(err)
-      })
+        res.send(err);
+      });
   }
-)
+);
 
-module.exports = router
+module.exports = router;

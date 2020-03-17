@@ -1,3 +1,5 @@
+import EmbedPopUp from '../../../admin/common/EmbedPopUp/EmbedPopUp';
+
 export const heroData = {
   image: '01-zara_training-logo.png',
   imageSide: 'left',
@@ -12,7 +14,7 @@ export const heroData = {
     text:
       'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.'
   }
-}
+};
 
 export const oneLineAlert = {
   type: 'info',
@@ -23,7 +25,8 @@ export const oneLineAlert = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      link: 'kontakt/#training'
+      linkAction: 'popUp'
+      // link: 'kontakt/#training'
     }
   },
   en: {
@@ -33,10 +36,10 @@ export const oneLineAlert = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      link: 'kontakt/#training'
+      linkAction: 'popUp'
     }
   }
-}
+};
 
 export const oneLineAlertDetail = {
   type: 'info',
@@ -60,7 +63,7 @@ export const oneLineAlertDetail = {
       link: 'kontakt/#training'
     }
   }
-}
+};
 
 export const trainingBoxData = {
   de: {
@@ -148,7 +151,7 @@ export const trainingBoxData = {
       { index: '3', text: 'For Businesses', link: 'unternehmen' }
     ]
   }
-}
+};
 export const trainingItems = {
   items: [
     {
@@ -757,4 +760,4 @@ export const trainingItems = {
       }
     }
   ]
-}
+};
