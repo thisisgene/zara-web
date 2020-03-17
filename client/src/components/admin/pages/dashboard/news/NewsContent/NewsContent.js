@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
-import moment from 'moment'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import moment from 'moment';
 
-import TextFieldGroup from '../../../../common/TextFieldGroup'
+import TextFieldGroup from '../../../../common/TextFieldGroup';
 
-import EmbedPopUp from '../../../../common/EmbedPopUp/EmbedPopUp'
+import EmbedPopUp from '../../../../common/EmbedPopUp/EmbedPopUp';
 
 import {
   saveContent,
@@ -14,25 +14,25 @@ import {
   toggleOnline,
   deleteById,
   clearSingle
-} from '../../../../../../actions/adminActions'
+} from '../../../../../../actions/adminActions';
 
-import { toolbarConfig, toolbarImgConfig } from './newsContentData'
-import { newsTags } from '../../../../../user/pages/Wissen/News/news_data'
+import { toolbarConfig, toolbarImgConfig } from './newsContentData';
+import { newsTags } from '../../../../../user/pages/Wissen/News/news_data';
 
-import RichTextEditor from 'react-rte'
-import { confirmAlert } from 'react-confirm-alert'
+import RichTextEditor from 'react-rte-link-extended';
+import { confirmAlert } from 'react-confirm-alert';
 
-import ContentImageList from '../../ContentImageList'
+import ContentImageList from '../../ContentImageList';
 
-import cx from 'classnames'
-import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
-import './rte.sass'
-import commonStyles from '../../../../common/Common.module.sass'
-import styles from './NewsContent.module.sass'
+import cx from 'classnames';
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import './rte.sass';
+import commonStyles from '../../../../common/Common.module.sass';
+import styles from './NewsContent.module.sass';
 
 class NewsContent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       isOnline: false,
       onNewsBox: false,
@@ -58,29 +58,29 @@ class NewsContent extends Component {
       imageListOpen: false,
       videos: [],
       showEmbedPopUp: false // should be false
-    }
+    };
   }
 
   componentDidMount() {
     this.props.match.params.newsId !== 'neu' &&
-      this.props.getById(this.props.match.params.newsId, 'news')
+      this.props.getById(this.props.match.params.newsId, 'news');
   }
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       if (this.props.errors !== prevProps.errors) {
-        this.setState({ errors: this.props.errors })
+        this.setState({ errors: this.props.errors });
       }
       if (this.props.news.newsItem) {
         if (prevProps.match.params.newsId === 'neu') {
           this.setState({
             newsId: this.props.news.newsItem._id
-          })
-          this.props.getAll('news')
+          });
+          this.props.getAll('news');
           this.props.history.push(
             `/admin/dashboard/news/${this.props.news.newsItem._id}`
-          )
+          );
         }
-        const item = this.props.news.newsItem
+        const item = this.props.news.newsItem;
         this.setState({
           blankItem: false,
 
@@ -117,12 +117,12 @@ class NewsContent extends Component {
           imageAlign: item.imageAlign,
           size: item.size,
           videos: item.videos
-        })
+        });
       }
       if (prevProps.match.params.newsId !== this.props.match.params.newsId) {
         if (this.props.match.params.newsId === 'neu') {
-          console.log('reset')
-          this.props.clearSingle('news')
+          console.log('reset');
+          this.props.clearSingle('news');
           this.setState({
             blankItem: true,
             newsId: this.props.match.params.newsId,
@@ -145,9 +145,9 @@ class NewsContent extends Component {
             imageAlign: '',
             size: '',
             videos: []
-          })
+          });
         } else {
-          this.props.getById(this.props.match.params.newsId, 'news')
+          this.props.getById(this.props.match.params.newsId, 'news');
         }
       }
     }
@@ -155,42 +155,42 @@ class NewsContent extends Component {
   onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
   onSelectChange = e => {
-    this.setState({ category: e.target.value })
-  }
+    this.setState({ category: e.target.value });
+  };
 
   onDateChange = e => {
-    console.log(e.target.value)
-    this.setState({ date: e.target.value })
-  }
+    console.log(e.target.value);
+    this.setState({ date: e.target.value });
+  };
 
   onShortDescriptionChange = (lang, value) => {
     lang === 'de'
       ? this.setState({ shortDescriptionDE: value })
-      : this.setState({ shortDescriptionEN: value })
-  }
+      : this.setState({ shortDescriptionEN: value });
+  };
   onDescriptionChange = (lang, value) => {
     lang === 'de'
       ? this.setState({ descriptionDE: value })
-      : this.setState({ descriptionEN: value })
-  }
+      : this.setState({ descriptionEN: value });
+  };
 
   onImageOpen = () => {
-    this.setState({ imageListOpen: !this.state.imageListOpen })
-  }
+    this.setState({ imageListOpen: !this.state.imageListOpen });
+  };
 
   onCheckClick = e => {
-    this.setState({ [e.target.name]: e.target.checked })
-  }
+    this.setState({ [e.target.name]: e.target.checked });
+  };
 
   saveContent = () => {
-    console.log(this.state.descriptionDE.toString('html'))
-    const shortDescDE = this.state.shortDescriptionDE
-    const shortDescEN = this.state.shortDescriptionEN
-    const descDE = this.state.descriptionDE
-    const descEN = this.state.descriptionEN
+    console.log(this.state.descriptionDE.toString('html'));
+    const shortDescDE = this.state.shortDescriptionDE;
+    const shortDescEN = this.state.shortDescriptionEN;
+    const descDE = this.state.descriptionDE;
+    const descEN = this.state.descriptionEN;
     const saveData = {
       category: 'news',
       tag: this.state.category,
@@ -210,19 +210,19 @@ class NewsContent extends Component {
       imageSide: this.state.imageSide,
       imageAlign: this.state.imageAlign,
       size: this.state.size
-    }
-    this.props.saveContent(saveData)
+    };
+    this.props.saveContent(saveData);
     // console.log(saveData)
-  }
+  };
 
   toggleOnline = () => {
-    this.props.toggleOnline(this.state.newsId, 'news', !this.state.isOnline)
-  }
+    this.props.toggleOnline(this.state.newsId, 'news', !this.state.isOnline);
+  };
 
   deleteNews = () => {
-    this.props.deleteById(this.state.newsId, 'news')
-    this.props.history.push('/admin/dashboard/news/neu')
-  }
+    this.props.deleteById(this.state.newsId, 'news');
+    this.props.history.push('/admin/dashboard/news/neu');
+  };
 
   confirmDelete = callback => {
     confirmAlert({
@@ -237,8 +237,8 @@ class NewsContent extends Component {
           label: 'Abbrechen'
         }
       ]
-    })
-  }
+    });
+  };
 
   updateTitleImage = (originalName, id, category) => {
     this.setState({
@@ -246,29 +246,29 @@ class NewsContent extends Component {
       imageId: id,
       imageCategory: category,
       imageListOpen: false
-    })
-  }
+    });
+  };
   closeImageList = () => {
     this.setState({
       imageListOpen: false
-    })
-  }
+    });
+  };
   onImageSideChange = e => {
     this.setState({
       imageSide: e.target.checked ? 'left' : 'right'
-    })
-  }
+    });
+  };
 
   onImageAlignChange = e => {
     this.setState({
       imageAlign: e.target.checked ? 'center' : ''
-    })
-  }
+    });
+  };
   onImageBigChange = e => {
     this.setState({
       size: e.target.checked ? 'big-image' : ''
-    })
-  }
+    });
+  };
 
   swapSoftNewLineBehavior(event) {
     let isSoftKeyPressed = e => {
@@ -277,24 +277,24 @@ class NewsContent extends Component {
         (e.getModifierState('Shift') ||
           e.getModifierState('Alt') ||
           e.getModifierState('Control'))
-      )
-    }
+      );
+    };
 
     if (!isSoftKeyPressed(event)) {
       event.getModifierState = _ => {
-        return true
-      }
+        return true;
+      };
     } else {
       event.getModifierState = _ => {
-        return false
-      }
+        return false;
+      };
     }
   }
 
   onVideoDelete = (nId, vId) => {
-    console.log(vId)
-    this.props.deleteById(nId, 'news-video', vId)
-  }
+    console.log(vId);
+    this.props.deleteById(nId, 'news-video', vId);
+  };
 
   render() {
     return (
@@ -651,16 +651,20 @@ class NewsContent extends Component {
           )}
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
   news: state.news,
   errors: state.errors
-})
+});
 
-export default connect(
-  mapStateToProps,
-  { saveContent, getById, toggleOnline, deleteById, clearSingle, getAll }
-)(NewsContent)
+export default connect(mapStateToProps, {
+  saveContent,
+  getById,
+  toggleOnline,
+  deleteById,
+  clearSingle,
+  getAll
+})(NewsContent);
