@@ -1,0 +1,210 @@
+.bulletins-wrapper
+  width: 100%
+  
+.bulletins-content-container
+  width: 100%
+  flex: 3
+  display: flex
+  padding: .5rem
+  &.blank-item
+    background: rgba(#4BBC29, .4)
+.bulletins-content
+  display: flex
+  flex: 3
+  width: 100%
+  @media(max-width: 670px)
+    display: block
+  @media print
+    height: 100%
+    overflow: visible
+  &--main
+    // display: flex
+    flex: 4
+  &--text
+    // display: flex
+    padding: 0 -.1rem
+
+    &__title
+      margin: 0 auto
+      width: 50%
+    &:first-child
+      margin-left: 0
+    
+    &__content
+      display: flex
+      @media(max-width: 970px)
+        display: block
+      .content-box
+        flex: 1
+        margin: 0 .1rem
+      &--left
+        &__labels
+          color: #111
+        &__location
+          display: flex
+          
+          margin: .2rem 0 0
+          &--time
+            flex: 2
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            margin: 0 0 .2rem .2rem
+            
+            input
+              flex: 1
+              padding: 0 .4rem
+              height: 100%
+              width: 100px
+            span
+              background: white
+              color: #444
+              display: flex
+              align-items: center
+              height: 100%
+              padding: 0 .2rem
+        &__fee
+          display: flex
+          justify-content: space-between
+          align-items: center
+          
+          span
+            text-align: right
+            width: 100%
+            padding-right: 1rem
+        &__date
+          flex: 1
+          
+          *
+            position: inherit
+
+
+    &__description
+      textarea
+        height: 193px !important
+        line-height: 1.1
+        &.private
+          // border: 1px solid #F44335 !important
+          // background: lighten(#F44335, 40%)
+  &--bottom-bar
+    margin: .4rem 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    
+      
+    .bulletins-content
+      &--team-select
+        width: 70%
+        margin: 2rem auto 1rem
+        display: flex
+        align-items: center
+        .confirm-button
+          margin-left: 1rem
+          height: 50%
+          flex: 1
+          button
+          
+            border: none
+            cursor: pointer
+            background: #FFC350
+            color: #111
+            &:disabled
+              background: #aaa
+              color: #666
+              cursor: not-allowed
+          p
+            font-size: .7rem
+            color: #cc4444
+          
+        .user-table
+          
+          thead
+            tr th
+              border-top: none !important
+              text-align: center
+          tr td
+            vertical-align: middle
+            text-align: center
+            &:first-child
+              text-align: left
+            &.td-interest
+              // padding-right: 3rem !important
+              // display: block
+              line-height: 1
+              color: #555
+              &.interested
+                color: #FFC803
+              
+          input[type=radio]
+            opacity: 0
+            width: 0
+            &:checked ~ label
+              color: #4BBC28
+            &:disabled ~ label
+              opacity: .1
+          label
+            line-height: 1
+            width: 20px
+            text-align: center
+            font-size: 1rem
+            margin: 0
+            cursor: pointer
+            color: #aaa
+            &:hover
+              color: #fff
+      &--additional-message__recipients    
+        display: flex
+        // align-items: center
+        input
+          margin: 4px .3rem 0 1rem
+  &--sidebar
+    width: 100px
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-left: .6rem
+    margin-left: .3rem
+    text-align: center
+    border-left: 1px solid #444
+    overflow-y: auto
+    flex: 1
+    height: 100%
+    hr
+      margin: 1rem auto
+      border: none
+      height: 1px
+      background: #666
+      width: 80%
+    &__state-indicator
+      display: flex
+      justify-content: center
+      align-items: center
+      margin-bottom: 1rem
+      &--sphere
+        margin: .3rem
+        width: 14px
+        height: 14px
+        border-radius: 50%
+        background: #777
+        &.online
+          background: #03F395
+          box-shadow: 0 0 4px #03F395
+
+    &--buttons
+      // padding: .2rem 114px 0 .3rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      margin: 1rem auto 0
+      
+      .button--save
+          width: 100% !important
+    @media(max-width: 670px)
+      margin: 1rem auto
+      border: none
+      padding: 0
+      
+    

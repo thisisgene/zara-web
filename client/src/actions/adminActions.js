@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 import {
   GET_ERRORS,
@@ -45,6 +45,12 @@ import {
   GET_TRAINING_BY_ID,
   DELETE_TRAINING_BY_ID,
   CLEAR_TRAINING,
+  GET_ALL_BULLETINS,
+  CREATE_NEW_BULLETIN,
+  UPDATE_BULLETIN,
+  GET_BULLETIN_BY_ID,
+  DELETE_BULLETIN_BY_ID,
+  CLEAR_BULLETIN,
   GET_ALL_FAQS,
   CREATE_NEW_FAQ,
   UPDATE_FAQ,
@@ -55,7 +61,7 @@ import {
   UNSET_GENERAL_LOADING,
   GET_ALL_USERS,
   CLEAR_REPORT
-} from './types'
+} from './types';
 
 // import { setProjectLoading } from './projectActions'
 
@@ -63,7 +69,7 @@ import {
 export const getAll = category => dispatch => {
   dispatch({
     type: CLEAR_ERRORS
-  })
+  });
   switch (category) {
     case 'label':
       axios
@@ -72,15 +78,15 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_LABELS,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'carousel':
       axios
         .get('/api/carousel')
@@ -88,15 +94,15 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_CAROUSELS,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'news':
       axios
         .get('/api/news')
@@ -104,15 +110,15 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_NEWS,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'jahresberichte':
       axios
         .get('/api/jahresberichte')
@@ -120,15 +126,15 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_JAHRESBERICHTE,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'faqs':
       axios
         .get('/api/faqs')
@@ -136,15 +142,15 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_FAQS,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'team':
       axios
         .get('/api/team')
@@ -152,15 +158,15 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_TEAM,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'trainingTeam':
       axios
         .get('/api/training/team')
@@ -168,15 +174,15 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_TRAININGTEAM,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'trainings':
       axios
         .get('/api/training/trainings')
@@ -184,20 +190,36 @@ export const getAll = category => dispatch => {
           dispatch({
             type: GET_ALL_TRAININGS,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
+    case 'bulletins':
+      axios
+        .get('/api/training/bulletins')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_BULLETINS,
+            payload: res.data
+          });
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        );
+      break;
 
     default:
-      return
+      return;
   }
-}
+};
 
 export const getAllAndSort = (category, sortBy) => dispatch => {
   switch (category) {
@@ -208,44 +230,44 @@ export const getAllAndSort = (category, sortBy) => dispatch => {
           dispatch({
             type: GET_ALL_TRAININGS,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     default:
-      return
+      return;
   }
-}
+};
 
 export const getAllByProps = (category, prop) => dispatch => {
   switch (category) {
     case 'team':
-      console.log(prop)
+      console.log(prop);
       axios
         .post(`/api/team/props`, prop)
         .then(res => {
           dispatch({
             type: GET_ALL_TEAM,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
 
     default:
-      return
+      return;
   }
-}
+};
 
 // Get by Property
 export const getByProperty = (category, property, value) => dispatch => {
@@ -257,24 +279,24 @@ export const getByProperty = (category, property, value) => dispatch => {
           dispatch({
             type: GET_ALL_NEWS,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     default:
-      return
+      return;
   }
-}
+};
 // Get by ID
 export const getById = (id, category) => dispatch => {
   dispatch({
     type: CLEAR_ERRORS
-  })
+  });
   switch (category) {
     case 'carousel':
       axios
@@ -283,15 +305,15 @@ export const getById = (id, category) => dispatch => {
           dispatch({
             type: GET_CAROUSEL_BY_ID,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'news':
       axios
         .get(`/api/news/${id}`)
@@ -299,15 +321,15 @@ export const getById = (id, category) => dispatch => {
           dispatch({
             type: GET_NEWS_BY_ID,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'jahresberichte':
       axios
         .get(`/api/jahresberichte/${id}`)
@@ -315,15 +337,15 @@ export const getById = (id, category) => dispatch => {
           dispatch({
             type: GET_JAHRESBERICHT_BY_ID,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'faqs':
       axios
         .get(`/api/faqs/${id}`)
@@ -331,15 +353,15 @@ export const getById = (id, category) => dispatch => {
           dispatch({
             type: GET_FAQ_BY_ID,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'team':
       axios
         .get(`/api/team/${id}`)
@@ -347,15 +369,15 @@ export const getById = (id, category) => dispatch => {
           dispatch({
             type: GET_TEAM_BY_ID,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'trainingTeam':
       axios
         .get(`/api/training/team/${id}`)
@@ -363,15 +385,15 @@ export const getById = (id, category) => dispatch => {
           dispatch({
             type: GET_TRAININGTEAM_BY_ID,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
     case 'trainings':
       axios
         .get(`/api/training/trainings/${id}`)
@@ -379,23 +401,39 @@ export const getById = (id, category) => dispatch => {
           dispatch({
             type: GET_TRAINING_BY_ID,
             payload: res.data
-          })
+          });
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
             payload: err
           })
-        )
-      break
+        );
+      break;
+    case 'bulletins':
+      axios
+        .get(`/api/training/bulletins/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_BULLETIN_BY_ID,
+            payload: res.data
+          });
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          })
+        );
+      break;
 
     default:
-      return
+      return;
   }
-}
+};
 
 export const sendInitialTrainingEmail = saveData => dispatch => {
-  dispatch(setGeneralLoading())
+  dispatch(setGeneralLoading());
   axios
     .post(`/api/training/trainings/send_initial_email/`, saveData)
     .then(res => {
@@ -405,18 +443,18 @@ export const sendInitialTrainingEmail = saveData => dispatch => {
       // })
       dispatch({
         type: UNSET_GENERAL_LOADING
-      })
+      });
     })
     .catch(err => {
       dispatch({
         type: UNSET_GENERAL_LOADING
-      })
+      });
       dispatch({
         type: GET_ERRORS,
         payload: err.response
-      })
-    })
-}
+      });
+    });
+};
 
 export const setInterestedTrainer = saveData => dispatch => {
   axios
@@ -428,23 +466,23 @@ export const setInterestedTrainer = saveData => dispatch => {
       dispatch({
         type: UPDATE_TRAINING,
         payload: res.data
-      })
+      });
     })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
         payload: err.response
       })
-    )
-}
+    );
+};
 
 // Create or update content
 export const saveContent = saveData => dispatch => {
-  console.log(saveData)
+  console.log(saveData);
   dispatch({
     type: CLEAR_ERRORS
-  })
-  dispatch(setGeneralLoading())
+  });
+  dispatch(setGeneralLoading());
 
   switch (saveData.category) {
     case 'label':
@@ -452,23 +490,23 @@ export const saveContent = saveData => dispatch => {
         ? axios
             .post('/api/label', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_LABEL,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/label/update/${saveData.id}`, saveData)
@@ -476,45 +514,45 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: UPDATE_LABEL,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
     case 'carousel':
-      console.log('CAROUSELLLLL')
+      console.log('CAROUSELLLLL');
       saveData.id === 'neu'
         ? axios
             .post('/api/carousel', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_CAROUSEL,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/carousel/update/${saveData.id}`, saveData)
@@ -522,44 +560,44 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: UPDATE_CAROUSEL,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
     case 'news':
       saveData.id === 'neu'
         ? axios
             .post('/api/news', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_NEWS,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/news/update/${saveData.id}`, saveData)
@@ -567,67 +605,67 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: UPDATE_NEWS,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
     case 'news-video':
       axios
         .post('/api/news/add_video', saveData)
         .then(res => {
-          dispatch({ type: CLEAR_ERRORS })
+          dispatch({ type: CLEAR_ERRORS });
           dispatch({
             type: ADD_NEWS_VIDEO,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err.response.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'jahresberichte':
       saveData.id === 'neu'
         ? axios
             .post('/api/jahresberichte', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_JAHRESBERICHT,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/jahresberichte/update/${saveData.id}`, saveData)
@@ -635,44 +673,44 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: UPDATE_JAHRESBERICHT,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
     case 'faqs':
       saveData.id === 'neu'
         ? axios
             .post('/api/faqs', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_FAQ,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/faqs/update/${saveData.id}`, saveData)
@@ -680,44 +718,44 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: UPDATE_FAQ,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
     case 'team':
       saveData.id === 'neu'
         ? axios
             .post('/api/team', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_TEAM,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/team/update/${saveData.id}`, saveData)
@@ -725,44 +763,44 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: UPDATE_TEAM,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
     case 'trainingTeam':
       saveData.id === 'neu'
         ? axios
             .post('/api/training/team', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_TRAININGTEAM,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/training/team/update/${saveData.id}`, saveData)
@@ -770,69 +808,116 @@ export const saveContent = saveData => dispatch => {
               dispatch({
                 type: UPDATE_TRAININGTEAM,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
     case 'trainings':
-      console.log(saveData.interestedTrainers)
+      console.log(saveData.interestedTrainers);
       saveData.id === 'neu'
         ? axios
             .post('/api/training/trainings', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
+              dispatch({ type: CLEAR_ERRORS });
               dispatch({
                 type: CREATE_NEW_TRAINING,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
         : axios
             .post(`/api/training/trainings/update/${saveData.id}`, saveData)
             .then(res => {
-              console.log('here we go')
+              console.log('here we go');
               dispatch({
                 type: UPDATE_TRAINING,
                 payload: res.data
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
+              });
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
                 payload: err.response
-              })
+              });
               dispatch({
                 type: UNSET_GENERAL_LOADING
-              })
-            })
+              });
+            });
 
-      break
+      break;
+    case 'trainings':
+      console.log(saveData.interestedTrainers);
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/training/bulletins', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS });
+              dispatch({
+                type: CREATE_NEW_BULLETIN,
+                payload: res.data
+              });
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              });
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err
+              });
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              });
+            })
+        : axios
+            .post(`/api/training/bulletins/update/${saveData.id}`, saveData)
+            .then(res => {
+              console.log('here we go');
+              dispatch({
+                type: UPDATE_BULLETIN,
+                payload: res.data
+              });
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              });
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response
+              });
+              dispatch({
+                type: UNSET_GENERAL_LOADING
+              });
+            });
+
+      break;
     case 'fees':
       axios
         .post(`/api/training/trainings/additional_fees`, saveData)
@@ -840,51 +925,51 @@ export const saveContent = saveData => dispatch => {
           dispatch({
             type: UPDATE_TRAINING,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err.response
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
+          });
+        });
 
-      break
+      break;
 
     default:
-      return
+      return;
   }
-}
+};
 
 export const sortList = (list, category) => dispatch => {
-  console.log('CAT: ', category)
+  console.log('CAT: ', category);
   axios
     .post(`/api/projects/sort/${category}`, { list })
     .then(res => {
       dispatch({
         // type: GET_ALL_NEWS,
         // payload: res.data
-      })
+      });
     })
     .catch(err => {
       dispatch({
         type: GET_ERRORS,
         payload: err
-      })
+      });
       dispatch({
         type: UNSET_GENERAL_LOADING
-      })
-    })
-}
+      });
+    });
+};
 
 export const toggleOnline = (id, category, state) => dispatch => {
-  dispatch(setGeneralLoading())
+  dispatch(setGeneralLoading());
 
   switch (category) {
     case 'carousel':
@@ -894,21 +979,21 @@ export const toggleOnline = (id, category, state) => dispatch => {
           dispatch({
             type: UPDATE_CAROUSEL,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'news':
       axios
         .get(`/api/news/toggle_online/${id}/${state}`)
@@ -916,21 +1001,21 @@ export const toggleOnline = (id, category, state) => dispatch => {
           dispatch({
             type: UPDATE_NEWS,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'jahresberichte':
       axios
         .get(`/api/jahresberichte/toggle_online/${id}/${state}`)
@@ -938,21 +1023,21 @@ export const toggleOnline = (id, category, state) => dispatch => {
           dispatch({
             type: UPDATE_JAHRESBERICHT,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'faqs':
       axios
         .get(`/api/faqs/toggle_online/${id}/${state}`)
@@ -960,21 +1045,21 @@ export const toggleOnline = (id, category, state) => dispatch => {
           dispatch({
             type: UPDATE_FAQ,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'team':
       axios
         .get(`/api/team/toggle_online/${id}/${state}`)
@@ -982,21 +1067,21 @@ export const toggleOnline = (id, category, state) => dispatch => {
           dispatch({
             type: UPDATE_TEAM,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'trainingTeam':
       axios
         .get(`/api/training/team/toggle_online/${id}/${state}`)
@@ -1004,21 +1089,21 @@ export const toggleOnline = (id, category, state) => dispatch => {
           dispatch({
             type: UPDATE_TRAININGTEAM,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'trainings':
       axios
         .get(`/api/training/trainings/toggle_online/${id}/${state}`)
@@ -1026,29 +1111,51 @@ export const toggleOnline = (id, category, state) => dispatch => {
           dispatch({
             type: UPDATE_TRAINING,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
+        });
+      break;
+    case 'bulletins':
+      axios
+        .get(`/api/training/bulletins/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: UPDATE_BULLETIN,
+            payload: res.data
+          });
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          });
         })
-      break
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          });
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          });
+        });
+      break;
 
     default:
-      return
+      return;
   }
-}
+};
 
 export const deleteById = (id, category, secondValue) => dispatch => {
-  dispatch(setGeneralLoading())
+  dispatch(setGeneralLoading());
 
   switch (category) {
     case 'label':
@@ -1058,21 +1165,21 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: DELETE_LABEL_BY_ID,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'carousel':
       axios
         .get(`/api/carousel/delete/${id}`)
@@ -1080,21 +1187,21 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: DELETE_CAROUSEL_BY_ID,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'news':
       axios
         .get(`/api/news/delete/${id}`)
@@ -1102,21 +1209,21 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: DELETE_NEWS_BY_ID,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'news-video':
       axios
         .get(`/api/news/video/delete/${id}/${secondValue}`)
@@ -1124,44 +1231,44 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: ADD_NEWS_VIDEO,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'jahresberichte':
-      console.log('jahresbericht löschen')
+      console.log('jahresbericht löschen');
       axios
         .get(`/api/jahresberichte/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_JAHRESBERICHT_BY_ID,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'faqs':
       axios
         .get(`/api/faqs/delete/${id}`)
@@ -1169,21 +1276,21 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: DELETE_FAQ_BY_ID,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'team':
       axios
         .get(`/api/team/delete/${id}`)
@@ -1191,21 +1298,21 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: DELETE_TEAM_BY_ID,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'trainingTeam':
       axios
         .get(`/api/users/delete/${id}`)
@@ -1213,21 +1320,21 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: GET_ALL_USERS,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
-        })
-      break
+          });
+        });
+      break;
     case 'trainings':
       axios
         .get(`/api/training/trainings/delete/${id}`)
@@ -1235,26 +1342,48 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           dispatch({
             type: DELETE_TRAINING_BY_ID,
             payload: res.data
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
             payload: err
-          })
+          });
           dispatch({
             type: UNSET_GENERAL_LOADING
-          })
+          });
+        });
+      break;
+    case 'bulletins':
+      axios
+        .get(`/api/training/bulletins/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_BULLETIN_BY_ID,
+            payload: res.data
+          });
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          });
         })
-      break
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err
+          });
+          dispatch({
+            type: UNSET_GENERAL_LOADING
+          });
+        });
+      break;
 
     default:
-      return
+      return;
   }
-}
+};
 
 export const deleteAdditionalFee = content => dispatch => {
   axios
@@ -1263,77 +1392,83 @@ export const deleteAdditionalFee = content => dispatch => {
       dispatch({
         type: UPDATE_TRAINING,
         payload: res.data
-      })
+      });
     })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
         payload: err
       })
-    )
-}
+    );
+};
 
 export const clearSingle = category => dispatch => {
   switch (category) {
     case 'carousel':
       dispatch({
         type: CLEAR_CAROUSEL
-      })
+      });
 
-      break
+      break;
     case 'news':
       dispatch({
         type: CLEAR_NEWS_ITEM
-      })
+      });
 
-      break
+      break;
     case 'jahresberichte':
       dispatch({
         type: CLEAR_JAHRESBERICHT
-      })
+      });
 
-      break
+      break;
     case 'faqs':
       dispatch({
         type: CLEAR_FAQ
-      })
+      });
 
-      break
+      break;
     case 'team':
       dispatch({
         type: CLEAR_TEAM
-      })
+      });
 
-      break
+      break;
     case 'trainingTeam':
       dispatch({
         type: CLEAR_TRAININGTEAM
-      })
+      });
     case 'trainings':
       dispatch({
         type: CLEAR_TRAINING
-      })
+      });
 
-      break
+      break;
+    case 'bulletins':
+      dispatch({
+        type: CLEAR_BULLETIN
+      });
+
+      break;
     case 'report':
       dispatch({
         type: CLEAR_REPORT
-      })
+      });
 
-      break
+      break;
     default:
-      return
+      return;
   }
-}
+};
 
 export const clearAll = () => dispatch => {
   dispatch({
     type: CLEAR_ALL
-  })
-}
+  });
+};
 
 export const setGeneralLoading = () => dispatch => {
   dispatch({
     type: SET_GENERAL_LOADING
-  })
-}
+  });
+};

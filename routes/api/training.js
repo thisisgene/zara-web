@@ -1,39 +1,40 @@
-const express = require('express')
-const router = express.Router()
-const passport = require('passport')
-const marked = require('marked')
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+const marked = require('marked');
 
-const multer = require('multer')
-const multerS3 = require('multer-s3')
-const aws = require('aws-sdk')
-const Jimp = require('jimp')
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const aws = require('aws-sdk');
+const Jimp = require('jimp');
 
-const moment = require('moment')
-const localization = require('moment/locale/de')
+const moment = require('moment');
+const localization = require('moment/locale/de');
 
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
 
-const validateNewsInput = require('../../validation/news')
-const validateTrainingInput = require('../../validation/training')
+const validateNewsInput = require('../../validation/news');
+const validateTrainingInput = require('../../validation/training');
 
-const User = require('../../models/User')
-const { TrainingTeam, Training } = require('../../models/Training')
+const User = require('../../models/User');
+const { TrainingTeam, Training } = require('../../models/Training');
+const { Bulletin } = require('../../models/Bulletin');
 
 // @route   GET api/training/team
 // @desc    Get all training team members
 // @access  Public
 router.get('/team', (req, res) => {
-  console.log('getall')
-  const errors = {}
+  console.log('getall');
+  const errors = {};
   TrainingTeam.find({ isDeleted: false })
     .sort('position')
     .exec()
     .then(team => {
-      console.log(team)
-      res.json(team)
+      console.log(team);
+      res.json(team);
     })
-    .catch(err => res.status(404).json(err))
-})
+    .catch(err => res.status(404).json(err));
+});
 
 // @route   POST api/training/team
 // @desc    Create a training team member
@@ -42,25 +43,25 @@ router.post(
   '/team',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const body = req.body
-    const { errors, isValid } = await validateNewsInput(body)
+    const body = req.body;
+    const { errors, isValid } = await validateNewsInput(body);
 
     if (!isValid) {
-      return res.status(400).json(errors)
+      return res.status(400).json(errors);
     }
-    console.log('ohla')
+    console.log('ohla');
     // Get fields
-    const trainingTeamFields = { de: {}, en: {} }
+    const trainingTeamFields = { de: {}, en: {} };
     if (body.titleDE) {
-      trainingTeamFields.de.title = body.titleDE
-      trainingTeamFields.handle = body.titleDE.replace(/\s/g, '_')
+      trainingTeamFields.de.title = body.titleDE;
+      trainingTeamFields.handle = body.titleDE.replace(/\s/g, '_');
     }
-    if (body.titleEN) trainingTeamFields.en.title = body.titleEN
-    trainingTeamFields.tag = body.tag
-    trainingTeamFields.de.shortDescription = body.shortDescriptionDE
-    trainingTeamFields.en.shortDescription = body.shortDescriptionEN
-    trainingTeamFields.de.description = body.descriptionDE
-    trainingTeamFields.en.description = body.descriptionEN
+    if (body.titleEN) trainingTeamFields.en.title = body.titleEN;
+    trainingTeamFields.tag = body.tag;
+    trainingTeamFields.de.shortDescription = body.shortDescriptionDE;
+    trainingTeamFields.en.shortDescription = body.shortDescriptionEN;
+    trainingTeamFields.de.description = body.descriptionDE;
+    trainingTeamFields.en.description = body.descriptionEN;
 
     const newTrainingTeam = new TrainingTeam({
       tag: trainingTeamFields.tag,
@@ -77,32 +78,32 @@ router.post(
         shortDescription: trainingTeamFields.en.shortDescription,
         description: trainingTeamFields.en.description
       }
-    })
-    console.log(newTrainingTeam)
+    });
+    console.log(newTrainingTeam);
     newTrainingTeam
       .save()
       .then(trainingTeamMember => {
-        res.json(trainingTeamMember)
+        res.json(trainingTeamMember);
       })
       .catch(err => {
-        console.log(err)
-      })
+        console.log(err);
+      });
   }
-)
+);
 
 router.post(
   '/team/update/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const body = req.body
-    const fDate = moment(body.date).format()
+    const body = req.body;
+    const fDate = moment(body.date).format();
     // Get fields
-    const trainingTeamFields = { de: {}, en: {} }
+    const trainingTeamFields = { de: {}, en: {} };
     if (body.titleDE) {
-      trainingTeamFields.de.title = body.titleDE
-      trainingTeamFields.handle = body.titleDE.replace(/\s/g, '_')
+      trainingTeamFields.de.title = body.titleDE;
+      trainingTeamFields.handle = body.titleDE.replace(/\s/g, '_');
     }
-    if (body.titleEN) trainingTeamFields.en.title = body.titleEN
+    if (body.titleEN) trainingTeamFields.en.title = body.titleEN;
     // if (body.filesDE) trainingTeamFields.selectedFilesDE = body.filesDE
     // if (body.filesEN) trainingTeamFields.selectedFilesEN = body.filesEN
     TrainingTeam.findOneAndUpdate(
@@ -127,42 +128,42 @@ router.post(
       },
       { new: true },
       (err, teamMember) => {
-        if (err) console.log('error: ', err)
+        if (err) console.log('error: ', err);
         if (!err) {
           TrainingTeam.find({ isDeleted: false })
             .sort('position')
             .then(team => {
-              res.json({ team: team, teamMember: teamMember })
+              res.json({ team: team, teamMember: teamMember });
             })
             .catch(err => {
-              console.log(err)
-            })
+              console.log(err);
+            });
         }
       }
-    )
+    );
   }
-)
+);
 
 // @route   GET api/training/team/:id
 // @desc    Get Training team member by id
 // @access  Public
 router.get('/team/:id', (req, res) => {
-  const errors = {}
+  const errors = {};
   User.findOne({ _id: req.params.id })
     .then(teamMember => {
       if (!teamMember) {
-        errors.noteammember = 'Kein Beitrag mit dieser ID.'
-        return res.status(404).json(errors.noteammember)
+        errors.noteammember = 'Kein Beitrag mit dieser ID.';
+        return res.status(404).json(errors.noteammember);
       }
-      console.log(teamMember)
-      res.json(teamMember)
+      console.log(teamMember);
+      res.json(teamMember);
     })
     .catch(err => {
-      console.log(err)
-      errors.teammember = 'Beitrag nicht gefunden.'
-      return res.status(404).json(err)
-    })
-})
+      console.log(err);
+      errors.teammember = 'Beitrag nicht gefunden.';
+      return res.status(404).json(err);
+    });
+});
 
 // @route   GET api/training/team/toggle_online/:id/:state
 // @desc    Toggle online training team member by id
@@ -171,8 +172,8 @@ router.get(
   '/team/toggle_online/:id/:state',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const errors = {}
-    console.log(req.params.id, req.params.state)
+    const errors = {};
+    console.log(req.params.id, req.params.state);
     TrainingTeam.findOneAndUpdate(
       { _id: req.params.id },
       { isOnline: req.params.state },
@@ -182,19 +183,19 @@ router.get(
         TrainingTeam.find({ isDeleted: false })
           .sort('position')
           .then(team => {
-            res.json({ team: team, teamMember: teamMember })
+            res.json({ team: team, teamMember: teamMember });
           })
           .catch(err => {
-            console.log(err)
-          })
+            console.log(err);
+          });
       })
       .catch(err => {
-        console.log('nicht fund')
-        errors.trainingteam = 'Beitrag nicht gefunden.'
-        return res.status(404).json(errors)
-      })
+        console.log('nicht fund');
+        errors.trainingteam = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
   }
-)
+);
 
 // @route   GET api/training/team/delete/:id
 // @desc    Delete training team member by id
@@ -203,22 +204,22 @@ router.get(
   '/team/delete/:id',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const errors = {}
+    const errors = {};
     TrainingTeam.findOneAndUpdate(
       { _id: req.params.id },
       { isDeleted: true },
       { safe: true, new: true }
     )
       .then(async () => {
-        const team = await TrainingTeam.find({ isDeleted: false })
-        res.json(team)
+        const team = await TrainingTeam.find({ isDeleted: false });
+        res.json(team);
       })
       .catch(err => {
-        errors.teammember = 'Beitrag nicht gefunden.'
-        return res.status(404).json(errors)
-      })
+        errors.teammember = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
   }
-)
+);
 
 //////////////////////// TRAININGS
 
@@ -229,16 +230,16 @@ router.get(
   '/trainings',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const errors = {}
+    const errors = {};
     Training.find({ isDeleted: false })
       .sort('position')
       .exec()
       .then(trainings => {
-        res.json(trainings)
+        res.json(trainings);
       })
-      .catch(err => res.status(404).json(err))
+      .catch(err => res.status(404).json(err));
   }
-)
+);
 // @route   GET api/training/trainingsSorted/:sortBy
 // @desc    Get all trainings
 // @access  Public
@@ -246,16 +247,16 @@ router.get(
   '/trainingsSorted/:sortBy',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const errors = {}
+    const errors = {};
     Training.find({ isDeleted: false })
       .sort(req.params.sortBy)
       .exec()
       .then(trainings => {
-        res.json(trainings)
+        res.json(trainings);
       })
-      .catch(err => res.status(404).json(err))
+      .catch(err => res.status(404).json(err));
   }
-)
+);
 
 // @route   POST api/training/trainings
 // @desc    Create a training
@@ -264,10 +265,10 @@ router.post(
   '/trainings',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const body = req.body
-    const { errors, isValid } = await validateTrainingInput(body)
+    const body = req.body;
+    const { errors, isValid } = await validateTrainingInput(body);
     if (!isValid) {
-      return res.status(400).json(errors)
+      return res.status(400).json(errors);
     }
     const newTraining = new Training({
       title: body.title && body.title,
@@ -299,26 +300,26 @@ router.post(
       emailSubject: body.emailSubject && body.emailSubject,
       pubContent: body.pubContent && body.pubContent,
       privContent: body.privContent && body.privContent
-    })
+    });
     newTraining
       .save()
       .then(training => {
-        res.json(training)
+        res.json(training);
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
-)
+);
 
 router.post(
   '/trainings/update/:id',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const body = req.body
-    const fDate = moment(body.date).format()
-    console.log(fDate)
-    const { errors, isValid } = await validateTrainingInput(body)
+    const body = req.body;
+    const fDate = moment(body.date).format();
+    console.log(fDate);
+    const { errors, isValid } = await validateTrainingInput(body);
     if (!isValid) {
-      return res.status(400).json(errors)
+      return res.status(400).json(errors);
     }
 
     Training.findOneAndUpdate(
@@ -362,28 +363,28 @@ router.post(
       },
       { new: true },
       (err, training) => {
-        if (err) console.log('error: ', err)
+        if (err) console.log('error: ', err);
         if (!err) {
           Training.find({ isDeleted: false })
             .sort('position')
             .then(trainings => {
-              res.json({ trainings: trainings, training: training })
+              res.json({ trainings: trainings, training: training });
             })
             .catch(err => {
-              console.log(err)
-            })
+              console.log(err);
+            });
         }
       }
-    )
+    );
   }
-)
+);
 
 router.post(
   '/trainings/set_interested_trainer/:id',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const body = req.body
-    console.log(body)
+    const body = req.body;
+    console.log(body);
 
     Training.findOneAndUpdate(
       { _id: body.id },
@@ -394,21 +395,21 @@ router.post(
       },
       { new: true },
       (err, training) => {
-        if (err) console.log('error: ', err)
+        if (err) console.log('error: ', err);
         if (!err) {
           Training.find({ isDeleted: false })
             .sort('position')
             .then(trainings => {
-              res.json({ trainings: trainings, training: training })
+              res.json({ trainings: trainings, training: training });
             })
             .catch(err => {
-              console.log(err)
-            })
+              console.log(err);
+            });
         }
       }
-    )
+    );
   }
-)
+);
 
 // @route   GET api/training/trainings/:id
 // @desc    Get Training by id
@@ -417,22 +418,22 @@ router.get(
   '/trainings/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const errors = {}
+    const errors = {};
     Training.findOne({ _id: req.params.id, isDeleted: false })
       .populate('lastEdited.user', ['name'])
       .then(training => {
         if (!training) {
-          errors.notraining = 'Kein Beitrag mit dieser ID.'
-          return res.status(404).json(errors.notraining)
+          errors.notraining = 'Kein Beitrag mit dieser ID.';
+          return res.status(404).json(errors.notraining);
         }
-        res.json(training)
+        res.json(training);
       })
       .catch(err => {
-        errors.training = 'Beitrag nicht gefunden.'
-        return res.status(404).json(errors)
-      })
+        errors.training = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
   }
-)
+);
 
 // @route   GET api/training/training/toggle_online/:id/:state
 // @desc    Toggle online training by id
@@ -441,8 +442,8 @@ router.get(
   '/trainings/toggle_online/:id/:state',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const errors = {}
-    console.log(req.params.id, req.params.state)
+    const errors = {};
+    console.log(req.params.id, req.params.state);
     Training.findOneAndUpdate(
       { _id: req.params.id },
       { isOnline: req.params.state },
@@ -452,19 +453,19 @@ router.get(
         Training.find({ isDeleted: false })
           .sort('position')
           .then(trainings => {
-            res.json({ trainings: trainings, training: training })
+            res.json({ trainings: trainings, training: training });
           })
           .catch(err => {
-            console.log(err)
-          })
+            console.log(err);
+          });
       })
       .catch(err => {
-        console.log('nicht fund')
-        errors.training = 'Beitrag nicht gefunden.'
-        return res.status(404).json(errors)
-      })
+        console.log('nicht fund');
+        errors.training = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
   }
-)
+);
 
 // @route   GET api/training/trainings/delete/:id
 // @desc    Delete training by id
@@ -473,22 +474,218 @@ router.get(
   '/trainings/delete/:id',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const errors = {}
+    const errors = {};
     Training.findOneAndUpdate(
       { _id: req.params.id },
       { isDeleted: true },
       { safe: true, new: true }
     )
       .then(async () => {
-        const trainings = await Training.find({ isDeleted: false })
-        res.json(trainings)
+        const trainings = await Training.find({ isDeleted: false });
+        res.json(trainings);
       })
       .catch(err => {
-        errors.trainings = 'Beitrag nicht gefunden.'
-        return res.status(404).json(errors)
-      })
+        errors.trainings = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
   }
-)
+);
+
+//////////////////////// BULLETINS
+
+// @route   GET api/training/bulletins
+// @desc    Get all bulletins
+// @access  Public
+router.get(
+  '/bulletins',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {};
+    Training.find({ isDeleted: false })
+      .sort('position')
+      .exec()
+      .then(bulletins => {
+        res.json(bulletins);
+      })
+      .catch(err => res.status(404).json(err));
+  }
+);
+
+// @route   POST api/training/bulletins
+// @desc    Create a bulletin
+// @access  Private
+router.post(
+  '/bulletins',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body;
+    const { errors, isValid } = await validateTrainingInput(body);
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+    const newBulletin = new Bulletin({
+      title: body.title && body.title,
+      handle: body.title && body.title.replace(/\s/g, '_'),
+
+      tag: body.tag && body.tag,
+      date: body.date && body.date,
+      timeFrom: body.timeFrom && body.timeFrom,
+      timeUntil: body.timeUntil && body.timeUntil,
+      location: {
+        title: body.location && body.location,
+        address1: body.address1 && body.address1
+      },
+      label: body.label && {
+        title: body.label.title,
+        value: body.label.value,
+        label: body.label.label,
+        color: body.label.color
+      },
+      content: body.content && body.content
+    });
+    newTraining
+      .save()
+      .then(bulletin => {
+        res.json(bulletin);
+      })
+      .catch(err => console.log(err));
+  }
+);
+
+router.post(
+  '/bulletins/update/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body;
+    const fDate = moment(body.date).format();
+    console.log(fDate);
+    const { errors, isValid } = await validateTrainingInput(body);
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    Bulletin.findOneAndUpdate(
+      { _id: body.id },
+      {
+        $set: {
+          title: body.title && body.title,
+          handle: body.title && body.title.replace(/\s/g, '_'),
+
+          tag: body.tag && body.tag,
+          date: fDate,
+          timeFrom: body.timeFrom && body.timeFrom,
+          timeUntil: body.timeUntil && body.timeUntil,
+          location: {
+            title: body.location,
+            address1: body.address1
+          },
+          label: body.label && {
+            title: body.label.title,
+            value: body.label.value,
+            label: body.label.label,
+            color: body.label.color
+          },
+          content: body.content && body.content,
+          contentMarked: body.content && marked(body.content)
+        }
+      },
+      { new: true },
+      (err, bulletin) => {
+        if (err) console.log('error: ', err);
+        if (!err) {
+          Training.find({ isDeleted: false })
+            .sort('position')
+            .then(bulletins => {
+              res.json({ bulletins: bulletins, bulletin: bulletin });
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        }
+      }
+    );
+  }
+);
+
+// @route   GET api/training/bulletins/:id
+// @desc    Get Bulletin by id
+// @access  Public
+router.get(
+  '/bulletins/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {};
+    Bulletin.findOne({ _id: req.params.id, isDeleted: false })
+      .populate('lastEdited.user', ['name'])
+      .then(bulletin => {
+        if (!bulletin) {
+          errors.nobulletin = 'Kein Beitrag mit dieser ID.';
+          return res.status(404).json(errors.nobulletin);
+        }
+        res.json(bulletin);
+      })
+      .catch(err => {
+        errors.bulletin = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
+  }
+);
+
+// @route   GET api/training/bulletin/toggle_online/:id/:state
+// @desc    Toggle online bulletin by id
+// @access  Private
+router.get(
+  '/bulletins/toggle_online/:id/:state',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {};
+    console.log(req.params.id, req.params.state);
+    Bulletin.findOneAndUpdate(
+      { _id: req.params.id },
+      { isOnline: req.params.state },
+      { safe: true, new: true }
+    )
+      .then(async bulletin => {
+        Bulletin.find({ isDeleted: false })
+          .sort('position')
+          .then(bulletins => {
+            res.json({ bulletins: bulletins, bulletin: bulletin });
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      })
+      .catch(err => {
+        console.log('nicht fund');
+        errors.bulletin = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
+  }
+);
+
+// @route   GET api/training/bulletins/delete/:id
+// @desc    Delete bulletin by id
+// @access  Private
+router.get(
+  '/bulletins/delete/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {};
+    Bulletin.findOneAndUpdate(
+      { _id: req.params.id },
+      { isDeleted: true },
+      { safe: true, new: true }
+    )
+      .then(async () => {
+        const bulletins = await Bulletin.find({ isDeleted: false });
+        res.json(bulletins);
+      })
+      .catch(err => {
+        errors.bulletins = 'Beitrag nicht gefunden.';
+        return res.status(404).json(errors);
+      });
+  }
+);
 
 ///////////////////////// E-MAILS
 
@@ -496,31 +693,31 @@ router.post(
   '/trainings/send_initial_email',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    let emailList = []
+    let emailList = [];
     User.find({ securityLevel: 16 })
       .exec()
       .then(users => {
         if (req.body.recipients === 'all') {
           users.map(user => {
-            emailList.push(`${user.name} <${user.email}>`)
-          })
-          sendTrainingEmail(emailList, req.body, res)
+            emailList.push(`${user.name} <${user.email}>`);
+          });
+          sendTrainingEmail(emailList, req.body, res);
           // console.log(req.body)
         } else if (req.body.recipients === 'interested') {
-          console.log('interessiert!')
+          console.log('interessiert!');
           Training.findOne({ _id: req.body.id })
             .exec()
             .then(training => {
-              console.log(training.interestedTrainers)
+              console.log(training.interestedTrainers);
               training.interestedTrainers &&
                 users
                   .filter(user => training.interestedTrainers.includes(user.id))
                   .map(user => {
-                    emailList.push(`${user.name} <${user.email}>`)
-                  })
+                    emailList.push(`${user.name} <${user.email}>`);
+                  });
               // console.log(emailList)
-              sendTrainingEmail(emailList, req.body, res)
-            })
+              sendTrainingEmail(emailList, req.body, res);
+            });
         } else if (req.body.recipients === 'chosen') {
           Training.findOne({ _id: req.body.id })
             .exec()
@@ -529,17 +726,17 @@ router.post(
                 users
                   .filter(user => training.assignedTrainer1.id === user.id)
                   .map(user => {
-                    emailList.push(`${user.name} <${user.email}>`)
-                  })
+                    emailList.push(`${user.name} <${user.email}>`);
+                  });
               training.assignedTrainer2 &&
                 users
                   .filter(user => training.assignedTrainer2.id === user.id)
                   .map(user => {
-                    emailList.push(`${user.name} <${user.email}>`)
-                  })
+                    emailList.push(`${user.name} <${user.email}>`);
+                  });
               // console.log(emailList)
-              sendTrainingEmail(emailList, req.body, res)
-            })
+              sendTrainingEmail(emailList, req.body, res);
+            });
         } else if (req.body.recipients === 'interestedAndChosen') {
           Training.findOne({ _id: req.body.id })
             .exec()
@@ -548,8 +745,8 @@ router.post(
                 users
                   .filter(user => training.interestedTrainers.includes(user.id))
                   .map(user => {
-                    emailList.push(`${user.name} <${user.email}>`)
-                  })
+                    emailList.push(`${user.name} <${user.email}>`);
+                  });
               training.assignedTrainer1 &&
                 users
                   .filter(
@@ -558,8 +755,8 @@ router.post(
                       !training.interestedTrainers.includes(user.id)
                   )
                   .map(user => {
-                    emailList.push(`${user.name} <${user.email}>`)
-                  })
+                    emailList.push(`${user.name} <${user.email}>`);
+                  });
               training.assignedTrainer2 &&
                 users
                   .filter(
@@ -568,32 +765,32 @@ router.post(
                       !training.interestedTrainers.includes(user.id)
                   )
                   .map(user => {
-                    emailList.push(`${user.name} <${user.email}>`)
-                  })
+                    emailList.push(`${user.name} <${user.email}>`);
+                  });
               // console.log(emailList)
-              sendTrainingEmail(emailList, req.body, res)
-            })
+              sendTrainingEmail(emailList, req.body, res);
+            });
         }
 
         // sendTrainingEmail(emailList, req.body, res)
-      })
+      });
     // console.log(req.body)
   }
-)
+);
 
 sendTrainingEmail = (emailList, content, res) => {
-  const link = `https://zara.or.at/admin/training/calendar/event/${content.id}`
-  const outputPlain = `${content.pubContent} Link: ${link}`
-  let outputHtml = ''
+  const link = `https://zara.or.at/admin/training/calendar/event/${content.id}`;
+  const outputPlain = `${content.pubContent} Link: ${link}`;
+  let outputHtml = '';
   if (content.addMessage) {
-    outputHtml += `<p>${marked(content.addMessage)}</p><br />-----<br />`
+    outputHtml += `<p>${marked(content.addMessage)}</p><br />-----<br />`;
   }
   console.log(
     'orig. Date: ',
     moment(new Date(content.date)).add(2, 'hours')
     // .locale('de', localization)
     // .format('DD. MM. YYYY')
-  )
+  );
   if (content.includeOriginalMessage) {
     outputHtml += `
     <h2>${content.title}</h2>
@@ -609,10 +806,10 @@ sendTrainingEmail = (emailList, content, res) => {
     <br />
     
     <a href="${link}">${link}</a>
-  `
+  `;
   }
 
-  console.log(outputHtml)
+  console.log(outputHtml);
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
@@ -624,7 +821,7 @@ sendTrainingEmail = (emailList, content, res) => {
     tls: {
       rejectUnauthorized: false
     }
-  })
+  });
 
   // setup email data with unicode symbols
   let trainingMailOptions = {
@@ -633,34 +830,34 @@ sendTrainingEmail = (emailList, content, res) => {
     subject: content.emailSubject, // Subject line
     text: outputPlain, // plain text body
     html: outputHtml // html body
-  }
+  };
 
   // send mail with defined transport object
   if (emailList.length > 0) {
     transporter.sendMail(trainingMailOptions, (error, info) => {
       if (error) {
-        return console.log(error)
+        return console.log(error);
       }
-      console.log('Message sent: %s', info.messageId)
+      console.log('Message sent: %s', info.messageId);
 
       // Preview only available when sending through an Ethereal account
-      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
       Training.findOneAndUpdate(
         { _id: content.id },
         { emailSent: true },
         { safe: true, new: true }
       )
         .then(training => {
-          res.send('success')
+          res.send('success');
         })
-        .catch(err => res.send(err))
+        .catch(err => res.send(err));
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
       // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    })
+    });
   } else {
-    res.status(404).json({ error: 'No recipients' })
+    res.status(404).json({ error: 'No recipients' });
   }
-}
+};
 
 ///////////////////////// HONORARE
 
@@ -669,79 +866,79 @@ router.post(
   '/trainings/additional_fees',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const body = req.body
-    console.log(body)
-    const { errors, isValid } = await validateTrainingInput(body)
+    const body = req.body;
+    console.log(body);
+    const { errors, isValid } = await validateTrainingInput(body);
     // if (!isValid) {
     //   return res.status(400).json(errors)
     // }
 
     Training.findOne({ _id: body.trainingId })
       .then(training => {
-        console.log('HERE WE ARE, ', training.assignedTrainer1, body.userId)
+        console.log('HERE WE ARE, ', training.assignedTrainer1, body.userId);
         if (
           training.assignedTrainer1 &&
           training.assignedTrainer1.id === body.userId
         ) {
-          console.log('tr1')
+          console.log('tr1');
           training.assignedTrainer1.additionalFees.push({
             description: body.addFeeDescription,
             amount: body.addFeeAmount
-          })
+          });
         } else if (
           training.assignedTrainer2 &&
           training.assignedTrainer2.id === body.userId
         ) {
-          console.log('tr2')
+          console.log('tr2');
           training.assignedTrainer2.additionalFees.push({
             description: body.addFeeDescription,
             amount: body.addFeeAmount
-          })
+          });
         }
         training.save(() => {
           Training.find({ isDeleted: false })
             .sort('date')
             .then(trainings => {
-              res.json({ trainings: trainings, training: training })
+              res.json({ trainings: trainings, training: training });
             })
             .catch(err => {
-              console.log(err)
-            })
-        })
+              console.log(err);
+            });
+        });
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
-)
+);
 
 router.post(
   '/additional_fees/delete/',
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
-    const body = req.body
+    const body = req.body;
     Training.findOne({ _id: req.body.trainingId }).then(training => {
       if (
         training.assignedTrainer1 &&
         training.assignedTrainer1.id === body.userId
       ) {
-        training.assignedTrainer1.additionalFees.pull(body.feeId)
+        training.assignedTrainer1.additionalFees.pull(body.feeId);
       } else if (
         training.assignedTrainer2 &&
         training.assignedTrainer2.id === body.userId
       ) {
-        training.assignedTrainer2.additionalFees.pull(body.feeId)
+        training.assignedTrainer2.additionalFees.pull(body.feeId);
       }
       training.save().then(training => {
         Training.find({ isDeleted: false })
           .sort('date')
           .then(trainings => {
-            res.json({ trainings: trainings, training: training })
+            res.json({ trainings: trainings, training: training });
           })
           .catch(err => {
-            console.log(err)
-          })
-      })
-    })
+            console.log(err);
+          });
+      });
+    });
   }
-)
+);
 
-module.exports = router
+module.exports = router;
