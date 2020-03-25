@@ -43,7 +43,7 @@ class BulletinContent extends Component {
       location: '',
       address1: '',
       label: {},
-      content: '',
+      shortDescriptionDe: '',
       errors: {},
       imageListOpen: false
     };
@@ -88,7 +88,8 @@ class BulletinContent extends Component {
             location: item.location && item.location.title,
             address1: item.location && item.location.address1,
             label: item.label,
-            content: item.content
+            shortDescriptionDe:
+              item.de.shortDescription && item.de.shortDescription
           });
         }
       }
@@ -112,7 +113,7 @@ class BulletinContent extends Component {
             location: '',
             address1: '',
             label: {},
-            content: '',
+            shortDescriptionDe: '',
             errors: {},
             imageListOpen: false
           });
@@ -136,6 +137,7 @@ class BulletinContent extends Component {
       [e.target.name]: e.target.value
     });
   };
+
   onTagSelectChange = e => {
     this.setState({ tag: e.target.value }, () => {
       if (this.state.bulletinId !== 'neu') {
@@ -204,7 +206,7 @@ class BulletinContent extends Component {
       location: this.state.location,
       address1: this.state.address1,
       label: this.state.label,
-      content: this.state.content
+      shortDescriptionDe: this.state.shortDescriptionDe
     };
     this.props.saveContent(saveData);
   };
@@ -347,10 +349,10 @@ class BulletinContent extends Component {
                       colorScheme="light"
                       placeholder="Beschreibungstext öffentlich (wird per Email verschickt)"
                       type="text"
-                      name="content"
-                      value={this.state.content}
+                      name="shortDescriptionDe"
+                      value={this.state.shortDescriptionDe}
                       onChange={this.onChange}
-                      error={this.state.errors.content}
+                      error={this.state.errors.shortDescriptionDe}
                     />
                   </div>
                 </div>

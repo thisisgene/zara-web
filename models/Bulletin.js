@@ -7,9 +7,27 @@ const BulletinSchema = new Schema({
     type: String,
     default: shortid.generate
   },
-
-  title: {
-    type: String
+  de: {
+    title: {
+      type: String
+    },
+    shortDescription: {
+      type: String
+    },
+    description: {
+      type: String
+    }
+  },
+  en: {
+    title: {
+      type: String
+    },
+    shortDescription: {
+      type: String
+    },
+    description: {
+      type: String
+    }
   },
   location: {
     title: String,
@@ -28,13 +46,6 @@ const BulletinSchema = new Schema({
     type: String
   },
 
-  content: {
-    type: String
-  },
-
-  contentMarked: {
-    type: String
-  },
   label: { name: String, label: String, value: String, color: String },
 
   isVisible: {

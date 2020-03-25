@@ -524,7 +524,10 @@ router.post(
       return res.status(400).json(errors);
     }
     const newBulletin = new Bulletin({
-      title: body.title && body.title,
+      de: {
+        title: body.title && body.title,
+        shortDescription: body.shortDescriptionDe && body.shortDescriptionDe
+      },
       handle: body.title && body.title.replace(/\s/g, '_'),
 
       tag: body.tag && body.tag,
@@ -540,8 +543,7 @@ router.post(
         value: body.label.value,
         label: body.label.label,
         color: body.label.color
-      },
-      content: body.content && body.content
+      }
     });
     newBulletin
       .save()
@@ -568,7 +570,10 @@ router.post(
       { _id: body.id },
       {
         $set: {
-          title: body.title && body.title,
+          de: {
+            title: body.title && body.title,
+            shortDescription: body.shortDescriptionDe && body.shortDescriptionDe
+          },
           handle: body.title && body.title.replace(/\s/g, '_'),
 
           tag: body.tag && body.tag,
@@ -584,9 +589,7 @@ router.post(
             value: body.label.value,
             label: body.label.label,
             color: body.label.color
-          },
-          content: body.content && body.content,
-          contentMarked: body.content && marked(body.content)
+          }
         }
       },
       { new: true },

@@ -7,15 +7,16 @@ import styles from './TrainingItemBox.module.sass';
 
 class TrainingItem extends Component {
   render() {
-    const { content, lang } = this.props;
-    const item = content[lang];
+    const { item, lang } = this.props;
     return (
       <div>
-        <Link to={`/${lang}/training/detail/${content._id}`}>
+        <Link to={`/${lang}/training/detail/${item._id}`}>
           <div className={styles['training-item']}>
-            <div className={styles['training-item--title']}>{item.title}</div>
+            <div className={styles['training-item--title']}>
+              {item[lang].title}
+            </div>
             <div className={styles['training-item--description']}>
-              {item.text}
+              {item[lang].shortDescription}
             </div>
             <div className={styles['training-item--info']}>
               {item.demographic && (
