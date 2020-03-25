@@ -871,8 +871,8 @@ export const saveContent = saveData => dispatch => {
             });
 
       break;
-    case 'trainings':
-      console.log(saveData.interestedTrainers);
+    case 'bulletins':
+      console.log(saveData);
       saveData.id === 'neu'
         ? axios
             .post('/api/training/bulletins', saveData)

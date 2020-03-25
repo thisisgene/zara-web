@@ -498,10 +498,10 @@ router.get(
 // @access  Public
 router.get(
   '/bulletins',
-  passport.authenticate('jwt', { session: false }),
+  // passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const errors = {};
-    Training.find({ isDeleted: false })
+    Bulletin.find({ isDeleted: false })
       .sort('position')
       .exec()
       .then(bulletins => {
@@ -543,7 +543,7 @@ router.post(
       },
       content: body.content && body.content
     });
-    newTraining
+    newBulletin
       .save()
       .then(bulletin => {
         res.json(bulletin);
@@ -593,7 +593,7 @@ router.post(
       (err, bulletin) => {
         if (err) console.log('error: ', err);
         if (!err) {
-          Training.find({ isDeleted: false })
+          Bulletin.find({ isDeleted: false })
             .sort('position')
             .then(bulletins => {
               res.json({ bulletins: bulletins, bulletin: bulletin });
@@ -616,7 +616,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Bulletin.findOne({ _id: req.params.id, isDeleted: false })
-      .populate('lastEdited.user', ['name'])
+      // .populate('lastEdited.user', ['name'])
       .then(bulletin => {
         if (!bulletin) {
           errors.nobulletin = 'Kein Beitrag mit dieser ID.';

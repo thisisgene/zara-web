@@ -83,8 +83,6 @@ class ItemAddList extends Component {
     };
   }
 
-  componentDidMount = () => {};
-
   parseIds = content => {
     let result = [];
     content.map(item => {
@@ -99,11 +97,13 @@ class ItemAddList extends Component {
           : item.de.title;
       result.push({ id: item._id, title: title });
     });
+    console.log('RESULT: ', result);
     return result;
   };
 
   componentDidUpdate = prevProps => {
     if (prevProps !== this.props) {
+      console.log('CINTENT: ', this.props.content);
       this.setState({
         list: this.props.content
       });
@@ -222,6 +222,7 @@ class ItemAddList extends Component {
                 this.state.selectedTag === ''
                   ? content.filter(item =>
                       category === 'trainings' ||
+                      category === 'bulletins' ||
                       category === 'faqs' ||
                       category === 'carousel'
                         ? item.title !== null

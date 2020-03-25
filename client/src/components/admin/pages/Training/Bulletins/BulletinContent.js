@@ -61,18 +61,19 @@ class BulletinContent extends Component {
       if (this.props.errors !== prevProps.errors) {
         this.setState({ errors: this.props.errors });
       }
-      if (this.props.training.bulletin) {
+      if (this.props.bulletin.bulletin) {
         if (prevProps.match.params.bulletinId === 'neu') {
           this.setState({
-            bulletinId: this.props.training.bulletin._id
+            bulletinId: this.props.bulletin.bulletin._id
           });
           this.props.getAll('bulletins');
           this.props.history.push(
-            `/admin/training/bulletins/${this.props.training.bulletin._id}`
+            `/admin/training/bulletins/${this.props.bulletin.bulletin._id}`
           );
         }
-        if (prevProps.training != this.props.training) {
-          const item = this.props.training.bulletin;
+        if (prevProps.bulletin != this.props.bulletin) {
+          console.log('HALLO BULLETIN');
+          const item = this.props.bulletin.bulletin;
           this.props.getImagesByCategory(item.tag);
           this.setState({
             blankItem: false,
@@ -355,7 +356,7 @@ class BulletinContent extends Component {
                 </div>
               </div>
             </div>
-            {this.props.training.bulletin && (
+            {this.props.bulletin.bulletin && (
               <div className={styles['bulletins-content--sidebar']}>
                 <div
                   className={
@@ -418,7 +419,7 @@ class BulletinContent extends Component {
 
                 <hr />
                 <div className={styles['bulletins-content--sidebar--buttons']}>
-                  {this.props.training.bulletin && (
+                  {this.props.bulletin.bulletin && (
                     <button
                       className={cx(
                         commonStyles['button'],
@@ -454,7 +455,7 @@ class BulletinContent extends Component {
 }
 
 const mapStateToProps = state => ({
-  training: state.training,
+  bulletin: state.bulletin,
   auth: state.auth,
   media: state.media,
   label: state.label,

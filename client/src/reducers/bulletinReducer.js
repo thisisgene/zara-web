@@ -1,5 +1,6 @@
 import {
   GET_ALL_BULLETINS,
+  GET_BULLETIN_BY_ID,
   CREATE_NEW_BULLETIN,
   UPDATE_BULLETIN,
   DELETE_BULLETIN_BY_ID,
@@ -21,10 +22,15 @@ export default function(state = initialState, action) {
         ...state,
         bulletins: action.payload
       };
+    case GET_BULLETIN_BY_ID:
+      return {
+        ...state,
+        bulletin: action.payload
+      };
     case CREATE_NEW_BULLETIN:
       return {
         ...state,
-        bulletins: action.payload
+        bulletin: action.payload
       };
     case UPDATE_BULLETIN:
       return {

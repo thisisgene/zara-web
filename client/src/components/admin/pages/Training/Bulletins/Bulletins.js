@@ -17,9 +17,9 @@ class Bulletins extends Component {
   render() {
     return (
       <div className={styles['bulletins']}>
-        {this.props.training && (
+        {this.props.bulletin && (
           <ItemAddList
-            content={this.props.training.bulletins}
+            content={this.props.bulletin.bulletins}
             baseCat="training"
             category="bulletins"
           />
@@ -34,7 +34,7 @@ class Bulletins extends Component {
 }
 
 const mapStateToProps = state => ({
-  training: state.training
+  bulletin: state.bulletin
 });
 
 export default connect(mapStateToProps, { getAll })(Bulletins);
