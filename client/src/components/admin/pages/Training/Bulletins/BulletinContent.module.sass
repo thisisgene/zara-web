@@ -24,20 +24,24 @@
     // display: flex
     padding: 0 -.1rem
 
-    &__title
-      margin: 0 auto
-      width: 50%
+    
     &:first-child
       margin-left: 0
     
     &__content
       display: flex
-      @media(max-width: 970px)
-        display: block
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
       .content-box
         flex: 1
         margin: 0 .1rem
-      &--left
+      &--top
+        display: flex
+        &__side
+          margin: 1rem .5rem .5rem
+          flex: 1
         &__labels
           color: #111
         &__location
@@ -77,15 +81,32 @@
           
           *
             position: inherit
-
-
+    &__headline
+      display: flex
+      > *
+        flex: 1
+        text-align: center
+        color: #aaa
+        // margin-top: 1rem
+        font-size: 1.1rem
+    &__title
+      display: flex
+      > *
+        margin: .2rem .5rem 0
+        flex: 1
     &__description
-      textarea
-        height: 193px !important
-        line-height: 1.1
-        &.private
-          // border: 1px solid #F44335 !important
-          // background: lighten(#F44335, 40%)
+      display: flex
+      width: 100%
+      &--side
+        flex: 1
+        margin: .5rem .5rem
+        color: #111
+        .html-editor
+          font-family: 'HK Grotesk'
+        &__short
+          margin-bottom: .5rem
+          .html-editor
+            height: 180px
   &--bottom-bar
     margin: .4rem 0
     display: flex

@@ -33,7 +33,7 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
       </div>
       <div className={styles['item-tag']} />
       {category === 'trainings' ||
-      category === 'bulletins' ||
+      // category === 'bulletins' ||
       category === 'faqs' ||
       category === 'carousel'
         ? item.title
@@ -88,7 +88,7 @@ class ItemAddList extends Component {
     content.map(item => {
       const title =
         this.props.category === 'trainings' ||
-        this.props.category === 'bulletins' ||
+        // this.props.category === 'bulletins' ||
         this.props.category === 'faqs' ||
         this.props.category === 'carousel'
           ? item.title
@@ -222,7 +222,6 @@ class ItemAddList extends Component {
                 this.state.selectedTag === ''
                   ? content.filter(item =>
                       category === 'trainings' ||
-                      category === 'bulletins' ||
                       category === 'faqs' ||
                       category === 'carousel'
                         ? item.title !== null

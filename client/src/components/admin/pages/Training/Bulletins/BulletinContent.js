@@ -5,9 +5,15 @@ import Calendar from 'react-calendar';
 
 import Select from 'react-select';
 
+import RichTextEditor from 'react-rte-link-extended';
 import TextFieldGroup from '../../../common/TextFieldGroup';
 import TextareaFieldGroup from '../../../common/TextareaFieldGroup';
+
 import { confirmAlert } from 'react-confirm-alert';
+import {
+  toolbarConfig,
+  toolbarImgConfig
+} from '../../dashboard/news/NewsContent/newsContentData';
 
 import {
   saveContent,
@@ -20,6 +26,8 @@ import {
 import { getImagesByCategory } from '../../../../../actions/imageActions';
 import { getAllUsers } from '../../../../../actions/authActions';
 
+import { trainingBoxData } from '../../../../user/pages/Training/training_data';
+
 import cx from 'classnames';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import globalStyles from '../../../common/Bootstrap.module.css';
@@ -30,20 +38,26 @@ class BulletinContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      trainingCategories: trainingBoxData.de.categories,
+      trainingCategory: { label: 'Für Kinder & Jugendliche', value: '1' },
       isOnline: false,
       blankItem: true,
       bulletinId: props.match.params.bulletinId,
       handle: '',
       category: 'bullletins',
       tag: 'bullletins',
-      title: '',
+      titleDE: '',
+      titleEN: '',
       date: new Date(),
       timeFrom: '11:00',
       timeUntil: '17:00',
       location: '',
       address1: '',
       label: {},
-      shortDescriptionDe: '',
+      shortDescriptionDE: RichTextEditor.createEmptyValue(),
+      shortDescriptionEN: RichTextEditor.createEmptyValue(),
+      descriptionDE: RichTextEditor.createEmptyValue(),
+      descriptionEN: RichTextEditor.createEmptyValue(),
       errors: {},
       imageListOpen: false
     };
@@ -54,6 +68,8 @@ class BulletinContent extends Component {
       this.props.getById(this.props.match.params.bulletinId, 'bulletins');
     this.props.getAllUsers();
     this.props.getAll('label');
+
+    console.log('training data: ', this.state.trainingCategories);
   }
 
   componentDidUpdate(prevProps) {
@@ -81,15 +97,32 @@ class BulletinContent extends Component {
             bulletinId: item._id,
             handle: item.handle,
             tag: item.tag && item.tag,
-            title: item.title,
+            trainingCategory: item.category && item.category,
+            titleDE: item.de.title,
+            titleEN: item.en.title,
             date: item.date,
             timeFrom: item.timeFrom,
             timeUntil: item.timeUntil,
             location: item.location && item.location.title,
             address1: item.location && item.location.address1,
             label: item.label,
-            shortDescriptionDe:
-              item.de.shortDescription && item.de.shortDescription
+            shortDescriptionDE: RichTextEditor.createValueFromString(
+              item.de.shortDescription,
+              'html'
+            ),
+            shortDescriptionEN:
+              item.en &&
+              RichTextEditor.createValueFromString(
+                item.en.shortDescription,
+                'html'
+              ),
+            descriptionDE: RichTextEditor.createValueFromString(
+              item.de.description,
+              'html'
+            ),
+            descriptionEN:
+              item.en &&
+              RichTextEditor.createValueFromString(item.en.description, 'html')
           });
         }
       }
@@ -106,14 +139,19 @@ class BulletinContent extends Component {
             handle: '',
             category: 'bulletins',
             tag: 'bulletins',
-            title: '',
+            trainingCategory: { label: 'Für Kinder & Jugendliche', value: '1' },
+            titleDE: '',
+            titleEN: '',
             date: new Date(),
             timeFrom: '11:00',
             timeUntil: '17:00',
             location: '',
             address1: '',
             label: {},
-            shortDescriptionDe: '',
+            shortDescriptionDE: RichTextEditor.createEmptyValue(),
+            shortDescriptionEN: RichTextEditor.createEmptyValue(),
+            descriptionDE: RichTextEditor.createEmptyValue(),
+            descriptionEN: RichTextEditor.createEmptyValue(),
             errors: {},
             imageListOpen: false
           });
@@ -146,6 +184,12 @@ class BulletinContent extends Component {
     });
   };
 
+  onCategorySelectChange = selected => {
+    console.log(selected);
+    this.setState({ trainingCategory: selected }, () => {
+      console.log('LABEL: ', this.state.trainingCategory);
+    });
+  };
   onLabelSelectChange = selected => {
     console.log(selected);
     this.setState({ label: selected }, () => {
@@ -153,10 +197,16 @@ class BulletinContent extends Component {
     });
   };
 
-  onAssignChange = (state, id, name) => {
-    this.setState({ [state]: { id: id, name: name } });
+  onShortDescriptionChange = (lang, value) => {
+    lang === 'de'
+      ? this.setState({ shortDescriptionDE: value })
+      : this.setState({ shortDescriptionEN: value });
   };
-
+  onDescriptionChange = (lang, value) => {
+    lang === 'de'
+      ? this.setState({ descriptionDE: value })
+      : this.setState({ descriptionEN: value });
+  };
   onSelectChange = (lang, selected) => {
     console.log(lang, selected);
 
@@ -195,18 +245,27 @@ class BulletinContent extends Component {
   };
 
   saveContent = () => {
+    const shortDescDE = this.state.shortDescriptionDE;
+    const shortDescEN = this.state.shortDescriptionEN;
+    const descDE = this.state.descriptionDE;
+    const descEN = this.state.descriptionEN;
     const saveData = {
       category: 'bulletins',
+      trainingCategory: this.state.trainingCategory,
       tag: this.state.tag,
       id: this.state.bulletinId,
-      title: this.state.title,
+      titleDE: this.state.titleDE,
+      titleEN: this.state.titleEN,
       date: this.state.date,
       timeFrom: this.state.timeFrom,
       timeUntil: this.state.timeUntil,
       location: this.state.location,
       address1: this.state.address1,
       label: this.state.label,
-      shortDescriptionDe: this.state.shortDescriptionDe
+      shortDescriptionDE: shortDescDE.toString('html'),
+      shortDescriptionEN: shortDescEN.toString('html'),
+      descriptionDE: descDE.toString('html'),
+      descriptionEN: descEN.toString('html')
     };
     this.props.saveContent(saveData);
   };
@@ -217,6 +276,16 @@ class BulletinContent extends Component {
       label: '',
       value: ''
     };
+
+    let categoryList = [];
+    this.state.trainingCategories.map(cat => {
+      categoryList.push({
+        label: cat.text,
+        value: cat.index
+      });
+    });
+    // categoryList.unshift(emptyLabel)
+
     let labelList;
     if (this.props.label && this.props.label.labels) {
       labelList = this.props.label.labels.filter(label => !label.isDeleted);
@@ -232,127 +301,222 @@ class BulletinContent extends Component {
           <div className={styles['bulletins-content']}>
             <div className={styles['bulletins-content--main']}>
               <div className={styles['bulletins-content--text']}>
+                <div className={styles['bulletins-content--text__content']}>
+                  <div
+                    className={cx(
+                      styles['bulletins-content--text__content--top'],
+                      styles['content-box']
+                    )}
+                  >
+                    <div
+                      className={cx(
+                        styles['bulletins-content--text__content--top__side']
+                      )}
+                    >
+                      <div
+                        className={
+                          styles[
+                            'bulletins-content--text__content--top__labels'
+                          ]
+                        }
+                      >
+                        <Select
+                          // isMulti
+                          value={this.state.trainingCategory}
+                          name={'category'}
+                          options={categoryList}
+                          className={styles['label-select']}
+                          placeholder={'Kategorie auswählen'}
+                          onChange={this.onCategorySelectChange}
+                        />
+                      </div>
+                      <div
+                        className={
+                          styles[
+                            'bulletins-content--text__content--top__labels'
+                          ]
+                        }
+                      >
+                        {this.props.label && this.props.label.labels && (
+                          <Select
+                            // isMulti
+                            value={this.state.label}
+                            name={'label'}
+                            options={labelList}
+                            className={styles['label-select']}
+                            placeholder={'Label auswählen'}
+                            onChange={this.onLabelSelectChange}
+                          />
+                        )}
+                      </div>
+                      <div
+                        className={
+                          styles[
+                            'bulletins-content--text__content--top__location'
+                          ]
+                        }
+                      >
+                        <TextFieldGroup
+                          className={commonStyles['input']}
+                          colorScheme="light"
+                          placeholder="Ort"
+                          type="text"
+                          name="location"
+                          value={this.state.location}
+                          onChange={this.onChange}
+                          error={this.state.errors.location}
+                        />
+                        <div
+                          className={
+                            styles[
+                              'bulletins-content--text__content--top__location--time'
+                            ]
+                          }
+                        >
+                          <span>
+                            {/* <i className="fas fa-clock" /> */}
+                            Von:
+                          </span>
+                          <input
+                            type="time"
+                            id="timeFrom"
+                            onChange={this.onChange}
+                            value={this.state.timeFrom}
+                            name="timeFrom"
+                          />
+                          <span>Bis:</span>
+                          <input
+                            type="time"
+                            id="timeUntil"
+                            onChange={this.onChange}
+                            value={this.state.timeUntil}
+                            name="timeUntil"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <TextFieldGroup
+                          className={commonStyles['input']}
+                          colorScheme="light"
+                          placeholder="Adresse Zeile 1"
+                          type="text"
+                          name="address1"
+                          value={this.state.address1}
+                          onChange={this.onChange}
+                          error={this.state.errors.address1}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={cx(
+                        styles['bulletins-content--text__content--top__side']
+                      )}
+                    >
+                      <div
+                        className={
+                          styles['bulletins-content--text__content--top__date']
+                        }
+                      >
+                        <Calendar
+                          onChange={this.onDateChange}
+                          value={new Date(this.state.date)}
+                          locale="de-DE"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div className={styles['bulletins-content--text__headline']}>
+                  <div>Deutsch</div>
+                  <div>Englisch</div>
+                </div>
+
                 <div className={styles['bulletins-content--text__title']}>
                   <TextFieldGroup
                     className={commonStyles['input']}
                     colorScheme="light"
-                    placeholder="Titel der Ausschreibung"
+                    placeholder="Titel deutsch"
                     type="text"
-                    name="title"
-                    value={this.state.title}
+                    name="titleDE"
+                    value={this.state.titleDE}
+                    onChange={this.onChange}
+                    error={this.state.errors.title}
+                  />
+                  <TextFieldGroup
+                    className={commonStyles['input']}
+                    colorScheme="light"
+                    placeholder="Titel englisch"
+                    type="text"
+                    name="titleEN"
+                    value={this.state.titleEN}
                     onChange={this.onChange}
                     error={this.state.errors.title}
                   />
                 </div>
-                <div className={styles['bulletins-content--text__content']}>
+                <div
+                  className={cx(styles['bulletins-content--text__description'])}
+                >
                   <div
                     className={cx(
-                      styles['bulletins-content--text__content--left'],
-                      styles['content-box']
+                      styles['bulletins-content--text__description--side']
                     )}
                   >
-                    <div
-                      className={
-                        styles['bulletins-content--text__content--left__labels']
-                      }
-                    >
-                      {this.props.label && this.props.label.labels && (
-                        <Select
-                          // isMulti
-                          value={this.state.label}
-                          name={'label'}
-                          options={labelList}
-                          className={styles['label-select']}
-                          placeholder={'Label auswählen'}
-                          onChange={this.onLabelSelectChange}
-                        />
-                      )}
-                    </div>
                     <div
                       className={
                         styles[
-                          'bulletins-content--text__content--left__location'
+                          'bulletins-content--text__description--side__short'
                         ]
                       }
                     >
-                      <TextFieldGroup
-                        className={commonStyles['input']}
-                        colorScheme="light"
-                        placeholder="Ort"
-                        type="text"
-                        name="location"
-                        value={this.state.location}
-                        onChange={this.onChange}
-                        error={this.state.errors.location}
-                      />
-                      <div
-                        className={
-                          styles[
-                            'bulletins-content--text__content--left__location--time'
-                          ]
-                        }
-                      >
-                        <span>
-                          {/* <i className="fas fa-clock" /> */}
-                          Von:
-                        </span>
-                        <input
-                          type="time"
-                          id="timeFrom"
-                          onChange={this.onChange}
-                          value={this.state.timeFrom}
-                          name="timeFrom"
-                        />
-                        <span>Bis:</span>
-                        <input
-                          type="time"
-                          id="timeUntil"
-                          onChange={this.onChange}
-                          value={this.state.timeUntil}
-                          name="timeUntil"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <TextFieldGroup
-                        className={commonStyles['input']}
-                        colorScheme="light"
-                        placeholder="Adresse Zeile 1"
-                        type="text"
-                        name="address1"
-                        value={this.state.address1}
-                        onChange={this.onChange}
-                        error={this.state.errors.address1}
+                      <RichTextEditor
+                        placeholder="Kurzbeschreibung deutsch"
+                        className={styles['html-editor']}
+                        toolbarConfig={toolbarConfig}
+                        value={this.state.shortDescriptionDE}
+                        onChange={this.onShortDescriptionChange.bind(
+                          this,
+                          'de'
+                        )}
                       />
                     </div>
-                    <div
-                      className={
-                        styles['trainings-content--text__content--left__date']
-                      }
-                    >
-                      <Calendar
-                        onChange={this.onDateChange}
-                        value={new Date(this.state.date)}
-                        locale="de-DE"
-                      />
-                    </div>
+                    <RichTextEditor
+                      placeholder="Beschreibung deutsch"
+                      className={styles['html-editor']}
+                      toolbarConfig={toolbarImgConfig}
+                      value={this.state.descriptionDE}
+                      onChange={this.onDescriptionChange.bind(this, 'de')}
+                    />
                   </div>
-
                   <div
                     className={cx(
-                      styles['trainings-content--text__description'],
-                      styles['content-box']
+                      styles['bulletins-content--text__description--side']
                     )}
                   >
-                    <TextareaFieldGroup
-                      className={commonStyles['input']}
-                      colorScheme="light"
-                      placeholder="Beschreibungstext öffentlich (wird per Email verschickt)"
-                      type="text"
-                      name="shortDescriptionDe"
-                      value={this.state.shortDescriptionDe}
-                      onChange={this.onChange}
-                      error={this.state.errors.shortDescriptionDe}
+                    <div
+                      className={
+                        styles[
+                          'bulletins-content--text__description--side__short'
+                        ]
+                      }
+                    >
+                      <RichTextEditor
+                        placeholder="Kurzbeschreibung englisch"
+                        className={styles['html-editor']}
+                        toolbarConfig={toolbarConfig}
+                        value={this.state.shortDescriptionEN}
+                        onChange={this.onShortDescriptionChange.bind(
+                          this,
+                          'en'
+                        )}
+                      />
+                    </div>
+                    <RichTextEditor
+                      placeholder="Beschreibung englisch"
+                      className={styles['html-editor']}
+                      toolbarConfig={toolbarImgConfig}
+                      value={this.state.descriptionEN}
+                      onChange={this.onDescriptionChange.bind(this, 'en')}
                     />
                   </div>
                 </div>

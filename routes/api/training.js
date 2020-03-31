@@ -519,14 +519,21 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const body = req.body;
-    const { errors, isValid } = await validateTrainingInput(body);
+    console.log('body: ', body);
+    const { errors, isValid } = await validateNewsInput(body);
     if (!isValid) {
       return res.status(400).json(errors);
     }
     const newBulletin = new Bulletin({
       de: {
-        title: body.title && body.title,
-        shortDescription: body.shortDescriptionDe && body.shortDescriptionDe
+        title: body.titleDE && body.titleDE,
+        shortDescription: body.shortDescriptionDE && body.shortDescriptionDE,
+        description: body.descriptionDE && body.descriptionDE
+      },
+      en: {
+        title: body.titleEN && body.titleEN,
+        shortDescription: body.shortDescriptionEN && body.shortDescriptionEN,
+        description: body.descriptionEN && body.descriptionEN
       },
       handle: body.title && body.title.replace(/\s/g, '_'),
 
@@ -537,6 +544,10 @@ router.post(
       location: {
         title: body.location && body.location,
         address1: body.address1 && body.address1
+      },
+      category: body.trainingCategory && {
+        value: body.trainingCategory.value,
+        label: body.trainingCategory.label
       },
       label: body.label && {
         title: body.label.title,
@@ -559,9 +570,9 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const body = req.body;
+    console.log('body update: ', body);
     const fDate = moment(body.date).format();
-    console.log(fDate);
-    const { errors, isValid } = await validateTrainingInput(body);
+    const { errors, isValid } = await validateNewsInput(body);
     if (!isValid) {
       return res.status(400).json(errors);
     }
@@ -571,8 +582,16 @@ router.post(
       {
         $set: {
           de: {
-            title: body.title && body.title,
-            shortDescription: body.shortDescriptionDe && body.shortDescriptionDe
+            title: body.titleDE && body.titleDE,
+            shortDescription:
+              body.shortDescriptionDE && body.shortDescriptionDE,
+            description: body.descriptionDE && body.descriptionDE
+          },
+          en: {
+            title: body.titleEN && body.titleEN,
+            shortDescription:
+              body.shortDescriptionEN && body.shortDescriptionEN,
+            description: body.descriptionEN && body.descriptionEN
           },
           handle: body.title && body.title.replace(/\s/g, '_'),
 
@@ -583,6 +602,10 @@ router.post(
           location: {
             title: body.location,
             address1: body.address1
+          },
+          category: body.trainingCategory && {
+            value: body.trainingCategory.value,
+            label: body.trainingCategory.label
           },
           label: body.label && {
             title: body.label.title,

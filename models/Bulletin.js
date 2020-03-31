@@ -45,9 +45,8 @@ const BulletinSchema = new Schema({
   handle: {
     type: String
   },
-
+  category: { label: String, value: String },
   label: { name: String, label: String, value: String, color: String },
-
   isVisible: {
     type: Boolean,
     default: false
