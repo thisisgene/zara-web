@@ -92,8 +92,16 @@ class TrainingItem extends Component {
               <div className={styles['training-item--info__child']}>
                 {/* <IconObject image="duration" /> */}
                 <div className={styles['training-item--info__child--data']}>
-                  <div className={styles['training-item--link']}>
-                    Details
+                  <div
+                    className={styles['training-item--info__child--data__line']}
+                  >
+                    <div
+                      className={
+                        styles['training-item--info__child--data__line--detail']
+                      }
+                    >
+                      Details
+                    </div>
                     {/* <IconObject image="arrowRight" /> */}
                   </div>
                 </div>
