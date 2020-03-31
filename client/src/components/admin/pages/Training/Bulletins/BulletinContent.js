@@ -8,6 +8,7 @@ import Select from 'react-select';
 import RichTextEditor from 'react-rte-link-extended';
 import TextFieldGroup from '../../../common/TextFieldGroup';
 import TextareaFieldGroup from '../../../common/TextareaFieldGroup';
+import ContentImageList from '../../dashboard/ContentImageList';
 
 import { confirmAlert } from 'react-confirm-alert';
 import {
@@ -59,8 +60,11 @@ class BulletinContent extends Component {
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
       descriptionDE: RichTextEditor.createEmptyValue(),
       descriptionEN: RichTextEditor.createEmptyValue(),
-      errors: {},
-      imageListOpen: false
+      titleImage: '',
+      imageId: '',
+      imageCategory: '',
+      imageListOpen: false,
+      errors: {}
     };
   }
 
@@ -197,6 +201,23 @@ class BulletinContent extends Component {
     console.log(selected);
     this.setState({ label: selected }, () => {
       console.log('LABEL: ', this.state.label);
+    });
+  };
+
+  onImageOpen = () => {
+    this.setState({ imageListOpen: !this.state.imageListOpen });
+  };
+  updateTitleImage = (originalName, id, category) => {
+    this.setState({
+      titleImage: originalName,
+      imageId: id,
+      imageCategory: category,
+      imageListOpen: false
+    });
+  };
+  closeImageList = () => {
+    this.setState({
+      imageListOpen: false
     });
   };
 
@@ -614,6 +635,34 @@ class BulletinContent extends Component {
                   </button>
                 </div>
 
+                <hr />
+                <div
+                  className={styles['title-image']}
+                  onClick={this.onImageOpen}
+                >
+                  <div className={cx(styles['title-image--avatar'])}>
+                    {this.state.titleImage ? (
+                      <img
+                        src={`/assets/media/${this.state.imageCategory}/${this.state.titleImage}`}
+                        alt=""
+                      />
+                    ) : (
+                      <div>
+                        Titelbild
+                        <br />
+                        zum auswählen klicken
+                      </div>
+                    )}
+                  </div>
+                  {this.state.imageListOpen && (
+                    <ContentImageList
+                      updateTitleImage={this.updateTitleImage}
+                      closeImageList={this.closeImageList}
+                      teamImageId={this.state.imageId}
+                      category={'training'}
+                    />
+                  )}
+                </div>
                 <hr />
                 <div className={styles['bulletins-content--sidebar--buttons']}>
                   {this.props.bulletin.bulletin && (
