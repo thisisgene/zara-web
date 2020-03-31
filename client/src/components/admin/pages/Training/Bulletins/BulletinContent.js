@@ -51,8 +51,9 @@ class BulletinContent extends Component {
       date: new Date(),
       timeFrom: '11:00',
       timeUntil: '17:00',
+      peopleMin: 1,
+      peopleMax: 8,
       location: '',
-      address1: '',
       label: {},
       shortDescriptionDE: RichTextEditor.createEmptyValue(),
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
@@ -103,8 +104,9 @@ class BulletinContent extends Component {
             date: item.date,
             timeFrom: item.timeFrom,
             timeUntil: item.timeUntil,
-            location: item.location && item.location.title,
-            address1: item.location && item.location.address1,
+            peopleMin: item.peopleMin && item.peopleMin,
+            peopleMax: item.peopleMax && item.peopleMax,
+            location: item.location && item.location,
             label: item.label,
             shortDescriptionDE: RichTextEditor.createValueFromString(
               item.de.shortDescription,
@@ -145,8 +147,9 @@ class BulletinContent extends Component {
             date: new Date(),
             timeFrom: '11:00',
             timeUntil: '17:00',
+            peopleMin: 1,
+            peopleMax: 8,
             location: '',
-            address1: '',
             label: {},
             shortDescriptionDE: RichTextEditor.createEmptyValue(),
             shortDescriptionEN: RichTextEditor.createEmptyValue(),
@@ -259,8 +262,9 @@ class BulletinContent extends Component {
       date: this.state.date,
       timeFrom: this.state.timeFrom,
       timeUntil: this.state.timeUntil,
+      peopleMin: this.state.peopleMin,
+      peopleMax: this.state.peopleMax,
       location: this.state.location,
-      address1: this.state.address1,
       label: this.state.label,
       shortDescriptionDE: shortDescDE.toString('html'),
       shortDescriptionEN: shortDescEN.toString('html'),
@@ -351,11 +355,77 @@ class BulletinContent extends Component {
                       </div>
                       <div
                         className={
+                          styles['bulletins-content--text__content--top__time']
+                        }
+                      >
+                        <div
+                          className={
+                            styles[
+                              'bulletins-content--text__content--top__time--side'
+                            ]
+                          }
+                        >
+                          <span>
+                            <i className="fas fa-users" />
+                          </span>
+                          <input
+                            className={commonStyles['input']}
+                            type="number"
+                            id="peopleMin"
+                            onChange={this.onChange}
+                            value={this.state.peopleMin}
+                            name="peopleMin"
+                          />
+                          <span> - </span>
+                          <input
+                            className={commonStyles['input']}
+                            type="number"
+                            id="peopleMax"
+                            onChange={this.onChange}
+                            value={this.state.peopleMax}
+                            name="peopleMax"
+                          />
+                        </div>
+                        <div
+                          className={
+                            styles[
+                              'bulletins-content--text__content--top__time--side'
+                            ]
+                          }
+                        >
+                          <span>
+                            <i className="fas fa-clock" />
+                          </span>
+                          <input
+                            className={commonStyles['input']}
+                            type="time"
+                            id="timeFrom"
+                            onChange={this.onChange}
+                            value={this.state.timeFrom}
+                            name="timeFrom"
+                          />
+                          <span>Bis:</span>
+                          <input
+                            className={commonStyles['input']}
+                            type="time"
+                            id="timeUntil"
+                            onChange={this.onChange}
+                            value={this.state.timeUntil}
+                            name="timeUntil"
+                          />
+                        </div>
+                      </div>
+                      <div></div>
+                      <div
+                        className={
                           styles[
                             'bulletins-content--text__content--top__location'
                           ]
                         }
                       >
+                        <span>
+                          <i className="fas fa-map-marker" />
+                        </span>
                         <TextFieldGroup
                           className={commonStyles['input']}
                           colorScheme="light"
@@ -365,45 +435,6 @@ class BulletinContent extends Component {
                           value={this.state.location}
                           onChange={this.onChange}
                           error={this.state.errors.location}
-                        />
-                        <div
-                          className={
-                            styles[
-                              'bulletins-content--text__content--top__location--time'
-                            ]
-                          }
-                        >
-                          <span>
-                            {/* <i className="fas fa-clock" /> */}
-                            Von:
-                          </span>
-                          <input
-                            type="time"
-                            id="timeFrom"
-                            onChange={this.onChange}
-                            value={this.state.timeFrom}
-                            name="timeFrom"
-                          />
-                          <span>Bis:</span>
-                          <input
-                            type="time"
-                            id="timeUntil"
-                            onChange={this.onChange}
-                            value={this.state.timeUntil}
-                            name="timeUntil"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <TextFieldGroup
-                          className={commonStyles['input']}
-                          colorScheme="light"
-                          placeholder="Adresse Zeile 1"
-                          type="text"
-                          name="address1"
-                          value={this.state.address1}
-                          onChange={this.onChange}
-                          error={this.state.errors.address1}
                         />
                       </div>
                     </div>

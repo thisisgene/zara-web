@@ -12,7 +12,7 @@ export default class TrainingItemBox extends Component {
         <div className={styles['training-box--content']}>
           {content &&
             content
-              // .filter(item => item.category === category)
+              .filter(item => item.isOnline && item.category.value === category)
               .map((item, index) => (
                 <div key={index}>
                   {/* <p>{item.title}</p> */}

@@ -29,10 +29,7 @@ const BulletinSchema = new Schema({
       type: String
     }
   },
-  location: {
-    title: String,
-    address1: String
-  },
+  location: String,
   date: {
     type: String
   },
@@ -41,6 +38,12 @@ const BulletinSchema = new Schema({
   },
   timeUntil: {
     type: String
+  },
+  peopleMin: {
+    type: Number
+  },
+  peopleMax: {
+    type: Number
   },
   handle: {
     type: String

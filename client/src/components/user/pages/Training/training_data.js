@@ -81,8 +81,8 @@ export const trainingBoxData = {
     categories: [
       {
         index: '1',
-        text: 'Für Kinder & Jugendliche',
-        link: 'kinder_jugendliche',
+        text: 'Offene Workshops & Vorträge',
+        link: 'workshops_vortraege',
         testimonials: [
           {
             name: 'AHS Friesgasse, Wien'
@@ -101,21 +101,26 @@ export const trainingBoxData = {
           }
         ]
       },
-      { index: '2', text: 'Für Erwachsene', link: 'erwachsene' },
-      { index: '3', text: 'Für Unternehmen', link: 'unternehmen' },
       {
-        index: '4',
-        text: 'Training & mehr',
-        link: null,
-        subMenuList: [
-          {
-            index: '4.1',
-            text: 'Aktuelle Trainingsprojekte',
-            link: 'trainingsprojekte'
-          },
-          { index: '4.2', text: 'Trainer*innen-Pool', link: 'trainer_innen' }
-        ]
-      }
+        index: '2',
+        text: 'Für Kinder & Jugendliche',
+        link: 'kinder_jugendliche'
+      },
+      { index: '3', text: 'Für Erwachsene', link: 'erwachsene' },
+      { index: '4', text: 'Für Unternehmen', link: 'unternehmen' }
+      // {
+      //   index: '4',
+      //   text: 'Training & mehr',
+      //   link: null,
+      //   subMenuList: [
+      //     {
+      //       index: '4.1',
+      //       text: 'Aktuelle Trainingsprojekte',
+      //       link: 'trainingsprojekte'
+      //     },
+      //     { index: '4.2', text: 'Trainer*innen-Pool', link: 'trainer_innen' }
+      //   ]
+      // }
     ]
   },
   en: {

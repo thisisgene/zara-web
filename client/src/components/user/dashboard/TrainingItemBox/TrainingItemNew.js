@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import moment from 'moment';
+
 import IconObject from '../../dashboard/IconObject/IconObject';
 
-import styles from './TrainingItemBox.module.sass';
+import styles from './TrainingItemBoxNew.module.sass';
 
 class TrainingItem extends Component {
   render() {
@@ -15,26 +17,87 @@ class TrainingItem extends Component {
             <div className={styles['training-item--title']}>
               {item[lang].title}
             </div>
-            <div className={styles['training-item--description']}>
-              {item[lang].shortDescription}
-            </div>
+            <div
+              className={styles['training-item--description']}
+              dangerouslySetInnerHTML={{ __html: item[lang].shortDescription }}
+            ></div>
             <div className={styles['training-item--info']}>
-              {item.demographic && (
+              {item.peopleMin && (
                 <div className={styles['training-item--info__child']}>
                   <IconObject image="participants" />
-                  <div>{item.demographic}</div>
+                  <div className={styles['training-item--info__child--data']}>
+                    <div
+                      className={
+                        styles['training-item--info__child--data__line']
+                      }
+                    >
+                      <div>{item.peopleMin}</div>
+                      <div>&nbsp;-&nbsp;</div>
+                      <div>{item.peopleMax}</div>
+                    </div>
+                    <div
+                      className={
+                        styles['training-item--info__child--data__line']
+                      }
+                    >
+                      <div>Personen</div>
+                    </div>
+                  </div>
                 </div>
               )}
-              {item.duration && (
+              {item.timeFrom && (
                 <div className={styles['training-item--info__child']}>
                   <IconObject image="duration" />
-                  <div>{item.duration}</div>
+                  <div className={styles['training-item--info__child--data']}>
+                    <div
+                      className={
+                        styles['training-item--info__child--data__line']
+                      }
+                    >
+                      <div>
+                        {moment(item.date)
+                          .locale('de')
+                          .format('DD. MM. YYYY')}
+                      </div>
+                    </div>
+                    <div
+                      className={
+                        styles['training-item--info__child--data__line']
+                      }
+                    >
+                      <div>{item.timeFrom}</div>
+                      <div>&nbsp;-&nbsp;</div>
+                      <div>{item.timeUntil}</div>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
-            <div className={styles['training-item--link']}>
-              {item.detailLinkText}
-              <IconObject image="arrowRight" />
+            <div className={styles['training-item--info']}>
+              {item.peopleMin && (
+                <div className={styles['training-item--info__child']}>
+                  <IconObject image="location" />
+                  <div className={styles['training-item--info__child--data']}>
+                    <div
+                      className={
+                        styles['training-item--info__child--data__line']
+                      }
+                    >
+                      <div>{item.location}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div className={styles['training-item--info__child']}>
+                {/* <IconObject image="duration" /> */}
+                <div className={styles['training-item--info__child--data']}>
+                  <div className={styles['training-item--link']}>
+                    Details
+                    {/* <IconObject image="arrowRight" /> */}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Link>

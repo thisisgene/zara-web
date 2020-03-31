@@ -541,10 +541,9 @@ router.post(
       date: body.date && body.date,
       timeFrom: body.timeFrom && body.timeFrom,
       timeUntil: body.timeUntil && body.timeUntil,
-      location: {
-        title: body.location && body.location,
-        address1: body.address1 && body.address1
-      },
+      peopleMin: body.peopleMin && body.peopleMin,
+      peopleMax: body.peopleMax && body.peopleMax,
+      location: body.location && body.location,
       category: body.trainingCategory && {
         value: body.trainingCategory.value,
         label: body.trainingCategory.label
@@ -599,10 +598,9 @@ router.post(
           date: fDate,
           timeFrom: body.timeFrom && body.timeFrom,
           timeUntil: body.timeUntil && body.timeUntil,
-          location: {
-            title: body.location,
-            address1: body.address1
-          },
+          peopleMin: body.peopleMin && body.peopleMin,
+          peopleMax: body.peopleMax && body.peopleMax,
+          location: body.location && body.location,
           category: body.trainingCategory && {
             value: body.trainingCategory.value,
             label: body.trainingCategory.label

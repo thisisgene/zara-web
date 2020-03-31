@@ -44,12 +44,12 @@
           flex: 1
         &__labels
           color: #111
-        &__location
+        &__time
           display: flex
           
           margin: .2rem 0 0
-          &--time
-            flex: 2
+          &--side
+            // flex: 2
             display: flex
             align-items: center
             justify-content: flex-end
@@ -57,25 +57,26 @@
             
             input
               flex: 1
-              padding: 0 .4rem
+              // padding: 0 .4rem
               height: 100%
               width: 100px
             span
-              background: white
-              color: #444
+              // background: white
+              color: #fff
               display: flex
               align-items: center
               height: 100%
               padding: 0 .2rem
-        &__fee
+        &__location
           display: flex
-          justify-content: space-between
+          margin: .2rem 0
+          width: 100%
           align-items: center
-          
+          input
+            flex: 3
+            margin: 0 .3rem
           span
-            text-align: right
-            width: 100%
-            padding-right: 1rem
+            padding: 0 .2rem
         &__date
           flex: 1
           
