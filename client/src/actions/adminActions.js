@@ -411,6 +411,7 @@ export const getById = (id, category) => dispatch => {
         );
       break;
     case 'bulletins':
+      console.log('get action!!');
       axios
         .get(`/api/training/bulletins/${id}`)
         .then(res => {
