@@ -20,6 +20,7 @@ const News = require('../../models/News');
 const Jahresbericht = require('../../models/Jahresbericht');
 const Faq = require('../../models/Faq');
 const Team = require('../../models/Team');
+const Bulletin = require('../../models/Bulletin');
 const { TrainingTeam, Training } = require('../../models/Training');
 
 const Report = require('../../models/Report');
@@ -125,6 +126,19 @@ router.post(
           )
             .then(item => {
               console.log(item.title, ': ', item.position);
+            })
+            .catch(err => {
+              if (err) console.log(err);
+            });
+          break;
+        case 'bulletins':
+          Bulletin.findOneAndUpdate(
+            { _id: item.id },
+            { position: index },
+            { safe: true, new: true }
+          )
+            .then(item => {
+              console.log(item.de.title, ': ', item.position);
             })
             .catch(err => {
               if (err) console.log(err);

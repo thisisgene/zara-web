@@ -18,7 +18,7 @@ const validateTrainingInput = require('../../validation/training');
 
 const User = require('../../models/User');
 const { TrainingTeam, Training } = require('../../models/Training');
-const { Bulletin } = require('../../models/Bulletin');
+const Bulletin = require('../../models/Bulletin');
 
 // @route   GET api/training/team
 // @desc    Get all training team members

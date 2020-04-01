@@ -68,5 +68,4 @@ const BulletinSchema = new Schema({
   }
 });
 
-const Bulletin = mongoose.model('bulletin', BulletinSchema);
-module.exports = { Bulletin: Bulletin };
+module.exports = Bulletin = mongoose.model('bulletin', BulletinSchema);
