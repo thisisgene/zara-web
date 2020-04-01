@@ -112,6 +112,9 @@ class BulletinContent extends Component {
             peopleMax: item.peopleMax && item.peopleMax,
             location: item.location && item.location,
             label: item.label,
+            titleImage: item.titleImage && item.titleImage.originalName,
+            imageId: item.titleImage && item.titleImage.imageId,
+            imageCategory: item.titleImage && item.titleImage.category,
             shortDescriptionDE: RichTextEditor.createValueFromString(
               item.de.shortDescription,
               'html'
@@ -159,8 +162,11 @@ class BulletinContent extends Component {
             shortDescriptionEN: RichTextEditor.createEmptyValue(),
             descriptionDE: RichTextEditor.createEmptyValue(),
             descriptionEN: RichTextEditor.createEmptyValue(),
-            errors: {},
-            imageListOpen: false
+            imageListOpen: false,
+            titleImage: '',
+            imageId: '',
+            imageCategory: '',
+            errors: {}
           });
         } else {
           this.props.getById(this.props.match.params.bulletinId, 'bulletins');
@@ -287,6 +293,9 @@ class BulletinContent extends Component {
       peopleMax: this.state.peopleMax,
       location: this.state.location,
       label: this.state.label,
+      titleImage: this.state.titleImage,
+      imageId: this.state.imageId,
+      imageCategory: this.state.imageCategory,
       shortDescriptionDE: shortDescDE.toString('html'),
       shortDescriptionEN: shortDescEN.toString('html'),
       descriptionDE: descDE.toString('html'),

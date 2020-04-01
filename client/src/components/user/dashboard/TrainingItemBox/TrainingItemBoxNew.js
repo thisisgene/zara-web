@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import TrainingItem from './TrainingItemNew';
 
-import styles from './TrainingItemBox.module.sass';
+import styles from './TrainingItemBoxNew.module.sass';
 
 export default class TrainingItemBox extends Component {
   render() {

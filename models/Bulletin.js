@@ -45,6 +45,11 @@ const BulletinSchema = new Schema({
   peopleMax: {
     type: Number
   },
+  titleImage: {
+    originalName: { type: String },
+    imageId: { type: String },
+    category: { type: String }
+  },
   handle: {
     type: String
   },

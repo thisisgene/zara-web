@@ -601,6 +601,11 @@ router.post(
           peopleMin: body.peopleMin && body.peopleMin,
           peopleMax: body.peopleMax && body.peopleMax,
           location: body.location && body.location,
+          titleImage: {
+            originalName: body.titleImage,
+            imageId: body.imageId,
+            category: body.imageCategory
+          },
           category: body.trainingCategory && {
             value: body.trainingCategory.value,
             label: body.trainingCategory.label
