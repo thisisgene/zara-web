@@ -606,6 +606,9 @@ router.post(
             imageId: body.imageId,
             category: body.imageCategory
           },
+          imageSide: body.imageSide,
+          imageAlign: body.imageAlign,
+          size: body.size,
           category: body.trainingCategory && {
             value: body.trainingCategory.value,
             label: body.trainingCategory.label

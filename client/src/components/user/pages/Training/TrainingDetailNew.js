@@ -83,7 +83,7 @@ class TrainingDetail extends Component {
               />
             </MetaTags>
             <div className={styles['training-detail']}>
-              <HeroUnit special="narrow" data={bulletin} lang={lang} />
+              <HeroUnit data={bulletin} lang={lang} />
               <OneLineAlert content={oneLineAlertDetail} lang={lang} />
               <div
                 className={styles['training-detail--text']}

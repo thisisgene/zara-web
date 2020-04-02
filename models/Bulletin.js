@@ -29,7 +29,9 @@ const BulletinSchema = new Schema({
       type: String
     }
   },
-  location: String,
+  location: {
+    type: String
+  },
   date: {
     type: String
   },
@@ -49,6 +51,11 @@ const BulletinSchema = new Schema({
     originalName: { type: String },
     imageId: { type: String },
     category: { type: String }
+  },
+  imageSide: { type: String },
+  imageAlign: { type: String },
+  size: {
+    type: String
   },
   handle: {
     type: String
