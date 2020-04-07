@@ -73,8 +73,6 @@ class BulletinContent extends Component {
       this.props.getById(this.props.match.params.bulletinId, 'bulletins');
     this.props.getAllUsers();
     this.props.getAll('label');
-
-    console.log('training data: ', this.state.trainingCategories);
   }
 
   componentDidUpdate(prevProps) {
@@ -93,7 +91,6 @@ class BulletinContent extends Component {
           );
         }
         if (prevProps.bulletin != this.props.bulletin) {
-          console.log('HALLO BULLETIN');
           const item = this.props.bulletin.bulletin;
           this.props.getImagesByCategory(item.tag);
           this.setState({
@@ -198,16 +195,10 @@ class BulletinContent extends Component {
   };
 
   onCategorySelectChange = selected => {
-    console.log(selected);
-    this.setState({ trainingCategory: selected }, () => {
-      console.log('LABEL: ', this.state.trainingCategory);
-    });
+    this.setState({ trainingCategory: selected });
   };
   onLabelSelectChange = selected => {
-    console.log(selected);
-    this.setState({ label: selected }, () => {
-      console.log('LABEL: ', this.state.label);
-    });
+    this.setState({ label: selected });
   };
 
   onImageOpen = () => {
@@ -238,12 +229,9 @@ class BulletinContent extends Component {
       : this.setState({ descriptionEN: value });
   };
   onSelectChange = (lang, selected) => {
-    console.log(lang, selected);
-
     this.setState({ selectedFiles: selected });
   };
   onDateChange = date => {
-    console.log(date);
     this.setState({ date });
   };
 

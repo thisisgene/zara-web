@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import cx from 'classnames'
-import styles from './HeroUnit.module.sass'
+import cx from 'classnames';
+import styles from './HeroUnit.module.sass';
 
 class HeroUnit extends Component {
   render() {
-    const { data, lang, special } = this.props
-    console.log(data)
+    const { data, lang, special } = this.props;
     return (
       <div>
         {data && lang && (
@@ -36,9 +35,7 @@ class HeroUnit extends Component {
                 <div className={styles['hero-unit--image']}>
                   {data.titleImage ? (
                     <img
-                      src={`/assets/media/${data.titleImage.category}/${
-                        data.titleImage.originalName
-                      }`}
+                      src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}
                       alt={data.titleImage.originalName}
                     />
                   ) : (
@@ -91,9 +88,7 @@ class HeroUnit extends Component {
                 {data.titleImage ? (
                   <div className={styles['hero-unit--image']}>
                     <img
-                      src={`/assets/media/${data.titleImage.category}/${
-                        data.titleImage.originalName
-                      }`}
+                      src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}
                       alt={data.titleImage.originalName}
                     />
                   </div>
@@ -109,8 +104,8 @@ class HeroUnit extends Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default HeroUnit
+export default HeroUnit;

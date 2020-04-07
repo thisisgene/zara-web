@@ -247,7 +247,6 @@ export const getAllAndSort = (category, sortBy) => dispatch => {
 export const getAllByProps = (category, prop) => dispatch => {
   switch (category) {
     case 'team':
-      console.log(prop);
       axios
         .post(`/api/team/props`, prop)
         .then(res => {
@@ -411,7 +410,6 @@ export const getById = (id, category) => dispatch => {
         );
       break;
     case 'bulletins':
-      console.log('get action!!');
       axios
         .get(`/api/training/bulletins/${id}`)
         .then(res => {
@@ -479,7 +477,6 @@ export const setInterestedTrainer = saveData => dispatch => {
 
 // Create or update content
 export const saveContent = saveData => dispatch => {
-  console.log(saveData);
   dispatch({
     type: CLEAR_ERRORS
   });
@@ -532,7 +529,6 @@ export const saveContent = saveData => dispatch => {
 
       break;
     case 'carousel':
-      console.log('CAROUSELLLLL');
       saveData.id === 'neu'
         ? axios
             .post('/api/carousel', saveData)
@@ -826,7 +822,6 @@ export const saveContent = saveData => dispatch => {
 
       break;
     case 'trainings':
-      console.log(saveData.interestedTrainers);
       saveData.id === 'neu'
         ? axios
             .post('/api/training/trainings', saveData)
@@ -852,7 +847,6 @@ export const saveContent = saveData => dispatch => {
         : axios
             .post(`/api/training/trainings/update/${saveData.id}`, saveData)
             .then(res => {
-              console.log('here we go');
               dispatch({
                 type: UPDATE_TRAINING,
                 payload: res.data
@@ -873,7 +867,6 @@ export const saveContent = saveData => dispatch => {
 
       break;
     case 'bulletins':
-      console.log(saveData);
       saveData.id === 'neu'
         ? axios
             .post('/api/training/bulletins', saveData)
@@ -899,7 +892,6 @@ export const saveContent = saveData => dispatch => {
         : axios
             .post(`/api/training/bulletins/update/${saveData.id}`, saveData)
             .then(res => {
-              console.log('here we go');
               dispatch({
                 type: UPDATE_BULLETIN,
                 payload: res.data
@@ -949,7 +941,6 @@ export const saveContent = saveData => dispatch => {
 };
 
 export const sortList = (list, category) => dispatch => {
-  console.log('CAT: ', category);
   axios
     .post(`/api/projects/sort/${category}`, { list })
     .then(res => {
@@ -1248,7 +1239,6 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         });
       break;
     case 'jahresberichte':
-      console.log('jahresbericht löschen');
       axios
         .get(`/api/jahresberichte/delete/${id}`)
         .then(res => {

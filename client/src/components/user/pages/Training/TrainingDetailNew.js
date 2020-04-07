@@ -54,6 +54,7 @@ class TrainingDetail extends Component {
       );
     }
   }
+
   render() {
     const { activeLanguage } = this.props;
     let lang;
@@ -84,7 +85,12 @@ class TrainingDetail extends Component {
             </MetaTags>
             <div className={styles['training-detail']}>
               <HeroUnit data={bulletin} lang={lang} />
-              <OneLineAlert content={oneLineAlertDetail} lang={lang} />
+              <OneLineAlert
+                content={oneLineAlertDetail}
+                type="togglePopupForm"
+                lang={lang}
+              />
+
               <div
                 className={styles['training-detail--text']}
                 dangerouslySetInnerHTML={{ __html: bulletin[lang].description }}

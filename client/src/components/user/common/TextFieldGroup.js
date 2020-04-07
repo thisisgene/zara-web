@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import cx from 'classnames';
-import globalStyles from './Bootstrap.module.css';
+import globalStyles from '../../admin/common/Bootstrap.module.css';
 import commonStyles from './Common.module.sass';
 
 const TextFieldGroup = ({
