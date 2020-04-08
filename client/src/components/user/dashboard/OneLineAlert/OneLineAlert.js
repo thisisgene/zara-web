@@ -9,27 +9,28 @@ import AlertIcon from './img/alert_icon.png';
 
 class OneLineAlert extends Component {
   state = {
-    popUpFormIsOpen: false
+    popUpFormIsOpen: false, // Should be false!
   };
 
-  togglePopUpForm = toggleState => {
+  togglePopUpForm = (toggleState) => {
     this.setState({
-      popUpFormIsOpen: toggleState
+      popUpFormIsOpen: toggleState,
     });
   };
 
   render() {
-    const { content, lang, type } = this.props;
+    const { content, lang, type, popUpPreSelectId } = this.props;
     return (
       <div
         className={cx(styles['alert'], {
-          [styles[content.type]]: content.type
+          [styles[content.type]]: content.type,
         })}
       >
         {this.state.popUpFormIsOpen && (
           <PopUpForm
             lang={lang}
             onCloseClick={this.togglePopUpForm}
+            preSelectId={popUpPreSelectId}
           ></PopUpForm>
         )}
         <div className={styles['alert-wrapper']}>

@@ -5,7 +5,7 @@ import {
   heroData,
   oneLineAlert,
   trainingBoxData,
-  trainingItems
+  trainingItems,
 } from './training_data';
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit';
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert';
@@ -23,7 +23,11 @@ class Training extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
-            <OneLineAlert content={oneLineAlert} lang={lang} />
+            <OneLineAlert
+              content={oneLineAlert}
+              type="togglePopupForm"
+              lang={lang}
+            />
             <TrainingBox
               content={trainingBoxData}
               trainingItems={trainingItems}

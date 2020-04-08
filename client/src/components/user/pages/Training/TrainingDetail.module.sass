@@ -16,16 +16,19 @@
     margin: 2rem auto
     @media(max-width: 800px)
       margin: 2rem 1rem
-    ul
-      margin-left: 2rem
-      li 
-        display: flex
-        align-items: flex-start
-        
-        img
-          margin-top: .4rem
-          margin-right: .2rem
-          width: 16px
+  ul
+    margin: 1rem 0 1rem 2rem
+    li 
+      display: flex
+      align-items: flex-start
+      &:before
+        content: '\2192'
+        margin-left: -20px
+        margin-right: 10px
+      img
+        margin-top: .4rem
+        margin-right: .2rem
+        width: 16px
   &--goals
     margin-bottom: 4rem
   &--testimonials

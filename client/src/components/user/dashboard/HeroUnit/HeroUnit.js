@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import cx from 'classnames';
@@ -15,10 +15,10 @@ class HeroUnit extends Component {
               styles['hero-unit-container'],
               { [styles[data.class]]: data.class },
               {
-                [styles[data.size]]: data.size
+                [styles[data.size]]: data.size,
               },
               {
-                [styles['narrow']]: special === 'narrow'
+                [styles['narrow']]: special === 'narrow',
               }
             )}
           >
@@ -28,7 +28,7 @@ class HeroUnit extends Component {
                   styles['hero-unit'],
                   styles['hero-unit--image-left'],
                   {
-                    [styles[data.imageAlign]]: data.imageAlign
+                    [styles[data.imageAlign]]: data.imageAlign,
                   }
                 )}
               >
@@ -67,12 +67,12 @@ class HeroUnit extends Component {
                 className={cx(
                   styles['hero-unit'],
                   {
-                    [styles[data.imageAlign]]: data.imageAlign
+                    [styles[data.imageAlign]]: data.imageAlign,
                   },
                   {
                     [styles['hero-unit--image-right']]:
                       data.image ||
-                      (data.titleImage && data.titleImage.originalName)
+                      (data.titleImage && data.titleImage.originalName),
                   }
                 )}
               >
@@ -85,7 +85,7 @@ class HeroUnit extends Component {
                     dangerouslySetInnerHTML={{ __html: data[lang].text }}
                   />
                 </div>
-                {data.titleImage ? (
+                {data.titleImage && data.titleImage.originalName ? (
                   <div className={styles['hero-unit--image']}>
                     <img
                       src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}

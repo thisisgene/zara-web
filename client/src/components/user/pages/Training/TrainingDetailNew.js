@@ -8,7 +8,7 @@ import MetaTags from 'react-meta-tags';
 import {
   trainingBoxData,
   trainingItems,
-  oneLineAlertDetail
+  oneLineAlertDetail,
 } from './training_data';
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit';
@@ -28,7 +28,7 @@ class TrainingDetail extends Component {
     super(props);
     this.state = {
       trainingId: props.match.params.trainingId,
-      bulletin: {}
+      bulletin: {},
     };
   }
   componentDidMount() {
@@ -42,7 +42,7 @@ class TrainingDetail extends Component {
       prevProps.match.params.trainingId !== this.props.match.params.trainingId
     ) {
       this.setState({
-        trainingId: this.props.match.params.trainingId
+        trainingId: this.props.match.params.trainingId,
       });
     }
     if (
@@ -88,6 +88,7 @@ class TrainingDetail extends Component {
               <OneLineAlert
                 content={oneLineAlertDetail}
                 type="togglePopupForm"
+                popUpPreSelectId={bulletin._id}
                 lang={lang}
               />
 
@@ -111,7 +112,7 @@ class TrainingDetail extends Component {
                 <div
                   className={styles['training-detail--text']}
                   dangerouslySetInnerHTML={{
-                    __html: bulletin[lang].detailText2
+                    __html: bulletin[lang].detailText2,
                   }}
                 />
               )}
@@ -144,8 +145,8 @@ class TrainingDetail extends Component {
                 <div className={styles['training-detail--testimonials']}>
                   <h1>{lang === 'de' ? 'Referenzen' : 'Testimonials'}</h1>
                   {trainingBoxData[lang].categories
-                    .filter(cat => cat.index === bulletin.category)
-                    .map(cat => (
+                    .filter((cat) => cat.index === bulletin.category)
+                    .map((cat) => (
                       <div
                         className={
                           styles['training-detail--testimonials__wrapper']
@@ -187,9 +188,9 @@ class TrainingDetail extends Component {
                       parentStyles['training-box--content']
                     )}
                   >
-                    {bulletin.related.map(rel =>
+                    {bulletin.related.map((rel) =>
                       this.state.bulletins
-                        .filter(item => item._id === rel.id)
+                        .filter((item) => item._id === rel.id)
                         .map((item, index) => (
                           <div key={index}>
                             <TrainingItem content={item} lang={lang} />
@@ -223,8 +224,8 @@ class TrainingDetail extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  bulletin: state.bulletin
+const mapStateToProps = (state) => ({
+  bulletin: state.bulletin,
 });
 
 export default withLocalize(
