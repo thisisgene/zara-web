@@ -116,7 +116,7 @@ export const data = {
     longText: {
       de: {
         text:
-          'Dies kann einerseits durch Seminare und Weiterbildungen geschehen (s. hierzu: <a href="./erwachsene">Trainingsmodule – Erwachsene</a>) oder durch fachliche Unterstützung bei betrieblichen Veränderungsprozessen, z.B. durch eine antidiskriminatorische Betriebsvereinbarung.',
+          'Dies kann einerseits durch Seminare und Weiterbildungen geschehen (s. hierzu: <a href="./erwachsenengruppen">Trainingsmodule – Erwachsene</a>) oder durch fachliche Unterstützung bei betrieblichen Veränderungsprozessen, z.B. durch eine antidiskriminatorische Betriebsvereinbarung.',
         link: 'kontakt/#training',
         linkText: 'Kontaktieren Sie uns!',
       },

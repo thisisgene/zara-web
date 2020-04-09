@@ -6,7 +6,7 @@ import { getByProperty } from '../../../../actions/adminActions'
 
 // import { heroData as workshops_vortraege_HeroData, longText as workshops_vortraege_Text } from './TrainingAdults_data'
 import { data as dataObj } from './trainingOffers_data'
-
+import { heroData as hero404 } from '../Other/404_data'
 import { oneLineAlert, trainingBoxData } from './training_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
@@ -57,7 +57,7 @@ class TrainingOffers extends Component {
     }
     return (
       <div>
-        {lang && trainingType && bulletins && (
+        {lang && trainingType && bulletins.length > 0 ? (
           <div>
             <HeroUnit data={dataObj[trainingType].heroData} lang={lang} />
             <OneLineAlert content={oneLineAlert} lang={lang} />
@@ -81,6 +81,10 @@ class TrainingOffers extends Component {
                 lang={lang}
               />
             </div>
+          </div>
+        ) : (
+          <div>
+            <HeroUnit data={hero404} lang={lang} />
           </div>
         )}
       </div>
