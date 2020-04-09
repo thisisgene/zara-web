@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-import TrainingItemBox from '../../dashboard/TrainingItemBox/TrainingItemBoxNew';
+import TrainingItemBox from '../../dashboard/TrainingItemBox/TrainingItemBoxNew'
 
-import { getAll } from '../../../../actions/adminActions';
+import { getAll } from '../../../../actions/adminActions'
 
-import styles from './Training.module.sass';
+import styles from './Training.module.sass'
 
 class TrainingBox extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      activeCat: '1'
-    };
+      activeCat: 'workshops_vortraege',
+    }
   }
 
   componentDidMount() {
-    this.props.getAll('bulletins');
+    this.props.getAll('bulletins')
   }
 
   onChange = e => {
     this.setState({
-      activeCat: e.target.value
-    });
-  };
+      activeCat: e.target.value,
+    })
+  }
 
   render() {
-    const { content, trainingItems, lang } = this.props;
+    const { content, trainingItems, lang } = this.props
     return (
       <div>
         {content && trainingItems && lang && (
@@ -56,13 +56,13 @@ class TrainingBox extends Component {
                   <div key={index} className={styles['cat-item']}>
                     <input
                       name="category"
-                      value={cat.index}
+                      value={cat.link}
                       type="radio"
-                      id={`cat-${cat.index}`}
+                      id={`cat-${cat.link}`}
                       onChange={this.onChange}
-                      checked={this.state.activeCat === cat.index}
+                      checked={this.state.activeCat === cat.link}
                     />
-                    <label htmlFor={`cat-${cat.index}`}>{cat.text}</label>
+                    <label htmlFor={`cat-${cat.link}`}>{cat.text}</label>
                   </div>
                   // <div key={index}>{cat.text}</div>
                 ))}
@@ -77,12 +77,12 @@ class TrainingBox extends Component {
           </div>
         )}
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = state => ({
-  bulletin: state.bulletin
-});
+  bulletin: state.bulletin,
+})
 
-export default connect(mapStateToProps, { getAll })(TrainingBox);
+export default connect(mapStateToProps, { getAll })(TrainingBox)

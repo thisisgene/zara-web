@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { NavLink, withRouter } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { NavLink, withRouter } from 'react-router-dom';
 
-import cx from 'classnames'
-import styles from '../dashboard/Dashboard.module.sass'
+import cx from 'classnames';
+import styles from '../dashboard/Dashboard.module.sass';
 
 class Dashboard extends Component {
   render() {
-    const { user } = this.props.auth
+    const { user } = this.props.auth;
 
     return (
       <div className={styles['category-nav']}>
@@ -16,11 +16,14 @@ class Dashboard extends Component {
             <NavLink
               className={cx(
                 styles['category-nav--link'],
-                styles['category-nav--link__hidden']
+                styles['category-nav--link__media']
               )}
               activeClassName={styles['cat-active']}
-              to="/admin/training/media"
-            />
+              to="/admin/dashboard/media/training"
+            >
+              Media
+            </NavLink>
+
             <NavLink
               className={styles['category-nav--link']}
               activeClassName={styles['cat-active']}
@@ -56,6 +59,16 @@ class Dashboard extends Component {
             >
               Honorare
             </NavLink>
+            <NavLink
+              className={cx(
+                styles['category-nav--link'],
+                styles['category-nav--link__new']
+              )}
+              activeClassName={styles['cat-active']}
+              to="/admin/training/bulletins"
+            >
+              Bulletins
+            </NavLink>
           </div>
         ) : (
           <div>
@@ -69,17 +82,12 @@ class Dashboard extends Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
-})
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    {}
-  )(Dashboard)
-)
+export default withRouter(connect(mapStateToProps, {})(Dashboard));

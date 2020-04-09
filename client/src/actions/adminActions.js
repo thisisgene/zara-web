@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 import {
   GET_ERRORS,
@@ -60,16 +60,16 @@ import {
   SET_GENERAL_LOADING,
   UNSET_GENERAL_LOADING,
   GET_ALL_USERS,
-  CLEAR_REPORT
-} from './types';
+  CLEAR_REPORT,
+} from './types'
 
 // import { setProjectLoading } from './projectActions'
 
 // Get all
 export const getAll = category => dispatch => {
   dispatch({
-    type: CLEAR_ERRORS
-  });
+    type: CLEAR_ERRORS,
+  })
   switch (category) {
     case 'label':
       axios
@@ -77,149 +77,149 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_LABELS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'carousel':
       axios
         .get('/api/carousel')
         .then(res => {
           dispatch({
             type: GET_ALL_CAROUSELS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'news':
       axios
         .get('/api/news')
         .then(res => {
           dispatch({
             type: GET_ALL_NEWS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'jahresberichte':
       axios
         .get('/api/jahresberichte')
         .then(res => {
           dispatch({
             type: GET_ALL_JAHRESBERICHTE,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'faqs':
       axios
         .get('/api/faqs')
         .then(res => {
           dispatch({
             type: GET_ALL_FAQS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'team':
       axios
         .get('/api/team')
         .then(res => {
           dispatch({
             type: GET_ALL_TEAM,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'trainingTeam':
       axios
         .get('/api/training/team')
         .then(res => {
           dispatch({
             type: GET_ALL_TRAININGTEAM,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'trainings':
       axios
         .get('/api/training/trainings')
         .then(res => {
           dispatch({
             type: GET_ALL_TRAININGS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'bulletins':
       axios
         .get('/api/training/bulletins')
         .then(res => {
           dispatch({
             type: GET_ALL_BULLETINS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
 
     default:
-      return;
+      return
   }
-};
+}
 
 export const getAllAndSort = (category, sortBy) => dispatch => {
   switch (category) {
@@ -229,20 +229,20 @@ export const getAllAndSort = (category, sortBy) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_TRAININGS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     default:
-      return;
+      return
   }
-};
+}
 
 export const getAllByProps = (category, prop) => dispatch => {
   switch (category) {
@@ -252,21 +252,21 @@ export const getAllByProps = (category, prop) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_TEAM,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
 
     default:
-      return;
+      return
   }
-};
+}
 
 // Get by Property
 export const getByProperty = (category, property, value) => dispatch => {
@@ -277,25 +277,41 @@ export const getByProperty = (category, property, value) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_NEWS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
+    case 'bulletin':
+      axios
+        .get(`/api/training/bulletins/get_by/${property}/${value}`)
+        .then(res => {
+          dispatch({
+            type: GET_ALL_BULLETINS,
+            payload: res.data,
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
+          })
+        )
+      break
     default:
-      return;
+      return
   }
-};
+}
 // Get by ID
 export const getById = (id, category) => dispatch => {
   dispatch({
-    type: CLEAR_ERRORS
-  });
+    type: CLEAR_ERRORS,
+  })
   switch (category) {
     case 'carousel':
       axios
@@ -303,136 +319,136 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_CAROUSEL_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'news':
       axios
         .get(`/api/news/${id}`)
         .then(res => {
           dispatch({
             type: GET_NEWS_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'jahresberichte':
       axios
         .get(`/api/jahresberichte/${id}`)
         .then(res => {
           dispatch({
             type: GET_JAHRESBERICHT_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'faqs':
       axios
         .get(`/api/faqs/${id}`)
         .then(res => {
           dispatch({
             type: GET_FAQ_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'team':
       axios
         .get(`/api/team/${id}`)
         .then(res => {
           dispatch({
             type: GET_TEAM_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'trainingTeam':
       axios
         .get(`/api/training/team/${id}`)
         .then(res => {
           dispatch({
             type: GET_TRAININGTEAM_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'trainings':
       axios
         .get(`/api/training/trainings/${id}`)
         .then(res => {
           dispatch({
             type: GET_TRAINING_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
     case 'bulletins':
       axios
         .get(`/api/training/bulletins/${id}`)
         .then(res => {
           dispatch({
             type: GET_BULLETIN_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
-        );
-      break;
+        )
+      break
 
     default:
-      return;
+      return
   }
-};
+}
 
 export const sendInitialTrainingEmail = saveData => dispatch => {
-  dispatch(setGeneralLoading());
+  dispatch(setGeneralLoading())
   axios
     .post(`/api/training/trainings/send_initial_email/`, saveData)
     .then(res => {
@@ -441,19 +457,19 @@ export const sendInitialTrainingEmail = saveData => dispatch => {
       //   payload: res.data
       // })
       dispatch({
-        type: UNSET_GENERAL_LOADING
-      });
+        type: UNSET_GENERAL_LOADING,
+      })
     })
     .catch(err => {
       dispatch({
-        type: UNSET_GENERAL_LOADING
-      });
+        type: UNSET_GENERAL_LOADING,
+      })
       dispatch({
         type: GET_ERRORS,
-        payload: err.response
-      });
-    });
-};
+        payload: err.response,
+      })
+    })
+}
 
 export const setInterestedTrainer = saveData => dispatch => {
   axios
@@ -464,23 +480,23 @@ export const setInterestedTrainer = saveData => dispatch => {
     .then(res => {
       dispatch({
         type: UPDATE_TRAINING,
-        payload: res.data
-      });
+        payload: res.data,
+      })
     })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response
+        payload: err.response,
       })
-    );
-};
+    )
+}
 
 // Create or update content
 export const saveContent = saveData => dispatch => {
   dispatch({
-    type: CLEAR_ERRORS
-  });
-  dispatch(setGeneralLoading());
+    type: CLEAR_ERRORS,
+  })
+  dispatch(setGeneralLoading())
 
   switch (saveData.category) {
     case 'label':
@@ -488,457 +504,457 @@ export const saveContent = saveData => dispatch => {
         ? axios
             .post('/api/label', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_LABEL,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/label/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_LABEL,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'carousel':
       saveData.id === 'neu'
         ? axios
             .post('/api/carousel', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_CAROUSEL,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/carousel/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_CAROUSEL,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'news':
       saveData.id === 'neu'
         ? axios
             .post('/api/news', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_NEWS,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/news/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_NEWS,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'news-video':
       axios
         .post('/api/news/add_video', saveData)
         .then(res => {
-          dispatch({ type: CLEAR_ERRORS });
+          dispatch({ type: CLEAR_ERRORS })
           dispatch({
             type: ADD_NEWS_VIDEO,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err.response.data
-          });
+            payload: err.response.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'jahresberichte':
       saveData.id === 'neu'
         ? axios
             .post('/api/jahresberichte', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_JAHRESBERICHT,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/jahresberichte/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_JAHRESBERICHT,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'faqs':
       saveData.id === 'neu'
         ? axios
             .post('/api/faqs', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_FAQ,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
-              });
+                payload: err.response,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/faqs/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_FAQ,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
-              });
+                payload: err.response,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'team':
       saveData.id === 'neu'
         ? axios
             .post('/api/team', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_TEAM,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
-              });
+                payload: err.response,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/team/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_TEAM,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
-              });
+                payload: err.response,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'trainingTeam':
       saveData.id === 'neu'
         ? axios
             .post('/api/training/team', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_TRAININGTEAM,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
-              });
+                payload: err.response.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/training/team/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_TRAININGTEAM,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
-              });
+                payload: err.response,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'trainings':
       saveData.id === 'neu'
         ? axios
             .post('/api/training/trainings', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_TRAINING,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err
-              });
+                payload: err,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/training/trainings/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_TRAINING,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
-              });
+                payload: err.response,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'bulletins':
       saveData.id === 'neu'
         ? axios
             .post('/api/training/bulletins', saveData)
             .then(res => {
-              dispatch({ type: CLEAR_ERRORS });
+              dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_BULLETIN,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err
-              });
+                payload: err,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
         : axios
             .post(`/api/training/bulletins/update/${saveData.id}`, saveData)
             .then(res => {
               dispatch({
                 type: UPDATE_BULLETIN,
-                payload: res.data
-              });
+                payload: res.data,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
+                type: UNSET_GENERAL_LOADING,
+              })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
-              });
+                payload: err.response,
+              })
               dispatch({
-                type: UNSET_GENERAL_LOADING
-              });
-            });
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
 
-      break;
+      break
     case 'fees':
       axios
         .post(`/api/training/trainings/additional_fees`, saveData)
         .then(res => {
           dispatch({
             type: UPDATE_TRAINING,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err.response
-          });
+            payload: err.response,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
 
-      break;
+      break
 
     default:
-      return;
+      return
   }
-};
+}
 
 export const sortList = (list, category) => dispatch => {
   axios
@@ -947,21 +963,21 @@ export const sortList = (list, category) => dispatch => {
       dispatch({
         // type: GET_ALL_NEWS,
         // payload: res.data
-      });
+      })
     })
     .catch(err => {
       dispatch({
         type: GET_ERRORS,
-        payload: err
-      });
+        payload: err,
+      })
       dispatch({
-        type: UNSET_GENERAL_LOADING
-      });
-    });
-};
+        type: UNSET_GENERAL_LOADING,
+      })
+    })
+}
 
 export const toggleOnline = (id, category, state) => dispatch => {
-  dispatch(setGeneralLoading());
+  dispatch(setGeneralLoading())
 
   switch (category) {
     case 'carousel':
@@ -970,184 +986,184 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_CAROUSEL,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'news':
       axios
         .get(`/api/news/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_NEWS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'jahresberichte':
       axios
         .get(`/api/jahresberichte/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_JAHRESBERICHT,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'faqs':
       axios
         .get(`/api/faqs/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_FAQ,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'team':
       axios
         .get(`/api/team/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_TEAM,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'trainingTeam':
       axios
         .get(`/api/training/team/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_TRAININGTEAM,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'trainings':
       axios
         .get(`/api/training/trainings/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_TRAINING,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'bulletins':
       axios
         .get(`/api/training/bulletins/toggle_online/${id}/${state}`)
         .then(res => {
           dispatch({
             type: UPDATE_BULLETIN,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
 
     default:
-      return;
+      return
   }
-};
+}
 
 export const deleteById = (id, category, secondValue) => dispatch => {
-  dispatch(setGeneralLoading());
+  dispatch(setGeneralLoading())
 
   switch (category) {
     case 'label':
@@ -1156,225 +1172,225 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_LABEL_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'carousel':
       axios
         .get(`/api/carousel/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_CAROUSEL_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'news':
       axios
         .get(`/api/news/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_NEWS_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'news-video':
       axios
         .get(`/api/news/video/delete/${id}/${secondValue}`)
         .then(res => {
           dispatch({
             type: ADD_NEWS_VIDEO,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'jahresberichte':
       axios
         .get(`/api/jahresberichte/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_JAHRESBERICHT_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'faqs':
       axios
         .get(`/api/faqs/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_FAQ_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'team':
       axios
         .get(`/api/team/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_TEAM_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'trainingTeam':
       axios
         .get(`/api/users/delete/${id}`)
         .then(res => {
           dispatch({
             type: GET_ALL_USERS,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'trainings':
       axios
         .get(`/api/training/trainings/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_TRAINING_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'bulletins':
       axios
         .get(`/api/training/bulletins/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_BULLETIN_BY_ID,
-            payload: res.data
-          });
+            payload: res.data,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
+            type: UNSET_GENERAL_LOADING,
+          })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
-          });
+            payload: err,
+          })
           dispatch({
-            type: UNSET_GENERAL_LOADING
-          });
-        });
-      break;
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
 
     default:
-      return;
+      return
   }
-};
+}
 
 export const deleteAdditionalFee = content => dispatch => {
   axios
@@ -1382,84 +1398,84 @@ export const deleteAdditionalFee = content => dispatch => {
     .then(res => {
       dispatch({
         type: UPDATE_TRAINING,
-        payload: res.data
-      });
+        payload: res.data,
+      })
     })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err
+        payload: err,
       })
-    );
-};
+    )
+}
 
 export const clearSingle = category => dispatch => {
   switch (category) {
     case 'carousel':
       dispatch({
-        type: CLEAR_CAROUSEL
-      });
+        type: CLEAR_CAROUSEL,
+      })
 
-      break;
+      break
     case 'news':
       dispatch({
-        type: CLEAR_NEWS_ITEM
-      });
+        type: CLEAR_NEWS_ITEM,
+      })
 
-      break;
+      break
     case 'jahresberichte':
       dispatch({
-        type: CLEAR_JAHRESBERICHT
-      });
+        type: CLEAR_JAHRESBERICHT,
+      })
 
-      break;
+      break
     case 'faqs':
       dispatch({
-        type: CLEAR_FAQ
-      });
+        type: CLEAR_FAQ,
+      })
 
-      break;
+      break
     case 'team':
       dispatch({
-        type: CLEAR_TEAM
-      });
+        type: CLEAR_TEAM,
+      })
 
-      break;
+      break
     case 'trainingTeam':
       dispatch({
-        type: CLEAR_TRAININGTEAM
-      });
+        type: CLEAR_TRAININGTEAM,
+      })
     case 'trainings':
       dispatch({
-        type: CLEAR_TRAINING
-      });
+        type: CLEAR_TRAINING,
+      })
 
-      break;
+      break
     case 'bulletins':
       dispatch({
-        type: CLEAR_BULLETIN
-      });
+        type: CLEAR_BULLETIN,
+      })
 
-      break;
+      break
     case 'report':
       dispatch({
-        type: CLEAR_REPORT
-      });
+        type: CLEAR_REPORT,
+      })
 
-      break;
+      break
     default:
-      return;
+      return
   }
-};
+}
 
 export const clearAll = () => dispatch => {
   dispatch({
-    type: CLEAR_ALL
-  });
-};
+    type: CLEAR_ALL,
+  })
+}
 
 export const setGeneralLoading = () => dispatch => {
   dispatch({
-    type: SET_GENERAL_LOADING
-  });
-};
+    type: SET_GENERAL_LOADING,
+  })
+}

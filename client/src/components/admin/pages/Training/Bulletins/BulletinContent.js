@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-import Calendar from 'react-calendar';
+import Calendar from 'react-calendar'
 
-import Select from 'react-select';
+import Select from 'react-select'
 
-import RichTextEditor from 'react-rte-link-extended';
-import TextFieldGroup from '../../../common/TextFieldGroup';
-import TextareaFieldGroup from '../../../common/TextareaFieldGroup';
-import ContentImageList from '../../dashboard/ContentImageList';
+import RichTextEditor from 'react-rte-link-extended'
+import TextFieldGroup from '../../../common/TextFieldGroup'
+import TextareaFieldGroup from '../../../common/TextareaFieldGroup'
+import ContentImageList from '../../dashboard/ContentImageList'
 
-import { confirmAlert } from 'react-confirm-alert';
+import { confirmAlert } from 'react-confirm-alert'
 import {
   toolbarConfig,
-  toolbarImgConfig
-} from '../../dashboard/news/NewsContent/newsContentData';
+  toolbarImgConfig,
+} from '../../dashboard/news/NewsContent/newsContentData'
 
 import {
   saveContent,
@@ -22,31 +22,31 @@ import {
   getById,
   toggleOnline,
   deleteById,
-  clearSingle
-} from '../../../../../actions/adminActions';
-import { getImagesByCategory } from '../../../../../actions/imageActions';
-import { getAllUsers } from '../../../../../actions/authActions';
+  clearSingle,
+} from '../../../../../actions/adminActions'
+import { getImagesByCategory } from '../../../../../actions/imageActions'
+import { getAllUsers } from '../../../../../actions/authActions'
 
-import { trainingBoxData } from '../../../../user/pages/Training/training_data';
+import { trainingBoxData } from '../../../../user/pages/Training/training_data'
 
-import cx from 'classnames';
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import globalStyles from '../../../common/Bootstrap.module.css';
-import commonStyles from '../../../common/Common.module.sass';
-import styles from './BulletinContent.module.sass';
+import cx from 'classnames'
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
+import globalStyles from '../../../common/Bootstrap.module.css'
+import commonStyles from '../../../common/Common.module.sass'
+import styles from './BulletinContent.module.sass'
 
 class BulletinContent extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       trainingCategories: trainingBoxData.de.categories,
-      trainingCategory: { label: 'Für Kinder & Jugendliche', value: '1' },
+      trainingCategory: { label: 'Für Schulklassen', value: 'schulklassen' },
       isOnline: false,
       blankItem: true,
       bulletinId: props.match.params.bulletinId,
       handle: '',
       category: 'bullletins',
-      tag: 'bullletins',
+      tag: '',
       titleDE: '',
       titleEN: '',
       date: new Date(),
@@ -64,35 +64,35 @@ class BulletinContent extends Component {
       imageId: '',
       imageCategory: '',
       imageListOpen: false,
-      errors: {}
-    };
+      errors: {},
+    }
   }
 
   componentDidMount() {
     this.props.match.params.bulletinId !== 'neu' &&
-      this.props.getById(this.props.match.params.bulletinId, 'bulletins');
-    this.props.getAllUsers();
-    this.props.getAll('label');
+      this.props.getById(this.props.match.params.bulletinId, 'bulletins')
+    this.props.getAllUsers()
+    this.props.getAll('label')
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       if (this.props.errors !== prevProps.errors) {
-        this.setState({ errors: this.props.errors });
+        this.setState({ errors: this.props.errors })
       }
       if (this.props.bulletin.bulletin) {
         if (prevProps.match.params.bulletinId === 'neu') {
           this.setState({
-            bulletinId: this.props.bulletin.bulletin._id
-          });
-          this.props.getAll('bulletins');
+            bulletinId: this.props.bulletin.bulletin._id,
+          })
+          this.props.getAll('bulletins')
           this.props.history.push(
             `/admin/training/bulletins/${this.props.bulletin.bulletin._id}`
-          );
+          )
         }
         if (prevProps.bulletin != this.props.bulletin) {
-          const item = this.props.bulletin.bulletin;
-          this.props.getImagesByCategory(item.tag);
+          const item = this.props.bulletin.bulletin
+          this.props.getImagesByCategory(item.tag)
           this.setState({
             blankItem: false,
             isOnline: item.isOnline,
@@ -128,8 +128,8 @@ class BulletinContent extends Component {
             ),
             descriptionEN:
               item.en &&
-              RichTextEditor.createValueFromString(item.en.description, 'html')
-          });
+              RichTextEditor.createValueFromString(item.en.description, 'html'),
+          })
         }
       }
       if (
@@ -137,15 +137,18 @@ class BulletinContent extends Component {
       ) {
         if (this.props.match.params.bulletinId === 'neu') {
           // RESET!
-          this.props.clearSingle('bulletins');
+          this.props.clearSingle('bulletins')
           this.setState({
             isOnline: false,
             blankItem: true,
             bulletinId: this.props.match.params.bulletinId,
             handle: '',
             category: 'bulletins',
-            tag: 'bulletins',
-            trainingCategory: { label: 'Für Kinder & Jugendliche', value: '1' },
+            tag: '',
+            trainingCategory: {
+              label: 'Für Schulklassen',
+              value: 'schulklassen',
+            },
             titleDE: '',
             titleEN: '',
             date: new Date(),
@@ -163,10 +166,10 @@ class BulletinContent extends Component {
             titleImage: '',
             imageId: '',
             imageCategory: '',
-            errors: {}
-          });
+            errors: {},
+          })
         } else {
-          this.props.getById(this.props.match.params.bulletinId, 'bulletins');
+          this.props.getById(this.props.match.params.bulletinId, 'bulletins')
         }
       }
     }
@@ -177,74 +180,74 @@ class BulletinContent extends Component {
       this.state.bulletinId,
       'bulletins',
       !this.state.isOnline
-    );
-  };
+    )
+  }
 
   onChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
+      [e.target.name]: e.target.value,
+    })
+  }
 
   onTagSelectChange = e => {
     this.setState({ tag: e.target.value }, () => {
       if (this.state.bulletinId !== 'neu') {
-        this.props.getImagesByCategory(this.state.tag);
+        this.props.getImagesByCategory(this.state.tag)
       }
-    });
-  };
+    })
+  }
 
   onCategorySelectChange = selected => {
-    this.setState({ trainingCategory: selected });
-  };
+    this.setState({ trainingCategory: selected })
+  }
   onLabelSelectChange = selected => {
-    this.setState({ label: selected });
-  };
+    this.setState({ label: selected })
+  }
 
   onImageOpen = () => {
-    this.setState({ imageListOpen: !this.state.imageListOpen });
-  };
+    this.setState({ imageListOpen: !this.state.imageListOpen })
+  }
   updateTitleImage = (originalName, id, category) => {
     this.setState({
       titleImage: originalName,
       imageId: id,
       imageCategory: category,
-      imageListOpen: false
-    });
-  };
+      imageListOpen: false,
+    })
+  }
   closeImageList = () => {
     this.setState({
-      imageListOpen: false
-    });
-  };
+      imageListOpen: false,
+    })
+  }
 
   onShortDescriptionChange = (lang, value) => {
     lang === 'de'
       ? this.setState({ shortDescriptionDE: value })
-      : this.setState({ shortDescriptionEN: value });
-  };
+      : this.setState({ shortDescriptionEN: value })
+  }
   onDescriptionChange = (lang, value) => {
     lang === 'de'
       ? this.setState({ descriptionDE: value })
-      : this.setState({ descriptionEN: value });
-  };
+      : this.setState({ descriptionEN: value })
+  }
   onSelectChange = (lang, selected) => {
-    this.setState({ selectedFiles: selected });
-  };
+    this.setState({ selectedFiles: selected })
+  }
   onDateChange = date => {
-    this.setState({ date });
-  };
+    this.setState({ date })
+  }
 
   onCheckChange = e => {
     this.setState({
-      [e.target.name]: e.target.checked
-    });
-  };
+      [e.target.name]: e.target.checked,
+    })
+  }
 
   deleteBulletin = () => {
-    this.props.deleteById(this.state.bulletinId, 'bulletins');
-    this.props.history.push('/admin/training/bulletins/neu');
-  };
+    this.props.deleteById(this.state.bulletinId, 'bulletins')
+    this.props.history.push('/admin/training/bulletins/neu')
+  }
 
   confirmDelete = callback => {
     confirmAlert({
@@ -253,20 +256,20 @@ class BulletinContent extends Component {
       buttons: [
         {
           label: 'Löschen',
-          onClick: () => this.deleteBulletin()
+          onClick: () => this.deleteBulletin(),
         },
         {
-          label: 'Abbrechen'
-        }
-      ]
-    });
-  };
+          label: 'Abbrechen',
+        },
+      ],
+    })
+  }
 
   saveContent = () => {
-    const shortDescDE = this.state.shortDescriptionDE;
-    const shortDescEN = this.state.shortDescriptionEN;
-    const descDE = this.state.descriptionDE;
-    const descEN = this.state.descriptionEN;
+    const shortDescDE = this.state.shortDescriptionDE
+    const shortDescEN = this.state.shortDescriptionEN
+    const descDE = this.state.descriptionDE
+    const descEN = this.state.descriptionEN
     const saveData = {
       category: 'bulletins',
       trainingCategory: this.state.trainingCategory,
@@ -290,37 +293,37 @@ class BulletinContent extends Component {
       shortDescriptionDE: shortDescDE.toString('html'),
       shortDescriptionEN: shortDescEN.toString('html'),
       descriptionDE: descDE.toString('html'),
-      descriptionEN: descEN.toString('html')
-    };
-    this.props.saveContent(saveData);
-  };
+      descriptionEN: descEN.toString('html'),
+    }
+    this.props.saveContent(saveData)
+  }
 
   render() {
-    const { users } = this.props.auth;
+    const { users } = this.props.auth
     const emptyLabel = {
       label: '',
-      value: ''
-    };
+      value: '',
+    }
 
-    let categoryList = [];
+    let categoryList = []
     this.state.trainingCategories.map(cat => {
       categoryList.push({
         label: cat.text,
-        value: cat.index
-      });
-    });
+        value: cat.link,
+      })
+    })
     // categoryList.unshift(emptyLabel)
 
-    let labelList;
+    let labelList
     if (this.props.label && this.props.label.labels) {
-      labelList = this.props.label.labels.filter(label => !label.isDeleted);
-      labelList.unshift(emptyLabel);
+      labelList = this.props.label.labels.filter(label => !label.isDeleted)
+      labelList.unshift(emptyLabel)
     }
     return (
       <div className={styles['bulletins-wrapper']}>
         <div
           className={cx(styles['bulletins-content-container'], {
-            [styles['blank-item']]: this.state.blankItem
+            [styles['blank-item']]: this.state.blankItem,
           })}
         >
           <div className={styles['bulletins-content']}>
@@ -587,7 +590,7 @@ class BulletinContent extends Component {
                         'bulletins-content--sidebar__state-indicator--sphere'
                       ],
                       {
-                        [styles['online']]: this.state.isOnline
+                        [styles['online']]: this.state.isOnline,
                       }
                     )}
                   />
@@ -610,10 +613,10 @@ class BulletinContent extends Component {
                     className={cx(
                       commonStyles['button'],
                       {
-                        [commonStyles['button--update']]: !this.state.isOnline
+                        [commonStyles['button--update']]: !this.state.isOnline,
                       },
                       {
-                        [commonStyles['button--offline']]: this.state.isOnline
+                        [commonStyles['button--offline']]: this.state.isOnline,
                       },
                       commonStyles['button--fullwidth']
                     )}
@@ -696,7 +699,7 @@ class BulletinContent extends Component {
           )}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -705,8 +708,8 @@ const mapStateToProps = state => ({
   auth: state.auth,
   media: state.media,
   label: state.label,
-  errors: state.errors
-});
+  errors: state.errors,
+})
 
 export default connect(mapStateToProps, {
   saveContent,
@@ -716,5 +719,5 @@ export default connect(mapStateToProps, {
   clearSingle,
   getAll,
   getAllUsers,
-  getImagesByCategory
-})(BulletinContent);
+  getImagesByCategory,
+})(BulletinContent)

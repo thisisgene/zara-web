@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-import moment from 'moment';
+import moment from 'moment'
 
-import IconObject from '../../dashboard/IconObject/IconObject';
+import IconObject from '../../dashboard/IconObject/IconObject'
 
-import styles from './TrainingItemBoxNew.module.sass';
+import styles from './TrainingItemBoxNew.module.sass'
 
 class TrainingItem extends Component {
   render() {
-    const { item, lang } = this.props;
+    const { item, lang } = this.props
     return (
       <div>
         <Link to={`/${lang}/training/detail/${item._id}`}>
@@ -21,7 +21,7 @@ class TrainingItem extends Component {
               <div
                 className={styles['training-item--description']}
                 dangerouslySetInnerHTML={{
-                  __html: item[lang].shortDescription
+                  __html: item[lang].shortDescription,
                 }}
               ></div>
               <div className={styles['training-item--info']}>
@@ -77,20 +77,24 @@ class TrainingItem extends Component {
                 )}
               </div>
               <div className={styles['training-item--info']}>
-                {item.peopleMin && (
-                  <div className={styles['training-item--info__child']}>
-                    <IconObject image="location" />
-                    <div className={styles['training-item--info__child--data']}>
+                <div className={styles['training-item--info__child']}>
+                  {item.location && (
+                    <div>
+                      <IconObject image="location" />
                       <div
-                        className={
-                          styles['training-item--info__child--data__line']
-                        }
+                        className={styles['training-item--info__child--data']}
                       >
-                        <div>{item.location}</div>
+                        <div
+                          className={
+                            styles['training-item--info__child--data__line']
+                          }
+                        >
+                          <div>{item.location}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
 
                 <div className={styles['training-item--info__child']}>
                   {/* <IconObject image="duration" /> */}
@@ -116,23 +120,18 @@ class TrainingItem extends Component {
               </div>
             </div>
             <div className={styles['training-image']}>
-              {item.titleImage ? (
+              {item.titleImage && item.titleImage.originalName && (
                 <img
                   src={`/assets/media/${item.titleImage.category}/${item.titleImage.originalName}`}
                   alt=""
-                />
-              ) : (
-                <img
-                  src={`/assets/img/news/news_placeholder.png`}
-                  // alt={content.image}
                 />
               )}
             </div>
           </div>
         </Link>
       </div>
-    );
+    )
   }
 }
 
-export default TrainingItem;
+export default TrainingItem

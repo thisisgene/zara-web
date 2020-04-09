@@ -1,4 +1,4 @@
-import EmbedPopUp from '../../../admin/common/EmbedPopUp/EmbedPopUp';
+import EmbedPopUp from '../../../admin/common/EmbedPopUp/EmbedPopUp'
 
 export const heroData = {
   image: '01-zara_training-logo.png',
@@ -14,7 +14,7 @@ export const heroData = {
     text:
       'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.',
   },
-};
+}
 
 export const oneLineAlert = {
   type: 'info',
@@ -39,7 +39,7 @@ export const oneLineAlert = {
       linkAction: 'popUp',
     },
   },
-};
+}
 
 export const oneLineAlertDetail = {
   type: 'info',
@@ -63,7 +63,30 @@ export const oneLineAlertDetail = {
       link: 'kontakt/#training',
     },
   },
-};
+}
+
+export const trainingTags = [
+  {
+    name: 'workshops_vortraege',
+    de: { title: 'Offene Workshops & Vorträge', singular: 'News' },
+    en: { title: 'News', singular: 'News' },
+  },
+  {
+    name: 'event',
+    de: { title: 'Für Schulklassen', singular: 'Veranstaltung' },
+    en: { title: 'Events', singular: 'Event' },
+  },
+  {
+    name: 'workshops',
+    de: { title: 'Für Erwachsenengruppen', singular: 'Workshop' },
+    en: { title: 'Workshops', singular: 'Workshop' },
+  },
+  {
+    name: 'pressemeldungen',
+    de: { title: 'Fuur Unternehmen', singular: 'Pressemeldung' },
+    en: { title: 'Press', singular: 'Press' },
+  },
+]
 
 export const trainingBoxData = {
   de: {
@@ -104,9 +127,13 @@ export const trainingBoxData = {
       {
         index: '2',
         text: 'Für Schulklassen',
-        link: 'kinder_jugendliche',
+        link: 'schulklassen',
       },
-      { index: '3', text: 'Für Erwachsenengruppen', link: 'erwachsene' },
+      {
+        index: '3',
+        text: 'Für Erwachsenengruppen',
+        link: 'erwachsenengruppen',
+      },
       { index: '4', text: 'Für Unternehmen', link: 'unternehmen' },
       // {
       //   index: '4',
@@ -156,7 +183,7 @@ export const trainingBoxData = {
       { index: '3', text: 'For Businesses', link: 'unternehmen' },
     ],
   },
-};
+}
 export const trainingItems = {
   items: [
     {
@@ -765,4 +792,4 @@ export const trainingItems = {
       },
     },
   ],
-};
+}

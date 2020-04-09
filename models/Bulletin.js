@@ -5,79 +5,80 @@ const shortid = require('shortid');
 const BulletinSchema = new Schema({
   _id: {
     type: String,
-    default: shortid.generate
+    default: shortid.generate,
   },
   de: {
     title: {
-      type: String
+      type: String,
     },
     shortDescription: {
-      type: String
+      type: String,
     },
     description: {
-      type: String
-    }
+      type: String,
+    },
   },
   en: {
     title: {
-      type: String
+      type: String,
     },
     shortDescription: {
-      type: String
+      type: String,
     },
     description: {
-      type: String
-    }
+      type: String,
+    },
   },
   location: {
-    type: String
+    type: String,
   },
   date: {
-    type: String
+    type: String,
   },
   timeFrom: {
-    type: String
+    type: String,
   },
   timeUntil: {
-    type: String
+    type: String,
   },
   peopleMin: {
-    type: Number
+    type: Number,
   },
   peopleMax: {
-    type: Number
+    type: Number,
   },
   titleImage: {
     originalName: { type: String },
     imageId: { type: String },
-    category: { type: String }
+    category: { type: String },
   },
   imageSide: { type: String },
   imageAlign: { type: String },
   size: {
-    type: String
+    type: String,
   },
   handle: {
-    type: String
+    type: String,
   },
+  tag: { type: String },
   category: { label: String, value: String },
   label: { name: String, label: String, value: String, color: String },
   isVisible: {
     type: Boolean,
-    default: false
+    default: false,
   },
   isOnline: {
     type: Boolean,
-    default: false
+    default: false,
   },
 
   position: {
-    type: Number
+    type: Number,
   },
   isDeleted: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 module.exports = Bulletin = mongoose.model('bulletin', BulletinSchema);

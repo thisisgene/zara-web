@@ -7,6 +7,8 @@ import { getAll } from '../../../../../actions/adminActions';
 import ItemAddList from '../../../common/ItemAddList/ItemAddList';
 import BulletinContent from './BulletinContent';
 
+import { trainingTags } from '../../../../user/pages/Training/training_data';
+
 import styles from './Bulletins.module.sass';
 
 class Bulletins extends Component {
@@ -22,6 +24,7 @@ class Bulletins extends Component {
             content={this.props.bulletin.bulletins}
             baseCat="training"
             category="bulletins"
+            tags={trainingTags}
           />
         )}
         <PrivateRoute
@@ -33,8 +36,8 @@ class Bulletins extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  bulletin: state.bulletin
+const mapStateToProps = (state) => ({
+  bulletin: state.bulletin,
 });
 
 export default connect(mapStateToProps, { getAll })(Bulletins);
