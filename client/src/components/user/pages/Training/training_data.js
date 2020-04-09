@@ -68,22 +68,22 @@ export const oneLineAlertDetail = {
 export const trainingTags = [
   {
     name: 'workshops_vortraege',
-    de: { title: 'Offene Workshops & Vorträge', singular: 'News' },
+    de: { title: 'Workshops & Vorträge', singular: 'News' },
     en: { title: 'News', singular: 'News' },
   },
   {
-    name: 'event',
-    de: { title: 'Für Schulklassen', singular: 'Veranstaltung' },
+    name: 'schulklassen',
+    de: { title: 'Schulklassen', singular: 'Veranstaltung' },
     en: { title: 'Events', singular: 'Event' },
   },
   {
-    name: 'workshops',
-    de: { title: 'Für Erwachsenengruppen', singular: 'Workshop' },
+    name: 'erwachsenengruppen',
+    de: { title: 'Erwachsenengruppen', singular: 'Workshop' },
     en: { title: 'Workshops', singular: 'Workshop' },
   },
   {
-    name: 'pressemeldungen',
-    de: { title: 'Fuur Unternehmen', singular: 'Pressemeldung' },
+    name: 'unternehmen',
+    de: { title: 'Unternehmen', singular: 'Pressemeldung' },
     en: { title: 'Press', singular: 'Press' },
   },
 ]
