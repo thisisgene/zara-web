@@ -25,6 +25,16 @@ class TrainingOffers extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (this.props.match.params.type !== prevProps.match.params.type) {
+      this.setState(
+        {
+          trainingType: this.props.match.params.type,
+        },
+        () => {
+          this.props.getByProperty('bulletin', 'tag', this.state.trainingType)
+        }
+      )
+    }
     if (this.props.bulletin !== prevProps.bulletin) {
       this.setState(
         {
@@ -41,18 +51,6 @@ class TrainingOffers extends Component {
     const { activeLanguage } = this.props
     const { trainingType, bulletins } = this.state
     let lang
-
-    // const dataObj = {
-    //   //   worshops_vortraege: { hero: workshops_HeroData, text: workshops_Text },
-    //   schulklassen: { hero: schulklassen_HeroData },
-
-    //   erwachsenengruppen: {
-    //     hero: erwachsenen_HeroData,
-    //     text: erwachsenen_Text,
-    //   },
-
-    //   unternehmen: { hero: unternehmen_HeroData, text: unternehmen_Text },
-    // }
 
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code

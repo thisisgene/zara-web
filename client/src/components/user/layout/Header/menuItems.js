@@ -9,29 +9,29 @@ const menuItems = [
           icon: 'act',
           color: 'red',
           text: 'Kostenlose Beratung',
-          link: 'beratung/beratung_rassismus_hassimnetz'
+          link: 'beratung/beratung_rassismus_hassimnetz',
         },
         en: {
           icon: 'act',
           color: 'red',
           text: 'Kostenlose Beratung',
-          link: 'beratung/beratung_rassismus_hassimnetz'
-        }
+          link: 'beratung/beratung_rassismus_hassimnetz',
+        },
       },
       {
         de: {
           icon: 'LockIcon',
           color: 'petrol',
           text: 'Verschlüsselte Email an ZARA',
-          link: 'verschluesselte_email'
+          link: 'verschluesselte_email',
         },
         en: {
           icon: 'LockIcon',
           color: 'petrol',
           text: 'Verschlüsselte Email an ZARA',
-          link: 'verschluesselte_email'
-        }
-      }
+          link: 'verschluesselte_email',
+        },
+      },
     ],
     contact: {
       de: {
@@ -39,15 +39,15 @@ const menuItems = [
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'beratung@zara.or.at'
+        email: 'beratung@zara.or.at',
       },
       en: {
         title: 'Kontakt Beratung',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'beratung@zara.or.at'
-      }
+        email: 'beratung@zara.or.at',
+      },
     },
     subMenuList: [
       {
@@ -59,19 +59,19 @@ const menuItems = [
           {
             name: 'Rassismus / Hass im Netz Beratung',
             link: 'beratung_rassismus_hassimnetz',
-            id: '1.1.3'
+            id: '1.1.3',
           },
           {
             name: 'Rassismus',
             link: 'melden/rassismus',
-            id: '1.1.1'
+            id: '1.1.1',
           },
           {
             name: 'Hass im Netz',
             link: 'melden/hassimnetz',
-            id: '1.1.2'
-          }
-        ]
+            id: '1.1.2',
+          },
+        ],
       },
       {
         name: 'Lass Uns was tun',
@@ -81,22 +81,22 @@ const menuItems = [
           {
             name: 'Was Sie tun können',
             link: 'wassietunkoennen',
-            id: '1.2.1'
+            id: '1.2.1',
           },
           {
             name: 'Was Wir tun können',
             link: 'waswirdanntun',
-            id: '1.2.2'
+            id: '1.2.2',
           },
           {
             name: 'Eigene Rechte kennen',
             redirect: true,
             redirectLink: 'wissen/eigene_rechte_kennen',
-            id: '1.2.3'
-          }
-        ]
-      }
-    ]
+            id: '1.2.3',
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Training',
@@ -108,28 +108,67 @@ const menuItems = [
         address:
           'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99 19',
-        email: 'info@zara-training.at'
+        email: 'info@zara-training.at',
       },
       en: {
         title: 'Kontakt Training',
         address:
           'ZARA Training<br>gemeinnützige GmbH<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99 19',
-        email: 'info@zara-training.at'
-      }
+        email: 'info@zara-training.at',
+      },
     },
     subMenuList: [
       {
-        name: 'Training für Kinder & Jugendliche',
-        link: 'kinder_jugendliche',
-        id: '2.1'
+        name: 'Trainingsangebote',
+        link: null,
+        id: '2.1',
+        subMenuList: [
+          {
+            name: 'Offene Workshops & Vorträge',
+            link: 'angebote/workshops_vortraege',
+            id: '2.1.1',
+          },
+          {
+            name: 'Für Schulklassen',
+            link: 'angebote/schulklassen',
+            id: '2.1.2',
+          },
+          {
+            name: 'Für Erwachsenengruppen',
+            link: 'angebote/erwachsenengruppen',
+            id: '2.1.3',
+          },
+          {
+            name: 'Für Unternehmen',
+            link: 'angebote/unternehmen',
+            id: '2.1.4',
+          },
+        ],
       },
       {
-        name: 'Training für Erwachsene',
-        link: 'erwachsene',
-        id: '2.2'
-      }
-    ]
+        name: 'Training & mehr',
+        link: null,
+        id: '2.2',
+        subMenuList: [
+          {
+            name: 'Aktuelle Trainingsangebote',
+            link: 'trainingsprojekte',
+            id: '2.2.1',
+          },
+          {
+            name: 'Workshop schenken',
+            link: 'workshop_schenken',
+            id: '2.2.2',
+          },
+          {
+            name: 'Unsere Trainer*innen',
+            link: 'trainer_innen',
+            id: '2.2.3',
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Mitmischen',
@@ -140,28 +179,28 @@ const menuItems = [
         de: {
           icon: 'act',
           text: 'Kostenlose Beratung',
-          link: 'beratung/beratung_rassismus_hassimnetz'
+          link: 'beratung/beratung_rassismus_hassimnetz',
         },
         en: {
           icon: 'act',
           text: 'Kostenlose Beratung',
-          link: 'beratung/beratung_rassismus_hassimnetz'
-        }
+          link: 'beratung/beratung_rassismus_hassimnetz',
+        },
       },
       {
         de: {
           icon: 'LockIcon',
           color: 'petrol',
           text: 'Verschlüsselte Email an ZARA',
-          link: 'verschluesselte_email'
+          link: 'verschluesselte_email',
         },
         en: {
           icon: 'LockIcon',
           color: 'petrol',
           text: 'Verschlüsselte Email an ZARA',
-          link: 'verschluesselte_email'
-        }
-      }
+          link: 'verschluesselte_email',
+        },
+      },
     ],
     contact: {
       de: {
@@ -169,15 +208,15 @@ const menuItems = [
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'mitmischen@zara.or.at'
+        email: 'mitmischen@zara.or.at',
       },
       en: {
         title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'mitmischen@zara.or.at'
-      }
+        email: 'mitmischen@zara.or.at',
+      },
     },
     subMenuList: [
       {
@@ -188,19 +227,19 @@ const menuItems = [
           {
             name: 'Counter Narratives',
             id: '3.1.1',
-            link: 'counternarratives'
+            link: 'counternarratives',
           },
           {
             name: 'Hashtags',
             id: '3.1.2',
-            link: 'hashtags'
+            link: 'hashtags',
           },
           {
             name: 'Hasspostings melden',
             id: '3.1.3',
-            link: 'hasspostings_melden'
-          }
-        ]
+            link: 'hasspostings_melden',
+          },
+        ],
       },
       {
         name: 'Werden Sie ein*e ZARAista',
@@ -210,16 +249,16 @@ const menuItems = [
           {
             name: 'Community',
             id: '3.2.1',
-            link: 'community'
+            link: 'community',
           },
           {
             name: 'Unterstützen',
             id: '3.2.2',
-            link: 'unterstuetzen'
-          }
-        ]
-      }
-    ]
+            link: 'unterstuetzen',
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Wissen',
@@ -232,22 +271,22 @@ const menuItems = [
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'presse@zara.or.at'
+        email: 'presse@zara.or.at',
       },
       en: {
         title: 'Kontakt Presse & Wissen',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'presse@zara.or.at'
-      }
+        email: 'presse@zara.or.at',
+      },
     },
     subMenuList: [
       {
         name: 'Aktuelles',
         link: 'aktuelles',
         id: '4.1',
-        subMenuList: [{ name: 'ZARA Kolumne', link: 'kolumne', id: '4.1.1' }]
+        subMenuList: [{ name: 'ZARA Kolumne', link: 'kolumne', id: '4.1.1' }],
       },
 
       {
@@ -263,9 +302,9 @@ const menuItems = [
           {
             name: 'Glossar',
             link: 'glossar',
-            id: '4.2.2'
-          }
-        ]
+            id: '4.2.2',
+          },
+        ],
       },
       {
         name: 'Publikationen',
@@ -275,24 +314,24 @@ const menuItems = [
           {
             name: 'Rassismusreport',
             link: 'rassismusreport',
-            id: '4.3.1'
+            id: '4.3.1',
           },
           {
             name: 'ZARA Publikationen',
             link: 'zara',
-            id: '4.3.2'
+            id: '4.3.2',
           },
           {
             name: 'Jahres- und Finanzberichte',
             link: 'jahres_und_finanzberichte',
-            id: '4.3.3'
-          }
-        ]
+            id: '4.3.3',
+          },
+        ],
       },
       {
         name: 'FAQs',
         link: 'faq',
-        id: '4.4'
+        id: '4.4',
       },
       {
         name: 'Presse',
@@ -303,21 +342,21 @@ const menuItems = [
           {
             name: 'Pressespiegel',
             link: 'pressespiegel',
-            id: '4.5.1'
+            id: '4.5.1',
           },
           {
             name: 'Pressematerial & Logos',
             link: 'pressematerial_und_logos',
-            id: '4.5.2'
+            id: '4.5.2',
           },
           {
             name: 'Fotos',
             link: 'fotos',
-            id: '4.5.3'
-          }
-        ]
-      }
-    ]
+            id: '4.5.3',
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Über ZARA',
@@ -329,15 +368,15 @@ const menuItems = [
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'office@zara.or.at'
+        email: 'office@zara.or.at',
       },
       en: {
         title: 'Kontakt ZARA Büro',
         address:
           'ZARA<br>Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
         phone: '+43 (0) 1 929 13 99',
-        email: 'office@zara.or.at'
-      }
+        email: 'office@zara.or.at',
+      },
     },
     subMenuList: [
       {
@@ -348,19 +387,19 @@ const menuItems = [
           {
             name: 'Mission',
             link: 'mission',
-            id: '5.1.1'
+            id: '5.1.1',
           },
           {
             name: 'Die ZARA Story',
             link: 'geschichte',
-            id: '5.1.2'
+            id: '5.1.2',
           },
           {
             name: 'ZARA Grundsätze',
             link: 'grundsaetze',
-            id: '5.1.3'
-          }
-        ]
+            id: '5.1.3',
+          },
+        ],
       },
       {
         name: 'Wer wir sind',
@@ -370,19 +409,19 @@ const menuItems = [
           {
             name: 'Team',
             link: 'team',
-            id: '5.2.1'
+            id: '5.2.1',
           },
           {
             name: 'Jobs',
             link: 'jobs',
-            id: '5.2.3'
+            id: '5.2.3',
           },
           {
             name: 'Volontariat & Zivildienst',
             link: 'jobs',
-            id: '5.2.4'
-          }
-        ]
+            id: '5.2.4',
+          },
+        ],
       },
       {
         name: 'Projekte & Kooperation',
@@ -392,22 +431,22 @@ const menuItems = [
           {
             name: 'Netzwerke & Initiativen',
             link: 'netzwerke_und_initiativen',
-            id: '5.3.1'
+            id: '5.3.1',
           },
           {
             name: 'Projekte',
             link: 'projekte',
-            id: '5.3.2'
+            id: '5.3.2',
           },
           {
             name: 'Befreundete Organisationen',
             link: 'befreundete_organisationen',
-            id: '5.3.3'
-          }
-        ]
-      }
-    ]
-  }
-];
+            id: '5.3.3',
+          },
+        ],
+      },
+    ],
+  },
+]
 
-export default menuItems;
+export default menuItems

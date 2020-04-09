@@ -29,6 +29,7 @@ import TrainingAdults from './pages/Training/TrainingAdults'
 import TrainingUnternehmen from './pages/Training/TrainingUnternehmen'
 import TrainingDetail from './pages/Training/TrainingDetailNew'
 import TrainingsProjekte from './pages/Training/TrainingsProjekte/TrainingsProjekte'
+import WorkshopSchenken from './pages/Training/WorkshopSchenken'
 
 import Mitmischen from './pages/Mitmischen/Mitmischen'
 import CounterNarratives from './pages/Mitmischen/CounterNarratives'
@@ -210,21 +211,7 @@ class User extends Component {
                 path="/:lang/training/angebote/:type"
                 component={TrainingOffers}
               />
-              {/* <Route
-                exact
-                path="/:lang/training/kinder_jugendliche"
-                component={TrainingChildren}
-              />
-              <Route
-                exact
-                path="/:lang/training/erwachsene"
-                component={TrainingAdults}
-              />
-              <Route
-                exact
-                path="/:lang/training/unternehmen"
-                component={TrainingUnternehmen}
-              /> */}
+
               <Route
                 exact
                 path="/:lang/training/detail/:trainingId"
@@ -239,6 +226,11 @@ class User extends Component {
                 exact
                 path="/:lang/training/trainer_innen"
                 component={TrainingTeam}
+              />
+              <Route
+                exact
+                path="/:lang/training/workshop_schenken"
+                component={WorkshopSchenken}
               />
 
               <Route exact path="/:lang/mitmischen" component={Mitmischen} />
