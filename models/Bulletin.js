@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const shortid = require('shortid');
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+const shortid = require('shortid')
 
 const BulletinSchema = new Schema({
   _id: {
@@ -17,6 +17,10 @@ const BulletinSchema = new Schema({
     description: {
       type: String,
     },
+    location: {
+      type: String,
+    },
+    targetGroup: { type: String },
   },
   en: {
     title: {
@@ -28,9 +32,10 @@ const BulletinSchema = new Schema({
     description: {
       type: String,
     },
-  },
-  location: {
-    type: String,
+    location: {
+      type: String,
+    },
+    targetGroup: { type: String },
   },
   date: {
     type: String,
@@ -41,12 +46,7 @@ const BulletinSchema = new Schema({
   timeUntil: {
     type: String,
   },
-  peopleMin: {
-    type: Number,
-  },
-  peopleMax: {
-    type: Number,
-  },
+  showTimeAndDate: { type: Boolean },
   titleImage: {
     originalName: { type: String },
     imageId: { type: String },
@@ -79,6 +79,6 @@ const BulletinSchema = new Schema({
     type: Boolean,
     default: false,
   },
-});
+})
 
-module.exports = Bulletin = mongoose.model('bulletin', BulletinSchema);
+module.exports = Bulletin = mongoose.model('bulletin', BulletinSchema)

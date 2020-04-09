@@ -530,11 +530,15 @@ router.post(
         title: body.titleDE && body.titleDE,
         shortDescription: body.shortDescriptionDE && body.shortDescriptionDE,
         description: body.descriptionDE && body.descriptionDE,
+        location: body.locationDE && body.locationDE,
+        targetGroup: body.targetGroupDE && body.targetGroupDE,
       },
       en: {
         title: body.titleEN && body.titleEN,
         shortDescription: body.shortDescriptionEN && body.shortDescriptionEN,
         description: body.descriptionEN && body.descriptionEN,
+        location: body.locationEN && body.locationEN,
+        targetGroup: body.targetGroupEN && body.targetGroupEN,
       },
       handle: body.title && body.title.replace(/\s/g, '_'),
 
@@ -542,6 +546,7 @@ router.post(
       date: body.date && body.date,
       timeFrom: body.timeFrom && body.timeFrom,
       timeUntil: body.timeUntil && body.timeUntil,
+      showTimeAndDate: body.showTimeAndDate,
       peopleMin: body.peopleMin && body.peopleMin,
       peopleMax: body.peopleMax && body.peopleMax,
       location: body.location && body.location,
@@ -587,12 +592,16 @@ router.post(
             shortDescription:
               body.shortDescriptionDE && body.shortDescriptionDE,
             description: body.descriptionDE && body.descriptionDE,
+            location: body.locationDE && body.locationDE,
+            targetGroup: body.targetGroupDE && body.targetGroupDE,
           },
           en: {
             title: body.titleEN && body.titleEN,
             shortDescription:
               body.shortDescriptionEN && body.shortDescriptionEN,
             description: body.descriptionEN && body.descriptionEN,
+            location: body.locationEN && body.locationEN,
+            targetGroup: body.targetGroupEN && body.targetGroupEN,
           },
           handle: body.title && body.title.replace(/\s/g, '_'),
 
@@ -600,9 +609,10 @@ router.post(
           date: fDate,
           timeFrom: body.timeFrom && body.timeFrom,
           timeUntil: body.timeUntil && body.timeUntil,
+          showTimeAndDate: body.showTimeAndDate,
           peopleMin: body.peopleMin && body.peopleMin,
           peopleMax: body.peopleMax && body.peopleMax,
-          location: body.location && body.location,
+
           titleImage: {
             originalName: body.titleImage,
             imageId: body.imageId,

@@ -45,38 +45,47 @@
         &__labels
           color: #111
         &__time
-          display: flex
+          // display: flex
           
-          margin: .2rem 0 0
+          margin: .8rem 0 0
           &--side
             // flex: 2
             display: flex
             align-items: center
             justify-content: flex-end
-            margin: 0 0 .2rem .2rem
+            margin: 1rem 0 .2rem .2rem
             
             input
               flex: 1
               // padding: 0 .4rem
               height: 100%
               width: 100px
+              margin-right: .4rem
             span
               // background: white
+              width: 40px
               color: #fff
               display: flex
               align-items: center
               height: 100%
-              padding: 0 .2rem
+              // padding: 0 .2rem
+        &__checkbox
+          display: flex
+          justify-content: flex-start
+          align-items: center
+          margin-bottom: 1rem
+          input[type=checkbox]
+            width: 40px
         &__location
           display: flex
           margin: .2rem 0
           width: 100%
           align-items: center
-          input
-            flex: 3
-            margin: 0 .3rem
+          textarea
+            margin-right: 1rem
+            width: 180px
           span
-            padding: 0 .2rem
+            width: 40px
         &__date
           flex: 1
           

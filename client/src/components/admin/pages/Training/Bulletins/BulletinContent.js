@@ -52,9 +52,11 @@ class BulletinContent extends Component {
       date: new Date(),
       timeFrom: '11:00',
       timeUntil: '17:00',
-      peopleMin: 1,
-      peopleMax: 8,
-      location: '',
+      showTimeAndDate: true,
+      targetGroupDE: '',
+      targetGroupEN: '',
+      locationDE: '',
+      locationEN: '',
       label: {},
       shortDescriptionDE: RichTextEditor.createEmptyValue(),
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
@@ -105,9 +107,11 @@ class BulletinContent extends Component {
             date: item.date,
             timeFrom: item.timeFrom,
             timeUntil: item.timeUntil,
-            peopleMin: item.peopleMin && item.peopleMin,
-            peopleMax: item.peopleMax && item.peopleMax,
-            location: item.location && item.location,
+            showTimeAndDate: item.showTimeAndDate,
+            targetGroupDE: item.de.targetGroup && item.de.targetGroup,
+            targetGroupEN: item.en.targetGroup && item.en.targetGroup,
+            locationDE: item.de.location && item.de.location,
+            locationEN: item.en.location && item.en.location,
             label: item.label,
             titleImage: item.titleImage && item.titleImage.originalName,
             imageId: item.titleImage && item.titleImage.imageId,
@@ -154,9 +158,11 @@ class BulletinContent extends Component {
             date: new Date(),
             timeFrom: '11:00',
             timeUntil: '17:00',
-            peopleMin: 1,
-            peopleMax: 8,
-            location: '',
+            showTimeAndDate: true,
+            targetGroupDE: '',
+            targetGroupEN: '',
+            locationDE: '',
+            locationEN: '',
             label: {},
             shortDescriptionDE: RichTextEditor.createEmptyValue(),
             shortDescriptionEN: RichTextEditor.createEmptyValue(),
@@ -280,9 +286,11 @@ class BulletinContent extends Component {
       date: this.state.date,
       timeFrom: this.state.timeFrom,
       timeUntil: this.state.timeUntil,
-      peopleMin: this.state.peopleMin,
-      peopleMax: this.state.peopleMax,
-      location: this.state.location,
+      showTimeAndDate: this.state.showTimeAndDate,
+      targetGroupDE: this.state.targetGroupDE,
+      targetGroupEN: this.state.targetGroupEN,
+      locationDE: this.state.locationDE,
+      locationEN: this.state.locationEN,
       label: this.state.label,
       titleImage: this.state.titleImage,
       imageId: this.state.imageId,
@@ -360,25 +368,6 @@ class BulletinContent extends Component {
                       </div>
                       <div
                         className={
-                          styles[
-                            'bulletins-content--text__content--top__labels'
-                          ]
-                        }
-                      >
-                        {this.props.label && this.props.label.labels && (
-                          <Select
-                            // isMulti
-                            value={this.state.label}
-                            name={'label'}
-                            options={labelList}
-                            className={styles['label-select']}
-                            placeholder={'Label auswählen'}
-                            onChange={this.onLabelSelectChange}
-                          />
-                        )}
-                      </div>
-                      <div
-                        className={
                           styles['bulletins-content--text__content--top__time']
                         }
                       >
@@ -394,20 +383,21 @@ class BulletinContent extends Component {
                           </span>
                           <input
                             className={commonStyles['input']}
-                            type="number"
-                            id="peopleMin"
+                            type="text"
+                            placeholder="Zielgruppe de"
+                            id="targetGroupDE"
                             onChange={this.onChange}
-                            value={this.state.peopleMin}
-                            name="peopleMin"
+                            value={this.state.targetGroupDE}
+                            name="targetGroupDE"
                           />
-                          <span> - </span>
                           <input
                             className={commonStyles['input']}
-                            type="number"
-                            id="peopleMax"
+                            type="text"
+                            placeholder="Zielgruppe en"
+                            id="targetGroupEN"
                             onChange={this.onChange}
-                            value={this.state.peopleMax}
-                            name="peopleMax"
+                            value={this.state.targetGroupEN}
+                            name="targetGroupEN"
                           />
                         </div>
                         <div
@@ -439,7 +429,23 @@ class BulletinContent extends Component {
                           />
                         </div>
                       </div>
-                      <div></div>
+                      <div
+                        className={
+                          styles[
+                            'bulletins-content--text__content--top__checkbox'
+                          ]
+                        }
+                      >
+                        <input
+                          className={commonStyles['input']}
+                          type="checkbox"
+                          id="showTimeAndDate"
+                          onChange={this.onCheckChange}
+                          checked={this.state.showTimeAndDate}
+                          name="showTimeAndDate"
+                        />
+                        <span>Datum und Uhrzeit anzeigen</span>
+                      </div>
                       <div
                         className={
                           styles[
@@ -450,13 +456,23 @@ class BulletinContent extends Component {
                         <span>
                           <i className="fas fa-map-marker" />
                         </span>
-                        <TextFieldGroup
+                        <TextareaFieldGroup
                           className={commonStyles['input']}
                           colorScheme="light"
-                          placeholder="Ort"
+                          placeholder="Ort deutsch"
                           type="text"
-                          name="location"
-                          value={this.state.location}
+                          name="locationDE"
+                          value={this.state.locationDE}
+                          onChange={this.onChange}
+                          error={this.state.errors.location}
+                        />
+                        <TextareaFieldGroup
+                          className={commonStyles['input']}
+                          colorScheme="light"
+                          placeholder="Ort englisch"
+                          type="text"
+                          name="locationEN"
+                          value={this.state.locationEN}
                           onChange={this.onChange}
                           error={this.state.errors.location}
                         />

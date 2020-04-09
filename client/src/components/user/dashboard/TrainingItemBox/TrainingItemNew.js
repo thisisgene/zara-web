@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
 import moment from 'moment'
@@ -25,7 +25,7 @@ class TrainingItem extends Component {
                 }}
               ></div>
               <div className={styles['training-item--info']}>
-                {item.peopleMin && (
+                {item[lang].targetGroup && (
                   <div className={styles['training-item--info__child']}>
                     <IconObject image="participants" />
                     <div className={styles['training-item--info__child--data']}>
@@ -34,52 +34,49 @@ class TrainingItem extends Component {
                           styles['training-item--info__child--data__line']
                         }
                       >
-                        <div>{item.peopleMin}</div>
-                        <div>&nbsp;-&nbsp;</div>
-                        <div>{item.peopleMax}</div>
-                      </div>
-                      <div
-                        className={
-                          styles['training-item--info__child--data__line']
-                        }
-                      >
-                        <div>Personen</div>
+                        <div>{item[lang].targetGroup}</div>
                       </div>
                     </div>
                   </div>
                 )}
                 {item.timeFrom && (
                   <div className={styles['training-item--info__child']}>
-                    <IconObject image="duration" />
-                    <div className={styles['training-item--info__child--data']}>
-                      <div
-                        className={
-                          styles['training-item--info__child--data__line']
-                        }
-                      >
-                        <div>
-                          {moment(item.date)
-                            .locale('de')
-                            .format('DD. MM. YYYY')}
+                    {item.showTimeAndDate && (
+                      <Fragment>
+                        <IconObject image="duration" />
+                        <div
+                          className={styles['training-item--info__child--data']}
+                        >
+                          <div
+                            className={
+                              styles['training-item--info__child--data__line']
+                            }
+                          >
+                            <div>
+                              {moment(item.date)
+                                .locale('de')
+                                .format('DD. MM. YYYY')}
+                            </div>
+                          </div>
+                          <div
+                            className={
+                              styles['training-item--info__child--data__line']
+                            }
+                          >
+                            <div>{item.timeFrom}</div>
+                            <div>&nbsp;-&nbsp;</div>
+                            <div>{item.timeUntil}</div>
+                          </div>
                         </div>
-                      </div>
-                      <div
-                        className={
-                          styles['training-item--info__child--data__line']
-                        }
-                      >
-                        <div>{item.timeFrom}</div>
-                        <div>&nbsp;-&nbsp;</div>
-                        <div>{item.timeUntil}</div>
-                      </div>
-                    </div>
+                      </Fragment>
+                    )}
                   </div>
                 )}
               </div>
               <div className={styles['training-item--info']}>
                 <div className={styles['training-item--info__child']}>
-                  {item.location && (
-                    <div>
+                  {item[lang].location && (
+                    <Fragment>
                       <IconObject image="location" />
                       <div
                         className={styles['training-item--info__child--data']}
@@ -89,10 +86,17 @@ class TrainingItem extends Component {
                             styles['training-item--info__child--data__line']
                           }
                         >
-                          <div>{item.location}</div>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: item[lang].location.replace(
+                                /\n\r?/g,
+                                '<br />'
+                              ),
+                            }}
+                          ></div>
                         </div>
                       </div>
-                    </div>
+                    </Fragment>
                   )}
                 </div>
 
