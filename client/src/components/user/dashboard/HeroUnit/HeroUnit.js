@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-import cx from 'classnames'
-import styles from './HeroUnit.module.sass'
+import cx from 'classnames';
+import styles from './HeroUnit.module.sass';
 
 class HeroUnit extends Component {
   render() {
-    const { data, lang, special } = this.props
-    console.log(data)
+    const { data, lang, special } = this.props;
     return (
       <div>
         {data && lang && (
@@ -16,10 +15,10 @@ class HeroUnit extends Component {
               styles['hero-unit-container'],
               { [styles[data.class]]: data.class },
               {
-                [styles[data.size]]: data.size
+                [styles[data.size]]: data.size,
               },
               {
-                [styles['narrow']]: special === 'narrow'
+                [styles['narrow']]: special === 'narrow',
               }
             )}
           >
@@ -29,16 +28,14 @@ class HeroUnit extends Component {
                   styles['hero-unit'],
                   styles['hero-unit--image-left'],
                   {
-                    [styles[data.imageAlign]]: data.imageAlign
+                    [styles[data.imageAlign]]: data.imageAlign,
                   }
                 )}
               >
                 <div className={styles['hero-unit--image']}>
                   {data.titleImage ? (
                     <img
-                      src={`/assets/media/${data.titleImage.category}/${
-                        data.titleImage.originalName
-                      }`}
+                      src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}
                       alt={data.titleImage.originalName}
                     />
                   ) : (
@@ -70,12 +67,12 @@ class HeroUnit extends Component {
                 className={cx(
                   styles['hero-unit'],
                   {
-                    [styles[data.imageAlign]]: data.imageAlign
+                    [styles[data.imageAlign]]: data.imageAlign,
                   },
                   {
                     [styles['hero-unit--image-right']]:
                       data.image ||
-                      (data.titleImage && data.titleImage.originalName)
+                      (data.titleImage && data.titleImage.originalName),
                   }
                 )}
               >
@@ -88,12 +85,10 @@ class HeroUnit extends Component {
                     dangerouslySetInnerHTML={{ __html: data[lang].text }}
                   />
                 </div>
-                {data.titleImage ? (
+                {data.titleImage && data.titleImage.originalName ? (
                   <div className={styles['hero-unit--image']}>
                     <img
-                      src={`/assets/media/${data.titleImage.category}/${
-                        data.titleImage.originalName
-                      }`}
+                      src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}
                       alt={data.titleImage.originalName}
                     />
                   </div>
@@ -109,8 +104,8 @@ class HeroUnit extends Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default HeroUnit
+export default HeroUnit;

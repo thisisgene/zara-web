@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import styles from './Media.module.sass'
+import styles from './Media.module.sass';
 
 export default class MediaCategories extends Component {
   render() {
@@ -50,6 +50,14 @@ export default class MediaCategories extends Component {
           </li>
           <li>
             <NavLink
+              to="/admin/dashboard/media/training"
+              activeClassName={styles['active']}
+            >
+              Training
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/admin/dashboard/media/files"
               activeClassName={styles['active']}
             >
@@ -58,6 +66,6 @@ export default class MediaCategories extends Component {
           </li>
         </ul>
       </div>
-    )
+    );
   }
 }

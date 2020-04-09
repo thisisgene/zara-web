@@ -23,11 +23,13 @@ import WasSieTunKoennen from './pages/Consulting/WasSieTunKoennen'
 import WasWirTunKoennen from './pages/Consulting/WasWirTunKoennen'
 
 import Training from './pages/Training/Training'
+import TrainingOffers from './pages/Training/TrainingOffers'
 import TrainingChildren from './pages/Training/TrainingChildren'
 import TrainingAdults from './pages/Training/TrainingAdults'
 import TrainingUnternehmen from './pages/Training/TrainingUnternehmen'
-import TrainingDetail from './pages/Training/TrainingDetail'
+import TrainingDetail from './pages/Training/TrainingDetailNew'
 import TrainingsProjekte from './pages/Training/TrainingsProjekte/TrainingsProjekte'
+import WorkshopSchenken from './pages/Training/WorkshopSchenken'
 
 import Mitmischen from './pages/Mitmischen/Mitmischen'
 import CounterNarratives from './pages/Mitmischen/CounterNarratives'
@@ -85,21 +87,21 @@ class User extends Component {
 
     const languages = [
       { name: 'Deutsch', code: 'de' },
-      { name: 'English', code: 'en' }
+      { name: 'English', code: 'en' },
     ]
     const defaultLanguage = languages[0].code
     // window.localStorage.getItem('languageCode') || languages[0].code
     this.props.initialize({
       languages,
       translation: globalTranslations,
-      options: { defaultLanguage, renderToStaticMarkup } // TODO: Set defaultLanguage after reload!
+      options: { defaultLanguage, renderToStaticMarkup }, // TODO: Set defaultLanguage after reload!
     })
 
     // this.props.addTranslation(headerTranslations)
     this.state = {
       mobileExpand: false,
       subMenuContent: '',
-      showCookieConsent: true
+      showCookieConsent: true,
     }
   }
   componentDidUpdate(prevProps) {
@@ -120,13 +122,13 @@ class User extends Component {
   }
   componentDidMount() {
     this.setState({
-      showCookieConsent: !localStorage.getItem('cookieAccept')
+      showCookieConsent: !localStorage.getItem('cookieAccept'),
     })
   }
 
   cookieAccept = () => {
     this.setState({
-      showCookieConsent: false
+      showCookieConsent: false,
     })
     localStorage.setItem('cookieAccept', true)
   }
@@ -138,7 +140,7 @@ class User extends Component {
         path: '//de',
         exact: false,
         breadcrumb: () => <NavLink to="/de">ZARA</NavLink>,
-        main: Home
+        main: Home,
       },
       {
         path: '//:lang/beratung',
@@ -147,8 +149,8 @@ class User extends Component {
           activeLanguage && (
             <NavLink to={`/${activeLanguage.code}/beratung`}>Beratung</NavLink>
           ),
-        main: Home
-      }
+        main: Home,
+      },
     ]
 
     return (
@@ -206,19 +208,10 @@ class User extends Component {
               <Route exact path="/:lang/training" component={Training} />
               <Route
                 exact
-                path="/:lang/training/kinder_jugendliche"
-                component={TrainingChildren}
+                path="/:lang/training/angebote/:type"
+                component={TrainingOffers}
               />
-              <Route
-                exact
-                path="/:lang/training/erwachsene"
-                component={TrainingAdults}
-              />
-              <Route
-                exact
-                path="/:lang/training/unternehmen"
-                component={TrainingUnternehmen}
-              />
+
               <Route
                 exact
                 path="/:lang/training/detail/:trainingId"
@@ -233,6 +226,11 @@ class User extends Component {
                 exact
                 path="/:lang/training/trainer_innen"
                 component={TrainingTeam}
+              />
+              <Route
+                exact
+                path="/:lang/training/workshop_schenken"
+                component={WorkshopSchenken}
               />
 
               <Route exact path="/:lang/mitmischen" component={Mitmischen} />
@@ -453,20 +451,15 @@ class User extends Component {
 }
 
 User.propTypes = {
-  setActiveLanguage: PropTypes.func.isRequired
+  setActiveLanguage: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
   lang: state.lang,
   project: state.project,
-  hasBackgroundImage: state.hasBackgroundImage
+  hasBackgroundImage: state.hasBackgroundImage,
 })
 
 export default withRouter(
-  withLocalize(
-    connect(
-      mapStateToProps,
-      { setActiveLanguage }
-    )(User)
-  )
+  withLocalize(connect(mapStateToProps, { setActiveLanguage })(User))
 )

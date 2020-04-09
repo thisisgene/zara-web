@@ -18,6 +18,7 @@ const validateTrainingInput = require('../../validation/training')
 
 const User = require('../../models/User')
 const { TrainingTeam, Training } = require('../../models/Training')
+const Bulletin = require('../../models/Bulletin')
 
 // @route   GET api/training/team
 // @desc    Get all training team members
@@ -70,13 +71,13 @@ router.post(
       de: {
         title: trainingTeamFields.de.title,
         shortDescription: trainingTeamFields.de.shortDescription,
-        description: trainingTeamFields.de.description
+        description: trainingTeamFields.de.description,
       },
       en: {
         title: trainingTeamFields.en.title,
         shortDescription: trainingTeamFields.en.shortDescription,
-        description: trainingTeamFields.en.description
-      }
+        description: trainingTeamFields.en.description,
+      },
     })
     console.log(newTrainingTeam)
     newTrainingTeam
@@ -114,16 +115,16 @@ router.post(
           handle: trainingTeamFields.handle,
           email: body.email,
           de: {
-            title: trainingTeamFields.de.title
+            title: trainingTeamFields.de.title,
           },
           en: {
-            title: trainingTeamFields.en.title
+            title: trainingTeamFields.en.title,
           },
           files: {
             de: body.filesDE,
-            en: body.filesEN
-          }
-        }
+            en: body.filesEN,
+          },
+        },
       },
       { new: true },
       (err, teamMember) => {
@@ -279,26 +280,26 @@ router.post(
       timeUntil: body.timeUntil && body.timeUntil,
       location: {
         title: body.location && body.location,
-        address1: body.address1 && body.address1
+        address1: body.address1 && body.address1,
       },
       fee: body.fee && body.fee,
       label: body.label && {
         title: body.label.title,
         value: body.label.value,
         label: body.label.label,
-        color: body.label.color
+        color: body.label.color,
       },
       assignedTrainer1: {
         id: body.assignedTrainer1 && body.assignedTrainer1.id,
-        name: body.assignedTrainer1 && body.assignedTrainer1.name
+        name: body.assignedTrainer1 && body.assignedTrainer1.name,
       },
       assignedTrainer2: {
         id: body.assignedTrainer2 && body.assignedTrainer2.id,
-        name: body.assignedTrainer2 && body.assignedTrainer2.name
+        name: body.assignedTrainer2 && body.assignedTrainer2.name,
       },
       emailSubject: body.emailSubject && body.emailSubject,
       pubContent: body.pubContent && body.pubContent,
-      privContent: body.privContent && body.privContent
+      privContent: body.privContent && body.privContent,
     })
     newTraining
       .save()
@@ -334,31 +335,31 @@ router.post(
           timeUntil: body.timeUntil && body.timeUntil,
           location: {
             title: body.location,
-            address1: body.address1
+            address1: body.address1,
           },
           fee: body.fee && body.fee,
           label: body.label && {
             title: body.label.title,
             value: body.label.value,
             label: body.label.label,
-            color: body.label.color
+            color: body.label.color,
           },
 
           assignedTrainer1: {
             id: body.assignedTrainer1 && body.assignedTrainer1.id,
-            name: body.assignedTrainer1 && body.assignedTrainer1.name
+            name: body.assignedTrainer1 && body.assignedTrainer1.name,
           },
           assignedTrainer2: {
             id: body.assignedTrainer2 && body.assignedTrainer2.id,
-            name: body.assignedTrainer2 && body.assignedTrainer2.name
+            name: body.assignedTrainer2 && body.assignedTrainer2.name,
           },
 
           emailSubject: body.emailSubject && body.emailSubject,
           pubContent: body.pubContent && body.pubContent,
           pubContentMarked: body.pubContent && marked(body.pubContent),
           privContent: body.privContent && body.privContent,
-          privContentMarked: body.privContent && marked(body.privContent)
-        }
+          privContentMarked: body.privContent && marked(body.privContent),
+        },
       },
       { new: true },
       (err, training) => {
@@ -389,8 +390,9 @@ router.post(
       { _id: body.id },
       {
         $set: {
-          interestedTrainers: body.interestedTrainers && body.interestedTrainers
-        }
+          interestedTrainers:
+            body.interestedTrainers && body.interestedTrainers,
+        },
       },
       { new: true },
       (err, training) => {
@@ -485,6 +487,271 @@ router.get(
       })
       .catch(err => {
         errors.trainings = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
+//////////////////////// BULLETINS
+
+// @route   GET api/training/bulletins
+// @desc    Get all bulletins
+// @access  Public
+router.get(
+  '/bulletins',
+  // passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {}
+    Bulletin.find({ isDeleted: false })
+      .sort('position')
+      .exec()
+      .then(bulletins => {
+        res.json(bulletins)
+      })
+      .catch(err => res.status(404).json(err))
+  }
+)
+
+// @route   POST api/training/bulletins
+// @desc    Create a bulletin
+// @access  Private
+router.post(
+  '/bulletins',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body
+    console.log('body: ', body)
+    const { errors, isValid } = await validateNewsInput(body)
+    if (!isValid) {
+      return res.status(400).json(errors)
+    }
+    const newBulletin = new Bulletin({
+      de: {
+        title: body.titleDE && body.titleDE,
+        shortDescription: body.shortDescriptionDE && body.shortDescriptionDE,
+        description: body.descriptionDE && body.descriptionDE,
+        location: body.locationDE && body.locationDE,
+        targetGroup: body.targetGroupDE && body.targetGroupDE,
+      },
+      en: {
+        title: body.titleEN && body.titleEN,
+        shortDescription: body.shortDescriptionEN && body.shortDescriptionEN,
+        description: body.descriptionEN && body.descriptionEN,
+        location: body.locationEN && body.locationEN,
+        targetGroup: body.targetGroupEN && body.targetGroupEN,
+      },
+      handle: body.title && body.title.replace(/\s/g, '_'),
+
+      tag: body.tag && body.tag,
+      date: body.date && body.date,
+      timeFrom: body.timeFrom && body.timeFrom,
+      timeUntil: body.timeUntil && body.timeUntil,
+      showTimeAndDate: body.showTimeAndDate,
+      peopleMin: body.peopleMin && body.peopleMin,
+      peopleMax: body.peopleMax && body.peopleMax,
+      location: body.location && body.location,
+      tag: body.trainingCategory.value && body.trainingCategory.value,
+      category: body.trainingCategory && {
+        value: body.trainingCategory.value,
+        label: body.trainingCategory.label,
+      },
+      label: body.label && {
+        title: body.label.title,
+        value: body.label.value,
+        label: body.label.label,
+        color: body.label.color,
+      },
+    })
+    newBulletin
+      .save()
+      .then(bulletin => {
+        res.json(bulletin)
+      })
+      .catch(err => console.log(err))
+  }
+)
+
+router.post(
+  '/bulletins/update/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const body = req.body
+    console.log('body update: ', body)
+    const fDate = moment(body.date).format()
+    const { errors, isValid } = await validateNewsInput(body)
+    if (!isValid) {
+      return res.status(400).json(errors)
+    }
+
+    Bulletin.findOneAndUpdate(
+      { _id: body.id },
+      {
+        $set: {
+          de: {
+            title: body.titleDE && body.titleDE,
+            shortDescription:
+              body.shortDescriptionDE && body.shortDescriptionDE,
+            description: body.descriptionDE && body.descriptionDE,
+            location: body.locationDE && body.locationDE,
+            targetGroup: body.targetGroupDE && body.targetGroupDE,
+          },
+          en: {
+            title: body.titleEN && body.titleEN,
+            shortDescription:
+              body.shortDescriptionEN && body.shortDescriptionEN,
+            description: body.descriptionEN && body.descriptionEN,
+            location: body.locationEN && body.locationEN,
+            targetGroup: body.targetGroupEN && body.targetGroupEN,
+          },
+          handle: body.title && body.title.replace(/\s/g, '_'),
+
+          tag: body.tag && body.tag,
+          date: fDate,
+          timeFrom: body.timeFrom && body.timeFrom,
+          timeUntil: body.timeUntil && body.timeUntil,
+          showTimeAndDate: body.showTimeAndDate,
+          peopleMin: body.peopleMin && body.peopleMin,
+          peopleMax: body.peopleMax && body.peopleMax,
+
+          titleImage: {
+            originalName: body.titleImage,
+            imageId: body.imageId,
+            category: body.imageCategory,
+          },
+          imageSide: body.imageSide,
+          imageAlign: body.imageAlign,
+          size: body.size,
+          tag: body.trainingCategory.value && body.trainingCategory.value,
+          category: body.trainingCategory && {
+            value: body.trainingCategory.value,
+            label: body.trainingCategory.label,
+          },
+          label: body.label && {
+            title: body.label.title,
+            value: body.label.value,
+            label: body.label.label,
+            color: body.label.color,
+          },
+        },
+      },
+      { new: true },
+      (err, bulletin) => {
+        if (err) console.log('error: ', err)
+        if (!err) {
+          Bulletin.find({ isDeleted: false })
+            .sort('position')
+            .then(bulletins => {
+              res.json({ bulletins: bulletins, bulletin: bulletin })
+            })
+            .catch(err => {
+              console.log(err)
+            })
+        }
+      }
+    )
+  }
+)
+
+// @route   GET api/training/bulletins/:id
+// @desc    Get Bulletin by id
+// @access  Public
+router.get(
+  '/bulletins/:id',
+  // passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {}
+    Bulletin.findOne({ _id: req.params.id, isDeleted: false })
+      // .populate('lastEdited.user', ['name'])
+      .then(bulletin => {
+        if (!bulletin) {
+          errors.nobulletin = 'Kein Beitrag mit dieser ID.'
+          return res.status(404).json(errors.nobulletin)
+        }
+        res.json(bulletin)
+      })
+      .catch(err => {
+        errors.bulletin = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
+router.get(
+  '/bulletins/get_by/:property/:value',
+  // passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const errors = {}
+    Bulletin.find({
+      [req.params.property]: req.params.value,
+      isDeleted: false,
+      isOnline: true,
+    })
+      .sort('position')
+      .then(bulletins => {
+        if (!bulletins) {
+          errors.noentry = 'Kein Beitrag mit dieser ID.'
+          return res.status(404).json(errors.noentry)
+        }
+        res.json(bulletins)
+      })
+      .catch(err => {
+        errors.entry = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
+// @route   GET api/training/bulletin/toggle_online/:id/:state
+// @desc    Toggle online bulletin by id
+// @access  Private
+router.get(
+  '/bulletins/toggle_online/:id/:state',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {}
+    console.log(req.params.id, req.params.state)
+    Bulletin.findOneAndUpdate(
+      { _id: req.params.id },
+      { isOnline: req.params.state },
+      { safe: true, new: true }
+    )
+      .then(async bulletin => {
+        Bulletin.find({ isDeleted: false })
+          .sort('position')
+          .then(bulletins => {
+            res.json({ bulletins: bulletins, bulletin: bulletin })
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      })
+      .catch(err => {
+        console.log('nicht fund')
+        errors.bulletin = 'Beitrag nicht gefunden.'
+        return res.status(404).json(errors)
+      })
+  }
+)
+
+// @route   GET api/training/bulletins/delete/:id
+// @desc    Delete bulletin by id
+// @access  Private
+router.get(
+  '/bulletins/delete/:id',
+  passport.authenticate('jwt', { session: false }),
+  async (req, res) => {
+    const errors = {}
+    Bulletin.findOneAndUpdate(
+      { _id: req.params.id },
+      { isDeleted: true },
+      { safe: true, new: true }
+    )
+      .then(async () => {
+        const bulletins = await Bulletin.find({ isDeleted: false })
+        res.json(bulletins)
+      })
+      .catch(err => {
+        errors.bulletins = 'Beitrag nicht gefunden.'
         return res.status(404).json(errors)
       })
   }
@@ -619,11 +886,11 @@ sendTrainingEmail = (emailList, content, res) => {
     secure: true, // true for 465, false for other ports
     auth: {
       user: 'serpig.testuser@gmail.com', // generated ethereal user
-      pass: 'serPig1dev2019' // generated ethereal password
+      pass: 'serPig1dev2019', // generated ethereal password
     },
     tls: {
-      rejectUnauthorized: false
-    }
+      rejectUnauthorized: false,
+    },
   })
 
   // setup email data with unicode symbols
@@ -632,7 +899,7 @@ sendTrainingEmail = (emailList, content, res) => {
     to: emailList, // list of receivers //beratung@zara.or.at
     subject: content.emailSubject, // Subject line
     text: outputPlain, // plain text body
-    html: outputHtml // html body
+    html: outputHtml, // html body
   }
 
   // send mail with defined transport object
@@ -686,7 +953,7 @@ router.post(
           console.log('tr1')
           training.assignedTrainer1.additionalFees.push({
             description: body.addFeeDescription,
-            amount: body.addFeeAmount
+            amount: body.addFeeAmount,
           })
         } else if (
           training.assignedTrainer2 &&
@@ -695,7 +962,7 @@ router.post(
           console.log('tr2')
           training.assignedTrainer2.additionalFees.push({
             description: body.addFeeDescription,
-            amount: body.addFeeAmount
+            amount: body.addFeeAmount,
           })
         }
         training.save(() => {

@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import IconObject from '../../dashboard/IconObject/IconObject'
+import IconObject from '../../dashboard/IconObject/IconObject';
 
-import styles from './TrainingItemBox.module.sass'
+import styles from './TrainingItemBox.module.sass';
 
 class TrainingItem extends Component {
   render() {
-    const { content, lang } = this.props
-    const item = content[lang]
+    const { content, lang } = this.props;
+    const item = content[lang];
     return (
       <div>
         <Link to={`/${lang}/training/detail/${content._id}`}>
@@ -38,8 +38,8 @@ class TrainingItem extends Component {
           </div>
         </Link>
       </div>
-    )
+    );
   }
 }
 
-export default TrainingItem
+export default TrainingItem;

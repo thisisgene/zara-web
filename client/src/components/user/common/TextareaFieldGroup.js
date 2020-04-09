@@ -2,40 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import cx from 'classnames';
-import globalStyles from './Bootstrap.module.css';
+import globalStyles from '../../admin/common/Bootstrap.module.css';
 import commonStyles from './Common.module.sass';
 
-const TextFieldGroup = ({
+const TextareaFieldGroup = ({
   name,
+  className,
   placeholder,
   value,
-  label,
-  style,
   error,
   info,
-  type,
-  colorScheme,
   onChange,
-  disabled,
-  className
+  onKeyUp,
+  disabled
 }) => {
   return (
     <div className={globalStyles['form-group']}>
-      <input
+      <textarea
         className={cx(
           globalStyles['form-control'],
-          { [commonStyles['dark-input']]: colorScheme !== 'light' },
-          {
-            [globalStyles['is-invalid']]: error
-          },
+          commonStyles['textarea'],
           className
         )}
-        style={style}
         placeholder={placeholder}
         name={name}
-        type={type}
         value={value}
         onChange={onChange}
+        onKeyUp={onKeyUp}
         disabled={disabled}
       />
       {info && (
@@ -50,19 +43,14 @@ const TextFieldGroup = ({
   );
 };
 
-TextFieldGroup.propTypes = {
+TextareaFieldGroup.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   info: PropTypes.string,
   error: PropTypes.string,
-  type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   disabled: PropTypes.string
 };
 
-TextFieldGroup.defaultProps = {
-  type: 'text'
-};
-
-export default TextFieldGroup;
+export default TextareaFieldGroup;

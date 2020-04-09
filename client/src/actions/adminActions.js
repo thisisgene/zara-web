@@ -45,6 +45,12 @@ import {
   GET_TRAINING_BY_ID,
   DELETE_TRAINING_BY_ID,
   CLEAR_TRAINING,
+  GET_ALL_BULLETINS,
+  CREATE_NEW_BULLETIN,
+  UPDATE_BULLETIN,
+  GET_BULLETIN_BY_ID,
+  DELETE_BULLETIN_BY_ID,
+  CLEAR_BULLETIN,
   GET_ALL_FAQS,
   CREATE_NEW_FAQ,
   UPDATE_FAQ,
@@ -54,7 +60,7 @@ import {
   SET_GENERAL_LOADING,
   UNSET_GENERAL_LOADING,
   GET_ALL_USERS,
-  CLEAR_REPORT
+  CLEAR_REPORT,
 } from './types'
 
 // import { setProjectLoading } from './projectActions'
@@ -62,7 +68,7 @@ import {
 // Get all
 export const getAll = category => dispatch => {
   dispatch({
-    type: CLEAR_ERRORS
+    type: CLEAR_ERRORS,
   })
   switch (category) {
     case 'label':
@@ -71,13 +77,13 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_LABELS,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -87,13 +93,13 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_CAROUSELS,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -103,13 +109,13 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_NEWS,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -119,13 +125,13 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_JAHRESBERICHTE,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -135,13 +141,13 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_FAQS,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -151,13 +157,13 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_TEAM,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -167,13 +173,13 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_TRAININGTEAM,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -183,13 +189,29 @@ export const getAll = category => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_TRAININGS,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
+          })
+        )
+      break
+    case 'bulletins':
+      axios
+        .get('/api/training/bulletins')
+        .then(res => {
+          dispatch({
+            type: GET_ALL_BULLETINS,
+            payload: res.data,
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
           })
         )
       break
@@ -207,13 +229,13 @@ export const getAllAndSort = (category, sortBy) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_TRAININGS,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -225,19 +247,18 @@ export const getAllAndSort = (category, sortBy) => dispatch => {
 export const getAllByProps = (category, prop) => dispatch => {
   switch (category) {
     case 'team':
-      console.log(prop)
       axios
         .post(`/api/team/props`, prop)
         .then(res => {
           dispatch({
             type: GET_ALL_TEAM,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -256,13 +277,29 @@ export const getByProperty = (category, property, value) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_NEWS,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
+          })
+        )
+      break
+    case 'bulletin':
+      axios
+        .get(`/api/training/bulletins/get_by/${property}/${value}`)
+        .then(res => {
+          dispatch({
+            type: GET_ALL_BULLETINS,
+            payload: res.data,
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
           })
         )
       break
@@ -273,7 +310,7 @@ export const getByProperty = (category, property, value) => dispatch => {
 // Get by ID
 export const getById = (id, category) => dispatch => {
   dispatch({
-    type: CLEAR_ERRORS
+    type: CLEAR_ERRORS,
   })
   switch (category) {
     case 'carousel':
@@ -282,13 +319,13 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_CAROUSEL_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -298,13 +335,13 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_NEWS_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -314,13 +351,13 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_JAHRESBERICHT_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -330,13 +367,13 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_FAQ_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -346,13 +383,13 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_TEAM_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -362,13 +399,13 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_TRAININGTEAM_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
         )
       break
@@ -378,13 +415,29 @@ export const getById = (id, category) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_TRAINING_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
         })
         .catch(err =>
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
+          })
+        )
+      break
+    case 'bulletins':
+      axios
+        .get(`/api/training/bulletins/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_BULLETIN_BY_ID,
+            payload: res.data,
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
           })
         )
       break
@@ -404,16 +457,16 @@ export const sendInitialTrainingEmail = saveData => dispatch => {
       //   payload: res.data
       // })
       dispatch({
-        type: UNSET_GENERAL_LOADING
+        type: UNSET_GENERAL_LOADING,
       })
     })
     .catch(err => {
       dispatch({
-        type: UNSET_GENERAL_LOADING
+        type: UNSET_GENERAL_LOADING,
       })
       dispatch({
         type: GET_ERRORS,
-        payload: err.response
+        payload: err.response,
       })
     })
 }
@@ -427,22 +480,21 @@ export const setInterestedTrainer = saveData => dispatch => {
     .then(res => {
       dispatch({
         type: UPDATE_TRAINING,
-        payload: res.data
+        payload: res.data,
       })
     })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response
+        payload: err.response,
       })
     )
 }
 
 // Create or update content
 export const saveContent = saveData => dispatch => {
-  console.log(saveData)
   dispatch({
-    type: CLEAR_ERRORS
+    type: CLEAR_ERRORS,
   })
   dispatch(setGeneralLoading())
 
@@ -455,19 +507,19 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_LABEL,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
@@ -475,25 +527,24 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_LABEL,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
       break
     case 'carousel':
-      console.log('CAROUSELLLLL')
       saveData.id === 'neu'
         ? axios
             .post('/api/carousel', saveData)
@@ -501,19 +552,19 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_CAROUSEL,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
@@ -521,19 +572,19 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_CAROUSEL,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
@@ -546,19 +597,19 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_NEWS,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
@@ -566,19 +617,19 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_NEWS,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
@@ -590,19 +641,19 @@ export const saveContent = saveData => dispatch => {
           dispatch({ type: CLEAR_ERRORS })
           dispatch({
             type: ADD_NEWS_VIDEO,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err.response.data
+            payload: err.response.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -614,19 +665,19 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_JAHRESBERICHT,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
@@ -634,19 +685,19 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_JAHRESBERICHT,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
@@ -659,19 +710,19 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_FAQ,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
+                payload: err.response,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
@@ -679,19 +730,19 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_FAQ,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
+                payload: err.response,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
@@ -704,19 +755,19 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_TEAM,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
+                payload: err.response,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
@@ -724,19 +775,19 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_TEAM,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
+                payload: err.response,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
@@ -749,19 +800,19 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_TRAININGTEAM,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response.data
+                payload: err.response.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
@@ -769,25 +820,24 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_TRAININGTEAM,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
+                payload: err.response,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
       break
     case 'trainings':
-      console.log(saveData.interestedTrainers)
       saveData.id === 'neu'
         ? axios
             .post('/api/training/trainings', saveData)
@@ -795,40 +845,84 @@ export const saveContent = saveData => dispatch => {
               dispatch({ type: CLEAR_ERRORS })
               dispatch({
                 type: CREATE_NEW_TRAINING,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err
+                payload: err,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
         : axios
             .post(`/api/training/trainings/update/${saveData.id}`, saveData)
             .then(res => {
-              console.log('here we go')
               dispatch({
                 type: UPDATE_TRAINING,
-                payload: res.data
+                payload: res.data,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
               })
             })
             .catch(err => {
               dispatch({
                 type: GET_ERRORS,
-                payload: err.response
+                payload: err.response,
               })
               dispatch({
-                type: UNSET_GENERAL_LOADING
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+
+      break
+    case 'bulletins':
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/training/bulletins', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_BULLETIN,
+                payload: res.data,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+        : axios
+            .post(`/api/training/bulletins/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_BULLETIN,
+                payload: res.data,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
               })
             })
 
@@ -839,19 +933,19 @@ export const saveContent = saveData => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_TRAINING,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err.response
+            payload: err.response,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
 
@@ -863,7 +957,6 @@ export const saveContent = saveData => dispatch => {
 }
 
 export const sortList = (list, category) => dispatch => {
-  console.log('CAT: ', category)
   axios
     .post(`/api/projects/sort/${category}`, { list })
     .then(res => {
@@ -875,10 +968,10 @@ export const sortList = (list, category) => dispatch => {
     .catch(err => {
       dispatch({
         type: GET_ERRORS,
-        payload: err
+        payload: err,
       })
       dispatch({
-        type: UNSET_GENERAL_LOADING
+        type: UNSET_GENERAL_LOADING,
       })
     })
 }
@@ -893,19 +986,19 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_CAROUSEL,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -915,19 +1008,19 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_NEWS,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -937,19 +1030,19 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_JAHRESBERICHT,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -959,19 +1052,19 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_FAQ,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -981,19 +1074,19 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_TEAM,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1003,19 +1096,19 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_TRAININGTEAM,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1025,19 +1118,41 @@ export const toggleOnline = (id, category, state) => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_TRAINING,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
+    case 'bulletins':
+      axios
+        .get(`/api/training/bulletins/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: UPDATE_BULLETIN,
+            payload: res.data,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1057,19 +1172,19 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_LABEL_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1079,19 +1194,19 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_CAROUSEL_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1101,19 +1216,19 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_NEWS_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1123,42 +1238,41 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: ADD_NEWS_VIDEO,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
     case 'jahresberichte':
-      console.log('jahresbericht löschen')
       axios
         .get(`/api/jahresberichte/delete/${id}`)
         .then(res => {
           dispatch({
             type: DELETE_JAHRESBERICHT_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1168,19 +1282,19 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_FAQ_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1190,19 +1304,19 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_TEAM_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1212,19 +1326,19 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: GET_ALL_USERS,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1234,19 +1348,41 @@ export const deleteById = (id, category, secondValue) => dispatch => {
         .then(res => {
           dispatch({
             type: DELETE_TRAINING_BY_ID,
-            payload: res.data
+            payload: res.data,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
           })
         })
         .catch(err => {
           dispatch({
             type: GET_ERRORS,
-            payload: err
+            payload: err,
           })
           dispatch({
-            type: UNSET_GENERAL_LOADING
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
+    case 'bulletins':
+      axios
+        .get(`/api/training/bulletins/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_BULLETIN_BY_ID,
+            payload: res.data,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
           })
         })
       break
@@ -1262,13 +1398,13 @@ export const deleteAdditionalFee = content => dispatch => {
     .then(res => {
       dispatch({
         type: UPDATE_TRAINING,
-        payload: res.data
+        payload: res.data,
       })
     })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
-        payload: err
+        payload: err,
       })
     )
 }
@@ -1277,47 +1413,53 @@ export const clearSingle = category => dispatch => {
   switch (category) {
     case 'carousel':
       dispatch({
-        type: CLEAR_CAROUSEL
+        type: CLEAR_CAROUSEL,
       })
 
       break
     case 'news':
       dispatch({
-        type: CLEAR_NEWS_ITEM
+        type: CLEAR_NEWS_ITEM,
       })
 
       break
     case 'jahresberichte':
       dispatch({
-        type: CLEAR_JAHRESBERICHT
+        type: CLEAR_JAHRESBERICHT,
       })
 
       break
     case 'faqs':
       dispatch({
-        type: CLEAR_FAQ
+        type: CLEAR_FAQ,
       })
 
       break
     case 'team':
       dispatch({
-        type: CLEAR_TEAM
+        type: CLEAR_TEAM,
       })
 
       break
     case 'trainingTeam':
       dispatch({
-        type: CLEAR_TRAININGTEAM
+        type: CLEAR_TRAININGTEAM,
       })
     case 'trainings':
       dispatch({
-        type: CLEAR_TRAINING
+        type: CLEAR_TRAINING,
+      })
+
+      break
+    case 'bulletins':
+      dispatch({
+        type: CLEAR_BULLETIN,
       })
 
       break
     case 'report':
       dispatch({
-        type: CLEAR_REPORT
+        type: CLEAR_REPORT,
       })
 
       break
@@ -1328,12 +1470,12 @@ export const clearSingle = category => dispatch => {
 
 export const clearAll = () => dispatch => {
   dispatch({
-    type: CLEAR_ALL
+    type: CLEAR_ALL,
   })
 }
 
 export const setGeneralLoading = () => dispatch => {
   dispatch({
-    type: SET_GENERAL_LOADING
+    type: SET_GENERAL_LOADING,
   })
 }

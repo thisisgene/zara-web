@@ -1,4 +1,4 @@
-import EmbedPopUp from '../../../admin/common/EmbedPopUp/EmbedPopUp';
+import EmbedPopUp from '../../../admin/common/EmbedPopUp/EmbedPopUp'
 
 export const heroData = {
   image: '01-zara_training-logo.png',
@@ -7,14 +7,14 @@ export const heroData = {
     title:
       'ZARA Training gemeinnützige GmbH:<br />Kompetenz für gleiche Chancen',
     text:
-      'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.'
+      'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.',
   },
   en: {
     title: 'ZARA Training gemeinnützige GmbH: Kompetenz für gleiche Chancen',
     text:
-      'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.'
-  }
-};
+      'Unsere Trainingskonzepte für Kinder, Jugendliche und Erwachsene sind jahrelang erprobt und stützen sich auf praktische Erfahrungen aus der Anti-Rassismus-Arbeit in Österreich unter Einbeziehung wissenschaftlicher Theorien und international anerkannter Trainingsmethoden.',
+  },
+}
 
 export const oneLineAlert = {
   type: 'info',
@@ -25,9 +25,9 @@ export const oneLineAlert = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      linkAction: 'popUp'
+      linkAction: 'popUp',
       // link: 'kontakt/#training'
-    }
+    },
   },
   en: {
     title: 'Termine & Trainings-Buchung',
@@ -36,10 +36,10 @@ export const oneLineAlert = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      linkAction: 'popUp'
-    }
-  }
-};
+      linkAction: 'popUp',
+    },
+  },
+}
 
 export const oneLineAlertDetail = {
   type: 'info',
@@ -50,8 +50,8 @@ export const oneLineAlertDetail = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      link: 'kontakt/#training'
-    }
+      link: 'kontakt/#training',
+    },
   },
   en: {
     title: 'Workshop buchen',
@@ -60,10 +60,33 @@ export const oneLineAlertDetail = {
     button: {
       text: 'Anfragen',
       type: 'default',
-      link: 'kontakt/#training'
-    }
-  }
-};
+      link: 'kontakt/#training',
+    },
+  },
+}
+
+export const trainingTags = [
+  {
+    name: 'workshops_vortraege',
+    de: { title: 'Workshops & Vorträge', singular: 'News' },
+    en: { title: 'News', singular: 'News' },
+  },
+  {
+    name: 'schulklassen',
+    de: { title: 'Schulklassen', singular: 'Veranstaltung' },
+    en: { title: 'Events', singular: 'Event' },
+  },
+  {
+    name: 'erwachsenengruppen',
+    de: { title: 'Erwachsenengruppen', singular: 'Workshop' },
+    en: { title: 'Workshops', singular: 'Workshop' },
+  },
+  {
+    name: 'unternehmen',
+    de: { title: 'Unternehmen', singular: 'Pressemeldung' },
+    en: { title: 'Press', singular: 'Press' },
+  },
+]
 
 export const trainingBoxData = {
   de: {
@@ -81,42 +104,51 @@ export const trainingBoxData = {
     categories: [
       {
         index: '1',
-        text: 'Für Kinder & Jugendliche',
-        link: 'kinder_jugendliche',
+        text: 'Offene Workshops & Vorträge',
+        link: 'workshops_vortraege',
         testimonials: [
           {
-            name: 'AHS Friesgasse, Wien'
+            name: 'AHS Friesgasse, Wien',
           },
           {
-            name: 'AHS Polgargasse, Wien'
+            name: 'AHS Polgargasse, Wien',
           },
           {
-            name: 'AHS Stubenbastei, Wien'
+            name: 'AHS Stubenbastei, Wien',
           },
           {
-            name: 'BAKIP Kolleg, Wien'
+            name: 'BAKIP Kolleg, Wien',
           },
           {
-            name: 'Berufsschule Apollogasse, Wien'
-          }
-        ]
+            name: 'Berufsschule Apollogasse, Wien',
+          },
+        ],
       },
-      { index: '2', text: 'Für Erwachsene', link: 'erwachsene' },
-      { index: '3', text: 'Für Unternehmen', link: 'unternehmen' },
       {
-        index: '4',
-        text: 'Training & mehr',
-        link: null,
-        subMenuList: [
-          {
-            index: '4.1',
-            text: 'Aktuelle Trainingsprojekte',
-            link: 'trainingsprojekte'
-          },
-          { index: '4.2', text: 'Trainer*innen-Pool', link: 'trainer_innen' }
-        ]
-      }
-    ]
+        index: '2',
+        text: 'Für Schulklassen',
+        link: 'schulklassen',
+      },
+      {
+        index: '3',
+        text: 'Für Erwachsenengruppen',
+        link: 'erwachsenengruppen',
+      },
+      { index: '4', text: 'Für Unternehmen', link: 'unternehmen' },
+      // {
+      //   index: '4',
+      //   text: 'Training & mehr',
+      //   link: null,
+      //   subMenuList: [
+      //     {
+      //       index: '4.1',
+      //       text: 'Aktuelle Trainingsprojekte',
+      //       link: 'trainingsprojekte'
+      //     },
+      //     { index: '4.2', text: 'Trainer*innen-Pool', link: 'trainer_innen' }
+      //   ]
+      // }
+    ],
   },
   en: {
     text:
@@ -134,24 +166,24 @@ export const trainingBoxData = {
         link: 'kinder_jugendliche',
         testimonials: [
           {
-            name: 'AHS Friesgasse, Wien'
+            name: 'AHS Friesgasse, Wien',
           },
           {
-            name: 'AHS Polgargasse, Wien'
+            name: 'AHS Polgargasse, Wien',
           },
           {
-            name: 'AHS Stubenbastei, Wien'
+            name: 'AHS Stubenbastei, Wien',
           },
           {
-            name: 'BAKIP Kolleg, Wien'
-          }
-        ]
+            name: 'BAKIP Kolleg, Wien',
+          },
+        ],
       },
       { index: '2', text: 'For Adults', link: 'erwachsene' },
-      { index: '3', text: 'For Businesses', link: 'unternehmen' }
-    ]
-  }
-};
+      { index: '3', text: 'For Businesses', link: 'unternehmen' },
+    ],
+  },
+}
 export const trainingItems = {
   items: [
     {
@@ -166,7 +198,7 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten, Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.'
+          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten, Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.',
       },
       en: {
         title: 'Vielfalt & Zivilcourage I',
@@ -176,8 +208,8 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten, Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.'
-      }
+          'Am ersten Halbtag steht das Thema „Vielfalt“ im Mittelpunkt. Ausgehend von der Vielfalt in der Gruppe bezüglich Name, Familie, Herkunft, Geschlecht, Religion etc. lernen die Kinder, Selbst- und Fremdwahrnehmung zu hinterfragen, Zuschreibungen zu erkennen, Grenzen wahrzunehmen und Gefühle zu benennen. Ziel dieses Workshopteils ist es, ausgehend von Gemeinsamkeiten, Unterschiede wertzuschätzen und einen positiven Umgang miteinander zu gestalten. Am zweiten Halbtag geht es um die Zivilcourage „im Kleinen“, also in der Klasse, in der Schule und im Freundeskreis. Die Kinder nähern sich spielerisch den Themen Achtsamkeit und Verantwortung an und sie erlernen Handlungskompetenzen in Konfliktsituationen. Ziel dieses Workshopteils ist es, soziale Kompetenz, Teamfähigkeit und Selbstbehauptung zu stärken.',
+      },
     },
     {
       _id: 'AFnbfe2',
@@ -190,7 +222,7 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Der erste Halbtag ist den Themen soziale Kompetenz, Teamfähigkeit, und Zivilcourage gewidmet. Im Rahmen dieses Workshopteils erarbeiten die Schüler*innen neue Möglichkeiten, mit „unangenehmen“ Situationen in der Öffentlichkeit umzugehen und erweitern ihre Handlungskompetenzen in diskriminierenden Situationen. Am zweiten Halbtag stehen die Themenfelder Diversität, Diskriminierung und Rassismus im Mittelpunkt. Ziele des Workshops sind das Erkennen und Anerkennen von Vielfalt und das Sichtbarmachen von Diskriminierungen und institutionellem Rassismus. Es werden Handlungskompetenzen in diskriminierenden Situationen erworben und Strategien im Umgang mit Vielfalt erarbeitet. Darüber hinaus zielt der Workshop auf eine Stärkung des Selbstwerts und der Selbstbehauptung.'
+          'Der erste Halbtag ist den Themen soziale Kompetenz, Teamfähigkeit, und Zivilcourage gewidmet. Im Rahmen dieses Workshopteils erarbeiten die Schüler*innen neue Möglichkeiten, mit „unangenehmen“ Situationen in der Öffentlichkeit umzugehen und erweitern ihre Handlungskompetenzen in diskriminierenden Situationen. Am zweiten Halbtag stehen die Themenfelder Diversität, Diskriminierung und Rassismus im Mittelpunkt. Ziele des Workshops sind das Erkennen und Anerkennen von Vielfalt und das Sichtbarmachen von Diskriminierungen und institutionellem Rassismus. Es werden Handlungskompetenzen in diskriminierenden Situationen erworben und Strategien im Umgang mit Vielfalt erarbeitet. Darüber hinaus zielt der Workshop auf eine Stärkung des Selbstwerts und der Selbstbehauptung.',
       },
       en: {
         title: 'Vielfalt & Zivilcourage II',
@@ -200,8 +232,8 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Der erste Halbtag ist den Themen soziale Kompetenz, Teamfähigkeit, und Zivilcourage gewidmet. Im Rahmen dieses Workshopteils erarbeiten die Schüler*innen neue Möglichkeiten, mit „unangenehmen“ Situationen in der Öffentlichkeit umzugehen und erweitern ihre Handlungskompetenzen in diskriminierenden Situationen. Am zweiten Halbtag stehen die Themenfelder Diversität, Diskriminierung und Rassismus im Mittelpunkt. Ziele des Workshops sind das Erkennen und Anerkennen von Vielfalt und das Sichtbarmachen von Diskriminierungen und institutionellem Rassismus. Es werden Handlungskompetenzen in diskriminierenden Situationen erworben und Strategien im Umgang mit Vielfalt erarbeitet. Darüber hinaus zielt der Workshop auf eine Stärkung des Selbstwerts und der Selbstbehauptung.'
-      }
+          'Der erste Halbtag ist den Themen soziale Kompetenz, Teamfähigkeit, und Zivilcourage gewidmet. Im Rahmen dieses Workshopteils erarbeiten die Schüler*innen neue Möglichkeiten, mit „unangenehmen“ Situationen in der Öffentlichkeit umzugehen und erweitern ihre Handlungskompetenzen in diskriminierenden Situationen. Am zweiten Halbtag stehen die Themenfelder Diversität, Diskriminierung und Rassismus im Mittelpunkt. Ziele des Workshops sind das Erkennen und Anerkennen von Vielfalt und das Sichtbarmachen von Diskriminierungen und institutionellem Rassismus. Es werden Handlungskompetenzen in diskriminierenden Situationen erworben und Strategien im Umgang mit Vielfalt erarbeitet. Darüber hinaus zielt der Workshop auf eine Stärkung des Selbstwerts und der Selbstbehauptung.',
+      },
     },
     {
       _id: 'AFnbfafr',
@@ -214,7 +246,7 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Sensibilisierungs-Workshops ermöglichen eine intensive Auseinandersetzung mit den Themen Vorurteile, Fremd-/Anderssein und Diskriminierung: Welche Vorurteile habe ich selbst und wie gehe ich damit um? Was macht meine Identität aus? Wie wirkt sich Diskriminierung auf Einzelne aus? Ziel ist es, Vielfalt zu erkennen und anzuerkennen sowie sich mit dem Entstehen von Vorurteilen zu beschäftigen und Auswirkungen von Diskriminierung und institutionellem Rassismus sichtbar zu machen. Dabei werden Vorurteile reflektiert und Strategien im Umgang mit Vielfalt erarbeitet.'
+          'Sensibilisierungs-Workshops ermöglichen eine intensive Auseinandersetzung mit den Themen Vorurteile, Fremd-/Anderssein und Diskriminierung: Welche Vorurteile habe ich selbst und wie gehe ich damit um? Was macht meine Identität aus? Wie wirkt sich Diskriminierung auf Einzelne aus? Ziel ist es, Vielfalt zu erkennen und anzuerkennen sowie sich mit dem Entstehen von Vorurteilen zu beschäftigen und Auswirkungen von Diskriminierung und institutionellem Rassismus sichtbar zu machen. Dabei werden Vorurteile reflektiert und Strategien im Umgang mit Vielfalt erarbeitet.',
       },
       en: {
         title: 'Sensibilisierung',
@@ -224,8 +256,8 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Sensibilisierungs-Workshops ermöglichen eine intensive Auseinandersetzung mit den Themen Vorurteile, Fremd-/Anderssein und Diskriminierung: Welche Vorurteile habe ich selbst und wie gehe ich damit um? Was macht meine Identität aus? Wie wirkt sich Diskriminierung auf Einzelne aus? Ziel ist es, Vielfalt zu erkennen und anzuerkennen sowie sich mit dem Entstehen von Vorurteilen zu beschäftigen und Auswirkungen von Diskriminierung und institutionellem Rassismus sichtbar zu machen. Dabei werden Vorurteile reflektiert und Strategien im Umgang mit Vielfalt erarbeitet.'
-      }
+          'Sensibilisierungs-Workshops ermöglichen eine intensive Auseinandersetzung mit den Themen Vorurteile, Fremd-/Anderssein und Diskriminierung: Welche Vorurteile habe ich selbst und wie gehe ich damit um? Was macht meine Identität aus? Wie wirkt sich Diskriminierung auf Einzelne aus? Ziel ist es, Vielfalt zu erkennen und anzuerkennen sowie sich mit dem Entstehen von Vorurteilen zu beschäftigen und Auswirkungen von Diskriminierung und institutionellem Rassismus sichtbar zu machen. Dabei werden Vorurteile reflektiert und Strategien im Umgang mit Vielfalt erarbeitet.',
+      },
     },
     {
       _id: 'aeFErf2',
@@ -237,7 +269,7 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Der Zivilcourage-Workshop beschäftigt sich mit dem Mut des/der Einzelnen, in der Öffentlichkeit in „unangenehmen“ Situationen einzugreifen. Auf Basis der inhaltlichen Auseinandersetzung mit dem Thema Zivilcourage erlernen die Teilnehmer*innen, wie man mit Angriffen, Ohnmacht, Aggression und Angst umgehen kann. Es wird erarbeitet, was man in solchen Situationen tun kann bzw. wo die eigenen Grenzen liegen. Ziel des Workshops ist der Erwerb von Handlungskompetenzen in diskriminierenden Situationen sowie die Stärkung des Selbstwerts und der Selbstbehauptung.'
+          'Der Zivilcourage-Workshop beschäftigt sich mit dem Mut des/der Einzelnen, in der Öffentlichkeit in „unangenehmen“ Situationen einzugreifen. Auf Basis der inhaltlichen Auseinandersetzung mit dem Thema Zivilcourage erlernen die Teilnehmer*innen, wie man mit Angriffen, Ohnmacht, Aggression und Angst umgehen kann. Es wird erarbeitet, was man in solchen Situationen tun kann bzw. wo die eigenen Grenzen liegen. Ziel des Workshops ist der Erwerb von Handlungskompetenzen in diskriminierenden Situationen sowie die Stärkung des Selbstwerts und der Selbstbehauptung.',
       },
       en: {
         title: 'Zivilcourage',
@@ -246,8 +278,8 @@ export const trainingItems = {
         duration: 'zwei halbtägige Workshops',
         detailLinkText: 'Details zum Workshop',
         detailText:
-          'Der Zivilcourage-Workshop beschäftigt sich mit dem Mut des/der Einzelnen, in der Öffentlichkeit in „unangenehmen“ Situationen einzugreifen. Auf Basis der inhaltlichen Auseinandersetzung mit dem Thema Zivilcourage erlernen die Teilnehmer*innen, wie man mit Angriffen, Ohnmacht, Aggression und Angst umgehen kann. Es wird erarbeitet, was man in solchen Situationen tun kann bzw. wo die eigenen Grenzen liegen. Ziel des Workshops ist der Erwerb von Handlungskompetenzen in diskriminierenden Situationen sowie die Stärkung des Selbstwerts und der Selbstbehauptung.'
-      }
+          'Der Zivilcourage-Workshop beschäftigt sich mit dem Mut des/der Einzelnen, in der Öffentlichkeit in „unangenehmen“ Situationen einzugreifen. Auf Basis der inhaltlichen Auseinandersetzung mit dem Thema Zivilcourage erlernen die Teilnehmer*innen, wie man mit Angriffen, Ohnmacht, Aggression und Angst umgehen kann. Es wird erarbeitet, was man in solchen Situationen tun kann bzw. wo die eigenen Grenzen liegen. Ziel des Workshops ist der Erwerb von Handlungskompetenzen in diskriminierenden Situationen sowie die Stärkung des Selbstwerts und der Selbstbehauptung.',
+      },
     },
     {
       _id: 'fwfsRG',
@@ -262,41 +294,41 @@ export const trainingItems = {
           'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen:',
         list1: [
           {
-            text: 'Wie begegne ich Angriffen und Aggression im Netz?'
+            text: 'Wie begegne ich Angriffen und Aggression im Netz?',
           },
           {
             text:
-              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?',
           },
           { text: 'Wie erkenne ich Fake News?' },
           { text: 'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen?' },
           {
-            text: 'Wie ist die rechtliche Situation in Österreich?'
+            text: 'Wie ist die rechtliche Situation in Österreich?',
           },
           {
-            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?',
           },
           {
-            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
-          }
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?',
+          },
         ],
         goals: {
           title: 'Ziele',
           list: [
             {
               text:
-                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet',
             },
             {
               text:
-                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz',
             },
             {
               text:
-                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
-            }
-          ]
-        }
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten',
+            },
+          ],
+        },
       },
       en: {
         title: 'Zivilcourage on- & offline',
@@ -308,42 +340,42 @@ export const trainingItems = {
           'Diskriminierende Situationen on- und offline stehen im Zentrum dieses Workshops. Zusätzlich zum „klassischen“ Zivilcouragetraining vermittelt dieser Workshop Medienkompetenz. Er soll Jugendliche darin unterstützen, reflektiert gefährdende Inhalte zu erkennen, sie richtig  einzuordnen und souveräner damit umzugehen. Dabei vermitteln die Trainings mit interaktiven Methoden folgende Kompetenzen:',
         list1: [
           {
-            text: 'Wie begegne ich Angriffen und Aggression im Netz?'
+            text: 'Wie begegne ich Angriffen und Aggression im Netz?',
           },
           {
             text:
-              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?',
           },
           { text: 'Wie erkenne ich Fake News?' },
           { text: 'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen?' },
           {
-            text: 'Wie ist die rechtliche Situation in Österreich?'
+            text: 'Wie ist die rechtliche Situation in Österreich?',
           },
           {
-            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?',
           },
           {
-            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
-          }
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?',
+          },
         ],
         goals: {
           title: 'Ziele',
           list: [
             {
               text:
-                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet',
             },
             {
               text:
-                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz',
             },
             {
               text:
-                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
-            }
-          ]
-        }
-      }
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten',
+            },
+          ],
+        },
+      },
     },
     {
       _id: 'h4shgva',
@@ -360,42 +392,42 @@ export const trainingItems = {
           { text: 'Wie wirkt sich Diskriminierung auf Einzelne aus?' },
           {
             text:
-              'Was ist meine Identität und mein Umgang mit Gruppenzugehörigkeit?'
+              'Was ist meine Identität und mein Umgang mit Gruppenzugehörigkeit?',
           },
           { text: 'Was bedeutet Vielfalt?' },
           { text: 'Welche Relevanz haben Unterschiede?' },
           {
             text:
-              'Wie kann ich mit Unterschieden positiv umgehen und „Vielfalt“ als positiven Wert in meinem Arbeitsalltag fördern?'
-          }
+              'Wie kann ich mit Unterschieden positiv umgehen und „Vielfalt“ als positiven Wert in meinem Arbeitsalltag fördern?',
+          },
         ],
         detailText2: 'Zur Anwendung kommen:',
         list2: [
           { text: 'Grundlagen der Interkulturellen Kompetenz' },
           { text: 'Erfahrungsaustausch' },
-          { text: 'Praktische Übungen' }
+          { text: 'Praktische Übungen' },
         ],
         goals: {
           title: 'Ziele',
           list: [
             {
               text:
-                'Sensibilisierung für die Bedeutung unterschiedlicher ethnischer/kultureller/sozialer Hintergründe im (Arbeits-)alltag'
+                'Sensibilisierung für die Bedeutung unterschiedlicher ethnischer/kultureller/sozialer Hintergründe im (Arbeits-)alltag',
             },
             {
               text:
-                'Sensibilisierung für die Auswirkungen von individueller und gesellschaftlicher Diskriminierung und deren Relevanz für die Arbeit'
+                'Sensibilisierung für die Auswirkungen von individueller und gesellschaftlicher Diskriminierung und deren Relevanz für die Arbeit',
             },
             {
               text:
-                'Reflexion eigener Haltungen und Einstellungen gegenüber Vielfalt und unterschiedlichen Aspekten der eigenen oder einer anderen Identität'
+                'Reflexion eigener Haltungen und Einstellungen gegenüber Vielfalt und unterschiedlichen Aspekten der eigenen oder einer anderen Identität',
             },
             {
               text:
-                'Handlungssicherheit im Umgang mit Personen anderer ethnischer/kultureller/sozialer Hintergründe'
-            }
-          ]
-        }
+                'Handlungssicherheit im Umgang mit Personen anderer ethnischer/kultureller/sozialer Hintergründe',
+            },
+          ],
+        },
       },
       en: {
         title: 'Umgang mit Vielfalt',
@@ -409,43 +441,43 @@ export const trainingItems = {
           { text: 'Wie wirkt sich Diskriminierung auf Einzelne aus?' },
           {
             text:
-              'Was ist meine Identität und mein Umgang mit Gruppenzugehörigkeit?'
+              'Was ist meine Identität und mein Umgang mit Gruppenzugehörigkeit?',
           },
           { text: 'Was bedeutet Vielfalt?' },
           { text: 'Welche Relevanz haben Unterschiede?' },
           {
             text:
-              'Wie kann ich mit Unterschieden positiv umgehen und „Vielfalt“ als positiven Wert in meinem Arbeitsalltag fördern?'
-          }
+              'Wie kann ich mit Unterschieden positiv umgehen und „Vielfalt“ als positiven Wert in meinem Arbeitsalltag fördern?',
+          },
         ],
         detailText2: 'Zur Anwendung kommen:',
         list2: [
           { text: 'Grundlagen der Interkulturellen Kompetenz' },
           { text: 'Erfahrungsaustausch' },
-          { text: 'Praktische Übungen' }
+          { text: 'Praktische Übungen' },
         ],
         goals: {
           title: 'Ziele',
           list: [
             {
               text:
-                'Sensibilisierung für die Bedeutung unterschiedlicher ethnischer/kultureller/sozialer Hintergründe im (Arbeits-)alltag'
+                'Sensibilisierung für die Bedeutung unterschiedlicher ethnischer/kultureller/sozialer Hintergründe im (Arbeits-)alltag',
             },
             {
               text:
-                'Sensibilisierung für die Auswirkungen von individueller und gesellschaftlicher Diskriminierung und deren Relevanz für die Arbeit'
+                'Sensibilisierung für die Auswirkungen von individueller und gesellschaftlicher Diskriminierung und deren Relevanz für die Arbeit',
             },
             {
               text:
-                'Reflexion eigener Haltungen und Einstellungen gegenüber Vielfalt und unterschiedlichen Aspekten der eigenen oder einer anderen Identität'
+                'Reflexion eigener Haltungen und Einstellungen gegenüber Vielfalt und unterschiedlichen Aspekten der eigenen oder einer anderen Identität',
             },
             {
               text:
-                'Handlungssicherheit im Umgang mit Personen anderer ethnischer/kultureller/sozialer Hintergründe'
-            }
-          ]
-        }
-      }
+                'Handlungssicherheit im Umgang mit Personen anderer ethnischer/kultureller/sozialer Hintergründe',
+            },
+          ],
+        },
+      },
     },
     {
       _id: 'h4s4nyva',
@@ -462,19 +494,19 @@ export const trainingItems = {
           { text: 'Wie begegne ich Angriffen und Aggression im Netz?' },
           {
             text:
-              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?',
           },
           { text: 'Wie erkenne ich Fake News?' },
           {
             text:
-              'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?'
+              'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?',
           },
           {
-            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?',
           },
           {
-            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
-          }
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?',
+          },
         ],
 
         goals: {
@@ -482,18 +514,18 @@ export const trainingItems = {
           list: [
             {
               text:
-                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet',
             },
             {
               text:
-                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz',
             },
             {
               text:
-                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
-            }
-          ]
-        }
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten',
+            },
+          ],
+        },
       },
       en: {
         title: 'Digitale Zivilcourage',
@@ -507,19 +539,19 @@ export const trainingItems = {
           { text: 'Wie begegne ich Angriffen und Aggression im Netz?' },
           {
             text:
-              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?'
+              'Wie treten rechtsextreme/ nationalistische/ rassistische Gruppen im Internet auf?',
           },
           { text: 'Wie erkenne ich Fake News?' },
           {
             text:
-              'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?'
+              'Wie kann ich selbst aktiv gegen Hass  und Hetze vorgehen? Wie ist die rechtliche Situation in Österreich?',
           },
           {
-            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?'
+            text: 'Wie kann ich Opfer von Hass im Netz unterstützen?',
           },
           {
-            text: 'Wo und wie bekomme ich als Opfer Hilfe?'
-          }
+            text: 'Wo und wie bekomme ich als Opfer Hilfe?',
+          },
         ],
 
         goals: {
@@ -527,19 +559,19 @@ export const trainingItems = {
           list: [
             {
               text:
-                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet'
+                'Sensibilisierung für die Auswirkungen von Hass und Hetze im Internet',
             },
             {
               text:
-                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz'
+                'Wissenstransfer rund um den Themenbereich Digitale Medien und Hass im Netz',
             },
             {
               text:
-                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten'
-            }
-          ]
-        }
-      }
+                'Erweitern der Kommunikations- und Handlungskompetenzen und der rhetorischen Fähigkeiten',
+            },
+          ],
+        },
+      },
     },
     {
       _id: 'h4daenyva',
@@ -554,18 +586,18 @@ export const trainingItems = {
         list1: [
           { text: 'Was ist Zivilcourage?' },
           {
-            text: 'Was ist Gewalt – welche Arten gibt es?'
+            text: 'Was ist Gewalt – welche Arten gibt es?',
           },
           {
             text:
-              'Wie begegne ich Angriffen, Ohnmacht, Aggression oder z.B. der Situation Einer gegen Alle?'
+              'Wie begegne ich Angriffen, Ohnmacht, Aggression oder z.B. der Situation Einer gegen Alle?',
           },
           {
-            text: 'Was kann ich wann tun?'
+            text: 'Was kann ich wann tun?',
           },
           {
-            text: 'Wo sind meine Grenzen?'
-          }
+            text: 'Wo sind meine Grenzen?',
+          },
         ],
 
         goals: {
@@ -573,20 +605,20 @@ export const trainingItems = {
             'Ziele - Die TeilnehmerInnen erweitern ihren ganz persönlichen Handlungsspielraum, indem sie',
           list: [
             {
-              text: 'lernen, was zivilcouragiertes Handeln ausmacht'
+              text: 'lernen, was zivilcouragiertes Handeln ausmacht',
             },
             {
-              text: 'eigene Grenzen und Möglichkeiten ausloten'
+              text: 'eigene Grenzen und Möglichkeiten ausloten',
             },
             {
-              text: 'körperliche wie verbale Selbstbehauptung  trainieren'
+              text: 'körperliche wie verbale Selbstbehauptung  trainieren',
             },
             {
               text:
-                'wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen  Situationen und Äußerungen entwickeln.'
-            }
-          ]
-        }
+                'wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen  Situationen und Äußerungen entwickeln.',
+            },
+          ],
+        },
       },
       en: {
         title: 'Zivilcourage',
@@ -598,18 +630,18 @@ export const trainingItems = {
         list1: [
           { text: 'Was ist Zivilcourage?' },
           {
-            text: 'Was ist Gewalt – welche Arten gibt es?'
+            text: 'Was ist Gewalt – welche Arten gibt es?',
           },
           {
             text:
-              'Wie begegne ich Angriffen, Ohnmacht, Aggression oder z.B. der Situation Einer gegen Alle?'
+              'Wie begegne ich Angriffen, Ohnmacht, Aggression oder z.B. der Situation Einer gegen Alle?',
           },
           {
-            text: 'Was kann ich wann tun?'
+            text: 'Was kann ich wann tun?',
           },
           {
-            text: 'Wo sind meine Grenzen?'
-          }
+            text: 'Wo sind meine Grenzen?',
+          },
         ],
 
         goals: {
@@ -617,21 +649,21 @@ export const trainingItems = {
             'Ziele - Die TeilnehmerInnen erweitern ihren ganz persönlichen Handlungsspielraum, indem sie',
           list: [
             {
-              text: 'lernen, was zivilcouragiertes Handeln ausmacht'
+              text: 'lernen, was zivilcouragiertes Handeln ausmacht',
             },
             {
-              text: 'eigene Grenzen und Möglichkeiten ausloten'
+              text: 'eigene Grenzen und Möglichkeiten ausloten',
             },
             {
-              text: 'körperliche wie verbale Selbstbehauptung  trainieren'
+              text: 'körperliche wie verbale Selbstbehauptung  trainieren',
             },
             {
               text:
-                'wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen  Situationen und Äußerungen entwickeln.'
-            }
-          ]
-        }
-      }
+                'wirkungsvolle Antworten und kreative Gegenstrategien im Umgang mit diskriminierenden und rassistischen  Situationen und Äußerungen entwickeln.',
+            },
+          ],
+        },
+      },
     },
     {
       _id: 'h4dae5ya',
@@ -647,11 +679,11 @@ export const trainingItems = {
         list1: [
           { text: 'Grundlagen der Interkulturellen Kommunikation' },
           {
-            text: 'Erfahrungsaustausch'
+            text: 'Erfahrungsaustausch',
           },
           {
-            text: 'Praktische Übungen'
-          }
+            text: 'Praktische Übungen',
+          },
         ],
 
         goals: {
@@ -659,18 +691,18 @@ export const trainingItems = {
           list: [
             {
               text:
-                'Sensibilisierung und Wissenstransfer rund um den Themenbereich Vielfalt, Kultur, Identität, Rassismus & Diskriminierung'
+                'Sensibilisierung und Wissenstransfer rund um den Themenbereich Vielfalt, Kultur, Identität, Rassismus & Diskriminierung',
             },
             {
               text:
-                'Verbesserung der Argumentation auf emotionaler und inhaltlich-sachlicher Ebene'
+                'Verbesserung der Argumentation auf emotionaler und inhaltlich-sachlicher Ebene',
             },
             {
               text:
-                'Erweitern der Kommunikationskompetenzen und rhetorischen Fähigkeiten'
-            }
-          ]
-        }
+                'Erweitern der Kommunikationskompetenzen und rhetorischen Fähigkeiten',
+            },
+          ],
+        },
       },
       en: {
         title: 'Argumentationstraining',
@@ -683,11 +715,11 @@ export const trainingItems = {
         list1: [
           { text: 'Grundlagen der Interkulturellen Kommunikation' },
           {
-            text: 'Erfahrungsaustausch'
+            text: 'Erfahrungsaustausch',
           },
           {
-            text: 'Praktische Übungen'
-          }
+            text: 'Praktische Übungen',
+          },
         ],
 
         goals: {
@@ -695,19 +727,19 @@ export const trainingItems = {
           list: [
             {
               text:
-                'Sensibilisierung und Wissenstransfer rund um den Themenbereich Vielfalt, Kultur, Identität, Rassismus & Diskriminierung'
+                'Sensibilisierung und Wissenstransfer rund um den Themenbereich Vielfalt, Kultur, Identität, Rassismus & Diskriminierung',
             },
             {
               text:
-                'Verbesserung der Argumentation auf emotionaler und inhaltlich-sachlicher Ebene'
+                'Verbesserung der Argumentation auf emotionaler und inhaltlich-sachlicher Ebene',
             },
             {
               text:
-                'Erweitern der Kommunikationskompetenzen und rhetorischen Fähigkeiten'
-            }
-          ]
-        }
-      }
+                'Erweitern der Kommunikationskompetenzen und rhetorischen Fähigkeiten',
+            },
+          ],
+        },
+      },
     },
     {
       _id: 'h4fh38ya',
@@ -726,14 +758,14 @@ export const trainingItems = {
           list: [
             {
               text:
-                'Wissenstransfer rund um das Gleichgehandlungsgesetz und andere relevante Texte'
+                'Wissenstransfer rund um das Gleichgehandlungsgesetz und andere relevante Texte',
             },
             {
               text:
-                'Erweitern der Handlungskompetenzen als ZeugInnen oder Opfer von Diskriminierung und Rassismus'
-            }
-          ]
-        }
+                'Erweitern der Handlungskompetenzen als ZeugInnen oder Opfer von Diskriminierung und Rassismus',
+            },
+          ],
+        },
       },
       en: {
         title: 'Meine Rechte kennen',
@@ -749,15 +781,15 @@ export const trainingItems = {
           list: [
             {
               text:
-                'Wissenstransfer rund um das Gleichgehandlungsgesetz und andere relevante Texte'
+                'Wissenstransfer rund um das Gleichgehandlungsgesetz und andere relevante Texte',
             },
             {
               text:
-                'Erweitern der Handlungskompetenzen als ZeugInnen oder Opfer von Diskriminierung und Rassismus'
-            }
-          ]
-        }
-      }
-    }
-  ]
-};
+                'Erweitern der Handlungskompetenzen als ZeugInnen oder Opfer von Diskriminierung und Rassismus',
+            },
+          ],
+        },
+      },
+    },
+  ],
+}
