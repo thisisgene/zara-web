@@ -45,6 +45,7 @@ import {
   GET_TRAINING_BY_ID,
   DELETE_TRAINING_BY_ID,
   CLEAR_TRAINING,
+  TRAINING_REQUEST_SUCCESS,
   GET_ALL_BULLETINS,
   CREATE_NEW_BULLETIN,
   UPDATE_BULLETIN,
@@ -61,6 +62,7 @@ import {
   UNSET_GENERAL_LOADING,
   GET_ALL_USERS,
   CLEAR_REPORT,
+  TRAINING_REQUEST_RESET,
 } from './types'
 
 // import { setProjectLoading } from './projectActions'
@@ -1468,6 +1470,35 @@ export const clearSingle = category => dispatch => {
   }
 }
 
+export const sendTrainingRequest = requestData => dispatch => {
+  dispatch(setGeneralLoading())
+  axios
+    .post('/api/training/send_training_request', requestData)
+    .then(res => {
+      dispatch({
+        type: TRAINING_REQUEST_SUCCESS,
+        payload: res.data,
+      })
+      dispatch({
+        type: UNSET_GENERAL_LOADING,
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: GET_ERRORS,
+        payload: err,
+      })
+      dispatch({
+        type: UNSET_GENERAL_LOADING,
+      })
+    })
+}
+export const trainingRequestReset = () => dispatch => {
+  console.log('req reset')
+  dispatch({
+    type: TRAINING_REQUEST_RESET,
+  })
+}
 export const clearAll = () => dispatch => {
   dispatch({
     type: CLEAR_ALL,

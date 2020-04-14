@@ -929,6 +929,12 @@ sendTrainingEmail = (emailList, content, res) => {
   }
 }
 
+router.post('/send_training_request', (req, res) => {
+  const body = req.body
+
+  res.json({ message: 'success' })
+})
+
 ///////////////////////// HONORARE
 
 // ADDITIONAL FEES

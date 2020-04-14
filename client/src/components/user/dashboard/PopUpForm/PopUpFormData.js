@@ -17,5 +17,10 @@ export const formData = {
       send: 'Abschicken',
       close: 'Schließen',
     },
+    success: {
+      title: 'Anfrage gesendet!',
+      body:
+        'Die Anfrage wurde erfolgreich gesendet. Vielen Dank für Ihr Interesse!',
+    },
   },
-};
+}
