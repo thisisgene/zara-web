@@ -65,6 +65,63 @@ export const oneLineAlertDetail = {
   },
 }
 
+export const cardGridObject = {
+  de: {
+    title: 'Training und mehr',
+    count: 'three',
+    cards: [
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/training.png',
+        title: 'Aktuelle Trainingsprojekte',
+        link: 'training/angebote/aktuelle_trainingsprojekte',
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/training.png',
+        title: 'Workshop schenken',
+        link: 'training/workshop_schenken',
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/training.png',
+        title: 'Unsere Trainer*innen',
+        link: 'training/trainer_innen',
+      },
+    ],
+  },
+  en: {
+    title: 'Training und mehr',
+    count: 'three',
+    cards: [
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/training.png',
+        title: 'Aktuelle Trainingsprojekte',
+        link: 'training/angebote/aktuelle_trainingsprojekte',
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/training.png',
+        title: 'Workshop schenken',
+        link: 'training/workshop_schenken',
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/training.png',
+        title: 'Unsere Trainer*innen',
+        link: 'training/trainer_innen',
+      },
+    ],
+  },
+}
+
 export const trainingTags = [
   {
     name: 'workshops_vortraege',
