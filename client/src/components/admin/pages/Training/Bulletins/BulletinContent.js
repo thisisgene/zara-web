@@ -50,8 +50,8 @@ class BulletinContent extends Component {
       titleDE: '',
       titleEN: '',
       date: new Date(),
-      timeFrom: '11:00',
-      timeUntil: '17:00',
+      timeFrameDE: '',
+      timeFrameEN: '',
       showTimeAndDate: true,
       targetGroupDE: '',
       targetGroupEN: '',
@@ -105,8 +105,8 @@ class BulletinContent extends Component {
             titleDE: item.de.title,
             titleEN: item.en.title,
             date: item.date,
-            timeFrom: item.timeFrom,
-            timeUntil: item.timeUntil,
+            timeFrameDE: item.de.timeFrame,
+            timeFrameEN: item.en.timeFrame,
             showTimeAndDate: item.showTimeAndDate,
             targetGroupDE: item.de.targetGroup && item.de.targetGroup,
             targetGroupEN: item.en.targetGroup && item.en.targetGroup,
@@ -156,8 +156,8 @@ class BulletinContent extends Component {
             titleDE: '',
             titleEN: '',
             date: new Date(),
-            timeFrom: '11:00',
-            timeUntil: '17:00',
+            timeFrameDE: '',
+            timeFrameEN: '',
             showTimeAndDate: true,
             targetGroupDE: '',
             targetGroupEN: '',
@@ -284,8 +284,8 @@ class BulletinContent extends Component {
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
       date: this.state.date,
-      timeFrom: this.state.timeFrom,
-      timeUntil: this.state.timeUntil,
+      timeFrameDE: this.state.timeFrameDE,
+      timeFrameEN: this.state.timeFrameEN,
       showTimeAndDate: this.state.showTimeAndDate,
       targetGroupDE: this.state.targetGroupDE,
       targetGroupEN: this.state.targetGroupEN,
@@ -295,9 +295,9 @@ class BulletinContent extends Component {
       titleImage: this.state.titleImage,
       imageId: this.state.imageId,
       imageCategory: this.state.imageCategory,
-      imageSide: 'right',
+      imageSide: 'left',
       imageAlign: 'center',
-      size: 'big-image',
+      // size: 'big-image',
       shortDescriptionDE: shortDescDE.toString('html'),
       shortDescriptionEN: shortDescEN.toString('html'),
       descriptionDE: descDE.toString('html'),
@@ -412,20 +412,21 @@ class BulletinContent extends Component {
                           </span>
                           <input
                             className={commonStyles['input']}
-                            type="time"
-                            id="timeFrom"
+                            type="text"
+                            placeholder="Zeitangabe de"
+                            id="timeFrameDE"
                             onChange={this.onChange}
-                            value={this.state.timeFrom}
-                            name="timeFrom"
+                            value={this.state.timeFrameDE}
+                            name="timeFrameDE"
                           />
-                          <span>Bis:</span>
                           <input
                             className={commonStyles['input']}
-                            type="time"
-                            id="timeUntil"
+                            type="text"
+                            placeholder="Zeitangabe en"
+                            id="timeFrameEN"
                             onChange={this.onChange}
-                            value={this.state.timeUntil}
-                            name="timeUntil"
+                            value={this.state.timeFrameEN}
+                            name="timeFrameEN"
                           />
                         </div>
                       </div>
@@ -444,7 +445,7 @@ class BulletinContent extends Component {
                           checked={this.state.showTimeAndDate}
                           name="showTimeAndDate"
                         />
-                        <span>Datum und Uhrzeit anzeigen</span>
+                        <span>Datum anzeigen</span>
                       </div>
                       <div
                         className={
@@ -509,6 +510,7 @@ class BulletinContent extends Component {
                     colorScheme="light"
                     placeholder="Titel deutsch"
                     type="text"
+                    maxlength="36"
                     name="titleDE"
                     value={this.state.titleDE}
                     onChange={this.onChange}
@@ -519,6 +521,7 @@ class BulletinContent extends Component {
                     colorScheme="light"
                     placeholder="Titel englisch"
                     type="text"
+                    maxlength="36"
                     name="titleEN"
                     value={this.state.titleEN}
                     onChange={this.onChange}
@@ -544,6 +547,7 @@ class BulletinContent extends Component {
                         placeholder="Kurzbeschreibung deutsch"
                         className={styles['html-editor']}
                         toolbarConfig={toolbarConfig}
+                        maxlength="280"
                         value={this.state.shortDescriptionDE}
                         onChange={this.onShortDescriptionChange.bind(
                           this,
@@ -555,6 +559,7 @@ class BulletinContent extends Component {
                       placeholder="Beschreibung deutsch"
                       className={styles['html-editor']}
                       toolbarConfig={toolbarImgConfig}
+                      maxlength="280"
                       value={this.state.descriptionDE}
                       onChange={this.onDescriptionChange.bind(this, 'de')}
                     />

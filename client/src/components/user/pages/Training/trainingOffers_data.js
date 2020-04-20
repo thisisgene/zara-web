@@ -89,11 +89,11 @@ export const data = {
     offerText: {
       de: {
         title:
-          'ZARA Training bietet folgende fünf Workshopformate für Schulklassen an:',
+          'ZARA Training bietet folgende Workshopformate für Schulklassen an:',
       },
       en: {
         title:
-          'ZARA Training bietet folgende fünf Workshopformate für Schulklassen an:',
+          'ZARA Training bietet folgende Workshopformate für Schulklassen an:',
       },
     },
   },
@@ -128,11 +128,11 @@ export const data = {
     offerText: {
       de: {
         title:
-          'ZARA Training bietet folgende fünf Workshopformate für Unternehmen an:',
+          'ZARA Training bietet folgende Workshopformate für Unternehmen an:',
       },
       en: {
         title:
-          'ZARA Training bietet folgende fünf Workshopformate für Unternehmen an:',
+          'ZARA Training bietet folgende Workshopformate für Unternehmen an:',
       },
     },
   },

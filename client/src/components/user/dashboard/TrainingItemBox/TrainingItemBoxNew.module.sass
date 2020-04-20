@@ -22,6 +22,7 @@
   color: #050505
   height: 100%
   padding: 1rem
+  // max-height: 280px
   // max-height: 320px
   display: flex
   @media(max-width: 560px)
@@ -36,12 +37,14 @@
 .training-image
   // flex: 2
   margin-left: 1rem
+  max-height: 280px
   img
     height: 100%
-    width: 11rem
+    max-width: 11rem
     object-fit: cover
 .training-item
   width: 19rem
+  
   &--title
     font:
       size: 1.25rem
@@ -53,6 +56,9 @@
     padding: .4rem 0 0
     font-size: .9rem
     margin-bottom: 1rem
+    min-height: 124px
+    // overflow: hidden
+    
 
   &--info
     display: flex

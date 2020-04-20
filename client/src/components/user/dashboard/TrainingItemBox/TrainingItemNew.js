@@ -39,37 +39,35 @@ class TrainingItem extends Component {
                     </div>
                   </div>
                 )}
-                {item.timeFrom && (
+                {(item[lang].timeFrame || item.showTimeAndDate) && (
                   <div className={styles['training-item--info__child']}>
-                    {item.showTimeAndDate && (
-                      <Fragment>
-                        <IconObject image="duration" />
+                    <Fragment>
+                      <IconObject image="duration" />
+                      <div
+                        className={styles['training-item--info__child--data']}
+                      >
                         <div
-                          className={styles['training-item--info__child--data']}
+                          className={
+                            styles['training-item--info__child--data__line']
+                          }
                         >
-                          <div
-                            className={
-                              styles['training-item--info__child--data__line']
-                            }
-                          >
+                          {item.showTimeAndDate && (
                             <div>
                               {moment(item.date)
                                 .locale('de')
                                 .format('DD. MM. YYYY')}
                             </div>
-                          </div>
-                          <div
-                            className={
-                              styles['training-item--info__child--data__line']
-                            }
-                          >
-                            <div>{item.timeFrom}</div>
-                            <div>&nbsp;-&nbsp;</div>
-                            <div>{item.timeUntil}</div>
-                          </div>
+                          )}
                         </div>
-                      </Fragment>
-                    )}
+                        <div
+                          className={
+                            styles['training-item--info__child--data__line']
+                          }
+                        >
+                          <div>{item[lang].timeFrame}</div>
+                        </div>
+                      </div>
+                    </Fragment>
                   </div>
                 )}
               </div>

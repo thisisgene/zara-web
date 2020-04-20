@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import cx from 'classnames';
-import globalStyles from './Bootstrap.module.css';
-import commonStyles from './Common.module.sass';
+import cx from 'classnames'
+import globalStyles from './Bootstrap.module.css'
+import commonStyles from './Common.module.sass'
 
 const TextFieldGroup = ({
   name,
@@ -17,7 +17,8 @@ const TextFieldGroup = ({
   colorScheme,
   onChange,
   disabled,
-  className
+  maxlength,
+  className,
 }) => {
   return (
     <div className={globalStyles['form-group']}>
@@ -26,7 +27,7 @@ const TextFieldGroup = ({
           globalStyles['form-control'],
           { [commonStyles['dark-input']]: colorScheme !== 'light' },
           {
-            [globalStyles['is-invalid']]: error
+            [globalStyles['is-invalid']]: error,
           },
           className
         )}
@@ -35,6 +36,7 @@ const TextFieldGroup = ({
         name={name}
         type={type}
         value={value}
+        maxlength={maxlength}
         onChange={onChange}
         disabled={disabled}
       />
@@ -47,8 +49,8 @@ const TextFieldGroup = ({
       )}
       {error && <div className={globalStyles['invalid-feedback']}>{error}</div>}
     </div>
-  );
-};
+  )
+}
 
 TextFieldGroup.propTypes = {
   name: PropTypes.string.isRequired,
@@ -58,11 +60,11 @@ TextFieldGroup.propTypes = {
   error: PropTypes.string,
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  disabled: PropTypes.string
-};
+  disabled: PropTypes.string,
+}
 
 TextFieldGroup.defaultProps = {
-  type: 'text'
-};
+  type: 'text',
+}
 
-export default TextFieldGroup;
+export default TextFieldGroup

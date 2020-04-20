@@ -1,38 +1,38 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { withLocalize } from 'react-localize-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { withLocalize } from 'react-localize-redux'
 
-import MetaTags from 'react-meta-tags';
+import MetaTags from 'react-meta-tags'
 
 import {
   trainingBoxData,
   trainingItems,
   oneLineAlertDetail,
-} from './training_data';
+} from './training_data'
 
-import HeroUnit from '../../dashboard/HeroUnit/HeroUnit';
-import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert';
-import TrainingItem from '../../dashboard/TrainingItemBox/TrainingItem';
-import IconObject from '../../dashboard/IconObject/IconObject';
+import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
+import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
+import TrainingItem from '../../dashboard/TrainingItemBox/TrainingItem'
+import IconObject from '../../dashboard/IconObject/IconObject'
 
-import { getAll, getById } from '../../../../actions/adminActions';
+import { getAll, getById } from '../../../../actions/adminActions'
 
-import cx from 'classnames';
-import styles from './TrainingDetail.module.sass';
-import parentStyles from './Training.module.sass';
-import TrainingUnternehmen from './TrainingUnternehmen';
+import cx from 'classnames'
+import styles from './TrainingDetail.module.sass'
+import parentStyles from './Training.module.sass'
+import TrainingUnternehmen from './TrainingUnternehmen'
 
 class TrainingDetail extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       trainingId: props.match.params.trainingId,
       bulletin: {},
-    };
+    }
   }
   componentDidMount() {
-    this.props.getById(this.state.trainingId, 'bulletins');
+    this.props.getById(this.state.trainingId, 'bulletins')
     // console.log('BULLETINS: ', this.state.trainingId);
   }
   componentDidUpdate(prevProps) {
@@ -43,7 +43,7 @@ class TrainingDetail extends Component {
     ) {
       this.setState({
         trainingId: this.props.match.params.trainingId,
-      });
+      })
     }
     if (
       this.props.bulletin != prevProps.bulletin &&
@@ -51,18 +51,18 @@ class TrainingDetail extends Component {
     ) {
       this.setState({ bulletin: this.props.bulletin.bulletin }, () =>
         console.log('state.buletin: ', this.state.bulletin)
-      );
+      )
     }
   }
 
   render() {
-    const { activeLanguage } = this.props;
-    let lang;
+    const { activeLanguage } = this.props
+    let lang
     if (activeLanguage && activeLanguage.code) {
-      lang = activeLanguage.code;
+      lang = activeLanguage.code
     }
-    const { bulletin } = this.props.bulletin;
-    console.log('bulletin: ', bulletin);
+    const { bulletin } = this.props.bulletin
+    console.log('bulletin: ', bulletin)
 
     return (
       <div>
@@ -84,7 +84,14 @@ class TrainingDetail extends Component {
               />
             </MetaTags>
             <div className={styles['training-detail']}>
-              <HeroUnit data={bulletin} lang={lang} />
+              <HeroUnit
+                data={{
+                  ...bulletin,
+                  de: { ...bulletin.de, text: bulletin.de.shortDescription },
+                  en: { ...bulletin.en, text: bulletin.en.shortDescription },
+                }}
+                lang={lang}
+              />
               <OneLineAlert
                 content={oneLineAlertDetail}
                 type="togglePopupForm"
@@ -145,8 +152,8 @@ class TrainingDetail extends Component {
                 <div className={styles['training-detail--testimonials']}>
                   <h1>{lang === 'de' ? 'Referenzen' : 'Testimonials'}</h1>
                   {trainingBoxData[lang].categories
-                    .filter((cat) => cat.index === bulletin.category)
-                    .map((cat) => (
+                    .filter(cat => cat.index === bulletin.category)
+                    .map(cat => (
                       <div
                         className={
                           styles['training-detail--testimonials__wrapper']
@@ -188,9 +195,9 @@ class TrainingDetail extends Component {
                       parentStyles['training-box--content']
                     )}
                   >
-                    {bulletin.related.map((rel) =>
+                    {bulletin.related.map(rel =>
                       this.state.bulletins
-                        .filter((item) => item._id === rel.id)
+                        .filter(item => item._id === rel.id)
                         .map((item, index) => (
                           <div key={index}>
                             <TrainingItem content={item} lang={lang} />
@@ -220,14 +227,14 @@ class TrainingDetail extends Component {
           </div>
         )}
       </div>
-    );
+    )
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   bulletin: state.bulletin,
-});
+})
 
 export default withLocalize(
   connect(mapStateToProps, { getById })(TrainingDetail)
-);
+)

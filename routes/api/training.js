@@ -532,6 +532,7 @@ router.post(
         description: body.descriptionDE && body.descriptionDE,
         location: body.locationDE && body.locationDE,
         targetGroup: body.targetGroupDE && body.targetGroupDE,
+        timeFrame: body.timeFrameDE && body.timeFrameDE,
       },
       en: {
         title: body.titleEN && body.titleEN,
@@ -539,6 +540,7 @@ router.post(
         description: body.descriptionEN && body.descriptionEN,
         location: body.locationEN && body.locationEN,
         targetGroup: body.targetGroupEN && body.targetGroupEN,
+        timeFrame: body.timeFrameEN && body.timeFrameEN,
       },
       handle: body.title && body.title.replace(/\s/g, '_'),
 
@@ -594,6 +596,7 @@ router.post(
             description: body.descriptionDE && body.descriptionDE,
             location: body.locationDE && body.locationDE,
             targetGroup: body.targetGroupDE && body.targetGroupDE,
+            timeFrame: body.timeFrameDE && body.timeFrameDE,
           },
           en: {
             title: body.titleEN && body.titleEN,
@@ -602,13 +605,12 @@ router.post(
             description: body.descriptionEN && body.descriptionEN,
             location: body.locationEN && body.locationEN,
             targetGroup: body.targetGroupEN && body.targetGroupEN,
+            timeFrame: body.timeFrameEN && body.timeFrameEN,
           },
           handle: body.title && body.title.replace(/\s/g, '_'),
 
           tag: body.tag && body.tag,
           date: fDate,
-          timeFrom: body.timeFrom && body.timeFrom,
-          timeUntil: body.timeUntil && body.timeUntil,
           showTimeAndDate: body.showTimeAndDate,
           peopleMin: body.peopleMin && body.peopleMin,
           peopleMax: body.peopleMax && body.peopleMax,

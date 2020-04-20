@@ -12,9 +12,10 @@ const TextareaFieldGroup = ({
   value,
   error,
   info,
+  maxlength,
   onChange,
   onKeyUp,
-  disabled
+  disabled,
 }) => {
   return (
     <div className={globalStyles['form-group']}>
@@ -27,6 +28,7 @@ const TextareaFieldGroup = ({
         placeholder={placeholder}
         name={name}
         value={value}
+        maxlength={maxlength}
         onChange={onChange}
         onKeyUp={onKeyUp}
         disabled={disabled}
@@ -50,7 +52,7 @@ TextareaFieldGroup.propTypes = {
   info: PropTypes.string,
   error: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  disabled: PropTypes.string
+  disabled: PropTypes.string,
 }
 
 export default TextareaFieldGroup

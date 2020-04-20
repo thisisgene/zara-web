@@ -21,6 +21,7 @@ const BulletinSchema = new Schema({
       type: String,
     },
     targetGroup: { type: String },
+    timeFrame: { type: String },
   },
   en: {
     title: {
@@ -36,14 +37,9 @@ const BulletinSchema = new Schema({
       type: String,
     },
     targetGroup: { type: String },
+    timeFrame: { type: String },
   },
   date: {
-    type: String,
-  },
-  timeFrom: {
-    type: String,
-  },
-  timeUntil: {
     type: String,
   },
   showTimeAndDate: { type: Boolean },
