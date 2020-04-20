@@ -68,13 +68,18 @@ class TrainingOffers extends Component {
               style={{
                 maxWidth: '800px',
                 margin: '3rem auto',
-                textAlign: 'center',
+                // textAlign: 'center',
               }}
             >
-              <h3>
+              <h4
+                style={{
+                  marginBottom: '2rem',
+                  textAlign: 'center',
+                }}
+              >
                 {dataObj[trainingType].offerText &&
                   dataObj[trainingType].offerText[lang].title}
-              </h3>
+              </h4>
               <TrainingItemBox
                 content={bulletins}
                 category={trainingType}
