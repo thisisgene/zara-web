@@ -136,4 +136,43 @@ export const data = {
       },
     },
   },
+  aktuelle_trainingsprojekte: {
+    heroData: {
+      image: 'training.png',
+      imageSide: 'left',
+      de: {
+        title: 'Aktuelle Trainingsprojekte',
+        text:
+          'Hier geht es zu einem kurzen Überblick über unsere Projekte in den Bereichen Diversity, Bewusstseinsbildung, Anti-Rassismus und Zivilcourage.',
+      },
+      en: {
+        title: 'Aktuelle Trainingsprojekte',
+        text:
+          'Hier geht es zu einem kurzen Überblick über unsere Projekte in den Bereichen Diversity, Bewusstseinsbildung, Anti-Rassismus und Zivilcourage.',
+      },
+    },
+
+    // longText: {
+    //   de: {
+    //     text:
+    //       'Dies kann einerseits durch Seminare und Weiterbildungen geschehen (s. hierzu: <a href="./erwachsenengruppen">Trainingsmodule – Erwachsene</a>) oder durch fachliche Unterstützung bei betrieblichen Veränderungsprozessen, z.B. durch eine antidiskriminatorische Betriebsvereinbarung.',
+    //     link: 'kontakt/#training',
+    //     linkText: 'Kontaktieren Sie uns!',
+    //   },
+    //   en: {
+    //     text:
+    //       'Dies kann einerseits durch Seminare und Weiterbildungen geschehen (s. hierzu: Trainingsmodule – Erwachsene) oder durch fachliche Unterstützung bei betrieblichen Veränderungsprozessen, z.B. durch eine antidiskriminatorische Betriebsvereinbarung.',
+    //   },
+    // },
+    // offerText: {
+    //   de: {
+    //     title:
+    //       'ZARA Training bietet folgende Workshopformate für Unternehmen an:',
+    //   },
+    //   en: {
+    //     title:
+    //       'ZARA Training bietet folgende Workshopformate für Unternehmen an:',
+    //   },
+    // },
+  },
 }

@@ -15,6 +15,8 @@ import LongText from '../../dashboard/LongText/LongText'
 
 import TrainingItemBox from '../../dashboard/TrainingItemBox/TrainingItemBoxNew'
 
+import styles from './Training.module.sass'
+
 class TrainingOffers extends Component {
   state = {
     trainingType: this.props.match.params.type,
@@ -57,34 +59,36 @@ class TrainingOffers extends Component {
     }
     return (
       <div>
-        {lang && trainingType && bulletins.length > 0 ? (
+        {lang && trainingType && bulletins && dataObj[trainingType] ? (
           <div>
             <HeroUnit data={dataObj[trainingType].heroData} lang={lang} />
             <OneLineAlert content={oneLineAlert} lang={lang} />
             {dataObj[trainingType].longText && (
               <LongText content={dataObj[trainingType].longText} lang={lang} />
             )}
-            <div
-              style={{
-                maxWidth: '800px',
-                margin: '3rem auto',
-                // textAlign: 'center',
-              }}
-            >
+            <div className={styles['training-box']}>
               <h4
                 style={{
-                  marginBottom: '2rem',
+                  margin: '4rem 0 2rem',
                   textAlign: 'center',
                 }}
               >
                 {dataObj[trainingType].offerText &&
                   dataObj[trainingType].offerText[lang].title}
               </h4>
-              <TrainingItemBox
-                content={bulletins}
-                category={trainingType}
-                lang={lang}
-              />
+              {bulletins.length > 0 ? (
+                <TrainingItemBox
+                  content={bulletins}
+                  category={trainingType}
+                  lang={lang}
+                />
+              ) : (
+                <p style={{ textAlign: 'center', margin: '4rem 0' }}>
+                  {lang === 'de'
+                    ? 'Zur Zeit keine Angebote.'
+                    : 'No offers at the moment.'}
+                </p>
+              )}
             </div>
           </div>
         ) : (

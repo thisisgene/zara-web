@@ -152,8 +152,8 @@ const menuItems = [
         id: '2.2',
         subMenuList: [
           {
-            name: 'Aktuelle Trainingsangebote',
-            link: 'trainingsprojekte',
+            name: 'Aktuelle Trainingsprojekte',
+            link: 'angebote/aktuelle_trainingsprojekte',
             id: '2.2.1',
           },
           {

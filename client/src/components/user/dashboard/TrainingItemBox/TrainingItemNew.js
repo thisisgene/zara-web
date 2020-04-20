@@ -70,11 +70,10 @@ class TrainingItem extends Component {
                     </Fragment>
                   </div>
                 )}
-              </div>
-              <div className={styles['training-item--info']}>
-                <div className={styles['training-item--info__child']}>
+
+                <Fragment>
                   {item[lang].location && (
-                    <Fragment>
+                    <div className={styles['training-item--info__child']}>
                       <IconObject image="location" />
                       <div
                         className={styles['training-item--info__child--data']}
@@ -94,9 +93,9 @@ class TrainingItem extends Component {
                           ></div>
                         </div>
                       </div>
-                    </Fragment>
+                    </div>
                   )}
-                </div>
+                </Fragment>
 
                 <div className={styles['training-item--info__child']}>
                   {/* <IconObject image="duration" /> */}

@@ -69,22 +69,27 @@ export const trainingTags = [
   {
     name: 'workshops_vortraege',
     de: { title: 'Workshops & Vorträge', singular: 'News' },
-    en: { title: 'News', singular: 'News' },
+    en: { title: 'Workshops & Lectures', singular: 'News' },
   },
   {
     name: 'schulklassen',
     de: { title: 'Schulklassen', singular: 'Veranstaltung' },
-    en: { title: 'Events', singular: 'Event' },
+    en: { title: 'School classes', singular: 'Event' },
   },
   {
     name: 'erwachsenengruppen',
     de: { title: 'Erwachsenengruppen', singular: 'Workshop' },
-    en: { title: 'Workshops', singular: 'Workshop' },
+    en: { title: 'Groups of adults', singular: 'Workshop' },
   },
   {
     name: 'unternehmen',
     de: { title: 'Unternehmen', singular: 'Pressemeldung' },
-    en: { title: 'Press', singular: 'Press' },
+    en: { title: 'Companies', singular: 'Press' },
+  },
+  {
+    name: 'aktuelle_trainingsprojekte',
+    de: { title: 'Trainingsprojekte', singular: 'Trainingsprojekte' },
+    en: { title: 'Training projects', singular: 'Press' },
   },
 ]
 
@@ -135,6 +140,12 @@ export const trainingBoxData = {
         link: 'erwachsenengruppen',
       },
       { index: '4', text: 'Für Unternehmen', link: 'unternehmen' },
+      {
+        index: '5',
+        text: 'Aktuelle Trainingsprojekte',
+        link: 'aktuelle_trainingsprojekte',
+        hideOnFilter: true,
+      },
       // {
       //   index: '4',
       //   text: 'Training & mehr',

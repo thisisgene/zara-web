@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import TrainingItemBox from '../../dashboard/TrainingItemBox/TrainingItemBoxNew'
@@ -53,18 +53,22 @@ class TrainingBox extends Component {
             <div className={styles['training-box--categories']}>
               {content[lang].categories &&
                 content[lang].categories.map((cat, index) => (
-                  <div key={index} className={styles['cat-item']}>
-                    <input
-                      name="category"
-                      value={cat.link}
-                      type="radio"
-                      id={`cat-${cat.link}`}
-                      onChange={this.onChange}
-                      checked={this.state.activeCat === cat.link}
-                    />
-                    <label htmlFor={`cat-${cat.link}`}>{cat.text}</label>
-                  </div>
-                  // <div key={index}>{cat.text}</div>
+                  <Fragment>
+                    {!cat.hideOnFilter && (
+                      <div key={index} className={styles['cat-item']}>
+                        <input
+                          name="category"
+                          value={cat.link}
+                          type="radio"
+                          id={`cat-${cat.link}`}
+                          onChange={this.onChange}
+                          checked={this.state.activeCat === cat.link}
+                        />
+                        <label htmlFor={`cat-${cat.link}`}>{cat.text}</label>
+                      </div>
+                      // <div key={index}>{cat.text}</div>
+                    )}
+                  </Fragment>
                 ))}
             </div>
             {this.props.bulletin && this.props.bulletin.bulletins && (
