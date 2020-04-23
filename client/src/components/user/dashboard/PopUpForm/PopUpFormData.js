@@ -4,7 +4,7 @@ export const formData = {
     generalRequest: 'Allgemeine Anfrage',
     title: 'Workshop buchen',
     info:
-      'Unsere Workshops und Seminare sind maßgeschneidert, da wir auf unsere Kunden individuell eingehen.<br />Bitte kontaktieren Sie uns, um ein auf Sie angepasstes Angebot zu erhalten.',
+      'Unsere Workshops und Seminare sind maßgeschneidert, da wir auf unsere Kund*innen individuell eingehen.<br />Bitte kontaktieren Sie uns, um ein auf Sie angepasstes Angebot zu erhalten.',
     disclaimer: 'Felder mit einem * müssen ausgefüllt werden.',
     fName: 'Vorname *',
     lName: 'Nachname *',

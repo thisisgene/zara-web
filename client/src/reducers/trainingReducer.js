@@ -96,6 +96,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         trainingRequestSuccess: action.payload.message,
+        trainingRequestSuccessMsg: action.payload.data,
       }
     case TRAINING_REQUEST_RESET:
       return {

@@ -3,14 +3,10 @@ const router = express.Router()
 const passport = require('passport')
 const marked = require('marked')
 
-const multer = require('multer')
-const multerS3 = require('multer-s3')
-const aws = require('aws-sdk')
-const Jimp = require('jimp')
-
 const moment = require('moment')
 const localization = require('moment/locale/de')
 
+const keys = require('../../config/keys')
 const nodemailer = require('nodemailer')
 
 const validateNewsInput = require('../../validation/news')
@@ -887,8 +883,8 @@ sendTrainingEmail = (emailList, content, res) => {
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: 'serpig.testuser@gmail.com', // generated ethereal user
-      pass: 'serPig1dev2019', // generated ethereal password
+      user: keys.emailAddress, // generated ethereal user
+      pass: keys.emailPass, // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false,
@@ -897,8 +893,8 @@ sendTrainingEmail = (emailList, content, res) => {
 
   // setup email data with unicode symbols
   let trainingMailOptions = {
-    from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: emailList, // list of receivers //beratung@zara.or.at
+    from: `"ZARA Server" <${keys.emailAddress}>`, // sender address
+    to: emailList, // list of receivers
     subject: content.emailSubject, // Subject line
     text: outputPlain, // plain text body
     html: outputHtml, // html body
@@ -933,8 +929,44 @@ sendTrainingEmail = (emailList, content, res) => {
 
 router.post('/send_training_request', (req, res) => {
   const body = req.body
+  console.log(body)
+  const msg = `
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head></head><body><style></style><div style="background:#fafafa;border:1px dashed #eaeaea;color:#444;font-family:Arial,sans-serif;font-size:12px;margin:16px;padding:16px 32px;text-align:left"><small style="background:#FFDF7F;border-radius:3px;color:#888;font-size:10px;padding:2px 4px">${body.trainingCategory}</small><h3 style="font-size:16px">${body.trainingTitle}</h3><p style="line-height:1.1;margin:0"><b>von:</b></p><p style="line-height:1.1;margin:0">${body.firstname} ${body.lastname}</p><p style="line-height:1.1;margin:0">${body.phone}</p><p style="line-height:1.1;margin:0">${body.email}</p><hr><h3 style="font-size:16px">Nachricht:</h3><p style="line-height:1.1;margin:0">${body.message}</p></div></body></html>
+  `
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: keys.emailAddress, // generated ethereal user
+      pass: keys.emailPass, // generated ethereal password
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  })
 
-  res.json({ message: 'success' })
+  let trainingMailOptions = {
+    from: `"ZARA Server" <${keys.emailAddress}>`, // sender address
+    to: 'emdo2000@gmail.com', // ZARA Training
+    subject: `Training Anfrage | ${body.trainingTitle}`, // Subject line
+    // text: outputPlain, // plain text body
+    html: msg, // html body
+  }
+
+  transporter.sendMail(trainingMailOptions, (error, info) => {
+    if (error) {
+      return console.log(error)
+    }
+    console.log('Message sent: %s', info.messageId)
+
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+    console.log(msg)
+    res.json({ message: 'success', data: msg })
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  })
 })
 
 ///////////////////////// HONORARE
