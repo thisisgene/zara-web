@@ -879,6 +879,7 @@ sendTrainingEmail = (emailList, content, res) => {
 
   console.log(outputHtml)
   let transporter = nodemailer.createTransport({
+    service: 'Gmail',
     host: 'smtp.gmail.com',
     port: 465,
     secure: true, // true for 465, false for other ports

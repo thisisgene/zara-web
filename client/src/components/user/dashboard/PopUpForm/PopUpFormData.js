@@ -1,4 +1,5 @@
 export const formData = {
+  captchaKey: "6LeQKuYUAAAAAOrRih1ajIajCxHw055WU6PH0MpC",
   de: {
     selectLabel: 'Anfrage zu:',
     generalRequest: 'Allgemeine Anfrage',
@@ -22,5 +23,6 @@ export const formData = {
       body:
         'Die Anfrage wurde erfolgreich gesendet. Vielen Dank für Ihr Interesse!',
     },
+
   },
 }
