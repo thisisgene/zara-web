@@ -28,27 +28,27 @@ export const longText = {
 }
 
 export const reportGridData = [
-  // {
-  //   id: 'rr2019',
-  //   isFresh: true,
-  //   toOrder: true,
-  //   image: 'zara_rr/covers/Deckblatt_RR2019.jpg',
-  //   links: [
-  //     { link: 'pdf/ZARA-Rassismus_Report_2019-144.pdf', linkText: 'deutsch' },
-  //     { link: 'pdf/ZARA-Rassismus_Report_2019_EN.pdf', linkText: 'englisch' }
-  //   ],
-  //   de: {
-  //     title: 'RR2019',
-  //     text: ''
-  //   },
-  //   en: {
-  //     title: 'RR2019',
-  //     text: ''
-  //   }
-  // },
+  {
+    id: 'rr2019',
+    isFresh: true,
+    toOrder: true,
+    image: 'zara_rr/covers/Deckblatt_RR2019.jpg',
+    links: [
+      { link: 'pdf/ZARA-Rassismus_Report_2019.pdf', linkText: 'deutsch' },
+      // { link: 'pdf/ZARA-Rassismus_Report_2019_EN.pdf', linkText: 'englisch' }
+    ],
+    de: {
+      title: 'RR2019',
+      text: ''
+    },
+    // en: {
+    //   title: 'RR2019',
+    //   text: ''
+    // }
+  },
   {
     id: 'rr2018',
-    isFresh: true,
+    // isFresh: true,
     toOrder: true,
     image: 'zara_rr/covers/Deckblatt_RR2018.jpg',
     links: [
