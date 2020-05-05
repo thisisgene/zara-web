@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment, useState } from 'react'
 import { connect } from 'react-redux'
 import { useForm } from 'react-hook-form'
 
@@ -14,6 +14,8 @@ import Spinner from '../Spinner/Spinner'
 import successIcon from '../../common/assets/icon/various/success.png'
 
 import { formData } from './PopUpFormData'
+
+import { trainingTags } from '../../pages/Training/training_data.js'
 
 import globalStyles from '../../../admin/common/Bootstrap.module.css'
 import styles from './PopUpForm.module.sass'
@@ -60,6 +62,7 @@ function Form({ props }) {
     onResolved
 
   } = props
+  const [selectedId] = useState(selectId)
   const requiredText = lang === 'de' ? 'Erforderlich' : 'Required'
   const invalidEmailText =
     lang === 'de' ? 'Ungültige E-mail Adresse' : 'Invalid email address'
@@ -88,21 +91,26 @@ function Form({ props }) {
                       id="trainingSelect"
                       name="trainingSelect"
                       ref={register}
-                      defaultValue={selectId}
+                    // defaultValue={selectedId}
                     // onChange={this.onSelectChange}
                     >
+
                       <optgroup>
                         <option value="no_select">
                           {formData[lang].generalRequest}
                         </option>
                       </optgroup>
-                      <optgroup label="hallo">
-                        {bulletins.map(training => (
-                          <option value={training._id}>
-                            {training[lang].title}
-                          </option>
-                        ))}
-                      </optgroup>
+                      {trainingTags.map(tag =>
+                        <optgroup label={tag[lang].title}>
+                          {bulletins.filter(item => item.category.value === tag.name).map(training => (
+                            <option value={training._id} selected={selectedId === training._id}>
+                              {training[lang].title}
+                            </option>
+                          ))}
+
+                        </optgroup>
+                      )}
+                      {/* <optgroup label="halumni"><option value="NcM9dIIt8">TEST</option></optgroup> */}
                     </select>
                   </div>
                 </div>
@@ -236,7 +244,7 @@ function Form({ props }) {
             </div>
           )}
       </div>
-    </div>
+    </div >
   )
 }
 

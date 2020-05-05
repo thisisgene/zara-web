@@ -62,7 +62,10 @@ class TrainingOffers extends Component {
         {lang && trainingType && bulletins && dataObj[trainingType] ? (
           <div>
             <HeroUnit data={dataObj[trainingType].heroData} lang={lang} />
-            <OneLineAlert content={oneLineAlert} lang={lang} />
+            <OneLineAlert
+              content={oneLineAlert}
+              type="togglePopupForm"
+              lang={lang} />
             {dataObj[trainingType].longText && (
               <LongText content={dataObj[trainingType].longText} lang={lang} />
             )}
@@ -83,19 +86,19 @@ class TrainingOffers extends Component {
                   lang={lang}
                 />
               ) : (
-                <p style={{ textAlign: 'center', margin: '4rem 0' }}>
-                  {lang === 'de'
-                    ? 'Zur Zeit keine Angebote.'
-                    : 'No offers at the moment.'}
-                </p>
-              )}
+                  <p style={{ textAlign: 'center', margin: '4rem 0' }}>
+                    {lang === 'de'
+                      ? 'Zur Zeit keine Angebote.'
+                      : 'No offers at the moment.'}
+                  </p>
+                )}
             </div>
           </div>
         ) : (
-          <div>
-            <HeroUnit data={hero404} lang={lang} />
-          </div>
-        )}
+            <div>
+              <HeroUnit data={hero404} lang={lang} />
+            </div>
+          )}
       </div>
     )
   }
