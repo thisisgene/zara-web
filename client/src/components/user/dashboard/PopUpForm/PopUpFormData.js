@@ -13,7 +13,7 @@ export const formData = {
     email: 'E-Mail *',
     message: 'Nachricht',
     consent:
-      'Ich stimme der Verarbeitung der von mir angegebenen Daten gemäß Art 6 Abs 1 lit a DSGVO zum Zweck der Weiterverarbeitung zu und akzeptiere die ZARA Training AGBs. *',
+      'Ich stimme der Verarbeitung der von mir angegebenen Daten gemäß Art 6 Abs 1 lit a <a target="blank" href="https://assets.zara.or.at/download/pdf/Training/ZARA%20Training_Datenschutzerkla%CC%88rung.pdf">DSGVO</a> zum Zweck der Weiterverarbeitung zu und akzeptiere die <a target="blank" href="https://assets.zara.or.at/download/pdf/Training/AGBs_ZARA%20Training.pdf">ZARA Training AGBs</a>. *',
     buttons: {
       send: 'Abschicken',
       close: 'Schließen',

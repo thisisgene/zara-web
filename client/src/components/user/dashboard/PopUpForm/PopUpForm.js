@@ -47,7 +47,11 @@ function Form({ props }) {
       trainingTitle,
       trainingCategory,
     }
-    if (props.captchaResolved) { props.onSaveClick(dataObj) } else { console.log('not resolved') }
+    if (props.captchaResolved) { props.onSaveClick(dataObj) } else { console.log('ReCaptcha not resolved') }
+  }
+
+  const onConsentChange = e => {
+    setConsent(e.target.checked)
   }
 
   const {
@@ -63,6 +67,7 @@ function Form({ props }) {
 
   } = props
   const [selectedId] = useState(selectId)
+  let [consented, setConsent] = useState(false)
   const requiredText = lang === 'de' ? 'Erforderlich' : 'Required'
   const invalidEmailText =
     lang === 'de' ? 'Ungültige E-mail Adresse' : 'Invalid email address'
@@ -197,16 +202,25 @@ function Form({ props }) {
                       id="message"
                       name="message"
                       ref={register}
-                    // value={this.state.message}
-                    // onChange={this.onChange}
-                    // placeholder={formData[lang].message}
                     />
                   </div>
+                </div>
+                <div className={styles['popup-form--body__consent']}>
+
+                  <input
+                    // className={globalStyles['form-control']}
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    onChange={onConsentChange}
+                    ref={register}
+                  />
+                  <label htmlFor="consent" dangerouslySetInnerHTML={{ __html: formData[lang].consent }}></label>
                 </div>
 
               </div>
               <div className={styles['popup-form--buttons']}>
-                <button type="submit">Submit</button>
+                <button type="submit" disabled={!consented}>Submit</button>
                 <button
                   type="cancel"
                   className={styles['close']}
@@ -325,13 +339,11 @@ class PopUpForm extends Component {
 
   onSaveClick = dataObj => {
 
-    console.log('on save clock', dataObj)
     this.setState({ loading: true })
     this.props.sendTrainingRequest(dataObj)
   }
 
   onCaptchaChange = value => {
-    console.log('captcha: ', value)
   }
 
   onCloseButtonClick = () => {
@@ -339,11 +351,7 @@ class PopUpForm extends Component {
     this.props.onCloseClick(false)
   }
 
-  onSubmit = data => {
-    console.log(data)
-  }
   onResolved = () => {
-    console.log('resolved!')
     this.setState({ captchaResolved: true })
   }
 
