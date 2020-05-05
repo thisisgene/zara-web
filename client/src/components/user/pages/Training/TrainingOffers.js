@@ -42,9 +42,7 @@ class TrainingOffers extends Component {
         {
           bulletins: this.props.bulletin.bulletins,
         },
-        () => {
-          console.log('BULLETINS: ', this.state.bulletins)
-        }
+
       )
     }
   }

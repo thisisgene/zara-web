@@ -182,7 +182,7 @@ class PopUpForm extends Component {
                         type="text"
                         value={this.state.firstname}
                         onChange={this.onChange}
-                        // placeholder={formData[lang].fName}
+                      // placeholder={formData[lang].fName}
                       />
                     </div>
                     <div className={globalStyles['form-group']}>
@@ -193,7 +193,7 @@ class PopUpForm extends Component {
                         type="text"
                         value={this.state.lastname}
                         onChange={this.onChange}
-                        // placeholder={formData[lang].lName}
+                      // placeholder={formData[lang].lName}
                       />
                     </div>
                   </div>
@@ -206,7 +206,7 @@ class PopUpForm extends Component {
                         type="tel"
                         value={this.state.phone}
                         onChange={this.onChange}
-                        // placeholder={formData[lang].phone}
+                      // placeholder={formData[lang].phone}
                       />
                     </div>
                     <div className={globalStyles['form-group']}>
@@ -217,7 +217,7 @@ class PopUpForm extends Component {
                         type="email"
                         value={this.state.email}
                         onChange={this.onChange}
-                        // placeholder={formData[lang].email}
+                      // placeholder={formData[lang].email}
                       />
                     </div>
                   </div>
@@ -229,7 +229,7 @@ class PopUpForm extends Component {
                         name="message"
                         value={this.state.message}
                         onChange={this.onChange}
-                        // placeholder={formData[lang].message}
+                      // placeholder={formData[lang].message}
                       />
                     </div>
                   </div>
@@ -254,22 +254,22 @@ class PopUpForm extends Component {
                 </div>
               </Fragment>
             ) : (
-              <div className={styles['popup-form--header__center']}>
-                <img src={successIcon} alt="" />
-                <h1>{formData[lang].success.title}</h1>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: formData[lang].success.body,
-                  }}
-                />
-                <button
-                  className={styles['close']}
-                  onClick={this.onCloseButtonClick}
-                >
-                  {formData[lang].buttons.close}
-                </button>
-              </div>
-            )}
+                <div className={styles['popup-form--header__center']}>
+                  <img src={successIcon} alt="" />
+                  <h1>{formData[lang].success.title}</h1>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: formData[lang].success.body,
+                    }}
+                  />
+                  <button
+                    className={styles['close']}
+                    onClick={this.onCloseButtonClick}
+                  >
+                    {formData[lang].buttons.close}
+                  </button>
+                </div>
+              )}
           </div>
         )}
       </form>

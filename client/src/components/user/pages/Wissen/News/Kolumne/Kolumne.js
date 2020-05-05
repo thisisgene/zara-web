@@ -26,7 +26,6 @@ class Kolumne extends Component {
       lang = activeLanguage.code
     }
     const content = this.props.news.news
-    console.log(content)
     return (
       <div className={styles['news-box']}>
         {lang && (
@@ -45,12 +44,12 @@ class Kolumne extends Component {
                   />
                 ))
               ) : (
-                <div className={styles['no-entries']}>
-                  {lang === 'de'
-                    ? 'Zur Zeit keine Einträge'
-                    : 'No entries at the moment'}
-                </div>
-              )}
+                  <div className={styles['no-entries']}>
+                    {lang === 'de'
+                      ? 'Zur Zeit keine Einträge'
+                      : 'No entries at the moment'}
+                  </div>
+                )}
             </div>
           </div>
         )}

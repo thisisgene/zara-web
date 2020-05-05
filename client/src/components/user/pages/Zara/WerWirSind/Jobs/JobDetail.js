@@ -21,7 +21,6 @@ class JobDetail extends Component {
   componentDidMount() {
     let docTitle = 'ZARA | ' + this.state.jobId
     docTitle = docTitle.replace(/_/g, ' ')
-    console.log(docTitle)
     document.title = docTitle
   }
   componentDidUpdate(prevProps) {

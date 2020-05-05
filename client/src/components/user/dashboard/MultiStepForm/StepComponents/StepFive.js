@@ -18,7 +18,7 @@ class StepFive extends Component {
     this.isValidated = this.isValidated.bind(this)
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   componentWillUnmount() {
     // Reset sentReport to FALSE
@@ -61,7 +61,6 @@ class StepFive extends Component {
             fileData.append('name', file.name)
             fileData.append('size', file.size)
             fileData.append('file', file)
-            console.log('file data: ', fileData)
             return axios
               .post('/api/projects/report/images', fileData)
               .then(res => {
@@ -139,8 +138,8 @@ class StepFive extends Component {
                           ))}
                     </div>
                   ) : (
-                    <div className={styles['review-item--text']}>---</div>
-                  )}
+                      <div className={styles['review-item--text']}>---</div>
+                    )}
                 </div>
                 <div className={styles['review-item']}>
                   <div className={styles['review-item--title']}>Links</div>
@@ -154,8 +153,8 @@ class StepFive extends Component {
                         ))}
                     </div>
                   ) : (
-                    <div className={styles['review-item--text']}>---</div>
-                  )}
+                      <div className={styles['review-item--text']}>---</div>
+                    )}
                 </div>
                 <div className={styles['review-item']}>
                   {/* <div className={styles['review-item--title']}>

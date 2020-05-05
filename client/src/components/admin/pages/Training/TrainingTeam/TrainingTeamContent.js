@@ -160,7 +160,6 @@ class TrainingTeamContent extends Component {
       password: this.state.password,
       password2: this.state.password2
     }
-    console.log(saveData)
     this.props.updateUserPassword(saveData)
   }
 
@@ -178,9 +177,9 @@ class TrainingTeamContent extends Component {
               <Register category="trainer" />
             </div>
           ) : (
-            <div className={styles['training-team-content']}>
-              <div className={styles['training-team-content--main']}>
-                {/* <div className={styles['training-team-content--main__category']}>
+              <div className={styles['training-team-content']}>
+                <div className={styles['training-team-content--main']}>
+                  {/* <div className={styles['training-team-content--main__category']}>
                 <select
                   name="catSelect"
                   value={this.state.tag}
@@ -193,61 +192,61 @@ class TrainingTeamContent extends Component {
                 </select>
               </div> */}
 
-                <div className={styles['training-team-content--text']}>
-                  <div className={styles['training-team-content--text__title']}>
-                    <TextFieldGroup
-                      className={commonStyles['input']}
-                      colorScheme="light"
-                      placeholder="Name deutsch"
-                      type="text"
-                      name="name"
-                      value={this.state.name}
-                      onChange={this.onChange}
-                      error={this.state.errors.name}
-                    />
-                  </div>
+                  <div className={styles['training-team-content--text']}>
+                    <div className={styles['training-team-content--text__title']}>
+                      <TextFieldGroup
+                        className={commonStyles['input']}
+                        colorScheme="light"
+                        placeholder="Name deutsch"
+                        type="text"
+                        name="name"
+                        value={this.state.name}
+                        onChange={this.onChange}
+                        error={this.state.errors.name}
+                      />
+                    </div>
 
-                  <div className={styles['training-team-content--text__email']}>
-                    <TextFieldGroup
-                      className={commonStyles['input']}
-                      colorScheme="light"
-                      placeholder="E-mail Adresse"
-                      type="email"
-                      name="email"
-                      value={this.state.email}
-                      onChange={this.onChange}
-                      error={this.state.errors.email}
-                    />
-                  </div>
-                  <div
-                    className={styles['training-team-content--text__password']}
-                  >
-                    <TextFieldGroup
-                      className={commonStyles['input']}
-                      colorScheme="light"
-                      placeholder="password"
-                      type="password"
-                      name="password"
-                      value={this.state.password}
-                      onChange={this.onChange}
-                      error={this.state.errors.password}
-                    />
-                    <TextFieldGroup
-                      className={commonStyles['input']}
-                      colorScheme="light"
-                      placeholder="password"
-                      type="password"
-                      name="password2"
-                      value={this.state.password2}
-                      onChange={this.onChange}
-                      error={this.state.errors.password2}
-                    />
+                    <div className={styles['training-team-content--text__email']}>
+                      <TextFieldGroup
+                        className={commonStyles['input']}
+                        colorScheme="light"
+                        placeholder="E-mail Adresse"
+                        type="email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.onChange}
+                        error={this.state.errors.email}
+                      />
+                    </div>
+                    <div
+                      className={styles['training-team-content--text__password']}
+                    >
+                      <TextFieldGroup
+                        className={commonStyles['input']}
+                        colorScheme="light"
+                        placeholder="password"
+                        type="password"
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.onChange}
+                        error={this.state.errors.password}
+                      />
+                      <TextFieldGroup
+                        className={commonStyles['input']}
+                        colorScheme="light"
+                        placeholder="password"
+                        type="password"
+                        name="password2"
+                        value={this.state.password2}
+                        onChange={this.onChange}
+                        error={this.state.errors.password2}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              {this.props.auth.user && (
-                <div className={styles['training-team-content--sidebar']}>
-                  {/* <div
+                {this.props.auth.user && (
+                  <div className={styles['training-team-content--sidebar']}>
+                    {/* <div
                     className={
                       styles['training-team-content--sidebar__state-indicator']
                     }
@@ -295,43 +294,43 @@ class TrainingTeamContent extends Component {
                         : 'Online stellen'}
                     </button>
                   </div> */}
-                  <div
-                    className={
-                      styles['training-team-content--sidebar--buttons']
-                    }
-                  >
-                    <button
-                      className={cx(
-                        commonStyles['button'],
-                        commonStyles['button--save'],
-                        styles['button--save']
-                      )}
-                      onClick={this.updateContent}
+                    <div
+                      className={
+                        styles['training-team-content--sidebar--buttons']
+                      }
                     >
-                      Speichern
+                      <button
+                        className={cx(
+                          commonStyles['button'],
+                          commonStyles['button--save'],
+                          styles['button--save']
+                        )}
+                        onClick={this.updateContent}
+                      >
+                        Speichern
                     </button>
-                  </div>
+                    </div>
 
-                  <hr />
-                  <div
-                    className={
-                      styles['training-team-content--sidebar--buttons']
-                    }
-                  >
-                    <button
-                      className={cx(
-                        commonStyles['button'],
-                        commonStyles['button--delete']
-                      )}
-                      onClick={this.confirmDelete.bind(this, this.deleteNews)}
+                    <hr />
+                    <div
+                      className={
+                        styles['training-team-content--sidebar--buttons']
+                      }
                     >
-                      Beitrag Löschen
+                      <button
+                        className={cx(
+                          commonStyles['button'],
+                          commonStyles['button--delete']
+                        )}
+                        onClick={this.confirmDelete.bind(this, this.deleteNews)}
+                      >
+                        Beitrag Löschen
                     </button>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          )}
+                )}
+              </div>
+            )}
         </div>
       </div>
     )

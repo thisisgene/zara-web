@@ -36,7 +36,6 @@ class FaqBox extends Component {
         this.setGlow(thisId)
       }
     )
-    console.log('toggle array: ', faqToggleArray)
   }
   componentDidUpdate(prevProps) {
     if (prevProps.location !== this.props.location) {
@@ -48,7 +47,6 @@ class FaqBox extends Component {
 
   setOpen = id => {
     let faqToggleArray = this.state.faqToggle
-    console.log('set id:', this.state.faqToggle)
 
     faqToggleArray
       .filter(item => item.id === id)
@@ -56,12 +54,10 @@ class FaqBox extends Component {
     this.setState({
       faqToggle: faqToggleArray
     })
-    console.log(faqToggleArray)
   }
 
   toggleOpen = id => {
     let faqToggleArray = this.state.faqToggle
-    console.log('toggle id:', id)
 
     faqToggleArray
       .filter(item => item.id === id)
@@ -69,7 +65,6 @@ class FaqBox extends Component {
     this.setState({
       faqToggle: faqToggleArray
     })
-    console.log(faqToggleArray)
   }
 
   toggleGlow = id => {
@@ -114,7 +109,6 @@ class FaqBox extends Component {
     const { content, tags, lang } = this.props
 
     let filteredContent = []
-    console.log('fag content: ', content)
     if (this.state.activeTag !== '') {
       filteredContent = content.filter(filteredFaq => {
         for (let tag of filteredFaq.tags) {

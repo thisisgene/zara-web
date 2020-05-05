@@ -31,7 +31,6 @@ class Team extends Component {
     let heroUnit
     if (team) {
       teamHero = team.filter(tm => tm.subCategory === 'heroUnit')
-      console.log(teamHero)
       heroUnit = {
         class: 'big-image',
         titleImage: teamHero[0] && teamHero[0].titleImage,
@@ -57,8 +56,8 @@ class Team extends Component {
               {lang && lang === 'de' ? (
                 <h1>ZARA Vorstand</h1>
               ) : (
-                <h1>ZARA Vorstand</h1>
-              )}
+                  <h1>ZARA Vorstand</h1>
+                )}
               <div id="vorstand" className={styles['team--gok']}>
                 {team
                   .filter(member => member.subCategory === 'vorstand')
@@ -72,11 +71,11 @@ class Team extends Component {
                   Kooperationskoordination
                 </h1>
               ) : (
-                <h1>
-                  ZARA Geschäftsführung, Öffentlichkeitsarbeit &
-                  Kooperationskoordination
-                </h1>
-              )}
+                  <h1>
+                    ZARA Geschäftsführung, Öffentlichkeitsarbeit &
+                    Kooperationskoordination
+                  </h1>
+                )}
               <div id="gok" className={styles['team--gok']}>
                 {team
                   .filter(member => member.subCategory === 'gok')
@@ -87,8 +86,8 @@ class Team extends Component {
               {lang && lang === 'de' ? (
                 <h1>ZARA Beratung</h1>
               ) : (
-                <h1>ZARA Consulting</h1>
-              )}
+                  <h1>ZARA Consulting</h1>
+                )}
               <div id="beratung" className={styles['team--gok']}>
                 {team
                   .filter(member => member.subCategory === 'beratung')
@@ -99,8 +98,8 @@ class Team extends Component {
               {lang && lang === 'de' ? (
                 <h1>ZARA Training</h1>
               ) : (
-                <h1>ZARA Training</h1>
-              )}
+                  <h1>ZARA Training</h1>
+                )}
               <div id="training" className={styles['team--gok']}>
                 {team
                   .filter(member => member.subCategory === 'training')
@@ -116,10 +115,10 @@ class Team extends Component {
                   <h1>Unterstützer*innen seit 2018</h1>
                 </div>
               ) : (
-                <div>
-                  <h1>Supporters since 2018</h1>
-                </div>
-              )}
+                  <div>
+                    <h1>Supporters since 2018</h1>
+                  </div>
+                )}
               <div className={styles['team--gok']}>
                 {team
                   .filter(member => member.subCategory === 'supporters')

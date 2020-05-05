@@ -282,7 +282,6 @@ router.post(
       { safe: true, new: true }
     )
       .then(newsItem => {
-        console.log(newsItem.videos)
         res.json(newsItem)
       })
       .catch(err => {

@@ -24,7 +24,6 @@ class Step3 extends Component {
   isValidated() {
     const userInput = this._grabUserInput() // grab user entered vals
     let isDataValid = true
-    console.log('LINKS', userInput.links)
     if (this.props.getStore().links !== userInput.links) {
       // only update store of something changed
       this.props.updateStore({
@@ -151,7 +150,7 @@ class Step3 extends Component {
                 if (acceptedFiles.length || rejectedFiles.length) {
                   return `Akzeptiert: ${acceptedFiles.length}, abgelehnt: ${
                     rejectedFiles.length
-                  }`
+                    }`
                 }
                 if (isDragAccept) {
                   return 'Gültiges Format.'
@@ -178,8 +177,8 @@ class Step3 extends Component {
             autoComplete="off"
             className="form-control"
             defaultValue={this.state.links}
-            // onBlur={this.validationCheck}
-            // onChange={this.validationCheck}
+          // onBlur={this.validationCheck}
+          // onChange={this.validationCheck}
           />
           <div>{this.state.linksValMsg}</div>
         </form>

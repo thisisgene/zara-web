@@ -34,7 +34,6 @@ class TrainingDetail extends Component {
   componentDidMount() {
     this.props.getAll('bulletins')
     this.props.getById(this.state.trainingId, 'bulletins')
-    // console.log('BULLETINS: ', this.state.trainingId);
   }
   componentDidUpdate(prevProps) {
     if (
@@ -50,9 +49,7 @@ class TrainingDetail extends Component {
       this.props.bulletin != prevProps.bulletin &&
       this.props.bulletin.bulletin
     ) {
-      this.setState({ bulletin: this.props.bulletin.bulletin }, () =>
-        console.log('state.buletin: ', this.state.bulletin)
-      )
+      this.setState({ bulletin: this.props.bulletin.bulletin })
     }
   }
 
@@ -63,7 +60,6 @@ class TrainingDetail extends Component {
       lang = activeLanguage.code
     }
     const { bulletin, bulletins } = this.props.bulletin
-    console.log('bulletin: ', bulletin)
 
     return (
       <div>

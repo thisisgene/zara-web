@@ -51,7 +51,6 @@ class ImageGridObject extends Component {
       prevProps !== this.props &&
       this.props.user.orderSent
     ) {
-      console.log('UPDATE')
       this.setState({
         orderSent: true
       })
@@ -87,7 +86,6 @@ class ImageGridObject extends Component {
         [e.target.name]: e.target.checked
       })
     }
-    console.log(this.state.approved)
   }
   onSubmit = e => {
     e.preventDefault()
@@ -177,7 +175,7 @@ class ImageGridObject extends Component {
                     <a
                       target="blank"
                       href={`https://assets.zara.or.at/download/${link.link}`}
-                      // onClick={this.props.onShowSurvey}
+                    // onClick={this.props.onShowSurvey}
                     >
                       {link.linkText}
                     </a>
@@ -309,10 +307,10 @@ class ImageGridObject extends Component {
                 </form>
               </div>
             ) : (
-              <Redirect
-                to={`/${lang}/wissen/publikationen/rassismusreport/bestellung/abgeschlossen`}
-              />
-            )}
+                <Redirect
+                  to={`/${lang}/wissen/publikationen/rassismusreport/bestellung/abgeschlossen`}
+                />
+              )}
           </div>
         )}
       </div>

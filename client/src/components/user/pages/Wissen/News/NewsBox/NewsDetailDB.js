@@ -26,7 +26,6 @@ class Preview extends Component {
   }
   componentDidMount() {
     this.props.getById(this.props.match.params.newsId, 'news')
-    console.log(this.props)
   }
 
   componentDidUpdate(prevProps) {
@@ -45,8 +44,8 @@ class Preview extends Component {
         let newDescription = description.replace(
           description.substring(start, end),
           '<div style="width:100%;text-align:center">' +
-            iframe.textContent +
-            '</div>'
+          iframe.textContent +
+          '</div>'
         )
 
         this.setState(
@@ -54,7 +53,6 @@ class Preview extends Component {
             hasIframe: true,
             newDescription: newDescription
           },
-          () => console.log(this.state.newDescription)
         )
       }
     }
@@ -116,13 +114,13 @@ class Preview extends Component {
                     }}
                   />
                 ) : (
-                  <div
-                    className={styles['news-detail--text']}
-                    dangerouslySetInnerHTML={{
-                      __html: newsItem[lang].description
-                    }}
-                  />
-                )}
+                    <div
+                      className={styles['news-detail--text']}
+                      dangerouslySetInnerHTML={{
+                        __html: newsItem[lang].description
+                      }}
+                    />
+                  )}
                 {newsItem.videos &&
                   newsItem.videos
                     .filter(video => video !== null)
