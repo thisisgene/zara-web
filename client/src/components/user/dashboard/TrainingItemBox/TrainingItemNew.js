@@ -108,7 +108,7 @@ class TrainingItem extends Component {
                       <div
                         className={
                           styles[
-                            'training-item--info__child--data__line--detail'
+                          'training-item--info__child--data__line--detail'
                           ]
                         }
                       >
@@ -120,14 +120,14 @@ class TrainingItem extends Component {
                 </div>
               </div>
             </div>
-            <div className={styles['training-image']}>
-              {item.titleImage && item.titleImage.originalName && (
+            {item.titleImage && item.titleImage.originalName && (
+              <div className={styles['training-image']}>
                 <img
                   src={`/assets/media/${item.titleImage.category}/${item.titleImage.originalName}`}
                   alt=""
                 />
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </Link>
       </div>

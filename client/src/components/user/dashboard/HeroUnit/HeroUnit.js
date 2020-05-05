@@ -33,16 +33,16 @@ class HeroUnit extends Component {
                 )}
               >
                 <div className={styles['hero-unit--image']}>
-                  {data.titleImage ? (
+                  {data.titleImage && data.titleImage.originalName ? (
                     <img
                       src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}
                       alt={data.titleImage.originalName}
                     />
                   ) : (
-                    data.image && (
-                      <img src={`/assets/img/${data.image}`} alt={data.image} />
-                    )
-                  )}
+                      data.image && (
+                        <img src={`/assets/img/${data.image}`} alt={data.image} />
+                      )
+                    )}
                 </div>
                 <div className={styles['hero-unit--text']}>
                   <div
@@ -63,44 +63,44 @@ class HeroUnit extends Component {
                 </div>
               </div>
             ) : (
-              <div
-                className={cx(
-                  styles['hero-unit'],
-                  {
-                    [styles[data.imageAlign]]: data.imageAlign,
-                  },
-                  {
-                    [styles['hero-unit--image-right']]:
-                      data.image ||
-                      (data.titleImage && data.titleImage.originalName),
-                  }
-                )}
-              >
-                <div className={styles['hero-unit--text']}>
-                  <div className={styles['hero-unit--text__title']}>
-                    {data[lang].title}
-                  </div>
-                  <div
-                    className={styles['hero-unit--text__body']}
-                    dangerouslySetInnerHTML={{ __html: data[lang].text }}
-                  />
-                </div>
-                {data.titleImage && data.titleImage.originalName ? (
-                  <div className={styles['hero-unit--image']}>
-                    <img
-                      src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}
-                      alt={data.titleImage.originalName}
+                <div
+                  className={cx(
+                    styles['hero-unit'],
+                    {
+                      [styles[data.imageAlign]]: data.imageAlign,
+                    },
+                    {
+                      [styles['hero-unit--image-right']]:
+                        data.image ||
+                        (data.titleImage && data.titleImage.originalName),
+                    }
+                  )}
+                >
+                  <div className={styles['hero-unit--text']}>
+                    <div className={styles['hero-unit--text__title']}>
+                      {data[lang].title}
+                    </div>
+                    <div
+                      className={styles['hero-unit--text__body']}
+                      dangerouslySetInnerHTML={{ __html: data[lang].text }}
                     />
                   </div>
-                ) : (
-                  data.image && (
+                  {data.titleImage && data.titleImage.originalName ? (
                     <div className={styles['hero-unit--image']}>
-                      <img src={`/assets/img/${data.image}`} alt={data.image} />
+                      <img
+                        src={`/assets/media/${data.titleImage.category}/${data.titleImage.originalName}`}
+                        alt={data.titleImage.originalName}
+                      />
                     </div>
-                  )
-                )}
-              </div>
-            )}
+                  ) : (
+                      data.image && (
+                        <div className={styles['hero-unit--image']}>
+                          <img src={`/assets/img/${data.image}`} alt={data.image} />
+                        </div>
+                      )
+                    )}
+                </div>
+              )}
           </div>
         )}
       </div>
