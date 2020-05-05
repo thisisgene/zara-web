@@ -80,7 +80,7 @@ import ZaraPublikationen from './pages/Wissen/Publikationen/ZaraPublikationen'
 import PageNotFound from './pages/Other/PageNotFound'
 import JobDetail from './pages/Zara/WerWirSind/Jobs/JobDetail'
 import NewsDetailDB from './pages/Wissen/News/NewsBox/NewsDetailDB'
-import Pressematerial_Logos from './pages/Wissen/Presse/Pressematerial_Logos'
+import Pressematerial_Logos from './pages/Wissen/Presse/Pressematerial_LogosNew'
 class User extends Component {
   constructor(props) {
     super(props)
@@ -182,8 +182,8 @@ class User extends Component {
               {activeLanguage ? (
                 <Redirect exact from="/" to={`/${activeLanguage.code}`} />
               ) : (
-                <Redirect exact from="/" to={'/de'} />
-              )}
+                  <Redirect exact from="/" to={'/de'} />
+                )}
               <Route exact path="/:lang/beratung" component={Consulting} />
               <Route
                 exact

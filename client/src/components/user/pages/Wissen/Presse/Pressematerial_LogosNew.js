@@ -31,7 +31,7 @@ class PressematerialLogos extends Component {
             <HeroUnit data={heroData} lang={lang} />
             {/* <LongText content={longText} lang={lang} /> */}
             <div className={styles['logo-box-container']}>
-              <div className={styles['logo-box--item']}>
+              {/* <div className={styles['logo-box--item']}>
                 <div>Photos Pressekonferenz 28.06.2019</div>
                 <div style={{ fontSize: '.8rem' }}>
                   Pressekonferenz_Lena Jager_ ZARA_Maria Windhager_1.jpg
@@ -98,9 +98,9 @@ class PressematerialLogos extends Component {
                   />
                 </a>
                 <p style={{ fontSize: '.8rem' }}>Photo Credit: Carl Dewald</p>
-              </div>
+              </div> */}
 
-              <div className={styles['logo-box--item']}>
+              {/* <div className={styles['logo-box--item']}>
                 <div>Caroline Kerschbaumer</div>
                 <div style={{ fontSize: '.8rem' }}>
                   Caroline Kerschbaumer_ZARA HiRes.jpg
@@ -178,7 +178,7 @@ class PressematerialLogos extends Component {
                     alt="Maria Windhager.jpg"
                   />
                 </a>
-              </div>
+              </div> */}
 
               {logoData &&
                 logoData.map(logoItem => (
@@ -193,12 +193,12 @@ class PressematerialLogos extends Component {
                             target="blank"
                             href={`https://assets.zara.or.at/download/logos/${
                               logo.image
-                            }`}
+                              }`}
                           >
                             <img
                               src={`https://assets.zara.or.at/download/logos/${
                                 logo.image
-                              }`}
+                                }`}
                               alt={logo.image}
                             />
                           </a>
@@ -207,9 +207,9 @@ class PressematerialLogos extends Component {
                   </div>
                 ))}
               <div className={styles['logo-box']}>
-                <h1>Datenvisualisierungen Rassismus Report 2018</h1>
+                <h1>Datenvisualisierungen Rassismus Report 2019</h1>
                 <h2>
-                  Hier finden Sie sämtliche Grafiken aus dem RR 2018,
+                  Hier finden Sie sämtliche Grafiken aus dem RR 2019,
                   <br /> die durch die Unterstützung von Fabian Lang (
                   <a target="blank" href="http://www.dergestalt.at/">
                     dergestalt
@@ -217,48 +217,49 @@ class PressematerialLogos extends Component {
                   ) realisiert werden konnten.
                 </h2>
                 <div className={styles['logo-box--item']}>
-                  <div>Datenanalyse RR 2018 Doppelseite</div>
+                  <div>Datenanalyse RR 2019</div>
                   <a
                     target="blank"
                     href={
-                      'https://assets.zara.or.at/download/grafiken/Datenanalyse 2018_ZARA RR2018-page-001.jpg'
+                      'https://assets.zara.or.at/download/grafiken/ZARA-Rassimus_Report-Datenanalyse%202019.pdf'
                     }
                   >
                     <img
                       src={
-                        'https://assets.zara.or.at/download/grafiken/Datenanalyse 2018_ZARA RR2018-page-001.jpg'
+                        'https://assets.zara.or.at/download/grafiken/ZARA-Rassimus_Report-Datenanalyse%202019.jpg'
                       }
-                      alt="Datenanalyse RR 2018 Doppelseite"
+                      alt="Datenanalyse RR 2019"
                     />
                   </a>
                 </div>
                 <div className={styles['logo-box--item']}>
-                  <div>Grafiken RR 2018 All-in-one</div>
+                  <div>Falldaten aus 20 Jahren Beratung</div>
                   <a
                     target="blank"
                     href={
-                      'https://assets.zara.or.at/download/grafiken/Grafiken RR 2018 All-in-one.jpg'
+                      'https://assets.zara.or.at/download/grafiken/ZARA-Rassimus_Report-Falldaten%20aus%2020%20Jahren%20Beratung.pdf'
                     }
                   >
                     <img
                       src={
-                        'https://assets.zara.or.at/download/grafiken/Grafiken RR 2018 All-in-one.jpg'
+                        'https://assets.zara.or.at/download/grafiken/ZARA-Rassimus_Report-Falldaten%20aus%2020%20Jahren%20Beratung.jpg'
                       }
-                      alt="Grafiken RR 2018 All-in-one"
+                      alt="Falldaten aus 20 Jahren Beratung"
                     />
                   </a>
                 </div>
 
                 <div className={styles['logo-box--item']}>
                   <div>
-                    RR18-Kontextualisierungen PDFs als zip herunterladen
+                    Datenanalyse aus den Lebensbereichen
                   </div>
                   <div className={styles['download-container']}>
                     <span>
                       <a
+                        target="blank"
                         className={styles['download-link']}
-                        href="https://assets.zara.or.at/download/zip/rr18-kontextualisierungen.zip"
-                        download="rr18-kontextualisierungen.zip"
+                        href="https://assets.zara.or.at/download/pdf/ZARA Lebensbereiche.pdf"
+                        download="ZARA Lebensbereiche.pdf"
                       >
                         <i
                           className={cx(
@@ -268,13 +269,87 @@ class PressematerialLogos extends Component {
                         />
                         <div className={styles['download-info']}>
                           <span className={styles['file-name']}>
-                            rr18-kontextualisierungen.zip
+                            ZARA Lebensbereiche.pdf
                           </span>
-                          <span className={styles['file-size']}>216 KB</span>
+                          <span className={styles['file-size']}>971 KB</span>
                         </div>
                       </a>
                     </span>
                   </div>
+                </div>
+                <div className={styles['logo-box--item']}>
+                  <div>
+                    ZARA Forderungen
+                  </div>
+                  <div className={styles['download-container']}>
+                    <span>
+                      <a
+                        target="blank"
+                        className={styles['download-link']}
+                        href="https://assets.zara.or.at/download/pdf/ZARA Forderungen.pdf"
+                        download="ZARA Forderungen.pdf"
+                      >
+                        <i
+                          className={cx(
+                            'far fa-file-archive',
+                            styles['zip-icon']
+                          )}
+                        />
+                        <div className={styles['download-info']}>
+                          <span className={styles['file-name']}>
+                            ZARA Forderungen.pdf
+                          </span>
+                          <span className={styles['file-size']}>127 KB</span>
+                        </div>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+                <div className={styles['logo-box--item']}>
+                  <div>Caroline Kerschbaumer</div>
+                  <div style={{ fontSize: '.8rem', fontWeight: 'bold' }}>ZARA Geschäftsführerin</div>
+                  <div style={{ fontSize: '.8rem' }}>
+                    Caroline Kerschbaumer_ZARA HiRes.jpg
+                </div>
+                  <a
+                    target="blank"
+                    href={
+                      'https://assets.zara.or.at/download/img/Caroline%20Kerschbaumer_ZARA%20HiRes.jpg'
+                    }
+                  >
+                    <img
+                      src={
+                        'https://assets.zara.or.at/download/img/Caroline%20Kerschbaumer_ZARA%20HiRes.jpg'
+                      }
+                      alt="Caroline Kerschbaumer_ZARA HiRes"
+                    />
+                  </a>
+                  <p style={{ fontSize: '.8rem' }}>
+                    Photo Credit: Johannes Zinner
+                </p>
+                </div>
+                <div className={styles['logo-box--item']}>
+                  <div>Dilber Dikme</div>
+                  <div style={{ fontSize: '.8rem', fontWeight: 'bold' }}>Leiterin der ZARA Beratungsstellen</div>
+                  <div style={{ fontSize: '.8rem' }}>
+                    Dilber Dikme_ZARA HiRes.jpg
+                </div>
+                  <a
+                    target="blank"
+                    href={
+                      'https://assets.zara.or.at/download/img/Dilber%20Dikme_ZARA%20HiRes.jpg'
+                    }
+                  >
+                    <img
+                      src={
+                        'https://assets.zara.or.at/download/img/Dilber%20Dikme_ZARA%20HiRes.jpg'
+                      }
+                      alt="Dilber Dikme_ZARA HiRes"
+                    />
+                  </a>
+                  <p style={{ fontSize: '.8rem' }}>
+                    Photo Credit: Johannes Zinner
+                </p>
                 </div>
               </div>
             </div>
