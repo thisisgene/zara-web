@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { withLocalize } from 'react-localize-redux'
@@ -7,13 +7,13 @@ import MetaTags from 'react-meta-tags'
 
 import {
   trainingBoxData,
-  trainingItems,
   oneLineAlertDetail,
+  trainingTags
 } from './training_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
-import TrainingItem from '../../dashboard/TrainingItemBox/TrainingItem'
+import TrainingItem from '../../dashboard/TrainingItemBox/TrainingItemNew'
 import IconObject from '../../dashboard/IconObject/IconObject'
 
 import { getAll, getById } from '../../../../actions/adminActions'
@@ -32,6 +32,7 @@ class TrainingDetail extends Component {
     }
   }
   componentDidMount() {
+    this.props.getAll('bulletins')
     this.props.getById(this.state.trainingId, 'bulletins')
     // console.log('BULLETINS: ', this.state.trainingId);
   }
@@ -61,7 +62,7 @@ class TrainingDetail extends Component {
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
     }
-    const { bulletin } = this.props.bulletin
+    const { bulletin, bulletins } = this.props.bulletin
     console.log('bulletin: ', bulletin)
 
     return (
@@ -169,8 +170,8 @@ class TrainingDetail extends Component {
                                       {testimonial.name}
                                     </a>
                                   ) : (
-                                    <div>{testimonial.name}</div>
-                                  )}
+                                      <div>{testimonial.name}</div>
+                                    )}
                                 </div>
                               )}
                             </div>
@@ -182,11 +183,11 @@ class TrainingDetail extends Component {
                     ))}
                 </div>
               )}
-              {bulletin.related && (
+              {bulletins &&
                 <div className={styles['training-detail--suggestions']}>
                   <h1>
                     {lang === 'de'
-                      ? 'Weitere Workshop Empfehlungen'
+                      ? 'Weitere Workshopempfehlungen'
                       : 'More workshop suggestions'}
                   </h1>
                   <div
@@ -195,15 +196,19 @@ class TrainingDetail extends Component {
                       parentStyles['training-box--content']
                     )}
                   >
-                    {bulletin.related.map(rel =>
-                      this.state.bulletins
-                        .filter(item => item._id === rel.id)
-                        .map((item, index) => (
-                          <div key={index}>
-                            <TrainingItem content={item} lang={lang} />
-                          </div>
-                        ))
-                    )}
+                    {bulletins.filter(item => item.category.value === bulletin.category.value)
+                      .filter((item) => item._id !== bulletin._id)
+
+                      .map((item, i, array) => (
+                        <Fragment>
+                          {i < 2 &&
+                            (<div key={i}>
+                              <TrainingItem item={item} lang={lang} />
+                            </div>)}
+                        </Fragment>
+                      )
+
+                      )}
 
                     <Link to={`/${lang}/bulletins/kinder_jugendliche`}>
                       <div
@@ -213,16 +218,20 @@ class TrainingDetail extends Component {
                         )}
                       >
                         <h1>
-                          {lang === 'de'
-                            ? 'Mehr zu Trainings für Kinder & Jugendliche'
-                            : 'More Trainings for Children'}
+                          {bulletin.category.value === 'workshops_vortraege' || bulletin.category.value === 'aktuelle_trainingsprojekte' ?
+                            lang === 'de'
+                              ? `Mehr ${trainingTags.filter(tag => tag.name === bulletin.category.value).map(tag => tag[lang].title)}`
+                              : `More ${trainingTags.filter(tag => tag.name === bulletin.category.value).map(tag => tag[lang].title)}`
+                            : lang === 'de'
+                              ? `Mehr zu Trainings für ${trainingTags.filter(tag => tag.name === bulletin.category.value).map(tag => tag[lang].title)}`
+                              : `More Trainings for ${trainingTags.filter(tag => tag.name === bulletin.category.value).map(tag => tag[lang].title)}`}
                         </h1>
                         <IconObject image="arrowButtonRight" />
                       </div>
                     </Link>
                   </div>
-                </div>
-              )}
+                </div>}
+
             </div>
           </div>
         )}
@@ -236,5 +245,5 @@ const mapStateToProps = state => ({
 })
 
 export default withLocalize(
-  connect(mapStateToProps, { getById })(TrainingDetail)
+  connect(mapStateToProps, { getAll, getById })(TrainingDetail)
 )

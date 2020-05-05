@@ -96,7 +96,22 @@ class TrainingItem extends Component {
                     </div>
                   )}
                 </Fragment>
-
+                <Fragment>
+                  {
+                    (item[lang].targetGroup && (item[lang].timeFrame || item.showTimeAndDate) && !item[lang].location)
+                    && (
+                      <div className={styles['training-item--info__child']}></div>
+                    )
+                  }
+                </Fragment>
+                <Fragment>
+                  {
+                    (!item[lang].targetGroup && !(item[lang].timeFrame || item.showTimeAndDate) && !item[lang].location)
+                    && (
+                      <div className={styles['training-item--info__child']}></div>
+                    )
+                  }
+                </Fragment>
                 <div className={styles['training-item--info__child']}>
                   {/* <IconObject image="duration" /> */}
                   <div className={styles['training-item--info__child--data']}>
