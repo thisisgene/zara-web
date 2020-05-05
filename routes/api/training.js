@@ -863,9 +863,9 @@ sendTrainingEmail = (emailList, content, res) => {
     outputHtml += `
     <h2>${content.title}</h2>
     <p>${moment(new Date(content.date))
-      .add(2, 'hours')
-      .locale('de', localization)
-      .format('DD. MMMM YYYY')}
+        .add(2, 'hours')
+        .locale('de', localization)
+        .format('DD. MMMM YYYY')}
       </p>
     <p>${content.timeFrom} - ${content.timeUntil}</p>
     <p>${content.location}</p>
@@ -949,7 +949,7 @@ router.post('/send_training_request', (req, res) => {
 
   let trainingMailOptions = {
     from: `"ZARA Server" <${keys.emailAddress}>`, // sender address
-    to: 'emdo2000@gmail.com', // ZARA Training
+    to: 'emdo2000@gmail.com', // info@zara-training.at
     subject: `Training Anfrage | ${body.trainingTitle}`, // Subject line
     // text: outputPlain, // plain text body
     html: msg, // html body

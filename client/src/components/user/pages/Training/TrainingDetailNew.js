@@ -43,7 +43,8 @@ class TrainingDetail extends Component {
     ) {
       this.setState({
         trainingId: this.props.match.params.trainingId,
-      })
+      }, () => this.props.getById(this.state.trainingId, 'bulletins'))
+
     }
     if (
       this.props.bulletin != prevProps.bulletin &&
