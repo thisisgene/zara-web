@@ -60,16 +60,19 @@ export default class LongText extends Component {
                 {content[lang].linkText}
               </a>
             ) : (
-              <Link to={`/${lang}/${content[lang].link}`}>
-                {content[lang].linkText}
-              </Link>
-            )}
+                <Link to={`/${lang}/${content[lang].link}`}>
+                  {content[lang].linkText}
+                </Link>
+              )}
           </div>
         )}
         {content.bottomImages && (
           <div className={styles['long-text--bottom-images']}>
             {content.bottomImages.map(image => (
-              <img src={`/assets/img/${image.image}`} alt={image.image} />
+
+              <img src={`/assets/img/${image.image}`} alt={image.image} className={cx({
+                [styles['big']]: image.bigImage
+              })} />
             ))}
           </div>
         )}

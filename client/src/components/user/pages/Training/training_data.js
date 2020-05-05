@@ -80,14 +80,14 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'icons/training.png',
+        image: 'icons/baustein2.png',
         title: 'Workshop schenken',
         link: 'training/workshop_schenken',
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'icons/training.png',
+        image: 'icons/ueber_zara.png',
         title: 'Unsere Trainer*innen',
         link: 'training/trainer_innen',
       },

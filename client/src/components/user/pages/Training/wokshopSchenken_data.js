@@ -23,6 +23,12 @@ export const longText = {
     text:
       'ZARA Training bietet österreichweit zielgruppengerechte Workshops und Projekte in den Bereichen Diversity, Bewusstseinsbildung, Anti-Rassismus, Argumentationstraining und Zivilcourage und Digitale Zivilcourage an. Bedarfs- und praxisorientiert unterstützt die GmbH auf diese Weise Kompetenzvermehrung in Unternehmen, Schulen, Behörden, Vereinen uvm. Eine Auswahl der Trainingsangebote finden Sie hier.',
   },
+  bottomImages: [{
+    image: 'training/baustein-training.jpg',
+    bigImage: true
+  }]
+
+
 }
 export const longText2 = {
   de: {
@@ -33,6 +39,10 @@ export const longText2 = {
     text:
       'Durch Ihre Unterstützung ermöglichen Sie einer Schulklasse oder einem Verein einen zweiteiligen Workshop zu den Themen Umgang mit Vielfalt, Argumentationstraining, Zivilcourage oder Digitale Zivilcourage. Dabei haben Sie die Möglichkeit, entweder eine Patenschaft in Höhe von € 2.000 zu übernehmen oder einen "Baustein"in Höhe von € 500 zu sponsern. Bei einer Patenschaft können Sie gerne die Schule bzw. den Verein auswählen. Wenn Sie einen "Baustein" beitragen wollen, vermitteln wir Ihnen gerne eine Schule oder eine Organisation für die bereits "Bausteine" gesponsert wurden. Bei Fragen können Sie hier mit uns in Kontakt treten.',
   },
+  bottomImages: [{
+    image: 'training/baustein-training-testimonial.jpg',
+    bigImage: true
+  }]
 }
 export const longText3 = {
   de: {
