@@ -69,7 +69,7 @@ class TrainingOffers extends Component {
             {dataObj[trainingType].longText && (
               <LongText content={dataObj[trainingType].longText} lang={lang} />
             )}
-            <div className={styles['training-box']}>
+            {trainingType !== 'unternehmen' && <div className={styles['training-box']}>
               <h4
                 style={{
                   margin: '4rem 0 2rem',
@@ -92,7 +92,7 @@ class TrainingOffers extends Component {
                       : 'No offers at the moment.'}
                   </p>
                 )}
-            </div>
+            </div>}
           </div>
         ) : (
             <div>
