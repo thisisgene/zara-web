@@ -210,7 +210,7 @@ class TrainingDetail extends Component {
 
                       )}
 
-                    <Link to={`/${lang}/bulletins/kinder_jugendliche`}>
+                    <Link to={`/${lang}/training/angebote/${bulletin.category.value}`}>
                       <div
                         className={cx(
                           styles['more-info'],
