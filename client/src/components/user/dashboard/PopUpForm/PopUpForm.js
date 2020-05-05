@@ -220,7 +220,7 @@ function Form({ props }) {
 
               </div>
               <div className={styles['popup-form--buttons']}>
-                <button type="submit" disabled={!consented}>Submit</button>
+                <button type="submit" disabled={!consented}>{formData[lang].buttons.send}</button>
                 <button
                   type="cancel"
                   className={styles['close']}
