@@ -949,7 +949,7 @@ router.post('/send_training_request', (req, res) => {
 
   let trainingMailOptions = {
     from: `"ZARA Server" <${keys.emailAddress}>`, // sender address
-    to: 'emdo2000@gmail.com', // info@zara-training.at
+    to: 'info@zara-training.at', // info@zara-training.at
     subject: `Training Anfrage | ${body.trainingTitle}`, // Subject line
     // text: outputPlain, // plain text body
     html: msg, // html body
