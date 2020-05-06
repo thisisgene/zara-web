@@ -138,7 +138,7 @@ class PressematerialLogos extends Component {
                       <a
                         target="blank"
                         className={styles['download-link']}
-                        href="https://assets.zara.or.at/download/zip/Corona-bezogener%20Rassismus.zip"
+                        href="https://assets.zara.or.at/download/zip/Corona-bezogener_Rassismus.zip"
                         download="Corona-bezogener Rassismus.zip"
                       >
                         <i
