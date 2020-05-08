@@ -20,58 +20,58 @@ class MobileSubMenu extends Component {
         {menuItems.map(item => {
           return (
             <div key={item.id}>
-              {item.name !== 'Training' ? (
-                <div
-                  className={cx(styles['sub-menu-item'], {
-                    [styles['visible']]: subMenuContent === item.id
-                  })}
-                >
-                  {subMenuContent === item.id && (
-                    <div className={styles['sub-menu-head']}>
-                      <div
-                        className={styles['sub-menu-head__arrow']}
-                        onClick={this.props.onSubLinkClick}
-                      >
-                        <i className="fa fa-angle-left" />
-                      </div>
-                      {item.name}
-                      <div />
+              {/* {item.name !== 'Training' ? ( */}
+              <div
+                className={cx(styles['sub-menu-item'], {
+                  [styles['visible']]: subMenuContent === item.id
+                })}
+              >
+                {subMenuContent === item.id && (
+                  <div className={styles['sub-menu-head']}>
+                    <div
+                      className={styles['sub-menu-head__arrow']}
+                      onClick={this.props.onSubLinkClick}
+                    >
+                      <i className="fa fa-angle-left" />
                     </div>
-                  )}
-                  <div className={styles['sub-item-container']}>
-                    {item.subMenuList &&
-                      item.subMenuList.map(subItem => {
-                        return (
-                          <div className={styles['sub-item']} key={subItem.id}>
-                            <div className={styles['sub-item--title']}>
-                              {subItem.link !== null ? (
-                                <NavLink
-                                  to={`/${lang}/${item.link}/${subItem.link}`}
-                                  activeClassName={styles.active}
-                                  onClick={this.props.onMobileNavClick}
+                    {item.name}
+                    <div />
+                  </div>
+                )}
+                <div className={styles['sub-item-container']}>
+                  {item.subMenuList &&
+                    item.subMenuList.map(subItem => {
+                      return (
+                        <div className={styles['sub-item']} key={subItem.id}>
+                          <div className={styles['sub-item--title']}>
+                            {subItem.link !== null ? (
+                              <NavLink
+                                to={`/${lang}/${item.link}/${subItem.link}`}
+                                activeClassName={styles.active}
+                                onClick={this.props.onMobileNavClick}
+                              >
+                                <div
+                                  className={styles['sub-item--title__link']}
                                 >
                                   <div
-                                    className={styles['sub-item--title__link']}
+                                    className={
+                                      styles['sub-item--title__link--text']
+                                    }
                                   >
-                                    <div
-                                      className={
-                                        styles['sub-item--title__link--text']
-                                      }
-                                    >
-                                      <Translate
-                                        id={`menu.item${subItem.id}`}
-                                      />
-                                    </div>
-                                    <div
-                                      className={
-                                        styles['sub-item--title__link--arrow']
-                                      }
-                                    >
-                                      <IconObject image="arrowRight" />
-                                    </div>
+                                    <Translate
+                                      id={`menu.item${subItem.id}`}
+                                    />
                                   </div>
-                                </NavLink>
-                              ) : (
+                                  <div
+                                    className={
+                                      styles['sub-item--title__link--arrow']
+                                    }
+                                  >
+                                    <IconObject image="arrowRight" />
+                                  </div>
+                                </div>
+                              </NavLink>
+                            ) : (
                                 <div
                                   className={styles['sub-item--title__link']}
                                 >
@@ -84,45 +84,45 @@ class MobileSubMenu extends Component {
                                   </div>
                                 </div>
                               )}
-                            </div>
-                            {subItem.subMenuList &&
-                              subItem.subMenuList.map(ssItem => {
-                                return (
-                                  <div
-                                    className={styles['sub-sub-item']}
-                                    key={ssItem.id}
-                                  >
-                                    <NavLink
-                                      to={
-                                        ssItem.redirect
-                                          ? `/${lang}/${ssItem.redirectLink}`
-                                          : subItem.link !== null
-                                          ? `/${lang}/${item.link}/${
-                                              subItem.link
-                                            }/${ssItem.link}`
-                                          : `/${lang}/${item.link}/${
-                                              ssItem.link
-                                            }`
-                                      }
-                                      activeClassName={styles.active}
-                                      onClick={this.props.onMobileNavClick}
-                                    >
-                                      <Translate id={`menu.item${ssItem.id}`} />
-                                    </NavLink>
-                                  </div>
-                                )
-                              })}
                           </div>
-                        )
-                      })}
-                    {item.contact && (
-                      <div className={styles['contact-box--container']}>
-                        <ContactBox content={item.contact} lang={lang} />
-                      </div>
-                    )}
-                  </div>
+                          {subItem.subMenuList &&
+                            subItem.subMenuList.map(ssItem => {
+                              return (
+                                <div
+                                  className={styles['sub-sub-item']}
+                                  key={ssItem.id}
+                                >
+                                  <NavLink
+                                    to={
+                                      ssItem.redirect
+                                        ? `/${lang}/${ssItem.redirectLink}`
+                                        : subItem.link !== null
+                                          ? `/${lang}/${item.link}/${
+                                          subItem.link
+                                          }/${ssItem.link}`
+                                          : `/${lang}/${item.link}/${
+                                          ssItem.link
+                                          }`
+                                    }
+                                    activeClassName={styles.active}
+                                    onClick={this.props.onMobileNavClick}
+                                  >
+                                    <Translate id={`menu.item${ssItem.id}`} />
+                                  </NavLink>
+                                </div>
+                              )
+                            })}
+                        </div>
+                      )
+                    })}
+                  {item.contact && (
+                    <div className={styles['contact-box--container']}>
+                      <ContactBox content={item.contact} lang={lang} />
+                    </div>
+                  )}
                 </div>
-              ) : (
+              </div>
+              {/* ) : (
                 <div
                   className={cx(styles['sub-menu-item'], {
                     [styles[`visible`]]: subMenuContent === item.id
@@ -244,7 +244,7 @@ class MobileSubMenu extends Component {
                     )}
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           )
         })}
