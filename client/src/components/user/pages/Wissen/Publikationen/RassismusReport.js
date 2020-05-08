@@ -25,9 +25,9 @@ class RassismusReport extends Component {
     }
   }
   componentDidMount() {
-    setTimeout(() => {
-      this.onShowSurvey()
-    }, 5000)
+    // setTimeout(() => {
+    //   this.onShowSurvey()
+    // }, 5000)
   }
   onShowSurvey = e => {
     this.setState({
