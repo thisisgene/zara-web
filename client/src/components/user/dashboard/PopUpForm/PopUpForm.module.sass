@@ -10,22 +10,22 @@
   display: flex
   justify-content: center
   align-items: center
-  padding-top: 3rem
-  overflow-y: scroll
+  // padding-top: 3rem
   overflow-x: hidden
 
   
 
 .popup-form
+  position: relative
+  margin-top: 0
   width: 100%
   max-width: 800px
-  // height: 100%
-  // max-height: 600px
+  max-height: 100vh
   border-radius: .4rem
   padding: 2rem
-  margin: 2rem 0
   background: lighten(#FFF7D3, 5%)
   box-shadow: 0 0 1rem rgba(black, .5)
+  overflow-y: scroll
   form
     padding: 0
   &--header
@@ -92,9 +92,9 @@
       opacity: .9
     &.close
       background: #555
-  @media(max-width: 670px)
-
+  // @media(max-width: 670px)
+  @media(max-width: 440px)
+    // height: 100%
     &--body
       &__line
         display: block
-  // @media(max-width: 440px)
