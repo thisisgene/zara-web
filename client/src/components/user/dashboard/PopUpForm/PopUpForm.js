@@ -47,7 +47,8 @@ function Form({ props }) {
       trainingTitle,
       trainingCategory,
     }
-    if (props.captchaResolved) { props.onSaveClick(dataObj) } else { console.log('ReCaptcha not resolved') }
+    props.onSaveClick(dataObj)
+    // if (props.captchaResolved) {  } else { console.log('ReCaptcha not resolved') }
   }
 
   const onConsentChange = e => {
@@ -62,8 +63,7 @@ function Form({ props }) {
     sendSuccess,
     selectId,
     successMsg,
-    recaptcha,
-    onResolved
+    captchaResolved
 
   } = props
   const [selectedId] = useState(selectId)
@@ -276,6 +276,7 @@ class PopUpForm extends Component {
     sendSuccess: false,
     successMsg: '',
     loading: false,
+    dataObj: []
   }
 
   componentDidMount() {
@@ -285,7 +286,6 @@ class PopUpForm extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.bulletin !== prevProps.bulletin) {
-      this.recaptcha.execute()
       this.setState(
         {
           bulletins: this.props.bulletin.bulletins,
@@ -338,12 +338,11 @@ class PopUpForm extends Component {
   }
 
   onSaveClick = dataObj => {
-
-    this.setState({ loading: true })
-    this.props.sendTrainingRequest(dataObj)
+    this.setState({ loading: true, dataObj: dataObj }, () => this.recaptcha.execute())
   }
 
-  onCaptchaChange = value => {
+  onCaptchaLoad = () => {
+    console.log('LOADADA')
   }
 
   onCloseButtonClick = () => {
@@ -352,7 +351,10 @@ class PopUpForm extends Component {
   }
 
   onResolved = () => {
-    this.setState({ captchaResolved: true })
+    console.log('resolved: ', this.recaptcha.getResponse())
+    this.props.sendTrainingRequest(this.state.dataObj)
+
+    // this.setState({ captchaResolved: true }, () => console.log('resoolve'))
   }
 
   render() {
@@ -380,6 +382,7 @@ class PopUpForm extends Component {
             <Recaptcha
               ref={ref => this.recaptcha = ref}
               sitekey={formData.captchaKey}
+              onload={this.onCaptchaLoad}
               onResolved={this.onResolved}
             /></div>
         )}
