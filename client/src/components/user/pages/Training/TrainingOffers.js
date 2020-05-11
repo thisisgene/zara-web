@@ -71,6 +71,7 @@ class TrainingOffers extends Component {
               <h4
                 style={{
                   margin: '4rem 0 2rem',
+                  padding: '0 1rem',
                   textAlign: 'center',
                 }}
               >
