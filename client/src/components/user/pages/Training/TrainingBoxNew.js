@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import TrainingItemBox from '../../dashboard/TrainingItemBox/TrainingItemBoxNew'
@@ -68,8 +69,13 @@ class TrainingBox extends Component {
                       </div>
                       // <div key={index}>{cat.text}</div>
                     )}
+
                   </Fragment>
                 ))}
+              <div key={'5'} className={styles['cat-item']}>
+                <input type="text" />
+                <Link to='training/angebote/unternehmen'><label>{lang === 'de' ? 'Unternehmen' : 'Companies'}</label></Link>
+              </div>
             </div>
             {this.props.bulletin && this.props.bulletin.bulletins && (
               <TrainingItemBox

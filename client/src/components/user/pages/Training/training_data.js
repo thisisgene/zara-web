@@ -130,19 +130,19 @@ export const trainingTags = [
   },
   {
     name: 'schulklassen',
-    de: { title: 'Schulklassen', singular: 'Veranstaltung' },
-    en: { title: 'School classes', singular: 'Event' },
+    de: { title: 'Schulklassen', singular: 'Schulklasse' },
+    en: { title: 'School classes', singular: 'School class' },
   },
   {
     name: 'erwachsenengruppen',
     de: { title: 'Erwachsenengruppen', singular: 'Workshop' },
     en: { title: 'Groups of adults', singular: 'Workshop' },
   },
-  {
-    name: 'unternehmen',
-    de: { title: 'Unternehmen', singular: 'Pressemeldung' },
-    en: { title: 'Companies', singular: 'Press' },
-  },
+  // {
+  //   name: 'unternehmen',
+  //   de: { title: 'Unternehmen', singular: 'Pressemeldung' },
+  //   en: { title: 'Companies', singular: 'Press' },
+  // },
   {
     name: 'aktuelle_trainingsprojekte',
     de: { title: 'Trainingsprojekte', singular: 'Trainingsprojekte' },
@@ -196,7 +196,7 @@ export const trainingBoxData = {
         text: 'Für Erwachsenengruppen',
         link: 'erwachsenengruppen',
       },
-      { index: '4', text: 'Für Unternehmen', link: 'unternehmen' },
+      // { index: '4', text: 'Für Unternehmen', link: 'unternehmen' },
       {
         index: '5',
         text: 'Aktuelle Trainingsprojekte',
