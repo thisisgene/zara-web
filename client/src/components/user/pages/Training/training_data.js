@@ -21,7 +21,7 @@ export const oneLineAlert = {
   de: {
     title: 'Termine & Trainings-Buchung',
     text:
-      'Bitte kontaktieren Sie uns, um gemeinsam einen passenden Trainings-Termin zu vereinbaren. ',
+      'Bitte kontaktieren Sie uns, um gemeinsam einen passenden Trainings-Termin zu vereinbaren.',
     button: {
       text: 'Anfragen',
       type: 'default',
@@ -32,7 +32,31 @@ export const oneLineAlert = {
   en: {
     title: 'Termine & Trainings-Buchung',
     text:
-      'Bitte kontaktieren Sie uns, um gemeinsam einen passenden Trainings-Termin zu vereinbaren. ',
+      'Bitte kontaktieren Sie uns, um gemeinsam einen passenden Trainings-Termin zu vereinbaren.',
+    button: {
+      text: 'Anfragen',
+      type: 'default',
+      linkAction: 'popUp',
+    },
+  },
+}
+export const oneLineAlertWorkshop = {
+  type: 'info',
+  de: {
+    title: 'Termine & Trainings-Buchung',
+    text:
+      'Bei weiteren Fragen zu unseren offenen Workshops und Vorträgen können Sie sich mit uns in Kontakt setzen.',
+    button: {
+      text: 'Anfragen',
+      type: 'default',
+      linkAction: 'popUp',
+      // link: 'kontakt/#training'
+    },
+  },
+  en: {
+    title: 'Termine & Trainings-Buchung',
+    text:
+      'Bei weiteren Fragen zu unseren offenen Workshops und Vorträgen können Sie sich mit uns in Kontakt setzen.',
     button: {
       text: 'Anfragen',
       type: 'default',

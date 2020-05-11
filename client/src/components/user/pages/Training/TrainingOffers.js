@@ -7,7 +7,7 @@ import { getByProperty } from '../../../../actions/adminActions'
 // import { heroData as workshops_vortraege_HeroData, longText as workshops_vortraege_Text } from './TrainingAdults_data'
 import { data as dataObj } from './trainingOffers_data'
 import { heroData as hero404 } from '../Other/404_data'
-import { oneLineAlert, trainingBoxData } from './training_data'
+import { oneLineAlert, oneLineAlertWorkshop, trainingBoxData } from './training_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
@@ -61,7 +61,7 @@ class TrainingOffers extends Component {
           <div>
             <HeroUnit data={dataObj[trainingType].heroData} lang={lang} />
             <OneLineAlert
-              content={oneLineAlert}
+              content={trainingType === 'workshops_vortraege' ? oneLineAlertWorkshop : oneLineAlert}
               type="togglePopupForm"
               lang={lang} />
             {dataObj[trainingType].longText && (
