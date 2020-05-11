@@ -23,7 +23,7 @@ class TrainingOffers extends Component {
     bulletins: [],
   }
   componentDidMount() {
-    this.props.getByProperty('bulletin', 'tag', this.state.trainingType)
+    this.props.getByProperty('bulletin', 'tag', this.state.trainingType === 'unternehmen' ? 'erwachsenengruppen' : this.state.trainingType)
   }
 
   componentDidUpdate(prevProps) {
@@ -33,7 +33,7 @@ class TrainingOffers extends Component {
           trainingType: this.props.match.params.type,
         },
         () => {
-          this.props.getByProperty('bulletin', 'tag', this.state.trainingType)
+          this.props.getByProperty('bulletin', 'tag', this.state.trainingType === 'unternehmen' ? 'erwachsenengruppen' : this.state.trainingType)
         }
       )
     }
@@ -67,20 +67,20 @@ class TrainingOffers extends Component {
             {dataObj[trainingType].longText && (
               <LongText content={dataObj[trainingType].longText} lang={lang} />
             )}
-            {trainingType !== 'unternehmen' && <div className={styles['training-box']}>
+            {<div className={styles['training-box']}>
               <h4
                 style={{
                   margin: '4rem 0 2rem',
                   textAlign: 'center',
                 }}
               >
-                {dataObj[trainingType].offerText &&
-                  dataObj[trainingType].offerText[lang].title}
+                {dataObj['unternehmen' ? 'erwachsenengruppen' : trainingType].offerText &&
+                  dataObj['unternehmen' ? 'erwachsenengruppen' : trainingType].offerText[lang].title}
               </h4>
               {bulletins.length > 0 ? (
                 <TrainingItemBox
                   content={bulletins}
-                  category={trainingType}
+                  category={trainingType === 'unternehmen' ? 'erwachsenengruppen' : trainingType}
                   lang={lang}
                 />
               ) : (
