@@ -73,7 +73,6 @@ class TrainingBox extends Component {
                   </Fragment>
                 ))}
               <div key={'5'} className={styles['cat-item']}>
-                <input type="text" />
                 <Link to='training/angebote/unternehmen'><label>{lang === 'de' ? 'Unternehmen' : 'Companies'}</label></Link>
               </div>
             </div>
