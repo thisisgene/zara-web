@@ -26,7 +26,9 @@ function Form({ props }) {
     if (selTraining.length > 0) {
       return selTraining[0]['de'].title
     } else {
-      return 'Allgemeine Anfrage'
+      if (id === 'unternehmen') {
+        return 'Für Unternehmen'
+      } else return 'Allgemeine Anfrage'
     }
   }
   const getCategoryFromId = id => {
@@ -34,7 +36,9 @@ function Form({ props }) {
     if (selTraining.length > 0) {
       return selTraining[0].category.label
     } else {
-      return 'Allgemein'
+      if (id === 'unternehmen') {
+        return 'Für Unternehmen'
+      } else return 'Allgemein'
     }
   }
 
@@ -48,6 +52,7 @@ function Form({ props }) {
       trainingCategory,
     }
     props.onSaveClick(dataObj)
+
     // if (props.captchaResolved) {  } else { console.log('ReCaptcha not resolved') }
   }
 
@@ -67,6 +72,7 @@ function Form({ props }) {
 
   } = props
   const [selectedId] = useState(selectId)
+  console.log('selected: ')
   let [consented, setConsent] = useState(false)
   const requiredText = lang === 'de' ? 'Erforderlich' : 'Required'
   const invalidEmailText =
@@ -104,6 +110,9 @@ function Form({ props }) {
                         <option value="no_select">
                           {formData[lang].generalRequest}
                         </option>
+                        <option value="unternehmen">
+                          {formData[lang].unternehmen}
+                        </option>
                       </optgroup>
                       {trainingTags.map(tag =>
                         <optgroup label={tag[lang].title}>
@@ -115,7 +124,6 @@ function Form({ props }) {
 
                         </optgroup>
                       )}
-                      {/* <optgroup label="halumni"><option value="NcM9dIIt8">TEST</option></optgroup> */}
                     </select>
                   </div>
                 </div>
@@ -281,7 +289,6 @@ class PopUpForm extends Component {
 
   componentDidMount() {
     this.props.getAll('bulletins')
-
   }
 
   componentDidUpdate(prevProps) {

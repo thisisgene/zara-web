@@ -3,6 +3,7 @@ export const formData = {
   de: {
     selectLabel: 'Anfrage zu:',
     generalRequest: 'Allgemeine Anfrage',
+    unternehmen: 'Unternehmen',
     title: 'Workshop buchen',
     info:
       'Unsere Workshops und Seminare sind maßgeschneidert, da wir auf unsere Kund*innen individuell eingehen.<br />Bitte kontaktieren Sie uns, um ein auf Sie angepasstes Angebot zu erhalten.',

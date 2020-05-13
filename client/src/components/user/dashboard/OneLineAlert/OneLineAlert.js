@@ -58,15 +58,15 @@ class OneLineAlert extends Component {
               <ButtonObject button={content[lang].button} lang={lang} />
             </div>
           ) : (
-            lang &&
-            content[lang].button && (
-              <div className={styles['alert--popup']}>
-                <button onClick={this.togglePopUpForm}>
-                  {content[lang].button.text}
-                </button>
-              </div>
-            )
-          )}
+              lang &&
+              content[lang].button && (
+                <div className={styles['alert--popup']}>
+                  <button onClick={this.togglePopUpForm}>
+                    {content[lang].button.text}
+                  </button>
+                </div>
+              )
+            )}
         </div>
       </div>
     );
