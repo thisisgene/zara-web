@@ -57,6 +57,8 @@ class BulletinContent extends Component {
       targetGroupEN: '',
       locationDE: '',
       locationEN: '',
+      isLinkToExternal: false,
+      linkToExternal: '',
       label: {},
       shortDescriptionDE: RichTextEditor.createEmptyValue(),
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
@@ -112,6 +114,8 @@ class BulletinContent extends Component {
             targetGroupEN: item.en.targetGroup && item.en.targetGroup,
             locationDE: item.de.location && item.de.location,
             locationEN: item.en.location && item.en.location,
+            isLinkToExternal: item.isLinkToExternal,
+            linkToExternal: item.linkToExternal && item.linkToExternal,
             label: item.label,
             titleImage: item.titleImage && item.titleImage.originalName,
             imageId: item.titleImage && item.titleImage.imageId,
@@ -163,6 +167,8 @@ class BulletinContent extends Component {
             targetGroupEN: '',
             locationDE: '',
             locationEN: '',
+            isLinkToExternal: false,
+            linkToExternal: '',
             label: {},
             shortDescriptionDE: RichTextEditor.createEmptyValue(),
             shortDescriptionEN: RichTextEditor.createEmptyValue(),
@@ -291,6 +297,8 @@ class BulletinContent extends Component {
       targetGroupEN: this.state.targetGroupEN,
       locationDE: this.state.locationDE,
       locationEN: this.state.locationEN,
+      isLinkToExternal: this.state.isLinkToExternal,
+      linkToExternal: this.state.linkToExternal,
       label: this.state.label,
       titleImage: this.state.titleImage,
       imageId: this.state.imageId,
@@ -352,7 +360,7 @@ class BulletinContent extends Component {
                       <div
                         className={
                           styles[
-                            'bulletins-content--text__content--top__labels'
+                          'bulletins-content--text__content--top__labels'
                           ]
                         }
                       >
@@ -374,7 +382,7 @@ class BulletinContent extends Component {
                         <div
                           className={
                             styles[
-                              'bulletins-content--text__content--top__time--side'
+                            'bulletins-content--text__content--top__time--side'
                             ]
                           }
                         >
@@ -403,7 +411,7 @@ class BulletinContent extends Component {
                         <div
                           className={
                             styles[
-                              'bulletins-content--text__content--top__time--side'
+                            'bulletins-content--text__content--top__time--side'
                             ]
                           }
                         >
@@ -433,7 +441,7 @@ class BulletinContent extends Component {
                       <div
                         className={
                           styles[
-                            'bulletins-content--text__content--top__checkbox'
+                          'bulletins-content--text__content--top__checkbox'
                           ]
                         }
                       >
@@ -450,7 +458,7 @@ class BulletinContent extends Component {
                       <div
                         className={
                           styles[
-                            'bulletins-content--text__content--top__location'
+                          'bulletins-content--text__content--top__location'
                           ]
                         }
                       >
@@ -476,6 +484,36 @@ class BulletinContent extends Component {
                           value={this.state.locationEN}
                           onChange={this.onChange}
                           error={this.state.errors.location}
+                        />
+                      </div>
+                      <span>Externer Link</span>
+                      <div
+                        className={
+                          styles[
+                          'bulletins-content--text__content--top__checkbox'
+                          ]
+                        }
+                      >
+
+                        <input
+                          className={commonStyles['input']}
+                          colorScheme="light"
+                          type="checkbox"
+                          name="isLinkToExternal"
+                          checked={this.state.isLinkToExternal}
+                          onChange={this.onCheckChange}
+                        />
+
+                        <TextFieldGroup
+                          className={commonStyles['input']}
+                          colorScheme="light"
+                          placeholder="https://external.link"
+                          type="text"
+                          name="linkToExternal"
+                          value={this.state.linkToExternal}
+                          disabled={!this.state.isLinkToExternal}
+                          onChange={this.onChange}
+                          error={this.state.errors.linkToExternal}
                         />
                       </div>
                     </div>
@@ -539,7 +577,7 @@ class BulletinContent extends Component {
                     <div
                       className={
                         styles[
-                          'bulletins-content--text__description--side__short'
+                        'bulletins-content--text__description--side__short'
                         ]
                       }
                     >
@@ -572,7 +610,7 @@ class BulletinContent extends Component {
                     <div
                       className={
                         styles[
-                          'bulletins-content--text__description--side__short'
+                        'bulletins-content--text__description--side__short'
                         ]
                       }
                     >
@@ -608,7 +646,7 @@ class BulletinContent extends Component {
                   <div
                     className={cx(
                       styles[
-                        'bulletins-content--sidebar__state-indicator--sphere'
+                      'bulletins-content--sidebar__state-indicator--sphere'
                       ],
                       {
                         [styles['online']]: this.state.isOnline,
@@ -618,7 +656,7 @@ class BulletinContent extends Component {
                   <div
                     className={
                       styles[
-                        'bulletins-content--sidebar__state-indicator--text'
+                      'bulletins-content--sidebar__state-indicator--text'
                       ]
                     }
                   >
@@ -671,12 +709,12 @@ class BulletinContent extends Component {
                         alt=""
                       />
                     ) : (
-                      <div>
-                        Titelbild
-                        <br />
+                        <div>
+                          Titelbild
+                          <br />
                         zum auswählen klicken
-                      </div>
-                    )}
+                        </div>
+                      )}
                   </div>
                   {this.state.imageListOpen && (
                     <ContentImageList

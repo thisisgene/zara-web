@@ -545,6 +545,8 @@ router.post(
       timeFrom: body.timeFrom && body.timeFrom,
       timeUntil: body.timeUntil && body.timeUntil,
       showTimeAndDate: body.showTimeAndDate,
+      isLinkToExternal: body.isLinkToExternal,
+      linkToExternal: body.linkToExternal,
       peopleMin: body.peopleMin && body.peopleMin,
       peopleMax: body.peopleMax && body.peopleMax,
       location: body.location && body.location,
@@ -608,6 +610,8 @@ router.post(
           tag: body.tag && body.tag,
           date: fDate,
           showTimeAndDate: body.showTimeAndDate,
+          isLinkToExternal: body.isLinkToExternal,
+          linkToExternal: body.linkToExternal,
           peopleMin: body.peopleMin && body.peopleMin,
           peopleMax: body.peopleMax && body.peopleMax,
 

@@ -43,6 +43,8 @@ const BulletinSchema = new Schema({
     type: String,
   },
   showTimeAndDate: { type: Boolean },
+  isLinkToExternal: { type: Boolean },
+  linkToExternal: { type: String },
   titleImage: {
     originalName: { type: String },
     imageId: { type: String },

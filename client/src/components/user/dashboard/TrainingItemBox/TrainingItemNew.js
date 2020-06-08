@@ -7,12 +7,30 @@ import IconObject from '../../dashboard/IconObject/IconObject'
 
 import styles from './TrainingItemBoxNew.module.sass'
 
+function TrainingLink(props) {
+  return (
+    <div>
+      {props.linkExternal.isExternal ? (
+        <a target="_blank" href={props.linkExternal.externalLink}>
+          {props.children}
+        </a>
+      ) : (
+          <Link to={props.linkInternal}>
+            {props.children}
+          </Link>
+        )}
+    </div>
+  )
+}
+
+
 class TrainingItem extends Component {
   render() {
     const { item, lang } = this.props
     return (
       <div>
-        <Link to={`/${lang}/training/detail/${item._id}`}>
+        {/* <Link to={`/${lang}/training/detail/${item._id}`}> */}
+        <TrainingLink linkExternal={{ isExternal: item.isLinkToExternal, externalLink: item.linkToExternal }} linkInternal={`/${lang}/training/detail/${item._id}`}>
           <div className={styles['training-item-container']}>
             <div className={styles['training-item']}>
               <div className={styles['training-item--title']}>
@@ -160,7 +178,8 @@ class TrainingItem extends Component {
               </div>
             )}
           </div>
-        </Link>
+        </TrainingLink>
+        {/* </Link> */}
       </div>
     )
   }
