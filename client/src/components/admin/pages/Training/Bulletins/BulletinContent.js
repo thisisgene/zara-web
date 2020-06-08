@@ -486,7 +486,8 @@ class BulletinContent extends Component {
                           error={this.state.errors.location}
                         />
                       </div>
-                      <span>Externer Link</span>
+                      <hr />
+                      <span>Bulletin als externer Link</span>
                       <div
                         className={
                           styles[
