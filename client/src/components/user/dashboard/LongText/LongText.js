@@ -21,6 +21,12 @@ export default class LongText extends Component {
             dangerouslySetInnerHTML={{ __html: content[lang].title }}
           />
         )}
+        {content[lang].subtitle && (
+          <div
+            className={styles['long-text--subtitle']}
+            dangerouslySetInnerHTML={{ __html: content[lang].subtitle }}
+          />
+        )}
         {content.image && (
           <div
             className={cx(styles['long-text--image'], {
