@@ -3,14 +3,14 @@ export const heroData = {
   imageSide: 'left',
   imageAlign: 'center',
   de: {
-    title: 'Jobs',
+    title: 'Jobs und Volontariate',
     text:
-      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.'
+      'Hier finden Sie aktuelle Ausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.'
   },
   en: {
-    title: 'Jobs',
+    title: 'Jobs und Volontariate',
     text:
-      'Hier finden Sie aktuelle Jobausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.'
+      'Hier finden Sie aktuelle Ausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.'
   }
 }
 
@@ -41,7 +41,7 @@ export const jobData = [
   {
     category: 'volontariat',
     de: {
-      title: 'Beratungsstelle für Betroffene und Zeug*innen von Rassismus',
+      title: 'VOLONTARIAT Beratungsstelle für Betroffene und Zeug*innen von Rassismus',
       area:
         'Unterstützung der Berater*innen bei der Fallbearbeitung (z.B. Erstellung von Beschwerdebriefen und Anzeigen, Begleitung von Klient*innen, Falldokumentation) und der Organisation der Beratungsstelle. Nach erfolgreicher Einarbeitungszeit auch selbständige Fallbearbeitung unter Supervision.',
       qualifications:
@@ -50,7 +50,7 @@ export const jobData = [
       contact: 'bewerbung@zara.or.at'
     },
     en: {
-      title: 'Beratungsstelle für Betroffene und Zeug*innen von Rassismus',
+      title: 'VOLONTARIAT Beratungsstelle für Betroffene und Zeug*innen von Rassismus',
       area:
         'Unterstützung der Berater*innen bei der Fallbearbeitung (z.B. Erstellung von Beschwerdebriefen und Anzeigen, Begleitung von Klient*innen, Falldokumentation) und der Organisation der Beratungsstelle. Nach erfolgreicher Einarbeitungszeit auch selbständige Fallbearbeitung unter Supervision.',
       qualifications:
@@ -62,7 +62,7 @@ export const jobData = [
   {
     category: 'volontariat',
     de: {
-      title: 'Trainingskoordination',
+      title: 'VOLONTARIAT Trainingskoordination',
       area:
         'Unterstützung bei organisatorischer und inhaltlicher Auf- und Vorbereitung von ZARA-Trainings, Recherchearbeiten zu diversen Themen, Dokumentationsarbeit',
       qualifications:
@@ -71,7 +71,7 @@ export const jobData = [
       contact: 'info@zara-training.at'
     },
     en: {
-      title: 'Trainingskoordination',
+      title: 'VOLONTARIAT Trainingskoordination',
       area:
         'Unterstützung bei organisatorischer und inhaltlicher Auf- und Vorbereitung von ZARA-Trainings, Recherchearbeiten zu diversen Themen, Dokumentationsarbeit',
       qualifications:
@@ -83,7 +83,7 @@ export const jobData = [
   {
     category: 'volontariat',
     de: {
-      title: 'Öffentlichkeitsarbeit',
+      title: 'VOLONTARIAT Öffentlichkeitsarbeit',
       area:
         'Unterstützung bei der Betreuung der Website, Newsletter und Pressespiegel, Recherchetätigkeiten, Verfassen von diversen Texten, Unterstützung bei der Organisation von PR-Events.',
       qualifications:
@@ -92,7 +92,7 @@ export const jobData = [
       contact: 'bewerbung@zara.or.at'
     },
     en: {
-      title: 'Öffentlichkeitsarbeit',
+      title: 'VOLONTARIAT Öffentlichkeitsarbeit',
       area:
         'Unterstützung bei der Betreuung der Website, Newsletter und Pressespiegel, Recherchetätigkeiten, Verfassen von diversen Texten, Unterstützung bei der Organisation von PR-Events.',
       qualifications:
@@ -103,18 +103,25 @@ export const jobData = [
   }
 ]
 
+export const longTextJobs = {
+  de: {
+    title: 'Jobs',
+    text:
+      'Derzeit haben wir keine offenen Stellen.'
+  }
+}
 export const longTextVolontariat = {
   de: {
     title: 'Volontariat',
     text:
-      'Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats oder Zivildiensts haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.'
+      'Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.'
   }
 }
 export const longTextZivildienst = {
   de: {
     title: 'Zivildienst',
     text:
-      '<b>Der Posten als Zivildiener bei ZARA ist seit 1. April 2019 vergeben.</b><br /><br />Die nächste Zivildienststelle wird bei uns am 6. Jänner 2020 wieder besetzt. Bei Interesse an einer Mitarbeit im Rahmen des darauffolgenden Zivildienstzyklus, geben Sie bitte bei der <a href="http://www.bmi.gv.at/cms/zivildienst">Zivildienstagentur</a> Ihren Zuweisungswunsch für ZARA – Zivilcourage und Anti-Rassismus-Arbeit bekannt und senden zusätzlich Ihre Unterlagen (Motivationsschreiben und Lebenslauf) an uns: <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!'
+      '<b>Der Posten als Zivildiener bei ZARA ist bereits bis 31. März 2022 vergeben.</b><br /><br />Die nächste Zivildienststelle wird ab 1. April 2022 frei. Wenn Sie Interesse haben, Ihren Zivildienst bei ZARA abzuleisten, senden Sie bitte eine E-Mail an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!'
   }
 }
 

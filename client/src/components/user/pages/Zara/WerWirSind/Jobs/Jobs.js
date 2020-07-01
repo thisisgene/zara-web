@@ -4,6 +4,7 @@ import { withLocalize } from 'react-localize-redux'
 import {
   heroData,
   jobData,
+  longTextJobs,
   longTextVolontariat,
   longTextZivildienst,
   longText
@@ -30,6 +31,7 @@ class RechtUndOrdnung extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
+            <LongText content={longTextJobs} lang={lang} />
             {/* <div className={styles['job-container']}>
               {jobData &&
                 jobData
