@@ -33,7 +33,7 @@ export const weitereHeroData = {
 export const weitereLongText = {
   de: {
     text:
-      'ZARA ist seit 2010 als spendenabzugsberechtigte Organisation gelistet. Somit sind Spenden an ZARA und Beiträge fördernder Mitglieder als sogenannte Sonderausgaben steuerlich absetzbar. ZARA wurde am 17. Dezember 2010 das Spendengütesiegel von der Kammer der Wirtschaftstreuhänder verliehen. Seither unterzieht sich ZARA einer jährlichen unabhängigen externen Prüfung, um die satzungs- und widmungsgemäße Verwendung der Spendengelder zu bestätigen. Hier finden Sie nähere Informationen zum <a target="blank" href="https://www.osgs.at/">Spendengütesiegel</a>.<br /><br />Beauftragte Mitglieder- und Spendenverwaltung: <b>Hannah Dobler</b><br />Beauftragte Datenschutz: <b>Caroline Kerschbaumer</b><br />Beauftragte Spendenwerbung: <b>Barbara Liegl/b><br />Beauftragte Spendenverwendung: <b>Barbara Liegl/b>'
+      'ZARA ist seit 2010 als spendenabzugsberechtigte Organisation gelistet. Somit sind Spenden an ZARA und Beiträge fördernder Mitglieder als sogenannte Sonderausgaben steuerlich absetzbar. ZARA wurde am 17. Dezember 2010 das Spendengütesiegel von der Kammer der Wirtschaftstreuhänder verliehen. Seither unterzieht sich ZARA einer jährlichen unabhängigen externen Prüfung, um die satzungs- und widmungsgemäße Verwendung der Spendengelder zu bestätigen. Hier finden Sie nähere Informationen zum <a target="blank" href="https://www.osgs.at/">Spendengütesiegel</a>.<br /><br />Beauftragte Mitglieder- und Spendenverwaltung: <b>Hannah Dobler</b><br />Beauftragte Datenschutz: <b>Sophie Haidinger</b><br />Beauftragte Spendenwerbung: <b>Barbara Liegl</b><br />Beauftragte Spendenverwendung: <b>Barbara Liegl</b>'
   },
   en: {
     text:
