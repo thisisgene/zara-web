@@ -20,7 +20,7 @@ class Projekte extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
-            <LongText content={longText} lang={lang} />
+            {/* <LongText content={longText} lang={lang} /> */}
             {projectData &&
               projectData.map(item => <LongText content={item} lang={lang} />)}
           </div>
