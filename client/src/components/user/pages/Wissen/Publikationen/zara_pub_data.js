@@ -1,5 +1,50 @@
 export const pubData = [
   {
+    image: 'publications/sCAN_Manual_Bild.jpg',
+    imageSide: 'left',
+    imageAlign: 'center',
+    id: 'Trainings-Manual_sCAN_Advanced_Monitoring_Training',
+
+    de: {
+      date: '2. September 2020',
+      title: '<b>Trainings-Manual:</b> sCAN Advanced Monitoring Training',
+      shortDescription:
+        'Das Trainings-Handbuch (auf Englisch) ist für all jene, die für das Phänomen Online-Hass und Hetze sensibilisieren und dagegen vorgehen möchten und bereits Workshop-Erfahrung haben.',
+      content:
+        '<p>Die Expertise des sCAN-Projekts – nämlich die Entwicklung transnationaler Praktiken zur Identifizierung, Überwachung, Analyse, Berichterstattung und Bekämpfung von Hassrede online – bildet die Grundlage für dieses Trainingshandbuch.<br /><br />Das Trainings-Handbuch (auf Englisch) ist für all jene, die für das Phänomen Online-Hass und Hetze sensibilisieren und dagegen vorgehen möchten und bereits Workshop-Erfahrung haben.<br /><br />Wir freuen uns, dass Karin Bischof in Zusammenarbeit mit Dieter Schindlauer und Anna-Laura Schreilechner sowie Fabian Lang (Layout) das sCAN Advanced Monitoring Training-Manual verfasst hat.</p>',
+      linkText: 'weiterlesen',
+      download: [
+        {
+          fileLocation:
+            'pdf/sCAN_Advanced_Monitoring_Training_Manual.pdf',
+          fileName:
+            'sCAN_Advanced_Monitoring_Training_Manual.pdf',
+
+          fileSize: '2.1 MB'
+        }
+      ]
+    },
+    en: {
+      date: '2. September 2020',
+      title: '<b>Trainings-Manual:</b> sCAN Advanced Monitoring Training',
+      shortDescription:
+        'Das Trainings-Handbuch (auf Englisch) ist für all jene, die für das Phänomen Online-Hass und Hetze sensibilisieren und dagegen vorgehen möchten und bereits Workshop-Erfahrung haben.',
+      content:
+        '<p>Die Expertise des sCAN-Projekts – nämlich die Entwicklung transnationaler Praktiken zur Identifizierung, Überwachung, Analyse, Berichterstattung und Bekämpfung von Hassrede online – bildet die Grundlage für dieses Trainingshandbuch.<br /><br />Das Trainings-Handbuch (auf Englisch) ist für all jene, die für das Phänomen Online-Hass und Hetze sensibilisieren und dagegen vorgehen möchten und bereits Workshop-Erfahrung haben.<br /><br />Wir freuen uns, dass Karin Bischof in Zusammenarbeit mit Dieter Schindlauer und Anna-Laura Schreilechner sowie Fabian Lang (Layout) das sCAN Advanced Monitoring Training-Manual verfasst hat.</p>',
+      linkText: 'weiterlesen',
+      download: [
+        {
+          fileLocation:
+            'pdf/sCAN_Advanced_Monitoring_Training_Manual.pdf',
+          fileName:
+            'sCAN_Advanced_Monitoring_Training_Manual.pdf',
+
+          fileSize: '2.1 MB'
+        }
+      ]
+    }
+  },
+  {
     image: 'publications/zara-broschuere-was_tun-01.png',
     imageSide: 'left',
     imageAlign: 'center',
@@ -662,4 +707,5 @@ export const pubData = [
       ]
     }
   }
+
 ]
