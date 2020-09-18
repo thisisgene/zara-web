@@ -47,6 +47,7 @@ import KenneDeineRechte from './pages/Wissen/KenneDeineRechte/KenneDeineRechte'
 import Glossar from './pages/Wissen/KenneDeineRechte/Glossar'
 import Publikationen from './pages/Wissen/Publikationen/Publikationen'
 import PubDetail from './pages/Wissen/Publikationen/PubDetail'
+import GegenHassimNetzBerichte from './pages/Wissen/Publikationen/GegenHassimNetzBerichte'
 import RassismusReport from './pages/Wissen/Publikationen/RassismusReport'
 import Faq from './pages/Wissen/Faq/Faq'
 
@@ -319,6 +320,11 @@ class User extends Component {
                 exact
                 path="/:lang/wissen/publikationen"
                 component={Publikationen}
+              />
+              <Route
+                exact
+                path="/:lang/wissen/publikationen/GegenHassimNetz_Berichte"
+                component={GegenHassimNetzBerichte}
               />
               <Route
                 exact

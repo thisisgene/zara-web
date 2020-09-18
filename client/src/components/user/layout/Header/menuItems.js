@@ -312,19 +312,24 @@ const menuItems = [
         id: '4.3',
         subMenuList: [
           {
+            name: 'GegenHassimNetz-Berichte',
+            link: 'GegenHassimNetz_Berichte',
+            id: '4.3.1',
+          },
+          {
             name: 'Rassismusreport',
             link: 'rassismusreport',
-            id: '4.3.1',
+            id: '4.3.2',
           },
           {
             name: 'ZARA Publikationen',
             link: 'zara',
-            id: '4.3.2',
+            id: '4.3.3',
           },
           {
             name: 'Jahres- und Finanzberichte',
             link: 'jahres_und_finanzberichte',
-            id: '4.3.3',
+            id: '4.3.4',
           },
         ],
       },
