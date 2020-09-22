@@ -170,7 +170,7 @@ class ImageGridObject extends Component {
                 <div className={styles['grid-item--title']}>
                   {item[lang].title}
                 </div>
-                <span>Online Download:</span>
+                <span>Download:</span>
                 <div className={styles['grid-item--links__language']}>
                   {item.links.map(link => (
                     <a
