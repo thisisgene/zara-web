@@ -23,7 +23,7 @@ export const longText = {
 }
 
 export const cardGridObject = {
-  count: 'three',
+  count: 'four',
   de: {
     title: 'Weiterführend',
     cards: [
@@ -45,6 +45,13 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/presse.png',
+        title: 'Pressemeldungen',
+        link: 'wissen/presse/pressemeldungen'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/presse.png',
         title: 'Pressespiegel',
         link: 'wissen/presse/pressespiegel'
       }
@@ -56,24 +63,31 @@ export const cardGridObject = {
       {
         size: 'default',
         type: 'imageCard',
-        image: 'icons/publikationen.png',
-        title: 'Rassismus Reports',
-        link: 'wissen/publikationen/rassismusreports'
+        image: 'icons/presse.png',
+        title: 'Pressematerial & Logos',
+        link: 'wissen/presse/pressematerial_und_logos'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'icons/publikationen.png',
-        title: '#GegenHassimNetz-Berichte',
-        link: 'wissen/publikationen/GegenHassimNetz_Berichte'
+        image: 'icons/presse.png',
+        title: 'Fotos',
+        link: 'wissen/presse/fotos'
       },
-      // {
-      //   size: 'default',
-      //   type: 'imageCard',
-      //   image: 'icons/publikationen.png',
-      //   title: 'Jahres- und Finanzberichte',
-      //   link: 'wissen/publikationen/jahres_und_finanzberichte'
-      // }
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/presse.png',
+        title: 'Pressemeldungen',
+        link: 'wissen/presse/pressemeldungen'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/presse.png',
+        title: 'Pressespiegel',
+        link: 'wissen/presse/pressespiegel'
+      }
     ]
   }
 }

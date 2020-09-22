@@ -292,6 +292,7 @@ const menuItems = [
       {
         name: 'Eigene Rechte kennen',
         link: 'eigene_rechte_kennen',
+        gridRow: 'two',
         id: '4.2',
         subMenuList: [
           // {
@@ -338,29 +339,29 @@ const menuItems = [
         link: 'faq',
         id: '4.4',
       },
-      {
-        name: 'Presse',
-        link: 'presse',
-        id: '4.5',
-        gridRow: 'two',
-        subMenuList: [
-          {
-            name: 'Pressespiegel',
-            link: 'pressespiegel',
-            id: '4.5.1',
-          },
-          {
-            name: 'Pressematerial & Logos',
-            link: 'pressematerial_und_logos',
-            id: '4.5.2',
-          },
-          {
-            name: 'Fotos',
-            link: 'fotos',
-            id: '4.5.3',
-          },
-        ],
-      },
+      // {
+      //   name: 'Presse',
+      //   link: 'presse',
+      //   id: '4.5',
+      //   gridRow: 'two',
+      //   subMenuList: [
+      //     {
+      //       name: 'Pressespiegel',
+      //       link: 'pressespiegel',
+      //       id: '4.5.1',
+      //     },
+      //     {
+      //       name: 'Pressematerial & Logos',
+      //       link: 'pressematerial_und_logos',
+      //       id: '4.5.2',
+      //     },
+      //     {
+      //       name: 'Fotos',
+      //       link: 'fotos',
+      //       id: '4.5.3',
+      //     },
+      //   ],
+      // },
     ],
   },
   {

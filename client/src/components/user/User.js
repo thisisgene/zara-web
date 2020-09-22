@@ -82,6 +82,7 @@ import PageNotFound from './pages/Other/PageNotFound'
 import JobDetail from './pages/Zara/WerWirSind/Jobs/JobDetail'
 import NewsDetailDB from './pages/Wissen/News/NewsBox/NewsDetailDB'
 import Pressematerial_Logos from './pages/Wissen/Presse/Pressematerial_LogosNew'
+import Pressemeldungen from './pages/Wissen/News/Pressemeldungen/Pressemeldungen'
 class User extends Component {
   constructor(props) {
     super(props)
@@ -301,11 +302,11 @@ class User extends Component {
                 path="/:lang/wissen/presse/pressespiegel"
                 component={Pressespiegel}
               />
-              {/* <Route
+              <Route
                 exact
-                path="/:lang/wissen/presse/pressematerial_und_logos"
-                component={Logos}
-              /> */}
+                path="/:lang/wissen/presse/pressemeldungen"
+                component={Pressemeldungen}
+              />
               <Route
                 exact
                 path="/:lang/wissen/presse/pressematerial_und_logos"
