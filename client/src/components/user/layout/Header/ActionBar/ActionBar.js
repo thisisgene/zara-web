@@ -45,7 +45,7 @@ class ActionBar extends Component {
             </NavLink>
             <NavLink
               activeClassName={styles.active}
-              to={`/${lang}/kontakt`}
+              to={`/${lang}/wissen/presse`}
               onClick={onClick ? onClick : null}
             >
               <Translate id={`menu.item0.3`} />

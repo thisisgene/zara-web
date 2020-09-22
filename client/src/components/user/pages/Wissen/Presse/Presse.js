@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
-import { heroData, longText } from './presse_data'
+import { heroData, longText, cardGridObject } from './presse_data'
 // import { oneLineAlert, trainingItems } from './training_data'
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import LongText from '../../../dashboard/LongText/LongText'
+import CardCollectionGridObject from '../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 class Presse extends Component {
   render() {
@@ -19,7 +20,8 @@ class Presse extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
-            <LongText content={longText} lang={lang} />
+            {/* <LongText content={longText} lang={lang} /> */}
+            <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}
       </div>
