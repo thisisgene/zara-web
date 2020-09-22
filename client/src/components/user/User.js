@@ -304,7 +304,7 @@ class User extends Component {
               />
               <Route
                 exact
-                path="/:lang/wissen/presse/pressemeldungen"
+                path="/:lang/wissen/aktuelles/pressemeldungen"
                 component={Pressemeldungen}
               />
               <Route

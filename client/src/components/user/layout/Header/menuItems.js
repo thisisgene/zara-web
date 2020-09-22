@@ -286,26 +286,7 @@ const menuItems = [
         name: 'Aktuelles',
         link: 'aktuelles',
         id: '4.1',
-        subMenuList: [{ name: 'ZARA Kolumne', link: 'kolumne', id: '4.1.1' }],
-      },
-
-      {
-        name: 'Eigene Rechte kennen',
-        link: 'eigene_rechte_kennen',
-        gridRow: 'two',
-        id: '4.2',
-        subMenuList: [
-          // {
-          //   name: 'Recht & Ordnung',
-          //   link: 'recht_und_ordnung',
-          //   id: '4.2.1'
-          // },
-          {
-            name: 'Glossar',
-            link: 'glossar',
-            id: '4.2.2',
-          },
-        ],
+        subMenuList: [{ name: 'ZARA Kolumne', link: 'kolumne', id: '4.1.1' }, { name: 'pressemeldungen', link: 'pressemeldungen', id: '4.1.2' }],
       },
       {
         name: 'Publikationen',
@@ -313,14 +294,14 @@ const menuItems = [
         id: '4.3',
         subMenuList: [
           {
-            name: 'GegenHassimNetz-Berichte',
-            link: 'GegenHassimNetz_Berichte',
-            id: '4.3.1',
-          },
-          {
             name: 'Rassismusreport',
             link: 'rassismusreport',
             id: '4.3.2',
+          },
+          {
+            name: 'GegenHassimNetz-Berichte',
+            link: 'GegenHassimNetz_Berichte',
+            id: '4.3.1',
           },
           {
             name: 'ZARA Publikationen',
@@ -338,7 +319,26 @@ const menuItems = [
         name: 'FAQs',
         link: 'faq',
         id: '4.4',
+        gridRow: 'two',
       },
+      {
+        name: 'Eigene Rechte kennen',
+        link: 'eigene_rechte_kennen',
+        id: '4.2',
+        subMenuList: [
+          // {
+          //   name: 'Recht & Ordnung',
+          //   link: 'recht_und_ordnung',
+          //   id: '4.2.1'
+          // },
+          {
+            name: 'Glossar',
+            link: 'glossar',
+            id: '4.2.2',
+          },
+        ],
+      },
+
       // {
       //   name: 'Presse',
       //   link: 'presse',
