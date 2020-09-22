@@ -20,12 +20,19 @@
     
     &.gghim
       .grid-item--links
-        background: rgba(white, .8)
-        opacity: .7
+        background: rgba(white, .6)
+        opacity: .9
         justify-content: flex-start
         padding-top: 2rem
+        transition: all 200ms ease-in-out
+        a
+          transition: opacity 200ms ease-in-out
+          opacity: .7
         &:hover, &:active
-          opacity: 1  
+          opacity: 1
+          background: rgba(white, .8)
+          a
+            opacity: 1
         
     button, a
       text-decoration: none !important

@@ -56,11 +56,11 @@ export const reportGridData = [
       // { link: 'pdf/ZARA-Rassismus_Report_2019_EN.pdf', linkText: 'englisch' }
     ],
     de: {
-      title: '#GegenHassimNetz-Bericht 1&2',
+      title: ' 1. & 2. #GegenHassimNetz-Bericht',
       text: ''
     },
     en: {
-      title: '#GegenHassimNetz-Bericht 1&2',
+      title: ' 1. & 2. #GegenHassimNetz-Bericht',
       text: ''
     }
   }
