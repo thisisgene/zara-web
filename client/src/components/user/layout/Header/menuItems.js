@@ -319,12 +319,13 @@ const menuItems = [
         name: 'FAQs',
         link: 'faq',
         id: '4.4',
-        gridRow: 'two',
+
       },
       {
         name: 'Eigene Rechte kennen',
         link: 'eigene_rechte_kennen',
         id: '4.2',
+        gridRow: 'two',
         subMenuList: [
           // {
           //   name: 'Recht & Ordnung',

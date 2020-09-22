@@ -137,6 +137,7 @@ class User extends Component {
 
   render() {
     const { activeLanguage } = this.props
+    console.log('TIMEEE: ', Date.now())
     const routes = [
       {
         path: '//de',
