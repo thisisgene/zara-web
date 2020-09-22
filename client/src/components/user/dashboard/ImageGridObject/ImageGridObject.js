@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+
 
 import { sendOrder, resetOrder } from '../../../../actions/userActions'
 
@@ -9,6 +10,7 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart'
 import Spinner from '../Spinner/Spinner'
 import TextFieldGroup from '../InputGroups/TextFieldGroup'
 import TextareaFieldGroup from '../InputGroups/TextareaFieldGroup'
+import OnlineByTimer from '../OnlineByTimer/OnlineByTimer'
 
 import cx from 'classnames'
 import styles from './ImageGridObject.module.sass'
@@ -157,50 +159,98 @@ class ImageGridObject extends Component {
         />
         <div className={styles['grid-container']}>
           {content.map((item, index) => (
-            <div
-              key={index}
-              className={cx(styles['grid-item'], {
-                [styles['is-fresh']]: item.isFresh,
-                [styles[type]]: type
-              })}
-            >
-              <img src={`/assets/img/${item.image}`} alt={item.image} />
-              {/* https://serpig-space.ams3.digitaloceanspaces.com/img/zara_rr/pdf/racism-report-2015.pdf */}
-              <div className={styles['grid-item--links']}>
-                <div className={styles['grid-item--title']}>
-                  {item[lang].title}
-                </div>
-                <span>Download:</span>
-                <div className={styles['grid-item--links__language']}>
-                  {item.links.map(link => (
-                    <a
-                      target="blank"
-                      href={`https://assets.zara.or.at/download/${link.link}`}
-                    // onClick={this.props.onShowSurvey}
-                    >
-                      {link.linkText}
-                    </a>
-                  ))}
-                </div>
-                {item.toOrder && (
-                  <div>
-                    <hr />
-                    <button
-                      onClick={this.increaseCount.bind(
-                        this,
-                        item.id,
-                        this.title
+            <Fragment>
+              { item.setOnlineByTimer ?
+                <OnlineByTimer onlineTime={item.onlineTime}>
+                  <div
+                    key={index}
+                    className={cx(styles['grid-item'], {
+                      [styles['is-fresh']]: item.isFresh,
+                      [styles[type]]: type
+                    })}
+                  >
+                    <img src={`/assets/img/${item.image}`} alt={item.image} />
+                    {/* https://serpig-space.ams3.digitaloceanspaces.com/img/zara_rr/pdf/racism-report-2015.pdf */}
+                    <div className={styles['grid-item--links']}>
+                      <div className={styles['grid-item--title']}>
+                        {item[lang].title}
+                      </div>
+                      <span>Download:</span>
+                      <div className={styles['grid-item--links__language']}>
+                        {item.links.map(link => (
+                          <a
+                            target="blank"
+                            href={`https://assets.zara.or.at/download/${link.link}`}
+                          // onClick={this.props.onShowSurvey}
+                          >
+                            {link.linkText}
+                          </a>
+                        ))}
+                      </div>
+                      {item.toOrder && (
+                        <div>
+                          <hr />
+                          <button
+                            onClick={this.increaseCount.bind(
+                              this,
+                              item.id,
+                              this.title
+                            )}
+                          >
+                            {lang === 'de'
+                              ? 'Druckversion Bestellen'
+                              : 'Order print version'}
+                          </button>
+                        </div>
                       )}
-                    >
-                      {lang === 'de'
-                        ? 'Druckversion Bestellen'
-                        : 'Order print version'}
-                    </button>
+                      {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
+                    </div>
                   </div>
-                )}
-                {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
-              </div>
-            </div>
+                </OnlineByTimer> :
+                <div
+                  key={index}
+                  className={cx(styles['grid-item'], {
+                    [styles['is-fresh']]: item.isFresh,
+                    [styles[type]]: type
+                  })}
+                >
+                  <img src={`/assets/img/${item.image}`} alt={item.image} />
+                  {/* https://serpig-space.ams3.digitaloceanspaces.com/img/zara_rr/pdf/racism-report-2015.pdf */}
+                  <div className={styles['grid-item--links']}>
+                    <div className={styles['grid-item--title']}>
+                      {item[lang].title}
+                    </div>
+                    <span>Download:</span>
+                    <div className={styles['grid-item--links__language']}>
+                      {item.links.map(link => (
+                        <a
+                          target="blank"
+                          href={`https://assets.zara.or.at/download/${link.link}`}
+                        // onClick={this.props.onShowSurvey}
+                        >
+                          {link.linkText}
+                        </a>
+                      ))}
+                    </div>
+                    {item.toOrder && (
+                      <div>
+                        <hr />
+                        <button
+                          onClick={this.increaseCount.bind(
+                            this,
+                            item.id,
+                            this.title
+                          )}
+                        >
+                          {lang === 'de'
+                            ? 'Druckversion Bestellen'
+                            : 'Order print version'}
+                        </button>
+                      </div>
+                    )}
+                    {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
+                  </div>
+                </div>}</Fragment>
           ))}
         </div>
         {withCart && this.state.showCart && (

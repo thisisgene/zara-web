@@ -28,24 +28,25 @@ export const longText = {
 }
 
 export const reportGridData = [
-  {
-    id: 'gghin2020',
-    isFresh: true,
-    // toOrder: true,
-    image: 'GegenHassimNetz/3-GegenHassimNetz-Bericht.jpg',
-    links: [
-      { link: 'pdf/3-GegenHassimNetz-Bericht.pdf', linkText: 'deutsch' },
-      // { link: 'pdf/ZARA-Rassismus_Report_2019_EN.pdf', linkText: 'englisch' }
-    ],
-    de: {
-      title: '3. #GegenHassimNetz-Bericht',
-      text: ''
-    },
-    en: {
-      title: '3. #GegenHassimNetz-Bericht',
-      text: ''
-    }
-  },
+  // {
+  //   onlineTime: "1600844403",
+  //   id: 'gghin2020',
+  //   isFresh: true,
+  //   // toOrder: true,
+  //   image: 'GegenHassimNetz/3-GegenHassimNetz-Bericht.jpg',
+  //   links: [
+  //     { link: 'pdf/3-GegenHassimNetz-Bericht.pdf', linkText: 'deutsch' },
+  //     // { link: 'pdf/ZARA-Rassismus_Report_2019_EN.pdf', linkText: 'englisch' }
+  //   ],
+  //   de: {
+  //     title: '3. #GegenHassimNetz-Bericht',
+  //     text: ''
+  //   },
+  //   en: {
+  //     title: '3. #GegenHassimNetz-Bericht',
+  //     text: ''
+  //   }
+  // },
   {
     id: 'gghin2019',
     // isFresh: true,
