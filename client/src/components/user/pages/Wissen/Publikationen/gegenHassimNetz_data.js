@@ -29,7 +29,7 @@ export const longText = {
 
 export const reportGridData = [
   {
-    id: 'rr2019',
+    id: 'gghin2019',
     // isFresh: true,
     // toOrder: true,
     image: 'GegenHassimNetz/GegenHassimNetz_Bericht_1-2.jpg',
@@ -61,10 +61,17 @@ export const shoppingCartText = {
 }
 
 export const cardGridObject = {
-  count: 'two',
+  count: 'three',
   de: {
     title: 'Weiterführend',
     cards: [
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/publikationen.png',
+        title: 'Rassismus Reports',
+        link: 'wissen/publikationen/rassismusreport'
+      },
       {
         size: 'default',
         type: 'imageCard',
@@ -84,6 +91,13 @@ export const cardGridObject = {
   en: {
     title: 'More',
     cards: [
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/publikationen.png',
+        title: 'Rassismus Reports',
+        link: 'wissen/publikationen/rassismusreport'
+      },
       {
         size: 'default',
         type: 'imageCard',

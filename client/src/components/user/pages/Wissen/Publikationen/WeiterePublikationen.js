@@ -4,12 +4,13 @@ import { withLocalize } from 'react-localize-redux'
 
 import { getAll } from '../../../../../actions/adminActions'
 
-import { weitereHeroData, weitereLongText } from './publikationen_data'
+import { weitereHeroData, weitereLongText, cardGridObject } from './publikationen_data'
 
 import HeroUnit from '../../../dashboard/HeroUnit/HeroUnit'
 import NewsletterOneLineObject from '../../../dashboard/NewsletterOneLineObject/NewsletterOneLineObject'
 import LongText from '../../../dashboard/LongText/LongText'
 import CollapsibleItem from '../../../dashboard/CollapsibleItem/CollapsibleItem'
+import CardCollectionGridObject from '../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 import styles from './WeiterePublikationen.module.sass'
 
@@ -53,6 +54,8 @@ class WeiterePublikationen extends Component {
                   ))}
               </div>
             )}
+            <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
+
           </div>
         )}
       </div>

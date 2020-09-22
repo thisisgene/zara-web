@@ -5,12 +5,12 @@ export const heroData = {
   de: {
     title: 'Rassismus Report',
     text:
-      'ZARA berichtet alljährlich im Rassismus Report über rassistische Übergriffe und Vorkommnisse in Österreich. Er ist eine wichtige Informationsquelle für nationale und internationale Organisationen und noch immer die einzige qualitative Datenquelle in Österreich. Die ausgewählten, detailliert dargestellten und anonymisierten Einzelberichte repräsentieren die Qualität und Strukturen des rassistischen österreichischen Alltags.'
+      'ZARA berichtet im Rassismus Report alljährlich über rassistische Übergriffe und Vorkommnisse in Österreich. Er ist eine wichtige Informationsquelle für nationale und internationale Organisationen und die einzige qualitative Datenquelle zu allen Formen von Rassismus in Österreich. Die ausgewählten, detailliert dargestellten und anonymisierten Einzelberichte repräsentieren die Qualität und Strukturen von Rassismus in Österreich.'
   },
   en: {
     title: 'Rassismus Report',
     text:
-      'ZARA berichtet alljährlich im Rassismus Report über rassistische Übergriffe und Vorkommnisse in Österreich. Er ist eine wichtige Informationsquelle für nationale und internationale Organisationen und noch immer die einzige qualitative Datenquelle in Österreich. Die ausgewählten, detailliert dargestellten und anonymisierten Einzelberichte repräsentieren die Qualität und Strukturen des rassistischen österreichischen Alltags.'
+      'ZARA berichtet im Rassismus Report alljährlich über rassistische Übergriffe und Vorkommnisse in Österreich. Er ist eine wichtige Informationsquelle für nationale und internationale Organisationen und die einzige qualitative Datenquelle zu allen Formen von Rassismus in Österreich. Die ausgewählten, detailliert dargestellten und anonymisierten Einzelberichte repräsentieren die Qualität und Strukturen von Rassismus in Österreich.'
   }
 }
 
@@ -18,12 +18,12 @@ export const longText = {
   de: {
     title: 'Download',
     text:
-      'Sie können auch alle bisherigen Rassismus Reports im PDF-Format herunterladen.<br /><br />Wenn Sie  den Rassismus-Report downloaden möchten , denken Sie bitte daran, dass die Publikation Geld kostet. ZARA lebt von engagierten Spender*innen. <a href="../../mitmischen/unterstuetzen">Unterstützen Sie uns</a> mit Ihrem Beitrag, die einzige Beratungsstelle für Betroffene und Zeug*innen von rassistischer Diskriminierung in Österreich zu sichern!'
+      'Hier können Sie alle bisherigen Rassismus Reports im PDF-Format herunterladen.<br /><br />Wenn Sie den Rassismus-Report downloaden möchten, denken Sie bitte daran, dass diese Publikation Geld kostet und ZARA von engagierten Spender*innen lebt.<a href="../../mitmischen/unterstuetzen"> Unterstützen Sie ZARA</a> und ermöglichen Sie, dass Betroffene und Zeug*innen von Rassismus auch in Zukunft umfassende juristische und psychosoziale Unterstützung bekommen.'
   },
   en: {
     title: 'Download',
     text:
-      'Sie können auch alle bisherigen Rassismus Reports im PDF-Format herunterladen.<br /><br />Wenn Sie  den Rassismus-Report downloaden möchten , denken Sie bitte daran, dass die Publikation Geld kostet. ZARA lebt von engagierten Spender*innen. <a href="../../mitmischen/unterstuetzen">Unterstützen Sie uns</a> mit Ihrem Beitrag, die einzige Beratungsstelle für Betroffene und Zeug*innen von rassistischer Diskriminierung in Österreich zu sichern!'
+      'Hier können Sie alle bisherigen Rassismus Reports im PDF-Format herunterladen.<br /><br />Wenn Sie den Rassismus-Report downloaden möchten, denken Sie bitte daran, dass diese Publikation Geld kostet und ZARA von engagierten Spender*innen lebt.<a href="../../mitmischen/unterstuetzen"> Unterstützen Sie ZARA</a> und ermöglichen Sie, dass Betroffene und Zeug*innen von Rassismus auch in Zukunft umfassende juristische und psychosoziale Unterstützung bekommen.'
   }
 }
 
@@ -392,7 +392,7 @@ export const shoppingCartText = {
 }
 
 export const cardGridObject = {
-  count: 'two',
+  count: 'three',
   de: {
     title: 'Weiterführend',
     cards: [
@@ -402,6 +402,13 @@ export const cardGridObject = {
         image: 'icons/publikationen.png',
         title: 'ZARA Publikationen',
         link: 'wissen/publikationen/zara'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/publikationen.png',
+        title: '#GegenHassimNetz-Berichte',
+        link: 'wissen/publikationen/GegenHassimNetz_Berichte'
       },
       {
         size: 'default',
@@ -421,6 +428,13 @@ export const cardGridObject = {
         image: 'icons/publikationen.png',
         title: 'ZARA Publikationen',
         link: 'wissen/publikationen/zara'
+      },
+      {
+        size: 'default',
+        type: 'imageCard',
+        image: 'icons/publikationen.png',
+        title: '#GegenHassimNetz-Berichte',
+        link: 'wissen/publikationen/GegenHassimNetz_Berichte'
       },
       {
         size: 'default',

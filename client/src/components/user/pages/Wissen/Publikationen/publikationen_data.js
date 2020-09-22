@@ -79,16 +79,23 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'ZARA Publikationen',
-        link: 'wissen/publikationen/zara'
+        title: 'Rassismus Reports',
+        link: 'wissen/publikationen/rassismusreports'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'Jahres- und Finanzberichte',
-        link: 'wissen/publikationen/jahres_und_finanzberichte'
-      }
+        title: '#GegenHassimNetz-Berichte',
+        link: 'wissen/publikationen/GegenHassimNetz_Berichte'
+      },
+      // {
+      //   size: 'default',
+      //   type: 'imageCard',
+      //   image: 'icons/publikationen.png',
+      //   title: 'Jahres- und Finanzberichte',
+      //   link: 'wissen/publikationen/jahres_und_finanzberichte'
+      // }
     ]
   },
   en: {
@@ -98,16 +105,23 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'ZARA Publikationen',
-        link: 'wissen/publikationen/zara'
+        title: 'Rassismus Reports',
+        link: 'wissen/publikationen/rassismusreports'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'icons/publikationen.png',
-        title: 'Jahres- und Finanzberichte',
-        link: 'wissen/publikationen/jahres_und_finanzberichte'
-      }
+        title: '#GegenHassimNetz-Berichte',
+        link: 'wissen/publikationen/GegenHassimNetz_Berichte'
+      },
+      // {
+      //   size: 'default',
+      //   type: 'imageCard',
+      //   image: 'icons/publikationen.png',
+      //   title: 'Jahres- und Finanzberichte',
+      //   link: 'wissen/publikationen/jahres_und_finanzberichte'
+      // }
     ]
   }
 }

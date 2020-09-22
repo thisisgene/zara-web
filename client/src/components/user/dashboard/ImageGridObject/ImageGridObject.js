@@ -146,7 +146,7 @@ class ImageGridObject extends Component {
   }
 
   render() {
-    const { content, lang, shoppingCartText, withCart } = this.props
+    const { content, lang, shoppingCartText, withCart, type } = this.props
     const { errors } = this.state
     return (
       <div>
@@ -160,7 +160,8 @@ class ImageGridObject extends Component {
             <div
               key={index}
               className={cx(styles['grid-item'], {
-                [styles['is-fresh']]: item.isFresh
+                [styles['is-fresh']]: item.isFresh,
+                [styles[type]]: type
               })}
             >
               <img src={`/assets/img/${item.image}`} alt={item.image} />
