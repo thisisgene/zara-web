@@ -46,7 +46,7 @@ export const cardGridObject = {
         type: 'imageCard',
         image: 'icons/presse.png',
         title: 'Pressemeldungen',
-        link: 'wissen/presse/pressemeldungen'
+        link: 'wissen/aktuelles/pressemeldungen'
       },
       {
         size: 'default',
