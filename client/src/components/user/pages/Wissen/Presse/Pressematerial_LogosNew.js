@@ -31,6 +31,81 @@ class PressematerialLogos extends Component {
             <HeroUnit data={heroData} lang={lang} />
             <div className={styles['logo-box-container']}>
               <div className={styles['logo-box']}>
+                <h1>Datenvisualisierung 3. #GegenHassimNetz-Bericht</h1>
+                <h2>
+                  Hier finden Sie sämtliche Grafiken aus dem 3. #GegenHassimNetz-Bericht,
+                  <br /> die durch die Unterstützung von Fabian Lang (
+                  <a target="blank" href="http://www.dergestalt.at/">
+                    dergestalt
+                  </a>
+                  ) realisiert werden konnten.
+                </h2>
+                <div className={styles['logo-box--item']}>
+                  <div>Bericht zum 3. Beratungsjahr</div>
+                  <a
+                    target="blank"
+                    href={
+                      'https://assets.zara.or.at/download/grafiken/Bericht zum 3 Beratungsjahr.jpg'
+                    }
+                  >
+                    <img
+                      src={
+                        'https://assets.zara.or.at/download/grafiken/Bericht zum 3 Beratungsjahr.jpg'
+                      }
+                      alt="Bericht zum 3. Beratungsjahr"
+                    />
+                  </a>
+                </div>
+                <div className={styles['logo-box--item']}>
+                  <div>Gemeinsam gegen Hass im Netz</div>
+                  <a
+                    target="blank"
+                    href={
+                      'https://assets.zara.or.at/download/grafiken/Gemeinsam gegen Hass im Netz.jpg'
+                    }
+                  >
+                    <img
+                      src={
+                        'https://assets.zara.or.at/download/grafiken/Gemeinsam gegen Hass im Netz.jpg'
+                      }
+                      alt="Gemeinsam gegen Hass im Netz"
+                    />
+                  </a>
+                </div>
+                <div className={styles['logo-box--item']}>
+                  <div>Ideologische Quellen von Hass im Netz</div>
+                  <a
+                    target="blank"
+                    href={
+                      'https://assets.zara.or.at/download/grafiken/Ideologische Quellen von Hass im Netz.jpg'
+                    }
+                  >
+                    <img
+                      src={
+                        'https://assets.zara.or.at/download/grafiken/Ideologische Quellen von Hass im Netz.jpg'
+                      }
+                      alt="Ideologische Quellen von Hass im Netz"
+                    />
+                  </a>
+                </div>
+                <div className={styles['logo-box--item']}>
+                  <div>Rechtliche Ersteinschaetzung der Meldungen durch die ZARA-Beratungsstelle #GegenHassimNetz</div>
+                  <a
+                    target="blank"
+                    href={
+                      'https://assets.zara.or.at/download/grafiken/Rechtliche Ersteinschaetzung der Meldungen durch die ZARA-Beratungsstelle GegenHassimNetz.jpg'
+                    }
+                  >
+                    <img
+                      src={
+                        'https://assets.zara.or.at/download/grafiken/Rechtliche Ersteinschaetzung der Meldungen durch die ZARA-Beratungsstelle GegenHassimNetz.jpg'
+                      }
+                      alt="Rechtliche Ersteinschaetzung der Meldungen durch die ZARA-Beratungsstelle #GegenHassimNetz"
+                    />
+                  </a>
+                </div>
+                <br />
+                <br />
                 <h1>Datenvisualisierungen Rassismus Report 2019</h1>
                 <h2>
                   Hier finden Sie sämtliche Grafiken aus dem RR 2019,
@@ -215,13 +290,11 @@ class PressematerialLogos extends Component {
                           <div>{logo.title}</div>
                           <a
                             target="blank"
-                            href={`https://assets.zara.or.at/download/logos/${
-                              logo.image
+                            href={`https://assets.zara.or.at/download/logos/${logo.image
                               }`}
                           >
                             <img
-                              src={`https://assets.zara.or.at/download/logos/${
-                                logo.image
+                              src={`https://assets.zara.or.at/download/logos/${logo.image
                                 }`}
                               alt={logo.image}
                             />
