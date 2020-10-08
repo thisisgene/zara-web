@@ -283,12 +283,11 @@ class TrainingContent extends Component {
     <br /><br />
     vielen Dank für Eure Rückmeldungen. Eingeteilt für den Workshop wurden 
     <br /><br />
-    <b>${this.state.assignedTrainer1.name}</b> und <b>${
-      this.state.assignedTrainer2.name
-    }</b>
+    <b>${this.state.assignedTrainer1.name}</b> und <b>${this.state.assignedTrainer2.name
+      }</b>
     <br /> <br />
     Mit besten Grüßen,
-    Bianca & Alice
+    Bianca & Beata
     </p>`
     const emailData = {
       category: 'trainings',
@@ -395,7 +394,7 @@ class TrainingContent extends Component {
                     <div
                       className={
                         styles[
-                          'trainings-content--text__content--left__location'
+                        'trainings-content--text__content--left__location'
                         ]
                       }
                     >
@@ -412,7 +411,7 @@ class TrainingContent extends Component {
                       <div
                         className={
                           styles[
-                            'trainings-content--text__content--left__location--time'
+                          'trainings-content--text__content--left__location--time'
                           ]
                         }
                       >
@@ -599,12 +598,12 @@ class TrainingContent extends Component {
                                         checked={
                                           this.state.assignedTrainer1 &&
                                           this.state.assignedTrainer1.id ===
-                                            user._id
+                                          user._id
                                         }
                                         disabled={
                                           this.state.assignedTrainer2 &&
                                           this.state.assignedTrainer2.id ===
-                                            user._id
+                                          user._id
                                         }
                                       />
                                       <label htmlFor={`at1${user._id}`}>
@@ -626,12 +625,12 @@ class TrainingContent extends Component {
                                         checked={
                                           this.state.assignedTrainer2 &&
                                           this.state.assignedTrainer2.id ===
-                                            user._id
+                                          user._id
                                         }
                                         disabled={
                                           this.state.assignedTrainer1 &&
                                           this.state.assignedTrainer1.id ===
-                                            user._id
+                                          user._id
                                         }
                                       />
                                       <label htmlFor={`at2${user._id}`}>
@@ -693,11 +692,11 @@ class TrainingContent extends Component {
                                 (this.props.training.training &&
                                   this.props.training.training
                                     .assignedTrainer1 !==
-                                    this.state.assignedTrainer1) ||
+                                  this.state.assignedTrainer1) ||
                                 (this.props.training.training &&
                                   this.props.training.training
                                     .assignedTrainer2 !==
-                                    this.state.assignedTrainer2) ||
+                                  this.state.assignedTrainer2) ||
                                 this.state.assignedTrainer1 === null ||
                                 this.state.assignedTrainer2 === null ||
                                 this.state.assignedTrainer1.id === 'none' ||
@@ -715,11 +714,11 @@ class TrainingContent extends Component {
                                   this.props.training.training &&
                                   this.props.training.training
                                     .assignedTrainer1 ===
-                                    this.state.assignedTrainer1 &&
+                                  this.state.assignedTrainer1 &&
                                   this.props.training.training &&
                                   this.props.training.training
                                     .assignedTrainer2 ===
-                                    this.state.assignedTrainer2
+                                  this.state.assignedTrainer2
                                 ) &&
                                   'Änderungen müssen zuerst gespeichert werden!'}
                               </p>
@@ -746,7 +745,7 @@ class TrainingContent extends Component {
                       <div
                         className={
                           styles[
-                            'trainings-content--additional-message__recipients'
+                          'trainings-content--additional-message__recipients'
                           ]
                         }
                       >
@@ -817,7 +816,7 @@ class TrainingContent extends Component {
                   <div
                     className={cx(
                       styles[
-                        'trainings-content--sidebar__state-indicator--sphere'
+                      'trainings-content--sidebar__state-indicator--sphere'
                       ],
                       {
                         [styles['online']]: this.state.isOnline
@@ -827,7 +826,7 @@ class TrainingContent extends Component {
                   <div
                     className={
                       styles[
-                        'trainings-content--sidebar__state-indicator--text'
+                      'trainings-content--sidebar__state-indicator--text'
                       ]
                     }
                   >
