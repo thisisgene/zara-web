@@ -63,7 +63,7 @@ export const footerContent = {
         },
         {
           icon: 'hours',
-          text: 'Mo – Mi: 9.00 – 16.00<br>Do: 10.00 – 18.00<br>Fr: 9.00 – 15.00'
+          text: 'Mo – Mi: 10.00 – 15.00<br>Do: 10.00 – 18.00<br>Fr: 10.00 – 15.00'
         }
       ]
     },
@@ -147,7 +147,7 @@ export const footerContent = {
         },
         {
           icon: 'hours',
-          text: 'Mo – Mi: 9.00 – 16.00<br>Do: 10.00 – 18.00<br>Fr: 9.00 – 15.00'
+          text: 'Mo – Mi: 10.00 – 15.00<br>Do: 10.00 – 18.00<br>Fr: 10.00 – 15.00'
         }
       ]
     },
