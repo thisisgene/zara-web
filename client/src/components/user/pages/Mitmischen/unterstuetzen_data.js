@@ -5,7 +5,7 @@ export const heroData = {
     title:
       'Wir freuen uns sehr über Ihr Interesse, einen Beitrag leisten zu wollen.',
     text:
-      'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit, bekämpft der Verein ZARA Hass im Netz und alle Formen von Rassismus in Österreich.'
+      'Mit der österreichweit einzigartigen Beratungsstelle für Betroffene und Zeug*innen von Rassismus sowie mit der Beratungsstelle und unserem Engagement #GegenHassimNetz, einem breiten Bildungsangebot sowie Kampagnen-, Projekt- und Medienarbeit, bekämpft der Verein ZARA Hass im Netz und alle Formen von Rassismus in Österreich.<br />&rarr; <a target="blank" href="https://www.osgs.at/">Spendengütesiegel</a>'
   },
   en: {
     title:
