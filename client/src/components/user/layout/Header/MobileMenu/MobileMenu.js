@@ -116,14 +116,14 @@ class MobileMenu extends Component {
                     <LanguageToggle />
                   </div>
                 ) : (
-                  <div
-                    className={styles['search-box']}
-                    data-tip
-                    data-for="searchTT"
-                  >
-                    <IconObject image="search" />
-                  </div>
-                )}
+                    <div
+                      className={styles['search-box']}
+                      data-tip
+                      data-for="searchTT"
+                    >
+                      <IconObject image="search" />
+                    </div>
+                  )}
                 <ReactTooltip
                   id="searchTT"
                   place="bottom"
@@ -165,7 +165,7 @@ class MobileMenu extends Component {
                       <div className={styles['main-menu--item']}>
                         <NavLink
                           activeClassName={styles.active}
-                          to={`/${lang}/${item.link}`}
+                          to={item.link.includes('beratung') ? `/${lang}/${item.link}` : `/de/${item.link}`} // BERATUNG HACK
                           onClick={this.onMobileNavClick}
                         >
                           <Translate id={`menu.item${item.id}`} />

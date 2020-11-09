@@ -12,6 +12,20 @@ export const oneLineAlert = {
   }
 }
 
+export const nowEnglishAlert = {
+  type: 'info',
+  de: {
+    title: 'English available!',
+    text:
+      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin.'
+  },
+  en: {
+    title: 'Persönliches Beratungsgespräch',
+    text:
+      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin.'
+  }
+}
+
 export const heroDataBeratungRassismus = {
   de: {
     title: 'Wir stehen Ihnen bei!',

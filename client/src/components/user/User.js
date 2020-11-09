@@ -107,19 +107,38 @@ class User extends Component {
     }
   }
   componentDidUpdate(prevProps) {
+
     document.title = 'ZARA - Zivilcourage & Anti-Rassismus-Arbeit'
+
+    const prevLang = prevProps.activeLanguage && prevProps.activeLanguage.code
+    const curLang = this.props.activeLanguage && this.props.activeLanguage.code
+
+    ////////////// BERATUNG HACK: SONDERFALL FUER BERATUNG TRANSLATION!
+    let currentSite = ''
+
+    if (this.props.match.url && this.props.match.url.includes(`${curLang}/beratung`)) {
+      console.log('BERATUNG')
+      currentSite = 'beratung'
+    }
+    ////////////// BERATUNG HACK: SONDERFALL ENDE
+
     if (this.props.activeLanguage) {
-      this.props.setActiveLanguage(this.props.activeLanguage.code)
+      if (currentSite == 'beratung') { // BERATUNG HACK: SONDERFALL ZUSATZ: REMOVE ONCE EVERYTHING IS TRANSLATED!
+        this.props.setActiveLanguage(this.props.activeLanguage.code)
+      }
+      else {
+        this.props.setActiveLanguage('de')
+      }
     } else {
       this.props.setActiveLanguage('de')
     }
-    const prevLang = prevProps.activeLanguage && prevProps.activeLanguage.code
-    const curLang = this.props.activeLanguage && this.props.activeLanguage.code
 
     const hasLanguageChanged = prevLang !== curLang
     if (hasLanguageChanged) {
       // window.localStorage.setItem('languageCode', curLang)
-      this.props.setActiveLanguage(curLang)
+      if (currentSite == 'beratung') { // BERATUNG HACK: SONDERFALL ZUSATZ: REMOVE ONCE EVERYTHING IS TRANSLATED!
+        this.props.setActiveLanguage(curLang)
+      }
     }
   }
   componentDidMount() {
@@ -137,7 +156,6 @@ class User extends Component {
 
   render() {
     const { activeLanguage } = this.props
-    console.log('TIMEEE: ', Date.now())
     const routes = [
       {
         path: '//de',

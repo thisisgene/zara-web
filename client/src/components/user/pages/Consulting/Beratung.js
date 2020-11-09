@@ -4,7 +4,8 @@ import { withLocalize } from 'react-localize-redux'
 import {
   heroDataBeratungRassismus,
   oneLineAlert,
-  beratungInfoBox
+  beratungInfoBox,
+  nowEnglishAlert
 } from './beratung_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
@@ -22,6 +23,7 @@ class Beratung extends Component {
       <div>
         {heroDataBeratungRassismus && lang && beratungInfoBox && (
           <div>
+            {lang == 'de' && <OneLineAlert content={nowEnglishAlert} lang={lang} />}
             <HeroUnit data={heroDataBeratungRassismus} lang={lang} />
             <OneLineAlert content={oneLineAlert} lang={lang} />
             <div style={{ margin: '3rem 0' }}>

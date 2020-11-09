@@ -23,27 +23,17 @@ import styles from './Header.module.sass'
 class Header extends Component {
   constructor(props) {
     super(props)
-
-    const languages = [
-      { name: 'Deutsch', code: 'de' },
-      { name: 'English', code: 'en' }
-    ]
-
-    const defaultLanguage = props.match.params.lang || languages[0].code
-
-    this.props.initialize({
-      languages,
-      translation: globalTranslations,
-      options: { defaultLanguage, renderToStaticMarkup } // TODO: Set defaultLanguage after reload!
-    })
-
     this.state = {
       mobileExpand: false,
       subMenuVisible: false,
       subMenuContent: '',
       subTitleHide: false,
-      showLanguageAlert: false
+      showLanguageAlert: false,
+      siteIsBeratung: false // BERATUNG HACK: Remove once everything is translated!
     }
+
+
+
   }
 
   componentDidMount() {
@@ -52,6 +42,25 @@ class Header extends Component {
     //   // console.log(location)
     //   // console.log(`The last navigation action was ${action}`)
     // })
+    const languages = [
+      { name: 'Deutsch', code: 'de' },
+      { name: 'English', code: 'en' }
+    ]
+
+    // const defaultLanguage = props.match.params.lang || languages[0].code   // BERATUNG HACK: USE WHEN EVERYTHING IS TRANSLATED!
+    let defaultLanguage
+    if (this.props.location.pathname && this.props.location.pathname.includes('/beratung')) { // BERATUNG HACK: REMOVE ONCE EVERYTHING IS TRANSLATED!
+      defaultLanguage = this.props.match.params.lang || languages[0].code
+      this.setState({ siteIsBeratung: true })
+    } else {
+      defaultLanguage = 'de'
+    }
+
+    this.props.initialize({
+      languages,
+      translation: globalTranslations,
+      options: { defaultLanguage, renderToStaticMarkup } // TODO: Set defaultLanguage after reload!
+    })
   }
 
   handleScroll = () => {
@@ -81,7 +90,7 @@ class Header extends Component {
   render() {
     const { activeLanguage } = this.props
     let menuItems = menuItemsFromFile
-
+    const lang = this.state.siteIsBeratung ? activeLanguage.code : 'de'
     return (
       <div className={styles['nav-wrapper']}>
         <div
@@ -107,21 +116,21 @@ class Header extends Component {
                     alt="Zivilcourage und Anti-Rassismus-Arbeit"
                   />
                 ) : (
-                  <img
-                    className={cx(styles['logo-add-img'], {
-                      [styles['hide']]: this.state.subTitleHide
-                    })}
-                    src={LogoAddEn}
-                    alt="Civil Courage and Anti-Racism-Work"
-                  />
-                )}
+                    <img
+                      className={cx(styles['logo-add-img'], {
+                        [styles['hide']]: this.state.subTitleHide
+                      })}
+                      src={LogoAddEn}
+                      alt="Civil Courage and Anti-Racism-Work"
+                    />
+                  )}
               </div>
             </NavLink>
             <div className={styles['main-menu']}>
               <div className={styles['top-header']}>
                 <div className={styles['top-header--menu']}>
                   <ActionBar
-                    lang={activeLanguage && activeLanguage.code}
+                    lang={lang}
                     align={'top'}
                     onClick={this.onLinkBlur}
                   />
@@ -130,12 +139,13 @@ class Header extends Component {
               <div className={styles['menu-container']}>
                 {menuItems.map(
                   item =>
+
                     activeLanguage && (
                       //  TODO: Sub menu links focus on keyboard tab
                       <div key={item.id}>
                         <NavLink
                           activeClassName={styles.active}
-                          to={`/${activeLanguage.code}/${item.link}`}
+                          to={item.link.includes('beratung') ? `/${lang}/${item.link}` : `/de/${item.link}`} // BERATUNG HACK
                           onMouseEnter={this.onLinkHover.bind(this, item.id)}
                           onFocus={this.onLinkHover.bind(this, item.id)}
                           onClick={this.onLinkBlur}
@@ -156,7 +166,7 @@ class Header extends Component {
                           <SubMenu
                             menuItems={menuItems}
                             subMenuContent={this.state.subMenuContent}
-                            lang={activeLanguage && activeLanguage.code}
+                            lang={lang}
                             onClick={this.onLinkBlur}
                           />
                         </nav>
@@ -222,7 +232,7 @@ class Header extends Component {
             <MobileMenu
               location={this.props.location}
               menuItems={menuItems}
-              lang={activeLanguage.code}
+              lang={lang}
             />
           )}
         </div>

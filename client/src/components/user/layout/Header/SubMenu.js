@@ -16,9 +16,11 @@ import styles from './SubMenu.module.sass'
 class SubMenu extends Component {
   render() {
     const { menuItems, subMenuContent, lang } = this.props
+
     return (
       <div>
         {menuItems.map((item, index) => {
+
           return (
             <div key={index}>
               {/* {item.name !== 'Training' ? ( */}
@@ -48,7 +50,7 @@ class SubMenu extends Component {
                         <div className={styles['sub-item--title']}>
                           {subItem.link !== null ? (
                             <NavLink
-                              to={`/${lang}/${item.link}/${subItem.link}`}
+                              to={item.link.includes('beratung') ? `/${lang}/${item.link}/${subItem.link}` : `/de/${item.link}/${subItem.link}`} // BERATUNG HACK
                               activeClassName={styles.active}
                               onClick={this.props.onClick}
                             >
@@ -56,11 +58,11 @@ class SubMenu extends Component {
                               <IconObject image="arrowRight" />
                             </NavLink>
                           ) : (
-                            <div className={styles['no-link']}>
-                              <Translate id={`menu.item${subItem.id}`} />
-                              {/* <IconObject image="arrowRight" /> */}
-                            </div>
-                          )}
+                              <div className={styles['no-link']}>
+                                <Translate id={`menu.item${subItem.id}`} />
+                                {/* <IconObject image="arrowRight" /> */}
+                              </div>
+                            )}
                         </div>
                         {subItem.subMenuList &&
                           subItem.subMenuList.map(ssItem => {
@@ -72,10 +74,10 @@ class SubMenu extends Component {
                                 <NavLink
                                   to={
                                     ssItem.redirect
-                                      ? `/${lang}/${ssItem.redirectLink}`
+                                      ? item.link.includes('beratung') ? `/${lang}/${ssItem.redirectLink}` : `/de/${ssItem.redirectLink}` // BERATUNG HACK
                                       : subItem.link !== null
-                                      ? `/${lang}/${item.link}/${subItem.link}/${ssItem.link}`
-                                      : `/${lang}/${item.link}/${ssItem.link}`
+                                        ? item.link.includes('beratung') ? `/${lang}/${item.link}/${subItem.link}/${ssItem.link}` : `/de/${item.link}/${subItem.link}/${ssItem.link}` // BERATUNG HACK
+                                        : item.link.includes('beratung') ? `/${lang}/${item.link}/${ssItem.link}` : `/de/${item.link}/${ssItem.link}` // BERATUNG HACK
                                   }
                                   activeClassName={styles.active}
                                   onClick={this.props.onClick}
