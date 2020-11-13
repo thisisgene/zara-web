@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
-import { oneLineAlert } from './beratung_data'
+import {
+  oneLineAlert,
+  nowEnglishAlert
+} from './beratung_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
 import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
@@ -206,6 +209,7 @@ class Consulting extends Component {
     return (
       <div>
         <HeroUnit data={heroData} lang={lang} />
+        {/* {lang == 'de' && <OneLineAlert content={nowEnglishAlert} lang='en' />}  ENGLISH ALERT! */}
         <OneLineAlert content={oneLineAlert} lang={lang} />
         <div id="melden">
           <InfoBoxObject infoBox={infoObj_default} lang={lang} />

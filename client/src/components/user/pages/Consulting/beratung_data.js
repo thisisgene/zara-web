@@ -13,16 +13,26 @@ export const oneLineAlert = {
 }
 
 export const nowEnglishAlert = {
-  type: 'info',
+  type: 'news',
   de: {
     title: 'English available!',
     text:
-      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin.'
+      'Our counceling page is now available in English!',
+    button: {
+      text: 'English',
+      type: 'default',
+      link: 'beratung'
+    }
   },
   en: {
-    title: 'Persönliches Beratungsgespräch',
+    title: 'English available!',
     text:
-      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin.'
+      'Our counceling page is now available in English!',
+    button: {
+      text: 'English',
+      type: 'default',
+      link: 'beratung'
+    }
   }
 }
 
