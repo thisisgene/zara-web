@@ -59,27 +59,27 @@ export const jobData = [
       contact: 'bewerbung@zara.or.at'
     }
   },
-  {
-    category: 'volontariat',
-    de: {
-      title: 'VOLONTARIAT Trainingskoordination',
-      area:
-        'Unterstützung bei organisatorischer und inhaltlicher Auf- und Vorbereitung von ZARA-Trainings, Recherchearbeiten zu diversen Themen, Dokumentationsarbeit',
-      qualifications:
-        'Interesse und Motivation im Bereich Antidiskriminierung mitzuarbeiten, selbstständiges und genaues Arbeiten.',
-      time: 'nach Vereinbarung',
-      contact: 'info@zara-training.at'
-    },
-    en: {
-      title: 'VOLONTARIAT Trainingskoordination',
-      area:
-        'Unterstützung bei organisatorischer und inhaltlicher Auf- und Vorbereitung von ZARA-Trainings, Recherchearbeiten zu diversen Themen, Dokumentationsarbeit',
-      qualifications:
-        'Interesse und Motivation im Bereich Antidiskriminierung mitzuarbeiten, selbstständiges und genaues Arbeiten.',
-      time: 'nach Vereinbarung',
-      contact: 'info@zara-training.at'
-    }
-  },
+  // {
+  //   category: 'volontariat',
+  //   de: {
+  //     title: 'VOLONTARIAT Trainingskoordination',
+  //     area:
+  //       'Unterstützung bei organisatorischer und inhaltlicher Auf- und Vorbereitung von ZARA-Trainings, Recherchearbeiten zu diversen Themen, Dokumentationsarbeit',
+  //     qualifications:
+  //       'Interesse und Motivation im Bereich Antidiskriminierung mitzuarbeiten, selbstständiges und genaues Arbeiten.',
+  //     time: 'nach Vereinbarung',
+  //     contact: 'info@zara-training.at'
+  //   },
+  //   en: {
+  //     title: 'VOLONTARIAT Trainingskoordination',
+  //     area:
+  //       'Unterstützung bei organisatorischer und inhaltlicher Auf- und Vorbereitung von ZARA-Trainings, Recherchearbeiten zu diversen Themen, Dokumentationsarbeit',
+  //     qualifications:
+  //       'Interesse und Motivation im Bereich Antidiskriminierung mitzuarbeiten, selbstständiges und genaues Arbeiten.',
+  //     time: 'nach Vereinbarung',
+  //     contact: 'info@zara-training.at'
+  //   }
+  // },
   {
     category: 'volontariat',
     de: {
