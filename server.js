@@ -37,7 +37,7 @@ mongoose
   .set('useFindAndModify', false)
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err))
+  .catch(err => console.log("DB connection error oooo", err))
 
 // Passport middleware
 app.use(passport.initialize())
@@ -74,7 +74,7 @@ if (process.env.NODE_ENV === 'production') {
     const filePath = path.resolve(__dirname, './client', 'build', 'index.html')
     const lang = req.params.lang
     // read in the index.html file
-    fs.readFile(filePath, 'utf8', function(err, data) {
+    fs.readFile(filePath, 'utf8', function (err, data) {
       if (err) {
         return console.log(err)
       }

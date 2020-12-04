@@ -60,6 +60,11 @@ class HeroUnit extends Component {
                       </Link>
                     </div>
                   )}
+                  {
+                    data[lang].buttons && data[lang].buttons.map(button => (
+                      <div>{button.title}</div>
+                    ))
+                  }
                 </div>
               </div>
             ) : (

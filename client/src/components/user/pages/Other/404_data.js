@@ -11,8 +11,8 @@ export const heroData = {
   en: {
     title: 'Page not found',
     text:
-      'OOPS...<br>Die Seite kann leider nicht angezeigt werden. <br>Versuchen Sie es später erneut oder kontaktieren Sie uns!',
+      'OOPS...<br>Sorry, the page cannot be displayed. <br>Please try again later or contact us!',
     link: 'kontakt',
-    linkText: 'Zum ZARA Kontakt'
+    linkText: 'Contact ZARA'
   }
 }

@@ -38,9 +38,19 @@ export const nowEnglishAlert = {
 
 export const heroDataBeratungRassismus = {
   de: {
-    title: 'Wir stehen Ihnen bei!',
-    text:
-      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.'
+    title: 'ZARA unterstützt Sie gegen Rassismus oder Hass im Netz – kostenlos und auf Wunsch anonym',
+    // text:
+    //   'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.',
+    buttons: [
+      {
+        title: 'Melden',
+        link: '/beratung/melden/hassimnetz'
+      },
+      {
+        title: 'Beratung',
+        link: '/beratung/beratung_rassismus_hassimnetz'
+      }
+    ]
   },
   en: {
     title: 'Wir stehen Ihnen bei!',
