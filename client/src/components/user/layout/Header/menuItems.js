@@ -89,10 +89,15 @@ const menuItems = [
             id: '1.2.2',
           },
           {
+            name: 'Rechtshilfefonds #GegenHassimNetz',
+            link: 'rechtshilfefonds',
+            id: '1.2.3',
+          },
+          {
             name: 'Eigene Rechte kennen',
             redirect: true,
             redirectLink: 'wissen/eigene_rechte_kennen',
-            id: '1.2.3',
+            id: '1.2.4',
           },
         ],
       },

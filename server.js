@@ -37,7 +37,7 @@ mongoose
   .set('useFindAndModify', false)
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log("DB connection error oooo", err))
+  .catch(err => console.log("DB connection error OIOIOIO", err))
 
 // Passport middleware
 app.use(passport.initialize())

@@ -5,6 +5,7 @@ import IconObject from '../IconObject/IconObject'
 
 import cx from 'classnames'
 import styles from './InfoBoxObject.module.sass'
+import cardStyles from '../InfoCardObject/InfoCardObject.module.sass'
 import ButtonObject from '../ButtonObject/ButtonObject'
 
 class InfoBoxObject extends Component {
@@ -34,6 +35,17 @@ class InfoBoxObject extends Component {
                     dangerouslySetInnerHTML={{ __html: infoBox[lang].text }}
                   />
                 )}
+                {infoBox[lang].listItems && (
+                  <ul className={cardStyles['info-card--body__list']}>
+                    {infoBox[lang].listItems &&
+                      infoBox[lang].listItems.map((item, index) => (
+                        <li key={index}>
+                          <IconObject image="listArrow" />
+                          <span>{item.text}</span>
+                        </li>
+                      ))}
+                  </ul>
+                )}
               </div>
               {infoBox[lang].buttons && (
                 <div className={styles['info-box--buttons']}>
@@ -42,6 +54,7 @@ class InfoBoxObject extends Component {
                   ))}
                 </div>
               )}
+
               {infoBox[lang].cards && (
                 <div
                   className={cx(

@@ -15,14 +15,38 @@ const heroData = {
   image: 'main_icons/big/beratung.png',
   imageSide: 'left',
   de: {
-    title: 'Das Team der ZARA Beratungsstellen steht Ihnen bei!',
+    title: 'ZARA unterstützt Sie',
     text:
-      'In der Beratungsstelle erhalten jährlich über 2.000 Betroffene und Zeug*innen von Rassismus und Hass und Hetze im Netz rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
+      'gegen Rassismus oder Hass im Netz – kostenlos und auf Wunsch anonym.',
+    buttons: [
+      {
+        text: 'Melden',
+        link: 'beratung/melden/hassimnetz',
+        type: 'default'
+      },
+      {
+        text: 'Beratung',
+        link: 'beratung/beratung_rassismus_hassimnetz',
+        type: 'default'
+      }
+    ]
   },
   en: {
-    title: 'We are on your side',
+    title: 'ZARA supports you',
     text:
-      'In der Beratungsstelle erhalten jährlich über 2.000 Betroffene und Zeug*innen von Rassismus und Hass und Hetze im Netz rechtliche Unterstützung. Die Beratung ist kostenlos, das Beratungsteam besteht aus juristisch und sozial geschulten Berater*innen.'
+      'against racism or online hate - free of charge and anonymously.',
+    buttons: [
+      {
+        text: 'Report an incident',
+        link: 'beratung/melden/hassimnetz',
+        type: 'default'
+      },
+      {
+        text: 'Get support',
+        link: 'beratung/beratung_rassismus_hassimnetz',
+        type: 'default'
+      }
+    ]
   }
 }
 
@@ -32,95 +56,95 @@ const infoObj_default = {
   de: {
     title: 'Melden und Beratung',
     text:
-      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Bei einer anonymen Meldung wird der Vorfall in unsere Falldatenbank aufgenommen, Sie erhalten aber keine Beratung. Wenn Sie eine Beratung wünschen, wählen Sie den Button „Kostenlose Beratung zu Rassismus“ bzw. „Kostenlose Beratung zu Hass im Netz“.',
+      'In der Beratungsstelle erhalten alle Betroffenen und Zeug*innen von Rassismus und Hass und Hetze im Netz Unterstützung. Die Beratung ist kostenlos und auf Wunsch anonym.<br />Wenn Sie eine Beratung wünschen, klicken Sie auf „Beratung“. Sie können uns dann per Telefon, verschlüsselte E-Mail oder per Chat erreichen.<br />Wenn Sie einen Vorfall nur melden möchten, aber keine Beratung brauchen, klicken Sie auf „Melden“. Der Vorfall wird dann von unseren Berater*innen bearbeitet. Für Rückfragen können Sie eine Kontaktmöglichkeit angeben.',
     cards: [
       {
         color: 'white',
         title: 'Rassistische Diskriminierung',
         text:
-          'Rassistische Diskriminierung bedeutet, dass eine Person oder eine bestimmte Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Aussehens, Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
-        linkType: 'button',
-        multiButton: true,
-        buttons: [
-          {
-            text: 'Kostenlose Beratung zu Rassismus',
-            type: 'cta',
-            link: 'beratung/beratung_rassismus_hassimnetz'
-          },
-          {
-            text: 'Rassismus anonym melden',
-            type: 'cta',
-            link: 'beratung/melden/rassismus'
-          }
-        ]
+          'Rassistische Diskriminierung umfasst nach ZARAs Arbeitsdefinition, dass eine Person oder eine bestimmte (konstruierte) Gruppe von Personen aufgrund ihrer Hautfarbe, Sprache, Religion, Staatsbürgerschaft, Herkunft oder ihres Aussehens in irgendeiner Form benachteiligt, herabgesetzt oder angegriffen wird.',
+        // linkType: 'button',
+        // multiButton: true,
+        // buttons: [
+        //   {
+        //     text: 'Kostenlose Beratung zu Rassismus',
+        //     type: 'cta',
+        //     link: 'beratung/beratung_rassismus_hassimnetz'
+        //   },
+        //   {
+        //     text: 'Rassismus anonym melden',
+        //     type: 'cta',
+        //     link: 'beratung/melden/rassismus'
+        //   }
+        // ]
       },
       {
         color: 'white',
         title: 'Hass im Netz',
         titleImage: 'GHiN_logo_s.png',
         text:
-          'Hass im Netz umfasst verhetzende oder hassmotivierte Inhalte und Postings auf Online Plattformen und sozialen Medien die gegen bestimmte Gruppen, z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
-        linkType: 'button',
-        multiButton: true,
-        buttons: [
-          {
-            text: 'Kostenlose Beratung zu Hass im Netz',
-            type: 'cta',
-            link: 'beratung/beratung_rassismus_hassimnetz'
-          },
-          {
-            text: 'Hass im Netz anonym melden',
-            type: 'cta',
-            link: 'beratung/melden/hassimnetz'
-          }
-        ]
+          'Hass im Netz umfasst nach ZARAs Arbeitsdefinition verhetzende oder hassmotivierte Inhalte und Postings auf Online Plattformen und sozialen Medien, die sich gegen eine Person oder (konstruierte) Gruppen, z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, richten.',
+        // linkType: 'button',
+        // multiButton: true,
+        // buttons: [
+        //   {
+        //     text: 'Kostenlose Beratung zu Hass im Netz',
+        //     type: 'cta',
+        //     link: 'beratung/beratung_rassismus_hassimnetz'
+        //   },
+        //   {
+        //     text: 'Hass im Netz anonym melden',
+        //     type: 'cta',
+        //     link: 'beratung/melden/hassimnetz'
+        //   }
+        // ]
       }
     ]
   },
   en: {
-    title: 'Melden',
+    title: 'Report an incident & Get support',
     text:
-      'Möchten Sie einen rassistischen Vorfall oder Hass im Netz melden oder eine schriftliche Beratung bekommen?<br><br>Ihre Meldungen werden in unserer Falldatenbank aufgenommen. Wenn Sie uns eine Kontaktmöglichkeit anbieten, können wir Ihnen sagen welche Aktionen wir eingeleitet haben. Wir beraten Sie auch gerne bei weiteren rechtlichen oder anderen Schritten.',
+      'All victims and witnesses of racism and online hate can receive support from our team. The advice is free of charge and, if desired, anonymous.<br />If you would like to get in touch with us, click on "Get support". You can contact us by phone, encrypted email or chat.<br />If you only want to let us know about an incident but don\'t need additional support, click "Report an incident". Our team will then process the incident. You can choose to provide us with your contact information, in case we have any further questions.',
     cards: [
       {
         color: 'white',
-        title: 'Rassistische Diskriminierung',
+        title: 'Racial Discrimination',
         text:
-          'Rassistische Diskriminierung bedeutet, dass eine Person aufgrund ihrer Hautfarbe, ihrer Sprache, ihres Aussehens, ihrer Religion, Staatsbürgerschaft oder Herkunft in irgendeiner Form benachteiligt wird.',
-        linkType: 'button',
-        multiButton: true,
-        buttons: [
-          {
-            text: 'Rassismus anonym melden',
-            type: 'cta',
-            link: 'beratung/melden/rassismus'
-          },
-          {
-            text: 'Beratung',
-            type: 'cta',
-            link: 'beratung/beratung_rassismus_hassimnetz'
-          }
-        ]
+          'According to ZARA\'s working definition, racial discrimination occurs when a person or a (constructed) group of people is disadvantaged, degraded or attacked in any way because of their skin colour, language, religion, citizenship, origin or appearance.',
+        // linkType: 'button',
+        // multiButton: true,
+        // buttons: [
+        //   {
+        //     text: 'Rassismus anonym melden',
+        //     type: 'cta',
+        //     link: 'beratung/melden/rassismus'
+        //   },
+        //   {
+        //     text: 'Beratung',
+        //     type: 'cta',
+        //     link: 'beratung/beratung_rassismus_hassimnetz'
+        //   }
+        // ]
       },
       {
         color: 'white',
-        title: 'Hass im Netz',
+        title: 'Online Hate',
         text:
-          'Hass im Netz umfasst verhetzende oder hassmotivierte Inhalte und Postings auf Online Plattformen und sozialen Medien die gegen bestimmte Gruppen, z.B. wegen ihrer sexuellen Orientierung, ihres Geschlechts oder einer Behinderung, gerichtet sind.',
-        linkType: 'button',
-        multiButton: true,
-        buttons: [
-          {
-            text: 'Hass im Netz anonym melden',
-            type: 'cta',
-            link: 'beratung/melden/hassimnetz'
-          },
-          {
-            text: 'Beratung',
-            type: 'cta',
-            link: 'beratung/beratung_rassismus_hassimnetz'
-          }
-        ]
+          'According to ZARA\'s working definition, online hate includes inflammatory or hateful content, which is published on online platforms and social media, directed against a person or a (constructed) group, for example, as a result of their sexual orientation, their gender or disability.',
+        // linkType: 'button',
+        // multiButton: true,
+        // buttons: [
+        //   {
+        //     text: 'Hass im Netz anonym melden',
+        //     type: 'cta',
+        //     link: 'beratung/melden/hassimnetz'
+        //   },
+        //   {
+        //     text: 'Beratung',
+        //     type: 'cta',
+        //     link: 'beratung/beratung_rassismus_hassimnetz'
+        //   }
+        // ]
       }
     ]
   }
@@ -150,8 +174,8 @@ const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/mitmischen.png',
-        title: 'Mitmischen',
-        link: 'mitmischen'
+        title: 'Rechtshilfefonds #GegenHassimNetz',
+        link: 'beratung/rechtshilfefonds'
       },
       {
         size: 'default',

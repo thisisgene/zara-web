@@ -19,6 +19,7 @@ import Home from './pages/Home/Home'
 import Consulting from './pages/Consulting/Consulting'
 import Beratung from './pages/Consulting/Beratung'
 import Report from './pages/Consulting/Report'
+import Rechtshilfefonds from './pages/Consulting/Rechtshilfefonds'
 import WasSieTunKoennen from './pages/Consulting/WasSieTunKoennen'
 import WasWirTunKoennen from './pages/Consulting/WasWirTunKoennen'
 
@@ -210,6 +211,11 @@ class User extends Component {
                 exact
                 path="/:lang/beratung/melden/:report"
                 component={Report}
+              />
+              <Route
+                exact
+                path="/:lang/beratung/rechtshilfefonds"
+                component={Rechtshilfefonds}
               />
               <Route
                 exact

@@ -24,10 +24,10 @@ class Beratung extends Component {
         {heroDataBeratungRassismus && lang && beratungInfoBox && (
           <div>
             {/* {lang == 'de' && <OneLineAlert content={nowEnglishAlert} lang={lang} />} */}
-            <HeroUnit data={heroDataBeratungRassismus} lang={lang} />
-            <OneLineAlert content={oneLineAlert} lang={lang} />
+            {/* <HeroUnit data={heroDataBeratungRassismus} lang={lang} /> */}
             <div style={{ margin: '3rem 0' }}>
               <InfoBoxObject infoBox={beratungInfoBox} lang={lang} />
+              <OneLineAlert content={oneLineAlert} lang={lang} />
             </div>
           </div>
         )}

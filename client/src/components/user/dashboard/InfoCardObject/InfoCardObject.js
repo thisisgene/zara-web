@@ -42,6 +42,13 @@ class InfoCardObject extends Component {
                   ))}
               </ul>
             )}
+            {card.buttons && (
+              <div className={styles['info-box--buttons']}>
+                {card.buttons.map((button, index) => (
+                  <div style={{ 'marginBottom': '15px' }}><ButtonObject key={index} button={button} lang={lang} /></div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -55,23 +62,23 @@ class InfoCardObject extends Component {
               ))}
             </div>
           ) : (
-            card.button && (
-              <div className={styles['info-card--button']}>
-                <ButtonObject button={card.button} lang={lang} />
-              </div>
+              card.button && (
+                <div className={styles['info-card--button']}>
+                  <ButtonObject button={card.button} lang={lang} />
+                </div>
+              )
             )
-          )
         ) : (
-          <div className={styles['info-card--link']}>
-            {card.linkPath === 'external' ? (
-              <a target="blank" href={card.link}>
-                {card.linkText}
-              </a>
-            ) : (
-              <Link to={`/${lang}/${card.link}`}>{card.linkText}</Link>
-            )}
-          </div>
-        )}
+            <div className={styles['info-card--link']}>
+              {card.linkPath === 'external' ? (
+                <a target="blank" href={card.link}>
+                  {card.linkText}
+                </a>
+              ) : (
+                  <Link to={`/${lang}/${card.link}`}>{card.linkText}</Link>
+                )}
+            </div>
+          )}
       </div>
     )
   }

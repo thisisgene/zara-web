@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import styles from './HeroUnit.module.sass';
 
+import ButtonObject from '../ButtonObject/ButtonObject'
+
 class HeroUnit extends Component {
   render() {
     const { data, lang, special } = this.props;
@@ -61,9 +63,11 @@ class HeroUnit extends Component {
                     </div>
                   )}
                   {
-                    data[lang].buttons && data[lang].buttons.map(button => (
-                      <div>{button.title}</div>
-                    ))
+                    data[lang].buttons && (
+                      <div className={styles['hero-unit--buttons']}>
+                        {data[lang].buttons.map(button => (
+                          <ButtonObject button={button} lang={lang} />
+                        ))}</div>)
                   }
                 </div>
               </div>

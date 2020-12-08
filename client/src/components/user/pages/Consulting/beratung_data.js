@@ -3,12 +3,12 @@ export const oneLineAlert = {
   de: {
     title: 'Persönliches Beratungsgespräch',
     text:
-      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin.'
+      'Wollen Sie eine persönliche Beratung? Rufen Sie uns unter +43 (0) 1 929 13 99 an.'
   },
   en: {
-    title: 'Persönliches Beratungsgespräch',
+    title: 'Meet us face-to-face',
     text:
-      'Wenn Sie eine persönliche Beratung wahrnehmen möchten, vereinbaren Sie bitte telefonisch – unter +43 (0) 1 929 13 99 – einen Termin.'
+      'Would you like to sit down with us? Call us to make an appointment +43 (0) 1 929 13 99.'
   }
 }
 
@@ -62,49 +62,147 @@ export const heroDataBeratungRassismus = {
 export const beratungInfoBox = {
   color: 'white',
   de: {
-    title: 'BERATUNG ZU RASSISMUS UND/ODER HASS IM NETZ',
+    title: 'Beratung zu Rassismus und/oder Hass im Netz',
     text:
-      'Möchten Sie aufgrund eines rassistischen Vorfalls oder Hass im Netz, den Sie oder andere erlebt haben, schriftliche Beratung bekommen? Dann sind Sie hier richtig! <br><br> Um Ihre Daten zu schützen, können Sie uns hier auf sicherem Weg verschlüsselte E-Mails schicken. Sie bleiben anonym, indem Sie sich einen Usernamen und ein Passwort zulegen. Wenn Sie zusätzlich Ihre E-Mail Adresse angeben, erhalten Sie ein Erinnerungsmail, sobald wir Ihre Anfrage beantwortet haben. Alle Daten werden streng vertraulich behandelt und nicht an Dritte weitergegeben. Wir sind natürlich auch telefonisch unter +43 (0)1 236 55 34 für Sie erreichbar. <br><br> Durch das Anklicken einer der Buttons - hier unten - wechseln Sie auf die Dienste von Aygonet. Alle Daten werden ausschließlich verschlüsselt übertragen und gespeichert und Ihre Anonymität ist geschützt. Wenn Sie mehr Informationen zur Datensicherheit erhalten möchten, klicken Sie bitte <a target="blank" href="https://www.aygonet.de/ueber-aygonet/datensicherheit.html">hier</a>.',
+      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cyber-Mobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.',
 
-    buttons: [
+    listItems: [
       {
-        text: 'Registrieren bei Aygonet',
-        type: 'cta',
-        linkPath: 'external',
-        link:
-          'https://onlineberatung.aygonet.de/index.php?fw_goto=anmeldung/helpdesk/22ddb&'
+        text: 'Telefon +43 (0) 1 929 13 99'
       },
       {
-        text: 'Login bei Aygonet',
-        type: 'cta',
-        linkPath: 'external',
-        link:
-          'https://onlineberatung.aygonet.de/index.php?fw_goto=login/index/hd/22ddb&'
+        text: 'Verschlüsselte E-Mail'
+      },
+      {
+        text: 'Chat beitreten'
+      }
+    ],
+    cards: [
+      {
+        color: 'default',
+        title: 'Beratung - Telefon',
+        text:
+          'Sie erreichen die ZARA Beratungsstellen Montag bis Freitag, von 10:00 bis 15:00 Uhr, unter: <a href="tel:+43 (0) 1 929 13 99">+43 (0) 1 929 13 99</a>',
+        // link: 'tel:+43 (0) 1 929 13 99',
+        // linkType: 'external',
+        // linkText: '+43 (0) 1 929 13 99'
+      },
+      {
+        color: 'default',
+        title: 'Verschlüsselte Email',
+        text:
+          'Ihre Sicherheit ist uns wichtig! Um Ihre Daten zu schützen, können Sie uns verschlüsselte E-Mails (über eine sichere Plattform namens Aygonet) schicken. Sie erhalten eine E-Mail, sobald wir Ihre Anfrage beantwortet haben. Alle Daten werden streng vertraulich behandelt und nicht an Dritte weitergegeben.',
+        // link: 'mitmischen/hashtags',
+        // linkText: 'Zu den Hashtags',
+        buttons: [
+          {
+            text: 'Registrieren bei Aygonet',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'https://onlineberatung.aygonet.de/index.php?fw_goto=anmeldung/helpdesk/22ddb&'
+          },
+          {
+            text: 'Login bei Aygonet',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'https://onlineberatung.aygonet.de/index.php?fw_goto=login/index/hd/22ddb&'
+          }
+        ],
+      },
+      {
+        color: 'default',
+        title: 'Beratung - Chat',
+        text:
+          '',
+        buttons: [
+          {
+            text: 'Zum Chatraum',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'https://onlineberatung.aygonet.de/index.php?fw_goto=verwaltung.chat/overview/22ddb&'
+          },
+
+        ],
+
+        // link: 'beratung/melden/hassimnetz',
+        // linkText: 'Hasspostings melden'
       }
     ]
   },
   en: {
-    title: 'BERATUNG ZU RASSISMUS UND/ODER HASS IM NETZ',
+    title: 'Support against racism and/or online hate',
     text:
-      'Möchten Sie aufgrund eines rassistischen Vorfalls oder Hass im Netz, den Sie oder andere erlebt haben, schriftliche Beratung bekommen? Dann sind Sie hier richtig! <br><br> Um Ihre Daten zu schützen, können Sie uns hier auf sicherem Weg verschlüsselte E-Mails schicken. Sie bleiben anonym, indem Sie sich einen Usernamen und ein Passwort zulegen. Wenn Sie zusätzlich Ihre E-Mail Adresse angeben, erhalten Sie ein Erinnerungsmail, sobald wir Ihre Anfrage beantwortet haben. Alle Daten werden streng vertraulich behandelt und nicht an Dritte weitergegeben. Wir sind natürlich auch telefonisch unter +43 (0)1 236 55 34 für Sie erreichbar. <br><br> Durch das Anklicken einer der Buttons - hier unten - wechseln Sie auf die Dienste von Aygonet. Alle Daten werden ausschließlich verschlüsselt übertragen und gespeichert und Ihre Anonymität ist geschützt. Wenn Sie mehr Informationen zur Datensicherheit erhalten möchten, klicken Sie bitte <a target="blank" href="https://www.aygonet.de/ueber-aygonet/datensicherheit.html">hier</a>.',
+      'If you are affected by racial discrimination, online hate and/or cyberbullying, or if you have become a witness to such incidents, then let us advise you free of charge. Our team provides legal and psychosocial advice and will be happy to support you.',
 
-    buttons: [
+    listItems: [
       {
-        text: 'Registrieren bei Aygonet',
-        type: 'cta',
-        linkPath: 'external',
-        link:
-          'https://onlineberatung.aygonet.de/index.php?fw_goto=anmeldung/helpdesk/22ddb&'
+        text: 'Telephone +43 (0) 1 929 13 99'
       },
       {
-        text: 'Login bei Aygonet',
-        type: 'cta',
-        linkPath: 'external',
-        link:
-          'https://onlineberatung.aygonet.de/index.php?fw_goto=login/index/hd/22ddb&'
+        text: 'Encrypted email'
+      },
+      {
+        text: 'Join chat'
+      }
+    ],
+    cards: [
+      {
+        color: 'default',
+        title: 'Telephone',
+        text:
+          'You can reach our team Monday to Friday, from 10:00 a.m. to 3:00 p.m., at +43 (0) 1 929 13 99',
+        // link: 'tel:+43 (0) 1 929 13 99',
+        // linkType: 'external',
+        // linkText: '+43 (0) 1 929 13 99'
+      },
+      {
+        color: 'default',
+        title: 'Encrypted email',
+        text:
+          'Your safety is important to us! To protect your data, you can send us encrypted emails (via a secure platform called Aygonet). You will receive an email as soon as we have answered your request. All data will be treated with strict confidentiality and will not be passed on to third parties.',
+        // link: 'mitmischen/hashtags',
+        // linkText: 'Zu den Hashtags',
+        buttons: [
+          {
+            text: 'Register',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'https://onlineberatung.aygonet.de/index.php?fw_goto=anmeldung/helpdesk/22ddb&'
+          },
+          {
+            text: 'Login',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'https://onlineberatung.aygonet.de/index.php?fw_goto=login/index/hd/22ddb&'
+          }
+        ],
+      },
+      {
+        color: 'default',
+        title: 'Chat',
+        text:
+          '',
+        buttons: [
+          {
+            text: 'Join Chat',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'https://onlineberatung.aygonet.de/index.php?fw_goto=verwaltung.chat/overview/22ddb&'
+          },
+
+        ],
+
+        // link: 'beratung/melden/hassimnetz',
+        // linkText: 'Hasspostings melden'
       }
     ]
-  }
+  },
 }
 
 export const heroDataRassismus = {
