@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
 
-import commonStyles from '../../../common/Common.module.sass'
+import { stepThree } from './step_data'
 
+import commonStyles from '../../../common/Common.module.sass'
 import styles from '../MultiStepForm.module.sass'
 import validation from 'react-validation-mixin'
 import strategy from 'joi-validation-strategy'
@@ -95,6 +96,8 @@ class Step3 extends Component {
     }
   }
   render() {
+    const { lang } = this.props
+    const errors = stepThree[lang].errorText
     const { files } = this.state
     const maxSize = 10485760
     const thumbs = files.map(file => (
@@ -121,7 +124,7 @@ class Step3 extends Component {
       <div className={styles['step']}>
         <form id="Form" className="form-horizontal">
           <h1>
-            Gibt es von dem Vorfall Fotos, Screenshots oder Links (optional)?
+            {stepThree[lang].title}
           </h1>
           <div className={styles['dropzone']}>
             <Dropzone
@@ -142,26 +145,25 @@ class Step3 extends Component {
                 const isFileTooLarge =
                   rejectedFiles.length > 0 && rejectedFiles[0].size > maxSize
                 if (this.state.files.length >= 10) {
-                  return 'Limit erreicht! Es dürfen maximal nur 10 Dateien auf einmal gesendet werden.'
+                  return `${errors.fileTooLarge}`
                 }
                 if (isFileTooLarge) {
-                  return 'Datei ist zu groß. Maximal 10 MB.'
+                  return `${errors.fileTooLarge}`
                 }
                 if (acceptedFiles.length || rejectedFiles.length) {
-                  return `Akzeptiert: ${acceptedFiles.length}, abgelehnt: ${
-                    rejectedFiles.length
+                  return `${errors.fileAccepted}{' '}${acceptedFiles.length},{' '}${errors.fileRejected}{' '}${rejectedFiles.length
                     }`
                 }
                 if (isDragAccept) {
-                  return 'Gültiges Format.'
+                  return `${errors.fileFormatAccepted}`
                 }
                 if (isDragReject) {
-                  return 'Ungültiges Format. Nur Bilddateien erlaubt.'
+                  return `${errors.fileFormatRejected}`
                 }
                 return (
                   <p>
-                    <i className="dropzone-image fa fa-image" /> Bilder hier
-                    hochladen.
+                    <i className="dropzone-image fa fa-image" />
+                    {stepThree[lang].text}
                   </p>
                 )
               }}
@@ -169,8 +171,7 @@ class Step3 extends Component {
             <aside className={styles['thumbsContainer']}>{thumbs}</aside>
           </div>
           <p>
-            Links zum Vorfall (Bei mehreren Links, bitte mit Beistrich getrennt
-            eintragen):
+            {stepThree[lang].text2}
           </p>
           <textarea
             ref="links"

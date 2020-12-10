@@ -11,6 +11,8 @@ import StepFour from './StepComponents/StepFour'
 import StepFive from './StepComponents/StepFive'
 import StepSix from './StepComponents/StepSix'
 
+import { stepNames } from './StepComponents/step_data'
+
 import cx from 'classnames'
 import './MultiStepForm_basic.css'
 import styles from './MultiStepForm.module.sass'
@@ -33,9 +35,9 @@ class MultiStepForm extends Component {
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   componentDidUpdate(prevProps) {
     if (
@@ -59,6 +61,7 @@ class MultiStepForm extends Component {
     }
   }
   render() {
+    const { lang } = this.props
     const steps = [
       // {
       //   name: 'Schritt 1',
@@ -73,7 +76,7 @@ class MultiStepForm extends Component {
       //   )
       // },
       {
-        name: 'Vorfallbeschreibung',
+        name: stepNames[lang].stepTwo,
         component: (
           <StepTwo
             className={styles['step']}
@@ -81,11 +84,12 @@ class MultiStepForm extends Component {
             updateStore={u => {
               this.updateStore(u)
             }}
+            lang={lang}
           />
         )
       },
       {
-        name: 'Links/Anhänge',
+        name: stepNames[lang].stepThree,
         component: (
           <StepThree
             className={styles['step']}
@@ -93,6 +97,7 @@ class MultiStepForm extends Component {
             updateStore={u => {
               this.updateStore(u)
             }}
+            lang={lang}
           />
         )
       },
@@ -109,7 +114,7 @@ class MultiStepForm extends Component {
       //   )
       // },
       {
-        name: 'Check',
+        name: stepNames[lang].stepFive,
         component: (
           <StepFive
             className={styles['step']}
@@ -117,6 +122,7 @@ class MultiStepForm extends Component {
             updateStore={u => {
               this.updateStore(u)
             }}
+            lang={lang}
             report={this.props.report.reportSent}
             resetReport={() => this.props.resetReport()}
             sendReport={reportData => this.props.sendReport(reportData)}
@@ -124,7 +130,7 @@ class MultiStepForm extends Component {
         )
       },
       {
-        name: 'Fertig',
+        name: stepNames[lang].stepSix,
         component: (
           <StepSix
             className={cx(styles['step'], 'step6')}
@@ -136,7 +142,7 @@ class MultiStepForm extends Component {
         )
       }
     ]
-    const { lang } = this.props
+
     return (
       <div className={styles['multi-step-container']}>
         <div className={cx('step-progress', styles['multi-step-form'])}>

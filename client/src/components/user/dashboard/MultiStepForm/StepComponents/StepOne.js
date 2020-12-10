@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import InfoCardObject from '../../InfoCardObject/InfoCardObject'
 
+// import { stepOne } from './step_data'
+
 import styles from '../MultiStepForm.module.sass'
 
 const infoCard = {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import { stepTwo } from './step_data'
+
 import styles from '../MultiStepForm.module.sass';
 
 export default class Step3 extends Component {
@@ -17,9 +19,9 @@ export default class Step3 extends Component {
     this.isValidated = this.isValidated.bind(this);
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   isValidated() {
     const userInput = this._grabUserInput(); // grab user entered vals
@@ -87,14 +89,14 @@ export default class Step3 extends Component {
   }
 
   render() {
+    const { lang } = this.props
     return (
       <div className={styles['step']}>
         <div className="row">
           <form id="Form" className="form-horizontal">
-            <h1>Was ist passiert?</h1>
+            <h1>{stepTwo[lang].title}</h1>
             <p>
-              Bitte beschreiben Sie uns den Vorfall möglichst genau,
-              idealerweise auch unter Angabe von Ort und Zeit:
+              {stepTwo[lang].text}
             </p>
 
             <div>
@@ -109,14 +111,13 @@ export default class Step3 extends Component {
               />
               <div>{this.state.descriptionValMsg}</div>
               <p>
-                <b>ACHTUNG:</b> BEI EINER ANONYMEN MELDUNG KÖNNEN WIR{' '}
-                <b>NICHT</b> ANTWORTEN! WENN SIE EINE BERATUNG MÖCHTEN, KLICKEN
-                SIE{' '}
+                <span dangerouslySetInnerHTML={{ __html: stepTwo[lang].disclaimer }} />
+                {' '}
                 <Link
                   style={{ color: '#111' }}
-                  to="/de/beratung/beratung_rassismus_hassimnetz"
+                  to={stepTwo[lang].link}
                 >
-                  HIER
+                  {stepTwo[lang].linkText}
                 </Link>
                 .
               </p>
