@@ -242,8 +242,8 @@ export const multiPartOneLinerData = [
     },
     en: {
       icon: 'duration',
-      title: 'Öffnungszeiten der Beratungsstelle',
-      text: 'Mo-Mi 9:00 - 16:30 | Do 10:00 - 18:30 | Fr 9:00 - 15:00'
+      title: 'Opening hours',
+      text: 'Mo-We 9am - 4:30pm | Th 10am - 6:30pm | Fr 9am - 3pm'
     }
   },
   {
@@ -254,7 +254,7 @@ export const multiPartOneLinerData = [
     },
     en: {
       icon: 'location',
-      title: 'So finden Sie uns',
+      title: 'How you find us:',
       text: 'Am Hundsturm 7/13, 1050 Wien'
     }
   },
@@ -265,7 +265,7 @@ export const multiPartOneLinerData = [
       link: 'https://goo.gl/maps/y5smNouBkD32'
     },
     en: {
-      linkText: 'Zum Anfahrtsplan',
+      linkText: 'Show map',
       linkType: 'external',
       link: 'https://goo.gl/maps/y5smNouBkD32'
     }
@@ -287,8 +287,8 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/wissen.png',
-        title: 'Wissenswertes & Tipps',
-        link: 'test'
+        title: 'Rechtshilfefonds #GegenHassimNetz',
+        link: 'beratung/rechtshilfefonds'
       },
       {
         size: 'default',
@@ -313,29 +313,29 @@ export const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/beratung.png',
-        title: 'Was können wir tun?',
+        title: 'Was wir dann tun',
         link: 'beratung/waswirdanntun'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'icons/wissen.png',
-        title: 'Wissenswertes & Tipps',
-        link: 'test'
+        title: 'Rechtshilfefonds #GegenHassimNetz',
+        link: 'beratung/rechtshilfefonds'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'faq-bubble.png',
+        image: 'icons/faq.png',
         title: 'Mehr dazu',
         link: 'wissen/faq'
       },
       {
         size: 'default',
         type: 'imageCard',
-        image: 'press.png',
+        image: 'icons/publikationen.png',
         title: 'Broschüre Hass im Netz',
-        link: 'wissen/faq'
+        link: 'wissen/publikationen'
       }
     ]
   }
