@@ -83,7 +83,7 @@ export default class Step3 extends Component {
 
   _validationErrors(val) {
     const errMsgs = {
-      descriptionValMsg: val.descriptionVal ? '' : 'Darf nicht leer sein'
+      descriptionValMsg: val.descriptionVal ? '' : stepTwo[this.props.lang].emptyError
     };
     return errMsgs;
   }
@@ -109,7 +109,7 @@ export default class Step3 extends Component {
                 onBlur={this.validationCheck}
                 onChange={this.validationCheck}
               />
-              <div>{this.state.descriptionValMsg}</div>
+              <div style={{ 'color': 'red' }}>{this.state.descriptionValMsg}</div>
               <p>
                 <span dangerouslySetInnerHTML={{ __html: stepTwo[lang].disclaimer }} />
                 {' '}

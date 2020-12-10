@@ -4,6 +4,8 @@ import Promise from 'promise'
 
 import Spinner from '../../Spinner/Spinner'
 
+import { stepFive } from './step_data'
+
 import cx from 'classnames'
 import styles from '../MultiStepForm.module.sass'
 
@@ -12,7 +14,9 @@ class StepFive extends Component {
     super(props)
 
     this.state = {
-      saving: false
+      saving: false,
+      consented: false,
+      showError: false
     }
 
     this.isValidated = this.isValidated.bind(this)
@@ -24,6 +28,8 @@ class StepFive extends Component {
     // Reset sentReport to FALSE
     this.props.resetReport()
   }
+
+
 
   // This review screen had the 'Save' button, on clicking this is called
   isValidated() {
@@ -42,51 +48,49 @@ class StepFive extends Component {
     reject(): validation/save failed. Stay on current step
     */
 
-    this.setState({
-      saving: true
-    })
 
     const reportData = this.props.getStore()
 
     return new Promise(async (resolve, reject) => {
-      let formData = new FormData()
-
-      axios.post('/api/projects/report/send', reportData).then(res => {
-        const id = res.data.report._id
-        const files = reportData.files
-        if (files.length > 0) {
-          files.map(file => {
-            let fileData = new FormData()
-            fileData.append('id', id)
-            fileData.append('name', file.name)
-            fileData.append('size', file.size)
-            fileData.append('file', file)
-            return axios
-              .post('/api/projects/report/images', fileData)
-              .then(res => {
-                if (res.data === 'success') {
-                  resolve()
-                } else {
-                  reject()
-                }
-              })
-          })
-        } else {
-          if (res.data.msg === 'success') {
-            resolve()
+      if (this.state.consented) {
+        this.setState({
+          saving: true,
+          showError: false
+        })
+        axios.post('/api/projects/report/send', reportData).then(res => {
+          const id = res.data.report._id
+          const files = reportData.files
+          if (files.length > 0) {
+            files.map(file => {
+              let fileData = new FormData()
+              fileData.append('id', id)
+              fileData.append('name', file.name)
+              fileData.append('size', file.size)
+              fileData.append('file', file)
+              return axios
+                .post('/api/projects/report/images', fileData)
+                .then(res => {
+                  if (res.data === 'success') {
+                    resolve()
+                  } else {
+                    reject()
+                  }
+                })
+            })
           } else {
-            reject()
+            if (res.data.msg === 'success') {
+              resolve()
+            } else {
+              reject()
+            }
           }
-        }
-      })
-      // this.props.sendReport(reportData)
-      // setTimeout(() => {
-      //   if (this.props.getStore().reportSent) {
-      //     resolve()
-      //   } else {
-      //     reject()
-      //   }
-      // }, 4000)
+        })
+      } else {
+        this.setState({
+          showError: true
+        })
+      }
+
     })
   }
 
@@ -95,7 +99,15 @@ class StepFive extends Component {
     this.props.jumpToStep(toStep - 1) // The StepZilla library injects this jumpToStep utility into each component
   }
 
+  checkConsent = e => {
+    console.log(e.target.checked)
+    this.setState({
+      consented: e.target.checked
+    })
+  }
+
   render() {
+    const { lang } = this.props
     return (
       <div className={styles['step']}>
         <Spinner nowActive={this.state.saving} />
@@ -103,31 +115,23 @@ class StepFive extends Component {
           <form id="Form" className="form-horizontal">
             <div className="form-group">
               <label className="col-md-12 control-label">
-                <h1>Einverstanden?</h1>
-                <p>
-                  Ihre Daten sind bei uns sicher. Personenbezogene Daten (z.B.
-                  falls Sie Namen in der Beschreibung nennen) behandeln wir
-                  streng vertraulich. Diese werden nur mit Ihrer Zustimmung an
-                  Dritte weitergegeben.
-                </p>
-                <p>
-                  Die Übertragung erfolgt über eine sichere Verbindung zu
-                  unserem Webserver.
-                </p>
+                <h1>{stepFive[lang].title}</h1>
+                <p dangerouslySetInnerHTML={{ __html: stepFive[lang].text }} />
+
               </label>
             </div>
             <div className="form-group">
               <div className="col-md-12 control-label">
                 <div className={styles['review-item']}>
                   <div className={styles['review-item--title']}>
-                    Beschreibung
+                    {stepFive[lang].list1}
                   </div>
                   <div className={styles['review-item--text']}>
                     {this.props.getStore().description}
                   </div>
                 </div>
                 <div className={styles['review-item']}>
-                  <div className={styles['review-item--title']}>Dateien</div>
+                  <div className={styles['review-item--title']}>{stepFive[lang].list2}</div>
                   {this.props.getStore().files.length > 0 ? (
                     <div className={styles['review-item--text']}>
                       {this.props.getStore().files &&
@@ -142,7 +146,7 @@ class StepFive extends Component {
                     )}
                 </div>
                 <div className={styles['review-item']}>
-                  <div className={styles['review-item--title']}>Links</div>
+                  <div className={styles['review-item--title']}>{stepFive[lang].list3}</div>
                   {this.props.getStore().links !== '' ? (
                     <div className={styles['review-item--text']}>
                       {this.props
@@ -156,59 +160,17 @@ class StepFive extends Component {
                       <div className={styles['review-item--text']}>---</div>
                     )}
                 </div>
-                <div className={styles['review-item']}>
-                  {/* <div className={styles['review-item--title']}>
-                    Kontaktdaten
+                <div>
+                  <div className={cx(styles['consent-box'],
+                    { [styles['error']]: this.state.showError && !this.state.consented }
+                  )}>
+                    <input type="checkbox" id="checkConsent" checked={this.state.consented} onChange={this.checkConsent} />
+                    <label htmlFor="checkConsent" dangerouslySetInnerHTML={{ __html: stepFive[lang].consent }} />
                   </div>
-                  {this.props.getStore().selectedOption !== 'anonym' ? (
-                    <div>
-                      {this.props.getStore().userName !== '' && (
-                        <div className={styles['review-item']}>
-                          <div className={styles['review-item--title']}>
-                            Name
-                          </div>
-                          <div className={styles['review-item--text']}>
-                            {this.props.getStore().userName}
-                          </div>
-                        </div>
-                      )}
-                      {this.props.getStore().email !== '' && (
-                        <div className={styles['review-item']}>
-                          <div className={styles['review-item--title']}>
-                            Email
-                          </div>
-                          <div className={styles['review-item--text']}>
-                            {this.props.getStore().email}
-                          </div>
-                        </div>
-                      )}
-                      {this.props.getStore().phone !== '' && (
-                        <div className={styles['review-item']}>
-                          <div className={styles['review-item--title']}>
-                            Telefonnummer
-                          </div>
-                          <div className={styles['review-item--text']}>
-                            {this.props.getStore().phone}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className={styles['review-item--text']}>
-                      Ich möchte anonym bleiben.
-                    </div>
-                  )} */}
+                  {this.state.showError && !this.state.consented && (
+                    <p style={{ 'color': 'red' }}>{stepFive[lang].errorMsg}</p>
+                  )}
                 </div>
-                {/* <div className="col-md-12 eg-jump-lnk">
-                  <a href="#" onClick={() => this.jumpToStep(1)}>
-                    e.g. showing how we use the jumpToStep method helper method
-                    to jump back to step 1
-                  </a>
-                </div>
-                <h2 className={savingCls}>
-                  Saving to Cloud, pls wait (by the way, we are using a Promise
-                  to do this :)...
-                </h2> */}
               </div>
             </div>
           </form>
@@ -219,7 +181,4 @@ class StepFive extends Component {
 }
 
 export default StepFive
-// export default connect(
-//   null,
-//   {}
-// )(StepFive)
+

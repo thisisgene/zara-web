@@ -88,7 +88,7 @@ router.post(
             { position: index },
             { safe: true, new: true }
           )
-            .then(item => {})
+            .then(item => { })
             .catch(err => {
               if (err) console.log(err);
             });
@@ -99,7 +99,7 @@ router.post(
             { position: index },
             { safe: true, new: true }
           )
-            .then(item => {})
+            .then(item => { })
             .catch(err => {
               if (err) console.log(err);
             });
@@ -305,7 +305,7 @@ router.post('/report/images', async (req, res) => {
       contentType: multerS3.AUTO_CONTENT_TYPE,
       bucket: 'serpig-space',
       acl: 'public-read',
-      key: function(req, file, cb) {
+      key: function (req, file, cb) {
         console.log('body: ', req.body);
         body = req.body;
         cb(null, `reports/${body.id}/${file.originalname}`);
@@ -316,7 +316,7 @@ router.post('/report/images', async (req, res) => {
   //   originalName: imgName
   // }
 
-  upload(req, res, function(error) {
+  upload(req, res, function (error) {
     if (error) {
       res.send(error);
       // return response.redirect('/error')
