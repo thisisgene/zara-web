@@ -6,10 +6,11 @@ import { withLocalize } from 'react-localize-redux'
 
 import styles from './LanguageToggle.module.sass'
 
-const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
+const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage, location }) => {
   // showLanguageAlert = () => {
   //   // languageAlert = true
   // }
+  console.log('langToggle: ', location.pathname.substring(3))
   return (
     <div className={styles['language-toggle']}>
       {languages.map(lang => (
@@ -17,14 +18,14 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage }) => {
           <NavLink
             activeClassName={styles.active}
             // className={styles[getClass(lang.code)]}
-            to={`/${lang.code}`}
-            data-tip
-            data-for={lang.code === 'en' && 'langTT'}
+            to={`/${lang.code}/${location.pathname.substring(4)}`}
+            // data-tip
+            // data-for={lang.code === 'en' && 'langTT'}
             onClick={e => {
-              e.preventDefault()
-              lang.code !== 'en' && setActiveLanguage(lang.code)
+              // e.preventDefault()
+              setActiveLanguage(lang.code)
             }}
-            // onMouseOver={lang.code === 'en' && languageAlert}
+          // onMouseOver={lang.code === 'en' && languageAlert}
           >
             {lang.code}
           </NavLink>

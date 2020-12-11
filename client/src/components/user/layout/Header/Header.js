@@ -203,7 +203,7 @@ class Header extends Component {
               </div>
               <div className={styles['right-menu--bottom']}>
                 <div className={styles['language-box']}>
-                  <LanguageToggle />
+                  <LanguageToggle match={this.props} />
                 </div>
                 <div
                   className={styles['search-box']}
