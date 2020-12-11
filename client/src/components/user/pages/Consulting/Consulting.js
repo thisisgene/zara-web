@@ -188,33 +188,36 @@ const cardGridObject = {
   },
   en: {
     title: 'Aktuell',
-    link: 'test',
-    linkText: 'Alle News & Presseaussendungen',
+    // link: 'test',
+    // linkText: 'Alle News & Presseaussendungen',
     cards: [
       {
         size: 'default',
-        type: 'titleCard',
-        text:
-          'Rassismus Report 2017: Weitere Zunahme rassistischer Vorfälle - Online Hass und Hetze auf neuem Höchststand',
-        link: 'test'
+        type: 'imageCard',
+        image: 'icons/beratung.png',
+        title: 'Was Sie Tun Können',
+        link: 'beratung/wassietunkoennen'
       },
       {
         size: 'default',
         type: 'imageCard',
-        title: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        image: 'icons/beratung.png',
+        title: 'Was Wir Dann Tun',
+        link: 'beratung/waswirdanntun'
       },
       {
         size: 'default',
         type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        image: 'icons/mitmischen.png',
+        title: 'Rechtshilfefonds #GegenHassimNetz',
+        link: 'beratung/rechtshilfefonds'
       },
       {
         size: 'default',
         type: 'imageCard',
-        text: 'Der Klagsverband ist vom Zusperren bedroht',
-        link: 'test'
+        image: 'icons/wissen.png',
+        title: 'Wissen',
+        link: 'wissen'
       }
     ]
   }

@@ -129,10 +129,10 @@ export const footerContent = {
         {
           icon: 'location',
           text:
-            'ZARA Zivilcourage und Anti-Rassismus-Arbeit<br>Schönbrunner Straße 119/13<br>Eingang: Am Hundsturm 7<br>1050 Wien',
+            'ZARA Civil Courage and Anti-Racism-Work<br>Schönbrunner Straße 119/13<br>Entrance: Am Hundsturm 7<br>1050 Wien',
           addLink: true,
-          link: '/test',
-          linkText: 'Zum Anfahrtsplan'
+          link: 'https://goo.gl/maps/Tjv8YHhNUXN2',
+          linkText: 'See map'
         },
         {
           icon: 'phone',
@@ -147,7 +147,7 @@ export const footerContent = {
         },
         {
           icon: 'hours',
-          text: 'Mo – Mi: 10.00 – 15.00<br>Do: 10.00 – 18.00<br>Fr: 10.00 – 15.00'
+          text: 'Mo – We: 10am – 3pm<br>Th: 10am – 6pm<br>Fr: 10am – 3pm'
         }
       ]
     },
@@ -175,8 +175,9 @@ export const footerContent = {
           ]
         },
         right: {
-          header: 'Donate',
-          icon: 'donate',
+          header: 'Donate to ZARA',
+          icon: 'spenden',
+          link: 'mitmischen/unterstuetzen',
           items: [
             {
               icon: 'check',
