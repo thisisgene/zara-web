@@ -2,19 +2,19 @@
   "menu": {
     "item0.1": [
       "Melden",
-      "Melden"
+      "Report"
     ],
     "item0.2": [
       "Spenden",
-      "Spenden"
+      "Donate"
     ],
     "item0.3": [
       "Presse",
-      "Presse"
+      "Press"
     ],
     "item0.4": [
       "Aktuelles",
-      "Aktuelles"
+      "News"
     ],
     "item1": [
       "Beratung",
@@ -30,7 +30,7 @@
     ],
     "item1.1.2": [
       "Hass im Netz anonym melden",
-      "report Online Hate"
+      "Report Online Hate"
     ],
     "item1.1.3": [
       "Beratung bei Rassismus/Hass im Netz",
@@ -62,47 +62,47 @@
     ],
     "item2.1": [
       "Trainingsangebote",
-      "Trainingsangebote"
+      "Training offers"
     ],
     "item2.1.1": [
       "Offene Workshops und Vorträge",
-      "Offene Workshops und Vorträge"
+      "Open Workshops and lectures"
     ],
     "item2.1.2": [
       "Für Schulklassen",
-      "Für Schulklassen"
+      "For school classes"
     ],
     "item2.1.3": [
       "Für Erwachsenengruppen",
-      "Für Erwachsenengruppen"
+      "For groups of adults"
     ],
     "item2.1.4": [
       "Für Unternehmen",
-      "Für Unternehmen"
+      "For companies"
     ],
     "item2.2": [
       "Training & mehr",
-      "Training & mehr"
+      "Training & more"
     ],
     "item2.2.1": [
       "Aktuelle Trainingsprojekte",
-      "Aktuelle Trainingsprojekte"
+      "Current Training projects"
     ],
     "item2.2.2": [
       "Workshop schenken",
-      "Workshop schenken"
+      "Gift a workshop"
     ],
     "item2.2.3": [
       "Unsere Trainer*innen",
-      "Unsere Trainer*innen"
+      "Our Trainers"
     ],
     "item3": [
       "Mitmischen",
-      "Mitmischen"
+      "Participate"
     ],
     "item3.1": [
       "Zeigen Sie Zivilcourage",
-      "Zeigen Sie Zivilcourage"
+      "Show Civil Courage"
     ],
     "item3.1.1": [
       "Counter Narratives",
@@ -114,11 +114,11 @@
     ],
     "item3.1.3": [
       "Hasspostings auf Social Media melden",
-      "Hasspostings auf Social Media melden"
+      "Why report hatefull post"
     ],
     "item3.2": [
       "Werden Sie ein*e ZARAista",
-      "Werden Sie ein*e ZARAista"
+      "Become a ZARAista"
     ],
     "item3.2.1": [
       "Community",
@@ -126,15 +126,15 @@
     ],
     "item3.2.2": [
       "Unterstützen",
-      "Unterstützen"
+      "Support"
     ],
     "item4": [
       "Wissen",
-      "Wissen"
+      "Knowledge"
     ],
     "item4.1": [
       "Aktuelles",
-      "Aktuelles"
+      "News"
     ],
     "item4.1.1": [
       "ZARA Kolumnen",
@@ -146,11 +146,11 @@
     ],
     "item4.2": [
       "Eigene Rechte kennen",
-      "Eigene Rechte kennen"
+      "Know Your Rights"
     ],
     "item4.2.1": [
       "Recht & Ordnung",
-      "Recht & Ordnung"
+      "Law & Order"
     ],
     "item4.2.2": [
       "Glossar",
@@ -158,7 +158,7 @@
     ],
     "item4.3": [
       "Publikationen",
-      "Publikationen"
+      "Publications"
     ],
     "item4.3.1": [
       "#GegenHassimNetz-Berichte",
@@ -166,15 +166,15 @@
     ],
     "item4.3.2": [
       "Rassismus Reports",
-      "Rassismus Reports"
+      "Racism Reports"
     ],
     "item4.3.3": [
       "Broschüren und Materialien",
-      "Broschüren und Materialien"
+      "ZARA Publications"
     ],
     "item4.3.4": [
       "Jahres- und Finanzberichte",
-      "Jahres- und Finanzberichte"
+      "More Publications"
     ],
     "item4.4": [
       "FAQs",
@@ -182,27 +182,27 @@
     ],
     "item4.5": [
       "Presse",
-      "Presse"
+      "Press"
     ],
     "item4.5.1": [
       "Pressespiegel",
-      "Pressespiegel"
+      "Press"
     ],
     "item4.5.2": [
       "Pressematerial & Logos",
-      "Pressematerial & Logos"
+      "Logos & Campaign Material"
     ],
     "item4.5.3": [
       "Fotos",
-      "Fotos"
+      "Photos"
     ],
     "item5": [
       "Über ZARA",
-      "Über ZARA"
+      "About ZARA"
     ],
     "item5.1": [
       "Was wir wollen",
-      "Was wir wollen"
+      "What we want"
     ],
     "item5.1.1": [
       "Mission ZARA",
@@ -210,15 +210,15 @@
     ],
     "item5.1.2": [
       "Die ZARA Story",
-      "Die ZARA Story"
+      "The ZARA Story"
     ],
     "item5.1.3": [
       "ZARA Grundsätze",
-      "ZARA Grundsätze"
+      "ZARA Principles"
     ],
     "item5.2": [
       "Wer wir sind",
-      "Wer wir sind"
+      "Who we are"
     ],
     "item5.2.1": [
       "Team",
