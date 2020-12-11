@@ -165,7 +165,7 @@ class MobileMenu extends Component {
                       <div className={styles['main-menu--item']}>
                         <NavLink
                           activeClassName={styles.active}
-                          to={item.link.includes('beratung') ? `/${lang}/${item.link}` : `/de/${item.link}`} // BERATUNG HACK
+                          to={`/${lang}/${item.link}`}
                           onClick={this.onMobileNavClick}
                         >
                           <Translate id={`menu.item${item.id}`} />

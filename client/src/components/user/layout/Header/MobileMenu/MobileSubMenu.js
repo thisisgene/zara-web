@@ -46,7 +46,7 @@ class MobileSubMenu extends Component {
                           <div className={styles['sub-item--title']}>
                             {subItem.link !== null ? (
                               <NavLink
-                                to={item.link.includes('beratung') ? `/${lang}/${item.link}/${subItem.link}` : `/de/${item.link}/${subItem.link}`} // BERATUNG HACK
+                                to={`/${lang}/${item.link}/${subItem.link}`}
                                 activeClassName={styles.active}
                                 onClick={this.props.onMobileNavClick}
                               >
@@ -95,10 +95,10 @@ class MobileSubMenu extends Component {
                                   <NavLink
                                     to={
                                       ssItem.redirect
-                                        ? item.link.includes('beratung') ? `/${lang}/${ssItem.redirectLink}` : `/de/${ssItem.redirectLink}` // BERATUNG HACK
+                                        ? `/${lang}/${ssItem.redirectLink}`
                                         : subItem.link !== null
-                                          ? item.link.includes('beratung') ? `/${lang}/${item.link}/${subItem.link}/${ssItem.link}` : `/de/${item.link}/${subItem.link}/${ssItem.link}` // BERATUNG HACK
-                                          : item.link.includes('beratung') ? `/${lang}/${item.link}/${ssItem.link}` : `/de/${item.link}/${ssItem.link}` // BERATUNG HACK
+                                          ? `/${lang}/${item.link}/${subItem.link}/${ssItem.link}`
+                                          : `/${lang}/${item.link}/${ssItem.link}`
                                     }
                                     activeClassName={styles.active}
                                     onClick={this.props.onMobileNavClick}

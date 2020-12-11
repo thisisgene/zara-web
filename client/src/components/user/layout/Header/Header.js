@@ -47,14 +47,15 @@ class Header extends Component {
       { name: 'English', code: 'en' }
     ]
 
-    // const defaultLanguage = props.match.params.lang || languages[0].code   // BERATUNG HACK: USE WHEN EVERYTHING IS TRANSLATED!
-    let defaultLanguage
-    if (this.props.location.pathname && this.props.location.pathname.includes('/beratung')) { // BERATUNG HACK: REMOVE ONCE EVERYTHING IS TRANSLATED!
-      defaultLanguage = this.props.match.params.lang || languages[0].code
-      this.setState({ siteIsBeratung: true })
-    } else {
-      defaultLanguage = 'de'
-    }
+
+    const defaultLanguage = this.props.match.params.lang || languages[0].code   // BERATUNG HACK: USE WHEN EVERYTHING IS TRANSLATED!
+    // let defaultLanguage
+    // if (this.props.location.pathname && this.props.location.pathname.includes('/beratung')) { // BERATUNG HACK: REMOVE ONCE EVERYTHING IS TRANSLATED!
+    //   defaultLanguage = this.props.match.params.lang || languages[0].code
+    //   this.setState({ siteIsBeratung: true })
+    // } else {
+    //   defaultLanguage = 'de'
+    // }
 
     this.props.initialize({
       languages,
@@ -90,7 +91,7 @@ class Header extends Component {
   render() {
     const { activeLanguage } = this.props
     let menuItems = menuItemsFromFile
-    const lang = this.state.siteIsBeratung ? activeLanguage.code : 'de'
+    const lang = activeLanguage && activeLanguage.code
     return (
       <div className={styles['nav-wrapper']}>
         <div
@@ -145,7 +146,7 @@ class Header extends Component {
                       <div key={item.id}>
                         <NavLink
                           activeClassName={styles.active}
-                          to={item.link.includes('beratung') ? `/${lang}/${item.link}` : `/de/${item.link}`} // BERATUNG HACK
+                          to={`/${lang}/${item.link}`}
                           onMouseEnter={this.onLinkHover.bind(this, item.id)}
                           onFocus={this.onLinkHover.bind(this, item.id)}
                           onClick={this.onLinkBlur}

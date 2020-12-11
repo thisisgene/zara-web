@@ -115,31 +115,31 @@ class User extends Component {
     const curLang = this.props.activeLanguage && this.props.activeLanguage.code
 
     ////////////// BERATUNG HACK: SONDERFALL FUER BERATUNG TRANSLATION!
-    let currentSite = ''
+    // let currentSite = ''
 
-    if (this.props.match.url && this.props.match.url.includes(`${curLang}/beratung`)) {
-      console.log('BERATUNG')
-      currentSite = 'beratung'
-    }
+    // if (this.props.match.url && this.props.match.url.includes(`${curLang}/beratung`)) {
+    //   console.log('BERATUNG')
+    //   currentSite = 'beratung'
+    // }
     ////////////// BERATUNG HACK: SONDERFALL ENDE
 
     if (this.props.activeLanguage) {
-      if (currentSite == 'beratung') { // BERATUNG HACK: SONDERFALL ZUSATZ: REMOVE ONCE EVERYTHING IS TRANSLATED!
-        this.props.setActiveLanguage(this.props.activeLanguage.code)
-      }
-      else {
-        this.props.setActiveLanguage('de')
-      }
+      // if (currentSite == 'beratung') { // BERATUNG HACK: SONDERFALL ZUSATZ: REMOVE ONCE EVERYTHING IS TRANSLATED!
+      this.props.setActiveLanguage(this.props.activeLanguage.code)
+      // }
+      // else {
+      this.props.setActiveLanguage('de')
+      // }
     } else {
       this.props.setActiveLanguage('de')
     }
 
     const hasLanguageChanged = prevLang !== curLang
     if (hasLanguageChanged) {
-      // window.localStorage.setItem('languageCode', curLang)
-      if (currentSite == 'beratung') { // BERATUNG HACK: SONDERFALL ZUSATZ: REMOVE ONCE EVERYTHING IS TRANSLATED!
-        this.props.setActiveLanguage(curLang)
-      }
+      window.localStorage.setItem('languageCode', curLang)
+      // if (currentSite == 'beratung') { // BERATUNG HACK: SONDERFALL ZUSATZ: REMOVE ONCE EVERYTHING IS TRANSLATED!
+      this.props.setActiveLanguage(curLang)
+      // }
     }
   }
   componentDidMount() {
@@ -157,6 +157,7 @@ class User extends Component {
 
   render() {
     const { activeLanguage } = this.props
+    const lang = activeLanguage && activeLanguage.code
     const routes = [
       {
         path: '//de',
@@ -180,9 +181,11 @@ class User extends Component {
         <div className={styles['user--header']}>
           <Route path="/:lang" component={Header} />
         </div>
-
         <ScrollToTop>
           <div className={styles['main-content']}>
+            {lang && lang == 'en' && !this.props.match.url.includes('beratung') &&
+              <div className={styles['language-disclaimer']}>Unfortunately, this page is not yet available in English!</div>
+            }
             {/* TODO: BREADCRUMBS */}
             {/* <div className={styles['breadcrumb-container']}>
               {routes.map((route, index) => (
