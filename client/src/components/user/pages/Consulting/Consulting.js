@@ -22,12 +22,12 @@ const heroData = {
       {
         text: 'Melden',
         link: 'beratung/melden',
-        type: 'default'
+        type: 'cta'
       },
       {
         text: 'Beratung',
         link: 'beratung/beratung_rassismus_hassimnetz',
-        type: 'default'
+        type: 'cta'
       }
     ]
   },
