@@ -81,7 +81,8 @@ export const beratungInfoBox = {
     cards: [
       {
         color: 'default',
-        title: 'Beratung - Telefon',
+        title: 'Telefon',
+        image: 'reportPhone',
         text:
           'Sie erreichen die ZARA Beratungsstellen Montag bis Freitag, von 10:00 bis 15:00 Uhr.',
 
@@ -98,6 +99,7 @@ export const beratungInfoBox = {
       {
         color: 'default',
         title: 'Verschlüsselte Email',
+        image: 'reportEmail',
         text:
           'Ihre Sicherheit ist uns wichtig! Um Ihre Daten zu schützen, können Sie uns verschlüsselte E-Mails (über eine sichere Plattform namens Aygonet) schicken. Sie erhalten eine E-Mail, sobald wir Ihre Anfrage beantwortet haben. Alle Daten werden streng vertraulich behandelt und nicht an Dritte weitergegeben.',
         // link: 'mitmischen/hashtags',
@@ -121,7 +123,8 @@ export const beratungInfoBox = {
       },
       {
         color: 'default',
-        title: 'Beratung - Chat',
+        title: 'Chat',
+        image: 'reportChat',
         text:
           '',
         buttons: [
@@ -160,6 +163,7 @@ export const beratungInfoBox = {
       {
         color: 'default',
         title: 'Telephone',
+        image: 'reportPhone',
         text:
           'You can reach our team Monday to Friday, from 10:00 a.m. to 3:00 p.m.',
         // link: 'tel:+43 (0) 1 929 13 99',
@@ -179,6 +183,7 @@ export const beratungInfoBox = {
       {
         color: 'default',
         title: 'Encrypted email',
+        image: 'reportEmail',
         text:
           'Your safety is important to us! To protect your data, you can send us encrypted emails (via a secure platform called Aygonet). You will receive an email as soon as we have answered your request. All data will be treated with strict confidentiality and will not be passed on to third parties.',
         // link: 'mitmischen/hashtags',
@@ -203,6 +208,7 @@ export const beratungInfoBox = {
       {
         color: 'default',
         title: 'Chat',
+        image: 'reportChat',
         text:
           '',
         buttons: [

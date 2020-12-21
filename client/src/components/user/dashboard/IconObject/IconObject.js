@@ -11,6 +11,10 @@ import ArrowIcon from '../../common/assets/icon/arrow/tertiary.svg'
 import arrowRight from '../../common/assets/icon/arrow/right.svg'
 import arrowButtonRight from '../../common/assets/icon/arrow-button/right.svg'
 
+import reportPhone from '../../common/assets/icon/report/telefon.svg'
+import reportEmail from '../../common/assets/icon/report/email.svg'
+import reportChat from '../../common/assets/icon/report/chat.svg'
+
 import search from '../../common/assets/button/search.svg'
 
 import email from '../../common/assets/icon/contact/email.svg'
@@ -32,30 +36,33 @@ class IconObject extends Component {
   render() {
     const { image } = this.props
     const imageSrc = image =>
-      ({
-        act,
-        alert,
-        donate_hand,
-        spenden,
-        arrowRight,
-        arrowButtonRight,
-        group,
-        listArrow: ArrowIcon,
-        LockIcon,
-        search,
-        check,
-        email,
-        hours,
-        location,
-        phone,
-        fbLogo,
-        instaLogo,
-        twitterLogo,
-        ytLogo,
-        newsletterLogo,
-        participants,
-        duration
-      }[image])
+    ({
+      act,
+      alert,
+      donate_hand,
+      spenden,
+      arrowRight,
+      arrowButtonRight,
+      group,
+      listArrow: ArrowIcon,
+      LockIcon,
+      search,
+      check,
+      email,
+      hours,
+      location,
+      phone,
+      reportPhone,
+      reportEmail,
+      reportChat,
+      fbLogo,
+      instaLogo,
+      twitterLogo,
+      ytLogo,
+      newsletterLogo,
+      participants,
+      duration
+    }[image])
     return <img src={imageSrc(image)} alt={image} />
   }
 }
