@@ -44,7 +44,7 @@ export const heroDataBeratungRassismus = {
     buttons: [
       {
         title: 'Melden',
-        link: '/beratung/melden/hassimnetz'
+        link: '/beratung/melden'
       },
       {
         title: 'Beratung',
@@ -396,7 +396,7 @@ export const wasSieTunKoennenInfoBox1 = {
         title: 'MELDEN',
         text:
           'Melden Sie rassistische Diskriminierung - on- sowie offline - und Hass im Netz an ZARA. ZARA dokumentiert alle Meldungen in einer eigen dafür vorgesehen Falldatenbank, welche wiederum für Berichte und Analysen anonymisiert aufgearbeitet werden. Diese Berichte sind eine wichtige qualitative Quelle, um auf das Ausmaß von Rassismus sowie Hass im Netz hinzuweisen und sichtbar zu machen. So ist ZARA in der Lage, Problematiken bzw. Tendenzen zu erkennen und mit Aktivitäten, Initiativen und Kampagnen dagegen vorzugehen.',
-        link: 'beratung/#melden',
+        link: 'beratung/melden',
         linkText: 'Melden'
       },
       {
@@ -416,7 +416,7 @@ export const wasSieTunKoennenInfoBox1 = {
         title: 'MELDEN',
         text:
           'Melden Sie rassistische Diskriminierung - on- sowie offline - und Hass im Netz an ZARA. ZARA dokumentiert alle Meldungen in einer eigen dafür vorgesehen Falldatenbank, welche wiederum für Berichte und Analysen anonymisiert aufgearbeitet werden. Diese Berichte sind eine wichtige qualitative Quelle, um auf das Ausmaß von Rassismus sowie Hass im Netz hinzuweisen und sichtbar zu machen. So ist ZARA in der Lage, Problematiken bzw. Tendenzen zu erkennen und mit Aktivitäten, Initiativen und Kampagnen dagegen vorzugehen.',
-        link: 'beratung/#melden',
+        link: 'beratung/melden',
         linkText: 'Melden'
       },
       {

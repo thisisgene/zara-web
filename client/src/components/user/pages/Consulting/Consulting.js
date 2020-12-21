@@ -21,7 +21,7 @@ const heroData = {
     buttons: [
       {
         text: 'Melden',
-        link: 'beratung/melden/hassimnetz',
+        link: 'beratung/melden',
         type: 'default'
       },
       {
@@ -38,7 +38,7 @@ const heroData = {
     buttons: [
       {
         text: 'Report an incident',
-        link: 'beratung/melden/hassimnetz',
+        link: 'beratung/melden',
         type: 'default'
       },
       {
