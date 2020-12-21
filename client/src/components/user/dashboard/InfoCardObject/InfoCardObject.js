@@ -9,11 +9,12 @@ import ButtonObject from '../ButtonObject/ButtonObject'
 
 class InfoCardObject extends Component {
   render() {
-    const { card, lang } = this.props
+    const { direction, card, lang } = this.props
     return (
       <div
         className={cx(styles['info-card'], {
-          [styles[card.color]]: card.color
+          [styles[card.color]]: card.color,
+          [styles[direction]]: direction
         })}
       >
         <div>
@@ -43,7 +44,7 @@ class InfoCardObject extends Component {
               </ul>
             )}
             {card.buttons && (
-              <div className={styles['info-box--buttons']}>
+              <div className={styles['info-card--body__buttons']}>
                 {card.buttons.map((button, index) => (
                   <div style={{ 'marginBottom': '15px' }}><ButtonObject key={index} button={button} lang={lang} /></div>
                 ))}
@@ -54,7 +55,7 @@ class InfoCardObject extends Component {
 
         {card.linkType && card.linkType === 'button' ? (
           card.multiButton === true ? (
-            <div>
+            <div className={styles['info-box--buttons']}>
               {card.buttons.map((button, index) => (
                 <div className={styles['info-card--button']} key={index}>
                   <ButtonObject button={button} lang={lang} />

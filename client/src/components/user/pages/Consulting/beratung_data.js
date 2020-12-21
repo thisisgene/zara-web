@@ -61,31 +61,39 @@ export const heroDataBeratungRassismus = {
 
 export const beratungInfoBox = {
   color: 'white',
+  direction: 'column',
   de: {
     title: 'Beratung zu Rassismus und/oder Hass im Netz',
     text:
       'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cyber-Mobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.',
 
-    listItems: [
-      {
-        text: 'Telefon +43 (0) 1 929 13 99'
-      },
-      {
-        text: 'Verschlüsselte E-Mail'
-      },
-      {
-        text: 'Chat beitreten'
-      }
-    ],
+    // listItems: [
+    //   {
+    //     text: 'Telefon +43 (0) 1 929 13 99'
+    //   },
+    //   {
+    //     text: 'Verschlüsselte E-Mail'
+    //   },
+    //   {
+    //     text: 'Chat beitreten'
+    //   }
+    // ],
     cards: [
       {
         color: 'default',
         title: 'Beratung - Telefon',
         text:
-          'Sie erreichen die ZARA Beratungsstellen Montag bis Freitag, von 10:00 bis 15:00 Uhr, unter: <a href="tel:+43 (0) 1 929 13 99">+43 (0) 1 929 13 99</a>',
-        // link: 'tel:+43 (0) 1 929 13 99',
-        // linkType: 'external',
-        // linkText: '+43 (0) 1 929 13 99'
+          'Sie erreichen die ZARA Beratungsstellen Montag bis Freitag, von 10:00 bis 15:00 Uhr.',
+
+        buttons: [
+          {
+            text: '+43 (0) 1 929 13 99',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'tel:+43 (0) 1 929 13 99'
+          }
+        ],
       },
       {
         color: 'default',
@@ -137,26 +145,36 @@ export const beratungInfoBox = {
     text:
       'If you are affected by racial discrimination, online hate and/or cyberbullying, or if you have become a witness to such incidents, then let us advise you free of charge. Our team provides legal and psychosocial advice and will be happy to support you.',
 
-    listItems: [
-      {
-        text: 'Telephone +43 (0) 1 929 13 99'
-      },
-      {
-        text: 'Encrypted email'
-      },
-      {
-        text: 'Join chat'
-      }
-    ],
+    // listItems: [
+    //   {
+    //     text: 'Telephone +43 (0) 1 929 13 99'
+    //   },
+    //   {
+    //     text: 'Encrypted email'
+    //   },
+    //   {
+    //     text: 'Join chat'
+    //   }
+    // ],
     cards: [
       {
         color: 'default',
         title: 'Telephone',
         text:
-          'You can reach our team Monday to Friday, from 10:00 a.m. to 3:00 p.m., at +43 (0) 1 929 13 99',
+          'You can reach our team Monday to Friday, from 10:00 a.m. to 3:00 p.m.',
         // link: 'tel:+43 (0) 1 929 13 99',
         // linkType: 'external',
         // linkText: '+43 (0) 1 929 13 99'
+        buttons: [
+          {
+            text: '+43 (0) 1 929 13 99',
+            type: 'cta',
+            linkPath: 'external',
+            link:
+              'tel:+43 (0) 1 929 13 99'
+          }
+        ]
+
       },
       {
         color: 'default',

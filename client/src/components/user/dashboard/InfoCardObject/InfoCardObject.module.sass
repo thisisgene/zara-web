@@ -21,7 +21,22 @@
     .info-card--link a
       color: #EF542B
       
-
+  &.column
+    max-width: 100%
+    margin: 0 0 2rem
+    display: flex
+    flex-direction: column
+    .info-card
+      &--title-box
+        
+        margin-bottom: 0
+      &--body
+        display: flex
+        flex-direction: column
+        &__text
+          order: 2
+        &__buttons
+          order: 1
   &--title-box
     // min-height: 3.8rem
     display: flex
