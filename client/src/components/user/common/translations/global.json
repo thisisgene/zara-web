@@ -18,23 +18,23 @@
     ],
     "item1": [
       "Beratung",
-      "Consulting"
+      "Support"
     ],
     "item1.1": [
       "Beratung & Melden",
-      "Consulting & Report"
+      "Support & Report"
     ],
     "item1.1.1": [
-      "Rassismus Anonym Melden",
-      "Report Racism"
+      "Meldung (Rassismus/Hass im Netz)",
+      "Report an Incident (racism/online hate)"
     ],
     "item1.1.2": [
       "Hass im Netz anonym melden",
       "Report Online Hate"
     ],
     "item1.1.3": [
-      "Beratung bei Rassismus/Hass im Netz",
-      "Consulting Racism / Online Hate"
+      "Beratung (Rassismus/Hass im Netz)",
+      "Get support (racism/online hate)"
     ],
     "item1.2": [
       "Lass Uns was tun",
@@ -62,19 +62,19 @@
     ],
     "item2.1": [
       "Trainingsangebote",
-      "Training offers"
+      "Workshops"
     ],
     "item2.1.1": [
       "Offene Workshops und Vorträge",
-      "Open Workshops and lectures"
+      "Open workshops and talks"
     ],
     "item2.1.2": [
       "Für Schulklassen",
-      "For school classes"
+      "For school children"
     ],
     "item2.1.3": [
       "Für Erwachsenengruppen",
-      "For groups of adults"
+      "For adult groups"
     ],
     "item2.1.4": [
       "Für Unternehmen",
@@ -82,11 +82,11 @@
     ],
     "item2.2": [
       "Training & mehr",
-      "Training & more"
+      "ZARA Training and more"
     ],
     "item2.2.1": [
       "Aktuelle Trainingsprojekte",
-      "Current Training projects"
+      "Current ZARA Training projects"
     ],
     "item2.2.2": [
       "Workshop schenken",
@@ -98,7 +98,7 @@
     ],
     "item3": [
       "Mitmischen",
-      "Participate"
+      "Get involved"
     ],
     "item3.1": [
       "Zeigen Sie Zivilcourage",
@@ -113,12 +113,12 @@
       "Hashtags"
     ],
     "item3.1.3": [
-      "Hasspostings auf Social Media melden",
-      "Why report hatefull post"
+      "Hasspostings an ZARA melden",
+      "Report online hate to ZARA"
     ],
     "item3.2": [
-      "Werden Sie ein*e ZARAista",
-      "Become a ZARAista"
+      "Werden Sie ein*e ZARA*ista",
+      "Become a ZARA*ista"
     ],
     "item3.2.1": [
       "Community",
@@ -126,23 +126,23 @@
     ],
     "item3.2.2": [
       "Unterstützen",
-      "Support"
+      "Support us"
     ],
     "item4": [
-      "Wissen",
-      "Knowledge"
+      "Ressourcen",
+      "Resources"
     ],
     "item4.1": [
       "Aktuelles",
-      "News"
+      "Latest news"
     ],
     "item4.1.1": [
       "ZARA Kolumnen",
-      "ZARA Kolumnen"
+      "ZARA Column"
     ],
     "item4.1.2": [
       "Pressemeldungen",
-      "Pressemeldungen"
+      "Press releases"
     ],
     "item4.2": [
       "Eigene Rechte kennen",
@@ -154,7 +154,7 @@
     ],
     "item4.2.2": [
       "Glossar",
-      "Glossar"
+      "Glossary"
     ],
     "item4.3": [
       "Publikationen",
@@ -162,7 +162,7 @@
     ],
     "item4.3.1": [
       "#GegenHassimNetz-Berichte",
-      "#GegenHassimNetz-Berichte"
+      "#AgainstOnlineHate Report"
     ],
     "item4.3.2": [
       "Rassismus Reports",
@@ -170,11 +170,11 @@
     ],
     "item4.3.3": [
       "Broschüren und Materialien",
-      "ZARA Publications"
+      "Brochures and materials"
     ],
     "item4.3.4": [
       "Jahres- und Finanzberichte",
-      "More Publications"
+      "Annual and financial reports"
     ],
     "item4.4": [
       "FAQs",

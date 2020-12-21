@@ -63,14 +63,14 @@ const menuItems = [
           },
           {
             name: 'Rassismus',
-            link: 'melden/rassismus',
+            link: 'melden',
             id: '1.1.1',
           },
-          {
-            name: 'Hass im Netz',
-            link: 'melden/hassimnetz',
-            id: '1.1.2',
-          },
+          // {
+          //   name: 'Hass im Netz',
+          //   link: 'melden/hassimnetz',
+          //   id: '1.1.2',
+          // },
         ],
       },
       {
@@ -234,15 +234,16 @@ const menuItems = [
             id: '3.1.1',
             link: 'counternarratives',
           },
-          {
-            name: 'Hashtags',
-            id: '3.1.2',
-            link: 'hashtags',
-          },
+          // {
+          //   name: 'Hashtags',
+          //   id: '3.1.2',
+          //   link: 'hashtags',
+          // },
           {
             name: 'Hasspostings melden',
             id: '3.1.3',
-            link: 'hasspostings_melden',
+            redirect: true,
+            redirectLink: 'beratung/melden',
           },
         ],
       },
