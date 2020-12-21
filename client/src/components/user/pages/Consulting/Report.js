@@ -4,6 +4,7 @@ import { withLocalize } from 'react-localize-redux'
 import {
   heroDataRassismus,
   heroDataHassImNetz,
+  heroDataMelden,
   multiPartOneLinerData,
   cardGridObject
 } from './beratung_data'
@@ -16,27 +17,27 @@ import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/C
 class Report extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      reportType: props.match.params.report
-    }
+    // this.state = {
+    //   reportType: props.match.params.report
+    // }
   }
   componentDidUpdate(prevProps) {
-    if (
-      prevProps.match &&
-      this.props.match &&
-      prevProps.match.params.report !== this.props.match.params.report
-    ) {
-      this.setState({
-        reportType: this.props.match.params.report
-      })
-    }
+    // if (
+    //   prevProps.match &&
+    //   this.props.match &&
+    //   prevProps.match.params.report !== this.props.match.params.report
+    // ) {
+    //   this.setState({
+    //     reportType: this.props.match.params.report
+    //   })
+    // }
   }
   render() {
     const { activeLanguage } = this.props
-    let heroData =
-      this.state.reportType === 'rassismus'
-        ? heroDataRassismus
-        : heroDataHassImNetz
+    // let heroData =
+    //   this.state.reportType === 'rassismus'
+    //     ? heroDataRassismus
+    //     : heroDataHassImNetz
 
     let lang
     if (activeLanguage && activeLanguage.code) {
@@ -46,7 +47,7 @@ class Report extends Component {
       <div>
         {lang && (
           <div>
-            {heroData && <HeroUnit data={heroData} lang={lang} />}
+            <HeroUnit data={heroDataMelden} lang={lang} />
 
             {multiPartOneLinerData && (
               <MultiPartOneLiner content={multiPartOneLinerData} lang={lang} />

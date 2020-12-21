@@ -211,8 +211,8 @@ class User extends Component {
                 )}
               <Route exact path="/:lang/beratung" component={Consulting} />
               <Route
-                exact
-                path="/:lang/beratung/melden/:report"
+                // exact
+                path="/:lang/beratung/melden"
                 component={Report}
               />
               <Route
