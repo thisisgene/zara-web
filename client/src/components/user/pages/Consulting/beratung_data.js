@@ -269,12 +269,12 @@ export const multiPartOneLinerData = [
     de: {
       icon: 'duration',
       title: 'Öffnungszeiten der Beratungsstelle',
-      text: 'Mo-Mi 9:00 - 16:30 | Do 10:00 - 18:30 | Fr 9:00 - 15:00'
+      text: 'Mo – Mi: 10.00 – 15.00 | Do: 10.00 – 18.00 | Fr: 10.00 – 15.00'
     },
     en: {
       icon: 'duration',
       title: 'Opening hours',
-      text: 'Mo-We 9am - 4:30pm | Th 10am - 6:30pm | Fr 9am - 3pm'
+      text: 'Mo – We: 10am – 3pm | Th: 10am – 6pm | Fr: 10am – 3pm'
     }
   },
   {
