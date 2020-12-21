@@ -56,7 +56,7 @@ const infoObj_default = {
   de: {
     title: 'Melden und Beratung',
     text:
-      'In der Beratungsstelle erhalten alle Betroffenen und Zeug*innen von Rassismus und Hass und Hetze im Netz Unterstützung. Die Beratung ist kostenlos und auf Wunsch anonym.<br />Wenn Sie eine Beratung wünschen, klicken Sie auf „Beratung“. Sie können uns dann per Telefon, verschlüsselte E-Mail oder per Chat erreichen.<br />Wenn Sie einen Vorfall nur melden möchten, aber keine Beratung brauchen, klicken Sie auf „Melden“. Der Vorfall wird dann von unseren Berater*innen bearbeitet. Für Rückfragen können Sie eine Kontaktmöglichkeit angeben.',
+      'In der Beratungsstelle erhalten alle Betroffenen und Zeug*innen von Rassismus und Hass und Hetze im Netz Unterstützung. Die Beratung ist kostenlos und auf Wunsch anonym.<br />Wenn Sie eine Beratung wünschen, klicken Sie auf „Beratung“. Sie können uns dann per Telefon, verschlüsselte E-Mail oder per Chat erreichen.<br />Wenn Sie einen Vorfall nur melden möchten, aber keine Beratung brauchen, klicken Sie auf „Melden“. Der Vorfall wird dann von unseren Berater*innen bearbeitet.',
     cards: [
       {
         color: 'white',
@@ -104,7 +104,7 @@ const infoObj_default = {
   en: {
     title: 'Report an incident & Get support',
     text:
-      'All victims and witnesses of racism and online hate can receive support from our team. The advice is free of charge and, if desired, anonymous.<br />If you would like to get in touch with us, click on "Get support". You can contact us by phone, encrypted email or chat.<br />If you only want to let us know about an incident but don\'t need additional support, click "Report an incident". Our team will then process the incident. You can choose to provide us with your contact information, in case we have any further questions.',
+      'All victims and witnesses of racism and online hate can receive support from our team. The advice is free of charge and, if desired, anonymous.<br />If you would like to get in touch with us, click on "Get support". You can contact us by phone, encrypted email or chat.<br />If you only want to let us know about an incident but don\'t need additional support, click "Report an incident". Our team will then process the incident.',
     cards: [
       {
         color: 'white',

@@ -233,12 +233,12 @@ export const heroDataMelden = {
   de: {
     title: 'Rassismus und/oder Hass im Netz melden',
     text:
-      'Wenn Sie einen rassistischen Vorfall, Hass im Netz und/oder Cyber Mobbing melden und es dokumentieren lassen möchten, dann nutzen Sie bitte das untere Meldeformular. Der Vorfall wird dann von unseren Berater*innen bearbeitet. Für Rückfragen können Sie eine Kontaktmöglichkeit angeben.'
+      'Wenn Sie einen rassistischen Vorfall, Hass im Netz und/oder Cyber Mobbing melden und es dokumentieren lassen möchten, dann nutzen Sie bitte das untere Meldeformular. Der Vorfall wird dann von unseren Berater*innen bearbeitet.'
   },
   en: {
     title: 'Report racism and/or online hate',
     text:
-      'If you have witnessed racial discrimination, online hate and/or cyberbullying, and you would like it to be documented, please use the form below. Our team will then process the incident. You can choose to provide us with your contact information, in case we have any further questions.'
+      'If you have witnessed racial discrimination, online hate and/or cyberbullying, and you would like it to be documented, please use the form below. Our team will then process the incident.'
   }
 }
 
