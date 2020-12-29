@@ -521,7 +521,7 @@ const oneLineAlert = {
     button: {
       text: 'Melden und Beratung',
       type: 'alert',
-      link: 'beratung/melden'
+      link: 'beratung'
     }
   },
   en: {
@@ -530,7 +530,7 @@ const oneLineAlert = {
     button: {
       text: 'Melden und Beratung',
       type: 'alert',
-      link: 'beratung/melden'
+      link: 'beratung'
     }
   }
 }

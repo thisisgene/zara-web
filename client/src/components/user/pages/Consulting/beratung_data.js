@@ -38,9 +38,9 @@ export const nowEnglishAlert = {
 
 export const heroDataBeratungRassismus = {
   de: {
-    title: 'ZARA unterstützt Sie gegen Rassismus oder Hass im Netz – kostenlos und auf Wunsch anonym',
-    // text:
-    //   'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.',
+    title: 'Beratung zu Rassismus und/oder Hass im Netz',
+    text:
+      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cyber-Mobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.',
     buttons: [
       {
         title: 'Melden',
@@ -53,9 +53,9 @@ export const heroDataBeratungRassismus = {
     ]
   },
   en: {
-    title: 'Wir stehen Ihnen bei!',
+    title: 'Support against racism and/or online hate',
     text:
-      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cybermobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.'
+      'If you are affected by racial discrimination, online hate and/or cyberbullying, or if you have become a witness to such incidents, then let us advise you free of charge. Our team provides legal and psychosocial advice and will be happy to support you.'
   }
 }
 
@@ -63,9 +63,9 @@ export const beratungInfoBox = {
   color: 'white',
   direction: 'column',
   de: {
-    title: 'Beratung zu Rassismus und/oder Hass im Netz',
-    text:
-      'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cyber-Mobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.',
+    // title: 'Beratung zu Rassismus und/oder Hass im Netz',
+    // text:
+    //   'Lassen Sie sich von ZARA kostenlos beraten, wenn Sie von rassistischer Diskriminierung, Online Hass und Hetze und/oder Cyber-Mobbing betroffen sind oder Zeug*in von solchen Vorfällen werden. Das Beratungsteam besteht aus psychosozial und juristisch geschulten Berater*innen, die Sie gerne unterstützen.',
 
     // listItems: [
     //   {
@@ -144,9 +144,9 @@ export const beratungInfoBox = {
     ]
   },
   en: {
-    title: 'Support against racism and/or online hate',
-    text:
-      'If you are affected by racial discrimination, online hate and/or cyberbullying, or if you have become a witness to such incidents, then let us advise you free of charge. Our team provides legal and psychosocial advice and will be happy to support you.',
+    // title: 'Support against racism and/or online hate',
+    // text:
+    //   'If you are affected by racial discrimination, online hate and/or cyberbullying, or if you have become a witness to such incidents, then let us advise you free of charge. Our team provides legal and psychosocial advice and will be happy to support you.',
 
     // listItems: [
     //   {

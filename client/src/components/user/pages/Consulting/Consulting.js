@@ -39,12 +39,12 @@ const heroData = {
       {
         text: 'Report an incident',
         link: 'beratung/melden',
-        type: 'default'
+        type: 'cta'
       },
       {
         text: 'Get support',
         link: 'beratung/beratung_rassismus_hassimnetz',
-        type: 'default'
+        type: 'cta'
       }
     ]
   }
@@ -195,28 +195,28 @@ const cardGridObject = {
         size: 'default',
         type: 'imageCard',
         image: 'icons/beratung.png',
-        title: 'Was Sie Tun Können',
+        title: 'What you can do',
         link: 'beratung/wassietunkoennen'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'icons/beratung.png',
-        title: 'Was Wir Dann Tun',
+        title: 'What we can do',
         link: 'beratung/waswirdanntun'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'icons/mitmischen.png',
-        title: 'Rechtshilfefonds #GegenHassimNetz',
+        title: 'Legal Aid Fund #AgainstOnlineHate',
         link: 'beratung/rechtshilfefonds'
       },
       {
         size: 'default',
         type: 'imageCard',
         image: 'icons/wissen.png',
-        title: 'Wissen',
+        title: 'Resources',
         link: 'wissen'
       }
     ]
