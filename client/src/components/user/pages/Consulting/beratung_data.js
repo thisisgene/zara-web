@@ -84,11 +84,11 @@ export const beratungInfoBox = {
         title: 'Telefon',
         image: 'reportPhone',
         text:
-          'Sie erreichen die ZARA Beratungsstellen Montag bis Freitag, von 10:00 bis 15:00 Uhr.',
+          'Wollen Sie eine persönliche Beratung? Rufen Sie uns unter +43 (0) 1 929 13 99 an und vereinbaren Sie einen Termin mit uns.<br />Sie erreichen die ZARA Beratungsstellen zu diesen Öffnungszeiten: <br /> Mo – Mi: 10.00 – 15.00, Do: 10.00 – 18.00, Fr: 10.00 – 15.00',
 
         buttons: [
           {
-            text: '+43 (0) 1 929 13 99',
+            text: 'Jetzt anrufen',
             type: 'cta',
             linkPath: 'external',
             link:
@@ -126,7 +126,7 @@ export const beratungInfoBox = {
         title: 'Chat',
         image: 'reportChat',
         text:
-          '',
+          'Hier können Sie anonym mit einem*einer Berater*in chatten. Schreiben Sie in Ihrer ersten Nachricht bitte nur, dass Sie gerne eine Chatberatung hätten. Wir erstellen dann einen privaten Raum, in dem Ihre Daten und Informationen nur von Ihnen und dem*der Berater*in gelesen werden.',
         buttons: [
           {
             text: 'Zum Chatraum',
@@ -165,13 +165,13 @@ export const beratungInfoBox = {
         title: 'Telephone',
         image: 'reportPhone',
         text:
-          'You can reach our team Monday to Friday, from 10:00 a.m. to 3:00 p.m.',
+          'Would you like to talk to us directly? Call us to make an appointment +43 (0) 1 929 13 99.<br />You can reach the ZARA team during these hours:<br />Mo – Mi: 10.00 – 15.00, Do: 10.00 – 18.00, Fr: 10.00 – 15.00',
         // link: 'tel:+43 (0) 1 929 13 99',
         // linkType: 'external',
         // linkText: '+43 (0) 1 929 13 99'
         buttons: [
           {
-            text: '+43 (0) 1 929 13 99',
+            text: 'Call now',
             type: 'cta',
             linkPath: 'external',
             link:
@@ -210,7 +210,7 @@ export const beratungInfoBox = {
         title: 'Chat',
         image: 'reportChat',
         text:
-          '',
+          'You can chat anonymously with a counsellor. In your first chat message, please write that you would like to chat with someone. Once we have noted your request we will open a chatroom where your information can only be read by you and our counsellor.',
         buttons: [
           {
             text: 'Join Chat',
