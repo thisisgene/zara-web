@@ -229,7 +229,9 @@ export const sponsorLogos = [
     image: 'rd-foundation-logo.jpg',
     size: 'wide'
   },
+
   {
-    image: 'EU_flag.png'
+    image: 'Straniak_and_EU_flag.png',
+    size: 'wide'
   }
 ];
