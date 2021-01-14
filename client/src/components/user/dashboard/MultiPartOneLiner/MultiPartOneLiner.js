@@ -13,7 +13,7 @@ class MultiPartOneLiner extends Component {
         {content &&
           content.map((item, index) => (
             <div key={index} className={styles['multi-part-one-liner--item']}>
-              {item[lang].icon && <IconObject image={item[lang].icon} />}
+              {item[lang] && item[lang].icon && <IconObject image={item[lang].icon} />}
               <div className={styles['multi-part-one-liner--item__text']}>
                 {item[lang].title && <h1>{item[lang].title}</h1>}
                 {item[lang].text && <p>{item[lang].text}</p>}
@@ -24,8 +24,8 @@ class MultiPartOneLiner extends Component {
                         {item[lang].linkText}
                       </a>
                     ) : (
-                      <Link to={item[lang].link}>{item[lang].linkText}</Link>
-                    )}
+                        <Link to={item[lang].link}>{item[lang].linkText}</Link>
+                      )}
                   </div>
                 )}
               </div>

@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withLocalize } from 'react-localize-redux'
 
 import {
-  oneLineAlert,
+  multiPartOneLinerData,
   nowEnglishAlert
 } from './beratung_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
-import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
+import MultiPartOneLiner from '../../dashboard/MultiPartOneLiner/MultiPartOneLiner'
 import InfoBoxObject from '../../dashboard/InfoBoxObject/InfoBoxObject'
 import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
@@ -56,7 +56,7 @@ const infoObj_default = {
   de: {
     title: 'Melden und Beratung',
     text:
-      'In der Beratungsstelle erhalten alle Betroffenen und Zeug*innen von Rassismus und Hass und Hetze im Netz Unterstützung. Die Beratung ist kostenlos und auf Wunsch anonym.<br />Wenn Sie eine Beratung wünschen, klicken Sie auf „Beratung“. Sie können uns dann per Telefon, verschlüsselte E-Mail oder per Chat erreichen.<br />Wenn Sie einen Vorfall nur melden möchten, aber keine Beratung brauchen, klicken Sie auf „Melden“. Der Vorfall wird dann von unseren Berater*innen bearbeitet.',
+      'In der Beratungsstelle erhalten alle Betroffenen und Zeug*innen von Rassismus und Hass und Hetze im Netz Unterstützung. Die Beratung ist kostenlos und auf Wunsch anonym.<br />Wenn Sie eine Beratung wünschen, klicken Sie auf „Beratung“. Sie können uns dann per Telefon, verschlüsselter E-Mail oder per Chat erreichen.<br />Wenn Sie einen Vorfall nur melden möchten, aber keine Beratung brauchen, klicken Sie auf „Melden“. Der Vorfall wird dann von unseren Berater*innen bearbeitet.',
     cards: [
       {
         color: 'white',
@@ -235,14 +235,18 @@ class Consulting extends Component {
     }
     return (
       <div>
-        <HeroUnit data={heroData} lang={lang} />
-        {/* {lang == 'de' && <OneLineAlert content={nowEnglishAlert} lang='en' />}  ENGLISH ALERT! */}
-        <OneLineAlert content={oneLineAlert} lang={lang} />
-        <div id="melden">
-          <InfoBoxObject infoBox={infoObj_default} lang={lang} />
-        </div>
-        <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
-        {/* <MultiStepForm /> */}
+        {lang && <Fragment>
+          <HeroUnit data={heroData} lang={lang} />
+          {/* {lang == 'de' && <OneLineAlert content={nowEnglishAlert} lang='en' />}  ENGLISH ALERT! */}
+          {multiPartOneLinerData && (
+            <MultiPartOneLiner content={multiPartOneLinerData} lang={lang} />
+          )}
+          <div id="melden">
+            <InfoBoxObject infoBox={infoObj_default} lang={lang} />
+          </div>
+          <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
+        </Fragment>
+        }
       </div>
     )
   }

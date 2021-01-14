@@ -1,14 +1,50 @@
 export const oneLineAlert = {
   type: 'info',
   de: {
-    title: 'Persönliches Beratungsgespräch',
+    title: 'Möchten Sie bei uns einen persönlichen Beratungstermin in Anspruch nehmen?',
     text:
-      'Wollen Sie eine persönliche Beratung? Rufen Sie uns unter +43 (0) 1 929 13 99 an.'
+      'Rufen Sie uns unter +43 (0) 1 929 13 99 an und machen Sie einen Termin aus.',
+    button: {
+      linkPath: 'external',
+      link: 'tel:+4319291399',
+      type: 'default',
+      text: 'Jetzt anrufen'
+    }
   },
   en: {
-    title: 'Meet us face-to-face',
+    title: 'Would you like to meet us in person?',
     text:
-      'Would you like to sit down with us? Call us to make an appointment +43 (0) 1 929 13 99.'
+      'Call us to make an appointment +43 (0) 1 929 13 99.',
+    button: {
+      linkPath: 'external',
+      link: 'tel:+4319291399',
+      type: 'default',
+      text: 'Call now'
+    }
+  }
+}
+
+export const oneLineAlertReport = {
+  type: 'info',
+  de: {
+    title: 'Möchten Sie eine Beratung in Anspruch nehmen?',
+    text:
+      'Bei einer anonymen Meldung können wir nicht antworten. Wir beraten Sie gerne per Telefon, verschlüsselter E-Mail oder per Chat.',
+    button: {
+      link: 'beratung/beratung_rassismus_hassimnetz',
+      type: 'default',
+      text: 'Zur Beratung'
+    }
+  },
+  en: {
+    title: 'Would you like to meet us in person?',
+    text:
+      'We cannot reply to an anonymous report! We can provide support over the phone, encrypted email or via chat.',
+    button: {
+      link: 'beratung/beratung_rassismus_hassimnetz',
+      type: 'default',
+      text: 'Get support'
+    }
   }
 }
 
@@ -84,7 +120,7 @@ export const beratungInfoBox = {
         title: 'Telefon',
         image: 'reportPhone',
         text:
-          'Wollen Sie eine persönliche Beratung? Rufen Sie uns unter +43 (0) 1 929 13 99 an und vereinbaren Sie einen Termin mit uns.<br />Sie erreichen die ZARA Beratungsstellen zu diesen Öffnungszeiten: <br /> Mo – Mi: 10.00 – 15.00, Do: 10.00 – 18.00, Fr: 10.00 – 15.00',
+          'Rufen Sie uns unter +43 (0) 1 929 13 99 an, um eine telefonische Beratung zu bekommen und/oder einen Termin für eine persönliche Beratung auszumachen.<br />Sie erreichen die ZARA Beratungsstellen zu diesen Öffnungszeiten: <br /> Mo – Mi: 10.00 – 15.00, Do: 10.00 – 18.00, Fr: 10.00 – 15.00',
 
         buttons: [
           {
@@ -165,7 +201,7 @@ export const beratungInfoBox = {
         title: 'Telephone',
         image: 'reportPhone',
         text:
-          'Would you like to talk to us directly? Call us to make an appointment +43 (0) 1 929 13 99.<br />You can reach the ZARA team during these hours:<br />Mo – Mi: 10.00 – 15.00, Do: 10.00 – 18.00, Fr: 10.00 – 15.00',
+          'Would you like to talk to us over the phone? Or would you like to make an appointment?<br />Call us on +43 (0) 1 929 13 99.<br />You can reach the ZARA team during these hours:<br />Mo – Mi: 10.00 – 15.00, Do: 10.00 – 18.00, Fr: 10.00 – 15.00',
         // link: 'tel:+43 (0) 1 929 13 99',
         // linkType: 'external',
         // linkText: '+43 (0) 1 929 13 99'
@@ -285,28 +321,28 @@ export const multiPartOneLinerData = [
   },
   {
     de: {
-      icon: 'location',
-      title: 'So finden Sie uns',
-      text: 'Am Hundsturm 7/13, 1050 Wien'
+      icon: 'phone',
+      title: 'So erreichen Sie uns',
+      text: '+43 (0) 1 929 13 99'
     },
     en: {
-      icon: 'location',
-      title: 'How you find us:',
-      text: 'Am Hundsturm 7/13, 1050 Wien'
+      icon: 'phone',
+      title: 'How to contact us',
+      text: '+43 (0) 1 929 13 99'
     }
   },
-  {
-    de: {
-      linkText: 'Zum Anfahrtsplan',
-      linkType: 'external',
-      link: 'https://goo.gl/maps/y5smNouBkD32'
-    },
-    en: {
-      linkText: 'Show map',
-      linkType: 'external',
-      link: 'https://goo.gl/maps/y5smNouBkD32'
-    }
-  }
+  // {
+  //   de: {
+  //     linkText: 'Zum Anfahrtsplan',
+  //     linkType: 'external',
+  //     link: 'https://goo.gl/maps/y5smNouBkD32'
+  //   },
+  //   en: {
+  //     linkText: 'Show map',
+  //     linkType: 'external',
+  //     link: 'https://goo.gl/maps/y5smNouBkD32'
+  //   }
+  // }
 ]
 
 export const cardGridObject = {

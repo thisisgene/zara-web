@@ -4,13 +4,14 @@ import { withLocalize } from 'react-localize-redux'
 import {
   heroDataRassismus,
   heroDataHassImNetz,
+  oneLineAlertReport,
   heroDataMelden,
   multiPartOneLinerData,
   cardGridObject
 } from './beratung_data'
 
 import HeroUnit from '../../dashboard/HeroUnit/HeroUnit'
-import MultiPartOneLiner from '../../dashboard/MultiPartOneLiner/MultiPartOneLiner'
+import OneLineAlert from '../../dashboard/OneLineAlert/OneLineAlert'
 import MultiStepForm from '../../dashboard/MultiStepForm/MultiStepForm'
 import CardCollectionGridObject from '../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
@@ -48,10 +49,8 @@ class Report extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroDataMelden} lang={lang} />
+            <OneLineAlert content={oneLineAlertReport} lang={lang} />
 
-            {multiPartOneLinerData && (
-              <MultiPartOneLiner content={multiPartOneLinerData} lang={lang} />
-            )}
             {MultiStepForm && <MultiStepForm lang={lang} />}
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
