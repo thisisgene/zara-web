@@ -19,7 +19,7 @@ export default class CardCollectionGridObject extends Component {
             </div>
             <div
               className={cx(styles['card-grid'], {
-                [styles[cardObject.count]]: cardObject.count
+                [styles[cardObject[lang].count]]: cardObject[lang].count
               })}
             >
               {cardObject[lang].cards &&
