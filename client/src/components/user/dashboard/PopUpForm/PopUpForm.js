@@ -116,7 +116,7 @@ function Form({ props }) {
                       </optgroup>
                       {trainingTags.map(tag =>
                         <optgroup label={tag[lang].title}>
-                          {bulletins.filter(item => item.category.value === tag.name).map(training => (
+                          {bulletins.filter(item => item.isOnline && item.category.value === tag.name).map(training => (
                             <option value={training._id} selected={selectedId === training._id}>
                               {training[lang].title}
                             </option>
