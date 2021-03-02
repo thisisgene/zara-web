@@ -9,7 +9,7 @@ export default class JobItem extends Component {
     return (
       <div className={styles['job-item']}>
         <div className={styles['job-item--title']}>
-          {index + 1}. {content[lang].title}
+          {content[lang].title}
         </div>
         <div className={styles['job-item--data']}>
           {content[lang].shortDescription && (
