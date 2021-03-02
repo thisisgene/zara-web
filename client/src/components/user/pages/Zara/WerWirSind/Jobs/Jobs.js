@@ -31,8 +31,8 @@ class RechtUndOrdnung extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
-            <LongText content={longTextJobs} lang={lang} />
-            {/* <div className={styles['job-container']}>
+            {/* <LongText content={longTextJobs} lang={lang} /> */}
+            <div className={styles['job-container']}>
               {jobData &&
                 jobData
                   .filter(job => job.category === 'job')
@@ -44,7 +44,7 @@ class RechtUndOrdnung extends Component {
                       lang={lang}
                     />
                   ))}
-            </div> */}
+            </div>
             <LongText content={longTextVolontariat} lang={lang} />
             <div className={styles['job-container']}>
               {jobData &&

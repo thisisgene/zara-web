@@ -99,9 +99,9 @@ export const networkData = [
       ],
       text:
         'Im Rahmen des EU-Projekts V-START – Victim SupportThrough Awareness-Raising and neTworking hatten wir, Vertreter*innen zivilgesellschaftlicher Organisationen und Initiativen, die in den Bereichen Antidiskriminierung, Opferschutz und Menschenrechte tätig sind, die Möglichkeit, uns zu vernetzen und folglich zusammenzuschließen, um eine gestärkte Lobby für von hate crime Betroffene zu bilden.<br><br>Das Netzwerk bezieht sich auf die praxisorientierte hate crime Definition, die vom OSZE-Büro für demokratische Institutionen und Menschenrechte (ODIHR) formuliert wurde, welche besagt:<br><br><i>“Hate crimes sind kriminelle Handlungen mit einem Vorurteilsmotiv gegen bestimmte Personengruppen.”</i>Das Netzwerk betrachtet weitergehende Formulierungen der von ODIHR geprägten Definition kritisch und einigt sich darauf, der österreichischen Gesetzgebung entsprechend, hate crime als Straftat mit Vorurteilsmotiv zu erkennen, die sich gegen eine der in § 283 – StGB Abs. 1 Z 1 genannten Gruppen von Personen – zugeschrieben oder tatsächlich – oder Mitglieder einer solchen Gruppe ausdrücklich wegen der Zugehörigkeit zu dieser Gruppe richtet. Im Verständnis des Netzwerkes richten sich sogenannte hate crimes (Hassverbrechen, Vorurteilsdelikte) dementsprechend<br><br><i>“gegen eine Kirche oder Religionsgesellschaft oder eine andere nach den vorhandenen oder fehlenden Kriterien der Rasse, der Hautfarbe, der Sprache, der Religion oder Weltanschauung, der Staatsangehörigkeit, der Abstammung oder nationalen oder ethnischen Herkunft, des Geschlechts, einer körperlichen oder geistigen Behinderung, des Alters oder der sexuellen Ausrichtung definierte Gruppe von Personen oder gegen ein Mitglied einer solchen Gruppe ausdrücklich wegen der Zugehörigkeit zu dieser Gruppe.”</i><br><br>Das Netzwerk setzt sich zum Ziel Unterstützungsmaßnahmen für von hate crime Betroffene zu verbessern und, dass vermehrt Maßnahmen gesetzt werden, um vorurteilsmotivierten Straftaten effektiv entgegenzutreten. Außerdem möchte das Netzwerk erreichen, dass die Kooperation und der Austausch zwischen ausschlaggebenden Stakeholdern ausgebaut und erweitert wird und präventive Maßnahmen – wie Training und Sensibilisierungskampagnen – gesetzt werden.',
-      link: 'https://www.vstart.eu',
-      linkText: 'www.vstart.eu',
-      linkType: 'external'
+      // link: 'https://www.vstart.eu',
+      // linkText: 'www.vstart.eu',
+      // linkType: 'external'
     },
     en: {
       title:
