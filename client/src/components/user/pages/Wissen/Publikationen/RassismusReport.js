@@ -56,13 +56,16 @@ class RassismusReport extends Component {
               />
             )}
             <LongText content={longText} lang={lang} />
-            <ImageGridObjectDB
+
+            {/* UNCOMMENT FOR RR FROM DB (ADMIN) */}
+            {/* <ImageGridObjectDB
               shoppingCartText={shoppingCartText}
               content={jahresberichte.jahresberichte}
               withCart={true}
               lang={lang}
               onShowSurvey={this.onShowSurvey}
-            />
+            /> */}
+
             <ImageGridObject
               shoppingCartText={shoppingCartText}
               content={reportGridData}
