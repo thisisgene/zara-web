@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import { jahresberichtTags } from '../jahresberichte_data'
@@ -32,13 +32,17 @@ class JahresberichtContent extends Component {
       jahresberichtId: props.match.params.jahresberichtId,
       handle: '',
       category: 'jahresberichte',
-      tag: 'jahresberichte',
+      tag: 'rassismusreport',
       titleDE: '',
       titleEN: '',
 
       selectedFilesDE: [],
       selectedFilesEN: [],
+      selectedImagesDE: [],
+      selectedImagesEN: [],
 
+      toOrder: true,
+      isRR: false,
       errors: {},
       imageListOpen: false
     }
@@ -64,8 +68,7 @@ class JahresberichtContent extends Component {
           })
           this.props.getAll('jahresberichte')
           this.props.history.push(
-            `/admin/dashboard/jahresberichte/${
-              this.props.jahresberichte.jahresbericht._id
+            `/admin/dashboard/jahresberichte/${this.props.jahresberichte.jahresbericht._id
             }`
           )
         }
@@ -81,7 +84,11 @@ class JahresberichtContent extends Component {
             titleDE: item.de && item.de.title && item.de.title,
             titleEN: item.en ? item.en.title : '',
             selectedFilesDE: item.files && item.files.de,
-            selectedFilesEN: item.files && item.files.en
+            selectedFilesEN: item.files && item.files.en,
+            selectedImagesDE: item.images && item.images.de,
+            selectedImagesEN: item.images && item.images.en,
+            toOrder: item.toOrder,
+            isRR: item.tag === 'rassismusreport' || item.tag === 'ghinbericht'
           })
         }
       }
@@ -102,7 +109,10 @@ class JahresberichtContent extends Component {
             titleDE: '',
             titleEN: '',
             selectedFilesDE: [],
-            selectedFilesEN: []
+            selectedFilesEN: [],
+            selectedImagesDE: [],
+            selectedImagesEN: [],
+            toOrder: true
           })
         } else {
           this.props.getById(
@@ -127,6 +137,9 @@ class JahresberichtContent extends Component {
       [e.target.name]: e.target.value
     })
   }
+  onCheckClick = e => {
+    this.setState({ [e.target.name]: e.target.checked });
+  }
   onTagSelectChange = e => {
     this.setState({ tag: e.target.value }, () => {
       if (this.state.jahresberichtId !== 'neu') {
@@ -135,12 +148,19 @@ class JahresberichtContent extends Component {
     })
   }
   onSelectChange = (lang, selected) => {
-    console.log(lang, selected)
     if (lang === 'DE') {
       this.setState({ selectedFilesDE: selected })
     }
     if (lang === 'EN') {
       this.setState({ selectedFilesEN: selected })
+    }
+  }
+  onImageSelectChange = (lang, selected) => {
+    if (lang === 'DE') {
+      this.setState({ selectedImagesDE: selected })
+    }
+    if (lang === 'EN') {
+      this.setState({ selectedImagesEN: selected })
     }
   }
   deleteJahresbericht = () => {
@@ -172,17 +192,25 @@ class JahresberichtContent extends Component {
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
       filesDE: this.state.selectedFilesDE,
-      filesEN: this.state.selectedFilesEN
+      filesEN: this.state.selectedFilesEN,
+      imagesDE: this.state.selectedImagesDE,
+      imagesEN: this.state.selectedImagesEN,
+      toOrder: this.state.toOrder
     }
     this.props.saveContent(saveData)
   }
 
   render() {
     let defaultSelectedDE = []
+    let defaultSelectedImageDE = []
     let defaultSelectedEN = []
+    let defaultSelectedImageEN = []
 
     if (this.state.selectedFilesDE && this.state.selectedFilesDE.length > 0) {
       defaultSelectedDE = this.state.selectedFilesDE
+    }
+    if (this.state.selectedImagesDE && this.state.selectedImagesDE.length > 0) {
+      defaultSelectedImageDE = this.state.selectedImagesDE
     }
 
     return (
@@ -218,6 +246,7 @@ class JahresberichtContent extends Component {
                     onChange={this.onChange}
                     error={this.state.errors.titleDE}
                   />
+
                 </div>
 
                 <div className={styles['jahresbericht-content--text__title']}>
@@ -233,36 +262,77 @@ class JahresberichtContent extends Component {
                   />
                 </div>
               </div>
-              {this.props.media && this.props.media.images && (
-                <div className={styles['jahresbericht-content--select-box']}>
-                  <div
-                    className={
-                      styles['jahresbericht-content--select-box__container']
-                    }
-                  >
-                    <FileSelectGroup
-                      optionContent={this.props.media.images}
-                      defaultValue={this.state.selectedFilesDE}
-                      name="fileSelectDE"
-                      onSelectChange={this.onSelectChange}
-                      lang="DE"
-                    />
+              {this.props.media && this.props.media.images && this.state.jahresberichtId !== 'neu' && (
+                <Fragment>
+                  <h3>PDF</h3>
+                  <div className={styles['jahresbericht-content--select-box']}>
+                    <div
+                      className={
+                        styles['jahresbericht-content--select-box__container']
+                      }
+                    >
+                      <FileSelectGroup
+                        optionContent={this.props.media.images}
+                        defaultValue={this.state.selectedFilesDE}
+                        name="fileSelectDE"
+                        onSelectChange={this.onSelectChange}
+                        lang="DE"
+                      />
+                    </div>
+                    <div
+                      className={
+                        styles['jahresbericht-content--select-box__container']
+                      }
+                    >
+                      <FileSelectGroup
+                        optionContent={this.props.media.images}
+                        defaultValue={this.state.selectedFilesEN}
+                        name="fileSelectEN"
+                        onSelectChange={this.onSelectChange}
+                        lang="EN"
+                      />
+                    </div>
+
                   </div>
-                  <div
-                    className={
-                      styles['jahresbericht-content--select-box__container']
-                    }
-                  >
-                    <FileSelectGroup
-                      optionContent={this.props.media.images}
-                      defaultValue={this.state.selectedFilesEN}
-                      name="fileSelectEN"
-                      onSelectChange={this.onSelectChange}
-                      lang="EN"
-                    />
-                  </div>
-                </div>
-              )}
+                </Fragment>
+              )
+              }
+              {
+                this.props.media && this.props.media.images && this.state.isRR && this.state.jahresberichtId !== 'neu' && (
+                  <Fragment>
+                    <h3>Titelbild</h3>
+                    <div className={styles['jahresbericht-content--select-box']}>
+                      <div
+                        className={
+                          styles['jahresbericht-content--select-box__container']
+                        }
+                      >
+                        <FileSelectGroup
+                          optionContent={this.props.media.images}
+                          defaultValue={this.state.selectedImagesDE}
+                          name="imageSelectDE"
+                          onSelectChange={this.onImageSelectChange}
+                          lang="DE"
+                        />
+                      </div>
+                      <div
+                        className={
+                          styles['jahresbericht-content--select-box__container']
+                        }
+                      >
+                        <FileSelectGroup
+                          optionContent={this.props.media.images}
+                          defaultValue={this.state.selectedImagesEN}
+                          name="imageSelectEN"
+                          onSelectChange={this.onImageSelectChange}
+                          lang="EN"
+                        />
+                      </div>
+
+                    </div>
+                  </Fragment>
+                )
+              }
             </div>
             {this.props.jahresberichte.jahresbericht && (
               <div className={styles['jahresbericht-content--sidebar']}>
@@ -274,7 +344,7 @@ class JahresberichtContent extends Component {
                   <div
                     className={cx(
                       styles[
-                        'jahresbericht-content--sidebar__state-indicator--sphere'
+                      'jahresbericht-content--sidebar__state-indicator--sphere'
                       ],
                       {
                         [styles['online']]: this.state.isOnline
@@ -284,7 +354,7 @@ class JahresberichtContent extends Component {
                   <div
                     className={
                       styles[
-                        'jahresbericht-content--sidebar__state-indicator--text'
+                      'jahresbericht-content--sidebar__state-indicator--text'
                       ]
                     }
                   >
@@ -315,6 +385,18 @@ class JahresberichtContent extends Component {
                 <div
                   className={styles['jahresbericht-content--sidebar--buttons']}
                 >
+                  {this.state.isRR && (
+                    <Fragment>
+                      <input
+                        id="toOrder"
+                        type="checkbox"
+                        onClick={this.onCheckClick}
+                        checked={this.state.toOrder}
+                        name="toOrder"
+                      />
+                      <label htmlFor="toOrder">Bestellbar</label>
+                    </Fragment>
+                  )}{' '}
                   <button
                     className={cx(
                       commonStyles['button'],

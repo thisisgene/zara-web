@@ -74,7 +74,47 @@ const JahresberichtSchema = new Schema({
       }
     ]
   },
+  images: {
+    de: [
+      {
+        _id: false,
+        originalId: {
+          type: String
+        },
+        value: {
+          type: String
+        },
+        label: {
+          type: String
+        },
+        name: {
+          type: String
+        }
+      }
+    ],
+    en: [
+      {
+        _id: false,
+        originalId: {
+          type: String
+        },
+        value: {
+          type: String
+        },
+        label: {
+          type: String
+        },
+        name: {
+          type: String
+        }
+      }
+    ]
+  },
 
+  toOrder: {
+    type: Boolean,
+    default: false
+  },
   isVisible: {
     type: Boolean,
     default: false

@@ -113,7 +113,12 @@ router.post(
           files: {
             de: body.filesDE,
             en: body.filesEN
-          }
+          },
+          images: {
+            de: body.imagesDE,
+            en: body.imagesEN
+          },
+          toOrder: body.toOrder
         }
       },
       { new: true },

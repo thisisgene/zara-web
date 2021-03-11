@@ -26,6 +26,22 @@ export default class MediaCategories extends Component {
           </li>
           <li>
             <NavLink
+              to="/admin/dashboard/media/rassismusreport"
+              activeClassName={styles['active']}
+            >
+              Rassismusreport
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/admin/dashboard/media/ghinbericht"
+              activeClassName={styles['active']}
+            >
+              GHiN-Bericht
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/admin/dashboard/media/jahresberichte"
               activeClassName={styles['active']}
             >
