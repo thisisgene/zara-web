@@ -264,6 +264,22 @@ export const getAllByProps = (category, prop) => dispatch => {
           })
         )
       break
+    case 'jahresberichte':
+      axios
+        .get(`/api/jahresberichte/getbyprop/${prop}`)
+        .then(res => {
+          dispatch({
+            type: GET_ALL_JAHRESBERICHTE,
+            payload: res.data,
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
+          })
+        )
+      break
 
     default:
       return
@@ -504,136 +520,136 @@ export const saveContent = saveData => dispatch => {
     case 'label':
       saveData.id === 'neu'
         ? axios
-            .post('/api/label', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_LABEL,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/label', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_LABEL,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/label/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_LABEL,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/label/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_LABEL,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'carousel':
       saveData.id === 'neu'
         ? axios
-            .post('/api/carousel', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_CAROUSEL,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/carousel', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_CAROUSEL,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/carousel/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_CAROUSEL,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/carousel/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_CAROUSEL,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'news':
       saveData.id === 'neu'
         ? axios
-            .post('/api/news', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_NEWS,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/news', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_NEWS,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/news/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_NEWS,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/news/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_NEWS,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'news-video':
@@ -662,271 +678,271 @@ export const saveContent = saveData => dispatch => {
     case 'jahresberichte':
       saveData.id === 'neu'
         ? axios
-            .post('/api/jahresberichte', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_JAHRESBERICHT,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/jahresberichte', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_JAHRESBERICHT,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/jahresberichte/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_JAHRESBERICHT,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/jahresberichte/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_JAHRESBERICHT,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'faqs':
       saveData.id === 'neu'
         ? axios
-            .post('/api/faqs', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_FAQ,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/faqs', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_FAQ,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/faqs/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_FAQ,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/faqs/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_FAQ,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'team':
       saveData.id === 'neu'
         ? axios
-            .post('/api/team', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_TEAM,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/team', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_TEAM,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/team/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_TEAM,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/team/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_TEAM,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'trainingTeam':
       saveData.id === 'neu'
         ? axios
-            .post('/api/training/team', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_TRAININGTEAM,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/training/team', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_TRAININGTEAM,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/training/team/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_TRAININGTEAM,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/training/team/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_TRAININGTEAM,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'trainings':
       saveData.id === 'neu'
         ? axios
-            .post('/api/training/trainings', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_TRAINING,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/training/trainings', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_TRAINING,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/training/trainings/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_TRAINING,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/training/trainings/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_TRAINING,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'bulletins':
       saveData.id === 'neu'
         ? axios
-            .post('/api/training/bulletins', saveData)
-            .then(res => {
-              dispatch({ type: CLEAR_ERRORS })
-              dispatch({
-                type: CREATE_NEW_BULLETIN,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post('/api/training/bulletins', saveData)
+          .then(res => {
+            dispatch({ type: CLEAR_ERRORS })
+            dispatch({
+              type: CREATE_NEW_BULLETIN,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
         : axios
-            .post(`/api/training/bulletins/update/${saveData.id}`, saveData)
-            .then(res => {
-              dispatch({
-                type: UPDATE_BULLETIN,
-                payload: res.data,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+          .post(`/api/training/bulletins/update/${saveData.id}`, saveData)
+          .then(res => {
+            dispatch({
+              type: UPDATE_BULLETIN,
+              payload: res.data,
             })
-            .catch(err => {
-              dispatch({
-                type: GET_ERRORS,
-                payload: err.response,
-              })
-              dispatch({
-                type: UNSET_GENERAL_LOADING,
-              })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
             })
+          })
+          .catch(err => {
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response,
+            })
+            dispatch({
+              type: UNSET_GENERAL_LOADING,
+            })
+          })
 
       break
     case 'fees':

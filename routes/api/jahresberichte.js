@@ -29,6 +29,21 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json(err))
 })
 
+// @route   GET api/jahresberichte/getbyprop/:prop
+// @desc    Get all jahresberichte by Prop
+// @access  Public
+router.get('/getbyprop/:prop', (req, res) => {
+  console.log('getallbyprop')
+  const errors = {}
+  Jahresbericht.find({ isDeleted: false, isOnline: true, tag: req.params.prop })
+    .sort('position')
+    .exec()
+    .then(jahresberichte => {
+      res.json(jahresberichte)
+    })
+    .catch(err => res.status(404).json(err))
+})
+
 // @route   POST api/jahresberichte
 // @desc    Create a jahresbericht
 // @access  Private

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
+
+import { getAllByProps } from '../../../../../actions/adminActions'
 
 import {
   heroData,
@@ -15,6 +18,7 @@ import NewsletterOneLineObject from '../../../dashboard/NewsletterOneLineObject/
 import SurveyPopUp from '../../../dashboard/SurveyPopUp/SurveyPopUp'
 import LongText from '../../../dashboard/LongText/LongText'
 import ImageGridObject from '../../../dashboard/ImageGridObject/ImageGridObject'
+import ImageGridObjectDB from '../../../dashboard/ImageGridObject/ImageGridObjectDB'
 import CardCollectionGridObject from '../../../dashboard/CardCollectionGridObject/CardCollectionGridObject'
 
 class RassismusReport extends Component {
@@ -25,9 +29,7 @@ class RassismusReport extends Component {
     }
   }
   componentDidMount() {
-    // setTimeout(() => {
-    //   this.onShowSurvey()
-    // }, 5000)
+    this.props.getAllByProps('jahresberichte', 'rassismusreport')
   }
   onShowSurvey = e => {
     this.setState({
@@ -35,14 +37,14 @@ class RassismusReport extends Component {
     })
   }
   render() {
-    const { activeLanguage } = this.props
+    const { activeLanguage, jahresberichte } = this.props
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
     }
     return (
       <div>
-        {lang && (
+        {lang && jahresberichte && jahresberichte.jahresberichte && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
             <NewsletterOneLineObject lang={lang} />
@@ -54,6 +56,13 @@ class RassismusReport extends Component {
               />
             )}
             <LongText content={longText} lang={lang} />
+            <ImageGridObjectDB
+              shoppingCartText={shoppingCartText}
+              content={jahresberichte.jahresberichte}
+              withCart={true}
+              lang={lang}
+              onShowSurvey={this.onShowSurvey}
+            />
             <ImageGridObject
               shoppingCartText={shoppingCartText}
               content={reportGridData}
@@ -69,4 +78,14 @@ class RassismusReport extends Component {
   }
 }
 
-export default withLocalize(RassismusReport)
+const mapStateToProps = state => ({
+  jahresberichte: state.jahresberichte
+})
+
+export default withLocalize(
+  connect(
+    mapStateToProps,
+    { getAllByProps }
+  )(RassismusReport)
+)
+
