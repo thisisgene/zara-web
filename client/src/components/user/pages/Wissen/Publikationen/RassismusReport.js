@@ -56,23 +56,24 @@ class RassismusReport extends Component {
               />
             )}
             <LongText content={longText} lang={lang} />
-
-            {/* UNCOMMENT FOR RR FROM DB (ADMIN) */}
-            {/* <ImageGridObjectDB
+            {/* RR from DB */}
+            <ImageGridObjectDB
               shoppingCartText={shoppingCartText}
               content={jahresberichte.jahresberichte}
               withCart={true}
               lang={lang}
               onShowSurvey={this.onShowSurvey}
-            /> */}
+            />
 
-            <ImageGridObject
+            {/* RR from local file */}
+            {/* <ImageGridObject
               shoppingCartText={shoppingCartText}
               content={reportGridData}
               withCart={true}
               lang={lang}
               onShowSurvey={this.onShowSurvey}
-            />
+            /> */}
+
             <CardCollectionGridObject cardObject={cardGridObject} lang={lang} />
           </div>
         )}
