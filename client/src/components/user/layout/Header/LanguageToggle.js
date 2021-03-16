@@ -10,7 +10,6 @@ const LanguageToggle = ({ languages, activeLanguage, setActiveLanguage, location
   // showLanguageAlert = () => {
   //   // languageAlert = true
   // }
-  console.log('langToggle: ', location.pathname.substring(3))
   return (
     <div className={styles['language-toggle']}>
       {languages.map(lang => (
