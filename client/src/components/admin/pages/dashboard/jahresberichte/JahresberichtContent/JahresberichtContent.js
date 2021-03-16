@@ -264,40 +264,53 @@ class JahresberichtContent extends Component {
               </div>
               {this.props.media && this.props.media.images && this.state.jahresberichtId !== 'neu' && (
                 <Fragment>
-                  <h3>PDF</h3>
-                  <div className={styles['jahresbericht-content--select-box']}>
-                    <div
-                      className={
-                        styles['jahresbericht-content--select-box__container']
-                      }
-                    >
-                      <FileSelectGroup
-                        optionContent={this.props.media.images}
-                        defaultValue={this.state.selectedFilesDE}
-                        name="fileSelectDE"
-                        onSelectChange={this.onSelectChange}
-                        lang="de"
-                      />
-                    </div>
-                    <div
-                      className={
-                        styles['jahresbericht-content--select-box__container']
-                      }
-                    >
-                      <FileSelectGroup
-                        optionContent={this.props.media.images}
-                        defaultValue={this.state.selectedFilesEN}
-                        name="fileSelectEN"
-                        onSelectChange={this.onSelectChange}
-                        lang="en"
-                      />
-                    </div>
+                  {jahresberichtTags &&
+                    jahresberichtTags.map(tag =>
+                      <Fragment>
+                        {tag.name === this.state.tag && tag.fileOptions &&
+                          tag.fileOptions.map(option =>
+                            <Fragment>
+                              <h3>{option.title}</h3>
+                              <div className={styles['jahresbericht-content--select-box']}>
+                                <div
+                                  className={
+                                    styles['jahresbericht-content--select-box__container']
+                                  }
+                                >
+                                  <FileSelectGroup
+                                    optionContent={this.props.media.images}
+                                    defaultValue={this.state[`selected${option.slug}DE`]}
+                                    name="fileSelectDE"
+                                    onSelectChange={this.onSelectChange}
+                                    lang="de"
+                                  />
+                                </div>
+                                <div
+                                  className={
+                                    styles['jahresbericht-content--select-box__container']
+                                  }
+                                >
+                                  <FileSelectGroup
+                                    optionContent={this.props.media.images}
+                                    defaultValue={this.state[`selected${option.slug}EN`]}
+                                    name="fileSelectEN"
+                                    onSelectChange={this.onSelectChange}
+                                    lang="en"
+                                  />
+                                </div>
 
-                  </div>
+                              </div>
+                            </Fragment>
+                          )
+                        }
+                      </Fragment>
+
+                    )}
                 </Fragment>
+
               )
               }
-              {
+              {/* {
                 this.props.media && this.props.media.images && this.state.isRR && this.state.jahresberichtId !== 'neu' && (
                   <Fragment>
                     <h3>Titelbild</h3>
@@ -332,7 +345,7 @@ class JahresberichtContent extends Component {
                     </div>
                   </Fragment>
                 )
-              }
+              } */}
             </div>
             {this.props.jahresberichte.jahresbericht && (
               <div className={styles['jahresbericht-content--sidebar']}>

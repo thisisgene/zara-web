@@ -50,6 +50,14 @@ export default class MediaCategories extends Component {
           </li>
           <li>
             <NavLink
+              to="/admin/dashboard/media/pressematerial"
+              activeClassName={styles['active']}
+            >
+              Pressematerial
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/admin/dashboard/media/pressespiegel"
               activeClassName={styles['active']}
             >
