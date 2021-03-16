@@ -147,7 +147,7 @@ class JahresberichtContent extends Component {
       }
     })
   }
-  onSelectChange = (lang, selected) => {
+  onFilesSelectChange = (lang, selected) => {
     if (lang === 'de') {
       this.setState({ selectedFilesDE: selected })
     }
@@ -155,7 +155,7 @@ class JahresberichtContent extends Component {
       this.setState({ selectedFilesEN: selected })
     }
   }
-  onImageSelectChange = (lang, selected) => {
+  onImagesSelectChange = (lang, selected) => {
     if (lang === 'de') {
       this.setState({ selectedImagesDE: selected })
     }
@@ -280,8 +280,8 @@ class JahresberichtContent extends Component {
                                   <FileSelectGroup
                                     optionContent={this.props.media.images}
                                     defaultValue={this.state[`selected${option.slug}DE`]}
-                                    name="fileSelectDE"
-                                    onSelectChange={this.onSelectChange}
+                                    name={`${option.type}SelectDE`}
+                                    onSelectChange={this[`on${option.slug}SelectChange`]}
                                     lang="de"
                                   />
                                 </div>
@@ -293,8 +293,8 @@ class JahresberichtContent extends Component {
                                   <FileSelectGroup
                                     optionContent={this.props.media.images}
                                     defaultValue={this.state[`selected${option.slug}EN`]}
-                                    name="fileSelectEN"
-                                    onSelectChange={this.onSelectChange}
+                                    name={`${option.type}SelectEN`}
+                                    onSelectChange={this[`on${option.slug}SelectChange`]}
                                     lang="en"
                                   />
                                 </div>
