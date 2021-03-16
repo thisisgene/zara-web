@@ -15,7 +15,6 @@ export default class FileSelectGroup extends Component {
     } = this.props
     let optionArray = []
     optionContent.map(option => {
-      // console.log('lang option: ', option)
       optionArray.push({
         value: option.originalName,
         label: option.originalName,
@@ -26,7 +25,6 @@ export default class FileSelectGroup extends Component {
         subtitle: option[lang] && option[lang].subtitle,
       })
     })
-    console.log('optopme: ', optionArray)
     return (
       <div>
         <Select
