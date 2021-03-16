@@ -10,6 +10,7 @@ import ImageUpload from '../ImageUpload'
 import ImageBox from '../ImageBox'
 import Spinner from '../../../common/Spinner'
 
+import styles from './Media.module.sass'
 class MediaContent extends Component {
   constructor(props) {
     super(props)
@@ -38,7 +39,7 @@ class MediaContent extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles['media--content']}>
         {this.state.category && (
           <div>
             <ImageUpload category={this.state.category} />

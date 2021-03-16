@@ -37,7 +37,7 @@ class ImageGridObject extends Component {
     let cartArray = []
     const lang = this.props.lang
     this.props.content.map(item => {
-      cartArray.push({ id: item.id, title: item[lang].title, count: 0 })
+      cartArray.push({ id: item._id, title: item[lang].title, count: 0 })
     })
     this.setState({
       cart: cartArray
@@ -129,6 +129,7 @@ class ImageGridObject extends Component {
   }
 
   increaseCount = id => {
+    console.log(id)
     let cartArray = this.state.cart
 
     cartArray.filter(item => item.id === id).map(item => item.count++)
@@ -192,7 +193,7 @@ class ImageGridObject extends Component {
                           <button
                             onClick={this.increaseCount.bind(
                               this,
-                              item.id,
+                              item._id,
                               this.title
                             )}
                           >
@@ -249,7 +250,7 @@ class ImageGridObject extends Component {
                         <button
                           onClick={this.increaseCount.bind(
                             this,
-                            item.id,
+                            item._id,
                             this.title
                           )}
                         >
