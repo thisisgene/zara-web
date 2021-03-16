@@ -37,20 +37,18 @@ export default class ImageBox extends Component {
               <div className={styles['image-box--item']}>
                 <CopyToClipboard
                   className={styles['image-box--item__copy']}
-                  text={`https://assets.zara.or.at/media/${image.category}/${
-                    image.originalName
-                  }`}
+                  text={`https://assets.zara.or.at/media/${image.category}/${image.originalName
+                    }`}
                 >
                   <span>
                     <i className={'fa fa-copy'} />
                   </span>
                 </CopyToClipboard>
-                {/* </div> */}
                 <div className={styles['image-box--item__image']}>
+                  { }
                   <img
-                    src={`/assets/media/${image.category}/${
-                      image.originalName
-                    }`}
+                    src={`/assets/media/${image.category}/${image.originalName
+                      }`}
                     alt=""
                   />
                 </div>
