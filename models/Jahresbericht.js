@@ -16,12 +16,18 @@ const JahresberichtSchema = new Schema({
   de: {
     title: {
       type: String
+    },
+    description: {
+      type: String
     }
   },
   en: {
     title: {
       type: String
-    }
+    },
+    description: {
+      type: String
+    },
   },
 
   handle: {

@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
 
 import MetaTags from 'react-meta-tags'
+
+import { getAllByProps } from '../../../../../actions/adminActions'
 
 import { heroData, logoData } from './logos_data'
 // import { oneLineAlert, trainingItems } from './training_data'
@@ -14,8 +17,24 @@ import styles from './Logos.module.sass'
 import ContactBox from '../../../dashboard/ContactBox/ContactBox'
 
 class PressematerialLogos extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      boxToShow: ''
+    }
+  }
+
+  componentDidMount() {
+    this.props.getAllByProps('jahresberichte', 'pressematerial')
+  }
+
+  onBoxClick = id => {
+    this.setState({ boxToShow: this.state.boxToShow === id ? '' : id })
+  }
+
   render() {
-    const { activeLanguage } = this.props
+    const { activeLanguage, jahresberichte } = this.props
     let lang
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
@@ -30,6 +49,74 @@ class PressematerialLogos extends Component {
             </MetaTags>
             <HeroUnit data={heroData} lang={lang} />
             <div className={styles['logo-box-container']}>
+              {/* DB content goes here    */}
+              {jahresberichte && jahresberichte.jahresberichte && jahresberichte.jahresberichte.map(collection => (
+                <div className={cx(styles['logo-box'], {
+                  [styles['box-is-active']]: this.state.boxToShow == collection._id
+                })}>
+                  <h1 className={styles['logo-box--title']} onClick={this.onBoxClick.bind(this, collection._id)}>{collection[lang].title} </h1>
+                  <h2>{collection[lang].description}</h2>
+                  <div className={styles['logo-box--content']}>
+                    {
+                      collection.images && collection.images[lang] && collection.images[lang].map(image => (
+                        <div className={styles['logo-box--item']}>
+                          <div>{image.title}</div>
+                          <div style={{ fontSize: '.8rem', fontWeight: 'bold' }}>{image.secondTitle}</div>
+                          <div style={{ fontSize: '.8rem' }}>
+                            {image.value}
+                          </div>
+                          <a
+                            target="blank"
+                            href={
+                              `https://assets.zara.or.at/media/pressematerial/${image.value}`
+                            }
+                          >
+                            <img
+                              src={
+                                `https://assets.zara.or.at/media/pressematerial/${image.value}`
+                              }
+                              alt={image.title || image.value}
+                            />
+                          </a>
+                          <p style={{ fontSize: '.8rem' }}>{image.subtitle}</p>
+                        </div>
+                      ))
+                    }
+                    {
+                      collection.files && collection.files[lang] && collection.files[lang].map(file => (
+                        <div className={styles['logo-box--item']}>
+                          <div>{file.title}</div>
+                          <div className={styles['download-container']}>
+                            <span>
+                              <a
+                                target="blank"
+                                className={styles['download-link']}
+                                href={`https://assets.zara.or.at/media/pressematerial/${file.value}`}
+                                download={file.value}
+                              >
+                                <i
+                                  className={cx(
+                                    'far fa-file-archive',
+                                    styles['zip-icon']
+                                  )}
+                                />
+                                <div className={styles['download-info']}>
+                                  <span className={styles['file-name']}>
+                                    {file.value}
+                                  </span>
+                                  {/* <span className={styles['file-size']}>971 KB</span> */}
+                                </div>
+                              </a>
+                            </span>
+                          </div>
+                        </div>
+                      ))
+                    }</div>
+                </div>
+              ))
+
+              }
+
               <div className={styles['logo-box']}>
                 <h1>Datenvisualisierung 3. #GegenHassimNetz-Bericht</h1>
                 <h2>
@@ -311,4 +398,11 @@ class PressematerialLogos extends Component {
   }
 }
 
-export default withLocalize(PressematerialLogos)
+const mapStateToProps = state => ({
+  jahresberichte: state.jahresberichte,
+})
+
+export default withLocalize(connect(
+  mapStateToProps, {
+  getAllByProps
+})(PressematerialLogos))

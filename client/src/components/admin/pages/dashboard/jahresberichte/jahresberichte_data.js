@@ -45,6 +45,7 @@ export const jahresberichtTags = [
   {
     name: 'pressematerial',
     de: { title: 'Pressematerial' },
+    hasDescription: true,
     fileOptions: [
       {
         type: 'file',
@@ -61,6 +62,7 @@ export const jahresberichtTags = [
   {
     name: 'pressespiegel',
     de: { title: 'Pressespiegel' },
+    hasDescription: false,
     fileOptions: [
       {
         type: 'file',

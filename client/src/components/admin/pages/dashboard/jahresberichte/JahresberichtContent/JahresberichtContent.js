@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { jahresberichtTags } from '../jahresberichte_data'
 
 import TextFieldGroup from '../../../../common/TextFieldGroup'
+import TextareaFieldGroup from '../../../../common/TextareaFieldGroup'
 import FileSelectGroup from '../../../../common/FileSelectGroup'
 
 import { confirmAlert } from 'react-confirm-alert'
@@ -35,6 +36,8 @@ class JahresberichtContent extends Component {
       tag: 'rassismusreport',
       titleDE: '',
       titleEN: '',
+      descriptionDE: '',
+      descriptionEN: '',
 
       selectedFilesDE: [],
       selectedFilesEN: [],
@@ -83,6 +86,8 @@ class JahresberichtContent extends Component {
             tag: item.tag && item.tag,
             titleDE: item.de && item.de.title && item.de.title,
             titleEN: item.en ? item.en.title : '',
+            descriptionDE: item.de && item.de.description && item.de.description,
+            descriptionEN: item.en ? item.en.description : '',
             selectedFilesDE: item.files && item.files.de,
             selectedFilesEN: item.files && item.files.en,
             selectedImagesDE: item.images && item.images.de,
@@ -108,6 +113,8 @@ class JahresberichtContent extends Component {
             tag: 'jahresberichte',
             titleDE: '',
             titleEN: '',
+            descriptionDE: '',
+            descriptionEN: '',
             selectedFilesDE: [],
             selectedFilesEN: [],
             selectedImagesDE: [],
@@ -185,18 +192,22 @@ class JahresberichtContent extends Component {
   }
 
   saveContent = () => {
+
     const saveData = {
       category: 'jahresberichte',
       tag: this.state.tag,
       id: this.state.jahresberichtId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
+      descriptionDE: this.state.descriptionDE,
+      descriptionEN: this.state.descriptionEN,
       filesDE: this.state.selectedFilesDE,
       filesEN: this.state.selectedFilesEN,
       imagesDE: this.state.selectedImagesDE,
       imagesEN: this.state.selectedImagesEN,
       toOrder: this.state.toOrder
     }
+    console.log('desc ', saveData)
     this.props.saveContent(saveData)
   }
 
@@ -267,6 +278,38 @@ class JahresberichtContent extends Component {
                   {jahresberichtTags &&
                     jahresberichtTags.map(tag =>
                       <Fragment>
+                        {tag.name === this.state.tag && tag.hasDescription && (
+                          <div className={styles['jahresbericht-content--text']}>
+                            <div className={styles['jahresbericht-content--text__title']}>
+                              <TextareaFieldGroup
+                                className={commonStyles['input']}
+                                colorScheme="light"
+                                placeholder="Beschreibung deutsch"
+                                type="textarea"
+                                name="descriptionDE"
+                                value={this.state.descriptionDE}
+                                onChange={this.onChange}
+                                error={this.state.errors.descriptionDE}
+                              />
+
+                            </div>
+
+                            <div className={styles['jahresbericht-content--text__title']}>
+                              <TextareaFieldGroup
+                                className={commonStyles['input']}
+                                colorScheme="light"
+                                placeholder="Beschreibung englisch"
+                                type="textarea"
+                                name="descriptionEN"
+                                value={this.state.descriptionEN}
+                                onChange={this.onChange}
+                                error={this.state.errors.descriptionEN}
+                              />
+                            </div>
+                          </div>
+                        )
+
+                        }
                         {tag.name === this.state.tag && tag.fileOptions &&
                           tag.fileOptions.map(option =>
                             <Fragment>

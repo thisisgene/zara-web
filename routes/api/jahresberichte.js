@@ -103,6 +103,7 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     const body = req.body
+    console.log(body)
     // Get fields
     const jahresberichtFields = { de: {}, en: {} }
     if (body.titleDE) {
@@ -120,10 +121,12 @@ router.post(
           date: body.date,
           handle: jahresberichtFields.handle,
           de: {
-            title: jahresberichtFields.de.title
+            title: jahresberichtFields.de.title,
+            description: body.descriptionDE
           },
           en: {
-            title: jahresberichtFields.en.title
+            title: jahresberichtFields.en.title,
+            description: body.descriptionEN
           },
           files: {
             de: body.filesDE,
