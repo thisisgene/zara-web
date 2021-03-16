@@ -60,7 +60,7 @@ router.post(
         bucket: 'serpig-space',
         acl: 'public-read',
         contentType: multerS3.AUTO_CONTENT_TYPE,
-        key: function(req, file, cb) {
+        key: function (req, file, cb) {
           console.log('body: ', req.body);
           body = req.body;
           const imgName = body.name.replace(/ /g, '_');
@@ -69,7 +69,7 @@ router.post(
       })
     }).array('file', 1);
 
-    upload(req, res, function(error) {
+    upload(req, res, function (error) {
       if (error) {
         res.send(error);
       }
@@ -98,6 +98,45 @@ router.post(
     });
   }
 );
+
+// @route   GET api/media/update_image
+// @desc    Update media by id
+// @access  Private
+router.post(
+  '/update_image', (req, res) => {
+    const body = req.body
+    const id = body.id
+    console.log('body: ', body)
+    Media.findOneAndUpdate(
+      { _id: id },
+      {
+        $set: {
+          de: {
+            title: body.titleDE,
+            secondTitle: body.secondTitleDE,
+            subtitle: body.subtitleDE,
+          },
+          en: {
+            title: body.titleEN,
+            secondTitle: body.secondTitleEN,
+            subtitle: body.subtitleEN,
+          }
+        }
+      },
+      { new: true }
+    ).then(image => {
+      console.log('CATE: ', body.tag)
+      Media.find({ category: body.tag, isDeleted: false })
+        .then(media => {
+          res.json(media);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })
+  }
+
+)
 
 // @route   GET api/media/delete/:id
 // @desc    Delete media by id

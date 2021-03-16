@@ -1,3 +1,6 @@
+.image-container
+  display: flex
+  flex: 1
 .image-box
   
   width: calc(100vw - 400px)
@@ -11,12 +14,17 @@
   grid-auto-rows: calc((100vw - 400px) / 6)
   grid-gap: 2px
   overflow-y: auto
+  
   &--item
     width: 100%
     cursor: pointer
     position: relative
-    
-    
+    box-sizing: border-box
+    opacity: 1
+    &.active-image img
+      border: 8px solid green
+    &.inactive-image
+      opacity: .5
     &__backdrop
       position: absolute
       top: 0
@@ -34,13 +42,14 @@
           left: 0
           width: 100%
           height: 100%
-          content: 'x'
+          content: 'more info'
           background: rgba(black, .2)
           display: flex
           justify-content: center
           align-items: center
-          font-size: 2rem
+          font-size: 1rem
           z-index: 10
+          cursor: pointer
       &--text
         margin-top: -2rem
         color: rgba(white, .5)
@@ -76,6 +85,7 @@
         width: calc((100vw - 410px) / 6)
         height: calc((100vw - 410px) / 6)
         object-fit: cover
+      
     &__copy
       position: absolute
       top: 0
@@ -88,3 +98,14 @@
         color: lightgreen
       // &--container
       //   // z-index: 20
+
+.image-info
+  // position: absolute
+  right: 0
+  width: 200px
+  background: #36363C
+  flex: 1
+  z-index: 10
+  box-shadow: -7px 0 2px rgba(black, .3)
+  border: 1px solid rgba(black, .1)
+  padding: 1rem

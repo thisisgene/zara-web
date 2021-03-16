@@ -5,7 +5,7 @@ const initialState = {
   uploadProgress: null
 }
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case UPDATE_MEDIA:
       return {
@@ -13,6 +13,7 @@ export default function(state = initialState, action) {
         images: action.payload,
         waiting: false
       }
+
     case UPLOAD_PROGRESS:
       return {
         ...state,

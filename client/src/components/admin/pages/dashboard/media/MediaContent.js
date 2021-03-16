@@ -41,7 +41,7 @@ class MediaContent extends Component {
     return (
       <div className={styles['media--content']}>
         {this.state.category && (
-          <div>
+          <div className={styles['media--content__container']}>
             <ImageUpload category={this.state.category} />
             <div style={{ height: '1.4rem' }}>
               {this.props.media.uploadProgress &&
@@ -59,6 +59,7 @@ class MediaContent extends Component {
               <ImageBox
                 images={this.props.media.images}
                 deleteImage={this.deleteImage}
+                category={this.state.category}
               />
             )}
           </div>

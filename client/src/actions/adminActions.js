@@ -63,6 +63,7 @@ import {
   GET_ALL_USERS,
   CLEAR_REPORT,
   TRAINING_REQUEST_RESET,
+  UPDATE_MEDIA
 } from './types'
 
 // import { setProjectLoading } from './projectActions'
@@ -951,6 +952,27 @@ export const saveContent = saveData => dispatch => {
         .then(res => {
           dispatch({
             type: UPDATE_TRAINING,
+            payload: res.data,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err.response,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+    case 'media':
+      axios
+        .post(`/api/media/update_image`, saveData)
+        .then(res => {
+          dispatch({
+            type: UPDATE_MEDIA,
             payload: res.data,
           })
           dispatch({

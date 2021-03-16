@@ -53,7 +53,10 @@ const JahresberichtSchema = new Schema({
         },
         name: {
           type: String
-        }
+        },
+        title: { type: String },
+        secondTitle: { type: String },
+        subtitle: { type: String }
       }
     ],
     en: [
@@ -70,7 +73,10 @@ const JahresberichtSchema = new Schema({
         },
         name: {
           type: String
-        }
+        },
+        title: { type: String },
+        secondTitle: { type: String },
+        subtitle: { type: String }
       }
     ]
   },
@@ -89,7 +95,10 @@ const JahresberichtSchema = new Schema({
         },
         name: {
           type: String
-        }
+        },
+        title: { type: String },
+        secondTitle: { type: String },
+        subtitle: { type: String }
       }
     ],
     en: [
@@ -106,7 +115,10 @@ const JahresberichtSchema = new Schema({
         },
         name: {
           type: String
-        }
+        },
+        title: { type: String },
+        secondTitle: { type: String },
+        subtitle: { type: String }
       }
     ]
   },

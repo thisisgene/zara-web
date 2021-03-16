@@ -148,18 +148,18 @@ class JahresberichtContent extends Component {
     })
   }
   onSelectChange = (lang, selected) => {
-    if (lang === 'DE') {
+    if (lang === 'de') {
       this.setState({ selectedFilesDE: selected })
     }
-    if (lang === 'EN') {
+    if (lang === 'en') {
       this.setState({ selectedFilesEN: selected })
     }
   }
   onImageSelectChange = (lang, selected) => {
-    if (lang === 'DE') {
+    if (lang === 'de') {
       this.setState({ selectedImagesDE: selected })
     }
-    if (lang === 'EN') {
+    if (lang === 'en') {
       this.setState({ selectedImagesEN: selected })
     }
   }
@@ -276,7 +276,7 @@ class JahresberichtContent extends Component {
                         defaultValue={this.state.selectedFilesDE}
                         name="fileSelectDE"
                         onSelectChange={this.onSelectChange}
-                        lang="DE"
+                        lang="de"
                       />
                     </div>
                     <div
@@ -289,7 +289,7 @@ class JahresberichtContent extends Component {
                         defaultValue={this.state.selectedFilesEN}
                         name="fileSelectEN"
                         onSelectChange={this.onSelectChange}
-                        lang="EN"
+                        lang="en"
                       />
                     </div>
 

@@ -8,8 +8,16 @@ const MediaSchema = new Schema({
   originalName: {
     type: String
   },
-  name: {
-    type: String
+  name: { type: String },
+  de: {
+    title: { type: String },
+    secondTitle: { type: String },
+    subtitle: { type: String }
+  },
+  en: {
+    title: { type: String },
+    secondTitle: { type: String },
+    subtitle: { type: String }
   },
   isVisible: {
     type: Boolean,
