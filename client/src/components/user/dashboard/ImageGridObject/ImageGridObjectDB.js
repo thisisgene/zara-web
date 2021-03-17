@@ -231,7 +231,7 @@ class ImageGridObject extends Component {
                               className={'rr-download-link'}
                               id={`${item[lang].title}_DE`}
                               target="blank"
-                              href={`https://assets.zara.or.at/download/${item.files.de[0].value}`}
+                              href={`https://assets.zara.or.at/media/rassismusreport/${item.files.de[0].value}`}
                             >
                               deutsch
                               </a>}
@@ -240,7 +240,7 @@ class ImageGridObject extends Component {
                               className={'rr-download-link'}
                               id={`${item[lang].title}_EN`}
                               target="blank"
-                              href={`https://assets.zara.or.at/download/${item.files.en[0].value}`}
+                              href={`https://assets.zara.or.at/media/rassismusreport/${item.files.en[0].value}`}
                             // onClick={this.props.onShowSurvey}
                             >
                               englisch
