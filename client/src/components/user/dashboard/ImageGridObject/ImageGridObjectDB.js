@@ -161,7 +161,7 @@ class ImageGridObject extends Component {
         <div className={styles['grid-container']}>
           {content.map((item, index) => (
             <Fragment>
-              { item.setOnlineByTimer ?
+              {/* { item.setOnlineByTimer ?
                 <OnlineByTimer onlineTime={item.onlineTime}>
                   <div
                     key={index}
@@ -179,6 +179,8 @@ class ImageGridObject extends Component {
                       <div className={styles['grid-item--links__language']}>
                         {item.links.map(link => (
                           <a
+                            className={'rr-download-link'}
+                            id={`${item[lang].title}_${link.linkText}`}
                             target="blank"
                             href={`https://assets.zara.or.at/download/${link.link}`}
                           // onClick={this.props.onShowSurvey}
@@ -206,63 +208,68 @@ class ImageGridObject extends Component {
                       {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
                     </div>
                   </div>
-                </OnlineByTimer> :
-                <div
-                  key={index}
-                  className={cx(styles['grid-item'], {
-                    [styles['is-fresh']]: index == 0,
-                    [styles[type]]: type
-                  })}
-                >
-                  {item.images && item.images[lang][0] && <img src={`/assets/media/${item.tag}/${item.images[lang][0].value}`} alt={item.image} />}
-                  <div className={styles['grid-item--links']}>
-                    <div className={styles['grid-item--title']}>
-                      {item[lang].title}
-                    </div>
-                    {item.files && (item.files.de.length > 0 || item.files.en.length > 0) && (
-                      <Fragment>
-                        <span>Download:</span>
-                        <div className={styles['grid-item--links__language']}>
-                          <Fragment>
-                            {item.files.de.length > 0 &&
-                              <a
-                                target="blank"
-                                href={`https://assets.zara.or.at/download/${item.files.de.value}`}
-                              // onClick={this.props.onShowSurvey}
-                              >
-                                deutsch
-                        </a>}
-                            {item.files.en.length > 0 &&
-                              <a
-                                target="blank"
-                                href={`https://assets.zara.or.at/download/${item.files.en.value}`}
-                              // onClick={this.props.onShowSurvey}
-                              >
-                                englisch
-                        </a>}
-                          </Fragment>
-                        </div>
-                      </Fragment>
-                    )}
-                    {item.toOrder && (
-                      <div>
-                        <hr />
-                        <button
-                          onClick={this.increaseCount.bind(
-                            this,
-                            item._id,
-                            this.title
-                          )}
-                        >
-                          {lang === 'de'
-                            ? 'Druckversion Bestellen'
-                            : 'Order print version'}
-                        </button>
-                      </div>
-                    )}
-                    {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
+                </OnlineByTimer> : */}
+              <div
+                key={index}
+                className={cx(styles['grid-item'], {
+                  [styles['is-fresh']]: index == 0,
+                  [styles[type]]: type
+                })}
+              >
+                {item.images && item.images[lang][0] && <img src={`/assets/media/${item.tag}/${item.images[lang][0].value}`} alt={item.image} />}
+                <div className={styles['grid-item--links']}>
+                  <div className={styles['grid-item--title']}>
+                    {item[lang].title}
                   </div>
-                </div>}</Fragment>
+                  {item.files && (item.files.de.length > 0 || item.files.en.length > 0) && (
+                    <Fragment>
+                      <span>Download bibi:</span>
+                      <div className={styles['grid-item--links__language']}>
+                        <Fragment>
+                          {item.files.de.length > 0 &&
+                            <a
+                              className={'rr-download-link'}
+                              id={`${item[lang].title}_DE`}
+                              target="blank"
+                              href={`https://assets.zara.or.at/download/${item.files.de[0].value}`}
+                            >
+                              deutsch
+                              </a>}
+                          {item.files.en.length > 0 &&
+                            <a
+                              className={'rr-download-link'}
+                              id={`${item[lang].title}_EN`}
+                              target="blank"
+                              href={`https://assets.zara.or.at/download/${item.files.en[0].value}`}
+                            // onClick={this.props.onShowSurvey}
+                            >
+                              englisch
+                        </a>}
+                        </Fragment>
+                      </div>
+                    </Fragment>
+                  )}
+                  {item.toOrder && (
+                    <div>
+                      <hr />
+                      <button
+                        onClick={this.increaseCount.bind(
+                          this,
+                          item._id,
+                          this.title
+                        )}
+                      >
+                        {lang === 'de'
+                          ? 'Druckversion Bestellen'
+                          : 'Order print version'}
+                      </button>
+                    </div>
+                  )}
+                  {item[lang].addInfo && <div>{item[lang].addInfo}</div>}
+                </div>
+              </div>
+              {/* } */}
+            </Fragment>
           ))}
         </div>
         {withCart && this.state.showCart && (
