@@ -3,29 +3,31 @@
   margin: 3rem auto
   padding: 0 1rem
   h1
-    font-size: 2rem
+    font-size: 1.5rem
     text-align: left
   @media(max-width: 501px)
     h1
       font-size: 2rem
   .logo-box
     // width: 500px
-    
+    width: 100%
     margin: 2rem auto
-    display: flex
-    flex-direction: column
-    align-items: flex-start
+    // display: flex
+    // flex-direction: column
+    // align-items: flex-start
     &.box-is-active > .logo-box--content
       // background: green
       display: block
-    &.box-is-active .logo-box--title, &.box-is-active h1
-      &:before
-        content: '-'
+    &.box-is-active .faq-item-top--arrow
+      transform: rotateZ(180deg) !important
+    // &.box-is-active .logo-box--title, &.box-is-active h1
+      // &:before
+      //   content: '-'
     &--item
       
       
       margin: 2rem 0 1rem
-      text-align: left
+      text-align: center
       img
         margin: 1rem 0
         max-width: 480px
@@ -46,9 +48,9 @@
       &--content
         display: none
         padding: 1rem 2rem
-        background: #E9F2EF
+        // background: #E9F2EF
     h2
-      text-align: left
+      text-align: center
       font:
         size: 1.2rem
       a
@@ -59,7 +61,7 @@
     .download-container
       display: flex
       flex-direction: column
-      align-items: flex-start
+      align-items: center
       // margin-bottom: 3rem
       
       .download-link

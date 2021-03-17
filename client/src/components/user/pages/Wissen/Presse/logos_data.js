@@ -16,6 +16,7 @@ export const heroData = {
 export const logoData = [
   {
     title: 'ZARA Logos',
+    id: 'zara logos',
     text: '',
     logos: [
       {
@@ -42,6 +43,7 @@ export const logoData = [
   },
   {
     title: 'ZARA Training Logos',
+    id: 'zara training logos',
     text: '',
     logos: [
       {
@@ -64,6 +66,7 @@ export const logoData = [
   },
   {
     title: 'Gegen Hass im Netz Logos',
+    id: 'ghin logos',
     text: '',
     logos: [
       {
