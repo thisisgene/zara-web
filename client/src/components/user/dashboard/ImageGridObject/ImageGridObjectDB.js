@@ -223,7 +223,7 @@ class ImageGridObject extends Component {
                   </div>
                   {item.files && (item.files.de.length > 0 || item.files.en.length > 0) && (
                     <Fragment>
-                      <span>Download bibi:</span>
+                      <span>Download:</span>
                       <div className={styles['grid-item--links__language']}>
                         <Fragment>
                           {item.files.de.length > 0 &&
