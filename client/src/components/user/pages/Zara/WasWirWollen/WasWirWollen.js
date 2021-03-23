@@ -20,7 +20,7 @@ class WasWirWollen extends Component {
           <div>
             <HeroUnit data={heroData} lang={lang} />
             <LongText content={longText} lang={lang} />
-            <BigImage image={teamImage} alt={teamImage} />
+            {/* <BigImage image={teamImage} alt={teamImage} /> */}
             <div style={{ height: '4rem' }} />
           </div>
         )}
