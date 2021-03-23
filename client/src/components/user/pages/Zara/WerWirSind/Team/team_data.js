@@ -1,7 +1,7 @@
 export const teamData = {
   heroUnit: {
-    class: 'big-image',
-    image: 'team/ZARA_Team.jpg',
+    // class: 'big-image',
+    // image: 'team/ZARA_Team.jpg',
     de: {
       title: 'Team',
       text:
