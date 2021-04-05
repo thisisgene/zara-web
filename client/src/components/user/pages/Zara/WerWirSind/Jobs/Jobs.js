@@ -7,7 +7,7 @@ import {
   longTextJobs,
   longTextVolontariat,
   longTextZivildienst,
-  longText
+  longText,
 } from './jobs_data'
 // import { oneLineAlert, trainingItems } from './training_data'
 
@@ -31,7 +31,7 @@ class RechtUndOrdnung extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
-            {/* <LongText content={longTextJobs} lang={lang} /> */}
+            <LongText content={longTextJobs} lang={lang} />
             <div className={styles['job-container']}>
               {jobData &&
                 jobData
