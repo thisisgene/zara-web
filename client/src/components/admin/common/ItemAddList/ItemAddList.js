@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import axios from 'axios'
 
-import { SortableContainer, SortableElement } from 'react-sortable-hoc';
-import arrayMove from 'array-move';
+import { SortableContainer, SortableElement } from 'react-sortable-hoc'
+import arrayMove from 'array-move'
 
-import { sortList } from '../../../../actions/adminActions';
+import TextFieldGroup from '../TextFieldGroup'
 
-import { newsTags } from './../../../user/pages/Wissen/News/news_data';
-import TextFieldGroup from '../TextFieldGroup';
-
-import cx from 'classnames';
-import commonStyles from '../Common.module.sass';
-import styles from './ItemAddList.module.sass';
+import cx from 'classnames'
+import commonStyles from '../Common.module.sass'
+import styles from './ItemAddList.module.sass'
 
 const SortableItem = SortableElement(({ item, baseCat, category }) => (
   <div className={styles['item-list--item']}>
@@ -57,7 +54,7 @@ const SortableItem = SortableElement(({ item, baseCat, category }) => (
       )}
     </NavLink>
   </div>
-));
+))
 
 const SortableList = SortableContainer(({ items, baseCat, category }) => {
   return (
@@ -72,24 +69,24 @@ const SortableList = SortableContainer(({ items, baseCat, category }) => {
         />
       ))}
     </ul>
-  );
-});
+  )
+})
 
 class ItemAddList extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       list: [],
       idList: [],
       selectedTag: '',
       searchValue: '',
       errors: {},
-    };
+    }
   }
 
-  parseIds = (content) => {
-    let result = [];
-    content.map((item) => {
+  parseIds = content => {
+    let result = []
+    content.map(item => {
       const title =
         this.props.category === 'trainings' ||
         // this.props.category === 'bulletins' ||
@@ -98,26 +95,26 @@ class ItemAddList extends Component {
           ? item.title
           : this.props.baseCat === 'training' && this.props.category === 'team'
           ? item.name
-          : item.de.title;
-      result.push({ id: item._id, title: title });
-    });
-    console.log('RESULT: ', result);
-    return result;
-  };
+          : item.de.title
+      result.push({ id: item._id, title: title })
+    })
+    console.log('RESULT: ', result)
+    return result
+  }
 
-  componentDidUpdate = (prevProps) => {
+  componentDidUpdate = prevProps => {
     if (prevProps !== this.props) {
       this.setState({
         list: this.props.content,
-      });
+      })
     }
-  };
+  }
 
   onSortEnd = ({ oldIndex, newIndex }) => {
     const url =
       this.props.baseCat === 'training' && this.props.category === 'team'
         ? `/api/projects/sort/training_team`
-        : `/api/projects/sort/${this.props.category}`;
+        : `/api/projects/sort/${this.props.category}`
 
     this.setState(
       ({ list }) => ({
@@ -131,27 +128,27 @@ class ItemAddList extends Component {
           .post(url, {
             list: this.parseIds(this.state.list),
           })
-          .then((res) => {
-            console.log(res);
+          .then(res => {
+            console.log(res)
           })
-          .catch((err) => {
-            if (err) console.log(err);
-          });
+          .catch(err => {
+            if (err) console.log(err)
+          })
       }
-    );
-  };
+    )
+  }
 
-  onChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
-  onTagChange = (e) => {
-    this.setState({ selectedTag: e.target.value });
-  };
+  onTagChange = e => {
+    this.setState({ selectedTag: e.target.value })
+  }
 
   render() {
-    const { baseCat, category, tags } = this.props;
-    const content = this.state.list;
+    const { baseCat, category, tags } = this.props
+    const content = this.state.list
     return (
       <div className={styles['item-add-list']}>
         <div>
@@ -186,7 +183,7 @@ class ItemAddList extends Component {
               </label>
             </div>
             {tags &&
-              tags.map((tag) => (
+              tags.map(tag => (
                 <div>
                   <input
                     type="radio"
@@ -223,7 +220,7 @@ class ItemAddList extends Component {
               helperClass={styles['dragged']}
               items={
                 this.state.selectedTag === ''
-                  ? content.filter((item) =>
+                  ? content.filter(item =>
                       category === 'trainings' ||
                       category === 'faqs' ||
                       category === 'carousel'
@@ -247,8 +244,8 @@ class ItemAddList extends Component {
                           )
                     )
                   : content
-                      .filter((item) => item.tag === this.state.selectedTag)
-                      .filter((item) =>
+                      .filter(item => item.tag === this.state.selectedTag)
+                      .filter(item =>
                         category === 'trainings' ||
                         category === 'faqs' ||
                         category === 'carousel'
@@ -273,7 +270,7 @@ class ItemAddList extends Component {
           )}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -282,4 +279,4 @@ class ItemAddList extends Component {
 //   ...ownProps
 // })
 
-export default ItemAddList;
+export default ItemAddList

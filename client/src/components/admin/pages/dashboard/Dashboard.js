@@ -7,6 +7,7 @@ import Media from './media/Media'
 import Carousel from './carousel/Carousel'
 import News from './news/News'
 import Jahresberichte from './jahresberichte/Jahresberichte'
+import Jobs from './jobs/Jobs'
 import Faqs from './faq/Faqs'
 import Team from './Team/Team'
 
@@ -27,6 +28,7 @@ class Dashboard extends Component {
             path="/admin/dashboard/jahresberichte"
             component={Jahresberichte}
           />
+          <PrivateRoute path="/admin/dashboard/jobs" component={Jobs} />
           <PrivateRoute path="/admin/dashboard/faqs" component={Faqs} />
           <PrivateRoute path="/admin/dashboard/team" component={Team} />
         </div>
