@@ -44,6 +44,7 @@ import News from './pages/Wissen/News/News'
 import Presse from './pages/Wissen/Presse/Presse'
 import Pressespiegel from './pages/Wissen/Presse/Pressespiegel'
 import Fotos from './pages/Wissen/Presse/Fotos'
+import Presseclub from './pages/Wissen/Presse/Presseclub/Presseclub'
 import KenneDeineRechte from './pages/Wissen/KenneDeineRechte/KenneDeineRechte'
 import Glossar from './pages/Wissen/KenneDeineRechte/Glossar'
 import Publikationen from './pages/Wissen/Publikationen/Publikationen'
@@ -108,7 +109,6 @@ class User extends Component {
     }
   }
   componentDidUpdate(prevProps) {
-
     document.title = 'ZARA - Zivilcourage & Anti-Rassismus-Arbeit'
 
     const prevLang = prevProps.activeLanguage && prevProps.activeLanguage.code
@@ -183,9 +183,13 @@ class User extends Component {
         </div>
         <ScrollToTop>
           <div className={styles['main-content']}>
-            {lang && lang == 'en' && !this.props.match.url.includes('beratung') &&
-              <div className={styles['language-disclaimer']}>Unfortunately, this page is not yet available in English!</div>
-            }
+            {lang &&
+              lang == 'en' &&
+              !this.props.match.url.includes('beratung') && (
+                <div className={styles['language-disclaimer']}>
+                  Unfortunately, this page is not yet available in English!
+                </div>
+              )}
             {/* TODO: BREADCRUMBS */}
             {/* <div className={styles['breadcrumb-container']}>
               {routes.map((route, index) => (
@@ -207,8 +211,8 @@ class User extends Component {
               {activeLanguage ? (
                 <Redirect exact from="/" to={`/${activeLanguage.code}`} />
               ) : (
-                  <Redirect exact from="/" to={'/de'} />
-                )}
+                <Redirect exact from="/" to={'/de'} />
+              )}
               <Route exact path="/:lang/beratung" component={Consulting} />
               <Route
                 // exact
@@ -344,6 +348,11 @@ class User extends Component {
                 exact
                 path="/:lang/wissen/presse/fotos"
                 component={Fotos}
+              />
+              <Route
+                exact
+                path="/:lang/wissen/presse/dokumentation_von_angriffen_auf_journalist_innen"
+                component={Presseclub}
               />
               <Route
                 exact
