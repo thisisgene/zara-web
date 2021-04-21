@@ -17,12 +17,13 @@ class InfoBoxObject extends Component {
           <div
             className={cx(styles['info-box-container'], {
               [styles[infoBox.color]]: infoBox.color,
-              [styles[infoBox.direction]]: infoBox.direction
+              [styles[infoBox.option]]: infoBox.option,
+              [styles[infoBox.direction]]: infoBox.direction,
             })}
           >
             <div
               className={cx(styles['info-box'], {
-                [styles[infoBox.size]]: infoBox.size
+                [styles[infoBox.size]]: infoBox.size,
               })}
             >
               <div className={styles['info-box--header']}>
@@ -64,7 +65,12 @@ class InfoBoxObject extends Component {
                   )}
                 >
                   {infoBox[lang].cards.map((card, index) => (
-                    <InfoCardObject direction={infoBox.direction} key={index} card={card} lang={lang} />
+                    <InfoCardObject
+                      direction={infoBox.direction}
+                      key={index}
+                      card={card}
+                      lang={lang}
+                    />
                   ))}
                 </div>
               )}

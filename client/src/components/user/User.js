@@ -356,6 +356,11 @@ class User extends Component {
               />
               <Route
                 exact
+                path="/:lang/wissen/presse/dokumentation_von_angriffen_auf_journalist_innen/:category"
+                component={Presseclub}
+              />
+              <Route
+                exact
                 path="/:lang/wissen/publikationen"
                 component={Publikationen}
               />
