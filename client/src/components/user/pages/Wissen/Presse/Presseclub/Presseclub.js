@@ -64,13 +64,25 @@ class Presseclub extends Component {
                 activeCategory={perspective}
               />
             )}
-            {category === 'oeffentlich' && (
+            {category === 'public' && (
               <OptionButtons
                 content={optionObjPublic}
                 lang={lang}
                 setActiveCategory={this.setActivePerspective}
                 activeCategory={perspective}
               />
+            )}
+            {category === 'online' && perspective === 'first' && (
+              <p>First Online</p>
+            )}
+            {category === 'online' && perspective === 'third' && (
+              <p>Third Online</p>
+            )}
+            {category === 'public' && perspective === 'first' && (
+              <p>First Public</p>
+            )}
+            {category === 'public' && perspective === 'third' && (
+              <p>Third Public</p>
             )}
           </div>
         )}

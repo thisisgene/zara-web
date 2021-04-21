@@ -39,7 +39,7 @@ export const optionObj = {
         text: 'Bitte klicken Sie hier weiter.',
         button: {
           text: 'Angriff im öffentlichen Raum melden',
-          category: 'oeffentlich',
+          category: 'public',
         },
       },
     ],
@@ -75,7 +75,7 @@ export const optionObjOnline = {
         text: 'Bitte klicken Sie hier weiter.',
         button: {
           text: 'Online-Angriff melden',
-          category: 'online',
+          category: 'first',
         },
       },
       {
@@ -84,7 +84,7 @@ export const optionObjOnline = {
         text: 'Bitte klicken Sie hier weiter.',
         button: {
           text: 'Angriff im öffentlichen Raum melden',
-          category: 'oeffentlich',
+          category: 'third',
         },
       },
     ],
@@ -120,7 +120,7 @@ export const optionObjPublic = {
         text: 'Bitte klicken Sie hier weiter.',
         button: {
           text: 'Online-Angriff melden',
-          category: 'online',
+          category: 'first',
         },
       },
       {
@@ -129,7 +129,7 @@ export const optionObjPublic = {
         text: 'Bitte klicken Sie hier weiter.',
         button: {
           text: 'Angriff im öffentlichen Raum melden',
-          category: 'oeffentlich',
+          category: 'third',
         },
       },
     ],

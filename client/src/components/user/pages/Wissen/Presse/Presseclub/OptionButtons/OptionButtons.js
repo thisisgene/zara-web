@@ -11,6 +11,8 @@ export default function OptionButtons(props) {
         <div
           className={cx(styles['card'], {
             [styles['active']]: card.button.category === activeCategory,
+            [styles['disabled']]:
+              activeCategory !== '' && card.button.category !== activeCategory,
           })}
           onClick={() => setActiveCategory(card.button.category)}
         >
