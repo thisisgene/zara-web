@@ -8,14 +8,13 @@ import StepFinal from "./StepFinal"
 
 class StepPathA extends Component {
   sampleStore = {
-    // email: '',
-    // userName: '',
-    // phone: '',
-    description: "",
     directReaction: "",
-    files: [],
-    links: "",
-    selectedOption: "anonym",
+    text1a1: "",
+    text1a2a: "",
+    text1a2b: "",
+    text1a2c: "",
+    text1b1: "",
+    text1b2: "",
     savedToCloud: false,
     reportSent: false,
   }
@@ -25,6 +24,7 @@ class StepPathA extends Component {
   }
 
   updateStore(update) {
+    console.log("update store: ", update)
     this.sampleStore = {
       ...this.sampleStore,
       ...update,
@@ -38,7 +38,6 @@ class StepPathA extends Component {
         name: "Step 1",
         component: (
           <Step1
-            title={"LIMPI"}
             getStore={() => this.getStore()}
             updateStore={(u) => {
               this.updateStore(u)
