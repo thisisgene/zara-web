@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import StepZilla from 'react-stepzilla'
-import { connect } from 'react-redux'
+import React, { Component } from "react"
+import StepZilla from "react-stepzilla"
+import { connect } from "react-redux"
 
-import { sendReport, resetReport } from '../../../../actions/reportActions'
+import { sendReport, resetReport } from "../../../../actions/reportActions"
 
-import StepOne from './StepComponents/StepOne'
-import StepTwo from './StepComponents/StepTwo'
-import StepThree from './StepComponents/StepThree'
-import StepFour from './StepComponents/StepFour'
-import StepFive from './StepComponents/StepFive'
-import StepSix from './StepComponents/StepSix'
+import StepOne from "./StepComponents/StepOne"
+import StepTwo from "./StepComponents/StepTwo"
+import StepThree from "./StepComponents/StepThree"
+import StepFour from "./StepComponents/StepFour"
+import StepFive from "./StepComponents/StepFive"
+import StepSix from "./StepComponents/StepSix"
 
-import { stepNames } from './StepComponents/step_data'
+import { stepNames } from "./StepComponents/step_data"
 
-import cx from 'classnames'
-import './MultiStepForm_basic.css'
-import styles from './MultiStepForm.module.sass'
+import cx from "classnames"
+import "./MultiStepForm_basic.css"
+import styles from "./MultiStepForm.module.sass"
 
 class MultiStepForm extends Component {
   constructor(props) {
@@ -26,18 +26,14 @@ class MultiStepForm extends Component {
       // email: '',
       // userName: '',
       // phone: '',
-      description: '',
+      description: "",
       files: [],
-      links: '',
-      selectedOption: 'anonym',
+      links: "",
+      selectedOption: "anonym",
       savedToCloud: false,
-      reportSent: false
+      reportSent: false,
     }
   }
-
-  componentDidMount() { }
-
-  componentWillUnmount() { }
 
   componentDidUpdate(prevProps) {
     if (
@@ -45,7 +41,7 @@ class MultiStepForm extends Component {
       prevProps.report.reportSent !== this.props.report.reportSent
     ) {
       this.updateStore({
-        reportSent: this.props.report.reportSent
+        reportSent: this.props.report.reportSent,
       })
     }
   }
@@ -57,7 +53,7 @@ class MultiStepForm extends Component {
   updateStore(update) {
     this.sampleStore = {
       ...this.sampleStore,
-      ...update
+      ...update,
     }
   }
   render() {
@@ -79,27 +75,27 @@ class MultiStepForm extends Component {
         name: stepNames[lang].stepTwo,
         component: (
           <StepTwo
-            className={styles['step']}
+            className={styles["step"]}
             getStore={() => this.getStore()}
-            updateStore={u => {
+            updateStore={(u) => {
               this.updateStore(u)
             }}
             lang={lang}
           />
-        )
+        ),
       },
       {
         name: stepNames[lang].stepThree,
         component: (
           <StepThree
-            className={styles['step']}
+            className={styles["step"]}
             getStore={() => this.getStore()}
-            updateStore={u => {
+            updateStore={(u) => {
               this.updateStore(u)
             }}
             lang={lang}
           />
-        )
+        ),
       },
       // {
       //   name: 'Schritt 4',
@@ -117,53 +113,52 @@ class MultiStepForm extends Component {
         name: stepNames[lang].stepFive,
         component: (
           <StepFive
-            className={styles['step']}
+            className={styles["step"]}
             getStore={() => this.getStore()}
-            updateStore={u => {
+            updateStore={(u) => {
               this.updateStore(u)
             }}
             lang={lang}
             report={this.props.report.reportSent}
             resetReport={() => this.props.resetReport()}
-            sendReport={reportData => this.props.sendReport(reportData)}
+            sendReport={(reportData) => this.props.sendReport(reportData)}
           />
-        )
+        ),
       },
       {
         name: stepNames[lang].stepSix,
         component: (
           <StepSix
-            className={cx(styles['step'], 'step6')}
+            className={cx(styles["step"], "step6")}
             getStore={() => this.getStore()}
-            updateStore={u => {
+            updateStore={(u) => {
               this.updateStore(u)
             }}
           />
-        )
-      }
+        ),
+      },
     ]
 
     return (
-      <div className={styles['multi-step-container']}>
-        <div className={cx('step-progress', styles['multi-step-form'])}>
+      <div className={styles["multi-step-container"]}>
+        <div className={cx("step-progress", styles["multi-step-form"])}>
           <StepZilla
             steps={steps}
             startAtStep={0}
             prevBtnOnLastStep={false}
-            nextButtonCls={'next-button'}
-            nextButtonText={lang === 'de' ? 'Weiter' : 'Next'}
-            backButtonText={lang === 'de' ? 'Zurück' : 'Back'}
-            nextTextOnFinalActionStep={'Absenden'}
+            nextButtonCls={"next-button"}
+            nextButtonText={lang === "de" ? "Weiter" : "Next"}
+            backButtonText={lang === "de" ? "Zurück" : "Back"}
+            nextTextOnFinalActionStep={lang === "de" ? "Absenden" : "Send"}
           />
         </div>
       </div>
     )
   }
 }
-const mapStateToProps = state => ({
-  report: state.report
+const mapStateToProps = (state) => ({
+  report: state.report,
 })
-export default connect(
-  mapStateToProps,
-  { sendReport, resetReport }
-)(MultiStepForm)
+export default connect(mapStateToProps, { sendReport, resetReport })(
+  MultiStepForm
+)
