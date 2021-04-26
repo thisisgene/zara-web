@@ -6,6 +6,7 @@ import Step1 from "./Step1"
 import Step2 from "./Step2"
 import Step3 from "./Step3"
 import Step4 from "./Step4"
+import Step5 from "./Step5"
 import StepFinal from "./StepFinal"
 
 class StepPathA extends Component {
@@ -14,63 +15,27 @@ class StepPathA extends Component {
     const steps = [
       {
         name: "Step 1",
-        component: (
-          <Step1
-            getStore={() => this.getStore()}
-            updateStore={(u) => {
-              this.updateStore(u)
-            }}
-            lang={lang}
-          />
-        ),
+        component: <Step1 lang={lang} />,
       },
       {
         name: "Step 2",
-        component: (
-          <Step2
-            getStore={() => this.getStore()}
-            updateStore={(u) => {
-              this.updateStore(u)
-            }}
-            lang={lang}
-          />
-        ),
+        component: <Step2 lang={lang} />,
       },
       {
         name: "Step 3",
-        component: (
-          <Step3
-            getStore={() => this.getStore()}
-            updateStore={(u) => {
-              this.updateStore(u)
-            }}
-            lang={lang}
-          />
-        ),
+        component: <Step3 lang={lang} />,
       },
       {
         name: "Step 4",
-        component: (
-          <Step4
-            getStore={() => this.getStore()}
-            updateStore={(u) => {
-              this.updateStore(u)
-            }}
-            lang={lang}
-          />
-        ),
+        component: <Step4 lang={lang} />,
+      },
+      {
+        name: "Step 5",
+        component: <Step5 lang={lang} />,
       },
       {
         name: "Step Final",
-        component: (
-          <StepFinal
-            getStore={() => this.getStore()}
-            updateStore={(u) => {
-              this.updateStore(u)
-            }}
-            lang={lang}
-          />
-        ),
+        component: <StepFinal lang={lang} />,
       },
     ]
     return (

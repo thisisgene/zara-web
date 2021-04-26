@@ -111,3 +111,51 @@ export const stepFour = {
   text4b:
     "<b>Wenn ja</b>, ist hier Raum für beispielhafte Beschreibung (Anzahl und Inhalt) der privaten Nachrichten:",
 }
+
+export const stepFive = {
+  text5a:
+    "<b>Haben sich die Online-Angriffe inhaltlich dezidiert einer oder mehrerer der folgenden Hass-Ideologien bedient?</b> Mehrfachauswahl möglich:",
+  optionName: "type",
+  options: [
+    {
+      text: "Hass aufgrund des Geschlechts (Sexismus)",
+      value: "sexism",
+    },
+    {
+      text:
+        "Hass wegen nicht-weißer, ethnischer, nationaler oder religiöser Zuschreibung (Rassismus)",
+      value: "racism",
+    },
+    {
+      text: "Homo-, Bi-, Trans-, Interfeindlichkeit (Heteronormativismus)",
+      value: "heteromormativism",
+    },
+    {
+      text: "Hass gegen Menschen mit Behinderung (Ableismus)",
+      value: "ableism",
+    },
+    {
+      text: "Hass aufgrund des Alters (Ageism)",
+      value: "ageism",
+    },
+    {
+      text: "Hass aufgrund der politischen Ideologie / Weltanschauung",
+      value: "politics",
+    },
+    {
+      text: "Hass aufgrund anderer Merkmale oder Zuschreibungen",
+      value: "other",
+    },
+  ],
+  text5b:
+    "Hier ist Raum für Beispiele (Originalwortlaut samt URL) bzw. Präzisierungen:",
+  text5c:
+    "Bitte laden Sie beispielhafte Nachrichten, Postings oder Kommentare des Online-Angriffs als Screenshots (mit Zeitstempel*) hier hoch:",
+  text5c2:
+    "Zeitstempel sind notwendig, wenn Sie Screenshots als Beweis (vor Gericht) verwenden wollen.",
+  text5d: "* Wie Sie einen Screenshot mit Zeitstempel erstellen, erfahren Sie",
+  link: {
+    text: "hier",
+    url: "",
+  },
+}
