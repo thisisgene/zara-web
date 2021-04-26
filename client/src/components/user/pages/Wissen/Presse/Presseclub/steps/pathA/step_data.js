@@ -72,3 +72,25 @@ export const stepTwo = {
     },
   ],
 }
+export const stepThree = {
+  text3:
+    "<b>Bitte schätzen Sie den Umfang des Online-Angriffs ein.</b> Zutreffende Einschätzung anklicken:",
+  optionName: "extent",
+  options: [
+    {
+      text:
+        "Der Online-Angriff umfasst(e) <b>einen einzelnen bzw. vereinzelte</b> Nachrichten oder Kommentare.",
+      value: "single",
+    },
+    {
+      text:
+        "Der Online-Angriff umfasst(e) <b>mehrere bis viele, aber noch überschaubare</b> Nachrichten oder Kommentare.",
+      value: "multiple",
+    },
+    {
+      text:
+        "Der Online-Angriff umfasst(e) <b>sehr viele bis kaum überschaubare</b> Nachrichten oder Kommentare.",
+      value: "many",
+    },
+  ],
+}
