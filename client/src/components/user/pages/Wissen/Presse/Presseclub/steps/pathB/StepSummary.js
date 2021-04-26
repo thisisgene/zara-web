@@ -66,7 +66,7 @@ class StepSummary extends Component {
       <div className={styles["step-container"]}>
         <Spinner nowActive={this.state.saving} />
         <p dangerouslySetInnerHTML={{ __html: stepSummary[lang].text }} />
-        <h1>Hallo</h1>
+        <p>...</p>
       </div>
     )
   }

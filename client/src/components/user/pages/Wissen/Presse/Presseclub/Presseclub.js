@@ -136,8 +136,12 @@ class Presseclub extends Component {
                   <StepPathB lang={lang} />
                 </>
               )}
-              {category === "public" && perspective === "first" && <></>}
-              {category === "public" && perspective === "third" && <></>}
+              {category === "public" && perspective === "first" && (
+                <>in progress</>
+              )}
+              {category === "public" && perspective === "third" && (
+                <>in progress</>
+              )}
             </div>
           </div>
         )}
