@@ -1,7 +1,7 @@
 export const stepOne = {
   de: {
     text1:
-      "<b>Ist der Online-Angriff eine direkte Reaktion auf einen journalistischen Beitrag von Ihnen?</b> Bitte Zutreffendes auswählen:",
+      "<b>Ist der Online-Angriff Ihrer Meinung nach eine direkte Reaktion auf einen journalistischen Beitrag?</b> Bitte Zutreffendes auswählen:",
     optionName: "directReaction",
     options: [
       {
@@ -30,7 +30,7 @@ export const stepOne = {
     text1B1: {
       name: "text1b1",
       text:
-        "<b>Bitte beschreiben Sie kurz den Kontext bzw. den möglichen Auslöser des Online-Angriffs</b><br />(z.B. Reaktion auf einen öffentlichen Auftritt oder persönliches Social Media-Posting)?",
+        "<b>Bitte beschreiben Sie kurz den Kontext bzw. den möglichen Auslöser des Online-Angriffs</b><br />(z.B. Reaktion auf einen öffentlichen Auftritt oder persönliches Social Media-Posting des*der Journalist*in)?",
     },
     text1B2: {
       name: "text1b2",
@@ -66,10 +66,6 @@ export const stepTwo = {
         value: "website",
       },
       {
-        text: "E-Mail",
-        value: "email",
-      },
-      {
         text: "Anderer Kanal, nämlich:",
         value: "other",
       },
@@ -84,17 +80,17 @@ export const stepThree = {
     options: [
       {
         text:
-          "Der Online-Angriff umfasst(e) <b>einen einzelnen bzw. vereinzelte</b> Nachrichten oder Kommentare.",
+          "Der Online-Angriff umfasst(e) <b>einen einzelnen bzw. vereinzelte</b>, öffentlich sichtbare Nachrichten oder Kommentare.",
         value: "single",
       },
       {
         text:
-          "Der Online-Angriff umfasst(e) <b>mehrere bis viele, aber noch überschaubare</b> Nachrichten oder Kommentare.",
+          "Der Online-Angriff umfasst(e) <b>mehrere bis viele, aber noch überschaubare</b>, öffentlich sichtbare Nachrichten oder Kommentare.",
         value: "multiple",
       },
       {
         text:
-          "Der Online-Angriff umfasst(e) <b>sehr viele bis kaum überschaubare</b> Nachrichten oder Kommentare.",
+          "Der Online-Angriff umfasst(e) <b>sehr viele bis kaum überschaubare</b>, öffentlich sichtbare Nachrichten oder Kommentare.",
         value: "many",
       },
     ],
@@ -159,7 +155,7 @@ export const stepFive = {
     text5b:
       "<b>Hier ist Raum für Beispiele (Originalwortlaut samt URL) bzw. Präzisierungen:</b>",
     text5c:
-      "<b>Bitte laden Sie beispielhafte Nachrichten, Postings oder Kommentare des Online-Angriffs als Screenshots (</b>",
+      "<b>Bitte laden Sie – wenn verfügbar – beispielhafte Nachrichten, Postings oder Kommentare des Online-Angriffs als Screenshots (</b>",
     text5c2: "<b>mit Zeitstempel*</b>",
     text5c3: "<b>) hier hoch:</b>",
     text5c2link:
@@ -219,7 +215,7 @@ export const stepSeven = {
 export const stepEight = {
   de: {
     text8:
-      "<b>Gab es auch Solidaritätsbekundungen (solidarische Gegenrede)?</b> Bitte auswählen:",
+      "<b>Haben Sie auch Solidaritätsbekundungen (solidarische Gegenrede) wahrgenommen?</b> Bitte auswählen:",
     optionName: "solidarity",
     options: [
       {
@@ -295,6 +291,6 @@ export const stepSummary = {
 export const stepFinal = {
   de: {
     text:
-      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet – in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="https://concordia.at/mitgliedschaft/">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: &lt;Hier anmelden></p>',
+      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet –  in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia. &lt;Hier anmelden></p><p><strong><span style="text-decoration:underline;">Die ZARA Beratungsstelle #GegenHassimNetz</span> bietet kostenlose und wenn gewünscht anonyme (Rechts-)Beratung bei Hass im Netz an.</strong> </p><p>Nehmen Sie gerne unverbindlich mit uns Kontakt auf: <a href="https://zara.or.at/de/beratung">https://zara.or.at/de/beratung</a> </p><p>oder wenden Sie sich persönlich an ZARA: 01/929 13 99-0 </p>',
   },
 }

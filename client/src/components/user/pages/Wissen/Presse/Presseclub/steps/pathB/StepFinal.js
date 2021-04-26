@@ -12,6 +12,7 @@ class StepFinal extends Component {
     msgValue:
       this.props.report.newReport &&
       this.props.report.newReport.stepA11 &&
+      this.props.report.newReport &&
       this.props.report.newReport.stepA11.msgValue,
   }
 

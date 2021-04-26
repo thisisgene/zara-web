@@ -5,12 +5,14 @@ import {
   RESET_REPORT,
   REPORT_FAIL,
   CLEAR_REPORT,
+  CLEAR_NEW_REPORT,
   UPDATE_REPORT,
   STORE_REPORT_DATA,
 } from "../actions/types"
 
 const initialState = {
   reports: null,
+  newReport: null,
 }
 
 export default function (state = initialState, action) {
@@ -49,6 +51,11 @@ export default function (state = initialState, action) {
         ...state,
         report: null,
       }
+    case CLEAR_NEW_REPORT:
+      return {
+        ...state,
+        newReport: null,
+      }
     case UPDATE_REPORT:
       return {
         ...state,
@@ -58,7 +65,7 @@ export default function (state = initialState, action) {
     case STORE_REPORT_DATA:
       return {
         ...state,
-        [action.payload.step]: action.payload.data,
+        newReport: {...state.newReport, [action.payload.step]: action.payload.data},
       }
     default:
       return state

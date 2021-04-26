@@ -10,7 +10,7 @@ ol.progtrckr li:last-child {
 }
 
 ol.progtrckr span {
-  /* display: none */
+  /* display: none; */
 }
 
 ol.progtrckr li {
@@ -65,7 +65,7 @@ ol.progtrckr li.progtrckr-done {
 }
 
 ol.progtrckr li:after {
-  content: '\00a0\00a0';
+  content: "\00a0\00a0";
 }
 
 ol.progtrckr li:before {
@@ -73,7 +73,7 @@ ol.progtrckr li:before {
   bottom: calc(-4.5rem + 7px);
   float: left;
   left: calc(50% - 9px);
-  content: '';
+  content: "";
   width: 18px;
   height: 18px;
 

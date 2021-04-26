@@ -5,6 +5,8 @@ import {
   SEND_REPORT,
   RESET_REPORT,
   REPORT_FAIL,
+  CLEAR_REPORT,
+  CLEAR_NEW_REPORT,
   UPDATE_REPORT,
   STORE_REPORT_DATA,
 } from "./types"
@@ -46,10 +48,16 @@ export const resetReport = () => (dispatch) => {
     type: RESET_REPORT,
   })
 }
+export const clearNewReport = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_NEW_REPORT,
+  })
+}
 
 // Presseclub Report
 export const storeReportData = (reportData, step) => (dispatch) => {
-  console.log("report action", reportData)
+  
+
   dispatch({
     type: STORE_REPORT_DATA,
     payload: { data: reportData, step: step },
