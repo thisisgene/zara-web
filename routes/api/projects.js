@@ -24,7 +24,7 @@ const Bulletin = require("../../models/Bulletin")
 const { TrainingTeam, Training } = require("../../models/Training")
 
 const Report = require("../../models/Report")
-const PresseclubReport = require("../../models/PresseclubReport")
+const Presseclubreport = require("../../models/Presseclubreport")
 
 // Load input validation
 const validateProjectInput = require("../../validation/project")
@@ -181,7 +181,7 @@ router.get(
   "/reports/presseclub",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    PresseclubReport.find()
+    Presseclubreport.find()
       .sort("-date")
       .select("_id date archived")
       .exec()
@@ -256,7 +256,7 @@ router.post("/report/presseclub/send", (req, res) => {
   const report = req.body.newReport
   const date = new Date()
   console.log("body: ", report)
-  const newReport = new PresseclubReport({
+  const newReport = new Presseclubreport({
     category: report.basics && report.basics.category,
     perspective: report.basics && report.basics.perspective,
     directReaction: report.stepA1 && report.stepA1.directReaction === "yes",
@@ -449,7 +449,7 @@ router.post("/report/presseclub/images", async (req, res) => {
     const newImage = {
       originalName: imgName,
     }
-    PresseclubReport.findOneAndUpdate(
+    Presseclubreport.findOneAndUpdate(
       { _id: body.id },
       { $push: { images: newImage } },
       { safe: true, new: true }

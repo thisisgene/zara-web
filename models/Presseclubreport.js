@@ -107,7 +107,7 @@ const ReportSchema = new Schema({
   },
 })
 
-module.exports = PresseclubReport = mongoose.model(
+module.exports = Presseclubreport = mongoose.model(
   "presseclubreports",
   ReportSchema
 )
