@@ -209,3 +209,92 @@ export const stepSix = {
     ],
   },
 }
+export const stepSeven = {
+  de: {
+    text7:
+      "<b>Welche Überlegungen oder Konsequenzen hat der Online-Angriff bei Ihnen ausgelöst?</b><br />Nennen Sie hier konkrete Überlegungen oder Konsequenzen (z.B. Thema gemieden, Jobwechsel überlegt, Social Media eingeschränkt):",
+  },
+}
+
+export const stepEight = {
+  de: {
+    text8:
+      "<b>Gab es auch Solidaritätsbekundungen (solidarische Gegenrede)?</b> Bitte auswählen:",
+    optionName: "solidarity",
+    options: [
+      {
+        text: "<b>Nein</b> keine.",
+        value: "no",
+      },
+      {
+        text: "<b>Ja</b>, aber sehr wenige.",
+        value: "few",
+      },
+      {
+        text: "<b>Ja</b>, einige.",
+        value: "more",
+      },
+      {
+        text: "<b>Ja</b>, viele.",
+        value: "most",
+      },
+    ],
+  },
+}
+export const stepNine = {
+  de: {
+    text9:
+      "<b>Welchem Geschlecht ordnen Sie sich zu?</b> Bitte Zutreffendes anklicken:",
+    optionName: "gender",
+    options: [
+      {
+        text: "Weiblich",
+        value: "female",
+      },
+      {
+        text: "Männlich",
+        value: "male",
+      },
+      {
+        text: "Transident",
+        value: "trans",
+      },
+      {
+        text: "Intersexuell",
+        value: "inter",
+      },
+      {
+        text: "*",
+        value: "other",
+      },
+    ],
+  },
+}
+
+export const stepTen = {
+  de: {
+    text10: "<b>Für welches Medium sind Sie journalistisch tätig?</b>",
+  },
+}
+export const stepEleven = {
+  de: {
+    text11:
+      "<b>Was soll zum Thema Online-Angriffe auf Journalist*innen noch gemacht werden?</b><br />Bitte notieren Sie hier konkrete Vorschläge.",
+  },
+}
+export const stepTwelve = {
+  de: {
+    text12: "<b>Hier ist Raum für weitere Beobachtungen:</b>",
+  },
+}
+export const stepSummary = {
+  de: {
+    text: "<b>Zusammenfassung</b>",
+  },
+}
+export const stepFinal = {
+  de: {
+    text:
+      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet – in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="https://concordia.at/mitgliedschaft/">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: &lt;Hier anmelden></p>',
+  },
+}
