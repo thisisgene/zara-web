@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import Dropzone from 'react-dropzone'
+import React, { Component } from "react"
+import Dropzone from "react-dropzone"
 
-import { stepThree } from './step_data'
+import { stepThree } from "./step_data"
 
-import commonStyles from '../../../common/Common.module.sass'
-import styles from '../MultiStepForm.module.sass'
-import validation from 'react-validation-mixin'
-import strategy from 'joi-validation-strategy'
-import Joi from 'joi'
+import commonStyles from "../../../common/Common.module.sass"
+import styles from "../MultiStepForm.module.sass"
+import validation from "react-validation-mixin"
+import strategy from "joi-validation-strategy"
+import Joi from "joi"
 
 class Step3 extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Step3 extends Component {
 
     this.state = {
       files: props.getStore().files,
-      links: props.getStore().links
+      links: props.getStore().links,
     }
     this._validateOnDemand = true // this flag enables onBlur validation as user fills forms
 
@@ -29,7 +29,7 @@ class Step3 extends Component {
       // only update store of something changed
       this.props.updateStore({
         ...userInput,
-        savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+        savedToCloud: false, // use this to notify step4 that some changes took place and prompt the user to save again
       }) // Update store here (this is just an example, in reality you will do it via redux or flux)
     }
 
@@ -39,30 +39,30 @@ class Step3 extends Component {
   }
   _grabUserInput() {
     return {
-      links: this.refs.links.value
+      links: this.refs.links.value,
     }
   }
 
-  onDrop = files => {
+  onDrop = (files) => {
     let fileCount = 10 - this.state.files.length
-    files.map(file => {
+    files.map((file) => {
       Object.assign(file, {
-        preview: URL.createObjectURL(file)
+        preview: URL.createObjectURL(file),
       })
       if (fileCount > 0) {
         this.setState(
-          state => ({
-            files: [...state.files, file]
+          (state) => ({
+            files: [...state.files, file],
           }),
           () => {
             this.props.updateStore({
               files: this.state.files,
-              savedToCloud: true // use this to notify step4 that some changes took place and prompt the user to save again
+              savedToCloud: true, // use this to notify step4 that some changes took place and prompt the user to save again
             })
           }
         )
         fileCount--
-      } else return 'Maximal 10 Dateien'
+      } else return "Maximal 10 Dateien"
     })
 
     // if (this.props.getStore().files !== files) {
@@ -76,9 +76,9 @@ class Step3 extends Component {
     // }
   }
 
-  onCancel() {
+  onCancel = () => {
     this.setState({
-      files: []
+      files: [],
     })
   }
 
@@ -91,7 +91,7 @@ class Step3 extends Component {
       this.setState({ files: array })
       this.props.updateStore({
         files: array,
-        savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
+        savedToCloud: false, // use this to notify step4 that some changes took place and prompt the user to save again
       })
     }
   }
@@ -100,18 +100,18 @@ class Step3 extends Component {
     const errors = stepThree[lang].errorText
     const { files } = this.state
     const maxSize = 10485760
-    const thumbs = files.map(file => (
+    const thumbs = files.map((file) => (
       <div key={file.name}>
-        <div className={commonStyles['thumb']}>
-          <div className={commonStyles['thumbInner']}>
+        <div className={commonStyles["thumb"]}>
+          <div className={commonStyles["thumbInner"]}>
             <img
               src={file.preview}
-              className={commonStyles['img']}
+              className={commonStyles["img"]}
               alt={`preview ${file.name}`}
             />
           </div>
           <button
-            className={commonStyles['delete-button']}
+            className={commonStyles["delete-button"]}
             onClick={this.removeFile.bind(this, file)}
           >
             x
@@ -121,14 +121,12 @@ class Step3 extends Component {
       </div>
     ))
     return (
-      <div className={styles['step']}>
+      <div className={styles["step"]}>
         <form id="Form" className="form-horizontal">
-          <h1>
-            {stepThree[lang].title}
-          </h1>
-          <div className={styles['dropzone']}>
+          <h1>{stepThree[lang].title}</h1>
+          <div className={styles["dropzone"]}>
             <Dropzone
-              className={styles['dropzone-inner']}
+              className={styles["dropzone-inner"]}
               accept="image/*"
               minSize={0}
               maxSize={maxSize}
@@ -140,7 +138,7 @@ class Step3 extends Component {
                 isDragAccept,
                 isDragReject,
                 acceptedFiles,
-                rejectedFiles
+                rejectedFiles,
               }) => {
                 const isFileTooLarge =
                   rejectedFiles.length > 0 && rejectedFiles[0].size > maxSize
@@ -151,8 +149,7 @@ class Step3 extends Component {
                   return `${errors.fileTooLarge}`
                 }
                 if (acceptedFiles.length || rejectedFiles.length) {
-                  return `${errors.fileAccepted}{' '}${acceptedFiles.length},{' '}${errors.fileRejected}{' '}${rejectedFiles.length
-                    }`
+                  return `${errors.fileAccepted}{' '}${acceptedFiles.length},{' '}${errors.fileRejected}{' '}${rejectedFiles.length}`
                 }
                 if (isDragAccept) {
                   return `${errors.fileFormatAccepted}`
@@ -168,18 +165,16 @@ class Step3 extends Component {
                 )
               }}
             </Dropzone>
-            <aside className={styles['thumbsContainer']}>{thumbs}</aside>
+            <aside className={styles["thumbsContainer"]}>{thumbs}</aside>
           </div>
-          <p>
-            {stepThree[lang].text2}
-          </p>
+          <p>{stepThree[lang].text2}</p>
           <textarea
             ref="links"
             autoComplete="off"
             className="form-control"
             defaultValue={this.state.links}
-          // onBlur={this.validationCheck}
-          // onChange={this.validationCheck}
+            // onBlur={this.validationCheck}
+            // onChange={this.validationCheck}
           />
           <div>{this.state.linksValMsg}</div>
         </form>

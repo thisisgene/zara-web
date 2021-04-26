@@ -158,4 +158,15 @@ export const stepFive = {
     text: "hier",
     url: "",
   },
+  droptext: "Bilder hier hochladen.",
+  errorText: {
+    maxFileCount: "Maximal 10 Dateien",
+    maxFileCountLong:
+      "Limit erreicht! Es dürfen maximal nur 10 Dateien auf einmal gesendet werden.",
+    fileTooLarge: "Datei ist zu groß. Maximal 10 MB.",
+    fileAccepted: "Akzeptiert:",
+    fileRejected: "abgelehnt:",
+    fileFormatAccepted: "Gültiges Format.",
+    fileFormatRejected: "Ungültiges Format. Nur Bilddateien erlaubt.",
+  },
 }
