@@ -94,3 +94,20 @@ export const stepThree = {
     },
   ],
 }
+export const stepFour = {
+  text4a:
+    "<b>Waren eine oder mehrere private Nachrichten ohne Öffentlichkeit (direct messages) Teil des Online-Angriffs?</b> Bitte auswählen:",
+  optionName: "privatemsg",
+  options: [
+    {
+      text: "Ja",
+      value: "yes",
+    },
+    {
+      text: "Nein",
+      value: "no",
+    },
+  ],
+  text4b:
+    "<b>Wenn ja</b>, ist hier Raum für beispielhafte Beschreibung (Anzahl und Inhalt) der privaten Nachrichten:",
+}
