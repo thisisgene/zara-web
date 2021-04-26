@@ -186,7 +186,7 @@ class StepA5 extends Component {
                 return `${errors.fileTooLarge}`
               }
               if (acceptedFiles.length || rejectedFiles.length) {
-                return `${errors.fileAccepted}{' '}${acceptedFiles.length},{' '}${errors.fileRejected}{' '}${rejectedFiles.length}`
+                return `${errors.fileAccepted} ${acceptedFiles.length}, ${errors.fileRejected} ${rejectedFiles.length}`
               }
               if (isDragAccept) {
                 return `${errors.fileFormatAccepted}`
