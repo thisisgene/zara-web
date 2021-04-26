@@ -1,52 +1,41 @@
 import React, { Component } from "react"
-import labelReducer from "../../../../../../../../reducers/labelReducer"
+import { connect } from "react-redux"
+
+import { storeReportData } from "../../../../../../../../actions/reportActions"
 
 import { stepOne } from "./step_data"
 
-export default class StepA1 extends Component {
-  state = {
-    directReaction: this.props.getStore().directReaction,
-    text1a1: this.props.getStore().text1a1,
-    text1a2a: this.props.getStore().text1a2a,
-    text1a2b: this.props.getStore().text1a2b,
-    text1a2c: this.props.getStore().text1a2c,
-    text1b1: this.props.getStore().text1b1,
-    text1b2: this.props.getStore().text1b2,
-  }
+import styles from "../Steps.module.sass"
 
-  componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
-      console.log("UPDATED!")
-      this.setState({
-        directReaction: this.props.getStore().directReaction,
-        text1a1: this.props.getStore().text1a1,
-        text1a2a: this.props.getStore().text1a2a,
-        text1a2b: this.props.getStore().text1a2b,
-        text1a2c: this.props.getStore().text1a2c,
-        text1b1: this.props.getStore().text1b1,
-        text1b2: this.props.getStore().text1b2,
-      })
-    }
+class StepA1 extends Component {
+  state = {
+    directReaction:
+      this.props.report.stepA1 && this.props.report.stepA1.directReaction,
+    text1a1: this.props.report.stepA1 && this.props.report.stepA1.text1a1,
+    text1a2a: this.props.report.stepA1 && this.props.report.stepA1.text1a2a,
+    text1a2b: this.props.report.stepA1 && this.props.report.stepA1.text1a2b,
+    text1a2c: this.props.report.stepA1 && this.props.report.stepA1.text1a2c,
+    text1b1: this.props.report.stepA1 && this.props.report.stepA1.text1b1,
+    text1b2: this.props.report.stepA1 && this.props.report.stepA1.text1b2,
   }
 
   onChange = (e) => {
-    console.log("target: ", e.target.value, e.target.name)
-    let userInput = {
-      [e.target.name]: e.target.value,
-    }
-    if (this.props.getStore()[e.target.name] !== e.target.value) {
-      console.log("it is different!")
-      this.props.updateStore({
-        ...userInput,
-        savedToCloud: false,
-      })
+    if (this.state[e.target.name] !== e.target.value) {
+      this.setState(
+        {
+          [e.target.name]: e.target.value,
+        },
+        () => {
+          this.props.storeReportData(this.state, "stepA1")
+        }
+      )
     }
   }
 
   render() {
     const { directReaction } = this.state
     return (
-      <div>
+      <div className={styles["step-container"]}>
         <p dangerouslySetInnerHTML={{ __html: stepOne.text1 }} />
 
         {stepOne.options.map((option) => (
@@ -56,6 +45,7 @@ export default class StepA1 extends Component {
               name={stepOne.optionName}
               id={option.value}
               value={option.value}
+              checked={option.value === this.state.directReaction}
               onChange={this.onChange}
             />
             <label
@@ -116,3 +106,9 @@ export default class StepA1 extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  report: state.report,
+})
+
+export default connect(mapStateToProps, { storeReportData })(StepA1)

@@ -37,3 +37,38 @@ export const stepOne = {
       "<b>Falls vorhanden, bitte URL </em(bzw. Zitation, wenn online nicht verfügbar) <b>hier eintragen:</b>",
   },
 }
+export const stepTwo = {
+  text2:
+    "<b>Wo – auf welcher Social Media Plattform oder über welche Online-Kanäle – hat der Online-Angriff stattgefunden?</b> Mehrfachauswahl möglich:",
+  optionName: "platform",
+  options: [
+    {
+      text: "Facebook",
+      value: "facebook",
+    },
+    {
+      text: "Twitter",
+      value: "twitter",
+    },
+    {
+      text: "Instagram",
+      value: "instagram",
+    },
+    {
+      text: "YouTube",
+      value: "youtube",
+    },
+    {
+      text: "Website, Blog oder Forum mit Kommentarfunktion",
+      value: "website",
+    },
+    {
+      text: "E-Mail",
+      value: "email",
+    },
+    {
+      text: "Anderer Kanal, nämlich:",
+      value: "other",
+    },
+  ],
+}

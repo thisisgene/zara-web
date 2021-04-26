@@ -5,54 +5,60 @@ import {
   RESET_REPORT,
   REPORT_FAIL,
   CLEAR_REPORT,
-  UPDATE_REPORT
-} from '../actions/types'
+  UPDATE_REPORT,
+  STORE_REPORT_DATA,
+} from "../actions/types"
 
 const initialState = {
-  reports: null
+  reports: null,
 }
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case GET_ALL_REPORTS:
       return {
         ...state,
 
-        reports: action.payload
+        reports: action.payload,
       }
     case GET_REPORT_BY_ID:
       return {
         ...state,
-        report: action.payload
+        report: action.payload,
       }
     case SEND_REPORT:
       return {
         ...state,
-        reportSent: true
+        reportSent: true,
       }
     case RESET_REPORT:
       return {
         ...state,
-        reportSent: false
+        reportSent: false,
       }
     case REPORT_FAIL:
       return {
         ...state,
         reportFail: true,
         reportMsgDE:
-          'Abschicken hat nicht geklappt. Bitte versuchen Sie es erneut.',
-        reportMsgEN: 'Something went wrong. Please try again.'
+          "Abschicken hat nicht geklappt. Bitte versuchen Sie es erneut.",
+        reportMsgEN: "Something went wrong. Please try again.",
       }
     case CLEAR_REPORT:
       return {
         ...state,
-        report: null
+        report: null,
       }
     case UPDATE_REPORT:
       return {
         ...state,
         reports: action.payload.reports,
-        report: action.payload.report
+        report: action.payload.report,
+      }
+    case STORE_REPORT_DATA:
+      return {
+        ...state,
+        [action.payload.step]: action.payload.data,
       }
     default:
       return state

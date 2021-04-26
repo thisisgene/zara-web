@@ -1,52 +1,62 @@
-import axios from 'axios'
+import axios from "axios"
 import {
   GET_ALL_REPORTS,
   GET_REPORT_BY_ID,
   SEND_REPORT,
   RESET_REPORT,
   REPORT_FAIL,
-  UPDATE_REPORT
-} from './types'
+  UPDATE_REPORT,
+  STORE_REPORT_DATA,
+} from "./types"
 
-export const getAllReports = () => dispatch => {
-  axios.get('/api/projects/reports').then(res => {
+export const getAllReports = () => (dispatch) => {
+  axios.get("/api/projects/reports").then((res) => {
     dispatch({
       type: GET_ALL_REPORTS,
-      payload: res.data
+      payload: res.data,
     })
   })
 }
 
-export const getReportById = id => dispatch => {
-  axios.get('/api/projects/reports/by_id/' + id).then(res => {
+export const getReportById = (id) => (dispatch) => {
+  axios.get("/api/projects/reports/by_id/" + id).then((res) => {
     dispatch({
       type: GET_REPORT_BY_ID,
-      payload: res.data
+      payload: res.data,
     })
   })
 }
 
-export const sendToArchive = id => dispatch => {
+export const sendToArchive = (id) => (dispatch) => {
   axios
     .get(`/api/projects/report/sendToArchive/${id}`)
-    .then(res => {
+    .then((res) => {
       dispatch({
         type: UPDATE_REPORT,
-        payload: res.data
+        payload: res.data,
       })
     })
-    .catch(res => {
+    .catch((res) => {
       console.log(res.data)
     })
 }
 
-export const resetReport = () => dispatch => {
+export const resetReport = () => (dispatch) => {
   dispatch({
-    type: RESET_REPORT
+    type: RESET_REPORT,
   })
 }
 
-export const sendReport = reportData => dispatch => {
+// Presseclub Report
+export const storeReportData = (reportData, step) => (dispatch) => {
+  console.log("report action", reportData)
+  dispatch({
+    type: STORE_REPORT_DATA,
+    payload: { data: reportData, step: step },
+  })
+}
+
+export const sendReport = (reportData) => (dispatch) => {
   // let formData = new FormData()
   // axios.post('/api/projects/report/send', reportData).then(res => {
   //   const id = res.data.report._id
