@@ -7,6 +7,7 @@ import Step2 from "./Step2"
 import Step3 from "./Step3"
 import Step4 from "./Step4"
 import Step5 from "./Step5"
+import Step6 from "./Step6"
 import StepFinal from "./StepFinal"
 
 class StepPathA extends Component {
@@ -34,6 +35,10 @@ class StepPathA extends Component {
         component: <Step5 lang={lang} />,
       },
       {
+        name: "Step 6",
+        component: <Step6 lang={lang} />,
+      },
+      {
         name: "Step Final",
         component: <StepFinal lang={lang} />,
       },
@@ -42,7 +47,7 @@ class StepPathA extends Component {
       <div>
         <StepZilla
           steps={steps}
-          startAtStep={0}
+          startAtStep={5}
           prevBtnOnLastStep={false}
           nextButtonCls={"next-button"}
           nextButtonText={lang === "de" ? "Weiter" : "Next"}

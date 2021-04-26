@@ -27,16 +27,17 @@ class StepA3 extends Component {
   }
 
   render() {
+    const { lang } = this.props
     const { extent } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepThree.text3 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepThree[lang].text3 }} />
 
-        {stepThree.options.map((option) => (
+        {stepThree[lang].options.map((option) => (
           <div>
             <input
               type="radio"
-              name={stepThree.optionName}
+              name={stepThree[lang].optionName}
               id={option.value}
               value={option.value}
               checked={option.value === extent}

@@ -46,12 +46,13 @@ class StepA2 extends Component {
   }
 
   render() {
+    const { lang } = this.props
     const { directReaction } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepTwo.text2 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepTwo[lang].text2 }} />
 
-        {stepTwo.options.map((option) => (
+        {stepTwo[lang].options.map((option) => (
           <div>
             <input
               type="checkbox"

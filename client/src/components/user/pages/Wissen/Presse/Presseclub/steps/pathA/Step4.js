@@ -29,16 +29,17 @@ class StepA4 extends Component {
   }
 
   render() {
+    const { lang } = this.props
     const { privatemsg } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepFour.text4a }} />
+        <p dangerouslySetInnerHTML={{ __html: stepFour[lang].text4a }} />
 
-        {stepFour.options.map((option) => (
+        {stepFour[lang].options.map((option) => (
           <div>
             <input
               type="radio"
-              name={stepFour.optionName}
+              name={stepFour[lang].optionName}
               id={option.value}
               value={option.value}
               checked={option.value === privatemsg}
@@ -53,7 +54,7 @@ class StepA4 extends Component {
 
         {privatemsg === "yes" && (
           <div>
-            <p dangerouslySetInnerHTML={{ __html: stepFour.text4b }} />
+            <p dangerouslySetInnerHTML={{ __html: stepFour[lang].text4b }} />
             <textarea
               name={"msgValue"}
               value={this.state["msgValue"]}

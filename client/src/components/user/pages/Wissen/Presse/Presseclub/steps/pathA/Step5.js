@@ -1,6 +1,8 @@
 import React, { Component } from "react"
+import { Link } from "react-router-dom"
 import { connect } from "react-redux"
 import Dropzone from "react-dropzone"
+import ReactTooltip from "react-tooltip"
 
 import { storeReportData } from "../../../../../../../../actions/reportActions"
 
@@ -96,7 +98,7 @@ class StepA5 extends Component {
   render() {
     const { lang } = this.props
     const { files } = this.state
-    const errors = stepFive.errorText
+    const errors = stepFive[lang].errorText
     const maxSize = 10485760
     const thumbs = files.map((file) => (
       <div key={file.name}>
@@ -120,9 +122,9 @@ class StepA5 extends Component {
     ))
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepFive.text5a }} />
+        <p dangerouslySetInnerHTML={{ __html: stepFive[lang].text5a }} />
 
-        {stepFive.options.map((option) => (
+        {stepFive[lang].options.map((option) => (
           <div>
             <input
               type="checkbox"
@@ -145,7 +147,7 @@ class StepA5 extends Component {
           onChange={this.onChange}
           disabled={!this.state.other}
         />
-        <p dangerouslySetInnerHTML={{ __html: stepFive.text5b }} />
+        <p dangerouslySetInnerHTML={{ __html: stepFive[lang].text5b }} />
         <input
           type="text"
           name="textarea1"
@@ -167,6 +169,27 @@ class StepA5 extends Component {
           onChange={this.onChange}
         />
         <div className={styles["dropzone"]}>
+          <p>
+            <span dangerouslySetInnerHTML={{ __html: stepFive[lang].text5c }} />
+            <span
+              className={styles["tooltip"]}
+              data-tip
+              data-for="screenshot"
+              dangerouslySetInnerHTML={{ __html: stepFive[lang].text5c2 }}
+            />
+            <span
+              dangerouslySetInnerHTML={{ __html: stepFive[lang].text5c3 }}
+            />
+          </p>
+          <ReactTooltip
+            id="screenshot"
+            place="bottom"
+            type="dark"
+            delayHide={1000}
+            effect="solid"
+          >
+            <span>{stepFive[lang].text5c2link}</span>
+          </ReactTooltip>
           <Dropzone
             className={styles["dropzone-inner"]}
             accept="image/*"
@@ -197,12 +220,16 @@ class StepA5 extends Component {
               return (
                 <p>
                   <i className="dropzone-image fa fa-image" />
-                  {stepFive.droptext}
+                  {stepFive[lang].droptext}
                 </p>
               )
             }}
           </Dropzone>
           <aside className={styles["thumbsContainer"]}>{thumbs}</aside>
+          <p>
+            <span dangerouslySetInnerHTML={{ __html: stepFive[lang].text5d }} />{" "}
+            <Link to={stepFive[lang].link.url}>{stepFive[lang].link.text}</Link>
+          </p>
         </div>
       </div>
     )

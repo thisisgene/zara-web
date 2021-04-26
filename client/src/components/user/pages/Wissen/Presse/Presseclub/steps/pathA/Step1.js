@@ -33,16 +33,17 @@ class StepA1 extends Component {
   }
 
   render() {
+    const { lang } = this.props
     const { directReaction } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepOne.text1 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepOne[lang].text1 }} />
 
-        {stepOne.options.map((option) => (
+        {stepOne[lang].options.map((option) => (
           <div>
             <input
               type="radio"
-              name={stepOne.optionName}
+              name={stepOne[lang].optionName}
               id={option.value}
               value={option.value}
               checked={option.value === this.state.directReaction}
@@ -56,48 +57,56 @@ class StepA1 extends Component {
         ))}
         {directReaction === "yes" && (
           <div>
-            <p dangerouslySetInnerHTML={{ __html: stepOne.text1A1.text }} />
+            <p
+              dangerouslySetInnerHTML={{ __html: stepOne[lang].text1A1.text }}
+            />
             <input
               type="text"
-              name={stepOne.text1A1.name}
-              value={this.state[stepOne.text1A1.name]}
+              name={stepOne[lang].text1A1.name}
+              value={this.state[stepOne[lang].text1A1.name]}
               onChange={this.onChange}
             />
 
-            <p dangerouslySetInnerHTML={{ __html: stepOne.text1A2.text }} />
+            <p
+              dangerouslySetInnerHTML={{ __html: stepOne[lang].text1A2.text }}
+            />
             <input
               type="text"
-              name={stepOne.text1A2.name}
-              value={this.state[stepOne.text1A2.name]}
+              name={stepOne[lang].text1A2.name}
+              value={this.state[stepOne[lang].text1A2.name]}
               onChange={this.onChange}
             />
             <input
               type="text"
-              name={stepOne.text1A2.name2}
-              value={this.state[stepOne.text1A2.name2]}
+              name={stepOne[lang].text1A2.name2}
+              value={this.state[stepOne[lang].text1A2.name2]}
               onChange={this.onChange}
             />
             <input
               type="text"
-              name={stepOne.text1A2.name3}
-              value={this.state[stepOne.text1A2.name3]}
+              name={stepOne[lang].text1A2.name3}
+              value={this.state[stepOne[lang].text1A2.name3]}
               onChange={this.onChange}
             />
           </div>
         )}
         {directReaction === "no" && (
           <div>
-            <p dangerouslySetInnerHTML={{ __html: stepOne.text1B1.text }} />
+            <p
+              dangerouslySetInnerHTML={{ __html: stepOne[lang].text1B1.text }}
+            />
             <textarea
-              name={stepOne.text1B1.name}
-              value={this.state[stepOne.text1B1.name]}
+              name={stepOne[lang].text1B1.name}
+              value={this.state[stepOne[lang].text1B1.name]}
               onChange={this.onChange}
             />
-            <p dangerouslySetInnerHTML={{ __html: stepOne.text1B2.text }} />
+            <p
+              dangerouslySetInnerHTML={{ __html: stepOne[lang].text1B2.text }}
+            />
             <input
               type="text"
-              name={stepOne.text1B2.name}
-              value={this.state[stepOne.text1B2.name]}
+              name={stepOne[lang].text1B2.name}
+              value={this.state[stepOne[lang].text1B2.name]}
               onChange={this.onChange}
             />
           </div>
