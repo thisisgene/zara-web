@@ -127,13 +127,6 @@ class StepA1 extends Component {
     return errMsgs
   }
 
-  // _grabUserInput() {
-  //   return {
-  //     gender: this.refs.gender.value,
-  //     email: this.refs.email.value,
-  //   }
-  // }
-
   render() {
     const { lang } = this.props
     const { directReaction } = this.state
