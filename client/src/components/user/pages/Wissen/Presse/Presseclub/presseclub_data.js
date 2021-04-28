@@ -1,5 +1,5 @@
 export const heroData = {
-  image: "publikationen.png",
+  image: "concordia_zara.png",
   imageSide: "left",
   de: {
     title: "Formular zur Dokumentation von Angriffen auf Journalist*innen",
