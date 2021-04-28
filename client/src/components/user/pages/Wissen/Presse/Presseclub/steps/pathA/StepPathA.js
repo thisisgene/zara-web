@@ -33,40 +33,113 @@ class StepPathA extends Component {
         ),
       },
       {
-        component: <Step2 lang={lang} />,
+        component: (
+          <Step2
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step3 lang={lang} />,
+        component: (
+          <Step3
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step4 lang={lang} />,
+        component: (
+          <Step4
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step5 lang={lang} />,
+        component: (
+          <Step5
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step6 lang={lang} />,
+        component: (
+          <Step6
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step7 lang={lang} />,
+        component: (
+          <Step7
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step8 lang={lang} />,
+        component: (
+          <Step8
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step9 lang={lang} />,
+        component: (
+          <Step9
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step10 lang={lang} />,
+        component: (
+          <Step10
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step11 lang={lang} />,
+        component: (
+          <Step11
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <Step12 lang={lang} />,
+        component: (
+          <Step12
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
       },
       {
-        component: <StepSummary lang={lang} report={this.props.report} />,
+        component: (
+          <StepSummary
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+            report={this.props.report}
+          />
+        ),
       },
       {
         component: <StepFinal lang={lang} />,
@@ -76,7 +149,7 @@ class StepPathA extends Component {
       <div>
         <StepZilla
           steps={steps}
-          startAtStep={0}
+          startAtStep={1}
           prevBtnOnLastStep={false}
           hocValidationAppliedTo={-1}
           nextButtonCls={"next-button"}

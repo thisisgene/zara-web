@@ -59,14 +59,6 @@ class StepA1 extends Component {
     }
   }
 
-  // validateData = (data) => {
-  //   return {
-  //     optionVal: data.directReaction !== null,
-  //     // genderVal: (data.gender != 0), // required: anything besides N/A
-  //     // emailVal: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(data.email), // required: regex w3c uses in html5
-  //   }
-  // }
-
   isValidated() {
     const userInput = this.state // grab user entered vals
     const validateNewInput = this._validateData(userInput) // run the new input against the validator
