@@ -8,10 +8,6 @@ class StepA1 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      text2:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA1 &&
-        this.props.report.newReport.stepA1.text2,
       verbal:
         this.props.report.newReport &&
         this.props.report.newReport.stepA1 &&
@@ -130,7 +126,7 @@ class StepA1 extends Component {
     const { directReaction } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepOne[lang].text2 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepOne[lang].text }} />
 
         {stepOne[lang].options.map((option) => (
           <div className={styles["radio-wrapper"]}>

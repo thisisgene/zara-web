@@ -73,86 +73,12 @@ class StepSummary extends Component {
               <>
                 <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepOne[lang].text1,
+                    __html: stepData.stepOne[lang].text,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      report.stepA1 && report.stepA1.directReaction === "yes"
-                        ? stepData.stepOne[lang].options[0].text
-                        : stepData.stepOne[lang].options[1].text,
-                  }}
-                />
-                {report.stepA1.directReaction === "yes" ? (
-                  <>
-                    <h3
-                      dangerouslySetInnerHTML={{
-                        __html: stepData.stepOne[lang].text1A1.text,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a1,
-                      }}
-                    />
-                    <h3
-                      dangerouslySetInnerHTML={{
-                        __html: stepData.stepOne[lang].text1A2.text,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a2a,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a2b,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a2c,
-                      }}
-                    />
-                  </>
-                ) : (
-                  <>
-                    <h3
-                      dangerouslySetInnerHTML={{
-                        __html: stepData.stepOne[lang].text1B1.text,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1b1,
-                      }}
-                    />
-                    <h3
-                      dangerouslySetInnerHTML={{
-                        __html: stepData.stepOne[lang].text1B2.text,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1b2,
-                      }}
-                    />
-                  </>
-                )}
-              </>
-            )}
-            {Object.keys(report.stepA2).length !== 0 && (
-              <>
-                <h3
-                  dangerouslySetInnerHTML={{
-                    __html: stepData.stepTwo[lang].text2,
-                  }}
-                />
-                {stepData.stepTwo[lang].options.map(
+                {stepData.stepOne[lang].options.map(
                   (option) =>
-                    report.stepA2[option.value] &&
+                    report.stepA1[option.value] &&
                     (option.value !== "other" ? (
                       <p dangerouslySetInnerHTML={{ __html: option.text }} />
                     ) : (
@@ -162,7 +88,7 @@ class StepSummary extends Component {
                         />{" "}
                         <span
                           dangerouslySetInnerHTML={{
-                            __html: report.stepA2.otherValue,
+                            __html: report.stepA1.otherValue,
                           }}
                         />
                       </p>
@@ -170,19 +96,32 @@ class StepSummary extends Component {
                 )}
               </>
             )}
-            {Object.keys(report.stepA3).length !== 0 && (
+            {Object.keys(report.stepA2).length !== 0 && (
               <>
                 <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepThree[lang].text3,
+                    __html: stepData.stepTwo[lang].text,
                   }}
                 />
 
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepThree[lang].options.find(
-                      (opt) => opt.value === report.stepA3.extent
-                    ).text,
+                    __html: report.stepA2.msgValue,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA3).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepThree[lang].text,
+                  }}
+                />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA3.msgValue,
                   }}
                 />
               </>
@@ -191,100 +130,42 @@ class StepSummary extends Component {
               <>
                 <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepFour[lang].text4a,
+                    __html: stepData.stepFour[lang].text,
                   }}
                 />
 
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepFour[lang].options.find(
-                      (opt) => opt.value === report.stepA4.privatemsg
-                    ).text,
+                    __html: report.stepA4.msgValue,
                   }}
                 />
-                {report.stepA4.privatemsg === "yes" && (
-                  <>
-                    {" "}
-                    <h3
-                      dangerouslySetInnerHTML={{
-                        __html: stepData.stepFour[lang].text4b,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA4.msgValue,
-                      }}
-                    />
-                  </>
-                )}
               </>
             )}
             {Object.keys(report.stepA5).length !== 0 && (
               <>
                 <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepFive[lang].text5a,
+                    __html: stepData.stepFive[lang].text,
                   }}
                 />
-                {stepData.stepFive[lang].options.map(
-                  (option) =>
-                    report.stepA5.typeOfHate &&
-                    report.stepA5.typeOfHate[option.value] &&
-                    (option.value !== "other" ? (
-                      <p dangerouslySetInnerHTML={{ __html: option.text }} />
-                    ) : (
-                      <p>
-                        <span
-                          dangerouslySetInnerHTML={{ __html: option.text }}
-                        />
-                        {": "}
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: report.stepA5.otherValue,
-                          }}
-                        />
-                      </p>
-                    ))
-                )}
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA5.msgValue,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA6).length !== 0 && (
+              <>
                 <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepFive[lang].text5b,
+                    __html: stepData.stepSix[lang].text,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA5.textarea1,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA5.textarea2,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA5.textarea3,
-                  }}
-                />
-                <h3>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: stepData.stepFive[lang].text5c,
-                    }}
-                  />
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: stepData.stepFive[lang].text5c2,
-                    }}
-                  />
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: stepData.stepFive[lang].text5c3,
-                    }}
-                  />
-                </h3>
-                {report.stepA5.files &&
-                  report.stepA5.files.map((file) => (
+
+                {report.stepA6.files &&
+                  report.stepA6.files.map((file) => (
                     <p>
                       <img src={file.preview} alt={`preview ${file.name}`} />{" "}
                       {file.name}
@@ -292,33 +173,80 @@ class StepSummary extends Component {
                   ))}
               </>
             )}
-            {Object.keys(report.stepA6).length !== 0 && (
+            {Object.keys(report.stepA7).length !== 0 && (
               <>
                 <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepSix[lang].text6,
+                    __html: stepData.stepSeven[lang].text,
                   }}
                 />
 
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepSix[lang].options.find(
-                      (opt) => opt.value === report.stepA6.jurid
+                    __html: stepData.stepSeven[lang].options.find(
+                      (opt) => opt.value === report.stepA7.racism
                     ).text,
                   }}
                 />
-                {report.stepA6.jurid === "other" && (
+                {report.stepA7.racism === "yes" && (
                   <>
                     {" "}
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: stepData.stepSeven[lang].textb,
+                      }}
+                    />
                     <p
                       dangerouslySetInnerHTML={{
-                        __html: report.stepA6.msgValue,
+                        __html: report.stepA7.msgValue,
                       }}
                     />
                   </>
                 )}
               </>
             )}
+            {Object.keys(report.stepA8).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepEight[lang].text,
+                  }}
+                />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepEight[lang].options.find(
+                      (opt) => opt.value === report.stepA8.witness
+                    ).text,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA9).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepNine[lang].text,
+                  }}
+                />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepNine[lang].options.find(
+                      (opt) => opt.value === report.stepA9.jurid
+                    ).text,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA9.msgValue,
+                  }}
+                />
+              </>
+            )}
+            {/* 
+            
+            
             {Object.keys(report.stepA7).length !== 0 && (
               <>
                 <h3
@@ -426,7 +354,7 @@ class StepSummary extends Component {
                   }}
                 />
               </>
-            )}
+            )} */}
           </>
         )}
       </div>

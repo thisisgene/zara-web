@@ -91,18 +91,6 @@ class StepA9 extends Component {
           [e.target.name]: e.target.value,
         },
         () => {
-          this.props.storeReportData(this.state, "stepA6")
-        }
-      )
-    }
-  }
-  onChange = (e) => {
-    if (this.state[e.target.name] !== e.target.value) {
-      this.setState(
-        {
-          [e.target.name]: e.target.value,
-        },
-        () => {
           this.props.storeReportData(this.state, "stepA9")
         }
       )

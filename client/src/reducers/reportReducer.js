@@ -26,6 +26,8 @@ const initialState = {
     stepA10: {},
     stepA11: {},
     stepA12: {},
+    stepA13: {},
+    stepA14: {},
   },
 }
 

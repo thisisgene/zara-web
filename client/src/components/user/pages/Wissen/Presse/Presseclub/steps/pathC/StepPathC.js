@@ -19,6 +19,8 @@ import Step9 from "./Step9"
 import Step10 from "./Step10"
 import Step11 from "./Step11"
 import Step12 from "./Step12"
+import Step13 from "./Step13"
+import Step14 from "./Step14"
 import StepSummary from "./StepSummary"
 import StepFinal from "./StepFinal"
 
@@ -119,42 +121,60 @@ class StepPathA extends Component {
           />
         ),
       },
-      // {
-      //   component: (
-      //     <Step10
-      //       report={this.props.report}
-      //       storeReportData={this.props.storeReportData}
-      //       lang={lang}
-      //     />
-      //   ),
-      // },
-      // {
-      //   component: (
-      //     <Step11
-      //       report={this.props.report}
-      //       storeReportData={this.props.storeReportData}
-      //       lang={lang}
-      //     />
-      //   ),
-      // },
-      // {
-      //   component: (
-      //     <Step12
-      //       report={this.props.report}
-      //       storeReportData={this.props.storeReportData}
-      //       lang={lang}
-      //     />
-      //   ),
-      // },
-      // {
-      //   component: (
-      //     <StepSummary
-      //       report={this.props.report}
-      //       storeReportData={this.props.storeReportData}
-      //       lang={lang}
-      //     />
-      //   ),
-      // },
+      {
+        component: (
+          <Step10
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
+      },
+      {
+        component: (
+          <Step11
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
+      },
+      {
+        component: (
+          <Step12
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
+      },
+      {
+        component: (
+          <Step13
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
+      },
+      {
+        component: (
+          <Step14
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
+      },
+      {
+        component: (
+          <StepSummary
+            report={this.props.report}
+            storeReportData={this.props.storeReportData}
+            lang={lang}
+          />
+        ),
+      },
       {
         component: (
           <StepFinal clearNewReport={this.props.clearNewReport} lang={lang} />
@@ -167,7 +187,6 @@ class StepPathA extends Component {
           steps={steps}
           startAtStep={5}
           prevBtnOnLastStep={false}
-          hocValidationAppliedTo={-1}
           nextButtonCls={"next-button"}
           nextButtonText={lang === "de" ? "Weiter" : "Next"}
           backButtonText={lang === "de" ? "Zurück" : "Back"}

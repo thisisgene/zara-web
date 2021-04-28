@@ -1,6 +1,6 @@
 export const stepOne = {
   de: {
-    text2:
+    text:
       "<b>Auf welche Art und Weise wurden Sie im öffentlichen Raum (z.B. auf einer Demonstration) angegriffen?</b> Mehrfachauswahl möglich:",
     optionName: "platform",
     options: [

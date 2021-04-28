@@ -1,7 +1,4 @@
 import React, { Component } from "react"
-import { connect } from "react-redux"
-
-import { storeReportData } from "../../../../../../../../actions/reportActions"
 
 import { stepTen } from "./step_data"
 
@@ -13,6 +10,14 @@ class StepA10 extends Component {
       this.props.report.newReport &&
       this.props.report.newReport.stepA10 &&
       this.props.report.newReport.stepA10.msgValue,
+    msgValue2:
+      this.props.report.newReport &&
+      this.props.report.newReport.stepA10 &&
+      this.props.report.newReport.stepA10.msgValue2,
+    msgValue3:
+      this.props.report.newReport &&
+      this.props.report.newReport.stepA10 &&
+      this.props.report.newReport.stepA10.msgValue3,
   }
 
   onChange = (e) => {
@@ -32,11 +37,26 @@ class StepA10 extends Component {
     const { lang } = this.props
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepTen[lang].text10 }} />
-        <br />
-        <textarea
+        <p dangerouslySetInnerHTML={{ __html: stepTen[lang].text }} />
+
+        <input
+          type="text"
           name="msgValue"
           value={this.state.msgValue}
+          onChange={this.onChange}
+        />
+        <br />
+        <input
+          type="text"
+          name="msgValue2"
+          value={this.state.msgValue2}
+          onChange={this.onChange}
+        />
+        <br />
+        <input
+          type="text"
+          name="msgValue3"
+          value={this.state.msgValue3}
           onChange={this.onChange}
         />
       </div>
@@ -44,8 +64,4 @@ class StepA10 extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  report: state.report,
-})
-
-export default connect(mapStateToProps, { storeReportData })(StepA10)
+export default StepA10
