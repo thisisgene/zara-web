@@ -95,7 +95,7 @@ class StepA8 extends Component {
         <p dangerouslySetInnerHTML={{ __html: stepEight[lang].text8 }} />
 
         {stepEight[lang].options.map((option) => (
-          <div>
+          <div className={styles["radio-wrapper"]}>
             <input
               type="radio"
               name={stepEight[lang].optionName}

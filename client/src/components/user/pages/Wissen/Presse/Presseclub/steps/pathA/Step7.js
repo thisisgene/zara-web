@@ -43,19 +43,22 @@ class StepA7 extends Component {
       <div className={styles["step-container"]}>
         <p dangerouslySetInnerHTML={{ __html: stepSeven[lang].text7 }} />
 
-        <textarea
+        <input
+          type="text"
           name="msgValue"
           value={this.state.msgValue}
           onChange={this.onChange}
         />
         <br />
-        <textarea
+        <input
+          type="text"
           name="msgValue2"
           value={this.state.msgValue2}
           onChange={this.onChange}
         />
         <br />
-        <textarea
+        <input
+          type="text"
           name="msgValue3"
           value={this.state.msgValue3}
           onChange={this.onChange}

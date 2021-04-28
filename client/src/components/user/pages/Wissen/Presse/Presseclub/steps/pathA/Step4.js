@@ -82,8 +82,8 @@ class StepA4 extends Component {
     return {
       optionVal: data.privatemsg !== undefined,
       msgValueVal:
-        !data.privatemsg ||
-        (data.privatemsg &&
+        data.privatemsg === "no" ||
+        (data.privatemsg === "yes" &&
           data.msgValue !== undefined &&
           data.msgValue !== ""),
     }
@@ -105,7 +105,7 @@ class StepA4 extends Component {
         <p dangerouslySetInnerHTML={{ __html: stepFour[lang].text4a }} />
 
         {stepFour[lang].options.map((option) => (
-          <div>
+          <div className={styles["radio-wrapper"]}>
             <input
               type="radio"
               name={stepFour[lang].optionName}

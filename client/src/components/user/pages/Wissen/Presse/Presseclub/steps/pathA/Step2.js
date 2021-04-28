@@ -151,7 +151,7 @@ class StepA2 extends Component {
         <p dangerouslySetInnerHTML={{ __html: stepTwo[lang].text2 }} />
 
         {stepTwo[lang].options.map((option) => (
-          <div>
+          <div className={styles["radio-wrapper"]}>
             <input
               type="checkbox"
               name={option.value}

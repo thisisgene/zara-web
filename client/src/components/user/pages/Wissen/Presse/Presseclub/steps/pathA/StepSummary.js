@@ -19,7 +19,6 @@ class StepSummary extends Component {
   }
   isValidated() {
     const { report } = this.props
-    console.log("report: ", report)
     return new Promise(async (resolve, reject) => {
       this.setState({
         saving: true,
@@ -70,63 +69,81 @@ class StepSummary extends Component {
 
         {report && (
           <>
-            <h3
-              dangerouslySetInnerHTML={{ __html: stepData.stepOne[lang].text1 }}
-            />
-            <p
-              dangerouslySetInnerHTML={{
-                __html:
-                  report.stepA1 && report.stepA1.directReaction === "yes"
-                    ? stepData.stepOne[lang].options[0].text
-                    : stepData.stepOne[lang].options[1].text,
-              }}
-            />
-            {report.stepA1 && report.stepA1.directReaction === "yes" ? (
+            {Object.keys(report.stepA1).length !== 0 && (
               <>
                 <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepOne[lang].text1A1.text,
+                    __html: stepData.stepOne[lang].text1,
                   }}
                 />
                 <p
-                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a1 }}
-                />
-                <h3
                   dangerouslySetInnerHTML={{
-                    __html: stepData.stepOne[lang].text1A2.text,
+                    __html:
+                      report.stepA1 && report.stepA1.directReaction === "yes"
+                        ? stepData.stepOne[lang].options[0].text
+                        : stepData.stepOne[lang].options[1].text,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a2a }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a2b }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a2c }}
-                />
-              </>
-            ) : (
-              <>
-                <h3
-                  dangerouslySetInnerHTML={{
-                    __html: stepData.stepOne[lang].text1B1.text,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1b1 }}
-                />
-                <h3
-                  dangerouslySetInnerHTML={{
-                    __html: stepData.stepOne[lang].text1B2.text,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1b2 }}
-                />
+                {report.stepA1.directReaction === "yes" ? (
+                  <>
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: stepData.stepOne[lang].text1A1.text,
+                      }}
+                    />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA1.text1a1,
+                      }}
+                    />
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: stepData.stepOne[lang].text1A2.text,
+                      }}
+                    />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA1.text1a2a,
+                      }}
+                    />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA1.text1a2b,
+                      }}
+                    />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA1.text1a2c,
+                      }}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: stepData.stepOne[lang].text1B1.text,
+                      }}
+                    />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA1.text1b1,
+                      }}
+                    />
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: stepData.stepOne[lang].text1B2.text,
+                      }}
+                    />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA1.text1b2,
+                      }}
+                    />
+                  </>
+                )}
               </>
             )}
-            {report.stepA2 && (
+            {Object.keys(report.stepA2).length !== 0 && (
               <>
                 <h3
                   dangerouslySetInnerHTML={{
@@ -151,6 +168,263 @@ class StepSummary extends Component {
                       </p>
                     ))
                 )}
+              </>
+            )}
+            {Object.keys(report.stepA3).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepThree[lang].text3,
+                  }}
+                />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepThree[lang].options.find(
+                      (opt) => opt.value === report.stepA3.extent
+                    ).text,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA4).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepFour[lang].text4a,
+                  }}
+                />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepFour[lang].options.find(
+                      (opt) => opt.value === report.stepA4.privatemsg
+                    ).text,
+                  }}
+                />
+                {report.stepA4.privatemsg === "yes" && (
+                  <>
+                    {" "}
+                    <h3
+                      dangerouslySetInnerHTML={{
+                        __html: stepData.stepFour[lang].text4b,
+                      }}
+                    />
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA4.msgValue,
+                      }}
+                    />
+                  </>
+                )}
+              </>
+            )}
+            {Object.keys(report.stepA5).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepFive[lang].text5a,
+                  }}
+                />
+                {stepData.stepFive[lang].options.map(
+                  (option) =>
+                    report.stepA5.typeOfHate &&
+                    report.stepA5.typeOfHate[option.value] &&
+                    (option.value !== "other" ? (
+                      <p dangerouslySetInnerHTML={{ __html: option.text }} />
+                    ) : (
+                      <p>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: option.text }}
+                        />
+                        {": "}
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: report.stepA5.otherValue,
+                          }}
+                        />
+                      </p>
+                    ))
+                )}
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepFive[lang].text5b,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA5.textarea1,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA5.textarea2,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA5.textarea3,
+                  }}
+                />
+                <h3>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: stepData.stepFive[lang].text5c,
+                    }}
+                  />
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: stepData.stepFive[lang].text5c2,
+                    }}
+                  />
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: stepData.stepFive[lang].text5c3,
+                    }}
+                  />
+                </h3>
+                {report.stepA5.files &&
+                  report.stepA5.files.map((file) => (
+                    <p>
+                      <img src={file.preview} alt={`preview ${file.name}`} />{" "}
+                      {file.name}
+                    </p>
+                  ))}
+              </>
+            )}
+            {Object.keys(report.stepA6).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepSix[lang].text6,
+                  }}
+                />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepSix[lang].options.find(
+                      (opt) => opt.value === report.stepA6.jurid
+                    ).text,
+                  }}
+                />
+                {report.stepA6.jurid === "other" && (
+                  <>
+                    {" "}
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: report.stepA6.msgValue,
+                      }}
+                    />
+                  </>
+                )}
+              </>
+            )}
+            {Object.keys(report.stepA7).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepSeven[lang].text7,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA7.msgValue,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA7.msgValue2,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA7.msgValue3,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA8).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepEight[lang].text8,
+                  }}
+                />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepEight[lang].options.find(
+                      (opt) => opt.value === report.stepA8.solidarity
+                    ).text,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA9).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepNine[lang].text9,
+                  }}
+                />
+
+                {report.stepA9.gender !== "other" ? (
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: stepData.stepNine[lang].options.find(
+                        (opt) => opt.value === report.stepA9.gender
+                      ).text,
+                    }}
+                  />
+                ) : (
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: report.stepA9.msgValue,
+                    }}
+                  />
+                )}
+              </>
+            )}
+            {Object.keys(report.stepA10).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepTen[lang].text10,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA10.msgValue,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA11).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepEleven[lang].text11,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA11.msgValue,
+                  }}
+                />
+              </>
+            )}
+            {Object.keys(report.stepA12).length !== 0 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepTwelve[lang].text12,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: report.stepA12.msgValue,
+                  }}
+                />
               </>
             )}
           </>

@@ -12,7 +12,21 @@ import {
 
 const initialState = {
   reports: null,
-  newReport: null,
+  newReport: {
+    basics: {},
+    stepA1: {},
+    stepA2: {},
+    stepA3: {},
+    stepA4: {},
+    stepA5: {},
+    stepA6: {},
+    stepA7: {},
+    stepA8: {},
+    stepA9: {},
+    stepA10: {},
+    stepA11: {},
+    stepA12: {},
+  },
 }
 
 export default function (state = initialState, action) {
@@ -65,7 +79,10 @@ export default function (state = initialState, action) {
     case STORE_REPORT_DATA:
       return {
         ...state,
-        newReport: {...state.newReport, [action.payload.step]: action.payload.data},
+        newReport: {
+          ...state.newReport,
+          [action.payload.step]: action.payload.data,
+        },
       }
     default:
       return state

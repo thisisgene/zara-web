@@ -105,20 +105,22 @@ class StepA6 extends Component {
         <p dangerouslySetInnerHTML={{ __html: stepSix[lang].text6 }} />
 
         {stepSix[lang].options.map((option) => (
-          <div>
-            <input
-              type="radio"
-              name={stepSix[lang].optionName}
-              id={option.value}
-              value={option.value}
-              checked={option.value === jurid}
-              onChange={this.onChange}
-              onBlur={this.validationCheck}
-            />
-            <label
-              htmlFor={option.value}
-              dangerouslySetInnerHTML={{ __html: option.text }}
-            />
+          <>
+            <div className={styles["radio-wrapper"]}>
+              <input
+                type="radio"
+                name={stepSix[lang].optionName}
+                id={option.value}
+                value={option.value}
+                checked={option.value === jurid}
+                onChange={this.onChange}
+                onBlur={this.validationCheck}
+              />
+              <label
+                htmlFor={option.value}
+                dangerouslySetInnerHTML={{ __html: option.text }}
+              />
+            </div>
             {option.value === "other" && (
               <>
                 <br />
@@ -136,7 +138,7 @@ class StepA6 extends Component {
                 )}
               </>
             )}
-          </div>
+          </>
         ))}
         {this.state.optionValMsg && (
           <span className={styles["error-msg"]}>{this.state.optionValMsg}</span>

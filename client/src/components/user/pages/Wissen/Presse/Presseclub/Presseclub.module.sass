@@ -14,6 +14,7 @@
       
       &--number
         // width: 50px !important
+        
         height: 50px
         margin-right: 1rem
         display: flex
@@ -23,3 +24,11 @@
           size: 1.8rem
           weight: bold
         color: #bbb
+
+  @media(max-width: 550px)
+    .option-group--wrapper
+      .option-group
+        padding: 0
+        &--number
+          display: none
+  

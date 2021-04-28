@@ -149,7 +149,7 @@ class StepPathA extends Component {
       <div>
         <StepZilla
           steps={steps}
-          startAtStep={0}
+          startAtStep={4}
           prevBtnOnLastStep={false}
           hocValidationAppliedTo={-1}
           nextButtonCls={"next-button"}

@@ -44,7 +44,7 @@ ol.progtrckr li span {
 
 @media (max-width: 500px) {
   .progtrckr em {
-    display: inline;
+    display: none;
     padding: 0 1rem;
   }
 }

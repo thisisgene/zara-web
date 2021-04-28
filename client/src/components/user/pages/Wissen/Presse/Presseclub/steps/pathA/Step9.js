@@ -117,23 +117,24 @@ class StepA9 extends Component {
         <p dangerouslySetInnerHTML={{ __html: stepNine[lang].text9 }} />
 
         {stepNine[lang].options.map((option) => (
-          <div>
-            <input
-              type="radio"
-              name={stepNine[lang].optionName}
-              id={option.value}
-              value={option.value}
-              checked={option.value === gender}
-              onChange={this.onChange}
-              onBlur={this.validationCheck}
-            />
-            <label
-              htmlFor={option.value}
-              dangerouslySetInnerHTML={{ __html: option.text }}
-            />
+          <>
+            <div className={styles["radio-wrapper"]}>
+              <input
+                type="radio"
+                name={stepNine[lang].optionName}
+                id={option.value}
+                value={option.value}
+                checked={option.value === gender}
+                onChange={this.onChange}
+                onBlur={this.validationCheck}
+              />
+              <label
+                htmlFor={option.value}
+                dangerouslySetInnerHTML={{ __html: option.text }}
+              />
+            </div>
             {option.value === "other" && (
               <>
-                {" "}
                 <input
                   type="text"
                   name="msgValue"
@@ -149,7 +150,7 @@ class StepA9 extends Component {
                 )}
               </>
             )}
-          </div>
+          </>
         ))}
         {this.state.optionValMsg && (
           <span className={styles["error-msg"]}>{this.state.optionValMsg}</span>
