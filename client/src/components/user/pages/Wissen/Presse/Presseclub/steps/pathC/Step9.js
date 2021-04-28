@@ -8,10 +8,10 @@ class StepA9 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      gender:
+      jurid:
         this.props.report.newReport &&
         this.props.report.newReport.stepA9 &&
-        this.props.report.newReport.stepA9.gender,
+        this.props.report.newReport.stepA9.jurid,
       msgValue:
         this.props.report.newReport &&
         this.props.report.newReport.stepA9 &&
@@ -67,10 +67,10 @@ class StepA9 extends Component {
 
   _validateData(data) {
     return {
-      optionVal: data.gender !== undefined,
+      optionVal: data.jurid !== undefined,
       msgValueVal:
-        data.gender !== "other" ||
-        (data.gender === "other" &&
+        data.jurid !== "other" ||
+        (data.jurid === "other" &&
           data.msgValue !== undefined &&
           data.msgValue !== ""),
     }
@@ -91,18 +91,6 @@ class StepA9 extends Component {
           [e.target.name]: e.target.value,
         },
         () => {
-          this.props.storeReportData(this.state, "stepA6")
-        }
-      )
-    }
-  }
-  onChange = (e) => {
-    if (this.state[e.target.name] !== e.target.value) {
-      this.setState(
-        {
-          [e.target.name]: e.target.value,
-        },
-        () => {
           this.props.storeReportData(this.state, "stepA9")
         }
       )
@@ -111,10 +99,10 @@ class StepA9 extends Component {
 
   render() {
     const { lang } = this.props
-    const { gender } = this.state
+    const { jurid } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepNine[lang].text9 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepNine[lang].text6 }} />
 
         {stepNine[lang].options.map((option) => (
           <>
@@ -124,7 +112,7 @@ class StepA9 extends Component {
                 name={stepNine[lang].optionName}
                 id={option.value}
                 value={option.value}
-                checked={option.value === gender}
+                checked={option.value === jurid}
                 onChange={this.onChange}
                 onBlur={this.validationCheck}
               />
@@ -133,14 +121,13 @@ class StepA9 extends Component {
                 dangerouslySetInnerHTML={{ __html: option.text }}
               />
             </div>
-            {option.value === "other" && (
+            {option.value === jurid && (
               <>
-                <input
-                  type="text"
+                <br />
+                <textarea
                   name="msgValue"
                   value={this.state.msgValue}
                   onChange={this.onChange}
-                  disabled={gender !== "other"}
                   onBlur={this.validationCheck}
                 />
                 {this.state.msgValueValMsg && (

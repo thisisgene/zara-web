@@ -19,6 +19,7 @@ import OptionButtons from "./OptionButtons/OptionButtons"
 import { stepsA, stepsB, stepsC, stepsD } from "./steps/steps"
 import StepPathA from "./steps/pathA/StepPathA"
 import StepPathB from "./steps/pathB/StepPathB"
+import StepPathC from "./steps/pathC/StepPathC"
 
 import styles from "./Presseclub.module.sass"
 
@@ -137,7 +138,9 @@ class Presseclub extends Component {
                 </>
               )}
               {category === "public" && perspective === "first" && (
-                <>in progress</>
+                <>
+                  <StepPathC lang={lang} />
+                </>
               )}
               {category === "public" && perspective === "third" && (
                 <>in progress</>

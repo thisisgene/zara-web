@@ -68,7 +68,21 @@ export default function (state = initialState, action) {
     case CLEAR_NEW_REPORT:
       return {
         ...state,
-        newReport: null,
+        newReport: {
+          basics: {},
+          stepA1: {},
+          stepA2: {},
+          stepA3: {},
+          stepA4: {},
+          stepA5: {},
+          stepA6: {},
+          stepA7: {},
+          stepA8: {},
+          stepA9: {},
+          stepA10: {},
+          stepA11: {},
+          stepA12: {},
+        },
       }
     case UPDATE_REPORT:
       return {

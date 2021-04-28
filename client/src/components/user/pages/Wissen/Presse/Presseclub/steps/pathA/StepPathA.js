@@ -2,7 +2,10 @@ import React, { Component } from "react"
 import StepZilla from "react-stepzilla"
 import { connect } from "react-redux"
 
-import { storeReportData } from "../../../../../../../../actions/reportActions"
+import {
+  clearNewReport,
+  storeReportData,
+} from "../../../../../../../../actions/reportActions"
 
 import Step1 from "./Step1"
 import Step2 from "./Step2"
@@ -20,6 +23,9 @@ import StepSummary from "./StepSummary"
 import StepFinal from "./StepFinal"
 
 class StepPathA extends Component {
+  componentDidMount() {
+    this.props.clearNewReport()
+  }
   render() {
     const { lang } = this.props
     const steps = [
@@ -137,19 +143,20 @@ class StepPathA extends Component {
             report={this.props.report}
             storeReportData={this.props.storeReportData}
             lang={lang}
-            report={this.props.report}
           />
         ),
       },
       {
-        component: <StepFinal lang={lang} />,
+        component: (
+          <StepFinal clearNewReport={this.props.clearNewReport} lang={lang} />
+        ),
       },
     ]
     return (
       <div>
         <StepZilla
           steps={steps}
-          startAtStep={4}
+          startAtStep={0}
           prevBtnOnLastStep={false}
           hocValidationAppliedTo={-1}
           nextButtonCls={"next-button"}
@@ -166,4 +173,6 @@ const mapStateToProps = (state) => ({
   report: state.report,
 })
 
-export default connect(mapStateToProps, { storeReportData })(StepPathA)
+export default connect(mapStateToProps, { clearNewReport, storeReportData })(
+  StepPathA
+)

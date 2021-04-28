@@ -1,49 +1,38 @@
 import React, { Component } from "react"
 
-import { stepTwo } from "./step_data"
+import { stepOne } from "./step_data"
 
 import styles from "../Steps.module.sass"
 
-class StepA2 extends Component {
+class StepA1 extends Component {
   constructor(props) {
     super(props)
     this.state = {
       text2:
         this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.text2,
-      facebook:
+        this.props.report.newReport.stepA1 &&
+        this.props.report.newReport.stepA1.text2,
+      verbal:
         this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.facebook,
-      twitter:
+        this.props.report.newReport.stepA1 &&
+        this.props.report.newReport.stepA1.verbal,
+      physical:
         this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.twitter,
-      instagram:
+        this.props.report.newReport.stepA1 &&
+        this.props.report.newReport.stepA1.physical,
+      damage:
         this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.instagram,
-      youtube:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.youtube,
-      website:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.website,
-      email:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.email,
+        this.props.report.newReport.stepA1 &&
+        this.props.report.newReport.stepA1.damage,
+
       other:
         this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.other,
+        this.props.report.newReport.stepA1 &&
+        this.props.report.newReport.stepA1.other,
       otherValue:
         this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.otherValue,
+        this.props.report.newReport.stepA1 &&
+        this.props.report.newReport.stepA1.otherValue,
     }
     this._validateOnDemand = true // this flag enables onBlur validation as user fills forms
 
@@ -57,7 +46,7 @@ class StepA2 extends Component {
           [e.target.name]: e.target.value,
         },
         () => {
-          this.props.storeReportData(this.state, "stepA2")
+          this.props.storeReportData(this.state, "stepA1")
         }
       )
     }
@@ -69,7 +58,7 @@ class StepA2 extends Component {
           [e.target.name]: e.target.checked,
         },
         () => {
-          this.props.storeReportData(this.state, "stepA2")
+          this.props.storeReportData(this.state, "stepA1")
         }
       )
     }
@@ -119,14 +108,7 @@ class StepA2 extends Component {
 
   _validateData(data) {
     return {
-      optionVal:
-        data.facebook ||
-        data.twitter ||
-        data.instagram ||
-        data.youtube ||
-        data.website ||
-        data.email ||
-        data.other,
+      optionVal: data.verbal || data.physical || data.damage || data.other,
       otherValueVal:
         !data.other ||
         (data.other && data.otherValue !== undefined && data.otherValue !== ""),
@@ -148,9 +130,9 @@ class StepA2 extends Component {
     const { directReaction } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepTwo[lang].text2 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepOne[lang].text2 }} />
 
-        {stepTwo[lang].options.map((option) => (
+        {stepOne[lang].options.map((option) => (
           <div className={styles["radio-wrapper"]}>
             <input
               type="checkbox"
@@ -188,4 +170,4 @@ class StepA2 extends Component {
   }
 }
 
-export default StepA2
+export default StepA1

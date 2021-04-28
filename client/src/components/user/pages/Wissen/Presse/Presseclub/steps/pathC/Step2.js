@@ -1,17 +1,17 @@
 import React, { Component } from "react"
 
-import { stepEight } from "./step_data"
+import { stepTwo } from "./step_data"
 
 import styles from "../Steps.module.sass"
 
-class StepA8 extends Component {
+class StepA2 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      solidarity:
+      msgValue:
         this.props.report.newReport &&
-        this.props.report.newReport.stepA8 &&
-        this.props.report.newReport.stepA8.solidarity,
+        this.props.report.newReport.stepA2 &&
+        this.props.report.newReport.stepA2.msgValue,
     }
     this._validateOnDemand = true // this flag enables onBlur validation as user fills forms
 
@@ -63,13 +63,13 @@ class StepA8 extends Component {
 
   _validateData(data) {
     return {
-      optionVal: data.solidarity !== undefined,
+      msgVal: data.msgValue && data.msgValue !== "",
     }
   }
 
   _validationErrors(val) {
     const errMsgs = {
-      optionValMsg: val.optionVal ? "" : "Bitte wählen Sie eine Option.",
+      msgValMsg: val.msgVal ? "" : "Darf nicht leer bleiben.",
     }
     return errMsgs
   }
@@ -81,7 +81,7 @@ class StepA8 extends Component {
           [e.target.name]: e.target.value,
         },
         () => {
-          this.props.storeReportData(this.state, "stepA8")
+          this.props.storeReportData(this.state, "stepA2")
         }
       )
     }
@@ -89,34 +89,22 @@ class StepA8 extends Component {
 
   render() {
     const { lang } = this.props
-    const { solidarity } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepEight[lang].text8 }} />
-
-        {stepEight[lang].options.map((option) => (
-          <div className={styles["radio-wrapper"]}>
-            <input
-              type="radio"
-              name={stepEight[lang].optionName}
-              id={option.value}
-              value={option.value}
-              checked={option.value === solidarity}
-              onChange={this.onChange}
-              onBlur={this.validationCheck}
-            />
-            <label
-              htmlFor={option.value}
-              dangerouslySetInnerHTML={{ __html: option.text }}
-            />
-          </div>
-        ))}
-        {this.state.optionValMsg && (
-          <span className={styles["error-msg"]}>{this.state.optionValMsg}</span>
+        <p dangerouslySetInnerHTML={{ __html: stepTwo[lang].text }} />
+        <br />
+        <textarea
+          name="msgValue"
+          value={this.state.msgValue}
+          onChange={this.onChange}
+          onBlur={this.validationCheck}
+        />
+        {this.state.msgValMsg && (
+          <span className={styles["error-msg"]}>{this.state.msgValMsg}</span>
         )}
       </div>
     )
   }
 }
 
-export default StepA8
+export default StepA2

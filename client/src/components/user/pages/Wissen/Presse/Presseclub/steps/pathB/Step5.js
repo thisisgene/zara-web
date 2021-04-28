@@ -174,13 +174,13 @@ class StepA5 extends Component {
         <p dangerouslySetInnerHTML={{ __html: stepFive[lang].text5a }} />
 
         {stepFive[lang].options.map((option) => (
-          <div>
+          <div className={styles["radio-wrapper"]}>
             <input
               type="checkbox"
               name={option.value}
               id={option.value}
               value={option.value}
-              checked={this.state[option.value]}
+              checked={this.state.typeOfHate[option.value]}
               onChange={this.onOptionChange}
             />
             <label

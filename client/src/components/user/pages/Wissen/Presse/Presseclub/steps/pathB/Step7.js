@@ -1,7 +1,4 @@
 import React, { Component } from "react"
-import { connect } from "react-redux"
-
-import { storeReportData } from "../../../../../../../../actions/reportActions"
 
 import { stepSeven } from "./step_data"
 
@@ -38,24 +35,26 @@ class StepA7 extends Component {
 
   render() {
     const { lang } = this.props
-    const { jurid } = this.state
     return (
       <div className={styles["step-container"]}>
         <p dangerouslySetInnerHTML={{ __html: stepSeven[lang].text7 }} />
 
-        <textarea
+        <input
+          type="text"
           name="msgValue"
           value={this.state.msgValue}
           onChange={this.onChange}
         />
         <br />
-        <textarea
+        <input
+          type="text"
           name="msgValue2"
           value={this.state.msgValue2}
           onChange={this.onChange}
         />
         <br />
-        <textarea
+        <input
+          type="text"
           name="msgValue3"
           value={this.state.msgValue3}
           onChange={this.onChange}
@@ -65,8 +64,4 @@ class StepA7 extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  report: state.report,
-})
-
-export default connect(mapStateToProps, { storeReportData })(StepA7)
+export default StepA7
