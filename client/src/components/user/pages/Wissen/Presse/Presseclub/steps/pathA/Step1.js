@@ -63,7 +63,6 @@ class StepA1 extends Component {
     const userInput = this.state // grab user entered vals
     const validateNewInput = this._validateData(userInput) // run the new input against the validator
     let isDataValid = false
-    console.log("validating: ", validateNewInput)
 
     // if full validation passes then save to store and pass as valid
     if (
