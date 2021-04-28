@@ -1,14 +1,12 @@
 import React, { Component } from "react"
-import { connect } from "react-redux"
 import axios from "axios"
 import Promise from "promise"
 
-import { storeReportData } from "../../../../../../../../actions/reportActions"
-
-import { stepSummary } from "./step_data"
+import * as stepData from "./step_data"
 
 import Spinner from "../../../../../../dashboard/Spinner/Spinner"
 
+import cx from "classnames"
 import styles from "../Steps.module.sass"
 
 class StepSummary extends Component {
@@ -60,12 +58,103 @@ class StepSummary extends Component {
   }
   render() {
     const { lang } = this.props
-    const report = this.props
+    const report = this.props.report.newReport
     return (
-      <div className={styles["step-container"]}>
+      <div
+        className={cx(styles["step-container"], styles["summary-container"])}
+      >
         <Spinner nowActive={this.state.saving} />
-        <p dangerouslySetInnerHTML={{ __html: stepSummary[lang].text }} />
-        <p>...</p>
+        <h2
+          dangerouslySetInnerHTML={{ __html: stepData.stepSummary[lang].text }}
+        />
+
+        {report && (
+          <>
+            <h3
+              dangerouslySetInnerHTML={{ __html: stepData.stepOne[lang].text1 }}
+            />
+            <p
+              dangerouslySetInnerHTML={{
+                __html:
+                  report.stepA1 && report.stepA1.directReaction === "yes"
+                    ? stepData.stepOne[lang].options[0].text
+                    : stepData.stepOne[lang].options[1].text,
+              }}
+            />
+            {report.stepA1 && report.stepA1.directReaction === "yes" ? (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepOne[lang].text1A1.text,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a1 }}
+                />
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepOne[lang].text1A2.text,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a2a }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a2b }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1a2c }}
+                />
+              </>
+            ) : (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepOne[lang].text1B1.text,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1b1 }}
+                />
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepOne[lang].text1B2.text,
+                  }}
+                />
+                <p
+                  dangerouslySetInnerHTML={{ __html: report.stepA1.text1b2 }}
+                />
+              </>
+            )}
+            {report.stepA2 && (
+              <>
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepTwo[lang].text2,
+                  }}
+                />
+                {stepData.stepTwo[lang].options.map(
+                  (option) =>
+                    report.stepA2[option.value] &&
+                    (option.value !== "other" ? (
+                      <p dangerouslySetInnerHTML={{ __html: option.text }} />
+                    ) : (
+                      <p>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: option.text }}
+                        />{" "}
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: report.stepA2.otherValue,
+                          }}
+                        />
+                      </p>
+                    ))
+                )}
+              </>
+            )}
+          </>
+        )}
       </div>
     )
   }
