@@ -61,7 +61,6 @@ class StepSummary extends Component {
   render() {
     const { lang } = this.props
     const report = this.props
-    console.log("report: ", report)
     return (
       <div className={styles["step-container"]}>
         <Spinner nowActive={this.state.saving} />

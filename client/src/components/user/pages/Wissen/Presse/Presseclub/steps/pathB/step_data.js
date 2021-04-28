@@ -18,7 +18,7 @@ export const stepOne = {
     text1A1: {
       name: "text1a1",
       text:
-        "<b>Bitte die URL</em (bzw. Zitation, falls online nicht verfügbar) <b>des journalistischen Beitrags hier eintragen:</b>",
+        "<b>Bitte die URL </em (bzw. Zitation, falls online nicht verfügbar) <b>des journalistischen Beitrags hier eintragen:</b>",
     },
     text1A2: {
       name: "text1a2a",
@@ -159,7 +159,7 @@ export const stepFive = {
     text5c2: "<b>mit Zeitstempel*</b>",
     text5c3: "<b>) hier hoch:</b>",
     text5c2link:
-      "Zeitstempel sind notwendig, wenn Sie Screenshots als Beweis (vor Gericht) verwenden wollen.",
+      "Zeitstempel sind notwendig, wenn man Screenshots als Beweis (vor Gericht) verwenden will.",
     text5d:
       "* Wie Sie einen Screenshot mit Zeitstempel erstellen, erfahren Sie",
     link: {
@@ -291,6 +291,6 @@ export const stepSummary = {
 export const stepFinal = {
   de: {
     text:
-      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet –  in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia. &lt;Hier anmelden></p><p><strong><span style="text-decoration:underline;">Die ZARA Beratungsstelle #GegenHassimNetz</span> bietet kostenlose und wenn gewünscht anonyme (Rechts-)Beratung bei Hass im Netz an.</strong> </p><p>Nehmen Sie gerne unverbindlich mit uns Kontakt auf: <a href="https://zara.or.at/de/beratung">https://zara.or.at/de/beratung</a> </p><p>oder wenden Sie sich persönlich an ZARA: 01/929 13 99-0 </p>',
+      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet –  in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: <a href="https://concordia.at/newsletter-anmeldung/">Hier anmelden</a></p><p><strong><span style="text-decoration:underline;">Die ZARA Beratungsstelle #GegenHassimNetz</span> bietet kostenlose und wenn gewünscht anonyme (Rechts-)Beratung bei Hass im Netz an.</strong> </p><p>Nehmen Sie gerne unverbindlich mit uns Kontakt auf: <a href="https://zara.or.at/de/beratung">https://zara.or.at/de/beratung</a> </p><p>oder wenden Sie sich persönlich an ZARA: 01/929 13 99-0 </p>',
   },
 }

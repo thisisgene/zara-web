@@ -1,7 +1,7 @@
 export const stepOne = {
   de: {
     text1:
-      "<b>Ist der Online-Angriff eine direkte Reaktion auf einen journalistischen Beitrag von Ihnen?</b> Bitte Zutreffendes auswählen:",
+      "<b>Ist der Online-Angriff eine direkte Reaktion auf einen journalistischen Beitrag, den Sie verfasst/gestaltet haben?</b> Bitte Zutreffendes auswählen:",
     optionName: "directReaction",
     options: [
       {
@@ -18,7 +18,7 @@ export const stepOne = {
     text1A1: {
       name: "text1a1",
       text:
-        "<b>Bitte die URL</em (bzw. Zitation, falls online nicht verfügbar) <b>des journalistischen Beitrags hier eintragen:</b>",
+        "<b>Bitte die URL </em (bzw. Zitation, falls online nicht verfügbar) <b>des journalistischen Beitrags hier eintragen:</b>",
     },
     text1A2: {
       name: "text1a2a",
@@ -279,7 +279,7 @@ export const stepTen = {
 export const stepEleven = {
   de: {
     text11:
-      "<b>Was soll zum Thema Online-Angriffe auf Journalist*innen noch gemacht werden?</b><br />Bitte notieren Sie hier konkrete Vorschläge.",
+      "<b>Was soll gegen Angriffe auf Journalist*innen noch unternommen werden?</b><br />Bitte notieren Sie hier konkrete Vorschläge.",
   },
 }
 export const stepTwelve = {
@@ -295,6 +295,6 @@ export const stepSummary = {
 export const stepFinal = {
   de: {
     text:
-      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet – in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="https://concordia.at/mitgliedschaft/">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: &lt;Hier anmelden></p>',
+      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet – in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="https://concordia.at/mitgliedschaft/">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: <a href="https://concordia.at/newsletter-anmeldung/">Hier anmelden</a></p>',
   },
 }
