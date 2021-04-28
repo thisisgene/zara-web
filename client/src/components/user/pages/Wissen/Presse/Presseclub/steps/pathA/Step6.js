@@ -69,7 +69,7 @@ class StepA6 extends Component {
     return {
       optionVal: data.jurid !== undefined,
       msgValueVal:
-        !data.jurid ||
+        data.jurid !== "other" ||
         (data.jurid === "other" &&
           data.msgValue !== undefined &&
           data.msgValue !== ""),
