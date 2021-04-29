@@ -1,65 +1,66 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
+import { Route, Switch, NavLink } from "react-router-dom"
 
-import PrivateRoute from './common/PrivateRoute';
+import PrivateRoute from "./common/PrivateRoute"
 
-import { authLinks } from './layout/nav-links';
+import { authLinks } from "./layout/nav-links"
 
-import Loading from './Loading/Loading';
-import Header from './layout/Header';
-import Footer from './layout/Footer';
-import Login from './auth/Login';
-import Settings from './auth/Settings';
-import Reports from './pages/Reports/Reports';
-import Training from './pages/Training/Training';
-import Dashboard from './pages/dashboard/Dashboard';
-import Preview from './preview/Preview';
-import RestrictedPage from './RestrictedPage/RestrictedPage';
+import Loading from "./Loading/Loading"
+import Header from "./layout/Header"
+import Footer from "./layout/Footer"
+import Login from "./auth/Login"
+import Settings from "./auth/Settings"
+import Presseclub from "./pages/Presseclub/Presseclub"
+import Reports from "./pages/Reports/Reports"
+import Training from "./pages/Training/Training"
+import Dashboard from "./pages/dashboard/Dashboard"
+import Preview from "./preview/Preview"
+import RestrictedPage from "./RestrictedPage/RestrictedPage"
 
 // import News from './dashboard/news/News'
 
-import './Admin.sass';
+import "./Admin.sass"
 
-import styles from './pages/dashboard/Dashboard.module.sass';
-import News from './pages/dashboard/news/News';
+import styles from "./pages/dashboard/Dashboard.module.sass"
+import News from "./pages/dashboard/news/News"
 
 class Admin extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       errors: {},
-      timeUntilLogout: '',
+      timeUntilLogout: "",
       timeCheckInterval: 60000,
-    };
+    }
   }
   componentDidMount() {
-    document.title = 'ZARA | Admin';
-    setTimeout(this.setTimeUntilLogout, 1);
+    document.title = "ZARA | Admin"
+    setTimeout(this.setTimeUntilLogout, 1)
   }
 
   setTimeUntilLogout = () => {
-    const timeLeft = Math.round(this.props.auth.user.exp - Date.now() / 1000);
+    const timeLeft = Math.round(this.props.auth.user.exp - Date.now() / 1000)
 
     if (timeLeft <= 7200) {
       this.setState({
         timeUntilLogout: timeLeft,
-      });
+      })
     }
     if (timeLeft <= 300) {
       this.setState({
         timeCheckInterval: 1000,
         timeUntilLogout: timeLeft,
-      });
+      })
     }
-    setTimeout(this.setTimeUntilLogout, this.state.timeCheckInterval);
-  };
+    setTimeout(this.setTimeUntilLogout, this.state.timeCheckInterval)
+  }
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated, user } = this.props.auth
     // this.setTimeUntilLogout()
 
     const authRoutes = (
@@ -82,6 +83,11 @@ class Admin extends Component {
             <PrivateRoute path="/admin/reports" component={Reports} />
           ) : (
             <PrivateRoute path="/admin/reports" component={RestrictedPage} />
+          )}
+          {user.securityLevel === 8 || user.securityLevel <= 1 ? (
+            <PrivateRoute path="/admin/presseclub" component={Presseclub} />
+          ) : (
+            <PrivateRoute path="/admin/presseclub" component={RestrictedPage} />
           )}
           {user.securityLevel === 5 ||
           user.securityLevel <= 2 ||
@@ -110,28 +116,28 @@ class Admin extends Component {
         </Switch>
         <Footer timeUntilLogout={this.state.timeUntilLogout} />
       </div>
-    );
+    )
     const guestRoutes = (
       <div>
         <Header />
-        <div className={styles['dashboard']}>
+        <div className={styles["dashboard"]}>
           <Login />
         </div>
         <Footer />
       </div>
-    );
-    return <div>{isAuthenticated ? authRoutes : guestRoutes}</div>;
+    )
+    return <div>{isAuthenticated ? authRoutes : guestRoutes}</div>
   }
 }
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors,
-});
+})
 
 Admin.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
-};
+}
 
-export default connect(mapStateToProps, {})(Admin);
+export default connect(mapStateToProps, {})(Admin)

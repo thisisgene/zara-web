@@ -130,7 +130,7 @@ export const stepNine = {
 export const stepTen = {
   de: {
     text:
-      "<b>Welche Überlegungen oder Konsequenzen hat der Online-Angriff bei Ihnen ausgelöst?</b><br />Nennen Sie hier konkrete Überlegungen oder Konsequenzen (z.B. Thema gemieden, Jobwechsel überlegt, Social Media eingeschränkt):",
+      "<b>Welche Überlegungen oder Konsequenzen hat der Angriff bei Ihnen ausgelöst?</b><br />Nennen Sie hier konkrete Überlegungen oder Konsequenzen (z.B. Thema gemieden, Jobwechsel überlegt, Social Media eingeschränkt):",
   },
 }
 

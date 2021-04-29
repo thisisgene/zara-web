@@ -19,9 +19,25 @@ export const getAllReports = () => (dispatch) => {
     })
   })
 }
+export const getAllPresseclubReports = () => (dispatch) => {
+  axios.get("/api/projects/reports/presseclub").then((res) => {
+    dispatch({
+      type: GET_ALL_REPORTS,
+      payload: res.data,
+    })
+  })
+}
 
 export const getReportById = (id) => (dispatch) => {
   axios.get("/api/projects/reports/by_id/" + id).then((res) => {
+    dispatch({
+      type: GET_REPORT_BY_ID,
+      payload: res.data,
+    })
+  })
+}
+export const getPresseclubReportById = (id) => (dispatch) => {
+  axios.get("/api/projects/reports/presseclub/by_id/" + id).then((res) => {
     dispatch({
       type: GET_REPORT_BY_ID,
       payload: res.data,
@@ -56,8 +72,6 @@ export const clearNewReport = () => (dispatch) => {
 
 // Presseclub Report
 export const storeReportData = (reportData, step) => (dispatch) => {
-  
-
   dispatch({
     type: STORE_REPORT_DATA,
     payload: { data: reportData, step: step },

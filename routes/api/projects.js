@@ -207,6 +207,19 @@ router.get(
       })
   }
 )
+router.get(
+  "/reports/presseclub/by_id/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Presseclubreport.findById(req.params.id)
+      .then((report) => {
+        res.json(report)
+      })
+      .catch((err) => {
+        res.json(err)
+      })
+  }
+)
 
 router.get(
   "/report/sendToArchive/:id",
@@ -296,35 +309,25 @@ router.post("/report/presseclub/send", (req, res) => {
     reportObject = {
       category: report.basics && report.basics.category,
       perspective: report.basics && report.basics.perspective,
-      directReaction: report.stepA1 && report.stepA1.directReaction === "yes",
-      articleUrl: report.stepA1 && report.stepA1.text1a1,
-      keywords: [
-        report.stepA1 && report.stepA1.text1a2a,
-        report.stepA1 && report.stepA1.text1a2b,
-        report.stepA1 && report.stepA1.text1a2c,
-      ],
-      description: report.stepA1 && report.stepA1.text1b1,
-      postUrl: report.stepA1 && report.stepA1.text1b2,
-      socialmedia: report.stepA2,
-      extent: report.stepA3 && report.stepA3.extent,
-      privatemsg: report.stepA4 && report.stepA4.privatemsg,
-      privatemsgValue: report.stepA4 && report.stepA4.privatemsgValue,
-      typeOfHate: report.stepA5 && report.stepA5.typeOfHate,
-      typeOtherValue: report.stepA5 && report.stepA5.otherValue,
-      typeText: report.stepA5 && report.stepA5.textarea1,
-      typeText2: report.stepA5 && report.stepA5.textarea2,
-      typeText3: report.stepA5 && report.stepA5.textarea3,
-      jurid: report.stepA6 && report.stepA6.jurid,
-      juridText: report.stepA6 && report.stepA6.msgValue,
-      consequence: report.stepA7 && report.stepA7.msgValue,
-      consequence2: report.stepA7 && report.stepA7.msgValue2,
-      consequence3: report.stepA7 && report.stepA7.msgValue3,
-      solidarity: report.stepA8 && report.stepA8.solidarity,
-      gender: report.stepA9 && report.stepA9.gender,
-      genderText: report.stepA9 && report.stepA9.msgValue,
-      medium: report.stepA10 && report.stepA10.msgValue,
-      additional: report.stepA11 && report.stepA11.msgValue,
-      additional2: report.stepA12 && report.stepA12.msgValue,
+      typeOfAbuse: report.stepA1 && report.stepA1.typeOfAbuse,
+      location: report.stepA2 && report.stepA2.msgValue,
+      attacker: report.stepA3 && report.stepA3.msgValue,
+      description: report.stepA4 && report.stepA4.msgValue,
+      medium: report.stepA5 && report.stepA5.msgValue,
+      racism: report.step7 && report.step7.racism === "yes",
+      racismText: report.step7 && report.step7.msgValue,
+      witness: report.step8 && report.step8.witness === "yes",
+      witnessText: report.step8 && report.step8.msgValue,
+      jurid: report.stepA9 && report.stepA9.jurid,
+      juridText: report.stepA9 && report.stepA9.msgValue,
+      consequence: report.stepA10 && report.stepA10.msgValue,
+      consequence2: report.stepA10 && report.stepA10.msgValue2,
+      consequence3: report.stepA10 && report.stepA10.msgValue3,
+      onlineToo: report.stepA11 && report.stepA11.online === "yes",
+      gender: report.stepA12 && report.stepA12.gender,
+      genderText: report.stepA12 && report.stepA12.msgValue,
+      additional: report.stepA13 && report.stepA13.msgValue,
+      additional2: report.stepA14 && report.stepA14.msgValue2,
       date: date,
     }
   }
