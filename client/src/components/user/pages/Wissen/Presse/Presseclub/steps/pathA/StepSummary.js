@@ -128,7 +128,8 @@ class StepSummary extends Component {
                 />
                 {stepData.stepTwo[lang].options.map(
                   (option) =>
-                    report.stepA2[option.value] &&
+                    report.stepA2.socialmedia &&
+                    report.stepA2.socialmedia[option.value] &&
                     (option.value !== "other" ? (
                       <p dangerouslySetInnerHTML={{ __html: option.text }} />
                     ) : (
@@ -136,7 +137,7 @@ class StepSummary extends Component {
                         <span
                           dangerouslySetInnerHTML={{ __html: option.text }}
                         />{" "}
-                        <p>{report.stepA2.otherValue}</p>
+                        <span>{report.stepA2.socialmedia.otherValue}</span>
                       </p>
                     ))
                 )}

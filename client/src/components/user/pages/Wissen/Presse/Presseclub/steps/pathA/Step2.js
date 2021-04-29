@@ -8,42 +8,48 @@ class StepA2 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      text2:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.text2,
-      facebook:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.facebook,
-      twitter:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.twitter,
-      instagram:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.instagram,
-      youtube:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.youtube,
-      website:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.website,
-      email:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.email,
-      other:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.other,
-      otherValue:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA2 &&
-        this.props.report.newReport.stepA2.otherValue,
+      socialmedia: {
+        facebook:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.facebook,
+        twitter:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.twitter,
+        instagram:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.instagram,
+        youtube:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.youtube,
+        website:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.website,
+        email:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.email,
+        other:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.other,
+        otherValue:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA2 &&
+          this.props.report.newReport.stepA2.socialmedia &&
+          this.props.report.newReport.stepA2.socialmedia.otherValue,
+      },
     }
     this._validateOnDemand = true // this flag enables onBlur validation as user fills forms
 
@@ -54,7 +60,10 @@ class StepA2 extends Component {
     if (this.state[e.target.name] !== e.target.value) {
       this.setState(
         {
-          [e.target.name]: e.target.value,
+          socialmedia: {
+            ...this.state.socialmedia,
+            [e.target.name]: e.target.value,
+          },
         },
         () => {
           this.props.storeReportData(this.state, "stepA2")
@@ -66,7 +75,10 @@ class StepA2 extends Component {
     if (this.state[e.target.name] !== e.target.value) {
       this.setState(
         {
-          [e.target.name]: e.target.checked,
+          socialmedia: {
+            ...this.state.socialmedia,
+            [e.target.name]: e.target.checked,
+          },
         },
         () => {
           this.props.storeReportData(this.state, "stepA2")
@@ -120,16 +132,18 @@ class StepA2 extends Component {
   _validateData(data) {
     return {
       optionVal:
-        data.facebook ||
-        data.twitter ||
-        data.instagram ||
-        data.youtube ||
-        data.website ||
-        data.email ||
-        data.other,
+        data.socialmedia.facebook ||
+        data.socialmedia.twitter ||
+        data.socialmedia.instagram ||
+        data.socialmedia.youtube ||
+        data.socialmedia.website ||
+        data.socialmedia.email ||
+        data.socialmedia.other,
       otherValueVal:
-        !data.other ||
-        (data.other && data.otherValue !== undefined && data.otherValue !== ""),
+        !data.socialmedia.other ||
+        (data.socialmedia.other &&
+          data.socialmedia.otherValue !== undefined &&
+          data.socialmedia.otherValue !== ""),
     }
   }
 
@@ -145,7 +159,6 @@ class StepA2 extends Component {
 
   render() {
     const { lang } = this.props
-    const { directReaction } = this.state
     return (
       <div className={styles["step-container"]}>
         <p dangerouslySetInnerHTML={{ __html: stepTwo[lang].text2 }} />
@@ -157,7 +170,7 @@ class StepA2 extends Component {
               name={option.value}
               id={option.value}
               value={option.value}
-              checked={this.state[option.value]}
+              checked={this.state.socialmedia[option.value]}
               onChange={this.onOptionChange}
               onBlur={this.validationCheck}
             />
@@ -173,9 +186,9 @@ class StepA2 extends Component {
         <input
           type="text"
           name="otherValue"
-          value={this.state.otherValue}
+          value={this.state.socialmedia.otherValue}
           onChange={this.onChange}
-          disabled={!this.state.other}
+          disabled={!this.state.socialmedia.other}
           onBlur={this.validationCheck}
         />
         {this.state.otherValueValMsg && (

@@ -8,27 +8,34 @@ class StepA1 extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      verbal:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA1 &&
-        this.props.report.newReport.stepA1.verbal,
-      physical:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA1 &&
-        this.props.report.newReport.stepA1.physical,
-      damage:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA1 &&
-        this.props.report.newReport.stepA1.damage,
+      typeOfAbuse: {
+        verbal:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA1 &&
+          this.props.report.newReport.stepA1.typeOfAbuse &&
+          this.props.report.newReport.stepA1.typeOfAbuse.verbal,
+        physical:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA1 &&
+          this.props.report.newReport.stepA1.typeOfAbuse &&
+          this.props.report.newReport.stepA1.typeOfAbuse.physical,
+        damage:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA1 &&
+          this.props.report.newReport.stepA1.typeOfAbuse &&
+          this.props.report.newReport.stepA1.typeOfAbuse.damage,
 
-      other:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA1 &&
-        this.props.report.newReport.stepA1.other,
-      otherValue:
-        this.props.report.newReport &&
-        this.props.report.newReport.stepA1 &&
-        this.props.report.newReport.stepA1.otherValue,
+        other:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA1 &&
+          this.props.report.newReport.stepA1.typeOfAbuse &&
+          this.props.report.newReport.stepA1.typeOfAbuse.other,
+        otherValue:
+          this.props.report.newReport &&
+          this.props.report.newReport.stepA1 &&
+          this.props.report.newReport.stepA1.typeOfAbuse &&
+          this.props.report.newReport.stepA1.typeOfAbuse.otherValue,
+      },
     }
     this._validateOnDemand = true // this flag enables onBlur validation as user fills forms
 
@@ -39,7 +46,10 @@ class StepA1 extends Component {
     if (this.state[e.target.name] !== e.target.value) {
       this.setState(
         {
-          [e.target.name]: e.target.value,
+          typeOfAbuse: {
+            ...this.state.typeOfAbuse,
+            [e.target.name]: e.target.value,
+          },
         },
         () => {
           this.props.storeReportData(this.state, "stepA1")
@@ -51,7 +61,10 @@ class StepA1 extends Component {
     if (this.state[e.target.name] !== e.target.value) {
       this.setState(
         {
-          [e.target.name]: e.target.checked,
+          typeOfAbuse: {
+            ...this.state.typeOfAbuse,
+            [e.target.name]: e.target.checked,
+          },
         },
         () => {
           this.props.storeReportData(this.state, "stepA1")
@@ -104,10 +117,16 @@ class StepA1 extends Component {
 
   _validateData(data) {
     return {
-      optionVal: data.verbal || data.physical || data.damage || data.other,
+      optionVal:
+        data.typeOfAbuse.verbal ||
+        data.typeOfAbuse.physical ||
+        data.typeOfAbuse.damage ||
+        data.typeOfAbuse.other,
       otherValueVal:
-        !data.other ||
-        (data.other && data.otherValue !== undefined && data.otherValue !== ""),
+        !data.typeOfAbuse.other ||
+        (data.typeOfAbuse.other &&
+          data.typeOfAbuse.otherValue !== undefined &&
+          data.typeOfAbuse.otherValue !== ""),
     }
   }
 
@@ -123,7 +142,6 @@ class StepA1 extends Component {
 
   render() {
     const { lang } = this.props
-    const { directReaction } = this.state
     return (
       <div className={styles["step-container"]}>
         <p dangerouslySetInnerHTML={{ __html: stepOne[lang].text }} />
@@ -135,7 +153,7 @@ class StepA1 extends Component {
               name={option.value}
               id={option.value}
               value={option.value}
-              checked={this.state[option.value]}
+              checked={this.state.typeOfAbuse[option.value]}
               onChange={this.onOptionChange}
               onBlur={this.validationCheck}
             />
@@ -151,9 +169,9 @@ class StepA1 extends Component {
         <input
           type="text"
           name="otherValue"
-          value={this.state.otherValue}
+          value={this.state.typeOfAbuse.otherValue}
           onChange={this.onChange}
-          disabled={!this.state.other}
+          disabled={!this.state.typeOfAbuse.other}
           onBlur={this.validationCheck}
         />
         {this.state.otherValueValMsg && (

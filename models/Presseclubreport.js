@@ -72,6 +72,21 @@ const ReportSchema = new Schema({
       },
     },
   ],
+  typeOfAbuse: { type: Object },
+  location: { type: String },
+  attacker: { type: String },
+  racism: {
+    type: Boolean,
+  },
+  racismText: {
+    type: String,
+  },
+  witness: {
+    type: Boolean,
+  },
+  witnessText: {
+    type: String,
+  },
   jurid: {
     type: String,
   },

@@ -78,7 +78,7 @@ class StepSummary extends Component {
                 />
                 {stepData.stepOne[lang].options.map(
                   (option) =>
-                    report.stepA1[option.value] &&
+                    report.stepA1.typeOfAbuse[option.value] &&
                     (option.value !== "other" ? (
                       <p dangerouslySetInnerHTML={{ __html: option.text }} />
                     ) : (
@@ -86,7 +86,7 @@ class StepSummary extends Component {
                         <span
                           dangerouslySetInnerHTML={{ __html: option.text }}
                         />{" "}
-                        <span>{report.stepA1.otherValue}</span>
+                        <span>{report.stepA1.typeOfAbuse.otherValue}</span>
                       </p>
                     ))
                 )}
