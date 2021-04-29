@@ -91,31 +91,15 @@ class StepSummary extends Component {
                         __html: stepData.stepOne[lang].text1A1.text,
                       }}
                     />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a1,
-                      }}
-                    />
+                    <p>{report.stepA1.text1a1}</p>
                     <h3
                       dangerouslySetInnerHTML={{
                         __html: stepData.stepOne[lang].text1A2.text,
                       }}
                     />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a2a,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a2b,
-                      }}
-                    />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1a2c,
-                      }}
-                    />
+                    <p>{report.stepA1.text1a2a}</p>
+                    <p>{report.stepA1.text1a2b}</p>
+                    <p>{report.stepA1.text1a2c}</p>
                   </>
                 ) : (
                   <>
@@ -124,21 +108,13 @@ class StepSummary extends Component {
                         __html: stepData.stepOne[lang].text1B1.text,
                       }}
                     />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1b1,
-                      }}
-                    />
+                    <p>{report.stepA1.text1b1}</p>
                     <h3
                       dangerouslySetInnerHTML={{
                         __html: stepData.stepOne[lang].text1B2.text,
                       }}
                     />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA1.text1b2,
-                      }}
-                    />
+                    <p>{report.stepA1.text1b2}</p>
                   </>
                 )}
               </>
@@ -160,11 +136,7 @@ class StepSummary extends Component {
                         <span
                           dangerouslySetInnerHTML={{ __html: option.text }}
                         />{" "}
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: report.stepA2.otherValue,
-                          }}
-                        />
+                        <p>{report.stepA2.otherValue}</p>
                       </p>
                     ))
                 )}
@@ -210,11 +182,7 @@ class StepSummary extends Component {
                         __html: stepData.stepFour[lang].text4b,
                       }}
                     />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA4.msgValue,
-                      }}
-                    />
+                    <p>{report.stepA4.msgValue}</p>
                   </>
                 )}
               </>
@@ -238,11 +206,7 @@ class StepSummary extends Component {
                           dangerouslySetInnerHTML={{ __html: option.text }}
                         />
                         {": "}
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: report.stepA5.otherValue,
-                          }}
-                        />
+                        <span>{report.stepA5.otherValue}</span>
                       </p>
                     ))
                 )}
@@ -251,21 +215,9 @@ class StepSummary extends Component {
                     __html: stepData.stepFive[lang].text5b,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA5.textarea1,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA5.textarea2,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA5.textarea3,
-                  }}
-                />
+                <p>{report.stepA5.textarea1}</p>
+                <p>{report.stepA5.textarea2}</p>
+                <p>{report.stepA5.textarea3}</p>
                 <h3>
                   <span
                     dangerouslySetInnerHTML={{
@@ -310,11 +262,7 @@ class StepSummary extends Component {
                 {report.stepA6.jurid === "other" && (
                   <>
                     {" "}
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA6.msgValue,
-                      }}
-                    />
+                    <p>{report.stepA6.msgValue}</p>
                   </>
                 )}
               </>
@@ -326,21 +274,9 @@ class StepSummary extends Component {
                     __html: stepData.stepSeven[lang].text7,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA7.msgValue,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA7.msgValue2,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA7.msgValue3,
-                  }}
-                />
+                <p>{report.stepA7.msgValue}</p>
+                <p>{report.stepA7.msgValue2}</p>
+                <p>{report.stepA7.msgValue3}</p>
               </>
             )}
             {Object.keys(report.stepA8).length !== 0 && (
@@ -377,11 +313,7 @@ class StepSummary extends Component {
                     }}
                   />
                 ) : (
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: report.stepA9.msgValue,
-                    }}
-                  />
+                  <p>{report.stepA9.msgValue}</p>
                 )}
               </>
             )}
@@ -392,11 +324,7 @@ class StepSummary extends Component {
                     __html: stepData.stepTen[lang].text10,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA10.msgValue,
-                  }}
-                />
+                <p>{report.stepA10.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA11).length !== 0 && (
@@ -406,11 +334,7 @@ class StepSummary extends Component {
                     __html: stepData.stepEleven[lang].text11,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA11.msgValue,
-                  }}
-                />
+                <p>{report.stepA11.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA12).length !== 0 && (
@@ -420,11 +344,7 @@ class StepSummary extends Component {
                     __html: stepData.stepTwelve[lang].text12,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA12.msgValue,
-                  }}
-                />
+                <p>{report.stepA12.msgValue}</p>
               </>
             )}
           </>
