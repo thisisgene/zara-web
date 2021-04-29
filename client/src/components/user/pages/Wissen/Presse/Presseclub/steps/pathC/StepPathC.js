@@ -24,22 +24,13 @@ import Step14 from "./Step14"
 import StepSummary from "./StepSummary"
 import StepFinal from "./StepFinal"
 
-class StepPathA extends Component {
+class StepPathC extends Component {
   componentDidMount() {
     this.props.clearNewReport()
   }
   render() {
     const { lang } = this.props
     const steps = [
-      // {
-      //   component: (
-      //     <Step1
-      //       report={this.props.report}
-      //       storeReportData={this.props.storeReportData}
-      //       lang={lang}
-      //     />
-      //   ),
-      // },
       {
         component: (
           <Step1
@@ -185,7 +176,7 @@ class StepPathA extends Component {
       <div>
         <StepZilla
           steps={steps}
-          startAtStep={5}
+          startAtStep={0}
           prevBtnOnLastStep={false}
           nextButtonCls={"next-button"}
           nextButtonText={lang === "de" ? "Weiter" : "Next"}
@@ -202,5 +193,5 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, { clearNewReport, storeReportData })(
-  StepPathA
+  StepPathC
 )

@@ -86,11 +86,7 @@ class StepSummary extends Component {
                         <span
                           dangerouslySetInnerHTML={{ __html: option.text }}
                         />{" "}
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: report.stepA1.otherValue,
-                          }}
-                        />
+                        <span>{report.stepA1.otherValue}</span>
                       </p>
                     ))
                 )}
@@ -104,11 +100,7 @@ class StepSummary extends Component {
                   }}
                 />
 
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA2.msgValue,
-                  }}
-                />
+                <p>{report.stepA2.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA3).length !== 0 && (
@@ -119,11 +111,7 @@ class StepSummary extends Component {
                   }}
                 />
 
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA3.msgValue,
-                  }}
-                />
+                <p>{report.stepA3.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA4).length !== 0 && (
@@ -134,11 +122,7 @@ class StepSummary extends Component {
                   }}
                 />
 
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA4.msgValue,
-                  }}
-                />
+                <p>{report.stepA4.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA5).length !== 0 && (
@@ -149,11 +133,7 @@ class StepSummary extends Component {
                   }}
                 />
 
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA5.msgValue,
-                  }}
-                />
+                <p>{report.stepA5.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA6).length !== 0 && (
@@ -196,11 +176,7 @@ class StepSummary extends Component {
                         __html: stepData.stepSeven[lang].textb,
                       }}
                     />
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: report.stepA7.msgValue,
-                      }}
-                    />
+                    <p>{report.stepA7.msgValue}</p>
                   </>
                 )}
               </>
@@ -237,11 +213,7 @@ class StepSummary extends Component {
                     ).text,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA9.msgValue,
-                  }}
-                />
+                <p>{report.stepA9.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA10).length !== 0 && (
@@ -252,21 +224,9 @@ class StepSummary extends Component {
                   }}
                 />
 
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA10.msgValue,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA10.msgValue2,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA10.msgValue3,
-                  }}
-                />
+                <p>{report.stepA10.msgValue}</p>
+                <p>{report.stepA10.msgValue2}</p>
+                <p>{report.stepA10.msgValue3}</p>
               </>
             )}
             {Object.keys(report.stepA11).length !== 0 && (
@@ -303,11 +263,7 @@ class StepSummary extends Component {
                     }}
                   />
                 ) : (
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: report.stepA12.msgValue,
-                    }}
-                  />
+                  <p>{report.stepA12.msgValue}</p>
                 )}
               </>
             )}
@@ -318,11 +274,7 @@ class StepSummary extends Component {
                     __html: stepData.stepThirteen[lang].text,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA13.msgValue,
-                  }}
-                />
+                <p>{report.stepA13.msgValue}</p>
               </>
             )}
             {Object.keys(report.stepA14).length !== 0 && (
@@ -332,59 +284,9 @@ class StepSummary extends Component {
                     __html: stepData.stepFourteen[lang].text,
                   }}
                 />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA14.msgValue,
-                  }}
-                />
+                <p>{report.stepA14.msgValue}</p>
               </>
             )}
-            {/* 
-            
-            
-            
-            {Object.keys(report.stepA10).length !== 0 && (
-              <>
-                <h3
-                  dangerouslySetInnerHTML={{
-                    __html: stepData.stepTen[lang].text10,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA10.msgValue,
-                  }}
-                />
-              </>
-            )}
-            {Object.keys(report.stepA11).length !== 0 && (
-              <>
-                <h3
-                  dangerouslySetInnerHTML={{
-                    __html: stepData.stepEleven[lang].text11,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA11.msgValue,
-                  }}
-                />
-              </>
-            )}
-            {Object.keys(report.stepA12).length !== 0 && (
-              <>
-                <h3
-                  dangerouslySetInnerHTML={{
-                    __html: stepData.stepTwelve[lang].text12,
-                  }}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: report.stepA12.msgValue,
-                  }}
-                />
-              </>
-            )} */}
           </>
         )}
       </div>

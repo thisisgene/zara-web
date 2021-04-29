@@ -102,7 +102,7 @@ class StepA12 extends Component {
     const { gender } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepTwelve[lang].text9 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepTwelve[lang].text }} />
 
         {stepTwelve[lang].options.map((option) => (
           <>

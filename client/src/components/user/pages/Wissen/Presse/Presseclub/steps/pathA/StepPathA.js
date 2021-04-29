@@ -158,7 +158,6 @@ class StepPathA extends Component {
           steps={steps}
           startAtStep={0}
           prevBtnOnLastStep={false}
-          hocValidationAppliedTo={-1}
           nextButtonCls={"next-button"}
           nextButtonText={lang === "de" ? "Weiter" : "Next"}
           backButtonText={lang === "de" ? "Zurück" : "Back"}

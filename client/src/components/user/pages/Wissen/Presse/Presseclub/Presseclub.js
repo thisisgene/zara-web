@@ -16,10 +16,10 @@ import HeroUnit from "../../../../dashboard/HeroUnit/HeroUnit"
 import LongText from "../../../../dashboard/LongText/LongText"
 import OptionButtons from "./OptionButtons/OptionButtons"
 
-import { stepsA, stepsB, stepsC, stepsD } from "./steps/steps"
 import StepPathA from "./steps/pathA/StepPathA"
 import StepPathB from "./steps/pathB/StepPathB"
 import StepPathC from "./steps/pathC/StepPathC"
+import StepPathD from "./steps/pathD/StepPathD"
 
 import styles from "./Presseclub.module.sass"
 
@@ -28,17 +28,6 @@ class Presseclub extends Component {
     category: "",
     perspective: "",
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (
-  //     prevProps.report &&
-  //     prevProps.report.reportSent !== this.props.report.reportSent
-  //   ) {
-  //     this.updateStore({
-  //       reportSent: this.props.report.reportSent,
-  //     })
-  //   }
-  // }
 
   setActiveCategory = (cat) => {
     if (this.state.category !== cat) {
@@ -143,7 +132,9 @@ class Presseclub extends Component {
                 </>
               )}
               {category === "public" && perspective === "third" && (
-                <>in progress</>
+                <>
+                  <StepPathD lang={lang} />
+                </>
               )}
             </div>
           </div>

@@ -84,6 +84,8 @@ export default function (state = initialState, action) {
           stepA10: {},
           stepA11: {},
           stepA12: {},
+          stepA13: {},
+          stepA14: {},
         },
       }
     case UPDATE_REPORT:

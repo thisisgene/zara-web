@@ -60,7 +60,6 @@ class StepA7 extends Component {
               name={"msgValue"}
               value={this.state["msgValue"]}
               onChange={this.onChange}
-              onBlur={this.validationCheck}
             />
           </div>
         )}
