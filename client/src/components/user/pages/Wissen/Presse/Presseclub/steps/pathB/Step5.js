@@ -277,7 +277,9 @@ class StepA5 extends Component {
           <aside className={styles["thumbsContainer"]}>{thumbs}</aside>
           <p>
             <span dangerouslySetInnerHTML={{ __html: stepFive[lang].text5d }} />{" "}
-            <Link to={stepFive[lang].link.url}>{stepFive[lang].link.text}</Link>
+            <a target="_blank" href={`/${lang}/${stepFive[lang].link.url}`}>
+              {stepFive[lang].link.text}
+            </a>
           </p>
         </div>
       </div>

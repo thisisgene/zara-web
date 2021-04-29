@@ -156,3 +156,11 @@ export const optionObjPublic = {
     ],
   },
 }
+
+export const screenshotInfo = {
+  de: {
+    title: "Wie erstelle ich einen korrekten Screenshot?",
+    text:
+      "<ul><li>Der Screenshot muss den gesamten Text des einzelnen Hassbeitrages (Kommentar, Posting, Bild mit Untertitel...) zeigen. <li>Sollte der Hassbeitrag (z.B. ein Kommentar) Bezug auf etwas nehmen (wie z.B. ein darüber stehendes Posting oder Bild), dann braucht es einen Screenshot bei dem sowohl das Original-Posting als auch der hasserfüllte Kommentar zu sehen sind, damit der Zusammenhang klar nachvollziehbar ist. <li>Der Screenshot muss Datum und Uhrzeit des Hassbeitrags selbst sichtbar machen. <p>    Achtung: Datum und Uhrzeit sind oftmals nicht automatisch sichtbar. Führen Sie Ihre Maus (<em>Cursor</em>) dorthin, wo eine ungefähre Zeitangabe (z.B. vor 1 Tag) steht, denn so werden Datum und Uhrzeit im Detail sichtbar.</p><ul><li>Für einen korrekten Screenshot braucht es das aktuelle Datum und die Uhrzeit, an dem der Screenshot selbst erstellt wurde. (Bitte kein Handy oder Tablet verwenden, weil das klappt meistens mit den mobilen Versionen nicht.)</li></ul></li></ul><p>Jede*r benutzt ein anderes Gerät/Betriebssystem und es gibt hierfür nicht die eine Lösung, aber wir empfehlen in einer Suchmaschine nach folgenden Stichworten zu suchen: </p><p><em>Screenshot tool</em> (z.B. FireShot, Snipping Tool) bzw. wie <em>Bildschirmaufnahme erstellen</em> <em>mit</em> (zeitlicher) <em>Verzögerung.</em></p><p>Zeitliche Verzögerung braucht es, damit Sie Ihren Cursor auf der Datum-/Zeitangabe halten können.  </p>",
+  },
+}

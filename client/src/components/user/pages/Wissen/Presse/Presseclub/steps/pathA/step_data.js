@@ -168,7 +168,8 @@ export const stepFive = {
       "* Wie Sie einen Screenshot mit Zeitstempel erstellen, erfahren Sie",
     link: {
       text: "hier.",
-      url: "",
+      url:
+        "wissen/presse/dokumentation_von_angriffen_auf_journalist_innen/screenshot_info",
     },
     droptext: "Bilder hier hochladen.",
     errorText: {
