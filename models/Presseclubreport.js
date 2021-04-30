@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const ReportSchema = new Schema({
@@ -87,6 +87,9 @@ const ReportSchema = new Schema({
   witnessText: {
     type: String,
   },
+  onlineToo: {
+    type: Boolean,
+  },
   jurid: {
     type: String,
   },
@@ -123,6 +126,6 @@ const ReportSchema = new Schema({
 })
 
 module.exports = Presseclubreport = mongoose.model(
-  "presseclubreports",
+  'presseclubreports',
   ReportSchema
 )

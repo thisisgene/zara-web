@@ -1,28 +1,28 @@
-import React, { Component } from "react"
-import StepZilla from "react-stepzilla"
-import { connect } from "react-redux"
+import React, { Component } from 'react'
+import StepZilla from 'react-stepzilla'
+import { connect } from 'react-redux'
 
 import {
   clearNewReport,
   storeReportData,
-} from "../../../../../../../../actions/reportActions"
+} from '../../../../../../../../actions/reportActions'
 
-import Step1 from "./Step1"
-import Step2 from "./Step2"
-import Step3 from "./Step3"
-import Step4 from "./Step4"
-import Step5 from "./Step5"
-import Step6 from "./Step6"
-import Step7 from "./Step7"
-import Step8 from "./Step8"
-import Step9 from "./Step9"
-import Step10 from "./Step10"
-import Step11 from "./Step11"
-import Step12 from "./Step12"
-import Step13 from "./Step13"
-import Step14 from "./Step14"
-import StepSummary from "./StepSummary"
-import StepFinal from "./StepFinal"
+import Step1 from './Step1'
+import Step2 from './Step2'
+import Step3 from './Step3'
+import Step4 from './Step4'
+import Step5 from './Step5'
+import Step6 from './Step6'
+import Step7 from './Step7'
+import Step8 from './Step8'
+import Step9 from './Step9'
+import Step10 from './Step10'
+import Step11 from './Step11'
+import Step12 from './Step12'
+import Step13 from './Step13'
+import Step14 from './Step14'
+import StepSummary from './StepSummary'
+import StepFinal from './StepFinal'
 
 class StepPathC extends Component {
   componentDidMount() {
@@ -177,18 +177,19 @@ class StepPathC extends Component {
         <StepZilla
           steps={steps}
           startAtStep={0}
+          stepsNavigation={false}
           prevBtnOnLastStep={false}
-          nextButtonCls={"next-button"}
-          nextButtonText={lang === "de" ? "Weiter" : "Next"}
-          backButtonText={lang === "de" ? "Zurück" : "Back"}
-          nextTextOnFinalActionStep={lang === "de" ? "Absenden" : "Send"}
+          nextButtonCls={'next-button'}
+          nextButtonText={lang === 'de' ? 'Weiter' : 'Next'}
+          backButtonText={lang === 'de' ? 'Zurück' : 'Back'}
+          nextTextOnFinalActionStep={lang === 'de' ? 'Absenden' : 'Send'}
         />
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   report: state.report,
 })
 
