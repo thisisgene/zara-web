@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Moment from 'react-moment'
+
+import ExportCsv from './ExportCsv'
 import {
   getPresseclubReportById,
   sendToArchive,
@@ -426,6 +428,9 @@ class ReportContent extends Component {
               >
                 {this.state.archived ? 'Aus Archiv holen' : 'Archivieren'}
               </button>
+            </div>
+            <div className={styles['export-button']}>
+              <ExportCsv data={report} path={path} stepData={stepData} />
             </div>
           </div>
         )}

@@ -29,6 +29,7 @@
     "react-google-maps": "^9.4.5",
     "react-google-recaptcha": "^2.0.1",
     "react-hook-form": "^5.5.3",
+    "react-json-csv": "^2.0.0",
     "react-keyed-file-browser": "^1.4.2",
     "react-localize-redux": "^3.5.1",
     "react-mailchimp-subscribe": "^2.0.2",
