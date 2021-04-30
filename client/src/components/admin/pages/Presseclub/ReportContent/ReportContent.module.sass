@@ -28,10 +28,12 @@
       padding: .3rem 1rem
       width: 100%
       font-family: Courier
+  @media(max-width: 800px)
+    margin-left: 0
   
 .image-container
   display: grid
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-template-columns: repeat(auto-fill, 150px)
   grid-gap: .3rem  
 
   .thumb-container 
@@ -44,6 +46,7 @@
     font-size: .7rem
     background: rgba(#aaa, .1)
     padding: .5rem
+    width: 150px
   .thumb 
     display: inline-flex
     border-radius: 2px
