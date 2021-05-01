@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-import Promise from 'promise'
+import React, { Component } from "react"
+import axios from "axios"
+import Promise from "promise"
 
-import * as stepData from './step_data'
+import * as stepData from "./step_data"
 
-import Spinner from '../../../../../../dashboard/Spinner/Spinner'
+import Spinner from "../../../../../../dashboard/Spinner/Spinner"
 
-import cx from 'classnames'
-import styles from '../Steps.module.sass'
+import cx from "classnames"
+import styles from "../Steps.module.sass"
 
 class StepSummary extends Component {
   constructor(props) {
@@ -23,21 +23,21 @@ class StepSummary extends Component {
       this.setState({
         saving: true,
       })
-      axios.post('/api/projects/report/presseclub/send', report).then(res => {
+      axios.post("/api/projects/report/presseclub/send", report).then((res) => {
         const id = res.data.report._id
         const files = report.newReport.stepA5 && report.newReport.stepA5.files
         if (files && files.length > 0) {
           // console.log("files ", id, files)
-          files.map(file => {
+          files.map((file) => {
             let fileData = new FormData()
-            fileData.append('id', id)
-            fileData.append('name', file.name)
-            fileData.append('size', file.size)
-            fileData.append('file', file)
+            fileData.append("id", id)
+            fileData.append("name", file.name)
+            fileData.append("size", file.size)
+            fileData.append("file", file)
             return axios
-              .post('/api/projects/report/presseclub/images', fileData)
-              .then(res => {
-                if (res.data === 'success') {
+              .post("/api/projects/report/presseclub/images", fileData)
+              .then((res) => {
+                if (res.data === "success") {
                   resolve()
                 } else {
                   reject()
@@ -45,7 +45,7 @@ class StepSummary extends Component {
               })
           })
         } else {
-          if (res.data.msg === 'success') {
+          if (res.data.msg === "success") {
             resolve()
           } else {
             reject()
@@ -59,7 +59,7 @@ class StepSummary extends Component {
     const report = this.props.report.newReport
     return (
       <div
-        className={cx(styles['step-container'], styles['summary-container'])}
+        className={cx(styles["step-container"], styles["summary-container"])}
       >
         <Spinner nowActive={this.state.saving} />
         <h2
@@ -78,12 +78,12 @@ class StepSummary extends Component {
                 <p
                   dangerouslySetInnerHTML={{
                     __html:
-                      report.stepA1 && report.stepA1.directReaction === 'yes'
+                      report.stepA1 && report.stepA1.directReaction === "yes"
                         ? stepData.stepOne[lang].options[0].text
                         : stepData.stepOne[lang].options[1].text,
                   }}
                 />
-                {report.stepA1.directReaction === 'yes' ? (
+                {report.stepA1.directReaction === "yes" ? (
                   <>
                     <h3
                       dangerouslySetInnerHTML={{
@@ -126,16 +126,16 @@ class StepSummary extends Component {
                   }}
                 />
                 {stepData.stepTwo[lang].options.map(
-                  option =>
+                  (option) =>
                     report.stepA2.socialmedia &&
                     report.stepA2.socialmedia[option.value] &&
-                    (option.value !== 'other' ? (
+                    (option.value !== "other" ? (
                       <p dangerouslySetInnerHTML={{ __html: option.text }} />
                     ) : (
                       <p>
                         <span
                           dangerouslySetInnerHTML={{ __html: option.text }}
-                        />{' '}
+                        />{" "}
                         <span>{report.stepA2.socialmedia.otherValue}</span>
                       </p>
                     ))
@@ -153,7 +153,7 @@ class StepSummary extends Component {
                 <p
                   dangerouslySetInnerHTML={{
                     __html: stepData.stepThree[lang].options.find(
-                      opt => opt.value === report.stepA3.extent
+                      (opt) => opt.value === report.stepA3.extent
                     ).text,
                   }}
                 />
@@ -170,13 +170,13 @@ class StepSummary extends Component {
                 <p
                   dangerouslySetInnerHTML={{
                     __html: stepData.stepFour[lang].options.find(
-                      opt => opt.value === report.stepA4.privatemsg
+                      (opt) => opt.value === report.stepA4.privatemsg
                     ).text,
                   }}
                 />
-                {report.stepA4.privatemsg === 'yes' && (
+                {report.stepA4.privatemsg === "yes" && (
                   <>
-                    {' '}
+                    {" "}
                     <h3
                       dangerouslySetInnerHTML={{
                         __html: stepData.stepFour[lang].text4b,
@@ -195,21 +195,27 @@ class StepSummary extends Component {
                   }}
                 />
                 {stepData.stepFive[lang].options.map(
-                  option =>
+                  (option) =>
                     report.stepA5.typeOfHate &&
                     report.stepA5.typeOfHate[option.value] &&
-                    (option.value !== 'other' ? (
+                    (option.value !== "other" ? (
                       <p dangerouslySetInnerHTML={{ __html: option.text }} />
                     ) : (
                       <p>
                         <span
                           dangerouslySetInnerHTML={{ __html: option.text }}
                         />
-                        {': '}
+                        {": "}
                         <span>{report.stepA5.otherValue}</span>
                       </p>
                     ))
                 )}
+                <h3
+                  dangerouslySetInnerHTML={{
+                    __html: stepData.stepFive[lang].text5a2,
+                  }}
+                />
+                <p>{report.stepA5.typeOfHateNotes}</p>
                 <h3
                   dangerouslySetInnerHTML={{
                     __html: stepData.stepFive[lang].text5b,
@@ -236,9 +242,9 @@ class StepSummary extends Component {
                   />
                 </h3>
                 {report.stepA5.files &&
-                  report.stepA5.files.map(file => (
+                  report.stepA5.files.map((file) => (
                     <p>
-                      <img src={file.preview} alt={`preview ${file.name}`} />{' '}
+                      <img src={file.preview} alt={`preview ${file.name}`} />{" "}
                       {file.name}
                     </p>
                   ))}
@@ -255,13 +261,13 @@ class StepSummary extends Component {
                 <p
                   dangerouslySetInnerHTML={{
                     __html: stepData.stepSix[lang].options.find(
-                      opt => opt.value === report.stepA6.jurid
+                      (opt) => opt.value === report.stepA6.jurid
                     ).text,
                   }}
                 />
-                {report.stepA6.jurid === 'other' && (
+                {report.stepA6.jurid === "other" && (
                   <>
-                    {' '}
+                    {" "}
                     <p>{report.stepA6.msgValue}</p>
                   </>
                 )}
@@ -290,7 +296,7 @@ class StepSummary extends Component {
                 <p
                   dangerouslySetInnerHTML={{
                     __html: stepData.stepEight[lang].options.find(
-                      opt => opt.value === report.stepA8.solidarity
+                      (opt) => opt.value === report.stepA8.solidarity
                     ).text,
                   }}
                 />
@@ -304,11 +310,11 @@ class StepSummary extends Component {
                   }}
                 />
 
-                {report.stepA9.gender !== 'other' ? (
+                {report.stepA9.gender !== "other" ? (
                   <p
                     dangerouslySetInnerHTML={{
                       __html: stepData.stepNine[lang].options.find(
-                        opt => opt.value === report.stepA9.gender
+                        (opt) => opt.value === report.stepA9.gender
                       ).text,
                     }}
                   />

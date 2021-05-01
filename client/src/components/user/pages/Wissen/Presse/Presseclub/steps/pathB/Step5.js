@@ -59,6 +59,11 @@ class StepA5 extends Component {
         this.props.report.newReport.stepA5 &&
         this.props.report.newReport.stepA5.typeOfHate &&
         this.props.report.newReport.stepA5.typeOfHate.other,
+      typeOfHateNotes:
+        this.props.report.newReport &&
+        this.props.report.newReport.stepA5 &&
+        this.props.report.newReport.stepA5.typeOfHate &&
+        this.props.report.newReport.stepA5.typeOfHate.typeOfHateNotes,
     },
     otherValue:
       this.props.report.newReport &&
@@ -172,7 +177,6 @@ class StepA5 extends Component {
     return (
       <div className={styles["step-container"]}>
         <p dangerouslySetInnerHTML={{ __html: stepFive[lang].text5a }} />
-
         {stepFive[lang].options.map((option) => (
           <div className={styles["radio-wrapper"]}>
             <input
@@ -195,6 +199,16 @@ class StepA5 extends Component {
           value={this.state.otherValue}
           onChange={this.onChange}
           disabled={!this.state.typeOfHate.other}
+        />
+        <br />
+        <span
+          dangerouslySetInnerHTML={{ __html: stepFive[lang].text5a2 }}
+        />{" "}
+        <input
+          type="text"
+          name="typeOfHateNotes"
+          value={this.state.typeOfHateNotes}
+          onChange={this.onChange}
         />
         <p dangerouslySetInnerHTML={{ __html: stepFive[lang].text5b }} />
         <input

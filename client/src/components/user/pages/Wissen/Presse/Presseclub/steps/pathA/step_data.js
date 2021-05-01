@@ -6,7 +6,7 @@ export const stepOne = {
     options: [
       {
         text:
-          "<b>Ja</b>, der Online-Angriff ist eine direkte Reaktion auf einen Beitrag.",
+          "<b>Ja</b>, der Online-Angriff ist eine direkte Reaktion auf einen Beitrag/mehrere Beiträge.",
         value: "yes",
       },
       {
@@ -152,10 +152,11 @@ export const stepFive = {
         value: "politics",
       },
       {
-        text: "Hass aufgrund anderer Merkmale oder Zuschreibungen",
+        text: "Hass aufgrund anderer Merkmale oder Zuschreibungen:",
         value: "other",
       },
     ],
+    text5a2: "Anmerkungen:",
     text5b:
       "<b>Hier ist Raum für Beispiele (Originalwortlaut samt URL) bzw. Präzisierungen:</b>",
     text5c:
@@ -296,6 +297,6 @@ export const stepSummary = {
 export const stepFinal = {
   de: {
     text:
-      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet – in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="https://concordia.at/mitgliedschaft/">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: <a href="https://concordia.at/newsletter-anmeldung/">Hier anmelden</a></p>',
+      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet – in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der <a href="https://concordia.at/">Presseclub Concordia</a> ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="https://concordia.at/mitgliedschaft/">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: <a href="https://concordia.at/newsletter-anmeldung/">Hier anmelden</a></p><p><span>Die ZARA Beratungsstelle #GegenHassimNetz</span> bietet kostenlose und wenn gewünscht anonyme (Rechts-)Beratung bei Hass im Netz an.</p><p>Nehmen Sie gerne unverbindlich mit uns Kontakt auf: <a href="https://zara.or.at/de/beratung">https://zara.or.at/de/beratung</a> oder wenden Sie sich persönlich an ZARA: 01/929 13 99-0 </p>',
   },
 }

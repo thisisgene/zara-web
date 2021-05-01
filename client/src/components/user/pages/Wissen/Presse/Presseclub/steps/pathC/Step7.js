@@ -53,16 +53,15 @@ class StepA7 extends Component {
             />
           </div>
         ))}
-        {racism === "yes" && (
-          <div>
-            <p dangerouslySetInnerHTML={{ __html: stepSeven[lang].textb }} />
-            <textarea
-              name={"msgValue"}
-              value={this.state["msgValue"]}
-              onChange={this.onChange}
-            />
-          </div>
-        )}
+
+        <div>
+          <p dangerouslySetInnerHTML={{ __html: stepSeven[lang].textb }} />
+          <textarea
+            name={"msgValue"}
+            value={this.state["msgValue"]}
+            onChange={this.onChange}
+          />
+        </div>
       </div>
     )
   }

@@ -102,7 +102,7 @@ class StepA9 extends Component {
     const { jurid } = this.state
     return (
       <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepNine[lang].text6 }} />
+        <p dangerouslySetInnerHTML={{ __html: stepNine[lang].text }} />
 
         {stepNine[lang].options.map((option) => (
           <>

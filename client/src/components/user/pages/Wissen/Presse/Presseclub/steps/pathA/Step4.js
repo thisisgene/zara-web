@@ -81,18 +81,12 @@ class StepA4 extends Component {
   _validateData(data) {
     return {
       optionVal: data.privatemsg !== undefined,
-      msgValueVal:
-        data.privatemsg === "no" ||
-        (data.privatemsg === "yes" &&
-          data.msgValue !== undefined &&
-          data.msgValue !== ""),
     }
   }
 
   _validationErrors(val) {
     const errMsgs = {
       optionValMsg: val.optionVal ? "" : "Bitte wählen Sie eine Option.",
-      msgValueValMsg: val.msgValueVal ? "" : "Darf nicht leer bleiben.",
     }
     return errMsgs
   }
@@ -133,11 +127,6 @@ class StepA4 extends Component {
               onChange={this.onChange}
               onBlur={this.validationCheck}
             />
-            {this.state.msgValueValMsg && (
-              <span className={styles["error-msg"]}>
-                {this.state.msgValueValMsg}
-              </span>
-            )}
           </div>
         )}
       </div>

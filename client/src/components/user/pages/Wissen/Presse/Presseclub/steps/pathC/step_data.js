@@ -78,8 +78,7 @@ export const stepSeven = {
         value: "no",
       },
     ],
-    textb:
-      "<b>Wenn ja</b>, ist hier Raum für beispielhafte Beschreibung (Anzahl und Inhalt) der privaten Nachrichten:",
+    textb: "<b>Raum für nähere Ausführungen:</b>",
   },
 }
 export const stepEight = {
@@ -200,6 +199,6 @@ export const stepSummary = {
 export const stepFinal = {
   de: {
     text:
-      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong> </p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen im Internet –  in Form, Ausmaß und Inhalt – öffentlich zu machen. </p><p>Der Presseclub Concordia ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="http://www.concordia.at">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: <a href="https://concordia.at/newsletter-anmeldung/">Hier anmelden</a></p>',
+      '<p><strong>Danke für das Dokumentieren Ihrer Erfahrungen.</strong></p><p>Die Daten werden anonymisiert ausgewertet, um das Phänomen der systematischen Einschüchterung von Journalist*innen öffentlich zu machen. </p><p>Der <a href="https://concordia.at/">Presseclub Concordia</a> ist ein gemeinnütziger Journalist*innenverein. Sein Ziel ist es, die Pressefreiheit zu wahren und unabhängigen, ethisch verantwortungsvollen Journalismus zu stärken. Wenn Sie Journalist*in sind und Mitglied werden wollen, informieren Sie sich auf der <a href="https://concordia.at/mitgliedschaft/">Concordia-Website</a>.</p><p>Um über die Initiative und die Ergebnisse am Laufenden zu bleiben, abonnieren Sie bitte den Newsletter des Presseclubs Concordia: <a href="https://concordia.at/newsletter-anmeldung/">Hier anmelden</a></p>',
   },
 }
