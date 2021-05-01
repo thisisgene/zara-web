@@ -156,8 +156,8 @@ class StepPathA extends Component {
       <div>
         <StepZilla
           steps={steps}
-          startAtStep={4}
-          // stepsNavigation={false}
+          startAtStep={0}
+          stepsNavigation={false}
           prevBtnOnLastStep={false}
           nextButtonCls={"next-button"}
           nextButtonText={lang === "de" ? "Weiter" : "Next"}
