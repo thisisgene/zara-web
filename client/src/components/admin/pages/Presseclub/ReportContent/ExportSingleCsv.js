@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { useJsonToCsv } from 'react-json-csv'
 
-import { fieldsAB, exportPathAB } from '../ExportCsv'
+import { fieldsAB, fieldsCD, exportPathAB, exportPathCD } from '../ExportCsv'
 
 export default class ExportSingleCsv extends Component {
   exportSingleCsv = (report, stepData, path) => {
@@ -15,7 +15,11 @@ export default class ExportSingleCsv extends Component {
       saveAsCsv({ data, fields, filename })
     }
     if (path === 'C' || path === 'D') {
-      console.log('happaenif')
+      const filename = `presseclub_meldung_${report.date}`
+      const fields = fieldsCD
+      let data = exportPathCD(report, stepData)
+      data = [data]
+      saveAsCsv({ data, fields, filename })
     }
   }
   render() {

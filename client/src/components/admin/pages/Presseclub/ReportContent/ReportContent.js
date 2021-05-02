@@ -438,6 +438,263 @@ class ReportContent extends Component {
                   )}
                 </>
               )}
+              {(path == 'C' || path == 'D') && stepData.length !== 0 && (
+                <>
+                  <h3>Datum & Uhrzeit</h3>
+                  <p>{formattedDate}</p>
+                  <h3
+                    dangerouslySetInnerHTML={{
+                      __html: stepData.stepOne[lang].text1,
+                    }}
+                  />
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: report.directReaction
+                        ? stepData.stepOne[lang].options[0].text
+                        : stepData.stepOne[lang].options[1].text,
+                    }}
+                  />
+                  {report.typeOfAbuse.length > 0 && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepOne[lang].text,
+                        }}
+                      />
+                      {stepData.stepOne[lang].options.map(
+                        option =>
+                          report.typeOfAbuse[option.value] &&
+                          (option.value !== 'other' ? (
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: option.text,
+                              }}
+                            />
+                          ) : (
+                            <p>
+                              <span
+                                dangerouslySetInnerHTML={{
+                                  __html: option.text,
+                                }}
+                              />
+                              {': '}
+                              <span>{report.typeOtherValue}</span>
+                            </p>
+                          ))
+                      )}
+                    </>
+                  )}
+                  {report.location && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepTwo[lang].text,
+                        }}
+                      />
+                      <p>{report.location}</p>
+                    </>
+                  )}
+                  {report.attacker && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepThree[lang].text,
+                        }}
+                      />
+                      <p>{report.attacker}</p>
+                    </>
+                  )}
+                  {report.description && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepFour[lang].text,
+                        }}
+                      />
+                      <p>{report.description}</p>
+                    </>
+                  )}
+                  {report.medium && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepFive[lang].text,
+                        }}
+                      />
+                      <p>{report.medium}</p>
+                    </>
+                  )}
+                  {report.images.length > 0 && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepSix[lang].text,
+                        }}
+                      />
+                      <div className={styles['image-container']}>
+                        {report.images.map((image, index) => (
+                          <div
+                            className={styles['thumb-container']}
+                            key={index}
+                          >
+                            <div>
+                              <div className={styles['thumb']}>
+                                <div className={styles['thumbInner']}>
+                                  <a
+                                    target="_blank"
+                                    href={`/assets/presseclub/reports/${report._id}/${image.originalName}`}
+                                  >
+                                    <Image
+                                      src={`/assets/presseclub/reports/${report._id}/${image.originalName}`}
+                                      className={styles['img']}
+                                      alt={`preview ${image.originalName}`}
+                                    />
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <p>{image.originalName}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {report.racism && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepSeven[lang].text,
+                        }}
+                      />
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepSeven[lang].options.find(opt =>
+                            report.racism ? 'yes' : 'no'
+                          ).text,
+                        }}
+                      />
+                      <>
+                        <p>{report.racismText}</p>
+                      </>
+                    </>
+                  )}
+                  {report.witness && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepEight[lang].text,
+                        }}
+                      />
+
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepEight[lang].options.find(opt =>
+                            report.witness ? 'yes' : 'no'
+                          ).text,
+                        }}
+                      />
+                      {report.witness === true && (
+                        <>
+                          <p>{report.witnessText}</p>
+                        </>
+                      )}
+                    </>
+                  )}
+                  {report.jurid && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepNine[lang].text,
+                        }}
+                      />
+
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepNine[lang].options.find(
+                            opt => opt.value === report.jurid
+                          ).text,
+                        }}
+                      />
+
+                      <p>{report.juridText}</p>
+                    </>
+                  )}
+                  {(report.consequence ||
+                    report.consequence2 ||
+                    report.consequence3) && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepTen[lang].text,
+                        }}
+                      />
+                      <p>{report.consequence}</p>
+                      <p>{report.consequence2}</p>
+                      <p>{report.consequence3}</p>
+                    </>
+                  )}
+                  {'onlineToo' in report && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepEleven[lang].text,
+                        }}
+                      />
+
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepEleven[lang].options.find(opt =>
+                            report.onlineToo ? 'yes' : 'no'
+                          ).text,
+                        }}
+                      />
+                    </>
+                  )}
+
+                  {report.gender && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepTwelve[lang].text,
+                        }}
+                      />
+
+                      {report.gender !== 'other' ? (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: stepData.stepTwelve[lang].options.find(
+                              opt => opt.value === report.gender
+                            ).text,
+                          }}
+                        />
+                      ) : (
+                        <p>{report.genderText}</p>
+                      )}
+                    </>
+                  )}
+
+                  {report.additional && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepThirteen[lang].text,
+                        }}
+                      />
+                      <p>{report.additional}</p>
+                    </>
+                  )}
+                  {report.additional2 && (
+                    <>
+                      <h3
+                        dangerouslySetInnerHTML={{
+                          __html: stepData.stepFourteen[lang].text,
+                        }}
+                      />
+                      <p>{report.additional2}</p>
+                    </>
+                  )}
+                </>
+              )}
             </div>
 
             <div className={styles['archive-button']}>

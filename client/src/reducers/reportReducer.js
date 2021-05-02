@@ -13,6 +13,7 @@ import {
 
 const initialState = {
   reports: null,
+  report: null,
   reportsSelected: null,
   newReport: {
     basics: {},
