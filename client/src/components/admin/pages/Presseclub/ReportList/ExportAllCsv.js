@@ -7,7 +7,6 @@ import { getAllPresseclubReportsByQuery } from '../../../../../actions/reportAct
 import { fieldsAB, fieldsCD, exportPathAB, exportPathCD } from '../ExportCsv'
 import * as stepDataA from '../../../../user/pages/Wissen/Presse/Presseclub/steps/pathA/step_data.js'
 import * as stepDataC from '../../../../user/pages/Wissen/Presse/Presseclub/steps/pathC/step_data.js'
-import * as stepDataD from '../../../../user/pages/Wissen/Presse/Presseclub/steps/pathD/step_data.js'
 
 class ExportAllCsv extends Component {
   state = {
@@ -31,6 +30,7 @@ class ExportAllCsv extends Component {
       filename = `presseclub_meldungen_AB`
       stepData = stepDataA
       fields = fieldsAB
+      // reports = reports.filter(report => !report.archived)
       for (let report of reports) {
         data.push(exportPathAB(report, stepData))
       }
@@ -52,10 +52,14 @@ class ExportAllCsv extends Component {
   getAllReports = path => {
     this.setState({ isLoading: true, path: path }, () => {
       if (this.state.path === 'ab') {
-        this.props.getAllPresseclubReportsByQuery({ category: 'online' })
+        this.props.getAllPresseclubReportsByQuery({
+          category: 'online',
+        })
       }
       if (this.state.path === 'cd') {
-        this.props.getAllPresseclubReportsByQuery({ category: 'public' })
+        this.props.getAllPresseclubReportsByQuery({
+          category: 'public',
+        })
       }
     })
   }

@@ -19,7 +19,7 @@ class Register extends Component {
       password: '',
       password2: '',
       securityLevel: props.category === 'trainer' ? '16' : '2',
-      errors: {}
+      errors: {},
     }
   }
 
@@ -40,7 +40,7 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2,
-      securityLevel: this.state.securityLevel
+      securityLevel: this.state.securityLevel,
     }
 
     this.props.registerUser(newUser, this.props.history)
@@ -105,6 +105,7 @@ class Register extends Component {
                       value={this.state.securityLevel}
                       onChange={this.onChange}
                     >
+                      <option value="8">Presseclub</option>
                       <option value="5">Training</option>
                       <option value="4">Beratung</option>
                       <option value="3">Website config</option>
@@ -135,15 +136,12 @@ class Register extends Component {
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
 })
 
-export default connect(
-  mapStateToProps,
-  { registerUser }
-)(withRouter(Register))
+export default connect(mapStateToProps, { registerUser })(withRouter(Register))
