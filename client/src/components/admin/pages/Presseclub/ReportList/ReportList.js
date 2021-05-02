@@ -1,8 +1,9 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import ReportListItem from "./ReportListItem"
+import ReportListItem from './ReportListItem'
+import ExportAllCsv from './ExportAllCsv'
 
-import styles from "./ReportList.module.sass"
+import styles from './ReportList.module.sass'
 
 class ReportList extends Component {
   state = {
@@ -18,13 +19,16 @@ class ReportList extends Component {
   render() {
     const { reports } = this.props
     return (
-      <div className={styles["report-list"]}>
-        <div className={styles["archive-button"]}>
+      <div className={styles['report-list']}>
+        <div className={styles['archive-button']}>
           <button onClick={this.onArchivClick}>
             {!this.state.showArchive
-              ? "Zum Archiv"
-              : "Zu den aktuellen Meldungen"}
+              ? 'Zum Archiv'
+              : 'Zu den aktuellen Meldungen'}
           </button>
+        </div>
+        <div className={styles['export-button']}>
+          {reports && <ExportAllCsv reports={reports} />}
         </div>
         {reports &&
           reports

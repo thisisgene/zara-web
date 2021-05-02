@@ -1,24 +1,24 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { Route } from "react-router-dom"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
 
-import { getAllPresseclubReports } from "../../../../actions/reportActions"
+import { getAllPresseclubReportsQuick } from '../../../../actions/reportActions'
 
-import ReportList from "./ReportList/ReportList"
-import ReportContent from "./ReportContent/ReportContent"
+import ReportList from './ReportList/ReportList'
+import ReportContent from './ReportContent/ReportContent'
 
-import styles from "./Reports.module.sass"
-import Spinner from "../../common/Spinner"
+import styles from './Reports.module.sass'
+import Spinner from '../../common/Spinner'
 
 class Presseclub extends Component {
   componentDidMount() {
-    this.props.getAllPresseclubReports()
+    this.props.getAllPresseclubReportsQuick()
   }
   render() {
     const { reports } = this.props.report
     return (
-      <div className={styles["reports"]}>
-        <div className={styles["reports-container"]}>
+      <div className={styles['reports']}>
+        <div className={styles['reports-container']}>
           {reports ? <ReportList reports={reports} /> : <Spinner />}
           <Route path="/admin/presseclub/:id" component={ReportContent} />
         </div>
@@ -27,9 +27,11 @@ class Presseclub extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   report: state.report,
   auth: state.auth,
 })
 
-export default connect(mapStateToProps, { getAllPresseclubReports })(Presseclub)
+export default connect(mapStateToProps, {
+  getAllPresseclubReportsQuick,
+})(Presseclub)

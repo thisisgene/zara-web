@@ -1,20 +1,19 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import Moment from "react-moment"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-import ExportCsv from "./ExportCsv"
+import ExportSingleCsv from './ExportSingleCsv'
 import {
   getPresseclubReportById,
   sendToArchive,
-} from "../../../../../actions/reportActions"
-import { clearSingle } from "../../../../../actions/adminActions"
+} from '../../../../../actions/reportActions'
+import { clearSingle } from '../../../../../actions/adminActions'
 
-import * as stepDataA from "../../../../user/pages/Wissen/Presse/Presseclub/steps/pathA/step_data.js"
-import * as stepDataB from "../../../../user/pages/Wissen/Presse/Presseclub/steps/pathB/step_data.js"
-import * as stepDataC from "../../../../user/pages/Wissen/Presse/Presseclub/steps/pathC/step_data.js"
-import * as stepDataD from "../../../../user/pages/Wissen/Presse/Presseclub/steps/pathD/step_data.js"
+import * as stepDataA from '../../../../user/pages/Wissen/Presse/Presseclub/steps/pathA/step_data.js'
+import * as stepDataB from '../../../../user/pages/Wissen/Presse/Presseclub/steps/pathB/step_data.js'
+import * as stepDataC from '../../../../user/pages/Wissen/Presse/Presseclub/steps/pathC/step_data.js'
+import * as stepDataD from '../../../../user/pages/Wissen/Presse/Presseclub/steps/pathD/step_data.js'
 
-import styles from "./ReportContent.module.sass"
+import styles from './ReportContent.module.sass'
 
 class Image extends Component {
   constructor(props) {
@@ -27,7 +26,7 @@ class Image extends Component {
   onError = () => {
     if (!this.state.errored) {
       this.setState({
-        src: this.props.src.replace(/_/g, " "),
+        src: this.props.src.replace(/_/g, ' '),
         errored: true,
       })
     }
@@ -43,8 +42,8 @@ class Image extends Component {
 
 class ReportContent extends Component {
   state = {
-    date: "",
-    description: "",
+    date: '',
+    description: '',
 
     images: [],
     archived: false,
@@ -66,57 +65,61 @@ class ReportContent extends Component {
   }
 
   componentWillUnmount() {
-    this.props.clearSingle("report")
+    this.props.clearSingle('report')
   }
 
-  onSendToArchiveClick = (id) => {
+  onSendToArchiveClick = id => {
     this.props.sendToArchive(id)
   }
 
   render() {
     const { report } = this.props.report
-    const lang = "de"
+    const lang = 'de'
+    let formattedDate
     let stepData
     let path
     let pathName
     if (report) {
-      if (report.category === "online" && report.perspective === "first") {
+      formattedDate = new Date(report.date).toLocaleString('de-at')
+      if (report.category === 'online' && report.perspective === 'first') {
         stepData = stepDataA
-        path = "A"
+        path = 'A'
         pathName =
-          "A: Sie sind Journalist*in und wollen einen gegen Sie gerichteten Online-Angriff melden"
+          'A: Sie sind Journalist*in und wollen einen gegen Sie gerichteten Online-Angriff melden'
       }
-      if (report.category === "online" && report.perspective === "third") {
+      if (report.category === 'online' && report.perspective === 'third') {
         stepData = stepDataB
-        path = "B"
+        path = 'B'
         pathName =
-          "B: Sie haben einen Online-Angriff auf eine Journalist*in beobachtet und möchten diesen melden"
+          'B: Sie haben einen Online-Angriff auf eine Journalist*in beobachtet und möchten diesen melden'
       }
-      if (report.category === "public" && report.perspective === "first") {
+      if (report.category === 'public' && report.perspective === 'first') {
         stepData = stepDataC
-        path = "C"
+        path = 'C'
         pathName =
-          "C: Sie sind Journalist*in und wollen einen gegen Sie gerichteten Angriff im öffentlichen Raum (z.B. bei einer Demonstration) melden"
+          'C: Sie sind Journalist*in und wollen einen gegen Sie gerichteten Angriff im öffentlichen Raum (z.B. bei einer Demonstration) melden'
       }
-      if (report.category === "public" && report.perspective === "third") {
+      if (report.category === 'public' && report.perspective === 'third') {
         stepData = stepDataD
-        path = "D"
+        path = 'D'
         pathName =
-          "D: Sie haben einen Angriff auf eine*n Journalist*in im öffentlichen Raum (z.B. auf einer Demonstration) beobachtet und möchten diesen melden"
+          'D: Sie haben einen Angriff auf eine*n Journalist*in im öffentlichen Raum (z.B. auf einer Demonstration) beobachtet und möchten diesen melden'
       }
     }
     return (
-      <div className={styles["report-content-container"]}>
+      <div className={styles['report-content-container']}>
         {report && (
           <div>
-            <div className={styles["report-message-container"]}>
+            <div className={styles['report-message-container']}>
               <h3>
                 <strong>Pfad</strong>
               </h3>
               <p>{pathName}</p>
-              {(path == "A" || path == "B") && stepData.length !== 0 && (
+              {(path == 'A' || path == 'B') && stepData.length !== 0 && (
                 <>
                   <>
+                    <h3>Datum & Uhrzeit</h3>
+                    <p>{formattedDate}</p>
                     <h3
                       dangerouslySetInnerHTML={{
                         __html: stepData.stepOne[lang].text1,
@@ -174,10 +177,10 @@ class ReportContent extends Component {
                       }}
                     />
                     {stepData.stepTwo[lang].options.map(
-                      (option) =>
+                      option =>
                         report.socialmedia &&
                         report.socialmedia[option.value] &&
-                        (option.value !== "other" ? (
+                        (option.value !== 'other' ? (
                           <p
                             dangerouslySetInnerHTML={{ __html: option.text }}
                           />
@@ -185,7 +188,7 @@ class ReportContent extends Component {
                           <p>
                             <span
                               dangerouslySetInnerHTML={{ __html: option.text }}
-                            />{" "}
+                            />{' '}
                             <span>{report.socialmedia.otherValue}</span>
                           </p>
                         ))
@@ -202,13 +205,13 @@ class ReportContent extends Component {
                       <p
                         dangerouslySetInnerHTML={{
                           __html: stepData.stepThree[lang].options.find(
-                            (opt) => opt.value === report.extent
+                            opt => opt.value === report.extent
                           ).text,
                         }}
                       />
                     </>
                   )}
-                  {"privatemsg" in report && (
+                  {'privatemsg' in report && (
                     <>
                       <h3
                         dangerouslySetInnerHTML={{
@@ -218,14 +221,14 @@ class ReportContent extends Component {
 
                       <p
                         dangerouslySetInnerHTML={{
-                          __html: stepData.stepFour[lang].options.find((opt) =>
-                            report.privatemsg ? "yes" : "no"
+                          __html: stepData.stepFour[lang].options.find(opt =>
+                            report.privatemsg ? 'yes' : 'no'
                           ).text,
                         }}
                       />
                       {report.privatemsg && report.privatemsgValue && (
                         <>
-                          {" "}
+                          {' '}
                           <h3
                             dangerouslySetInnerHTML={{
                               __html: stepData.stepFour[lang].text4b,
@@ -246,9 +249,9 @@ class ReportContent extends Component {
                           }}
                         />
                         {stepData.stepFive[lang].options.map(
-                          (option) =>
+                          option =>
                             report.typeOfHate[0][option.value] &&
-                            (option.value !== "other" ? (
+                            (option.value !== 'other' ? (
                               <p
                                 dangerouslySetInnerHTML={{
                                   __html: option.text,
@@ -261,7 +264,7 @@ class ReportContent extends Component {
                                     __html: option.text,
                                   }}
                                 />
-                                {": "}
+                                {': '}
                                 <span>{report.typeOtherValue}</span>
                               </p>
                             ))
@@ -300,20 +303,25 @@ class ReportContent extends Component {
                             des Online-Angriffs als Screenshots
                           </strong>
                         </h3>
-                        <div className={styles["image-container"]}>
+                        <div className={styles['image-container']}>
                           {report.images.map((image, index) => (
                             <div
-                              className={styles["thumb-container"]}
+                              className={styles['thumb-container']}
                               key={index}
                             >
                               <div>
-                                <div className={styles["thumb"]}>
-                                  <div className={styles["thumbInner"]}>
-                                    <Image
-                                      src={`/assets/presseclub/reports/${report._id}/${image.originalName}`}
-                                      className={styles["img"]}
-                                      alt={`preview ${image.originalName}`}
-                                    />
+                                <div className={styles['thumb']}>
+                                  <div className={styles['thumbInner']}>
+                                    <a
+                                      target="_blank"
+                                      href={`/assets/presseclub/reports/${report._id}/${image.originalName}`}
+                                    >
+                                      <Image
+                                        src={`/assets/presseclub/reports/${report._id}/${image.originalName}`}
+                                        className={styles['img']}
+                                        alt={`preview ${image.originalName}`}
+                                      />
+                                    </a>
                                   </div>
                                 </div>
                               </div>
@@ -335,11 +343,11 @@ class ReportContent extends Component {
                       <p
                         dangerouslySetInnerHTML={{
                           __html: stepData.stepSix[lang].options.find(
-                            (opt) => opt.value === report.jurid
+                            opt => opt.value === report.jurid
                           ).text,
                         }}
                       />
-                      {report.jurid === "other" && (
+                      {report.jurid === 'other' && (
                         <>
                           <p>{report.juridText}</p>
                         </>
@@ -371,7 +379,7 @@ class ReportContent extends Component {
                       <p
                         dangerouslySetInnerHTML={{
                           __html: stepData.stepEight[lang].options.find(
-                            (opt) => opt.value === report.solidarity
+                            opt => opt.value === report.solidarity
                           ).text,
                         }}
                       />
@@ -385,11 +393,11 @@ class ReportContent extends Component {
                         }}
                       />
 
-                      {report.gender !== "other" ? (
+                      {report.gender !== 'other' ? (
                         <p
                           dangerouslySetInnerHTML={{
                             __html: stepData.stepNine[lang].options.find(
-                              (opt) => opt.value === report.gender
+                              opt => opt.value === report.gender
                             ).text,
                           }}
                         />
@@ -432,15 +440,15 @@ class ReportContent extends Component {
               )}
             </div>
 
-            <div className={styles["archive-button"]}>
+            <div className={styles['archive-button']}>
               <button
                 onClick={this.onSendToArchiveClick.bind(this, report._id)}
               >
-                {this.state.archived ? "Aus Archiv holen" : "Archivieren"}
+                {this.state.archived ? 'Aus Archiv holen' : 'Archivieren'}
               </button>
             </div>
-            <div className={styles["export-button"]}>
-              <ExportCsv data={report} path={path} stepData={stepData} />
+            <div className={styles['export-button']}>
+              <ExportSingleCsv data={report} path={path} stepData={stepData} />
             </div>
           </div>
         )}
@@ -449,7 +457,7 @@ class ReportContent extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   report: state.report,
 })
 

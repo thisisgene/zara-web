@@ -8,10 +8,12 @@ import {
   CLEAR_NEW_REPORT,
   UPDATE_REPORT,
   STORE_REPORT_DATA,
-} from "../actions/types"
+  GET_ALL_REPORTS_SELECTION,
+} from '../actions/types'
 
 const initialState = {
   reports: null,
+  reportsSelected: null,
   newReport: {
     basics: {},
     stepA1: {},
@@ -39,6 +41,12 @@ export default function (state = initialState, action) {
 
         reports: action.payload,
       }
+    case GET_ALL_REPORTS_SELECTION:
+      return {
+        ...state,
+
+        reportsSelected: action.payload,
+      }
     case GET_REPORT_BY_ID:
       return {
         ...state,
@@ -59,8 +67,8 @@ export default function (state = initialState, action) {
         ...state,
         reportFail: true,
         reportMsgDE:
-          "Abschicken hat nicht geklappt. Bitte versuchen Sie es erneut.",
-        reportMsgEN: "Something went wrong. Please try again.",
+          'Abschicken hat nicht geklappt. Bitte versuchen Sie es erneut.',
+        reportMsgEN: 'Something went wrong. Please try again.',
       }
     case CLEAR_REPORT:
       return {
