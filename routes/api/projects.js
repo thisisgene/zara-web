@@ -390,13 +390,58 @@ router.post('/report/presseclub/send', (req, res) => {
   const newReport = new Presseclubreport(reportObject)
     .save()
     .then(report => {
-      // sendEmail(report);
+      sendPresseclubEmail(report)
       console.log('new report: ', report)
       res.json({ report: report, msg: 'success' })
     })
     .catch(err => res.send(err))
 })
 
+sendPresseclubEmail = report => {
+  const link = `https://zara.or.at/admin/presseclub/${report.id}`
+  const outputPlain = `Neue Meldung empfangen. Link: ${link}`
+  const outputHtml = `
+    <p>Neue Meldung empfangen.</p>
+    <h3>
+      <a href="${link}">${link}</a>
+    </h3>
+  `
+  console.log(outputHtml)
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: 'serpig.testuser@gmail.com', // generated ethereal user
+      pass: 'serPig1dev2019', // generated ethereal password
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  })
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
+    to: 'emdo2000@gmail.com', // list of receivers //beratung@zara.or.at
+    subject: 'Neue Meldung eingegangen', // Subject line
+    text: outputPlain, // plain text body
+    html: outputHtml, // html body
+  }
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return console.log(error)
+    }
+    console.log('Message sent: %s', info.messageId)
+    // Preview only available when sending through an Ethereal account
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
+
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  })
+}
 sendEmail = report => {
   const link = `https://zara.or.at/admin/reports/${report.id}`
   const outputPlain = `Neue Meldung empfangen. Link: ${link}`
