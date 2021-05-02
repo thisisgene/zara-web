@@ -216,7 +216,7 @@ router.get(
   (req, res) => {
     Presseclubreport.find()
       .sort('-date')
-      .select('_id date category archived')
+      .select('_id date category perspective archived')
       .exec()
       .then(reports => {
         res.json(reports)
@@ -286,7 +286,7 @@ router.get(
         report.save((err, updatedReport) => {
           Presseclubreport.find()
             .sort('-date')
-            .select('_id date category archived')
+            .select('_id date category perspective archived')
             .exec()
             .then(reports => {
               res.json({ report: updatedReport, reports: reports })
