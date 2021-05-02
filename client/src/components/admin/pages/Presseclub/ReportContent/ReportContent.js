@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import ExportSingleCsv from './ExportSingleCsv'
 import {
   getPresseclubReportById,
-  sendToArchive,
+  sendPresseclubToArchive,
 } from '../../../../../actions/reportActions'
 import { clearSingle } from '../../../../../actions/adminActions'
 
@@ -69,7 +69,7 @@ class ReportContent extends Component {
   }
 
   onSendToArchiveClick = id => {
-    this.props.sendToArchive(id)
+    this.props.sendPresseclubToArchive(id)
   }
 
   render() {
@@ -720,6 +720,6 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   getPresseclubReportById,
-  sendToArchive,
+  sendPresseclubToArchive,
   clearSingle,
 })(ReportContent)
