@@ -67,6 +67,19 @@ export const sendToArchive = id => dispatch => {
       console.log(res.data)
     })
 }
+export const sendPresseclubToArchive = id => dispatch => {
+  axios
+    .get(`/api/projects/report/presseclub/sendToArchive/${id}`)
+    .then(res => {
+      dispatch({
+        type: UPDATE_REPORT,
+        payload: res.data,
+      })
+    })
+    .catch(res => {
+      console.log(res.data)
+    })
+}
 
 export const resetReport = () => dispatch => {
   dispatch({

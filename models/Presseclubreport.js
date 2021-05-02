@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const ReportSchema = new Schema({
@@ -124,9 +124,13 @@ const ReportSchema = new Schema({
   additional2: {
     type: String,
   },
+  archived: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 module.exports = Presseclubreport = mongoose.model(
-  "presseclubreports",
+  'presseclubreports',
   ReportSchema
 )

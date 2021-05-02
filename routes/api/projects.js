@@ -183,6 +183,7 @@ router.get(
   (req, res) => {
     Presseclubreport.find()
       .sort('-date')
+
       .exec()
       .then(reports => {
         res.json(reports)
@@ -264,6 +265,28 @@ router.get(
           Report.find()
             .sort('-date')
             .select('_id date archived')
+            .exec()
+            .then(reports => {
+              res.json({ report: updatedReport, reports: reports })
+            })
+        })
+      })
+      .catch(err => {
+        res.json(err)
+      })
+  }
+)
+router.get(
+  '/report/presseclub/sendToArchive/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Presseclubreport.findById(req.params.id)
+      .then(report => {
+        report.archived = !report.archived
+        report.save((err, updatedReport) => {
+          Presseclubreport.find()
+            .sort('-date')
+            .select('_id date category archived')
             .exec()
             .then(reports => {
               res.json({ report: updatedReport, reports: reports })

@@ -62,13 +62,16 @@ class ExportAllCsv extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={() => this.getAllReports('ab')}>
-          Alle Exportieren Pfad A&B
-        </button>
-        <button onClick={() => this.getAllReports('cd')}>
-          Alle Exportieren Pfad C&D
-        </button>
+      <div
+        style={{
+          marginBottom: '1rem',
+        }}
+      >
+        <p>Als .csv exportieren</p>
+        <div style={{ display: 'flex' }}>
+          <button onClick={() => this.getAllReports('ab')}>Pfade A&B</button>
+          <button onClick={() => this.getAllReports('cd')}>Pfade C&D</button>
+        </div>
       </div>
     )
   }

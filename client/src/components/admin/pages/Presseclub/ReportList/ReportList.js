@@ -20,6 +20,10 @@ class ReportList extends Component {
     const { reports } = this.props
     return (
       <div className={styles['report-list']}>
+        <div className={styles['export-button']}>
+          {reports && <ExportAllCsv reports={reports} />}
+        </div>
+        <hr />
         <div className={styles['archive-button']}>
           <button onClick={this.onArchivClick}>
             {!this.state.showArchive
@@ -27,12 +31,10 @@ class ReportList extends Component {
               : 'Zu den aktuellen Meldungen'}
           </button>
         </div>
-        <div className={styles['export-button']}>
-          {reports && <ExportAllCsv reports={reports} />}
-        </div>
+
         {reports &&
           reports
-            // .filter((report) => report.archived == this.state.showArchive)
+            .filter(report => report.archived == this.state.showArchive)
             .map((report, index) => (
               <ReportListItem key={index} report={report} />
             ))}
