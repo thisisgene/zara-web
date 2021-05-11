@@ -423,7 +423,7 @@ sendPresseclubEmail = report => {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '"ZARA Server" <serpig.testuser@gmail.com>', // sender address
-    to: 'office@concordia.at', // list of receivers //beratung@zara.or.at
+    to: 'presse@zara.or.at,m.zojer@presseclub.at', // list of receivers //beratung@zara.or.at
     subject: 'Neue Meldung eingegangen', // Subject line
     text: outputPlain, // plain text body
     html: outputHtml, // html body

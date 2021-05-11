@@ -1,8 +1,8 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import { stepTwelve } from "./step_data"
+import { stepTwelve } from './step_data'
 
-import styles from "../Steps.module.sass"
+import styles from '../Steps.module.sass'
 
 class StepA12 extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class StepA12 extends Component {
 
     // if full validation passes then save to store and pass as valid
     if (
-      Object.keys(validateNewInput).every((k) => {
+      Object.keys(validateNewInput).every(k => {
         return validateNewInput[k] === true
       })
     ) {
@@ -69,29 +69,29 @@ class StepA12 extends Component {
     return {
       optionVal: data.gender !== undefined,
       msgValueVal:
-        data.gender !== "other" ||
-        (data.gender === "other" &&
+        data.gender !== 'other' ||
+        (data.gender === 'other' &&
           data.msgValue !== undefined &&
-          data.msgValue !== ""),
+          data.msgValue !== ''),
     }
   }
 
   _validationErrors(val) {
     const errMsgs = {
-      optionValMsg: val.optionVal ? "" : "Bitte wählen Sie eine Option.",
-      msgValueValMsg: val.msgValueVal ? "" : "Darf nicht leer bleiben.",
+      optionValMsg: val.optionVal ? '' : 'Bitte wählen Sie eine Option.',
+      msgValueValMsg: val.msgValueVal ? '' : 'Darf nicht leer bleiben.',
     }
     return errMsgs
   }
 
-  onChange = (e) => {
+  onChange = e => {
     if (this.state[e.target.name] !== e.target.value) {
       this.setState(
         {
           [e.target.name]: e.target.value,
         },
         () => {
-          this.props.storeReportData(this.state, "stepA12")
+          this.props.storeReportData(this.state, 'stepA12')
         }
       )
     }
@@ -101,12 +101,12 @@ class StepA12 extends Component {
     const { lang } = this.props
     const { gender } = this.state
     return (
-      <div className={styles["step-container"]}>
-        <p dangerouslySetInnerHTML={{ __html: stepTwelve[lang].text9 }} />
+      <div className={styles['step-container']}>
+        <p dangerouslySetInnerHTML={{ __html: stepTwelve[lang].text }} />
 
-        {stepTwelve[lang].options.map((option) => (
+        {stepTwelve[lang].options.map(option => (
           <>
-            <div className={styles["radio-wrapper"]}>
+            <div className={styles['radio-wrapper']}>
               <input
                 type="radio"
                 name={stepTwelve[lang].optionName}
@@ -121,18 +121,18 @@ class StepA12 extends Component {
                 dangerouslySetInnerHTML={{ __html: option.text }}
               />
             </div>
-            {option.value === "other" && (
+            {option.value === 'other' && (
               <>
                 <input
                   type="text"
                   name="msgValue"
                   value={this.state.msgValue}
                   onChange={this.onChange}
-                  disabled={gender !== "other"}
+                  disabled={gender !== 'other'}
                   onBlur={this.validationCheck}
                 />
                 {this.state.msgValueValMsg && (
-                  <span className={styles["error-msg"]}>
+                  <span className={styles['error-msg']}>
                     {this.state.msgValueValMsg}
                   </span>
                 )}
@@ -141,7 +141,7 @@ class StepA12 extends Component {
           </>
         ))}
         {this.state.optionValMsg && (
-          <span className={styles["error-msg"]}>{this.state.optionValMsg}</span>
+          <span className={styles['error-msg']}>{this.state.optionValMsg}</span>
         )}
       </div>
     )
