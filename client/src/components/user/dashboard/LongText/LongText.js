@@ -12,7 +12,7 @@ export default class LongText extends Component {
     return (
       <div
         className={cx(styles['long-text'], {
-          [styles[content.type]]: content.type
+          [styles[content.type]]: content.type,
         })}
       >
         {content[lang].title && (
@@ -30,7 +30,7 @@ export default class LongText extends Component {
         {content.image && (
           <div
             className={cx(styles['long-text--image'], {
-              [styles['big']]: content.bigImage
+              [styles['big']]: content.bigImage,
             })}
           >
             <img src={`/assets/img/${content.image}`} alt="" />
@@ -66,19 +66,30 @@ export default class LongText extends Component {
                 {content[lang].linkText}
               </a>
             ) : (
-                <Link to={`/${lang}/${content[lang].link}`}>
-                  {content[lang].linkText}
-                </Link>
-              )}
+              <Link to={`/${lang}/${content[lang].link}`}>
+                {content[lang].linkText}
+              </Link>
+            )}
           </div>
         )}
         {content.bottomImages && (
-          <div className={styles['long-text--bottom-images']}>
+          <div
+            className={cx(
+              styles['long-text--bottom-images'],
+              content.bottomImageAlign && [styles[content.bottomImageAlign]]
+            )}
+          >
             {content.bottomImages.map(image => (
-
-              <img src={`/assets/img/${image.image}`} alt={image.image} className={cx({
-                [styles['big']]: image.bigImage
-              })} />
+              <img
+                src={`/assets/img/${image.image}`}
+                alt={image.image}
+                className={cx(
+                  {
+                    [styles['big']]: image.bigImage,
+                  },
+                  image.imageSize && [styles[image.imageSize]]
+                )}
+              />
             ))}
           </div>
         )}
