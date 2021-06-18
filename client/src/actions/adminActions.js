@@ -402,6 +402,22 @@ export const getById = (id, category) => dispatch => {
           })
         )
       break
+    case 'jobs':
+      axios
+        .get(`/api/jobs/${id}`)
+        .then(res => {
+          dispatch({
+            type: GET_JOB_BY_ID,
+            payload: res.data,
+          })
+        })
+        .catch(err =>
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
+          })
+        )
+      break
     case 'faqs':
       axios
         .get(`/api/faqs/${id}`)
@@ -726,6 +742,51 @@ export const saveContent = saveData => dispatch => {
             .then(res => {
               dispatch({
                 type: UPDATE_JAHRESBERICHT,
+                payload: res.data,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+
+      break
+    case 'jobs':
+      saveData.id === 'neu'
+        ? axios
+            .post('/api/jobs', saveData)
+            .then(res => {
+              dispatch({ type: CLEAR_ERRORS })
+              dispatch({
+                type: CREATE_NEW_JOB,
+                payload: res.data,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+            .catch(err => {
+              dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data,
+              })
+              dispatch({
+                type: UNSET_GENERAL_LOADING,
+              })
+            })
+        : axios
+            .post(`/api/jobs/update/${saveData.id}`, saveData)
+            .then(res => {
+              dispatch({
+                type: UPDATE_JOB,
                 payload: res.data,
               })
               dispatch({
@@ -1108,6 +1169,28 @@ export const toggleOnline = (id, category, state) => dispatch => {
           })
         })
       break
+    case 'jobs':
+      axios
+        .get(`/api/jobs/toggle_online/${id}/${state}`)
+        .then(res => {
+          dispatch({
+            type: UPDATE_JOB,
+            payload: res.data,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'faqs':
       axios
         .get(`/api/faqs/toggle_online/${id}/${state}`)
@@ -1338,6 +1421,28 @@ export const deleteById = (id, category, secondValue) => dispatch => {
           })
         })
       break
+    case 'jobs':
+      axios
+        .get(`/api/jobs/delete/${id}`)
+        .then(res => {
+          dispatch({
+            type: DELETE_JOB_BY_ID,
+            payload: res.data,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+        .catch(err => {
+          dispatch({
+            type: GET_ERRORS,
+            payload: err,
+          })
+          dispatch({
+            type: UNSET_GENERAL_LOADING,
+          })
+        })
+      break
     case 'faqs':
       axios
         .get(`/api/faqs/delete/${id}`)
@@ -1488,6 +1593,12 @@ export const clearSingle = category => dispatch => {
     case 'jahresberichte':
       dispatch({
         type: CLEAR_JAHRESBERICHT,
+      })
+
+      break
+    case 'jobs':
+      dispatch({
+        type: CLEAR_JOB,
       })
 
       break
