@@ -35,12 +35,15 @@
   &--link
     word-break: break-all
 
-  @media(max-width: 400px)
+  @media(max-width: 880px)
+    // width: auto !important
+  // @media(max-width: 400px)
+
     &--image
-      height: auto
+      height: auto !important
       max-width: 90vw
       img
-        height: auto
+        height: 100%
         width: 100%
 
   &--list
@@ -82,8 +85,10 @@
 
     // justify-content: center
     @media(max-width: 700px)
+      max-width: 100vw !important
       text-align: center
       img
+        max-width: 90% !important
         margin: 1rem !important
         
     // height: 200px
