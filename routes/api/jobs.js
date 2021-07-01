@@ -10,7 +10,7 @@ const Jimp = require('jimp')
 
 const nodemailer = require('nodemailer')
 
-const validateNewsInput = require('../../validation/news')
+const validateJobsInput = require('../../validation/jobs')
 
 const Job = require('../../models/Job')
 
@@ -52,7 +52,7 @@ router.post(
   passport.authenticate('jwt', { session: false }),
   async (req, res) => {
     const body = req.body
-    const { errors, isValid } = await validateNewsInput(body)
+    const { errors, isValid } = await validateJobsInput(body)
 
     if (!isValid) {
       return res.status(400).json(errors)
@@ -67,9 +67,13 @@ router.post(
     if (body.titleEN) jobFields.en.title = body.titleEN
     jobFields.tag = body.tag
     jobFields.de.shortDescription = body.shortDescriptionDE
+      ? body.shortDescriptionDE
+      : ''
     jobFields.en.shortDescription = body.shortDescriptionEN
-    jobFields.de.description = body.descriptionDE
-    jobFields.en.description = body.descriptionEN
+      ? body.shortDescriptionEN
+      : ''
+    jobFields.de.description = body.descriptionDE ? body.descriptionDE : ''
+    jobFields.en.description = body.descriptionEN ? body.descriptionEN : ''
 
     const newJob = new Job({
       tag: jobFields.tag,
@@ -122,10 +126,12 @@ router.post(
           handle: jobFields.handle,
           de: {
             title: jobFields.de.title,
+            shortDescription: body.shortDescriptionDE,
             description: body.descriptionDE,
           },
           en: {
             title: jobFields.en.title,
+            shortDescription: body.shortDescriptionEN,
             description: body.descriptionEN,
           },
           files: {

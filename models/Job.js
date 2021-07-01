@@ -17,12 +17,18 @@ const jobSchema = new Schema({
     title: {
       type: String,
     },
+    shortDescription: {
+      type: String,
+    },
     description: {
       type: String,
     },
   },
   en: {
     title: {
+      type: String,
+    },
+    shortDescription: {
       type: String,
     },
     description: {

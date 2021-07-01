@@ -41,13 +41,13 @@ class Dashboard extends Component {
         >
           Rassismusreport, Berichte, ...
         </NavLink>
-        {/* <NavLink
+        <NavLink
           className={styles['category-nav--link']}
           activeClassName={styles['cat-active']}
           to="/admin/dashboard/jobs"
         >
           Jobs
-        </NavLink> */}
+        </NavLink>
         <NavLink
           className={styles['category-nav--link']}
           activeClassName={styles['cat-active']}

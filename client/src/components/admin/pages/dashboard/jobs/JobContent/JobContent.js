@@ -1,7 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import RichTextEditor from 'react-rte-link-extended'
+import moment from 'moment'
 
 import { jobTags } from '../jobs_data'
+import { toolbarConfig, toolbarImgConfig } from './rte_toolbar_config'
 
 import TextFieldGroup from '../../../../common/TextFieldGroup'
 import TextareaFieldGroup from '../../../../common/TextareaFieldGroup'
@@ -20,6 +23,7 @@ import {
 import { getImagesByCategory } from '../../../../../../actions/imageActions'
 
 import cx from 'classnames'
+import '../../news/NewsContent/rte.sass'
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 import commonStyles from '../../../../common/Common.module.sass'
 import styles from './JobContent.module.sass'
@@ -32,12 +36,15 @@ class JobContent extends Component {
       blankItem: true,
       jobId: props.match.params.jobId,
       handle: '',
+      date: moment(new Date()).format('YYYY-MM-DD'),
       category: 'jobs',
-      tag: 'rassismusreport',
+      tag: 'job',
       titleDE: '',
       titleEN: '',
-      descriptionDE: '',
-      descriptionEN: '',
+      descriptionDE: RichTextEditor.createEmptyValue(),
+      descriptionEN: RichTextEditor.createEmptyValue(),
+      shortDescriptionDE: RichTextEditor.createEmptyValue(),
+      shortDescriptionEN: RichTextEditor.createEmptyValue(),
 
       selectedFilesDE: [],
       selectedFilesEN: [],
@@ -79,18 +86,39 @@ class JobContent extends Component {
             isOnline: item.isOnline,
             jobId: item._id,
             handle: item.handle,
+            date: moment(item.date).format('YYYY-MM-DD'),
             tag: item.tag && item.tag,
             titleDE: item.de && item.de.title && item.de.title,
-            titleEN: item.en ? item.en.title : '',
+            titleEN: item.en ? item.en.title && item.en.title : '',
             descriptionDE:
-              item.de && item.de.description && item.de.description,
-            descriptionEN: item.en ? item.en.description : '',
+              item.de &&
+              item.de.description &&
+              RichTextEditor.createValueFromString(item.de.description, 'html'),
+            descriptionEN: item.en
+              ? item.en.description &&
+                RichTextEditor.createValueFromString(
+                  item.en.description,
+                  'html'
+                )
+              : RichTextEditor.createEmptyValue(),
+            shortDescriptionDE:
+              item.de &&
+              item.de.shortDescription &&
+              RichTextEditor.createValueFromString(
+                item.de.shortDescription,
+                'html'
+              ),
+            shortDescriptionEN: item.en
+              ? item.en.shortDescription &&
+                RichTextEditor.createValueFromString(
+                  item.en.shortDescription,
+                  'html'
+                )
+              : RichTextEditor.createEmptyValue(),
             selectedFilesDE: item.files && item.files.de,
             selectedFilesEN: item.files && item.files.en,
             selectedImagesDE: item.images && item.images.de,
             selectedImagesEN: item.images && item.images.en,
-            toOrder: item.toOrder,
-            isRR: item.tag === 'rassismusreport' || item.tag === 'ghinbericht',
           })
         }
       }
@@ -103,17 +131,19 @@ class JobContent extends Component {
             isOnline: false,
             jobId: this.props.match.params.jobId,
             handle: '',
+            date: moment(new Date()).format('YYYY-MM-DD'),
             category: 'jobs',
-            tag: 'jobs',
+            tag: 'job',
             titleDE: '',
             titleEN: '',
-            descriptionDE: '',
-            descriptionEN: '',
+            descriptionDE: RichTextEditor.createEmptyValue(),
+            descriptionEN: RichTextEditor.createEmptyValue(),
+            shortDescriptionDE: RichTextEditor.createEmptyValue(),
+            shortDescriptionEN: RichTextEditor.createEmptyValue(),
             selectedFilesDE: [],
             selectedFilesEN: [],
             selectedImagesDE: [],
             selectedImagesEN: [],
-            toOrder: true,
           })
         } else {
           this.props.getById(this.props.match.params.jobId, 'jobs')
@@ -131,6 +161,38 @@ class JobContent extends Component {
       [e.target.name]: e.target.value,
     })
   }
+  onShortDescriptionChange = (lang, value) => {
+    lang === 'de'
+      ? this.setState({ shortDescriptionDE: value })
+      : this.setState({ shortDescriptionEN: value })
+  }
+  onDescriptionChange = (lang, value) => {
+    lang === 'de'
+      ? this.setState({ descriptionDE: value })
+      : this.setState({ descriptionEN: value })
+  }
+
+  swapSoftNewLineBehavior(event) {
+    let isSoftKeyPressed = e => {
+      return (
+        e.which === 13 &&
+        (e.getModifierState('Shift') ||
+          e.getModifierState('Alt') ||
+          e.getModifierState('Control'))
+      )
+    }
+
+    if (!isSoftKeyPressed(event)) {
+      event.getModifierState = _ => {
+        return true
+      }
+    } else {
+      event.getModifierState = _ => {
+        return false
+      }
+    }
+  }
+
   onCheckClick = e => {
     this.setState({ [e.target.name]: e.target.checked })
   }
@@ -179,19 +241,25 @@ class JobContent extends Component {
   }
 
   saveContent = () => {
+    const shortDescDE = this.state.shortDescriptionDE
+    const shortDescEN = this.state.shortDescriptionEN
+    const descDE = this.state.descriptionDE
+    const descEN = this.state.descriptionEN
     const saveData = {
       category: 'jobs',
+      date: this.state.date,
       tag: this.state.tag,
       id: this.state.jobId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
-      descriptionDE: this.state.descriptionDE,
-      descriptionEN: this.state.descriptionEN,
+      shortDescriptionDE: shortDescDE.toString('html'),
+      shortDescriptionEN: shortDescEN.toString('html'),
+      descriptionDE: descDE.toString('html'),
+      descriptionEN: descEN.toString('html'),
       filesDE: this.state.selectedFilesDE,
       filesEN: this.state.selectedFilesEN,
       imagesDE: this.state.selectedImagesDE,
       imagesEN: this.state.selectedImagesEN,
-      toOrder: this.state.toOrder,
     }
     console.log('desc ', saveData)
     this.props.saveContent(saveData)
@@ -265,35 +333,90 @@ class JobContent extends Component {
                     {jobTags &&
                       jobTags.map(tag => (
                         <Fragment>
+                          {tag.name === this.state.tag &&
+                            tag.hasShortDescription && (
+                              <div className={styles['job-content--text']}>
+                                <div
+                                  className={styles['job-content--text__title']}
+                                >
+                                  <RichTextEditor
+                                    placeholder="Kurzbeschreibung deutsch"
+                                    className={styles['html-editor']}
+                                    toolbarConfig={toolbarConfig}
+                                    value={this.state.shortDescriptionDE}
+                                    onChange={this.onShortDescriptionChange.bind(
+                                      this,
+                                      'de'
+                                    )}
+                                  />
+                                  {/* <TextareaFieldGroup
+                                    className={commonStyles['input']}
+                                    colorScheme="light"
+                                    placeholder="Kurzbeschreibung deutsch"
+                                    type="textarea"
+                                    name="shortDescriptionDE"
+                                    value={this.state.shortDescriptionDE}
+                                    onChange={this.onChange}
+                                    error={this.state.errors.shortDescriptionDE}
+                                  /> */}
+                                </div>
+
+                                <div
+                                  className={styles['job-content--text__title']}
+                                >
+                                  <RichTextEditor
+                                    placeholder="Kurzbeschreibung englisch"
+                                    className={styles['html-editor']}
+                                    toolbarConfig={toolbarConfig}
+                                    value={this.state.shortDescriptionEN}
+                                    onChange={this.onShortDescriptionChange.bind(
+                                      this,
+                                      'en'
+                                    )}
+                                  />
+                                  {/* <TextareaFieldGroup
+                                    className={commonStyles['input']}
+                                    colorScheme="light"
+                                    placeholder="Kurzbeschreibung englisch"
+                                    type="textarea"
+                                    name="shortDescriptionEN"
+                                    value={this.state.shortDescriptionEN}
+                                    onChange={this.onChange}
+                                    error={this.state.errors.shortDescriptionEN}
+                                  /> */}
+                                </div>
+                              </div>
+                            )}
                           {tag.name === this.state.tag && tag.hasDescription && (
                             <div className={styles['job-content--text']}>
                               <div
                                 className={styles['job-content--text__title']}
                               >
-                                <TextareaFieldGroup
-                                  className={commonStyles['input']}
-                                  colorScheme="light"
-                                  placeholder="Beschreibung deutsch"
-                                  type="textarea"
-                                  name="descriptionDE"
+                                <RichTextEditor
+                                  handleReturn={this.swapSoftNewLineBehavior}
+                                  placeholder="Hauptbeschreibung deutsch"
+                                  className={styles['html-editor']}
+                                  toolbarConfig={toolbarImgConfig}
                                   value={this.state.descriptionDE}
-                                  onChange={this.onChange}
-                                  error={this.state.errors.descriptionDE}
+                                  onChange={this.onDescriptionChange.bind(
+                                    this,
+                                    'de'
+                                  )}
                                 />
                               </div>
 
                               <div
                                 className={styles['job-content--text__title']}
                               >
-                                <TextareaFieldGroup
-                                  className={commonStyles['input']}
-                                  colorScheme="light"
-                                  placeholder="Beschreibung englisch"
-                                  type="textarea"
-                                  name="descriptionEN"
+                                <RichTextEditor
+                                  placeholder="Hauptinhalt englisch"
+                                  className={styles['html-editor']}
+                                  toolbarConfig={toolbarImgConfig}
                                   value={this.state.descriptionEN}
-                                  onChange={this.onChange}
-                                  error={this.state.errors.descriptionEN}
+                                  onChange={this.onDescriptionChange.bind(
+                                    this,
+                                    'en'
+                                  )}
                                 />
                               </div>
                             </div>
