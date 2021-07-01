@@ -101,7 +101,7 @@ export const jobData = [
 export const longTextJobs = {
   de: {
     title: 'Jobs',
-    text: 'Derzeit haben wir keine offenen Stellen.',
+    // text: 'Derzeit haben wir keine offenen Stellen.',
   },
 }
 export const longTextVolontariat = {
