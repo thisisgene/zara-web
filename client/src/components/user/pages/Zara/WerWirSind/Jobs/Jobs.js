@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { withLocalize } from 'react-localize-redux'
+
+import { getAll } from '../../../../../../actions/adminActions'
 
 import {
   heroData,
@@ -20,9 +23,15 @@ import LongText from '../../../../dashboard/LongText/LongText'
 import styles from './Jobs.module.sass'
 
 class RechtUndOrdnung extends Component {
+  componentDidMount() {
+    this.props.getAll('jobs')
+  }
+
   render() {
     const { activeLanguage } = this.props
+    const jobs = this.props.jobs.jobs
     let lang
+
     if (activeLanguage && activeLanguage.code) {
       lang = activeLanguage.code
     }
@@ -33,7 +42,18 @@ class RechtUndOrdnung extends Component {
             <HeroUnit data={heroData} lang={lang} />
             <LongText content={longTextJobs} lang={lang} />
             <div className={styles['job-container']}>
-              {jobData &&
+              {jobs &&
+                jobs
+                  .filter(job => job.tag === 'job')
+                  .map((job, index) => (
+                    <JobItem
+                      key={index}
+                      index={index}
+                      content={job}
+                      lang={lang}
+                    />
+                  ))}
+              {/* {jobData &&
                 jobData
                   .filter(job => job.category === 'job')
                   .map((job, index) => (
@@ -43,13 +63,38 @@ class RechtUndOrdnung extends Component {
                       content={job}
                       lang={lang}
                     />
-                  ))}
+                  ))} */}
             </div>
             <LongText content={longTextVolontariat} lang={lang} />
             <div className={styles['job-container']}>
-              {jobData &&
+              {jobs &&
+                jobs
+                  .filter(job => job.tag === 'volunteering')
+                  .map((job, index) => (
+                    <JobItem
+                      key={index}
+                      index={index}
+                      content={job}
+                      lang={lang}
+                    />
+                  ))}
+              {/* {jobData &&
                 jobData
                   .filter(job => job.category === 'volontariat')
+                  .map((job, index) => (
+                    <JobItem
+                      key={index}
+                      index={index}
+                      content={job}
+                      lang={lang}
+                    />
+                  ))} */}
+            </div>
+            {/* <LongText content={longTextVolontariat} lang={lang} /> */}
+            <div className={styles['job-container']}>
+              {jobs &&
+                jobs
+                  .filter(job => job.tag === 'unsalaried')
                   .map((job, index) => (
                     <JobItem
                       key={index}
@@ -70,4 +115,10 @@ class RechtUndOrdnung extends Component {
   }
 }
 
-export default withLocalize(RechtUndOrdnung)
+const mapStateToProps = state => ({
+  jobs: state.jobs,
+})
+
+export default withLocalize(
+  connect(mapStateToProps, { getAll })(RechtUndOrdnung)
+)

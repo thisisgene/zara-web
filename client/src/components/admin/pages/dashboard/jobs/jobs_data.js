@@ -24,18 +24,6 @@ export const jobTags = [
     hasShortDescription: true,
     descriptionTags: [
       {
-        name: 'area',
-        de: { title: 'Vorwiegende Aufgabengebiete' },
-        en: { title: 'Vorwiegende Aufgabengebiete' },
-        type: 'markdown',
-      },
-      {
-        name: 'qualifications',
-        de: { title: 'Erwünschte Qualifikationen' },
-        en: { title: 'Erwünschte Qualifikationen' },
-        type: 'markdown',
-      },
-      {
         name: 'time',
         de: { title: 'Zeitausmaß' },
         en: { title: 'Zeitausmaß' },

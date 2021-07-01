@@ -349,16 +349,6 @@ class JobContent extends Component {
                                       'de'
                                     )}
                                   />
-                                  {/* <TextareaFieldGroup
-                                    className={commonStyles['input']}
-                                    colorScheme="light"
-                                    placeholder="Kurzbeschreibung deutsch"
-                                    type="textarea"
-                                    name="shortDescriptionDE"
-                                    value={this.state.shortDescriptionDE}
-                                    onChange={this.onChange}
-                                    error={this.state.errors.shortDescriptionDE}
-                                  /> */}
                                 </div>
 
                                 <div
@@ -374,16 +364,6 @@ class JobContent extends Component {
                                       'en'
                                     )}
                                   />
-                                  {/* <TextareaFieldGroup
-                                    className={commonStyles['input']}
-                                    colorScheme="light"
-                                    placeholder="Kurzbeschreibung englisch"
-                                    type="textarea"
-                                    name="shortDescriptionEN"
-                                    value={this.state.shortDescriptionEN}
-                                    onChange={this.onChange}
-                                    error={this.state.errors.shortDescriptionEN}
-                                  /> */}
                                 </div>
                               </div>
                             )}
@@ -418,6 +398,51 @@ class JobContent extends Component {
                                     'en'
                                   )}
                                 />
+                              </div>
+                            </div>
+                          )}
+                          {tag.name === this.state.tag && tag.descriptionTags && (
+                            <div
+                              className={cx(
+                                styles['job-content--descriptionTags'],
+                                styles['job-content--text']
+                              )}
+                            >
+                              <div>
+                                {tag.descriptionTags.map(descTag => (
+                                  <div
+                                    className={
+                                      styles[
+                                        'job-content--descriptionTags__tag'
+                                      ]
+                                    }
+                                  >
+                                    <span>{descTag['de'].title}</span>
+                                    <TextFieldGroup
+                                      className={commonStyles['input']}
+                                      colorScheme="light"
+                                      placeholder="Titel deutsch"
+                                      type="text"
+                                      name="titleDE"
+                                      value={this.state.titleDE}
+                                      onChange={this.onChange}
+                                      // error={this.state.errors.titleDE}
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                              <div>
+                                {tag.descriptionTags.map(descTag => (
+                                  <div
+                                    className={
+                                      styles[
+                                        'job-content--descriptionTags__tag'
+                                      ]
+                                    }
+                                  >
+                                    <span>{descTag['en'].title}</span>
+                                  </div>
+                                ))}
                               </div>
                             </div>
                           )}
