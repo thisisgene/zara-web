@@ -42,7 +42,7 @@ class RechtUndOrdnung extends Component {
             <HeroUnit data={heroData} lang={lang} />
             <LongText content={longTextJobs} lang={lang} />
             <div className={styles['job-container']}>
-              {jobs &&
+              {/* {jobs &&
                 jobs
                   .filter(job => job.tag === 'job')
                   .map((job, index) => (
@@ -52,8 +52,8 @@ class RechtUndOrdnung extends Component {
                       content={job}
                       lang={lang}
                     />
-                  ))}
-              {/* {jobData &&
+                  ))} */}
+              {jobData &&
                 jobData
                   .filter(job => job.category === 'job')
                   .map((job, index) => (
@@ -63,11 +63,11 @@ class RechtUndOrdnung extends Component {
                       content={job}
                       lang={lang}
                     />
-                  ))} */}
+                  ))}
             </div>
             <LongText content={longTextVolontariat} lang={lang} />
             <div className={styles['job-container']}>
-              {jobs &&
+              {/* {jobs &&
                 jobs
                   .filter(job => job.tag === 'volunteering')
                   .map((job, index) => (
@@ -77,8 +77,8 @@ class RechtUndOrdnung extends Component {
                       content={job}
                       lang={lang}
                     />
-                  ))}
-              {/* {jobData &&
+                  ))} */}
+              {jobData &&
                 jobData
                   .filter(job => job.category === 'volontariat')
                   .map((job, index) => (
@@ -88,10 +88,10 @@ class RechtUndOrdnung extends Component {
                       content={job}
                       lang={lang}
                     />
-                  ))} */}
+                  ))}
             </div>
             {/* <LongText content={longTextVolontariat} lang={lang} /> */}
-            <div className={styles['job-container']}>
+            {/* <div className={styles['job-container']}>
               {jobs &&
                 jobs
                   .filter(job => job.tag === 'unsalaried')
@@ -103,7 +103,7 @@ class RechtUndOrdnung extends Component {
                       lang={lang}
                     />
                   ))}
-            </div>
+            </div> */}
             {/* <NewsletterOneLineObject lang={lang} /> */}
             <LongText content={longText} lang={lang} />
             <LongText content={longTextZivildienst} lang={lang} />
