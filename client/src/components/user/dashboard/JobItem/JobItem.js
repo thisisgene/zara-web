@@ -76,10 +76,10 @@ export default class JobItem extends Component {
           )}
         </div>
 
-        {content[lang].moreLink && (
+        {content.moreLink && (
           <div className={styles["job-item--data"]}>
-            <Link to={`/${lang}/ueber_ZARA/wer_wir_sind/jobs/${content.id}`}>
-              {content[lang].moreLinkText}
+            <Link to={`/${lang}/ueber_ZARA/wer_wir_sind/jobs/${content._id}`}>
+              {lang === "de" ? "Mehr erfahren" : "More Info"}
             </Link>
           </div>
         )}

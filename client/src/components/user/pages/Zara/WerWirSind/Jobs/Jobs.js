@@ -42,7 +42,9 @@ class RechtUndOrdnung extends Component {
         {lang && (
           <div>
             <HeroUnit data={heroData} lang={lang} />
-            {jobs && jobs.filter((job) => job.tag === "job").length > 0 ? (
+            {jobs &&
+            jobs.filter((job) => job.tag === "job" && job.isOnline).length >
+              0 ? (
               <>
                 <LongText content={longTextJobs} lang={lang} />
                 <div className={styles["job-container"]}>

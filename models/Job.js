@@ -147,9 +147,8 @@ const jobSchema = new Schema({
     ],
   },
 
-  toOrder: {
+  moreLink: {
     type: Boolean,
-    default: false,
   },
   isVisible: {
     type: Boolean,

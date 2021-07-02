@@ -367,6 +367,8 @@ class JobContent extends Component {
       descTag4KeyEN: this.state.descTag4KeyEN,
       descTag4ValueEN: this.state.descTag4ValueEN,
 
+      moreLink: this.state.tag === "job",
+
       filesDE: this.state.selectedFilesDE,
       filesEN: this.state.selectedFilesEN,
       imagesDE: this.state.selectedImagesDE,
