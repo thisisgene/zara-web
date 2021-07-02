@@ -83,6 +83,7 @@ import ZaraPublikationen from "./pages/Wissen/Publikationen/ZaraPublikationen"
 
 import PageNotFound from "./pages/Other/PageNotFound"
 import JobDetail from "./pages/Zara/WerWirSind/Jobs/JobDetail"
+import JobDetailDB from "./pages/Zara/WerWirSind/Jobs/JobDetailDB"
 import NewsDetailDB from "./pages/Wissen/News/NewsBox/NewsDetailDB"
 import Pressematerial_Logos from "./pages/Wissen/Presse/Pressematerial_LogosNew"
 import Pressemeldungen from "./pages/Wissen/News/Pressemeldungen/Pressemeldungen"
@@ -448,7 +449,7 @@ class User extends Component {
               <Route
                 exact
                 path="/:lang/ueber_ZARA/wer_wir_sind/jobs/:jobId"
-                component={JobDetail}
+                component={JobDetailDB}
               />
               <Redirect
                 exact
