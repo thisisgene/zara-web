@@ -1,16 +1,16 @@
-import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux'
-import RichTextEditor from 'react-rte-link-extended'
-import moment from 'moment'
+import React, { Component, Fragment } from "react"
+import { connect } from "react-redux"
+import RichTextEditor from "react-rte-link-extended"
+import moment from "moment"
 
-import { jobTags } from '../jobs_data'
-import { toolbarConfig, toolbarImgConfig } from './rte_toolbar_config'
+import { jobTags } from "../jobs_data"
+import { toolbarConfig, toolbarImgConfig } from "./rte_toolbar_config"
 
-import TextFieldGroup from '../../../../common/TextFieldGroup'
-import TextareaFieldGroup from '../../../../common/TextareaFieldGroup'
-import FileSelectGroup from '../../../../common/FileSelectGroup'
+import TextFieldGroup from "../../../../common/TextFieldGroup"
+import TextareaFieldGroup from "../../../../common/TextareaFieldGroup"
+import FileSelectGroup from "../../../../common/FileSelectGroup"
 
-import { confirmAlert } from 'react-confirm-alert'
+import { confirmAlert } from "react-confirm-alert"
 
 import {
   saveContent,
@@ -19,14 +19,14 @@ import {
   toggleOnline,
   deleteById,
   clearSingle,
-} from '../../../../../../actions/adminActions'
-import { getImagesByCategory } from '../../../../../../actions/imageActions'
+} from "../../../../../../actions/adminActions"
+import { getImagesByCategory } from "../../../../../../actions/imageActions"
 
-import cx from 'classnames'
-import '../../news/NewsContent/rte.sass'
-import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
-import commonStyles from '../../../../common/Common.module.sass'
-import styles from './JobContent.module.sass'
+import cx from "classnames"
+import "../../news/NewsContent/rte.sass"
+import "react-confirm-alert/src/react-confirm-alert.css" // Import css
+import commonStyles from "../../../../common/Common.module.sass"
+import styles from "./JobContent.module.sass"
 
 class JobContent extends Component {
   constructor(props) {
@@ -35,16 +35,37 @@ class JobContent extends Component {
       isOnline: false,
       blankItem: true,
       jobId: props.match.params.jobId,
-      handle: '',
-      date: moment(new Date()).format('YYYY-MM-DD'),
-      category: 'jobs',
-      tag: 'job',
-      titleDE: '',
-      titleEN: '',
+      handle: "",
+      date: moment(new Date()).format("YYYY-MM-DD"),
+      category: "jobs",
+      tag: "job",
+      titleDE: "",
+      titleEN: "",
       descriptionDE: RichTextEditor.createEmptyValue(),
       descriptionEN: RichTextEditor.createEmptyValue(),
       shortDescriptionDE: RichTextEditor.createEmptyValue(),
       shortDescriptionEN: RichTextEditor.createEmptyValue(),
+
+      timeDE: "",
+      contactDE: "",
+      timeEN: "",
+      contactEN: "",
+      descTag1KeyDE: "",
+      descTag1ValueDE: "",
+      descTag2KeyDE: "",
+      descTag2ValueDE: "",
+      descTag3KeyDE: "",
+      descTag3ValueDE: "",
+      descTag4KeyDE: "",
+      descTag4ValueDE: "",
+      descTag1KeyEN: "",
+      descTag1ValueEN: "",
+      descTag2KeyEN: "",
+      descTag2ValueEN: "",
+      descTag3KeyEN: "",
+      descTag3ValueEN: "",
+      descTag4KeyEN: "",
+      descTag4ValueEN: "",
 
       selectedFilesDE: [],
       selectedFilesEN: [],
@@ -59,8 +80,8 @@ class JobContent extends Component {
   }
 
   componentDidMount() {
-    this.props.match.params.jobId !== 'neu' &&
-      this.props.getById(this.props.match.params.jobId, 'jobs')
+    this.props.match.params.jobId !== "neu" &&
+      this.props.getById(this.props.match.params.jobId, "jobs")
   }
 
   componentDidUpdate(prevProps) {
@@ -69,36 +90,36 @@ class JobContent extends Component {
         this.setState({ errors: this.props.errors })
       }
       if (this.props.jobs.job) {
-        if (prevProps.match.params.jobId === 'neu') {
+        if (prevProps.match.params.jobId === "neu") {
           this.setState({
             jobId: this.props.jobs.job._id,
           })
-          this.props.getAll('jobs')
+          this.props.getAll("jobs")
           this.props.history.push(
             `/admin/dashboard/jobs/${this.props.jobs.job._id}`
           )
         }
         if (prevProps.jobs != this.props.jobs) {
           const item = this.props.jobs.job
-          this.props.getImagesByCategory(item.tag || 'jobs')
+          this.props.getImagesByCategory(item.tag || "jobs")
           this.setState({
             blankItem: false,
             isOnline: item.isOnline,
             jobId: item._id,
             handle: item.handle,
-            date: moment(item.date).format('YYYY-MM-DD'),
+            date: moment(item.date).format("YYYY-MM-DD"),
             tag: item.tag && item.tag,
             titleDE: item.de && item.de.title && item.de.title,
-            titleEN: item.en ? item.en.title && item.en.title : '',
+            titleEN: item.en ? item.en.title && item.en.title : "",
             descriptionDE:
               item.de &&
               item.de.description &&
-              RichTextEditor.createValueFromString(item.de.description, 'html'),
+              RichTextEditor.createValueFromString(item.de.description, "html"),
             descriptionEN: item.en
               ? item.en.description &&
                 RichTextEditor.createValueFromString(
                   item.en.description,
-                  'html'
+                  "html"
                 )
               : RichTextEditor.createEmptyValue(),
             shortDescriptionDE:
@@ -106,15 +127,38 @@ class JobContent extends Component {
               item.de.shortDescription &&
               RichTextEditor.createValueFromString(
                 item.de.shortDescription,
-                'html'
+                "html"
               ),
             shortDescriptionEN: item.en
               ? item.en.shortDescription &&
                 RichTextEditor.createValueFromString(
                   item.en.shortDescription,
-                  'html'
+                  "html"
                 )
               : RichTextEditor.createEmptyValue(),
+
+            timeDE: item.de.time,
+            contactDE: item.de.contact,
+            timeEN: item.en.time,
+            contactEN: item.en.contact,
+
+            descTag1KeyDE: item.de.descTag1Key,
+            descTag1ValueDE: item.de.descTag1Value,
+            descTag2KeyDE: item.de.descTag2Key,
+            descTag2ValueDE: item.de.descTag2Value,
+            descTag3KeyDE: item.de.descTag3Key,
+            descTag3ValueDE: item.de.descTag3Value,
+            descTag4KeyDE: item.de.descTag4Key,
+            descTag4ValueDE: item.de.descTag4Value,
+            descTag1KeyEN: item.en.descTag1Key,
+            descTag1ValueEN: item.en.descTag1Value,
+            descTag2KeyEN: item.en.descTag2Key,
+            descTag2ValueEN: item.en.descTag2Value,
+            descTag3KeyEN: item.en.descTag3Key,
+            descTag3ValueEN: item.en.descTag3Value,
+            descTag4KeyEN: item.en.descTag4Key,
+            descTag4ValueEN: item.en.descTag4Value,
+
             selectedFilesDE: item.files && item.files.de,
             selectedFilesEN: item.files && item.files.en,
             selectedImagesDE: item.images && item.images.de,
@@ -123,118 +167,140 @@ class JobContent extends Component {
         }
       }
       if (prevProps.match.params.jobId !== this.props.match.params.jobId) {
-        if (this.props.match.params.jobId === 'neu') {
-          console.log('reset')
-          this.props.clearSingle('jobs')
+        if (this.props.match.params.jobId === "neu") {
+          console.log("reset")
+          this.props.clearSingle("jobs")
           this.setState({
             blankItem: true,
             isOnline: false,
             jobId: this.props.match.params.jobId,
-            handle: '',
-            date: moment(new Date()).format('YYYY-MM-DD'),
-            category: 'jobs',
-            tag: 'job',
-            titleDE: '',
-            titleEN: '',
+            handle: "",
+            date: moment(new Date()).format("YYYY-MM-DD"),
+            category: "jobs",
+            tag: "job",
+            titleDE: "",
+            titleEN: "",
             descriptionDE: RichTextEditor.createEmptyValue(),
             descriptionEN: RichTextEditor.createEmptyValue(),
             shortDescriptionDE: RichTextEditor.createEmptyValue(),
             shortDescriptionEN: RichTextEditor.createEmptyValue(),
+
+            timeDE: "",
+            contactDE: "",
+            timeEN: "",
+            contactEN: "",
+            descTag1KeyDE: "",
+            descTag1ValueDE: "",
+            descTag2KeyDE: "",
+            descTag2ValueDE: "",
+            descTag3KeyDE: "",
+            descTag3ValueDE: "",
+            descTag4KeyDE: "",
+            descTag4ValueDE: "",
+            descTag1KeyEN: "",
+            descTag1ValueEN: "",
+            descTag2KeyEN: "",
+            descTag2ValueEN: "",
+            descTag3KeyEN: "",
+            descTag3ValueEN: "",
+            descTag4KeyEN: "",
+            descTag4ValueEN: "",
+
             selectedFilesDE: [],
             selectedFilesEN: [],
             selectedImagesDE: [],
             selectedImagesEN: [],
           })
         } else {
-          this.props.getById(this.props.match.params.jobId, 'jobs')
+          this.props.getById(this.props.match.params.jobId, "jobs")
         }
       }
     }
   }
 
   toggleOnline = () => {
-    this.props.toggleOnline(this.state.jobId, 'jobs', !this.state.isOnline)
+    this.props.toggleOnline(this.state.jobId, "jobs", !this.state.isOnline)
   }
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     })
   }
   onShortDescriptionChange = (lang, value) => {
-    lang === 'de'
+    lang === "de"
       ? this.setState({ shortDescriptionDE: value })
       : this.setState({ shortDescriptionEN: value })
   }
   onDescriptionChange = (lang, value) => {
-    lang === 'de'
+    lang === "de"
       ? this.setState({ descriptionDE: value })
       : this.setState({ descriptionEN: value })
   }
 
   swapSoftNewLineBehavior(event) {
-    let isSoftKeyPressed = e => {
+    let isSoftKeyPressed = (e) => {
       return (
         e.which === 13 &&
-        (e.getModifierState('Shift') ||
-          e.getModifierState('Alt') ||
-          e.getModifierState('Control'))
+        (e.getModifierState("Shift") ||
+          e.getModifierState("Alt") ||
+          e.getModifierState("Control"))
       )
     }
 
     if (!isSoftKeyPressed(event)) {
-      event.getModifierState = _ => {
+      event.getModifierState = (_) => {
         return true
       }
     } else {
-      event.getModifierState = _ => {
+      event.getModifierState = (_) => {
         return false
       }
     }
   }
 
-  onCheckClick = e => {
+  onCheckClick = (e) => {
     this.setState({ [e.target.name]: e.target.checked })
   }
-  onTagSelectChange = e => {
+  onTagSelectChange = (e) => {
     this.setState({ tag: e.target.value }, () => {
-      if (this.state.jobId !== 'neu') {
+      if (this.state.jobId !== "neu") {
         this.props.getImagesByCategory(this.state.tag)
       }
     })
   }
   onFilesSelectChange = (lang, selected) => {
-    if (lang === 'de') {
+    if (lang === "de") {
       this.setState({ selectedFilesDE: selected })
     }
-    if (lang === 'en') {
+    if (lang === "en") {
       this.setState({ selectedFilesEN: selected })
     }
   }
   onImagesSelectChange = (lang, selected) => {
-    if (lang === 'de') {
+    if (lang === "de") {
       this.setState({ selectedImagesDE: selected })
     }
-    if (lang === 'en') {
+    if (lang === "en") {
       this.setState({ selectedImagesEN: selected })
     }
   }
   deleteJob = () => {
-    this.props.deleteById(this.state.jobId, 'jobs')
-    this.props.history.push('/admin/dashboard/jobs/neu')
+    this.props.deleteById(this.state.jobId, "jobs")
+    this.props.history.push("/admin/dashboard/jobs/neu")
   }
 
-  confirmDelete = callback => {
+  confirmDelete = (callback) => {
     confirmAlert({
-      title: 'Beitrag löschen',
-      message: 'Wollen Sie diesen Beitrag wirklich löschen?',
+      title: "Beitrag löschen",
+      message: "Wollen Sie diesen Beitrag wirklich löschen?",
       buttons: [
         {
-          label: 'Löschen',
+          label: "Löschen",
           onClick: () => this.deleteJob(),
         },
         {
-          label: 'Abbrechen',
+          label: "Abbrechen",
         },
       ],
     })
@@ -245,64 +311,96 @@ class JobContent extends Component {
     const shortDescEN = this.state.shortDescriptionEN
     const descDE = this.state.descriptionDE
     const descEN = this.state.descriptionEN
+
+    let descriptionTags
+    let timeDE = ""
+    let contactDE = ""
+    let timeEN = ""
+    let contactEN = ""
+
+    jobTags.map((tag) => {
+      if (tag.name === this.state.tag)
+        descriptionTags = tag.descriptionTags ? tag.descriptionTags : null
+    })
+    descriptionTags &&
+      descriptionTags.map((tag) => {
+        if (tag.name === "time") {
+          timeDE = this.state.timeDE
+          timeEN = this.state.timeEN
+        }
+        if (tag.name === "contact") {
+          contactDE = this.state.contactDE
+          contactEN = this.state.contactEN
+        }
+      })
+
     const saveData = {
-      category: 'jobs',
+      category: "jobs",
       date: this.state.date,
       tag: this.state.tag,
       id: this.state.jobId,
       titleDE: this.state.titleDE,
       titleEN: this.state.titleEN,
-      shortDescriptionDE: shortDescDE.toString('html'),
-      shortDescriptionEN: shortDescEN.toString('html'),
-      descriptionDE: descDE.toString('html'),
-      descriptionEN: descEN.toString('html'),
+      shortDescriptionDE: shortDescDE.toString("html"),
+      shortDescriptionEN: shortDescEN.toString("html"),
+      descriptionDE: descDE.toString("html"),
+      descriptionEN: descEN.toString("html"),
+
+      timeDE: timeDE,
+      contactDE: contactDE,
+      timeEN: timeEN,
+      contactEN: contactEN,
+      descTag1KeyDE: this.state.descTag1KeyDE,
+      descTag1ValueDE: this.state.descTag1ValueDE,
+      descTag2KeyDE: this.state.descTag2KeyDE,
+      descTag2ValueDE: this.state.descTag2ValueDE,
+      descTag3KeyDE: this.state.descTag3KeyDE,
+      descTag3ValueDE: this.state.descTag3ValueDE,
+      descTag4KeyDE: this.state.descTag4KeyDE,
+      descTag4ValueDE: this.state.descTag4ValueDE,
+      descTag1KeyEN: this.state.descTag1KeyEN,
+      descTag1ValueEN: this.state.descTag1ValueEN,
+      descTag2KeyEN: this.state.descTag2KeyEN,
+      descTag2ValueEN: this.state.descTag2ValueEN,
+      descTag3KeyEN: this.state.descTag3KeyEN,
+      descTag3ValueEN: this.state.descTag3ValueEN,
+      descTag4KeyEN: this.state.descTag4KeyEN,
+      descTag4ValueEN: this.state.descTag4ValueEN,
+
       filesDE: this.state.selectedFilesDE,
       filesEN: this.state.selectedFilesEN,
       imagesDE: this.state.selectedImagesDE,
       imagesEN: this.state.selectedImagesEN,
     }
-    console.log('desc ', saveData)
     this.props.saveContent(saveData)
   }
 
   render() {
-    let defaultSelectedDE = []
-    let defaultSelectedImageDE = []
-    let defaultSelectedEN = []
-    let defaultSelectedImageEN = []
-
-    if (this.state.selectedFilesDE && this.state.selectedFilesDE.length > 0) {
-      defaultSelectedDE = this.state.selectedFilesDE
-    }
-    if (this.state.selectedImagesDE && this.state.selectedImagesDE.length > 0) {
-      defaultSelectedImageDE = this.state.selectedImagesDE
-    }
-
     return (
-      <div className={styles['job-wrapper']}>
+      <div className={styles["job-wrapper"]}>
         <div
-          className={cx(styles['job-content-container'], {
-            [styles['blank-item']]: this.state.blankItem,
+          className={cx(styles["job-content-container"], {
+            [styles["blank-item"]]: this.state.blankItem,
           })}
         >
-          <div className={styles['job-content']}>
-            <div className={styles['job-content--main']}>
-              <div className={styles['job-content--main__category']}>
+          <div className={styles["job-content"]}>
+            <div className={styles["job-content--main"]}>
+              <div className={styles["job-content--main__category"]}>
                 <select
                   name="catSelect"
                   value={this.state.tag}
                   onChange={this.onTagSelectChange}
                 >
                   {jobTags &&
-                    jobTags.map(tag => (
+                    jobTags.map((tag) => (
                       <option value={tag.name}>{tag.de.title}</option>
                     ))}
                 </select>
               </div>
-              <div className={styles['job-content--text']}>
-                <div className={styles['job-content--text__title']}>
+              <div className={styles["job-content--text"]}>
+                <div className={styles["job-content--text__title"]}>
                   <TextFieldGroup
-                    className={commonStyles['input']}
+                    className={commonStyles["input"]}
                     colorScheme="light"
                     placeholder="Titel deutsch"
                     type="text"
@@ -313,9 +411,9 @@ class JobContent extends Component {
                   />
                 </div>
 
-                <div className={styles['job-content--text__title']}>
+                <div className={styles["job-content--text__title"]}>
                   <TextFieldGroup
-                    className={commonStyles['input']}
+                    className={commonStyles["input"]}
                     colorScheme="light"
                     placeholder="Titel englisch"
                     type="text"
@@ -328,74 +426,74 @@ class JobContent extends Component {
               </div>
               {this.props.media &&
                 this.props.media.images &&
-                this.state.jobId !== 'neu' && (
+                this.state.jobId !== "neu" && (
                   <Fragment>
                     {jobTags &&
-                      jobTags.map(tag => (
+                      jobTags.map((tag) => (
                         <Fragment>
                           {tag.name === this.state.tag &&
                             tag.hasShortDescription && (
-                              <div className={styles['job-content--text']}>
+                              <div className={styles["job-content--text"]}>
                                 <div
-                                  className={styles['job-content--text__title']}
+                                  className={styles["job-content--text__title"]}
                                 >
                                   <RichTextEditor
                                     placeholder="Kurzbeschreibung deutsch"
-                                    className={styles['html-editor']}
+                                    className={styles["html-editor"]}
                                     toolbarConfig={toolbarConfig}
                                     value={this.state.shortDescriptionDE}
                                     onChange={this.onShortDescriptionChange.bind(
                                       this,
-                                      'de'
+                                      "de"
                                     )}
                                   />
                                 </div>
 
                                 <div
-                                  className={styles['job-content--text__title']}
+                                  className={styles["job-content--text__title"]}
                                 >
                                   <RichTextEditor
                                     placeholder="Kurzbeschreibung englisch"
-                                    className={styles['html-editor']}
+                                    className={styles["html-editor"]}
                                     toolbarConfig={toolbarConfig}
                                     value={this.state.shortDescriptionEN}
                                     onChange={this.onShortDescriptionChange.bind(
                                       this,
-                                      'en'
+                                      "en"
                                     )}
                                   />
                                 </div>
                               </div>
                             )}
                           {tag.name === this.state.tag && tag.hasDescription && (
-                            <div className={styles['job-content--text']}>
+                            <div className={styles["job-content--text"]}>
                               <div
-                                className={styles['job-content--text__title']}
+                                className={styles["job-content--text__title"]}
                               >
                                 <RichTextEditor
                                   handleReturn={this.swapSoftNewLineBehavior}
                                   placeholder="Hauptbeschreibung deutsch"
-                                  className={styles['html-editor']}
+                                  className={styles["html-editor"]}
                                   toolbarConfig={toolbarImgConfig}
                                   value={this.state.descriptionDE}
                                   onChange={this.onDescriptionChange.bind(
                                     this,
-                                    'de'
+                                    "de"
                                   )}
                                 />
                               </div>
 
                               <div
-                                className={styles['job-content--text__title']}
+                                className={styles["job-content--text__title"]}
                               >
                                 <RichTextEditor
                                   placeholder="Hauptinhalt englisch"
-                                  className={styles['html-editor']}
+                                  className={styles["html-editor"]}
                                   toolbarConfig={toolbarImgConfig}
                                   value={this.state.descriptionEN}
                                   onChange={this.onDescriptionChange.bind(
                                     this,
-                                    'en'
+                                    "en"
                                   )}
                                 />
                               </div>
@@ -404,143 +502,102 @@ class JobContent extends Component {
                           {tag.name === this.state.tag && tag.descriptionTags && (
                             <div
                               className={cx(
-                                styles['job-content--descriptionTags'],
-                                styles['job-content--text']
+                                styles["job-content--descriptionTags"],
+                                styles["job-content--text"]
                               )}
                             >
                               <div>
-                                {tag.descriptionTags.map(descTag => (
+                                {tag.descriptionTags.map((descTag) => (
                                   <div
                                     className={
                                       styles[
-                                        'job-content--descriptionTags__tag'
+                                        "job-content--descriptionTags__tag"
                                       ]
                                     }
                                   >
-                                    <span>{descTag['de'].title}</span>
+                                    <span>{descTag["de"].title}</span>
                                     <TextFieldGroup
-                                      className={commonStyles['input']}
+                                      className={commonStyles["input"]}
                                       colorScheme="light"
-                                      placeholder="Titel deutsch"
+                                      placeholder={descTag["de"].title}
                                       type="text"
-                                      name="titleDE"
-                                      value={this.state.titleDE}
+                                      name={`${descTag.name}DE`}
+                                      value={this.state[`${descTag.name}DE`]}
                                       onChange={this.onChange}
-                                      // error={this.state.errors.titleDE}
                                     />
                                   </div>
                                 ))}
                               </div>
                               <div>
-                                {tag.descriptionTags.map(descTag => (
+                                {tag.descriptionTags.map((descTag) => (
                                   <div
                                     className={
                                       styles[
-                                        'job-content--descriptionTags__tag'
+                                        "job-content--descriptionTags__tag"
                                       ]
                                     }
                                   >
-                                    <span>{descTag['en'].title}</span>
+                                    <span>{descTag["en"].title}</span>
+                                    <TextFieldGroup
+                                      className={commonStyles["input"]}
+                                      colorScheme="light"
+                                      placeholder={descTag["en"].title}
+                                      type="text"
+                                      name={`${descTag.name}EN`}
+                                      value={this.state[`${descTag.name}EN`]}
+                                      onChange={this.onChange}
+                                    />
                                   </div>
                                 ))}
                               </div>
                             </div>
                           )}
-                          {tag.name === this.state.tag &&
-                            tag.fileOptions &&
-                            tag.fileOptions.map(option => (
-                              <Fragment>
-                                <h3>{option.title}</h3>
-                                <div
-                                  className={styles['job-content--select-box']}
-                                >
-                                  <div
-                                    className={
-                                      styles[
-                                        'job-content--select-box__container'
-                                      ]
-                                    }
-                                  >
-                                    <FileSelectGroup
-                                      optionContent={this.props.media.images}
-                                      defaultValue={
-                                        this.state[`selected${option.slug}DE`]
-                                      }
-                                      name={`${option.type}SelectDE`}
-                                      onSelectChange={
-                                        this[`on${option.slug}SelectChange`]
-                                      }
-                                      lang="de"
-                                    />
-                                  </div>
-                                  <div
-                                    className={
-                                      styles[
-                                        'job-content--select-box__container'
-                                      ]
-                                    }
-                                  >
-                                    <FileSelectGroup
-                                      optionContent={this.props.media.images}
-                                      defaultValue={
-                                        this.state[`selected${option.slug}EN`]
-                                      }
-                                      name={`${option.type}SelectEN`}
-                                      onSelectChange={
-                                        this[`on${option.slug}SelectChange`]
-                                      }
-                                      lang="en"
-                                    />
-                                  </div>
-                                </div>
-                              </Fragment>
-                            ))}
                         </Fragment>
                       ))}
                   </Fragment>
                 )}
             </div>
             {this.props.jobs.job && (
-              <div className={styles['job-content--sidebar']}>
+              <div className={styles["job-content--sidebar"]}>
                 <div
-                  className={styles['job-content--sidebar__state-indicator']}
+                  className={styles["job-content--sidebar__state-indicator"]}
                 >
                   <div
                     className={cx(
-                      styles['job-content--sidebar__state-indicator--sphere'],
+                      styles["job-content--sidebar__state-indicator--sphere"],
                       {
-                        [styles['online']]: this.state.isOnline,
+                        [styles["online"]]: this.state.isOnline,
                       }
                     )}
                   />
                   <div
                     className={
-                      styles['job-content--sidebar__state-indicator--text']
+                      styles["job-content--sidebar__state-indicator--text"]
                     }
                   >
-                    {this.state.isOnline ? 'Online' : 'Offline'}
+                    {this.state.isOnline ? "Online" : "Offline"}
                   </div>
                 </div>
                 <div
-                  className={styles['job-content--sidebar__section--publish']}
+                  className={styles["job-content--sidebar__section--publish"]}
                 >
                   <button
                     className={cx(
-                      commonStyles['button'],
+                      commonStyles["button"],
                       {
-                        [commonStyles['button--update']]: !this.state.isOnline,
+                        [commonStyles["button--update"]]: !this.state.isOnline,
                       },
                       {
-                        [commonStyles['button--offline']]: this.state.isOnline,
+                        [commonStyles["button--offline"]]: this.state.isOnline,
                       },
-                      commonStyles['button--fullwidth']
+                      commonStyles["button--fullwidth"]
                     )}
                     onClick={this.toggleOnline}
                   >
-                    {this.state.isOnline ? 'Offline nehmen' : 'Online stellen'}
+                    {this.state.isOnline ? "Offline nehmen" : "Online stellen"}
                   </button>
                 </div>
-                <div className={styles['job-content--sidebar--buttons']}>
+                <div className={styles["job-content--sidebar--buttons"]}>
                   {this.state.isRR && (
                     <Fragment>
                       <input
@@ -552,12 +609,12 @@ class JobContent extends Component {
                       />
                       <label htmlFor="toOrder">Bestellbar</label>
                     </Fragment>
-                  )}{' '}
+                  )}{" "}
                   <button
                     className={cx(
-                      commonStyles['button'],
-                      commonStyles['button--save'],
-                      styles['button--save']
+                      commonStyles["button"],
+                      commonStyles["button--save"],
+                      styles["button--save"]
                     )}
                     onClick={this.saveContent}
                   >
@@ -566,12 +623,12 @@ class JobContent extends Component {
                 </div>
 
                 <hr />
-                <div className={styles['job-content--sidebar--buttons']}>
+                <div className={styles["job-content--sidebar--buttons"]}>
                   {this.props.jobs.job && (
                     <button
                       className={cx(
-                        commonStyles['button'],
-                        commonStyles['button--delete']
+                        commonStyles["button"],
+                        commonStyles["button--delete"]
                       )}
                       onClick={this.confirmDelete.bind(this, this.deleteNews)}
                     >
@@ -584,12 +641,12 @@ class JobContent extends Component {
           </div>
         </div>
         <div>
-          {this.props.match.params.jobId === 'neu' && (
+          {this.props.match.params.jobId === "neu" && (
             <button
               className={cx(
-                commonStyles['button'],
-                commonStyles['button--save'],
-                styles['button--save']
+                commonStyles["button"],
+                commonStyles["button--save"],
+                styles["button--save"]
               )}
               onClick={this.saveContent}
             >
@@ -602,7 +659,7 @@ class JobContent extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   jobs: state.jobs,
   media: state.media,
   errors: state.errors,

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-const shortid = require('shortid')
+const shortid = require("shortid")
 
 const jobSchema = new Schema({
   _id: {
@@ -23,6 +23,12 @@ const jobSchema = new Schema({
     description: {
       type: String,
     },
+    time: {
+      type: String,
+    },
+    contact: {
+      type: String,
+    },
   },
   en: {
     title: {
@@ -34,6 +40,12 @@ const jobSchema = new Schema({
     description: {
       type: String,
     },
+    time: {
+      type: String,
+    },
+    contact: {
+      type: String,
+    },
   },
 
   handle: {
@@ -43,7 +55,7 @@ const jobSchema = new Schema({
   lastEdited: {
     user: {
       type: Schema.Types.ObjectId,
-      ref: 'users',
+      ref: "users",
     },
     date: {
       type: Date,
@@ -156,4 +168,4 @@ const jobSchema = new Schema({
   },
 })
 
-module.exports = job = mongoose.model('job', jobSchema)
+module.exports = job = mongoose.model("job", jobSchema)

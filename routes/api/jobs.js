@@ -1,55 +1,55 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
-const passport = require('passport')
-const marked = require('marked')
+const passport = require("passport")
+const marked = require("marked")
 
-const multer = require('multer')
-const multerS3 = require('multer-s3')
-const aws = require('aws-sdk')
-const Jimp = require('jimp')
+const multer = require("multer")
+const multerS3 = require("multer-s3")
+const aws = require("aws-sdk")
+const Jimp = require("jimp")
 
-const nodemailer = require('nodemailer')
+const nodemailer = require("nodemailer")
 
-const validateJobsInput = require('../../validation/jobs')
+const validateJobsInput = require("../../validation/jobs")
 
-const Job = require('../../models/Job')
+const Job = require("../../models/Job")
 
 // @route   GET api/jobs
 // @desc    Get all jobs
 // @access  Public
-router.get('/', (req, res) => {
-  console.log('getall')
+router.get("/", (req, res) => {
+  console.log("getall")
   const errors = {}
   Job.find({ isDeleted: false })
-    .sort('position')
+    .sort("position")
     .exec()
-    .then(jobs => {
+    .then((jobs) => {
       res.json(jobs)
     })
-    .catch(err => res.status(404).json(err))
+    .catch((err) => res.status(404).json(err))
 })
 
 // @route   GET api/jobs/getbyprop/:prop
 // @desc    Get all jobs by Prop
 // @access  Public
-router.get('/getbyprop/:prop', (req, res) => {
-  console.log('getallbyprop')
+router.get("/getbyprop/:prop", (req, res) => {
+  console.log("getallbyprop")
   const errors = {}
   Job.find({ isDeleted: false, isOnline: true, tag: req.params.prop })
-    .sort('position')
+    .sort("position")
     .exec()
-    .then(jobs => {
+    .then((jobs) => {
       res.json(jobs)
     })
-    .catch(err => res.status(404).json(err))
+    .catch((err) => res.status(404).json(err))
 })
 
 // @route   POST api/jobs
 // @desc    Create a job
 // @access  Private
 router.post(
-  '/',
-  passport.authenticate('jwt', { session: false }),
+  "/",
+  passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     const body = req.body
     const { errors, isValid } = await validateJobsInput(body)
@@ -62,18 +62,18 @@ router.post(
     const jobFields = { de: {}, en: {} }
     if (body.titleDE) {
       jobFields.de.title = body.titleDE
-      jobFields.handle = body.titleDE.replace(/\s/g, '_')
+      jobFields.handle = body.titleDE.replace(/\s/g, "_")
     }
     if (body.titleEN) jobFields.en.title = body.titleEN
     jobFields.tag = body.tag
     jobFields.de.shortDescription = body.shortDescriptionDE
       ? body.shortDescriptionDE
-      : ''
+      : ""
     jobFields.en.shortDescription = body.shortDescriptionEN
       ? body.shortDescriptionEN
-      : ''
-    jobFields.de.description = body.descriptionDE ? body.descriptionDE : ''
-    jobFields.en.description = body.descriptionEN ? body.descriptionEN : ''
+      : ""
+    jobFields.de.description = body.descriptionDE ? body.descriptionDE : ""
+    jobFields.en.description = body.descriptionEN ? body.descriptionEN : ""
 
     const newJob = new Job({
       tag: jobFields.tag,
@@ -90,21 +90,20 @@ router.post(
         description: jobFields.en.description,
       },
     })
-    console.log(newJob)
     newJob
       .save()
-      .then(job => {
+      .then((job) => {
         res.json(job)
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err)
       })
   }
 )
 
 router.post(
-  '/update/:id',
-  passport.authenticate('jwt', { session: false }),
+  "/update/:id",
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const body = req.body
     console.log(body)
@@ -112,7 +111,7 @@ router.post(
     const jobFields = { de: {}, en: {} }
     if (body.titleDE) {
       jobFields.de.title = body.titleDE
-      jobFields.handle = body.titleDE.replace(/\s/g, '_')
+      jobFields.handle = body.titleDE.replace(/\s/g, "_")
     }
     if (body.titleEN) jobFields.en.title = body.titleEN
     // if (body.filesDE) jobFields.selectedFilesDE = body.filesDE
@@ -128,11 +127,15 @@ router.post(
             title: jobFields.de.title,
             shortDescription: body.shortDescriptionDE,
             description: body.descriptionDE,
+            time: body.timeDE,
+            contact: body.contactDE,
           },
           en: {
             title: jobFields.en.title,
             shortDescription: body.shortDescriptionEN,
             description: body.descriptionEN,
+            time: body.timeEN,
+            contact: body.contactEN,
           },
           files: {
             de: body.filesDE,
@@ -147,17 +150,17 @@ router.post(
       },
       { new: true },
       (err, job) => {
-        if (err) console.log('error: ', err)
+        if (err) console.log("error: ", err)
         if (!err) {
           Job.find({ isDeleted: false })
-            .sort('position')
-            .then(jobs => {
+            .sort("position")
+            .then((jobs) => {
               res.json({
                 jobs: jobs,
                 job: job,
               })
             })
-            .catch(err => {
+            .catch((err) => {
               console.log(err)
             })
         }
@@ -169,19 +172,19 @@ router.post(
 // @route   GET api/jobs/:id
 // @desc    Get jobs by id
 // @access  Public
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   const errors = {}
   Job.findOne({ _id: req.params.id, isDeleted: false })
-    .populate('lastEdited.user', ['name'])
-    .then(job => {
+    .populate("lastEdited.user", ["name"])
+    .then((job) => {
       if (!job) {
-        errors.nojob = 'Kein Beitrag mit dieser ID.'
+        errors.nojob = "Kein Beitrag mit dieser ID."
         return res.status(404).json(errors.nojob)
       }
       res.json(job)
     })
-    .catch(err => {
-      errors.job = 'Beitrag nicht gefunden.'
+    .catch((err) => {
+      errors.job = "Beitrag nicht gefunden."
       return res.status(404).json(errors)
     })
 })
@@ -190,8 +193,8 @@ router.get('/:id', (req, res) => {
 // @desc    Toggle online job by id
 // @access  Private
 router.get(
-  '/toggle_online/:id/:state',
-  passport.authenticate('jwt', { session: false }),
+  "/toggle_online/:id/:state",
+  passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     const errors = {}
     console.log(req.params.id, req.params.state)
@@ -200,22 +203,22 @@ router.get(
       { isOnline: req.params.state },
       { safe: true, new: true }
     )
-      .then(async jobItem => {
+      .then(async (jobItem) => {
         Job.find({ isDeleted: false })
-          .sort('position')
-          .then(jobs => {
+          .sort("position")
+          .then((jobs) => {
             res.json({
               jobs: jobs,
               job: jobItem,
             })
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err)
           })
       })
-      .catch(err => {
-        console.log('nicht fund')
-        errors.job = 'Beitrag nicht gefunden.'
+      .catch((err) => {
+        console.log("nicht fund")
+        errors.job = "Beitrag nicht gefunden."
         return res.status(404).json(errors)
       })
   }
@@ -225,8 +228,8 @@ router.get(
 // @desc    Delete job by id
 // @access  Private
 router.get(
-  '/delete/:id',
-  passport.authenticate('jwt', { session: false }),
+  "/delete/:id",
+  passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     const errors = {}
     Job.findOneAndUpdate(
@@ -238,8 +241,8 @@ router.get(
         const jobs = await Job.find({ isDeleted: false })
         res.json(jobs)
       })
-      .catch(err => {
-        errors.job = 'Beitrag nicht gefunden.'
+      .catch((err) => {
+        errors.job = "Beitrag nicht gefunden."
         return res.status(404).json(errors)
       })
   }

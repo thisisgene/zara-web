@@ -1,13 +1,13 @@
 export const heroData = {
-  image: 'publikationen.png',
-  imageSide: 'left',
-  imageAlign: 'center',
+  image: "publikationen.png",
+  imageSide: "left",
+  imageAlign: "center",
   de: {
-    title: 'Jobs und Volontariate',
+    title: "Jobs und Volontariate",
     text: 'Hier finden Sie aktuelle Ausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.',
   },
   en: {
-    title: 'Jobs und Volontariate',
+    title: "Jobs und Volontariate",
     text: 'Hier finden Sie aktuelle Ausschreibungen. Wir freuen uns auch über Initiativbewerbungen. Diese können Sie an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a> schicken.',
   },
 }
@@ -36,24 +36,24 @@ export const jobData = [
   //   },
   // },
   {
-    category: 'volontariat',
+    category: "volontariat",
     de: {
       title:
-        'VOLONTARIAT Beratungsstelle für Betroffene und Zeug*innen von Rassismus',
-      area: 'Unterstützung der Berater*innen bei der Fallbearbeitung (z.B. Erstellung von Beschwerdebriefen und Anzeigen, Begleitung von Klient*innen, Falldokumentation) und der Organisation der Beratungsstelle. Nach erfolgreicher Einarbeitungszeit auch selbständige Fallbearbeitung unter Supervision.',
+        "VOLONTARIAT Beratungsstelle für Betroffene und Zeug*innen von Rassismus",
+      area: "Unterstützung der Berater*innen bei der Fallbearbeitung (z.B. Erstellung von Beschwerdebriefen und Anzeigen, Begleitung von Klient*innen, Falldokumentation) und der Organisation der Beratungsstelle. Nach erfolgreicher Einarbeitungszeit auch selbständige Fallbearbeitung unter Supervision.",
       qualifications:
-        'Jusstudent*innen oder -absolvent*innen, Interesse am/Erfahrung im Bereich Antidiskriminierung, Gleichbehandlungsrecht und allg. Menschenrechte, idealerweise bereits im 2./3. Studienabschnitt.',
-      time: 'mind. 10h/Woche',
-      contact: 'bewerbung@zara.or.at',
+        "Jusstudent*innen oder -absolvent*innen, Interesse am/Erfahrung im Bereich Antidiskriminierung, Gleichbehandlungsrecht und allg. Menschenrechte, idealerweise bereits im 2./3. Studienabschnitt.",
+      time: "mind. 10h/Woche",
+      contact: "bewerbung@zara.or.at",
     },
     en: {
       title:
-        'VOLONTARIAT Beratungsstelle für Betroffene und Zeug*innen von Rassismus',
-      area: 'Unterstützung der Berater*innen bei der Fallbearbeitung (z.B. Erstellung von Beschwerdebriefen und Anzeigen, Begleitung von Klient*innen, Falldokumentation) und der Organisation der Beratungsstelle. Nach erfolgreicher Einarbeitungszeit auch selbständige Fallbearbeitung unter Supervision.',
+        "VOLONTARIAT Beratungsstelle für Betroffene und Zeug*innen von Rassismus",
+      area: "Unterstützung der Berater*innen bei der Fallbearbeitung (z.B. Erstellung von Beschwerdebriefen und Anzeigen, Begleitung von Klient*innen, Falldokumentation) und der Organisation der Beratungsstelle. Nach erfolgreicher Einarbeitungszeit auch selbständige Fallbearbeitung unter Supervision.",
       qualifications:
-        'Jusstudent*innen oder -absolvent*innen, Interesse am/Erfahrung im Bereich Antidiskriminierung, Gleichbehandlungsrecht und allg. Menschenrechte, idealerweise bereits im 2./3. Studienabschnitt.',
-      time: 'mind. 10h/Woche',
-      contact: 'bewerbung@zara.or.at',
+        "Jusstudent*innen oder -absolvent*innen, Interesse am/Erfahrung im Bereich Antidiskriminierung, Gleichbehandlungsrecht und allg. Menschenrechte, idealerweise bereits im 2./3. Studienabschnitt.",
+      time: "mind. 10h/Woche",
+      contact: "bewerbung@zara.or.at",
     },
   },
   // {
@@ -78,80 +78,112 @@ export const jobData = [
   //   }
   // },
   {
-    category: 'volontariat',
+    category: "volontariat",
     de: {
-      title: 'VOLONTARIAT Öffentlichkeitsarbeit',
-      area: 'Unterstützung bei der Betreuung der Website, Newsletter und Pressespiegel, Recherchetätigkeiten, Verfassen von diversen Texten, Unterstützung bei der Organisation von PR-Events.',
+      title: "VOLONTARIAT Öffentlichkeitsarbeit",
+      area: "Unterstützung bei der Betreuung der Website, Newsletter und Pressespiegel, Recherchetätigkeiten, Verfassen von diversen Texten, Unterstützung bei der Organisation von PR-Events.",
       qualifications:
-        'selbständiges Arbeiten, Kontaktfreudigkeit, Sicherheit in der Formulierung von Texten, Interesse an Medienarbeit',
-      time: 'nach Vereinbarung',
-      contact: 'bewerbung@zara.or.at',
+        "selbständiges Arbeiten, Kontaktfreudigkeit, Sicherheit in der Formulierung von Texten, Interesse an Medienarbeit",
+      time: "nach Vereinbarung",
+      contact: "bewerbung@zara.or.at",
     },
     en: {
-      title: 'VOLONTARIAT Öffentlichkeitsarbeit',
-      area: 'Unterstützung bei der Betreuung der Website, Newsletter und Pressespiegel, Recherchetätigkeiten, Verfassen von diversen Texten, Unterstützung bei der Organisation von PR-Events.',
+      title: "VOLONTARIAT Öffentlichkeitsarbeit",
+      area: "Unterstützung bei der Betreuung der Website, Newsletter und Pressespiegel, Recherchetätigkeiten, Verfassen von diversen Texten, Unterstützung bei der Organisation von PR-Events.",
       qualifications:
-        'selbständiges Arbeiten, Kontaktfreudigkeit, Sicherheit in der Formulierung von Texten, Interesse an Medienarbeit',
-      time: 'nach Vereinbarung',
-      contact: 'bewerbung@zara.or.at',
+        "selbständiges Arbeiten, Kontaktfreudigkeit, Sicherheit in der Formulierung von Texten, Interesse an Medienarbeit",
+      time: "nach Vereinbarung",
+      contact: "bewerbung@zara.or.at",
     },
   },
 ]
 
 export const longTextJobs = {
   de: {
-    title: 'Jobs',
+    title: "Jobs",
     // text: 'Derzeit haben wir keine offenen Stellen.',
+  },
+  en: {
+    title: "Jobs",
+    // text: 'Derzeit haben wir keine offenen Stellen.',
+  },
+}
+export const longTextNoJobs = {
+  de: {
+    title: "Jobs",
+    text: "Derzeit haben wir keine offenen Stellen.",
+  },
+  en: {
+    title: "Jobs",
+    text: "Derzeit haben wir keine offenen Stellen.",
   },
 }
 export const longTextVolontariat = {
   de: {
-    title: 'Volontariat',
-    text: 'Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.',
+    title: "Volontariat",
+    text: "Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.",
+  },
+  en: {
+    title: "Volontariat",
+    text: "Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.",
+  },
+}
+export const longTextEhrenamtlich = {
+  de: {
+    title: "Ehrenamtliche Mitarbeit",
+    // text: "Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.",
+  },
+  en: {
+    title: "Ehrenamtliche Mitarbeit",
+    // text: "Sie haben Interesse an Antidiskriminierungsarbeit und wollten schon immer in einer progressiven NGO mit flachen Hierarchien mitarbeiten? Im Rahmen eines Volontariats haben Sie die Möglichkeit, Teil unseres Teams zu werden und einen Einblick in die tagtägliche Anti-Rassismus-Arbeit in Österreich zu bekommen. Bei uns gibt es die Möglichkeit, in drei unterschiedlichen Bereichen Volontariate zu absolvieren.",
   },
 }
 export const longTextZivildienst = {
   de: {
-    title: 'Zivildienst',
+    title: "Zivildienst",
+    text: '<b>Der Posten als Zivildiener bei ZARA ist bereits bis 31. März 2022 vergeben.</b><br /><br />Die nächste Zivildienststelle wird ab 1. April 2022 frei. Wenn Sie Interesse haben, Ihren Zivildienst bei ZARA abzuleisten, senden Sie bitte eine E-Mail an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!',
+  },
+  en: {
+    title: "Zivildienst",
     text: '<b>Der Posten als Zivildiener bei ZARA ist bereits bis 31. März 2022 vergeben.</b><br /><br />Die nächste Zivildienststelle wird ab 1. April 2022 frei. Wenn Sie Interesse haben, Ihren Zivildienst bei ZARA abzuleisten, senden Sie bitte eine E-Mail an <a href="mailto:bewerbung@zara.or.at">bewerbung@zara.or.at</a><br /><br />Vielen Dank für Ihr Interesse an einer Mitarbeit!',
   },
 }
 
 export const longText = {
   de: {
-    title: 'ZARA bietet:',
+    title: "ZARA bietet:",
     list: [
       {
-        text: 'Freundliches Arbeitsklima, flache Hierarchien, Vernetzungsmöglichkieiten',
+        text: "Freundliches Arbeitsklima, flache Hierarchien, Vernetzungsmöglichkieiten",
       },
-      { text: 'Einblicke in die Anti-Rassismus-Arbeit in Österreich' },
-      { text: 'Abwechslungsreiches Arbeiten' },
+      { text: "Einblicke in die Anti-Rassismus-Arbeit in Österreich" },
+      { text: "Abwechslungsreiches Arbeiten" },
       {
-        text: 'Tätigkeit in einem gesellschaftspolitisch brisanten und rechtlich diversen Themenbereich',
+        text: "Tätigkeit in einem gesellschaftspolitisch brisanten und rechtlich diversen Themenbereich",
       },
-      { text: 'Kennenlernen von Arbeitsabläufen in einer NGO' },
+      { text: "Kennenlernen von Arbeitsabläufen in einer NGO" },
       {
-        text: 'Je nach Verfügbarkeit und Interesse Teilnahme an nationalen und internationalen Workshops und Trainings / Konferenzen.',
+        text: "Je nach Verfügbarkeit und Interesse Teilnahme an nationalen und internationalen Workshops und Trainings / Konferenzen.",
       },
     ],
-    text: 'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Volontariat bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.',
+    text: "Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Volontariat bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.",
   },
-  de: {
-    title: 'ZARA bietet:',
+  en: {
+    title: "ZARA bietet:",
     list: [
       {
-        text: 'Freundliches Arbeitsklima, flache Hierarchien, Vernetzungsmöglichkieiten',
+        text: "Freundliches Arbeitsklima, flache Hierarchien, Vernetzungsmöglichkieiten",
       },
-      { text: 'Einblicke in die Anti-Rassismus-Arbeit in Österreich' },
-      { text: 'Abwechslungsreiches Arbeiten' },
+      { text: "Einblicke in die Anti-Rassismus-Arbeit in Österreich" },
+      { text: "Abwechslungsreiches Arbeiten" },
       {
-        text: 'Tätigkeit in einem gesellschaftspolitisch brisanten und rechtlich diversen Themenbereich',
+        text: "Tätigkeit in einem gesellschaftspolitisch brisanten und rechtlich diversen Themenbereich",
       },
-      { text: 'Kennenlernen von Arbeitsabläufen in einer NGO' },
+      { text: "Kennenlernen von Arbeitsabläufen in einer NGO" },
       {
-        text: 'Je nach Verfügbarkeit und Interesse Teilnahme an nationalen und internationalen Workshops und Trainings / Konferenzen.',
+        text: "Je nach Verfügbarkeit und Interesse Teilnahme an nationalen und internationalen Workshops und Trainings / Konferenzen.",
       },
     ],
-    text: 'Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Volontariat bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.',
+    text: "Grundsätzlich geben wir Bewerber*innen den Vorzug, die bereit sind, über einen längeren Zeitraum hinweg (6 Monate oder länger) ein Volontariat bei uns zu absolvieren.<br /><br />Bei Interesse wenden Sie sich bitte an die oben angeführten Kontaktadressen.",
   },
 }

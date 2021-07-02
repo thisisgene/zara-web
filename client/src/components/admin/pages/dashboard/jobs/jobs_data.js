@@ -1,7 +1,7 @@
 export const jobTags = [
   {
-    name: 'job',
-    de: { title: 'Job' },
+    name: "job",
+    de: { title: "Job" },
     hasShortDescription: true,
     readMoreButton: true,
     hasDescription: true,
@@ -19,21 +19,21 @@ export const jobTags = [
     // ],
   },
   {
-    name: 'volunteering',
-    de: { title: 'Volontariat' },
+    name: "volunteering",
+    de: { title: "Volontariat" },
     hasShortDescription: true,
     descriptionTags: [
       {
-        name: 'time',
-        de: { title: 'Zeitausmaß' },
-        en: { title: 'Zeitausmaß' },
-        type: 'input',
+        name: "time",
+        de: { title: "Zeitausmaß" },
+        en: { title: "Time expenditure" },
+        type: "input",
       },
       {
-        name: 'contact',
-        de: { title: 'Kontakt' },
-        en: { title: 'Kontakt' },
-        type: 'input',
+        name: "contact",
+        de: { title: "Kontakt" },
+        en: { title: "Contact" },
+        type: "input",
       },
     ],
     // fileOptions: [
@@ -50,9 +50,17 @@ export const jobTags = [
     // ],
   },
   {
-    name: 'unsalaried',
-    de: { title: 'Ehrenamtlich' },
+    name: "unsalaried",
+    de: { title: "Ehrenamtlich" },
     hasShortDescription: true,
+    descriptionTags: [
+      {
+        name: "contact",
+        de: { title: "Kontakt" },
+        en: { title: "Contact" },
+        type: "input",
+      },
+    ],
     // fileOptions: [
     //   {
     //     type: 'file',
