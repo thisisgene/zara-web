@@ -662,6 +662,53 @@ class JobContent extends Component {
                     />
                   )}
                 </div>
+                <div className={styles["job-content--sidebar__image-checkbox"]}>
+                  <div
+                    className={
+                      styles["job-content--sidebar__image-checkbox--group"]
+                    }
+                  >
+                    <div>
+                      <input
+                        id="image-side"
+                        type="checkbox"
+                        onClick={this.onImageSideChange}
+                        checked={this.state.imageSide === "left"}
+                        name="imageSide"
+                      />
+                      <label htmlFor="image-side">Bild Links</label>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      styles["job-content--sidebar__image-checkbox--group"]
+                    }
+                  >
+                    <input
+                      id="image-big"
+                      type="checkbox"
+                      onClick={this.onImageBigChange}
+                      checked={this.state.size === "big-image"}
+                      name="imageBig"
+                    />
+                    <label htmlFor="image-big">Großes Bild</label>
+                  </div>
+                  <div
+                    className={
+                      styles["job-content--sidebar__image-checkbox--group"]
+                    }
+                  >
+                    <input
+                      id="image-align"
+                      type="checkbox"
+                      onClick={this.onImageAlignChange}
+                      checked={this.state.imageAlign === "center"}
+                      disabled={this.state.size === "big-image"}
+                      name="imageAlign"
+                    />
+                    <label htmlFor="image-align">Text vertikal mittig</label>
+                  </div>
+                </div>
                 <hr />
                 <div className={styles["job-content--sidebar--buttons"]}>
                   {this.props.jobs.job && (
