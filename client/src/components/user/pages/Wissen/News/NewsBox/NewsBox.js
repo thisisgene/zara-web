@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import NewsItem from './NewsItem'
+import NewsItem from "./NewsItem"
 
-import cx from 'classnames'
-import styles from '../News.module.sass'
+import cx from "classnames"
+import styles from "../News.module.sass"
 
 class NewsBox extends Component {
   constructor() {
     super()
     this.state = {
-      activeTag: ''
+      activeTag: "",
     }
   }
-  onChange = e => {
+  onChange = (e) => {
     // let activeTags = this.state.activeTags
     // if (e.target.checked) {
     //   activeTags.push(e.target.name)
@@ -25,17 +25,17 @@ class NewsBox extends Component {
     //   })
     // }
     this.setState({
-      activeTag: e.target.value
+      activeTag: e.target.value,
     })
   }
 
-  filterNews = e => {
+  filterNews = (e) => {
     return this.indexOf(e) < 0
   }
 
   resetTags = () => {
     this.setState({
-      activeTag: ''
+      activeTag: "",
     })
   }
 
@@ -44,8 +44,8 @@ class NewsBox extends Component {
 
     // Filter hardcoded news content
     let filteredContent = []
-    if (this.state.activeTag !== '') {
-      filteredContent = content.filter(filteredNews => {
+    if (this.state.activeTag !== "") {
+      filteredContent = content.filter((filteredNews) => {
         if (this.state.activeTag === filteredNews.tag) return true
 
         return false
@@ -56,8 +56,8 @@ class NewsBox extends Component {
 
     // Filter news content from DB
     let filteredNews = []
-    if (this.state.activeTag !== '') {
-      filteredNews = news.filter(fNews => {
+    if (this.state.activeTag !== "") {
+      filteredNews = news.filter((fNews) => {
         if (this.state.activeTag === fNews.tag) return true
 
         return false
@@ -69,21 +69,21 @@ class NewsBox extends Component {
     // TODO: Pagination if more than 10 News items
 
     return (
-      <div className={styles['news-box']}>
-        <div className={styles['news-box--filter-bar']}>
+      <div className={styles["news-box"]}>
+        <div className={styles["news-box--filter-bar"]}>
           <div
-            className={cx(styles['reset-button'], {
-              [styles['active']]: this.state.activeTag === ''
+            className={cx(styles["reset-button"], {
+              [styles["active"]]: this.state.activeTag === "",
             })}
           >
             <label onClick={this.resetTags} tabIndex="1">
               Alle Beiträge
             </label>
           </div>
-          <div className={styles['filter-box']}>
+          <div className={styles["filter-box"]}>
             {tags &&
               tags.map((tag, index) => (
-                <div key={index} className={styles['tag-item']}>
+                <div key={index} className={styles["tag-item"]}>
                   <input
                     value={tag.name}
                     type="radio"
@@ -97,11 +97,11 @@ class NewsBox extends Component {
           </div>
         </div>
         {/* ADD PAGEINATION! */}
-        <div className={styles['news-item-container']}>
+        <div className={styles["news-item-container"]}>
           {filteredNews && lang && (
             <div>
               {filteredNews
-                .filter(news => news.isOnline && !news.isDeleted)
+                .filter((news) => news.isOnline && !news.isDeleted)
                 .map((news, index) => (
                   <NewsItem
                     key={index}
@@ -112,7 +112,7 @@ class NewsBox extends Component {
                 ))}
             </div>
           )}
-          <div>
+          {/* <div>
             {content && lang && (
               <div>
                 {filteredContent.length > 0 ? (
@@ -133,7 +133,7 @@ class NewsBox extends Component {
                 )}
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     )
