@@ -62,90 +62,14 @@ const jobSchema = new Schema({
     },
   },
 
-  files: {
-    de: [
-      {
-        _id: false,
-        originalId: {
-          type: String,
-        },
-        value: {
-          type: String,
-        },
-        label: {
-          type: String,
-        },
-        name: {
-          type: String,
-        },
-        title: { type: String },
-        secondTitle: { type: String },
-        subtitle: { type: String },
-      },
-    ],
-    en: [
-      {
-        _id: false,
-        originalId: {
-          type: String,
-        },
-        value: {
-          type: String,
-        },
-        label: {
-          type: String,
-        },
-        name: {
-          type: String,
-        },
-        title: { type: String },
-        secondTitle: { type: String },
-        subtitle: { type: String },
-      },
-    ],
+  titleImage: {
+    originalName: { type: String },
+    imageId: { type: String },
+    category: { type: String },
   },
-  images: {
-    de: [
-      {
-        _id: false,
-        originalId: {
-          type: String,
-        },
-        value: {
-          type: String,
-        },
-        label: {
-          type: String,
-        },
-        name: {
-          type: String,
-        },
-        title: { type: String },
-        secondTitle: { type: String },
-        subtitle: { type: String },
-      },
-    ],
-    en: [
-      {
-        _id: false,
-        originalId: {
-          type: String,
-        },
-        value: {
-          type: String,
-        },
-        label: {
-          type: String,
-        },
-        name: {
-          type: String,
-        },
-        title: { type: String },
-        secondTitle: { type: String },
-        subtitle: { type: String },
-      },
-    ],
-  },
+  imageSide: { type: String },
+  imageAlign: { type: String },
+  size: { type: String },
 
   moreLink: {
     type: Boolean,

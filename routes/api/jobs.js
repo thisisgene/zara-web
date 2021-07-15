@@ -137,14 +137,14 @@ router.post(
             time: body.timeEN,
             contact: body.contactEN,
           },
-          files: {
-            de: body.filesDE,
-            en: body.filesEN,
+          titleImage: {
+            originalName: body.titleImage,
+            imageId: body.imageId,
+            category: body.imageCategory,
           },
-          images: {
-            de: body.imagesDE,
-            en: body.imagesEN,
-          },
+          imageSide: body.imageSide,
+          imageAlign: body.imageAlign,
+          size: body.size,
           moreLink: body.moreLink,
         },
       },

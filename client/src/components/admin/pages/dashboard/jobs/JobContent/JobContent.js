@@ -7,8 +7,7 @@ import { jobTags } from "../jobs_data"
 import { toolbarConfig, toolbarImgConfig } from "./rte_toolbar_config"
 
 import TextFieldGroup from "../../../../common/TextFieldGroup"
-import TextareaFieldGroup from "../../../../common/TextareaFieldGroup"
-import FileSelectGroup from "../../../../common/FileSelectGroup"
+import ContentImageList from "../../ContentImageList"
 
 import { confirmAlert } from "react-confirm-alert"
 
@@ -67,15 +66,15 @@ class JobContent extends Component {
       descTag4KeyEN: "",
       descTag4ValueEN: "",
 
-      selectedFilesDE: [],
-      selectedFilesEN: [],
-      selectedImagesDE: [],
-      selectedImagesEN: [],
-
-      toOrder: true,
-      isRR: false,
-      errors: {},
+      titleImage: "",
+      imageId: "",
+      imageCategory: "",
+      imageSide: "",
+      imageAlign: "",
+      bigImage: false,
       imageListOpen: false,
+
+      errors: {},
     }
   }
 
@@ -159,10 +158,12 @@ class JobContent extends Component {
             descTag4KeyEN: item.en.descTag4Key,
             descTag4ValueEN: item.en.descTag4Value,
 
-            selectedFilesDE: item.files && item.files.de,
-            selectedFilesEN: item.files && item.files.en,
-            selectedImagesDE: item.images && item.images.de,
-            selectedImagesEN: item.images && item.images.en,
+            titleImage: item.titleImage && item.titleImage.originalName,
+            imageId: item.titleImage && item.titleImage.imageId,
+            imageCategory: item.titleImage && item.titleImage.category,
+            imageSide: item.imageSide,
+            imageAlign: item.imageAlign,
+            size: item.size,
           })
         }
       }
@@ -206,10 +207,12 @@ class JobContent extends Component {
             descTag4KeyEN: "",
             descTag4ValueEN: "",
 
-            selectedFilesDE: [],
-            selectedFilesEN: [],
-            selectedImagesDE: [],
-            selectedImagesEN: [],
+            titleImage: "",
+            imageId: "",
+            imageCategory: "",
+            imageSide: "",
+            imageAlign: "",
+            size: "",
           })
         } else {
           this.props.getById(this.props.match.params.jobId, "jobs")
@@ -269,22 +272,40 @@ class JobContent extends Component {
       }
     })
   }
-  onFilesSelectChange = (lang, selected) => {
-    if (lang === "de") {
-      this.setState({ selectedFilesDE: selected })
-    }
-    if (lang === "en") {
-      this.setState({ selectedFilesEN: selected })
-    }
+
+  onImageOpen = () => {
+    this.setState({ imageListOpen: !this.state.imageListOpen })
   }
-  onImagesSelectChange = (lang, selected) => {
-    if (lang === "de") {
-      this.setState({ selectedImagesDE: selected })
-    }
-    if (lang === "en") {
-      this.setState({ selectedImagesEN: selected })
-    }
+  updateTitleImage = (originalName, id, category) => {
+    this.setState({
+      titleImage: originalName,
+      imageId: id,
+      imageCategory: category,
+      imageListOpen: false,
+    })
   }
+  closeImageList = () => {
+    this.setState({
+      imageListOpen: false,
+    })
+  }
+  onImageSideChange = (e) => {
+    this.setState({
+      imageSide: e.target.checked ? "left" : "right",
+    })
+  }
+
+  onImageAlignChange = (e) => {
+    this.setState({
+      imageAlign: e.target.checked ? "center" : "",
+    })
+  }
+  onImageBigChange = (e) => {
+    this.setState({
+      size: e.target.checked ? "big-image" : "",
+    })
+  }
+
   deleteJob = () => {
     this.props.deleteById(this.state.jobId, "jobs")
     this.props.history.push("/admin/dashboard/jobs/neu")
@@ -369,10 +390,12 @@ class JobContent extends Component {
 
       moreLink: this.state.tag === "job",
 
-      filesDE: this.state.selectedFilesDE,
-      filesEN: this.state.selectedFilesEN,
-      imagesDE: this.state.selectedImagesDE,
-      imagesEN: this.state.selectedImagesEN,
+      titleImage: this.state.titleImage,
+      imageId: this.state.imageId,
+      imageCategory: this.state.imageCategory,
+      imageSide: this.state.imageSide,
+      imageAlign: this.state.imageAlign,
+      size: this.state.size,
     }
     this.props.saveContent(saveData)
   }
@@ -600,18 +623,6 @@ class JobContent extends Component {
                   </button>
                 </div>
                 <div className={styles["job-content--sidebar--buttons"]}>
-                  {this.state.isRR && (
-                    <Fragment>
-                      <input
-                        id="toOrder"
-                        type="checkbox"
-                        onClick={this.onCheckClick}
-                        checked={this.state.toOrder}
-                        name="toOrder"
-                      />
-                      <label htmlFor="toOrder">Bestellbar</label>
-                    </Fragment>
-                  )}{" "}
                   <button
                     className={cx(
                       commonStyles["button"],
@@ -623,7 +634,34 @@ class JobContent extends Component {
                     Speichern
                   </button>
                 </div>
-
+                <hr />
+                <div
+                  className={styles["title-image"]}
+                  onClick={this.onImageOpen}
+                >
+                  <div className={cx(styles["title-image--avatar"])}>
+                    {this.state.titleImage ? (
+                      <img
+                        src={`/assets/media/${this.state.imageCategory}/${this.state.titleImage}`}
+                        alt=""
+                      />
+                    ) : (
+                      <div>
+                        Titelbild
+                        <br />
+                        zum auswählen klicken
+                      </div>
+                    )}
+                  </div>
+                  {this.state.imageListOpen && (
+                    <ContentImageList
+                      updateTitleImage={this.updateTitleImage}
+                      closeImageList={this.closeImageList}
+                      newsImageId={this.state.imageId}
+                      category={"jobs"}
+                    />
+                  )}
+                </div>
                 <hr />
                 <div className={styles["job-content--sidebar--buttons"]}>
                   {this.props.jobs.job && (

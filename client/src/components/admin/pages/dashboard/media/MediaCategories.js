@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from "react"
+import { NavLink } from "react-router-dom"
 
-import styles from './Media.module.sass';
+import styles from "./Media.module.sass"
 
 export default class MediaCategories extends Component {
   render() {
     return (
-      <div className={styles['media--menu']}>
+      <div className={styles["media--menu"]}>
         <ul>
           <li>
             <NavLink
               to="/admin/dashboard/media/carousel"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Karussell
             </NavLink>
@@ -19,7 +19,7 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/news"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               News
             </NavLink>
@@ -27,7 +27,7 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/rassismusreport"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Rassismusreport
             </NavLink>
@@ -35,7 +35,7 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/ghinbericht"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               GHiN-Bericht
             </NavLink>
@@ -43,7 +43,7 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/jahresberichte"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Jahresberichte
             </NavLink>
@@ -51,7 +51,7 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/pressematerial"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Pressematerial
             </NavLink>
@@ -59,15 +59,23 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/pressespiegel"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Pressespiegel
             </NavLink>
           </li>
           <li>
             <NavLink
+              to="/admin/dashboard/media/jobs"
+              activeClassName={styles["active"]}
+            >
+              Jobs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/admin/dashboard/media/team"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Team
             </NavLink>
@@ -75,7 +83,7 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/training"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Training
             </NavLink>
@@ -83,13 +91,13 @@ export default class MediaCategories extends Component {
           <li>
             <NavLink
               to="/admin/dashboard/media/files"
-              activeClassName={styles['active']}
+              activeClassName={styles["active"]}
             >
               Files
             </NavLink>
           </li>
         </ul>
       </div>
-    );
+    )
   }
 }
