@@ -5,6 +5,12 @@
   background: rgba(#FFC803, .1)
   display: flex
   justify-content: space-between
+  @media(max-width: 720px)
+    flex-direction: column-reverse
+    align-items: center
+    &__right
+      margin-left: 0 !important
+      margin-bottom: 1rem
   a
     color: #050505
   &--title
@@ -31,5 +37,6 @@
     img
       // height: auto
       max-width: 140px
+
 
     
